@@ -1,0 +1,38 @@
+---
+title: "Pollen trade-offs"
+author: "Fernando, Hugo, Jason & Daniel"
+date: "27 February 2017"
+output:
+  html_document: default
+  word_document: default
+subtitle: Proposal
+---
+
+# Introduction
+
+Interspecific pollen deposition is detrimental to plant fitness. 
+This is particularly true if it's the first deposition.
+Using specialization: trade offs
+Plants can minimise interspecific pollen deposition using four distinct mechanisms:
+
+1. By preferentially flowering on spatial clusters 
+2. By flowering in missmatching phenologies
+3. By harnessing individual level insect preferences
+4. By depositing and receiving pollen on/from specific insect body parts
+
+I aim to use 
+
+# Methods
+
+## Individual based model
+
+## Hugo's data
+
+Data collected over 3 years, each year with 5 samplings from November to March. 
+For each sampling, 3 sites were visited, each of them with 4 fragments (two restored and two agricultural). 
+In each fragment, 2 transects were performed. 
+For each transect x sampling, there is data on flower abundance, insect abbundance (# insects caught), plant-insect visitation(?) and pollen carried per individual insect (to the species level). 
+In addition, there is data on the amount of interspecific/conspecific pollen in flower stigmas for year #2. (From November to March as well?)
+It might be possible to gather information on plant and animal phenophases and traits either from available data or databases / published literature.
+
+# Timeline
