@@ -31,3 +31,14 @@ vignettes/*.pdf
 # Temporary files created by R markdown
 *.utf8.md
 *.knit.md
+.Rproj.user
+
+*.docx
+
+paper/proposal\.html
+
+paper/drafts_and_submissions/\.DS_Store
+
+*\.DS_Store
+
+pollen-competition\.Rproj
