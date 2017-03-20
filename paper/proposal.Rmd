@@ -1,38 +1,124 @@
 ---
-title: "Pollen trade-offs"
+title: "The mutualistic trade-off"
 author: "Fernando, Hugo, Jason & Daniel"
-date: "27 February 2017"
 output:
-  html_document: default
-  word_document: default
-subtitle: Proposal
+  pdf_document: default
+subtitle: "Mini proposal"
+bibliography: references.bib
+csl: ecology-letters.csl
+header-includes:
+- \usepackage{setspace}
 ---
 
-# Introduction
+\onehalfspacing
 
-Interspecific pollen deposition is detrimental to plant fitness. 
-This is particularly true if it's the first deposition.
-Using specialization: trade offs
-Plants can minimise interspecific pollen deposition using four distinct mechanisms:
+The trade-off between the number of partners and the mutualistic benefit (mutualistic trade-off) has been shown to play an important role in the structuring of pollination networks [@Saavedra2013]. 
+The mutualistic trade-off arises primarily from the negative effects of interspecific pollen transfer on plant fitness (trough pollen limitation, for example). 
+When the trade-off is very low, plants that have a large number of interaction partners tend to be the ones that obtain the largest benefits.
+Contrastingly, when the mutualistic trade-off is very high, specialist plants (those with a small number of partners) would fare better because their pollen is not deposited on foreign stigmas, and similarly, their stigmas are not clogged by foreign pollen. 
+Nevertheless, it has been shown that specialisation might be a dangerous strategy because it reduces the insurance effect against partner loss and volatility that generalism promotes. 
 
-1. By preferentially flowering on spatial clusters 
-2. By flowering in missmatching phenologies
-3. By harnessing individual level insect preferences
-4. By depositing and receiving pollen on/from specific insect body parts
+As evidenced by a multitude of empirical studies, real mutualistic networks are somewhere in the middle—at intermediate levels of connectance. 
+This is means that plant communities and/or species employ strategies to minimise the mutualistic trade-offs. 
 
-I aim to use 
+## Effect of the trade-off mutualism\footnote{Not so sure about this one. I think it might be a good way to start this chapter because it seems relatively straightforward, sets the scenario for the things to come, and can come with useful lessons about how to follow. }
 
-# Methods
+It has been shown that mutualism maximises diversity [@Bastolla2009]. 
+Under a no trade-off scenario the largest biodiversity is achieved when the network is fully connected (the connectance *c = 1*). 
+For intermediate levels of connectance, it has also been shown that the performance of different structures differ such that a nested structure promotes biodiversity more efficiently than a modular and a random structure. 
+It is unknown, however, which structures are more favourable when the mutualistic trade-off is included. 
+Empirical networks are far from being fully connected, and have neither completely modular or nested structure, but are somewhere in between. 
+The **first potential question** is to compare the performance of four different structures: random, nested, modular, and empirical, when the mutualistic trade-off is included. 
 
-## Individual based model
+We will use the feasibility of the network as an indication of the extent to which the network structure facilitates species coexistence [@Saavedra2016]. 
+To compare the different structures, we will calculate the feasibility of an empirical network and compare it with the feasibility of a network that maintains the size and connectance, but that has a highly nested, highly modular, and random structure. 
+We will do that under two scenarios. 
+In the first, assumes a homogeneous mutualistic trade-off for the community. 
+In this case, we will analyse the feasibility of the four structures for varying levels of trade-off.
+In the second scenario, we will assume that the trade-off is species dependent and correspond to the "neutral" assumption that the trade-off is inversely proportional to the species abundance. 
+This second scenario will require a modification of the existing feasibility code.
 
-## Hugo's data
+## Empirical networks minimise the trade-off
 
-Data collected over 3 years, each year with 5 samplings from November to March. 
-For each sampling, 3 sites were visited, each of them with 4 fragments (two restored and two agricultural). 
-In each fragment, 2 transects were performed. 
-For each transect x sampling, there is data on flower abundance, insect abbundance (# insects caught), plant-insect visitation(?) and pollen carried per individual insect (to the species level). 
-In addition, there is data on the amount of interspecific/conspecific pollen in flower stigmas for year #2. (From November to March as well?)
-It might be possible to gather information on plant and animal phenophases and traits either from available data or databases / published literature.
+We start from the premise that both efficiency and redundancy are desirable in pollination networks, but that there is a trade-off between those. 
+We follow with the assumption that the highest pollination efficiency is achieved when there is no interspecific pollen transfer. 
+At the community level, we expect that pollination communities are selected towards structures that minimise the efficiency/redundancy trade-off. 
+The first question is therefore whether the structure of empirical natural communities allows for higher levels of efficiency than what would be expected at random for its redundancy. 
+
+```{r, echo = F, fig.width = 7, fig.height = 1.5, results='hide', fig.cap  = "Illustration of the mutualistic trade-off."}
+library(magrittr)
+r <- list(
+    matrix(1, ncol = 2, nrow = 2),
+    matrix(c(1, 1, 1, 0), ncol = 2, nrow = 2),
+    matrix(c(1, 0, 0, 1), ncol = 2, nrow = 2)
+)
+
+c(1, 1, 1, 2, 3, 4, 5, 5, 5) %>%
+    matrix(3, 3, byrow = T) %>%
+    layout(heights = c(1, 2.5, 1))
+par(mar = rep(0, 4))
+plot.new()
+text(0.5, 0.5, "redundancy", pos = 3)
+arrows(1, 0.5, 0, length = 0.1, angle = 15, col = "grey30")
+lapply(r, igraph::graph_from_incidence_matrix) %>%
+    lapply(igraph::plot.igraph, 
+                 layout = igraph::layout_as_bipartite, 
+                 vertex.color = NA, 
+                 vertex.label = NA,
+                 vertex.size = 50)
+
+plot.new()
+text(0.5, 0.5, "efficiency", pos = 1)
+arrows(0, 0.5, 1, length = 0.1, angle = 15, col = "grey30")
+```
+
+Efficiency will be measured by quantifying the pollen $\alpha$-diversity in pollination units and*the pollen $\beta$-diversity across pollination units. 
+Efficient pollination (low interspecific transfer) occurs when $\alpha$-diversity is minimal and $\beta$-diversity is maximal. 
+Here, a pollination unit is the one at which pollination effectively takes place. While most studies have studied pollination systems using species as the pollination unit, individuals or even body parts can be more meaningful units, as individuals are the ones moving from flower to flower, and the body parts are effectively where the pollen is attached to and retrieved from. 
+Redundancy will be measured either by counting the incidence of more redundant 4 species motifs or by using the network's complementarity H2 [@Bluthgen2011]. 
+As the highest redundancy is achieved when plant species can harness the positive feedback loops characteristic in mutualistic communities, and the end effect of redundancy is to buffer against fluctuations in the populations of mutualistic partners, the relevant unit when evaluating the redundancy is species. 
+
+The relationship between the $\alpha$ and $\beta$ diversity and *potential* interspecific pollen transfer can be shown by using a set of networks in which pollen loads and visitation data exists. 
+The proportion of potential interspecific pollen for plant species *i* is $$t_i = \frac{\sum{p_{ij}\frac{v_{ji}}{v_j}}}{\sum{p_{ij}}}$$, where $p_ij$ is the amount of pollen of plant *i* on pollinator unit *j*, $v_{ji}$ is the number of visits by pollinator *j* on plant *i* and $v_j$ is the total number of visits by pollinator *j*.
+Hopefully, the relationship agrees strongly enough with the diversity indices so that they can be used instead, and networks in which only pollen load data exists can be used (necessary at all?). 
+The neutral efficiency for a given redundancy will be calculated assuming that the pollen is distributed homogeneously among pollinator units in a way proportional to the overall abundance of pollen per species. A very rough pictorial description of this procedure can be found at the end. 
+This analysis will take place when considering species or individual as the pollination units. 
+
+The results will potentially explain why pollen transfer networks seem to be more specialised than visitation and provide evidence as to how plants can harness individual pollinator preferences to increase the functional complementarity of the pollination service without sacrificing the stability provided by interaction redundancy, effectively minimising interspecific competition. 
+
+However, network structure and individual pollinator preferences are not the only way communities might employ to minimise the mutualistic trade-offs. 
+I identify four strategies, two that introduce mismatches and two that introduce pollinator granularity, that has been empirically recognised. 
+
+1. A spatial mismatch: Animal mutualists have different home ranges. 
+The mutualistic trade-off can be minimised by plant species by growing in spatial clusters such that the likelihood that the following or previous visits on a focal plant occur on the same species. 
+2. A temporal mismatch: The trade-off can similarly be minimised by growing in distinct temporal clusters that cause a mismatch on plant phenologies. 
+This is so because when a time period is dominated by a particular plant species the likelyhood that the following or previous visits on a focal plant occur on the same species is increased too.
+3. Individual pollinator granularity: Although the reasons and mechanisms are still unclear, it has been shown that pollinators have preferences at the individual level. 
+This is, while a pollinator species might be a mutualist for several plant species, individuals concentrate their visits on a particular plant species. 
+This effectively reduces the amount of interspecific pollen transfer.
+4. Body part pollinator granularity: diving even further, plant reproductive organs can have shapes that preferentially attach (and receive), pollen in (from) particular body parts of the pollinator partner. 
+
+Effectively, all these four strategies operate by achieving the same effect on patterns of $\alpha$ and $\beta$-diversity. The low pollen diversity has the largest benefit for the species with the largest *local abundance*. 
+
+Although previous work indicates that all these strategies might operate to a certain degree in nature, it is unclear how prevalent they are in pollination systems. 
+A potential section of the chapter might be to use an individual-based model to compare the extent to which these mechanisms might contribute to the minimisation of the trade-off. 
+An IBM might be desirable because it allows modeling all these mechanisms within a unified framework. 
+
+## Empirical individual & body part pollen partitioning constraint feasibility less than random
+
+In collaboration with Melissa, I will calculate the feasibility of the agricultural networks when using individual pollinators, and body parts as the pollination units. 
+I will then compare it with the feasibility of *i)* an scenario in which there is no individual or body part differentiation, and *ii)* random differentiation.
 
 # Timeline
+
+* March and April: Feasibility - Melissa. Potential reviews for control paper.
+* April, May and June: Empirical networks minimise trade-offs (analyse data using proposed methods, attempt to write a draft, keep on analysing data and decide if further analysis is necessary. Potential reviews for control paper. On holidays the last week of June
+* July: ICCB and Suspension
+* August: ESA and Suspension *or* Internship
+* September: Internship, iDiv summer school *or* suspension
+* October and November: Internship *or* Empirical networks minimise trade-offs (finish up writing and, follow up work in case results are not satisfactory)
+* December - June: Third chapter
+* Winter 2018: Internship *or* Data incubator
+* Summer 2018-2019: Third chapter and wrap up thesis
+
+# References
