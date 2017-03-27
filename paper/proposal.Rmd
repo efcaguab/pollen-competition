@@ -51,16 +51,4 @@ In addition to this, there is also abundance and visitation data for the 2008-20
 
 Different components of this data set have been published by @Marrero2014, @Marrero2016, and @Marrero2017. @Marrero2014 used visitation data and determined that there were differences on the degree of specialization between land uses (agricultural vs. restored) as well as the richness of plants and pollinators. @Marrero2016 used pollen deposition data and determined that the pollination service (both the absolute number and the proportion of conspecific pollen deposited on stigmas) is reduced in agricultural communities when compared to restored communities. Finally, @Marrero2017 used pollen transfer networks and found that pollen diversity and pollination niche overlap (at the species level) is greater in agricultural communities. The increase on niche overlap was in turn positively associated with an increased abundance of exotic plants.
 
-# Timeline
-
-* April: Feasibility - Melissa. Potential reviews for control paper.
-* May and June: Empirical networks minimise trade-offs (analyse data using proposed methods, attempt to write a draft, keep on analysing data and decide if further analysis is necessary. Potential reviews for control paper might get on the way. On holidays the last week/mid of June
-* July: ICCB and Suspension
-* August: ESA and Suspension *or* Internship
-* September: Internship, iDiv summer school *or* suspension
-* October and November: Internship *or* Empirical networks minimise trade-offs (finish up writing and, follow up work in case results are not satisfactory)
-* December - June: Third chapter
-* Winter 2018: Internship *or* Data incubator
-* Summer 2018-2019: Third chapter and wrap up thesis
-
 # References
