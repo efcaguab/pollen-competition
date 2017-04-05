@@ -16,8 +16,10 @@ data <- readr::read_csv(input_file)
 
 data <- data %>% 
 	group_by(site, land_use) %>%
-	mutate(fragment = as.numeric(as.factor(fragment)),
-				 site_name = paste(site, toupper(land_use), fragment, sep = "_"))	%>%
+	mutate(fragment_name = fragment, 
+	       fragment_name = gsub("\x92", "i", fragment_name),
+	       fragment = as.numeric(as.factor(fragment)),
+				 site_name = paste("MA", site, toupper(land_use), fragment, sep = "_"))	%>%
 	rename(plant_name = plant, 
 				 cons = co_grains,
 				 hete = he_grains,
@@ -28,7 +30,8 @@ site_data <- data %>%
 	group_by(site_name) %>%
 	summarise(locality = unique(site), 
 						land_use = unique(land_use),
-						fragment = unique(fragment)) %>%
+						fragment = unique(fragment),
+						fragment_name = unique(fragment_name)) %>%
 	mutate(land_use = if_else(land_use == "a", "agricultural", "reserve")) %>%
 	group_by()
 
@@ -75,6 +78,7 @@ data <- foreach(i=1:n_distinct(site_data$site_name)) %do% {
 	site$locality <- site_data$locality[i]
 	site$land_use <- site_data$land_use[i]
 	site$fragment <- site_data$fragment[i]
+	site$fragment_name <- site_data$fragment_name[i]
 	site$plant_data <- plant_data %>% 
 		filter(site_name == site_data$site_name[i]) %>%
 		select(- site_name)
