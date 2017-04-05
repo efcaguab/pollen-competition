@@ -53,7 +53,9 @@ per_plant_data <- data %>%
   reshape2::melt(measure.vars = c("germ", "non.germ"), 
                  variable.name = "pollen_type", 
                  value.name = "n_grains") %>%
-  mutate(treatment = "open")
+  mutate(treatment = "open",
+         pollen_type = if_else(pollen_type == "germ", "germinated", "non_germinated")) %>%
+  select(site_name, plant, n_stigma, recipient, donor, n_grains, pollen_type, treatment)
 
 # save all data in a list of unique sites in a sort of deposition-site object.
 # each site has a list of properties that describe and relate it to other sites.

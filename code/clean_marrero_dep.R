@@ -44,7 +44,27 @@ data <- data %>%
 				 treatment,
 				 cons,
 				 hete,
-				 n_stigma)
+				 n_stigma) %>%
+  rename(recipient = plant_name) %>%
+  mutate(plant = 1:nrow(.))
+
+plants <- data %>% 
+  select(site_name, plant, n_stigma, treatment, recipient)
+
+conspecific <- data %>%
+  mutate(donor = recipient, 
+         n_grains = cons) %>% 
+  select(plant, recipient, donor, n_grains) 
+
+heterospecific <- data %>%
+  mutate(donor = "UNKNOWN", 
+         n_grains = hete) %>% 
+  select(plant, recipient, donor, n_grains)
+
+data <- bind_rows(conspecific, heterospecific) %>% 
+  left_join(plants) %>% 
+  mutate(pollen_type = "non_germinated") %>%
+  select(site_name, plant, n_stigma, recipient, donor, n_grains, pollen_type, treatment)
 
 # save all data in a list of unique sites in a sort of deposition-site object.
 # each site has a list of properties that describe and relate it to other sites.
