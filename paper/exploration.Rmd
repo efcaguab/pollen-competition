@@ -1,0 +1,58 @@
+---
+title: "The degre/benefit trade-off: deposition data"
+author: "Fernando Cagua"
+date: "4 April 2017"
+output: 
+  html_notebook: 
+    code_folding: hide
+    fig_caption: yes
+---
+
+```{r setup, message=FALSE, results='hide'}
+library(dplyr)
+library(ggplot2)
+knitr::opts_chunk$set(warning = FALSE, message = FALSE, fig.width = 7)
+
+# read data
+dep <- readRDS("../data/datasets/processed/all_deposition.rds")
+dep_df <- plyr::ldply(dep, function(x){
+  x$deposition %>%
+    mutate(site = x$name, 
+           study = x$study)
+})
+
+vis <- readRDS("../data/datasets/processed/all_visitation.rds")
+vis_df <- plyr::ldply(vis, function(x){
+  x$visitation %>%
+    mutate(site = x$name, 
+           study = x$study)
+})
+```
+
+This is a preliminary analysis using Hugo's data. Here, species degree is independently calculated from the visitation network. 
+
+Particular to this study is the use of control flowers to account for the effect of self pollination. The treatment "closed" corresponds to when flowers were bagged, and the treatment "open" allowed for insects to come and pollinate the flower. 
+
+The follwing graph shows the number of grains as a function of the overall plant degree (the number of distinct partners across all sites) for both the open and closed treatment. 
+
+```{r}
+# calculate degrees
+degree_overall <- vis_df %>%
+  rename(recipient = plant_name) %>%
+  group_by(study, recipient) %>%
+  summarise(degree = n_distinct(animal_name)) 
+
+inner_join(degree_overall, dep_df) %>% 
+  ggplot(aes(x = degree, y = n_grains/n_stigma + 1)) + 
+  geom_point(aes(colour = recipient == donor),
+             position = position_jitter(0.4),
+             size = 1, 
+             alpha = 0.7) +
+  geom_smooth(aes(colour = recipient == donor),
+              method = "lm") +
+  facet_grid(~treatment) +
+  scale_y_log10() +
+  theme(legend.position = "top")
+```
+
+This seems to make sense.
