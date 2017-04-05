@@ -5,6 +5,8 @@ all: clean
 clean: deposition
 deposition: $(proc_data)/all_deposition.rds
 
+# deposition
+
 $(proc_data)/deposition/marrero.rds: clean_marrero_dep.R $(raw_data)/marrero2016/estigmatic_pollen.csv
 	Rscript $^ $@
 
@@ -14,5 +16,5 @@ $(proc_data)/deposition/tur.rds: clean_tur_dep.R $(raw_data)/tur2016/Data_Tur_et
 $(proc_data)/deposition/emer.rds: clean_emer_dep.R $(raw_data)/emer2015/pollen_transfer.csv
 	Rscript $^ $@
 
-$(proc_data)/all_deposition.rds: assemble_dep.R $(proc_data)/deposition/marrero.rds $(proc_data)/deposition/tur.rds $(proc_data)/deposition/emer.rds
+$(proc_data)/all_deposition.rds: assemble.R $(proc_data)/deposition/marrero.rds $(proc_data)/deposition/tur.rds $(proc_data)/deposition/emer.rds
 	Rscript $^ $@

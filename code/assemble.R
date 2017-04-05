@@ -1,4 +1,4 @@
-# assemble all pollen deposition data into one file
+# assemble all disparate data into one file
 
 library(foreach)
 
