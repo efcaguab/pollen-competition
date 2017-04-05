@@ -2,8 +2,9 @@ proc_data = ../data/datasets/processed
 raw_data = ../data/datasets/raw
 
 all: clean
-clean: deposition
+clean: deposition visitation
 deposition: $(proc_data)/all_deposition.rds
+visitation: $(proc_data)/all_visitation.rds
 
 # deposition
 
@@ -17,4 +18,12 @@ $(proc_data)/deposition/emer.rds: clean_emer_dep.R $(raw_data)/emer2015/pollen_t
 	Rscript $^ $@
 
 $(proc_data)/all_deposition.rds: assemble.R $(proc_data)/deposition/marrero.rds $(proc_data)/deposition/tur.rds $(proc_data)/deposition/emer.rds
+	Rscript $^ $@
+
+# visitation
+
+$(proc_data)/all_visitation.rds: assemble.R $(proc_data)/visitation/marrero.rds
+	Rscript $^ $@
+
+$(proc_data)/visitation/marrero.rds: clean_marrero_vis.R $(raw_data)/marrero2016/visitation.csv $(proc_data)/deposition/marrero.rds
 	Rscript $^ $@
