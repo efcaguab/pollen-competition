@@ -1,5 +1,5 @@
 ---
-title: "The degre/benefit trade-off: deposition data"
+title: "The degree/benefit trade-off: deposition data"
 author: "Fernando Cagua"
 date: "4 April 2017"
 output: 
@@ -11,7 +11,10 @@ output:
 ```{r setup, message=FALSE, results='hide'}
 library(dplyr)
 library(ggplot2)
-knitr::opts_chunk$set(warning = FALSE, message = FALSE, fig.width = 7)
+knitr::opts_chunk$set(warning = FALSE,
+                      message = FALSE,
+                      fig.width = 8, 
+                      fig.height = 4)
 
 # read data
 dep <- readRDS("../data/datasets/processed/all_deposition.rds")
@@ -19,7 +22,12 @@ dep_df <- plyr::ldply(dep, function(x){
   x$deposition %>%
     mutate(site = x$name, 
            study = x$study)
-})
+}) %>%
+  mutate(pollen_category = recipient == donor,
+         pollen_category = if_else(pollen_category, 
+                                   "conspecific", 
+                                   "heterospecific"),
+         grain_density = n_grains/n_stigma)
 
 vis <- readRDS("../data/datasets/processed/all_visitation.rds")
 vis_df <- plyr::ldply(vis, function(x){
@@ -33,26 +41,143 @@ This is a preliminary analysis using Hugo's data. Here, species degree is indepe
 
 Particular to this study is the use of control flowers to account for the effect of self pollination. The treatment "closed" corresponds to when flowers were bagged, and the treatment "open" allowed for insects to come and pollinate the flower. 
 
-The follwing graph shows the number of grains as a function of the overall plant degree (the number of distinct partners across all sites) for both the open and closed treatment. 
+The follwing graph shows the number of grains as a function of the overall plant degree (the number of distinct partners across all sites) for both the open and closed treatment. Some jitter was added to the x axis to facilitate visualisation. 
 
 ```{r}
-# calculate degrees
+# calculate overall degree
 degree_overall <- vis_df %>%
   rename(recipient = plant_name) %>%
   group_by(study, recipient) %>%
   summarise(degree = n_distinct(animal_name)) 
 
 inner_join(degree_overall, dep_df) %>% 
-  ggplot(aes(x = degree, y = n_grains/n_stigma + 1)) + 
-  geom_point(aes(colour = recipient == donor),
+  ggplot(aes(x = degree, y = grain_density + 1)) + 
+  geom_point(aes(colour = pollen_category),
              position = position_jitter(0.4),
              size = 1, 
              alpha = 0.7) +
-  geom_smooth(aes(colour = recipient == donor),
+  geom_smooth(aes(colour = pollen_category),
               method = "lm") +
   facet_grid(~treatment) +
   scale_y_log10() +
-  theme(legend.position = "top")
+  theme(legend.position = "top") +
+  ggtitle("Degree vs pollen count per stigma", "Overall degree")
+
+# inner_join(degree_overall, dep_df) %>% 
 ```
 
-This seems to make sense.
+This is opposite to what we expected, at least for the open treatment. But the fact that there is also a possitive relationship between conspecific pollen and degree in the closed treatment highlights the fact that there are differences between species that might need to be accounted for. Interestingly, for the open treatment, the relationship between hetrospecific pollen and degree is negative. 
+
+Before dwelling into that, let's have a look if the pattern holds for when we look at the site level degrees. 
+
+```{r}
+# calculate site degree
+degree_site <- vis_df %>%
+  rename(recipient = plant_name) %>%
+  group_by(study, site, recipient) %>%
+  summarise(degree = n_distinct(animal_name)) 
+
+inner_join(degree_site, dep_df) %>% 
+  ggplot(aes(x = degree, y = grain_density + 1)) + 
+  geom_point(aes(colour = pollen_category),
+             position = position_jitter(0.4),
+             size = 1, 
+             alpha = 0.7) +
+  geom_smooth(aes(colour = pollen_category),
+              method = "lm") +
+  facet_grid(~treatment) +
+  scale_y_log10() +
+  theme(legend.position = "top") +
+  ggtitle("Degree vs pollen count per stigma", "Site level degree")
+
+cons_prop <- inner_join(degree_site, dep_df) %>% 
+  group_by(study, plant) %>%
+  arrange(pollen_category) %>% 
+  summarise(conspecific = first(grain_density),
+            heterospecific = last(grain_density),
+            cons_prop = conspecific/(conspecific + heterospecific),
+            cons_log_dif = log(conspecific + 1) - log(heterospecific + 1))
+
+dep_df %>%
+  select(treatment, site, study, recipient, plant) %>%
+  distinct() %>% 
+  inner_join(cons_prop) %>% 
+  inner_join(degree_site) %>% 
+  ggplot(aes(x = degree, y = cons_prop)) + 
+  geom_point(aes(colour = recipient), 
+             position = position_jitter(0.3),
+             size = 1, 
+             alpha = 0.7) +
+  geom_smooth(method = "glm", color = "black", method.args = list(family = "binomial")) +
+  facet_grid(~treatment) +
+  theme(legend.position = "top") +
+  ggtitle("Degree vs conspecific/heterospecific proportion", "Site level degree")
+
+dep_df %>%
+  select(treatment, site, study, recipient, plant) %>%
+  distinct() %>% 
+  inner_join(cons_prop) %>% 
+  inner_join(degree_site) %>% 
+  ggplot(aes(x = degree, y = cons_log_dif)) + 
+  geom_point(aes(colour = recipient), 
+             position = position_jitter(0.3),
+             size = 1, 
+             alpha = 0.7) +
+  geom_smooth(method = "lm", color = "black", method.args = list(family = "gaussian")) +
+  facet_grid(~treatment) +
+  theme(legend.position = "top") +
+  ggtitle("Degree vs conspecific/heterospecific log-difference", "Site level degree")
+```
+
+It seems like yes, the unexpected pattern holds even when looking at the commity level degree. This pattern is also obvious when we visualise the proportion of conspecific-heterospecific pollen. We do that as a natural logarithm difference to improve normality.
+
+Now let's look into removing the effect of self pollination as a mean to approximate the amount of pollen contributed by pollinators. To do that I subtract the median (because pollen counts are non-normal) of the grain density in the closed treatment to the sampled grain density in the open treatment. I include only plants that had at least one heterospecific pollen grain in the open treatment to prevent the inclusion of those that might have not had any pollinator visit. In any case the proportion of plants without heterospecific pollen was very low (~4% for hugo's study). 
+
+We look at the differences using both the absolute difference in pollen grains and in proportion. Using proportion has the advantage of reducing the differences between plants
+
+```{r, fig.height=6}
+dep_benefit <- dep_df %>%
+  filter(treatment == "closed") %>%
+  group_by(study, recipient,  pollen_category) %>%
+  summarise(grain_density_selfpol = median(grain_density)) %>% 
+  inner_join(dep_df) %>%
+  inner_join(degree_site) %>%
+  mutate(grain_density_surplus_prop =  grain_density/(grain_density_selfpol),
+         grain_density_surplus = grain_density - grain_density_selfpol)
+
+dep_benefit %>%
+  filter(treatment == "open") %>%
+  group_by(study, plant) %>%
+  mutate(has_heterospecific = !any(pollen_category == "heterospecific" &
+                                     n_grains == 0)) %>% 
+  filter(has_heterospecific) %>%
+  reshape2::melt(measure.vars = c("grain_density_surplus", "grain_density_surplus_prop")) %>%
+  ggplot(aes(x = degree, y = value)) +
+  geom_point(aes(colour = recipient), 
+             position = position_jitter(0.4),
+             size = 1, 
+             alpha = 0.7) +
+  geom_smooth(aes(x = degree, group = pollen_category), colour = "black") +
+  # geom_boxplot(aes(colour = pollen_category)) +
+  theme(legend.position = "top") +
+  facet_grid(variable~pollen_category, scales = "free_y") +
+  ggtitle("Degree vs. pollination contributed polllen density", 
+          "Degree & self-pollination baseline at the site level")
+```
+
+From the plot we can more or less infer that when we discount the effect of self-pollination, degree seems to have a negative effect on the ammount of conspecific pollen but only until a certain level, after which it flattens out. Similar patterns are observable for the heterospecific pollen.
+
+In terms of absolute numbers, plants receive more conspecific pollen grains than heterospecific pollen grains when pollinators enter the equation. In terms of proportion, as expected, the amount of heterospecific pollen that enters is greater than the amount of conspecific pollen. 
+
+If everything is correct then this data seems to support the idea that raw number of conspecific pollen is more valuable for plants than the actual proportion.
+
+# Outstanding issues
+
+* I have estigmatic pollen from Tur, Emer and Barrero but only really have networks of some kind for the same time for Barrero. 
+* Is the sample size large enough? Doesn't look like it... Might need to change focus. Back to Visitation * Transport to predict deposition? 
+* I can integrate Emer data using visitation data from other year but there is no closed treatment. So What would be the insight there?
+* In any case why so many heterospecific pollen grains in the closed treatment? Flowers were supposedly bagged before anthesis
+* Why closed and open treatment, most people don't bother doing that.
+* I can use Kaiser-Bunbury data to relate degree and set seed. But I'm not convinced of the degree vs. benefit hypothesis anymore
+
+
