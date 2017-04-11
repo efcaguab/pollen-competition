@@ -29,3 +29,7 @@ paper/proposal\.html
 paper/drafts_and_submissions/\.DS_Store
 *\.DS_Store
 pollen-competition\.Rproj
+
+paper/rsconnect/
+
+data/datasets/raw/marrero2016/Workbook1\.xlsx
