@@ -33,3 +33,6 @@ $(proc_data)/visitation/marrero.rds: clean_marrero_vis.R $(raw_data)/marrero2016
 
 $(proc_data)/degree/emer.rds: clean_emer_deg.R $(raw_data)/lopezaraiza2007
 	Rscript $^ $@
+
+$(proc_data)/degree/marrero.rds: clean_marrero_deg.R $(proc_data)/visitation/marrero.rds
+	Rscript $^ $@
