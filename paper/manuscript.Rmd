@@ -1,0 +1,59 @@
+---
+title: "Pollen competition"
+author: "Fernando Cagua, Hugo Marrero, Jason Tylianakis, Daniel Stouffer"
+date: "19 December 2017"
+output: pdf_document
+bibliography: references.bib
+csl: ecology-letters.csl
+header-includes:
+- \usepackage{booktabs}
+- \usepackage{tabularx}
+- \usepackage{setspace}
+---
+
+\doublespacing
+
+```{r, echo = F, message = F}
+library(magrittr)
+knitr::opts_chunk$set(
+  echo = FALSE,
+  message = FALSE, 
+  warning = FALSE
+)
+options("xtable.include.rownames" = FALSE,
+        "xtable.comment" = FALSE,
+        "xtable.size" = "small")
+```
+
+## Abstract
+
+## Introduction
+
+## Methods
+
+### Data collection
+
+We performed sampling in three locations, each located in a distinct phytogeograohic region of the Argentinean Pampas (Figure 1). 
+The sampling locations are distributed across a gradient of precipitation with a humid temperate climate in the eastward Flooding Pampas and an drier as we move inland and westward towards the Pampean Grasslands.
+Across all sites, annual mean temperatures range between 14.8 and 15.8 Celsius. 
+
+In each location, we sampled two restored and two agricultural fragments. 
+However, due to the lack of available sites in the Flooding Pampas, it was only possible to sample one restored site.
+We visited each fragment monthly between November and March between 2010 and 2011. 
+In each visit we gathered information related to abundance, plant-pollinator visitation, pollen transfer, and pollen deposition.
+For more information about the study sites and data collection protocols can be found in previous publications [@Marrero2014; @Marrero2016; @Marrero2017].
+
+```{r, results='asis'}
+readr::read_csv("variables_sampled.csv") %>%
+  dplyr::rename(` ` = Var) %>%
+  xtable::xtable(caption = "Variables sampled", align = c("l", "l", "X")) %>%
+  print(booktabs = TRUE, tabular.environment = "tabularx", width = "\\linewidth")
+```
+
+### Data analysis
+
+## Results
+
+## Discussion
+
+## References
