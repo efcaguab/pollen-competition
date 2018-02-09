@@ -28,7 +28,6 @@ vignettes/*.pdf
 paper/proposal\.html
 paper/drafts_and_submissions/\.DS_Store
 *\.DS_Store
-pollen-competition\.Rproj
 
 paper/rsconnect/
 
