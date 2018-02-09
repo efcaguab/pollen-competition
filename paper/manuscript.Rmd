@@ -54,8 +54,7 @@ In the selected plants we removed all flowers except buds that were expected to 
 A quarter of these buds were bagged to prevent animal pollination. 
 Two days after inflorecense, we analysed the pollen grains in the flowers' pistils and classified it between conspecific and heterospecific pollen. 
 
-The reader can find more details about the study sites, the data collection, and laboratory protocols in Marrero *et al.* (2014, 2016, and 2017)
-\footnote{
+The reader can find more details about the study sites, the data collection, and laboratory protocols in Marrero *et al.* (2014, 2016, and 2017)\footnote{
 This paper is almost entirely based on data that has already been published in separate units in Marrero et al. 2014, 2016, and 2017. 
 Marrero et al. 2014 used visitation data and determined that land uses (agricultural vs. restored) was correlated to differences on the degree of specialization and richness of plants and pollinators.
 Marrero et al. 2016 used pollen deposition data and determined that the pollination service (both the absolute number and the proportion of conspecific pollen deposited on stigmas) is reduced in agricultural communities when compared to restored communities.

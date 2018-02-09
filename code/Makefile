@@ -1,11 +1,12 @@
 proc_data = ../data/datasets/processed
 raw_data = ../data/datasets/raw
 
-all: clean
+all: clean phylogeny
 clean: deposition visitation degree
 deposition: $(proc_data)/all_deposition.rds
 visitation: $(proc_data)/all_visitation.rds
 degree: $(proc_data)/all_degree.rds
+phylogeny: $(proc_data)/all_phylogeny.rds
 
 # deposition
 
@@ -38,4 +39,8 @@ $(proc_data)/degree/emer.rds: clean_emer_deg.R $(raw_data)/lopezaraiza2007
 	Rscript $^ $@
 
 $(proc_data)/degree/marrero.rds: clean_marrero_deg.R $(proc_data)/visitation/marrero.rds
+	Rscript $^ $@
+
+# phylogeny
+$(proc_data)/all_phylogeny.rds: construct_phylogenies.R $(proc_data)/all_deposition.rds $(proc_data)/all_visitation.rds $(proc_data)/all_degree.rds
 	Rscript $^ $@

@@ -271,7 +271,7 @@ data_dep <- plyr::llply(data_dep, change_names_site,
 
 qual_vis_file <- "data/datasets/raw/marrero2016/qualitative_visits.csv" 
 
-qua <- read_csv(qual_vis_file)
+qua <- readr::read_csv(qual_vis_file)
 qua %<>%
   rename(plant_name = plant,
          fragment_name = fragment, 
@@ -303,15 +303,37 @@ data_vis_qual <- foreach(i=1:n_distinct(site_data$site_name)) %do% {
   site
 }
 
-qua %>% arrange(date, locality,fragment_name) %>% filter(locality == "LC") %>% View()
+# ARMONISE DEPOSITION AND QUALITATIVE VISITS ------------------------------
+
+data_vis_qual <- plyr::llply(data_vis_qual, change_names_site, 
+                        affected_col = c("plant_name", "donor", "recipient"),
+                        from = "Descurania argentina", 
+                        to = "Descurainia argentina")
+
+data_vis_qual <- plyr::llply(data_vis_qual, change_names_site, 
+                        affected_col = c("plant_name", "donor", "recipient"),
+                        from = "Dipsacus sp.", 
+                        to = "Dipsacus sativus")
+
+data_vis_qual <- plyr::llply(data_vis_qual, change_names_site, 
+                        affected_col = c("plant_name", "donor", "recipient"),
+                        from = "Nothoscordum euosimum", 
+                        to = "Nothoscordum nudicaule")
+
+data_vis_qual <- plyr::llply(data_vis_qual, change_names_site, 
+                        affected_col = c("plant_name", "donor", "recipient"),
+                        from = "Thelesperma sp.", 
+                        to = "Thelesperma megapotamicum")
+
+# qua %>% arrange(date, locality,fragment_name) %>% filter(locality == "LC") %>% View()
 
 dep_plants <- plyr::ldply(data_dep, function(x) x$plant_data) %>%
   distinct()
-vis_plants <- plyr::ldply(data_vis, function(x) x$plant_data) %>%
+vis_plants <- plyr::ldply(data_vis_qual, function(x) x$visitation %>% group_by(plant_name) %>% summarise(a=1)) %>%
   distinct()
 
 full_join(dep_plants, vis_plants, by = "plant_name") %>%
-  arrange(plant_name) 
+  arrange(plant_name) %>% View
 
 saveRDS(data, output_file)
 
