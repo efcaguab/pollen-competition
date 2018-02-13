@@ -223,6 +223,7 @@ change_names <- function(df, affected_col, from, to){
 # change names in data_frames arranged in a list
 change_names_site <- function(li, affected_col, from, to){
   for(i in 1:length(li)){
+    # message("evaluating site ", li$name, ", field ", names(li)[i])
     if(any(affected_col %in% names(li[[i]]))){
       li[[i]] <- change_names(li[[i]], affected_col, from, to)
     }
@@ -264,7 +265,6 @@ data_vis <- plyr::llply(data_vis, change_names_site,
                         affected_col = c("plant_name", "donor", "recipient"),
                         from = "Descuraina argentina", 
                         to = "Descurainia argentina")
-
 
 data_dep <- plyr::llply(data_dep, change_names_site, 
                         affected_col = c("plant_name", "donor", "recipient"),
@@ -346,6 +346,38 @@ data_vis_qual <- plyr::llply(data_vis_qual, change_names_site,
                         from = "Thelesperma sp.", 
                         to = "Thelesperma megapotamicum")
 
+# ARMONISE VISITS AND QUAL VISITS -----------------------------------------
+
+data_vis_qual <- plyr::llply(data_vis_qual, change_names_site, 
+                             affected_col = c("animal_name"),
+                             from = "Ligaeidae sp. 1", 
+                             to = "Lygaeidae sp. 1")
+
+data_vis_qual <- plyr::llply(data_vis_qual, change_names_site,
+                             affected_col = c("animal_name"),
+                             from = "Blaesoxipha \\(Acanthodotheca\\) sp. 1",
+                             to = "Blaesoxipha (Acanthodotheca) sp.")
+
+data_vis_qual <- plyr::llply(data_vis_qual, change_names_site,
+                             affected_col = c("animal_name"),
+                             from = "Graehomya auriceps",
+                             to = "Graphomya auriceps")
+
+data_vis <- plyr::llply(data_vis, change_names_site,
+                             affected_col = c("animal_name"),
+                             from = "Exomalopsis sp. 1",
+                             to = "Exomalopsis sp.")
+
+vis_animal <- plyr::ldply(data_vis, function(x) x$animal_data) %>%
+  distinct()
+vis_qual_animal <- plyr::ldply(data_vis_qual, function(x) x$visitation %>% group_by(animal_name) %>% summarise(a=1)) %>%
+  distinct()
+
+full_join(vis_animal, vis_qual_animal, by = "animal_name") %>%
+  arrange(animal_name) %>% View
+
+vis_animal <- plyr::ldply(data_vis, function(x) x$animal_data) %>%
+  arrange(animal_name) %>% View
 # qua %>% arrange(date, locality,fragment_name) %>% filter(locality == "LC") %>% View()
 
 dep_plants <- plyr::ldply(data_dep, function(x) x$plant_data) %>%
