@@ -139,6 +139,17 @@ plant_abundance <- data %>%
   rename(plant_name = Plant.observed) %>%
   group_by()
 
+standardize_animal_name <- . %>%
+  # standarise animal names for ease
+  mutate(animal_name = stringr::str_replace(animal_name, stringr::regex('\\s(sp)'), ' sp.'), 
+         animal_name = if_else(stringr::str_detect(animal_name, stringr::regex('([0-9]+)')),
+                               stringr::str_replace(animal_name, stringr::regex('([0-9]+)'), function(x) paste0(' ', x)), 
+                               animal_name),
+         animal_name = stringr::str_replace_all(animal_name, stringr::regex('\\.+'), '.'), 
+         animal_name = stringr::str_replace_all(animal_name, stringr::regex('\\s+'), ' '),
+         animal_name = stringr::str_replace(animal_name, stringr::regex('[^(sp)]\\.$'), ''),
+         animal_name = trimws(animal_name)) 
+
 animal_data <- data %>%
   # remove records of no visits
   filter(Flower.visitor.ID != "No visits", 
@@ -153,14 +164,18 @@ animal_data <- data %>%
             animal_type = unique(Visitor_type)) %>%
   mutate(animal_type = tolower(animal_type)) %>%
   group_by() %>%
-  rename(animal_name = Flower.visitor.ID)
+  rename(animal_name = Flower.visitor.ID) %>%
+  standardize_animal_name()
+
+
 
 interaction_data <- data %>%
   filter(Visitation.frequency != 0) %>%
   rename(plant_name = Plant.observed, 
          animal_name = Flower.visitor.ID, 
          n_visits = Visitation.frequency) %>%
-  select(site_name, date, plant_name, animal_name, n_visits)
+  select(site_name, date, plant_name, animal_name, n_visits) %>%
+  standardize_animal_name()
 
 data_vis <- foreach(i=1:n_distinct(site_char$site_name)) %do% {
   site <- list()
@@ -194,7 +209,11 @@ change_names <- function(df, affected_col, from, to){
   for(i in 1:length(affected_col)){
     if(affected_col[i] %in% names(df)){
       class(df) <- "data.frame"
+      # message("evaluated column is ", affected_col[i])
       df[, affected_col[i]] <- as.character(df[, affected_col[i]])
+      if(any(stringr::str_detect(df[, affected_col[i]], from))) {
+        # message("found instance of change")
+      }
       df[, affected_col[i]] <- stringr::str_replace(df[, affected_col[i]], from, to)
     }
   }
@@ -282,7 +301,9 @@ qua %<>%
          date = stringr::str_replace(date, "Ene", "Jan"),
          date = stringr::str_replace(date, "Dic", "Dec"),
          date = as.Date(date, format = "%d %b %y"),
-         fragment_name = stringr::str_replace(fragment_name, "C-alflafa", "C-alfalfa"))
+         fragment_name = stringr::str_replace(fragment_name, "C-alflafa", "C-alfalfa")) %>%
+  # standarise animal names for ease
+  standardize_animal_name()
 
 # save all data in a list of unique sites in a sort of deposition-site object.
 # each site has a list of properties that describe and relate it to other sites.
