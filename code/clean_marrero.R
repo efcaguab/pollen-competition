@@ -376,19 +376,82 @@ vis_qual_animal <- plyr::ldply(data_vis_qual, function(x) x$visitation %>% group
 full_join(vis_animal, vis_qual_animal, by = "animal_name") %>%
   arrange(animal_name) %>% View
 
+# POLLEN TRANSFER ---------------------------------------------------------
+
+transfer_file <- "data/datasets/raw/marrero2016/Pollen_transfer_network.csv" 
+
+transfer_df <- transfer_file %>%
+  read.csv() %>%
+  rename(plant_name = plant,
+         fragment_name = fragment, 
+         animal_name = insect,
+         locality = site) %>% 
+  mutate(date = as.character(date)) %>%
+  mutate(date = if_else(stringr::str_detect(date, stringr::regex('[0-9]')),
+                                            date,
+                                            paste(date, "10")),
+         date = paste("1", date),
+         date = stringr::str_replace(date, "\\.", " "),
+         date = stringr::str_replace(date, "Ene", "Jan"),
+         date = stringr::str_replace(date, "Dic", "Dec"),
+         date = as.Date(date, format = "%d %b %y"),
+         fragment_name = stringr::str_replace(fragment_name, "C-alflafa", "C-alfalfa")) %>%
+  standardize_animal_name()
+
+transfer <- foreach(i=1:n_distinct(site_data$site_name)) %do% {
+  site <- list()
+  site$name <- site_data$site_name[i]
+  site$locality <- site_data$locality[i]
+  site$land_use <- site_data$land_use[i]
+  site$fragment <- site_data$fragment[i]
+  site$fragment_name <- site_data$fragment_name[i]
+  site$transfer <- transfer_df %>% 
+    filter(fragment_name == site_data$fragment_name[i]) %>%
+    select(- fragment_name)
+  site$study <- "marrero"
+  site$sampling <- list(from = as.Date("2010-12-01"), 
+                        to = as.Date("2011-03-01"))
+  site
+}
+
+
+# ARMONIZE DEPOSITION AND POLLEN TRANSFER ---------------------------------
+
 vis_animal <- plyr::ldply(data_vis, function(x) x$animal_data) %>%
+  distinct()
+vis_qual_animal <- plyr::ldply(data_vis_qual, function(x) x$visitation %>% group_by(animal_name) %>% summarise(a=1)) %>%
+  distinct()
+
+full_join(vis_animal, vis_qual_animal, by = "animal_name") %>%
   arrange(animal_name) %>% View
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # qua %>% arrange(date, locality,fragment_name) %>% filter(locality == "LC") %>% View()
 
 dep_plants <- plyr::ldply(data_dep, function(x) x$plant_data) %>%
   distinct()
-vis_plants <- plyr::ldply(data_vis_qual, function(x) x$visitation %>% group_by(plant_name) %>% summarise(a=1)) %>%
+vis_plants <- plyr::ldply(data_vis, function(x) x$visitation %>% group_by(plant_name) %>% summarise(a=1)) %>%
+  distinct()
+vis_qual_plants <- plyr::ldply(data_vis_qual, function(x) x$visitation %>% group_by(plant_name) %>% summarise(a=1)) %>%
   distinct()
 
-full_join(dep_plants, vis_plants, by = "plant_name") %>%
+full_join(dep_plants, tra_plants, by = "plant_name") %>%
+  full_join(vis_qual_plants, by = "plant_name") %>%
   arrange(plant_name) %>% View
 
-saveRDS(data, output_file)
+# saveRDS(data, output_file)
 
 
 
