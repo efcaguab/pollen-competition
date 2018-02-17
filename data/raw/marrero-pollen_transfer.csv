@@ -1,0 +1,2297 @@
+individual,plant,grain,fragment,insect,treatment,site,date
+SSS122,Grupo Conium-Ammi,387,C-leon,Chrysomelidae sp2,c,sc,Nov
+SSS122,Oxalis sp.,7,C-leon,Chrysomelidae sp2,c,sc,Nov
+SSS122,indeterminate,1,C-leon,Chrysomelidae sp2,c,sc,Nov
+SSS137,Grupo Conium-Ammi,4007,C-leon,Chrysomelidae sp2,c,sc,Nov
+SSS137,Verbena sp.,2,C-leon,Chrysomelidae sp2,c,sc,Nov
+SSS137,Oxalis sp.,2,C-leon,Chrysomelidae sp2,c,sc,Nov
+SSS130,Grupo Conium-Ammi,1031,C-leon,Limnophora sp.,c,sc,Nov
+SSS130,Asteraceae,3,C-leon,Limnophora sp.,c,sc,Nov
+SSS130,Hirschfeldia incana,1,C-leon,Limnophora sp.,c,sc,Nov
+SSS130,indeterminate,1,C-leon,Limnophora sp.,c,sc,Nov
+SSS130,Verbena sp.,1,C-leon,Limnophora sp.,c,sc,Nov
+SSS124,Grupo Conium-Ammi,60,C-leon,Toxomerus sp.,c,sc,Nov
+SSS124,Geranium sp.,15,C-leon,Toxomerus sp.,c,sc,Nov
+SSS124,Verbena sp.,2,C-leon,Toxomerus sp.,c,sc,Nov
+SSS136,Grupo Conium-Ammi,12580,C-leon,Astylus quadrilineatus,c,sc,Nov
+SSS136,Hirschfeldia incana,83,C-leon,Astylus quadrilineatus,c,sc,Nov
+SSS136,Verbena sp.,2,C-leon,Astylus quadrilineatus,c,sc,Nov
+SSS126,Grupo Conium-Ammi,189,C-leon,Limnophora sp.,c,sc,Nov
+SSS126,Verbena sp.,2,C-leon,Limnophora sp.,c,sc,Nov
+SSS126,Asteraceae,1,C-leon,Limnophora sp.,c,sc,Nov
+SSS126,indeterminate,1,C-leon,Limnophora sp.,c,sc,Nov
+SSS126,Hirschfeldia incana,1,C-leon,Limnophora sp.,c,sc,Nov
+SSS133,Grupo Conium-Ammi,1711,C-leon,Limnophora sp.,c,sc,Nov
+SSS133,Hirschfeldia incana,20,C-leon,Limnophora sp.,c,sc,Nov
+SSS133,Oxalis sp.,1,C-leon,Limnophora sp.,c,sc,Nov
+SSS133,Verbena sp.,5,C-leon,Limnophora sp.,c,sc,Nov
+SSS133,indeterminate,1,C-leon,Limnophora sp.,c,sc,Nov
+SSS91,Hirschfeldia incana,15649,C-leon,Dialictus sp.13,c,sc,Nov
+SSS91,Grupo Conium-Ammi,389,C-leon,Dialictus sp.13,c,sc,Nov
+SSS132,Grupo Conium-Ammi,6165,C-leon,Oxysarcodexia varia,c,sc,Nov
+SSS132,indeterminate,1,C-leon,Oxysarcodexia varia,c,sc,Nov
+SSS132,Asteraceae,1,C-leon,Oxysarcodexia varia,c,sc,Nov
+SSS132,Hirschfeldia incana,1,C-leon,Oxysarcodexia varia,c,sc,Nov
+SSS123,Grupo Conium-Ammi,305,C-leon,Curculionidae sp5,c,sc,Nov
+SSS123,Capsela-bursapastoris,2,C-leon,Curculionidae sp5,c,sc,Nov
+SSS123,Hirschfeldia incana,1,C-leon,Curculionidae sp5,c,sc,Nov
+SSS88,Grupo Conium-Ammi,3283,C-leon,Dialictus sp.13,c,sc,Nov
+SSS88,Hirschfeldia incana,8316,C-leon,Dialictus sp.13,c,sc,Nov
+SSS88,Geranium sp.,1,C-leon,Dialictus sp.13,c,sc,Nov
+SSS134,Grupo Conium-Ammi,8944,C-leon,Dilophus sp.,c,sc,Nov
+SSS134,indeterminate,1,C-leon,Dilophus sp.,c,sc,Nov
+SSS134,Wharlengernia sp.,1,C-leon,Dilophus sp.,c,sc,Nov
+SSS134,Anagaslis sp.,1,C-leon,Dilophus sp.,c,sc,Nov
+SSS138,Grupo Conium-Ammi,576,C-leon,Chrysomelidae sp2,c,sc,Nov
+SSS138,Hirschfeldia incana,2,C-leon,Chrysomelidae sp2,c,sc,Nov
+SSS138,Anagaslis sp.,5,C-leon,Chrysomelidae sp2,c,sc,Nov
+SSS138,indeterminate,1,C-leon,Chrysomelidae sp2,c,sc,Nov
+SSS138,indeterminate,4,C-leon,Chrysomelidae sp2,c,sc,Nov
+SSS90,Grupo Conium-Ammi,94,C-leon,Allograpta exotica,c,sc,Nov.10
+SSS90,Hirschfeldia incana,3,C-leon,Allograpta exotica,c,sc,Nov.10
+SSS90,indeterminate,2,C-leon,Allograpta exotica,c,sc,Nov.10
+SSS92,Hirschfeldia incana,161,C-leon,Toxomerus sp.,c,sc,Nov.10
+SSS92,Grupo Conium-Ammi,23,C-leon,Toxomerus sp.,c,sc,Nov.10
+SSS92,Geranium sp.,3,C-leon,Toxomerus sp.,c,sc,Nov.10
+SSS92,indeterminate,2,C-leon,Toxomerus sp.,c,sc,Nov.10
+SSS93,Hirschfeldia incana,2,C-leon,Toxomerus sp.,c,sc,Nov.10
+SSS93,indeterminate,1,C-leon,Toxomerus sp.,c,sc,Nov.10
+SSS127,Grupo Conium-Ammi,102,C-leon,Anthomyiidae sp5,c,sc,Nov.10
+SSS127,Solanum sp.,9,C-leon,Anthomyiidae sp5,c,sc,Nov.10
+SSS135,Grupo Conium-Ammi,2658,C-leon,Stratiomyiidae sp2 ,c,sc,Nov.10
+SSS135,Solanum sp.,15,C-leon,Stratiomyiidae sp2 ,c,sc,Nov.10
+SSS135,Hirschfeldia incana,5,C-leon,Stratiomyiidae sp2 ,c,sc,Nov.10
+SSS89,Grupo Conium-Ammi,42,C-leon,Allograpta exotica,c,sc,Nov.10
+SSS89,Hirschfeldia incana,6,C-leon,Allograpta exotica,c,sc,Nov.10
+SSS89,indeterminate,1,C-leon,Allograpta exotica,c,sc,Nov.10
+SSS154,Glandularia perubiana,418,C-vias,Ceratina montana,c,sc,Nov.10
+SSS154,Hirschfeldia incana,87,C-vias,Ceratina montana,c,sc,Nov.10
+SSS154,Grupo Lactuca-Sonchus,1,C-vias,Ceratina montana,c,sc,Nov.10
+SSS154,indeterminate,2,C-vias,Ceratina montana,c,sc,Nov.10
+SSS87,Grupo Conium-Ammi,111,C-leon,Allograpta exotica,c,sc,Nov.10
+SSS87,Hirschfeldia incana,258,C-leon,Allograpta exotica,c,sc,Nov.10
+SSS87,Geranium sp.,1,C-leon,Allograpta exotica,c,sc,Nov.10
+SSS87,indeterminate,1,C-leon,Allograpta exotica,c,sc,Nov.10
+SSS121,Grupo Conium-Ammi,1160,C-leon,Allograpta exotica,c,sc,Nov.10
+SSS121,Asteraceae,6,C-leon,Allograpta exotica,c,sc,Nov.10
+SSS121,Solanum sp.,1,C-leon,Allograpta exotica,c,sc,Nov.10
+SSS121,Hirschfeldia incana,1,C-leon,Allograpta exotica,c,sc,Nov.10
+SSS121,Verbena sp.,1,C-leon,Allograpta exotica,c,sc,Nov.10
+SSS129,Grupo Conium-Ammi,1420,C-leon,Anthomyiidae sp1,c,sc,Nov.10
+SSS129,Hirschfeldia incana,1,C-leon,Anthomyiidae sp1,c,sc,Nov.10
+SSS105,Grupo Conium-Ammi,920,A-leon,Anthomyiidae sp1,a,sc,Nov.10
+SSS105,Solanum sp.,2,A-leon,Anthomyiidae sp1,a,sc,Nov.10
+SSS105,Hirschfeldia incana,1,A-leon,Anthomyiidae sp1,a,sc,Nov.10
+SSS125,Grupo Conium-Ammi,658,C-leon,Anthomyiidae sp5,c,sc,Nov.10
+SSS125,Solanum sp.,1,C-leon,Anthomyiidae sp5,c,sc,Nov.10
+SSS125,indeterminate,1,C-leon,Anthomyiidae sp5,c,sc,Nov.10
+SSS128,Grupo Conium-Ammi,1110,C-leon,Anthomyiidae sp5,c,sc,Nov.10
+SSS255,Hirschfeldia incana,6594,A-vias,Apis mellifera,a,sc,Dic.10
+SSS255,Verbena sp.,2,A-vias,Apis mellifera,a,sc,Dic.10
+SSS255,indeterminate,1,A-vias,Apis mellifera,a,sc,Dic.10
+SSS252,Hirschfeldia incana,2383,A-vias,Dialictus sp.21,a,sc,Dic.10
+SSS252,Adesmia sp.,595,A-vias,Dialictus sp.21,a,sc,Dic.10
+SSS252,Grupo Conium-Ammi,2,A-vias,Dialictus sp.21,a,sc,Dic.10
+SSS252,Grupo Crepis-Hypochoeris,9,A-vias,Dialictus sp.21,a,sc,Dic.10
+SSS302,Grupo Carduus-Cirsium,462,C-leon,Apis mellifera,c,sc,Dic.10
+SSS302,Hirschfeldia incana,13,C-leon,Apis mellifera,c,sc,Dic.10
+SSS302,Eucaliptus sp.,27,C-leon,Apis mellifera,c,sc,Dic.10
+SSS302,Asteraceae,1,C-leon,Apis mellifera,c,sc,Dic.10
+SSS302,Grupo Conium-Ammi,60,C-leon,Apis mellifera,c,sc,Dic.10
+SSS302,indeterminate,1,C-leon,Apis mellifera,c,sc,Dic.10
+SSS253,Hirschfeldia incana,6713,A-vias,Dialictus sp.20,a,sc,Dic.10
+SSS253,Grupo Crepis-Hypochoeris,2,A-vias,Dialictus sp.20,a,sc,Dic.10
+SSS253,Capsela-bursapastoris,1,A-vias,Dialictus sp.20,a,sc,Dic.10
+SSS254,Hirschfeldia incana,10047,A-vias,Apis mellifera,a,sc,Dic.10
+SSS254,Capsela-bursapastoris,1,A-vias,Apis mellifera,a,sc,Dic.10
+SSS254,Eucaliptus sp.,26,A-vias,Apis mellifera,a,sc,Dic.10
+SSS254,Grupo Conium-Ammi,2,A-vias,Apis mellifera,a,sc,Dic.10
+SSS298,Grupo Conium-Ammi,1235,C-leon,Anthomyiidae sp5,c,sc,Dic.10
+SSS298,indeterminate,2,C-leon,Anthomyiidae sp5,c,sc,Dic.10
+SSS299,Grupo Conium-Ammi,224,C-leon,Allograpta exotica,c,sc,Dic.10
+SSS299,Grupo Carduus-Cirsium,7,C-leon,Allograpta exotica,c,sc,Dic.10
+SSS299,Eucaliptus sp.,7,C-leon,Allograpta exotica,c,sc,Dic.10
+SSS281,Grupo Conium-Ammi,387,C-leon,Allograpta exotica,c,sc,Dic.10
+SSS281,Eucaliptus sp.,5,C-leon,Allograpta exotica,c,sc,Dic.10
+SSS281,Grupo Carduus-Cirsium,2,C-leon,Allograpta exotica,c,sc,Dic.10
+SSS281,Asteraceae,1,C-leon,Allograpta exotica,c,sc,Dic.10
+SSS281,Grupo Baccharis spp.,1,C-leon,Allograpta exotica,c,sc,Dic.10
+SSS280,Grupo Conium-Ammi,1138,C-leon,Allograpta exotica,c,sc,Dic.10
+SSS280,Eucaliptus sp.,14,C-leon,Allograpta exotica,c,sc,Dic.10
+SSS280,Hirschfeldia incana,42,C-leon,Allograpta exotica,c,sc,Dic.10
+SSS280,indeterminate,2,C-leon,Allograpta exotica,c,sc,Dic.10
+SSS256,Grupo Crepis-Hypochoeris,4,A-vias,Dialictus sp.20,a,sc,Dic.10
+SSS256,Solanum sp.,6,A-vias,Dialictus sp.20,a,sc,Dic.11
+SSS256,Hirschfeldia incana,8904,A-vias,Dialictus sp.20,a,sc,Dic.12
+SSS257,Hirschfeldia incana,380,A-vias,Allograpta exotica,a,sc,Dic.10
+SSS257,Eucaliptus sp.,5,A-vias,Allograpta exotica,a,sc,Dic.10
+SSS257,indeterminate,2,A-vias,Allograpta exotica,a,sc,Dic.10
+SSS257,indeterminate,1,A-vias,Allograpta exotica,a,sc,Dic.10
+SSS257,Grupo Conium-Ammi,29,A-vias,Allograpta exotica,a,sc,Dic.10
+SSS279,Grupo Conium-Ammi,731,C-leon,Allograpta exotica,c,sc,Dic.10
+SSS279,Eucaliptus sp.,12,C-leon,Allograpta exotica,c,sc,Dic.10
+SSS279,Geranium sp.,4,C-leon,Allograpta exotica,c,sc,Dic.10
+SSS287,Grupo Conium-Ammi,87,C-leon,Cochliomyia macellaria,c,sc,Dic.10
+SSS287,Grupo Carduus-Cirsium,2,C-leon,Cochliomyia macellaria,c,sc,Dic.10
+SSS287,Grupo Lactuca-Sonchus,2,C-leon,Cochliomyia macellaria,c,sc,Dic.10
+SSS287,Hirschfeldia incana,1,C-leon,Cochliomyia macellaria,c,sc,Dic.10
+SSS287,Eucaliptus sp.,89,C-leon,Cochliomyia macellaria,c,sc,Dic.10
+SSS287,indeterminate,1,C-leon,Cochliomyia macellaria,c,sc,Dic.10
+SSS287,Chenopodeaceae,1,C-leon,Cochliomyia macellaria,c,sc,Dic.10
+SSS286,Grupo Conium-Ammi,945,C-leon,Cochliomyia macellaria,c,sc,Dic.10
+SSS286,Grupo Carduus-Cirsium,108,C-leon,Cochliomyia macellaria,c,sc,Dic.10
+SSS286,Eucaliptus sp.,25,C-leon,Cochliomyia macellaria,c,sc,Dic.10
+SSS286,Hirschfeldia incana,5,C-leon,Cochliomyia macellaria,c,sc,Dic.10
+SSS286,Grupo Lactuca-Sonchus,1,C-leon,Cochliomyia macellaria,c,sc,Dic.10
+SSS286,Totora,1,C-leon,Cochliomyia macellaria,c,sc,Dic.10
+SSS321,Physalis sp.,20593,C-leon,Colletes sp4,c,sc,Dic.10
+SSS321,Grupo Conium-Ammi,1,C-leon,Colletes sp4,c,sc,Dic.10
+SSS321,Hirschfeldia incana,2,C-leon,Colletes sp4,c,sc,Dic.10
+SSS321,indeterminate,2,C-leon,Colletes sp4,c,sc,Dic.10
+SSS321,Eucaliptus sp.,1799,C-leon,Colletes sp4,c,sc,Dic.10
+SSS301,Grupo Conium-Ammi,4076,C-leon,Cochliomyia macellaria,c,sc,Dic.10
+SSS301,Hirschfeldia incana,1,C-leon,Cochliomyia macellaria,c,sc,Dic.10
+SSS301,Verbena sp.,2,C-leon,Cochliomyia macellaria,c,sc,Dic.10
+SSS301,indeterminate,1,C-leon,Cochliomyia macellaria,c,sc,Dic.10
+SSS301,indeterminate,1,C-leon,Cochliomyia macellaria,c,sc,Dic.10
+SSS301,Geranium sp.,3,C-leon,Cochliomyia macellaria,c,sc,Dic.10
+SSS283,Grupo Conium-Ammi,782,C-leon,Cochliomyia macellaria,c,sc,Dic.10
+SSS283,Grupo Carduus-Cirsium,2,C-leon,Cochliomyia macellaria,c,sc,Dic.10
+SSS283,Eucaliptus sp.,1,C-leon,Cochliomyia macellaria,c,sc,Dic.10
+SSS283,Hirschfeldia incana,2,C-leon,Cochliomyia macellaria,c,sc,Dic.10
+SSS283,indeterminate,1,C-leon,Cochliomyia macellaria,c,sc,Dic.10
+SSS322,Grupo Conium-Ammi,3846,C-leon,Cochliomyia macellaria,c,sc,Dic.10
+SSS322,Eucaliptus sp.,1,C-leon,Cochliomyia macellaria,c,sc,Dic.10
+SSS322,Grupo Carduus-Cirsium,1,C-leon,Cochliomyia macellaria,c,sc,Dic.10
+SSS322,indeterminate,1,C-leon,Cochliomyia macellaria,c,sc,Dic.10
+SSS327,Grupo Conium-Ammi,2814,C-leon,Cochliomyia macellaria,c,sc,Dic.10
+SSS327,Grupo Lactuca-Sonchus,2,C-leon,Cochliomyia macellaria,c,sc,Dic.10
+SSS327,Totora,4,C-leon,Cochliomyia macellaria,c,sc,Dic.10
+SSS327,Eucaliptus sp.,3,C-leon,Cochliomyia macellaria,c,sc,Dic.10
+SSS288,Grupo Conium-Ammi,3530,C-leon,Cochliomyia macellaria,c,sc,Dic.10
+SSS288,Grupo Lactuca-Sonchus,1,C-leon,Cochliomyia macellaria,c,sc,Dic.10
+SSS288,Geranium sp.,1,C-leon,Cochliomyia macellaria,c,sc,Dic.10
+SSS288,indeterminate,2,C-leon,Cochliomyia macellaria,c,sc,Dic.10
+SSS288,indeterminate,1,C-leon,Cochliomyia macellaria,c,sc,Dic.10
+SSS315,Grupo Conium-Ammi,376,C-leon,Blaesoxipha (Tephromyia) sp.2,c,sc,Dic.10
+SSS315,Verbena sp.,3,C-leon,Blaesoxipha (Tephromyia) sp.2,c,sc,Dic.10
+SSS315,Totora,6,C-leon,Blaesoxipha (Tephromyia) sp.2,c,sc,Dic.10
+SSS315,Geranium sp.,1,C-leon,Blaesoxipha (Tephromyia) sp.2,c,sc,Dic.10
+SSS315,Eucaliptus sp.,1,C-leon,Blaesoxipha (Tephromyia) sp.2,c,sc,Dic.10
+SSS315,Grupo Carduus-Cirsium,2,C-leon,Blaesoxipha (Tephromyia) sp.2,c,sc,Dic.10
+SSS335,Grupo Conium-Ammi,359,C-leon,Ligaeidae sp1,c,sc,Dic.10
+SSS335,Hirschfeldia incana,1,C-leon,Ligaeidae sp1,c,sc,Dic.10
+SSS316,Grupo Conium-Ammi,36,C-leon,Cochliomyia macellaria,c,sc,Dic.10
+SSS316,Eucaliptus sp.,16,C-leon,Cochliomyia macellaria,c,sc,Dic.10
+SSS316,Hirschfeldia incana,5,C-leon,Cochliomyia macellaria,c,sc,Dic.10
+SSS316,Grupo Carduus-Cirsium,1,C-leon,Cochliomyia macellaria,c,sc,Dic.10
+SSS316,Verbena sp.,1,C-leon,Cochliomyia macellaria,c,sc,Dic.10
+SSS272,Grupo Conium-Ammi,329,C-leon,Limnophora sp.,c,sc,Dic.10
+SSS272,Verbena sp.,1,C-leon,Limnophora sp.,c,sc,Dic.10
+SSS272,Hirschfeldia incana,2,C-leon,Limnophora sp.,c,sc,Dic.10
+SSS325,Grupo Conium-Ammi,1157,C-leon,Blaesoxipha (Tephromyia) sp.2,c,sc,Dic.10
+SSS325,Totora,1,C-leon,Blaesoxipha (Tephromyia) sp.2,c,sc,Dic.10
+SSS325,indeterminate,2,C-leon,Blaesoxipha (Tephromyia) sp.2,c,sc,Dic.10
+SSS284,Grupo Conium-Ammi,269,C-leon,Limnophora sp.,c,sc,Dic.10
+SSS284,Totora,1,C-leon,Limnophora sp.,c,sc,Dic.10
+SSS284,Verbena sp.,2,C-leon,Limnophora sp.,c,sc,Dic.10
+SSS329,Grupo Conium-Ammi,453,C-leon,Diabrotica speciosa,c,sc,Dic.10
+SSS329,Hirschfeldia incana,1,C-leon,Diabrotica speciosa,c,sc,Dic.10
+SSS323,Grupo Conium-Ammi,580,C-leon,Phaenicia cluvia,c,sc,Dic.10
+SSS323,Totora,1,C-leon,Phaenicia cluvia,c,sc,Dic.10
+SSS323,indeterminate,1,C-leon,Phaenicia cluvia,c,sc,Dic.10
+SSS323,Verbena sp.,1,C-leon,Phaenicia cluvia,c,sc,Dic.10
+SSS323,Eucaliptus sp.,4,C-leon,Phaenicia cluvia,c,sc,Dic.10
+SSS292,Grupo Conium-Ammi,1281,C-leon,Palpada elegans,c,sc,Dic.10
+SSS292,Eucaliptus sp.,1,C-leon,Palpada elegans,c,sc,Dic.10
+SSS292,Verbena sp.,1,C-leon,Palpada elegans,c,sc,Dic.10
+SSS292,Hirschfeldia incana,1,C-leon,Palpada elegans,c,sc,Dic.10
+SSS326,Grupo Conium-Ammi,281,C-leon,Blaesoxipha (Acanthodotheca) sp1 ,c,sc,Dic.10
+SSS326,indeterminate,1,C-leon,Blaesoxipha (Acanthodotheca) sp1 ,c,sc,Dic.10
+SSS326,Poaceae,18,C-leon,Blaesoxipha (Acanthodotheca) sp1 ,c,sc,Dic.10
+SSS300,Grupo Conium-Ammi,1345,C-leon,Limnophora sp.,c,sc,Dic.10
+SSS300,Poaceae,2,C-leon,Limnophora sp.,c,sc,Dic.10
+SSS300,indeterminate,2,C-leon,Limnophora sp.,c,sc,Dic.10
+SSS334,Grupo Conium-Ammi,3008,C-leon,Oxysarcodexia paulistanensis,c,sc,Dic.10
+SSS334,Poaceae,2,C-leon,Oxysarcodexia paulistanensis,c,sc,Dic.10
+SSS334,Totora,1,C-leon,Oxysarcodexia paulistanensis,c,sc,Dic.10
+SSS334,Eucaliptus sp.,1,C-leon,Oxysarcodexia paulistanensis,c,sc,Dic.10
+SSS291,Grupo Conium-Ammi,1278,C-leon,Oxysarcodexia paulistanensis,c,sc,Dic.10
+SSS291,indeterminate,1,C-leon,Oxysarcodexia paulistanensis,c,sc,Dic.10
+SSS291,Eucaliptus sp.,1,C-leon,Oxysarcodexia paulistanensis,c,sc,Dic.10
+SSS263,Grupo Conium-Ammi,34,C-leon,Oxysarcodexia varia,c,sc,Dic.10
+SSS263,Poaceae,3,C-leon,Oxysarcodexia varia,c,sc,Dic.10
+SSS324,Grupo Conium-Ammi,2842,C-leon,Oxysarcodexia paulistanensis,c,sc,Dic.10
+SSS324,Poaceae,16,C-leon,Oxysarcodexia paulistanensis,c,sc,Dic.10
+SSS324,Totora,1,C-leon,Oxysarcodexia paulistanensis,c,sc,Dic.10
+SSS324,Hirschfeldia incana,1,C-leon,Oxysarcodexia paulistanensis,c,sc,Dic.10
+SSS324,Grupo Carduus-Cirsium,1,C-leon,Oxysarcodexia paulistanensis,c,sc,Dic.10
+SSS296,Grupo Conium-Ammi,5274,C-leon,Oxysarcodexia varia,c,sc,Dic.10
+SSS296,Totora,2,C-leon,Oxysarcodexia varia,c,sc,Dic.10
+SSS296,Poaceae,10,C-leon,Oxysarcodexia varia,c,sc,Dic.10
+SSS331,Grupo Conium-Ammi,1493,C-leon,Polybia scutellaris,c,sc,Dic.10
+SSS331,Totora,1,C-leon,Polybia scutellaris,c,sc,Dic.10
+SSS333,Grupo Conium-Ammi,3542,C-leon,Polybia scutellaris,c,sc,Dic.10
+SSS333,Hirschfeldia incana,2,C-leon,Polybia scutellaris,c,sc,Dic.10
+SSS332,Grupo Conium-Ammi,6204,C-leon,Polybia scutellaris,c,sc,Dic.10
+SSS332,Eucaliptus sp.,1,C-leon,Polybia scutellaris,c,sc,Dic.10
+SSS289,Grupo Conium-Ammi,7324,C-leon,Polybia scutellaris,c,sc,Dic.10
+SSS330,Grupo Conium-Ammi,4406,C-leon,Polybia scutellaris,c,sc,Dic.10
+SSS290,Grupo Conium-Ammi,5395,C-leon,Polybia scutellaris,c,sc,Dic.10
+SSS290,Totora,1,C-leon,Polybia scutellaris,c,sc,Dic.10
+SSS290,Hirschfeldia incana,1,C-leon,Polybia scutellaris,c,sc,Dic.10
+SSS328,Grupo Conium-Ammi,1409,C-leon,Syrphus sp.,c,sc,Dic.10
+SSS328,Totora,1,C-leon,Syrphus sp.,c,sc,Dic.10
+SSS328,Poaceae,1,C-leon,Syrphus sp.,c,sc,Dic.10
+SSS328,Hirschfeldia incana,5,C-leon,Syrphus sp.,c,sc,Dic.10
+SSS328,indeterminate,1,C-leon,Syrphus sp.,c,sc,Dic.10
+SSS282,Grupo Conium-Ammi,904,C-leon,Sphiximorpha sp. 1,c,sc,Dic.10
+SSS282,Eucaliptus sp.,50,C-leon,Sphiximorpha sp. 1,c,sc,Dic.10
+SSS282,Poaceae,2,C-leon,Sphiximorpha sp. 1,c,sc,Dic.10
+SSS282,Grupo Carduus-Cirsium,1,C-leon,Sphiximorpha sp. 1,c,sc,Dic.10
+SSS264,Grupo Conium-Ammi,527,C-leon,Toxomerus sp.,c,sc,Dic.10
+SSS264,Geranium sp.,1,C-leon,Toxomerus sp.,c,sc,Dic.10
+SSS285,Grupo Conium-Ammi,107,C-leon,Tachinidae sp43,c,sc,Dic.10
+SSS258,Hirschfeldia incana,13,A-vias,Toxomerus sp.,a,sc,Dic.10
+SSS258,Eucaliptus sp.,1,A-vias,Toxomerus sp.,a,sc,Dic.10
+SSS258,Grupo Crepis-Hypochoeris,1,A-vias,Toxomerus sp.,a,sc,Dic.10
+SSS258,Grupo Conium-Ammi,1,A-vias,Toxomerus sp.,a,sc,Dic.10
+SSS295,Grupo Conium-Ammi,390,C-leon,Tachinidae sp47,c,sc,Dic.10
+SSS295,Hirschfeldia incana,7,C-leon,Tachinidae sp47,c,sc,Dic.10
+SSS295,Eucaliptus sp.,3,C-leon,Tachinidae sp47,c,sc,Dic.10
+SSS295,Grupo Lactuca-Sonchus,5,C-leon,Tachinidae sp47,c,sc,Dic.10
+SSS457,Grupo Eryngium spp.,3790,C-vias,Chauliognathus scriptus,c,sc,Ene.11
+SSS457,Grupo Carduus-Cirsium,37,C-vias,Chauliognathus scriptus,c,sc,Ene.11
+SSS457,Hirschfeldia incana,7,C-vias,Chauliognathus scriptus,c,sc,Ene.11
+SSS457,indeterminate,2,C-vias,Chauliognathus scriptus,c,sc,Ene.11
+SSS457,Grupo Conium-Ammi,2,C-vias,Chauliognathus scriptus,c,sc,Ene.11
+SSS457,Eucaliptus sp.,4,C-vias,Chauliognathus scriptus,c,sc,Ene.11
+SSS458,Grupo Eryngium spp.,257,C-vias,Coleoptera sp4,c,sc,Ene.11
+SSS458,indeterminate,2,C-vias,Coleoptera sp4,c,sc,Ene.11
+SSS445,Grupo Eryngium spp.,58,C-vias,Cochliomyia macellaria,c,sc,Ene.11
+SSS445,Grupo Conium-Ammi,502,C-vias,Cochliomyia macellaria,c,sc,Ene.11
+SSS445,Grupo Carduus-Cirsium,5,C-vias,Cochliomyia macellaria,c,sc,Ene.11
+SSS445,Hirschfeldia incana,5,C-vias,Cochliomyia macellaria,c,sc,Ene.11
+SSS445,Eucaliptus sp.,5,C-vias,Cochliomyia macellaria,c,sc,Ene.11
+SSS445,Grupo Baccharis spp.,1,C-vias,Cochliomyia macellaria,c,sc,Ene.11
+SSS453,Grupo Eryngium spp.,10,C-vias,Coleoptera sp4,c,sc,Ene.11
+SSS453,Verbena sp.,3,C-vias,Coleoptera sp4,c,sc,Ene.11
+SSS452,Grupo Eryngium spp.,120,C-vias,Coleoptera sp4,c,sc,Ene.11
+SSS452,indeterminate,1,C-vias,Coleoptera sp4,c,sc,Ene.11
+SSS405,Grupo Carduus-Cirsium,383,A-leon,Chauliognathus scriptus,a,sc,Ene.11
+SSS405,Hirschfeldia incana,7,A-leon,Chauliognathus scriptus,a,sc,Ene.11
+SSS405,indeterminate,2,A-leon,Chauliognathus scriptus,a,sc,Ene.11
+SSS405,Grupo Eryngium spp.,18,A-leon,Chauliognathus scriptus,a,sc,Ene.11
+SSS405,Glycine max,19,A-leon,Chauliognathus scriptus,a,sc,Ene.11
+SSS448,Grupo Eryngium spp.,2516,C-vias,Chauliognathus scriptus,c,sc,Ene.11
+SSS448,Grupo Conium-Ammi,5,C-vias,Chauliognathus scriptus,c,sc,Ene.11
+SSS449,Grupo Eryngium spp.,2400,C-vias,Chauliognathus scriptus,c,sc,Ene.11
+SSS449,Hirschfeldia incana,1,C-vias,Chauliognathus scriptus,c,sc,Ene.11
+SSS449,Grupo Conium-Ammi,1,C-vias,Chauliognathus scriptus,c,sc,Ene.11
+SSS449,Verbena sp.,1,C-vias,Chauliognathus scriptus,c,sc,Ene.11
+SSS449,Chenopodeaceae,1,C-vias,Chauliognathus scriptus,c,sc,Ene.11
+SSS403,Grupo Carduus-Cirsium,396,A-leon,Chauliognathus scriptus,a,sc,Ene.11
+SSS403,Grupo Conium-Ammi,16,A-leon,Chauliognathus scriptus,a,sc,Ene.11
+SSS403,Glycine max,152,A-leon,Chauliognathus scriptus,a,sc,Ene.11
+SSS403,Asteraceae,1,A-leon,Chauliognathus scriptus,a,sc,Ene.11
+SSS403,Hirschfeldia incana,18,A-leon,Chauliognathus scriptus,a,sc,Ene.11
+SSS404,Grupo Carduus-Cirsium,283,A-leon,Chauliognathus scriptus,a,sc,Ene.11
+SSS404,Grupo Conium-Ammi,359,A-leon,Chauliognathus scriptus,a,sc,Ene.11
+SSS404,Glycine max,573,A-leon,Chauliognathus scriptus,a,sc,Ene.11
+SSS404,Malvaceae,1,A-leon,Chauliognathus scriptus,a,sc,Ene.11
+SSS404,Hirschfeldia incana,5,A-leon,Chauliognathus scriptus,a,sc,Ene.11
+SSS410,Hirschfeldia incana,35,A-leon,Toxomerus sp.,a,sc,Ene.11
+SSS410,Grupo Carduus-Cirsium,1,A-leon,Toxomerus sp.,a,sc,Ene.11
+SSS407,Hirschfeldia incana,60,A-leon,Oxysarcodexia varia,a,sc,Ene.11
+SSS407,Glycine max,19,A-leon,Oxysarcodexia varia,a,sc,Ene.11
+SSS407,Grupo Carduus-Cirsium,20,A-leon,Oxysarcodexia varia,a,sc,Ene.11
+SSS400,Hirschfeldia incana,109,A-leon,Toxomerus sp.,a,sc,Ene.11
+SSS400,Grupo Carduus-Cirsium,1,A-leon,Toxomerus sp.,a,sc,Ene.11
+SSS454,Grupo Eryngium spp.,1054,C-vias,Oxysarcodexia varia,c,sc,Ene.11
+SSS412,Hirschfeldia incana,60,A-leon,Allograpta exotica,a,sc,Ene.11
+SSS412,Grupo Carduus-Cirsium,1,A-leon,Allograpta exotica,a,sc,Ene.11
+SSS412,indeterminate,4,A-leon,Allograpta exotica,a,sc,Ene.11
+SSS412,Glycine max,5,A-leon,Allograpta exotica,a,sc,Ene.11
+SSS490,Grupo Carduus-Cirsium,1820,A-vias,Apis mellifera,a,sc,Ene.11
+SSS490,Chenopodeaceae,4,A-vias,Apis mellifera,a,sc,Ene.11
+SSS490,Hirschfeldia incana,3,A-vias,Apis mellifera,a,sc,Ene.11
+SSS490,Grupo Conium-Ammi,5,A-vias,Apis mellifera,a,sc,Ene.11
+SSS446,Grupo Eryngium spp.,45,C-vias,Oxysarcodexia varia,c,sc,Ene.11
+SSS446,Grupo Carduus-Cirsium,1,C-vias,Oxysarcodexia varia,c,sc,Ene.11
+SSS446,Glycine max,1,C-vias,Oxysarcodexia varia,c,sc,Ene.11
+SSS446,indeterminate,2,C-vias,Oxysarcodexia varia,c,sc,Ene.11
+SSS447,Grupo Eryngium spp.,136,C-vias,Oxysarcodexia varia,c,sc,Ene.11
+SSS447,Grupo Carduus-Cirsium,3,C-vias,Oxysarcodexia varia,c,sc,Ene.11
+SSS447,Solanum sp.,36,C-vias,Oxysarcodexia varia,c,sc,Ene.11
+SSS476,Glycine max,2089,A-vias,Apis mellifera,a,sc,Ene.11
+SSS476,Grupo Carduus-Cirsium,25,A-vias,Apis mellifera,a,sc,Ene.11
+SSS476,Asteraceae,6,A-vias,Apis mellifera,a,sc,Ene.11
+SSS476,Chenopodeaceae,1,A-vias,Apis mellifera,a,sc,Ene.11
+SSS476,Grupo Conium-Ammi,2,A-vias,Apis mellifera,a,sc,Ene.11
+SSS476,Solanum sp.,5,A-vias,Apis mellifera,a,sc,Ene.11
+SSS476,indeterminate,2,A-vias,Apis mellifera,a,sc,Ene.11
+SSS455,Grupo Eryngium spp.,339,C-vias,Oxysarcodexia varia,c,sc,Ene.11
+SSS455,Grupo Carduus-Cirsium,1,C-vias,Oxysarcodexia varia,c,sc,Ene.11
+SSS402,Grupo Carduus-Cirsium,423,A-leon,Chauliognathus scriptus,a,sc,Ene.11
+SSS402,Glycine max,34,A-leon,Chauliognathus scriptus,a,sc,Ene.11
+SSS402,Hirschfeldia incana,60,A-leon,Chauliognathus scriptus,a,sc,Ene.11
+SSS402,Grupo Conium-Ammi,144,A-leon,Chauliognathus scriptus,a,sc,Ene.11
+SSS411,Hirschfeldia incana,53,A-leon,Allograpta exotica,a,sc,Ene.11
+SSS411,Grupo Conium-Ammi,3,A-leon,Allograpta exotica,a,sc,Ene.11
+SSS411,Glycine max,34,A-leon,Allograpta exotica,a,sc,Ene.11
+SSS451,Grupo Eryngium spp.,183,C-vias,Oxysarcodexia varia,c,sc,Ene.11
+SSS401,Hirschfeldia incana,24,A-leon,Allograpta exotica,a,sc,Ene.11
+SSS401,Eucaliptus sp.,14,A-leon,Allograpta exotica,a,sc,Ene.11
+SSS401,Grupo Carduus-Cirsium,1,A-leon,Allograpta exotica,a,sc,Ene.11
+SSS401,Asteraceae,1,A-leon,Allograpta exotica,a,sc,Ene.11
+SSS401,Geranium sp.,1,A-leon,Allograpta exotica,a,sc,Ene.11
+SSS401,indeterminate,7,A-leon,Allograpta exotica,a,sc,Ene.11
+SSS475,Glycine max,2478,A-vias,Apis mellifera,a,sc,Ene.11
+SSS475,Grupo Carduus-Cirsium,20,A-vias,Apis mellifera,a,sc,Ene.11
+SSS479,Grupo Carduus-Cirsium,3975,A-vias,Apis mellifera,a,sc,Ene.11
+SSS489,Hirschfeldia incana,7,A-vias,Dialictus sp.21,a,sc,Ene.11
+SSS489,Grupo Carduus-Cirsium,4,A-vias,Dialictus sp.21,a,sc,Ene.11
+SSS489,Grupo Conium-Ammi,4,A-vias,Dialictus sp.21,a,sc,Ene.11
+SSS489,indeterminate,1,A-vias,Dialictus sp.21,a,sc,Ene.11
+SSS357,Glycine max,2,C-leon,Melissodes tintinnas,c,sc,Ene.11
+SSS357,Hirschfeldia incana,23,C-leon,Melissodes tintinnas,c,sc,Ene.11
+SSS357,Grupo Carduus-Cirsium,44,C-leon,Melissodes tintinnas,c,sc,Ene.11
+SSS477,Grupo Conium-Ammi,1,A-vias,Apis mellifera,a,sc,Ene.11
+SSS477,Glycine max,2202,A-vias,Apis mellifera,a,sc,Ene.11
+SSS477,Grupo Carduus-Cirsium,10,A-vias,Apis mellifera,a,sc,Ene.11
+SSS477,Trifolium sp.,1,A-vias,Apis mellifera,a,sc,Ene.11
+SSS477,Verbena sp.,16,A-vias,Apis mellifera,a,sc,Ene.11
+SSS456,Grupo Eryngium spp.,161,C-vias,Pseudomops neglecta,c,sc,Ene.11
+SSS456,Grupo Lactuca-Sonchus,2,C-vias,Pseudomops neglecta,c,sc,Ene.11
+SSS450,Grupo Eryngium spp.,403,C-vias,Oxysarcodexia paulistanensis,c,sc,Ene.11
+SSS450,Solanum sp.,3,C-vias,Oxysarcodexia paulistanensis,c,sc,Ene.11
+SSS406,Grupo Carduus-Cirsium,1154,A-leon,Dialictus sp.15,a,sc,Ene.11
+SSS406,Hirschfeldia incana,85,A-leon,Dialictus sp.15,a,sc,Ene.11
+SSS491,Grupo Carduus-Cirsium,30,A-vias,Dialictus sp.11,a,sc,Ene.11
+SSS491,Hirschfeldia incana,145,A-vias,Dialictus sp.11,a,sc,Ene.11
+SSS491,Grupo Conium-Ammi,1,A-vias,Dialictus sp.11,a,sc,Ene.11
+SSS491,Glycine max,2,A-vias,Dialictus sp.11,a,sc,Ene.11
+SSS408,Glycine max,1584,A-leon,Dialictus sp.21,a,sc,Ene.11
+SSS408,Hirschfeldia incana,220,A-leon,Dialictus sp.21,a,sc,Ene.11
+SSS358,Grupo Carduus-Cirsium,2717,C-leon,Pseudagapostemon pampeanus,c,sc,Ene.11
+SSS358,Glycine max,115,C-leon,Pseudagapostemon pampeanus,c,sc,Ene.11
+SSS480,Grupo Carduus-Cirsium,4343,A-vias,Pseudagapostemon pampeanus,a,sc,Ene.11
+SSS480,Grupo Conium-Ammi,1,A-vias,Pseudagapostemon pampeanus,a,sc,Ene.11
+SSS480,indeterminate,2,A-vias,Pseudagapostemon pampeanus,a,sc,Ene.11
+SSS480,Glycine max,2,A-vias,Pseudagapostemon pampeanus,a,sc,Ene.11
+SSS478,Grupo Carduus-Cirsium,1926,A-vias,Apis mellifera,a,sc,Ene.11
+SSS478,Girasol,4,A-vias,Apis mellifera,a,sc,Ene.11
+SSS478,Hirschfeldia incana,2,A-vias,Apis mellifera,a,sc,Ene.11
+SSS478,Grupo Conium-Ammi,2,A-vias,Apis mellifera,a,sc,Ene.11
+SSS478,Glycine max,2,A-vias,Apis mellifera,a,sc,Ene.11
+SSS478,Asteraceae,1,A-vias,Apis mellifera,a,sc,Ene.11
+SSS478,indeterminate,1,A-vias,Apis mellifera,a,sc,Ene.11
+SSS409,Hirschfeldia incana,5354,A-leon,Dialictus sp.21,a,sc,Ene.11
+SSS409,Glycine max,2,A-leon,Dialictus sp.21,a,sc,Ene.11
+SSS409,Portulaca,1,A-leon,Dialictus sp.21,a,sc,Ene.11
+SSS409,Grupo Carduus-Cirsium,1,A-leon,Dialictus sp.21,a,sc,Ene.11
+SSS512,Glycine max,100,C-leon,Apis mellifera,c,sc,Feb.11
+SSS512,Girasol,3,C-leon,Apis mellifera,c,sc,Feb.11
+SSS512,Grupo Carduus-Cirsium,5224,C-leon,Apis mellifera,c,sc,Feb.11
+SSS512,Grupo Eryngium spp.,85,C-leon,Apis mellifera,c,sc,Feb.11
+SSS512,Grupo Baccharis spp.,41,C-leon,Apis mellifera,c,sc,Feb.11
+SSS512,Hirschfeldia incana,67,C-leon,Apis mellifera,c,sc,Feb.11
+SSS512,indeterminate,1,C-leon,Apis mellifera,c,sc,Feb.11
+SSS512,indeterminate,1,C-leon,Apis mellifera,c,sc,Feb.11
+SSS651,Grupo Carduus-Cirsium,5239,C-leon,Apis mellifera,c,sc,Feb.11
+SSS651,Asteraceae,8,C-leon,Apis mellifera,c,sc,Feb.11
+SSS651,Glycine max,3,C-leon,Apis mellifera,c,sc,Feb.11
+SSS651,Hirschfeldia incana,5,C-leon,Apis mellifera,c,sc,Feb.11
+SSS651,Grupo Eryngium spp.,10,C-leon,Apis mellifera,c,sc,Feb.11
+SSS584,Grupo Carduus-Cirsium,2632,A-vias,Apis mellifera,a,sc,Feb.11
+SSS584,Grupo Eryngium spp.,10,A-vias,Apis mellifera,a,sc,Feb.11
+SSS584,Eucaliptus sp.,2,A-vias,Apis mellifera,a,sc,Feb.11
+SSS584,Conyza sp.,41,A-vias,Apis mellifera,a,sc,Feb.11
+SSS584,Asteraceae,1,A-vias,Apis mellifera,a,sc,Feb.11
+SSS633,Grupo Carduus-Cirsium,1107,C-leon,Apis mellifera,c,sc,Feb.11
+SSS633,Grupo Baccharis spp.,30,C-leon,Apis mellifera,c,sc,Feb.11
+SSS633,Hirschfeldia incana,6,C-leon,Apis mellifera,c,sc,Feb.11
+SSS633,Glycine max,6,C-leon,Apis mellifera,c,sc,Feb.11
+SSS633,indeterminate,2,C-leon,Apis mellifera,c,sc,Feb.11
+SSS633,Grupo Eryngium spp.,28,C-leon,Apis mellifera,c,sc,Feb.11
+SSS639,Grupo Carduus-Cirsium,1244,C-leon,Apis mellifera,c,sc,Feb.11
+SSS639,Grupo Eryngium spp.,10,C-leon,Apis mellifera,c,sc,Feb.11
+SSS639,Hirschfeldia incana,4,C-leon,Apis mellifera,c,sc,Feb.11
+SSS639,Grupo Baccharis spp.,28,C-leon,Apis mellifera,c,sc,Feb.11
+SSS509,Grupo Eryngium spp.,516,C-leon,Lampyridae sp2,c,sc,Feb.11
+SSS509,Grupo Baccharis spp.,24,C-leon,Lampyridae sp2,c,sc,Feb.11
+SSS509,Hirschfeldia incana,2,C-leon,Lampyridae sp2,c,sc,Feb.11
+SSS509,Grupo Carduus-Cirsium,21,C-leon,Lampyridae sp2,c,sc,Feb.11
+SSS509,indeterminate,2,C-leon,Lampyridae sp2,c,sc,Feb.11
+SSS509,Grupo Conium-Ammi,16,C-leon,Lampyridae sp2,c,sc,Feb.11
+SSS509,Eucaliptus sp.,1,C-leon,Lampyridae sp2,c,sc,Feb.11
+SSS635,Poaceae,9,C-leon,Coleoptera sp8,c,sc,Feb.11
+SSS635,Grupo Carduus-Cirsium,12,C-leon,Coleoptera sp8,c,sc,Feb.11
+SSS635,Hirschfeldia incana,2,C-leon,Coleoptera sp8,c,sc,Feb.11
+SSS635,Conyza sp.,29,C-leon,Coleoptera sp8,c,sc,Feb.11
+SSS635,Grupo Baccharis spp.,29,C-leon,Coleoptera sp8,c,sc,Feb.11
+SSS635,Grupo Eryngium spp.,2,C-leon,Coleoptera sp8,c,sc,Feb.11
+SSS635,Girasol,1,C-leon,Coleoptera sp8,c,sc,Feb.11
+SSS635,indeterminate,1,C-leon,Coleoptera sp8,c,sc,Feb.11
+SSS635,indeterminate,1,C-leon,Coleoptera sp8,c,sc,Feb.11
+SSS635,Geranium sp.,1,C-leon,Coleoptera sp8,c,sc,Feb.11
+SSS578,Grupo Carduus-Cirsium,333,A-vias,Chauliognathus scriptus,a,sc,Feb.11
+SSS578,Glycine max,1,A-vias,Chauliognathus scriptus,a,sc,Feb.11
+SSS578,Conyza sp.,3,A-vias,Chauliognathus scriptus,a,sc,Feb.11
+SSS578,Grupo Eryngium spp.,15,A-vias,Chauliognathus scriptus,a,sc,Feb.11
+SSS578,Grupo Conium-Ammi,12,A-vias,Chauliognathus scriptus,a,sc,Feb.11
+SSS503,Grupo Carduus-Cirsium,137,C-leon,Chauliognathus scriptus,c,sc,Feb.11
+SSS503,Grupo Baccharis spp.,62,C-leon,Chauliognathus scriptus,c,sc,Feb.11
+SSS503,Conyza sp.,3,C-leon,Chauliognathus scriptus,c,sc,Feb.11
+SSS503,Grupo Eryngium spp.,24,C-leon,Chauliognathus scriptus,c,sc,Feb.11
+SSS503,Hirschfeldia incana,3,C-leon,Chauliognathus scriptus,c,sc,Feb.11
+SSS503,Grupo Lactuca-Sonchus,1,C-leon,Chauliognathus scriptus,c,sc,Feb.11
+SSS503,Glycine max,3,C-leon,Chauliognathus scriptus,c,sc,Feb.11
+SSS505,Grupo Carduus-Cirsium,517,C-leon,Chauliognathus scriptus,c,sc,Feb.11
+SSS505,Grupo Eryngium spp.,23,C-leon,Chauliognathus scriptus,c,sc,Feb.11
+SSS505,Hirschfeldia incana,20,C-leon,Chauliognathus scriptus,c,sc,Feb.11
+SSS505,Grupo Baccharis spp.,147,C-leon,Chauliognathus scriptus,c,sc,Feb.11
+SSS505,Geranium sp.,1,C-leon,Chauliognathus scriptus,c,sc,Feb.11
+SSS505,Conyza sp.,1,C-leon,Chauliognathus scriptus,c,sc,Feb.11
+SSS505,Verbena sp.,3,C-leon,Chauliognathus scriptus,c,sc,Feb.11
+SSS505,Glycine max,2,C-leon,Chauliognathus scriptus,c,sc,Feb.11
+SSS506,Hirschfeldia incana,7372,C-leon,Dialictus sp.17,c,sc,Feb.11
+SSS506,Grupo Carduus-Cirsium,20,C-leon,Dialictus sp.17,c,sc,Feb.11
+SSS506,Grupo Baccharis spp.,1,C-leon,Dialictus sp.17,c,sc,Feb.11
+SSS506,Grupo Eryngium spp.,1,C-leon,Dialictus sp.17,c,sc,Feb.11
+SSS660,Grupo Eryngium spp.,3129,C-leon,Lampyridae sp2,c,sc,Feb.11
+SSS660,Grupo Carduus-Cirsium,4,C-leon,Lampyridae sp2,c,sc,Feb.11
+SSS663,Grupo Eryngium spp.,1808,C-leon,Lampyridae sp2,c,sc,Feb.11
+SSS663,Grupo Baccharis spp.,6,C-leon,Lampyridae sp2,c,sc,Feb.11
+SSS663,Eucaliptus sp.,1,C-leon,Lampyridae sp2,c,sc,Feb.11
+SSS663,Chenopodeaceae,4,C-leon,Lampyridae sp2,c,sc,Feb.11
+SSS579,Grupo Carduus-Cirsium,2,A-vias,Chrysomelidae sp1,a,sc,Feb.11
+SSS576,Grupo Carduus-Cirsium,227,A-vias,Chauliognathus scriptus,a,sc,Feb.11
+SSS576,Glycine max,117,A-vias,Chauliognathus scriptus,a,sc,Feb.11
+SSS576,Grupo Conium-Ammi,24,A-vias,Chauliognathus scriptus,a,sc,Feb.11
+SSS576,Conyza sp.,8,A-vias,Chauliognathus scriptus,a,sc,Feb.11
+SSS504,Grupo Carduus-Cirsium,3574,C-leon,Dialictus sp.20,c,sc,Feb.11
+SSS504,Grupo Eryngium spp.,9,C-leon,Dialictus sp.20,c,sc,Feb.11
+SSS504,Conyza sp.,5,C-leon,Dialictus sp.20,c,sc,Feb.11
+SSS504,Grupo Baccharis spp.,19,C-leon,Dialictus sp.20,c,sc,Feb.11
+SSS504,Hirschfeldia incana,6,C-leon,Dialictus sp.20,c,sc,Feb.11
+SSS504,indeterminate,2,C-leon,Dialictus sp.20,c,sc,Feb.11
+SSS659,Grupo Eryngium spp.,3784,C-leon,Lampyridae sp2,c,sc,Feb.11
+SSS659,Grupo Carduus-Cirsium,9,C-leon,Lampyridae sp2,c,sc,Feb.11
+SSS659,Grupo Baccharis spp.,4,C-leon,Lampyridae sp2,c,sc,Feb.11
+SSS659,Conyza sp.,2,C-leon,Lampyridae sp2,c,sc,Feb.11
+SSS659,Hirschfeldia incana,1,C-leon,Lampyridae sp2,c,sc,Feb.11
+SSS656,Grupo Eryngium spp.,44,C-leon,Lampyridae sp2,c,sc,Feb.11
+SSS656,Grupo Carduus-Cirsium,4,C-leon,Lampyridae sp2,c,sc,Feb.11
+SSS656,Grupo Baccharis spp.,3,C-leon,Lampyridae sp2,c,sc,Feb.11
+SSS656,Conyza sp.,5,C-leon,Lampyridae sp2,c,sc,Feb.11
+SSS656,indeterminate,1,C-leon,Lampyridae sp2,c,sc,Feb.11
+SSS574,Grupo Carduus-Cirsium,1809,A-vias,Chauliognathus scriptus,a,sc,Feb.11
+SSS574,Grupo Eryngium spp.,6,A-vias,Chauliognathus scriptus,a,sc,Feb.11
+SSS574,Grupo Baccharis spp.,2,A-vias,Chauliognathus scriptus,a,sc,Feb.11
+SSS574,Poaceae,3,A-vias,Chauliognathus scriptus,a,sc,Feb.11
+SSS574,Conyza sp.,5,A-vias,Chauliognathus scriptus,a,sc,Feb.11
+SSS574,Glycine max,1,A-vias,Chauliognathus scriptus,a,sc,Feb.11
+SSS572,Grupo Carduus-Cirsium,1131,A-vias,Chauliognathus scriptus,a,sc,Feb.11
+SSS572,Glycine max,3,A-vias,Chauliognathus scriptus,a,sc,Feb.11
+SSS572,Conyza sp.,11,A-vias,Chauliognathus scriptus,a,sc,Feb.11
+SSS572,indeterminate,3,A-vias,Chauliognathus scriptus,a,sc,Feb.11
+SSS572,Grupo Eryngium spp.,3,A-vias,Chauliognathus scriptus,a,sc,Feb.11
+SSS657,Grupo Eryngium spp.,1562,C-leon,Lampyridae sp2,c,sc,Feb.11
+SSS657,Grupo Carduus-Cirsium,21,C-leon,Lampyridae sp2,c,sc,Feb.11
+SSS657,Conyza sp.,3,C-leon,Lampyridae sp2,c,sc,Feb.11
+SSS569,Grupo Conium-Ammi,1081,A-vias,Chauliognathus scriptus,a,sc,Feb.11
+SSS569,Grupo Carduus-Cirsium,433,A-vias,Chauliognathus scriptus,a,sc,Feb.11
+SSS569,Grupo Baccharis spp.,2,A-vias,Chauliognathus scriptus,a,sc,Feb.11
+SSS569,Conyza sp.,6,A-vias,Chauliognathus scriptus,a,sc,Feb.11
+SSS569,indeterminate,1,A-vias,Chauliognathus scriptus,a,sc,Feb.11
+SSS569,Hirschfeldia incana,1,A-vias,Chauliognathus scriptus,a,sc,Feb.11
+SSS582,Grupo Carduus-Cirsium,475,A-vias,Chauliognathus scriptus,a,sc,Feb.11
+SSS582,Girasol,1,A-vias,Chauliognathus scriptus,a,sc,Feb.11
+SSS582,Conyza sp.,7,A-vias,Chauliognathus scriptus,a,sc,Feb.11
+SSS582,Grupo Baccharis spp.,1,A-vias,Chauliognathus scriptus,a,sc,Feb.11
+SSS582,Eucaliptus sp.,1,A-vias,Chauliognathus scriptus,a,sc,Feb.11
+SSS582,Grupo Eryngium spp.,171,A-vias,Chauliognathus scriptus,a,sc,Feb.11
+SSS575,Grupo Carduus-Cirsium,609,A-vias,Chauliognathus scriptus,a,sc,Feb.11
+SSS575,Glycine max,2,A-vias,Chauliognathus scriptus,a,sc,Feb.11
+SSS575,Grupo Baccharis spp.,1,A-vias,Chauliognathus scriptus,a,sc,Feb.11
+SSS575,Conyza sp.,4,A-vias,Chauliognathus scriptus,a,sc,Feb.11
+SSS575,Grupo Conium-Ammi,14,A-vias,Chauliognathus scriptus,a,sc,Feb.11
+SSS577,Grupo Carduus-Cirsium,402,A-vias,Chauliognathus scriptus,a,sc,Feb.11
+SSS577,Glycine max,2,A-vias,Chauliognathus scriptus,a,sc,Feb.11
+SSS577,Grupo Conium-Ammi,3,A-vias,Chauliognathus scriptus,a,sc,Feb.11
+SSS577,Conyza sp.,3,A-vias,Chauliognathus scriptus,a,sc,Feb.11
+SSS577,Hirschfeldia incana,1,A-vias,Chauliognathus scriptus,a,sc,Feb.11
+SSS581,Grupo Carduus-Cirsium,555,A-vias,Chauliognathus scriptus,a,sc,Feb.11
+SSS581,Grupo Conium-Ammi,194,A-vias,Chauliognathus scriptus,a,sc,Feb.11
+SSS581,Conyza sp.,3,A-vias,Chauliognathus scriptus,a,sc,Feb.11
+SSS581,Grupo Baccharis spp.,3,A-vias,Chauliognathus scriptus,a,sc,Feb.11
+SSS571,Grupo Carduus-Cirsium,456,A-vias,Chauliognathus scriptus,a,sc,Feb.11
+SSS571,Grupo Conium-Ammi,298,A-vias,Chauliognathus scriptus,a,sc,Feb.11
+SSS571,Conyza sp.,7,A-vias,Chauliognathus scriptus,a,sc,Feb.11
+SSS571,Grupo Crepis-Hypochoeris,11,A-vias,Chauliognathus scriptus,a,sc,Feb.11
+SSS573,Grupo Carduus-Cirsium,334,A-vias,Chauliognathus scriptus,a,sc,Feb.11
+SSS573,Glycine max,2,A-vias,Chauliognathus scriptus,a,sc,Feb.11
+SSS573,Grupo Conium-Ammi,14,A-vias,Chauliognathus scriptus,a,sc,Feb.11
+SSS573,Conyza sp.,6,A-vias,Chauliognathus scriptus,a,sc,Feb.11
+SSS573,Chenopodeaceae,1,A-vias,Chauliognathus scriptus,a,sc,Feb.11
+SSS655,Grupo Eryngium spp.,25,C-leon,Lampyridae sp2,c,sc,Feb.11
+SSS655,Grupo Carduus-Cirsium,9,C-leon,Lampyridae sp2,c,sc,Feb.11
+SSS655,Grupo Baccharis spp.,5,C-leon,Lampyridae sp2,c,sc,Feb.11
+SSS655,Conyza sp.,4,C-leon,Lampyridae sp2,c,sc,Feb.11
+SSS580,Grupo Carduus-Cirsium,1,A-vias,Chrysomelidae sp3,a,sc,Feb.11
+SSS580,Capsela-bursapastoris,1,A-vias,Chrysomelidae sp3,a,sc,Feb.11
+SSS665,Grupo Eryngium spp.,175,C-leon,Blaesoxipha (Tephromyia) sp.1 ,c,sc,Feb.11
+SSS665,Grupo Baccharis spp.,70,C-leon,Blaesoxipha (Tephromyia) sp.1 ,c,sc,Feb.11
+SSS665,Grupo Carduus-Cirsium,2,C-leon,Blaesoxipha (Tephromyia) sp.1 ,c,sc,Feb.11
+SSS665,Chenopodeaceae,6,C-leon,Blaesoxipha (Tephromyia) sp.1 ,c,sc,Feb.11
+SSS684,Grupo Carduus-Cirsium,2,A-leon,Coleas lesbia,a,sc,Feb.11
+SSS684,Asteraceae,1,A-leon,Coleas lesbia,a,sc,Feb.11
+SSS684,Chenopodeaceae,2,A-leon,Coleas lesbia,a,sc,Feb.11
+SSS640,Grupo Carduus-Cirsium,1910,C-leon,Apis mellifera,c,sc,Feb.11
+SSS640,Conyza sp.,5,C-leon,Apis mellifera,c,sc,Feb.11
+SSS640,Grupo Baccharis spp.,6,C-leon,Apis mellifera,c,sc,Feb.11
+SSS640,Grupo Eryngium spp.,12,C-leon,Apis mellifera,c,sc,Feb.11
+SSS640,Hirschfeldia incana,1,C-leon,Apis mellifera,c,sc,Feb.11
+SSS640,Eucaliptus sp.,1,C-leon,Apis mellifera,c,sc,Feb.11
+SSS640,Geranium sp.,1,C-leon,Apis mellifera,c,sc,Feb.11
+SSS586,Grupo Carduus-Cirsium,2977,A-vias,Apis mellifera,a,sc,Feb.11
+SSS586,Hirschfeldia incana,13,A-vias,Apis mellifera,a,sc,Feb.11
+SSS586,indeterminate,1,A-vias,Apis mellifera,a,sc,Feb.11
+SSS586,Conyza sp.,10,A-vias,Apis mellifera,a,sc,Feb.11
+SSS586,Grupo Baccharis spp.,2,A-vias,Apis mellifera,a,sc,Feb.11
+SSS586,Geranium sp.,1,A-vias,Apis mellifera,a,sc,Feb.11
+SSS586,Grupo Eryngium spp.,2,A-vias,Apis mellifera,a,sc,Feb.11
+SSS510,Grupo Eryngium spp.,4495,C-leon,Lampyridae sp2,c,sc,Feb.11
+SSS510,Grupo Baccharis spp.,28,C-leon,Lampyridae sp2,c,sc,Feb.11
+SSS510,Conyza sp.,5,C-leon,Lampyridae sp2,c,sc,Feb.11
+SSS510,Grupo Carduus-Cirsium,8,C-leon,Lampyridae sp2,c,sc,Feb.11
+SSS510,Hirschfeldia incana,4,C-leon,Lampyridae sp2,c,sc,Feb.11
+SSS585,Grupo Carduus-Cirsium,11558,A-vias,Apis mellifera,a,sc,Feb.11
+SSS585,Chenopodeaceae,16,A-vias,Apis mellifera,a,sc,Feb.11
+SSS585,Glycine max,2,A-vias,Apis mellifera,a,sc,Feb.11
+SSS585,Grupo Crepis-Hypochoeris,5,A-vias,Apis mellifera,a,sc,Feb.11
+SSS585,Grupo Eryngium spp.,7,A-vias,Apis mellifera,a,sc,Feb.11
+SSS585,Asteraceae,4,A-vias,Apis mellifera,a,sc,Feb.11
+SSS585,Grupo Baccharis spp.,5,A-vias,Apis mellifera,a,sc,Feb.11
+SSS585,Conyza sp.,4,A-vias,Apis mellifera,a,sc,Feb.11
+SSS585,Hirschfeldia incana,1,A-vias,Apis mellifera,a,sc,Feb.11
+SSS508,Hirschfeldia incana,5152,C-leon,Dialictus sp.21,c,sc,Feb.11
+SSS508,Grupo Carduus-Cirsium,218,C-leon,Dialictus sp.21,c,sc,Feb.11
+SSS508,Grupo Baccharis spp.,1,C-leon,Dialictus sp.21,c,sc,Feb.11
+SSS508,Grupo Eryngium spp.,4,C-leon,Dialictus sp.21,c,sc,Feb.11
+SSS511,Conyza sp.,4,C-leon,Lampyridae sp2,c,sc,Feb.11
+SSS511,Grupo Baccharis spp.,45,C-leon,Lampyridae sp2,c,sc,Feb.11
+SSS511,Grupo Carduus-Cirsium,2,C-leon,Lampyridae sp2,c,sc,Feb.11
+SSS511,Grupo Eryngium spp.,4,C-leon,Lampyridae sp2,c,sc,Feb.11
+SSS511,Hirschfeldia incana,5,C-leon,Lampyridae sp2,c,sc,Feb.11
+SSS511,indeterminate,1,C-leon,Lampyridae sp2,c,sc,Feb.11
+SSS643,Grupo Carduus-Cirsium,4,C-leon,Oxysarcodexia varia,c,sc,Feb.11
+SSS643,Geranium sp.,1,C-leon,Oxysarcodexia varia,c,sc,Feb.11
+SSS643,indeterminate,1,C-leon,Oxysarcodexia varia,c,sc,Feb.11
+SSS654,Grupo Eryngium spp.,13,C-leon,Lampyridae sp2,c,sc,Feb.11
+SSS654,Poaceae,5,C-leon,Lampyridae sp2,c,sc,Feb.11
+SSS654,Conyza sp.,8,C-leon,Lampyridae sp2,c,sc,Feb.11
+SSS654,Grupo Carduus-Cirsium,4,C-leon,Lampyridae sp2,c,sc,Feb.11
+SSS654,Grupo Baccharis spp.,5,C-leon,Lampyridae sp2,c,sc,Feb.11
+SSS654,Hirschfeldia incana,1,C-leon,Lampyridae sp2,c,sc,Feb.11
+SSS654,Grupo Lactuca-Sonchus,6,C-leon,Lampyridae sp2,c,sc,Feb.11
+SSS661,Grupo Eryngium spp.,1700,C-leon,Lampyridae sp2,c,sc,Feb.11
+SSS661,Grupo Carduus-Cirsium,4,C-leon,Lampyridae sp2,c,sc,Feb.11
+SSS661,Grupo Baccharis spp.,2,C-leon,Lampyridae sp2,c,sc,Feb.11
+SSS507,Grupo Eryngium spp.,112,C-leon,Oxysarcodexia varia,c,sc,Feb.11
+SSS507,Hirschfeldia incana,15,C-leon,Oxysarcodexia varia,c,sc,Feb.11
+SSS507,Grupo Carduus-Cirsium,23,C-leon,Oxysarcodexia varia,c,sc,Feb.11
+SSS507,Grupo Baccharis spp.,32,C-leon,Oxysarcodexia varia,c,sc,Feb.11
+SSS674,Grupo Baccharis spp.,96,C-leon,Oxysarcodexia varia,c,sc,Feb.11
+SSS674,Grupo Carduus-Cirsium,7,C-leon,Oxysarcodexia varia,c,sc,Feb.11
+SSS674,Grupo Eryngium spp.,7,C-leon,Oxysarcodexia varia,c,sc,Feb.11
+SSS653,Grupo Eryngium spp.,386,C-leon,Lampyridae sp2,c,sc,Feb.11
+SSS653,Grupo Carduus-Cirsium,1,C-leon,Lampyridae sp2,c,sc,Feb.11
+SSS653,Grupo Baccharis spp.,8,C-leon,Lampyridae sp2,c,sc,Feb.11
+SSS649,Grupo Eryngium spp.,630,C-leon,Lampyridae sp2,c,sc,Feb.11
+SSS649,Grupo Carduus-Cirsium,6,C-leon,Lampyridae sp2,c,sc,Feb.11
+SSS649,Grupo Baccharis spp.,18,C-leon,Lampyridae sp2,c,sc,Feb.11
+SSS649,Conyza sp.,2,C-leon,Lampyridae sp2,c,sc,Feb.11
+SSS652,Grupo Eryngium spp.,31,C-leon,Lampyridae sp2,c,sc,Feb.11
+SSS652,Grupo Carduus-Cirsium,1,C-leon,Lampyridae sp2,c,sc,Feb.11
+SSS652,Grupo Baccharis spp.,5,C-leon,Lampyridae sp2,c,sc,Feb.11
+SSS652,Conyza sp.,2,C-leon,Lampyridae sp2,c,sc,Feb.11
+SSS637,Grupo Baccharis spp.,295,C-leon,Tachytes pubescens,c,sc,Feb.11
+SSS637,Grupo Eryngium spp.,7,C-leon,Tachytes pubescens,c,sc,Feb.11
+SSS637,Grupo Carduus-Cirsium,7,C-leon,Tachytes pubescens,c,sc,Feb.11
+SSS637,Conyza sp.,21,C-leon,Tachytes pubescens,c,sc,Feb.11
+SSS619,Grupo Baccharis spp.,2472,C-vias,Megachile (Pseudocentron) sp3,c,sc,Feb.11
+SSS619,Grupo Eryngium spp.,79,C-vias,Megachile (Pseudocentron) sp3,c,sc,Feb.11
+SSS619,Conyza sp.,10,C-vias,Megachile (Pseudocentron) sp3,c,sc,Feb.11
+SSS619,Grupo Carduus-Cirsium,41,C-vias,Megachile (Pseudocentron) sp3,c,sc,Feb.11
+SSS619,Hirschfeldia incana,5,C-vias,Megachile (Pseudocentron) sp3,c,sc,Feb.11
+SSS583,Grupo Carduus-Cirsium,267,A-vias,Pseudagapostemon pampeanus,a,sc,Feb.11
+SSS583,Glycine max,1,A-vias,Pseudagapostemon pampeanus,a,sc,Feb.11
+SSS583,Grupo Crepis-Hypochoeris,1,A-vias,Pseudagapostemon pampeanus,a,sc,Feb.11
+SSS583,Grupo Baccharis spp.,2,A-vias,Pseudagapostemon pampeanus,a,sc,Feb.11
+SSS641,Grupo Eryngium spp.,2,C-leon,Oxysarcodexia varia,c,sc,Feb.11
+SSS641,Grupo Carduus-Cirsium,29,C-leon,Oxysarcodexia varia,c,sc,Feb.11
+SSS641,Grupo Conium-Ammi,22,C-leon,Oxysarcodexia varia,c,sc,Feb.11
+SSS641,Conyza sp.,4,C-leon,Oxysarcodexia varia,c,sc,Feb.11
+SSS642,Grupo Baccharis spp.,10,C-leon,Oxysarcodexia varia,c,sc,Feb.11
+SSS642,Conyza sp.,4,C-leon,Oxysarcodexia varia,c,sc,Feb.11
+SSS642,Poaceae,3,C-leon,Oxysarcodexia varia,c,sc,Feb.11
+SSS642,Hirschfeldia incana,2,C-leon,Oxysarcodexia varia,c,sc,Feb.11
+SSS642,Grupo Eryngium spp.,3,C-leon,Oxysarcodexia varia,c,sc,Feb.11
+SSS642,Grupo Carduus-Cirsium,6,C-leon,Oxysarcodexia varia,c,sc,Feb.11
+SSS634,Grupo Carduus-Cirsium,2990,C-leon,Pseudagapostemon pampeanus,c,sc,Feb.11
+SSS634,Solanum sp.,12,C-leon,Pseudagapostemon pampeanus,c,sc,Feb.11
+SSS634,Grupo Eryngium spp.,3,C-leon,Pseudagapostemon pampeanus,c,sc,Feb.11
+SSS734,Hirschfeldia incana,1033,C-leon,Pseudagapostemon pampeanus,c,sc,Mar.11
+SSS734,Convolvulus sp.,4,C-leon,Pseudagapostemon pampeanus,c,sc,Mar.11
+SSS734,Grupo Lactuca-Sonchus,10,C-leon,Pseudagapostemon pampeanus,c,sc,Mar.11
+SSS734,Grupo Baccharis spp.,3,C-leon,Pseudagapostemon pampeanus,c,sc,Mar.11
+SSS734,Chenopodeaceae,6,C-leon,Pseudagapostemon pampeanus,c,sc,Mar.11
+SSS734,Grupo Carduus-Cirsium,1,C-leon,Pseudagapostemon pampeanus,c,sc,Mar.11
+SSS734,Grupo Eryngium spp.,11,C-leon,Pseudagapostemon pampeanus,c,sc,Mar.11
+SSS638,Grupo Baccharis spp.,6,C-leon,Polybia scutellaris,c,sc,Feb.11
+SSS636,Grupo Baccharis spp.,353,C-leon,Tachytes amazonus,c,sc,Feb.11
+SSS636,Conyza sp.,4,C-leon,Tachytes amazonus,c,sc,Feb.11
+SSS636,Grupo Carduus-Cirsium,2,C-leon,Tachytes amazonus,c,sc,Feb.11
+SSS636,indeterminate,1,C-leon,Tachytes amazonus,c,sc,Feb.11
+SSS636,Geranium sp.,1,C-leon,Tachytes amazonus,c,sc,Feb.11
+SSS636,Grupo Eryngium spp.,26,C-leon,Tachytes amazonus,c,sc,Feb.11
+SSS646,Grupo Eryngium spp.,1,C-leon,Tricharaea occidua,c,sc,Feb.11
+SSS646,Grupo Baccharis spp.,1,C-leon,Tricharaea occidua,c,sc,Feb.11
+SSS646,indeterminate,1,C-leon,Tricharaea occidua,c,sc,Feb.11
+SSS644,Grupo Eryngium spp.,1,C-leon,Tricharaea occidua,c,sc,Feb.11
+SSS644,Conyza sp.,2,C-leon,Tricharaea occidua,c,sc,Feb.11
+SSS645,Grupo Baccharis spp.,1,C-leon,Tricharaea occidua,c,sc,Feb.11
+SSS645,indeterminate,1,C-leon,Tricharaea occidua,c,sc,Feb.11
+SSS648,Grupo Eryngium spp.,72,C-leon,Tricharaea occidua,c,sc,Feb.11
+SSS648,Grupo Baccharis spp.,12,C-leon,Tricharaea occidua,c,sc,Feb.11
+SSS648,Grupo Carduus-Cirsium,1,C-leon,Tricharaea occidua,c,sc,Feb.11
+SSS647,Grupo Carduus-Cirsium,2,C-leon,Tricharaea occidua,c,sc,Feb.11
+SSS662,Grupo Eryngium spp.,2034,C-leon,Lampyridae sp2,c,sc,Feb.11
+SSS662,Grupo Carduus-Cirsium,3,C-leon,Lampyridae sp2,c,sc,Feb.11
+SSS664,Grupo Eryngium spp.,1949,C-leon,Lampyridae sp2,c,sc,Feb.11
+SSS664,Conyza sp.,1,C-leon,Lampyridae sp2,c,sc,Feb.11
+SSS650,Grupo Eryngium spp.,516,C-leon,Oxysarcodexia varia,c,sc,Feb.11
+SSS650,Grupo Baccharis spp.,404,C-leon,Oxysarcodexia varia,c,sc,Feb.11
+SSS650,indeterminate,3,C-leon,Oxysarcodexia varia,c,sc,Feb.11
+SSS738,Grupo Carduus-Cirsium,696,C-leon,Apis mellifera,c,sc,Mar.11
+SSS738,Hirschfeldia incana,96,C-leon,Apis mellifera,c,sc,Mar.11
+SSS738,Grupo Eryngium spp.,117,C-leon,Apis mellifera,c,sc,Mar.11
+SSS738,Grupo Baccharis spp.,23,C-leon,Apis mellifera,c,sc,Mar.11
+SSS747,Grupo Carduus-Cirsium,1676,C-leon,Apis mellifera,c,sc,Mar.11
+SSS747,Hirschfeldia incana,17,C-leon,Apis mellifera,c,sc,Mar.11
+SSS747,Chenopodeaceae,2,C-leon,Apis mellifera,c,sc,Mar.11
+SSS747,Grupo Baccharis spp.,12,C-leon,Apis mellifera,c,sc,Mar.11
+SSS747,Grupo Eryngium spp.,3,C-leon,Apis mellifera,c,sc,Mar.11
+SSS783,Grupo Carduus-Cirsium,534,A-vias,Apis mellifera,a,sc,Mar.11
+SSS783,Grupo Baccharis spp.,23,A-vias,Apis mellifera,a,sc,Mar.11
+SSS783,Hirschfeldia incana,22,A-vias,Apis mellifera,a,sc,Mar.11
+SSS783,Conyza sp.,1,A-vias,Apis mellifera,a,sc,Mar.11
+SSS783,Chenopodeaceae,9,A-vias,Apis mellifera,a,sc,Mar.11
+SSS783,Grupo Eryngium spp.,1,A-vias,Apis mellifera,a,sc,Mar.11
+SSS783,Gamochaeta sp.,111,A-vias,Apis mellifera,a,sc,Mar.11
+SSS757,Grupo Carduus-Cirsium,954,C-leon,Apis mellifera,c,sc,Mar.11
+SSS757,Grupo Baccharis spp.,6,C-leon,Apis mellifera,c,sc,Mar.11
+SSS756,Hirschfeldia incana,1,C-leon,Apis mellifera,c,sc,Mar.11
+SSS756,Grupo Eryngium spp.,3,C-leon,Apis mellifera,c,sc,Mar.11
+SSS756,Grupo Baccharis spp.,5,C-leon,Apis mellifera,c,sc,Mar.11
+SSS756,Chenopodeaceae,2,C-leon,Apis mellifera,c,sc,Mar.11
+SSS756,Solanum sp.,3,C-leon,Apis mellifera,c,sc,Mar.11
+SSS756,Grupo Carduus-Cirsium,1556,C-leon,Apis mellifera,c,sc,Mar.11
+SSS746,Conyza sp.,2,C-leon,Apis mellifera,c,sc,Mar.11
+SSS746,Grupo Baccharis spp.,20,C-leon,Apis mellifera,c,sc,Mar.11
+SSS746,Malvaceae,5,C-leon,Apis mellifera,c,sc,Mar.11
+SSS746,Grupo Eryngium spp.,2,C-leon,Apis mellifera,c,sc,Mar.11
+SSS746,Hirschfeldia incana,7,C-leon,Apis mellifera,c,sc,Mar.11
+SSS746,Poaceae,3,C-leon,Apis mellifera,c,sc,Mar.11
+SSS746,Grupo Carduus-Cirsium,1895,C-leon,Apis mellifera,c,sc,Mar.11
+SSS792,Grupo Carduus-Cirsium,1957,A-vias,Apis mellifera,a,sc,Mar.11
+SSS792,Hirschfeldia incana,7,A-vias,Apis mellifera,a,sc,Mar.11
+SSS792,Grupo Crepis-Hypochoeris,2,A-vias,Apis mellifera,a,sc,Mar.11
+SSS792,Grupo Baccharis spp.,8,A-vias,Apis mellifera,a,sc,Mar.11
+SSS792,Chenopodeaceae,3,A-vias,Apis mellifera,a,sc,Mar.11
+SSS797,Grupo Baccharis spp.,1203,A-vias,Chlorion sp.,a,sc,Mar.11
+SSS797,Grupo Carduus-Cirsium,8,A-vias,Chlorion sp.,a,sc,Mar.11
+SSS797,Conyza sp.,2,A-vias,Chlorion sp.,a,sc,Mar.11
+SSS797,Poaceae,1,A-vias,Chlorion sp.,a,sc,Mar.11
+SSS753,Grupo Carduus-Cirsium,2210,C-leon,Apis mellifera,c,sc,Mar.11
+SSS753,Grupo Baccharis spp.,4,C-leon,Apis mellifera,c,sc,Mar.11
+SSS753,Hirschfeldia incana,2,C-leon,Apis mellifera,c,sc,Mar.11
+SSS753,Glycine max,1,C-leon,Apis mellifera,c,sc,Mar.11
+SSS753,Grupo Lactuca-Sonchus,1,C-leon,Apis mellifera,c,sc,Mar.11
+SSS753,Poaceae,1,C-leon,Apis mellifera,c,sc,Mar.11
+SSS753,Grupo Eryngium spp.,2,C-leon,Apis mellifera,c,sc,Mar.11
+SSS753,Chenopodeaceae,1,C-leon,Apis mellifera,c,sc,Mar.11
+SSS778,Grupo Baccharis spp.,86,A-leon,Pseudagapostemon pampeanus,a,sc,Mar.11
+SSS778,Chenopodeaceae,2,A-leon,Pseudagapostemon pampeanus,a,sc,Mar.11
+SSS778,Hirschfeldia incana,1,A-leon,Pseudagapostemon pampeanus,a,sc,Mar.11
+SSS778,Grupo Carduus-Cirsium,1,A-leon,Pseudagapostemon pampeanus,a,sc,Mar.11
+SSS780,Grupo Baccharis spp.,62,A-leon,Braconidae sp5,a,sc,Mar.11
+SSS780,Poaceae,1,A-leon,Braconidae sp5,a,sc,Mar.11
+SSS780,Grupo Eryngium spp.,2,A-leon,Braconidae sp5,a,sc,Mar.11
+SSS780,Conyza sp.,1,A-leon,Braconidae sp5,a,sc,Mar.11
+SSS780,Chenopodeaceae,1,A-leon,Braconidae sp5,a,sc,Mar.11
+SSS794,Grupo Baccharis spp.,18,A-vias,Bombus bellicosus,a,sc,Mar.11
+SSS794,Hirschfeldia incana,5,A-vias,Bombus bellicosus,a,sc,Mar.11
+SSS794,Grupo Carduus-Cirsium,4334,A-vias,Bombus bellicosus,a,sc,Mar.11
+SSS794,Chenopodeaceae,13,A-vias,Bombus bellicosus,a,sc,Mar.11
+SSS794,Glycine max,2,A-vias,Bombus bellicosus,a,sc,Mar.11
+SSS794,Poaceae,2,A-vias,Bombus bellicosus,a,sc,Mar.11
+SSS794,Grupo Crepis-Hypochoeris,1,A-vias,Bombus bellicosus,a,sc,Mar.11
+SSS766,Grupo Baccharis spp.,3160,A-leon,Dilophus sp.,a,sc,Mar.11
+SSS766,Grupo Carduus-Cirsium,14,A-leon,Dilophus sp.,a,sc,Mar.11
+SSS766,Malvaceae,17,A-leon,Dilophus sp.,a,sc,Mar.11
+SSS766,Hirschfeldia incana,1,A-leon,Dilophus sp.,a,sc,Mar.11
+SSS766,Chenopodeaceae,4,A-leon,Dilophus sp.,a,sc,Mar.11
+SSS795,Grupo Carduus-Cirsium,4600,A-vias,Apis mellifera,a,sc,Mar.11
+SSS795,Chenopodeaceae,1,A-vias,Apis mellifera,a,sc,Mar.11
+SSS795,Poaceae,1,A-vias,Apis mellifera,a,sc,Mar.11
+SSS795,Grupo Baccharis spp.,3,A-vias,Apis mellifera,a,sc,Mar.11
+SSS750,Grupo Carduus-Cirsium,2478,C-leon,Apis mellifera,c,sc,Mar.11
+SSS750,Grupo Eryngium spp.,1,C-leon,Apis mellifera,c,sc,Mar.11
+SSS750,Grupo Baccharis spp.,25,C-leon,Apis mellifera,c,sc,Mar.11
+SSS750,Grupo Lactuca-Sonchus,11,C-leon,Apis mellifera,c,sc,Mar.11
+SSS750,Chenopodeaceae,2,C-leon,Apis mellifera,c,sc,Mar.11
+SSS750,Portulaca,1,C-leon,Apis mellifera,c,sc,Mar.11
+SSS750,Poaceae,2,C-leon,Apis mellifera,c,sc,Mar.11
+SSS750,Conyza sp.,5,C-leon,Apis mellifera,c,sc,Mar.11
+SSS750,Hirschfeldia incana,108,C-leon,Apis mellifera,c,sc,Mar.11
+SSS767,Grupo Carduus-Cirsium,31,A-leon,Coleas lesbia,a,sc,Mar.11
+SSS767,Grupo Baccharis spp.,3,A-leon,Coleas lesbia,a,sc,Mar.11
+SSS767,Chenopodeaceae,1,A-leon,Coleas lesbia,a,sc,Mar.11
+SSS767,indeterminate,1,A-leon,Coleas lesbia,a,sc,Mar.11
+SSS763,Grupo Carduus-Cirsium,1,A-leon,Coleas lesbia,a,sc,Mar.11
+SSS751,Grupo Carduus-Cirsium,161,C-leon,Coleas lesbia,c,sc,Mar.11
+SSS751,Hirschfeldia incana,4,C-leon,Coleas lesbia,c,sc,Mar.11
+SSS751,Conyza sp.,1,C-leon,Coleas lesbia,c,sc,Mar.11
+SSS809,Solidago sp.,11,C-vias,Bruchidius endotubercularis ,c,sc,Mar.11
+SSS801,Conyza sp.,79,C-vias,Dialictus sp.14,c,sc,Mar.11
+SSS801,Grupo Carduus-Cirsium,1,C-vias,Dialictus sp.14,c,sc,Mar.11
+SSS801,indeterminate,1,C-vias,Dialictus sp.14,c,sc,Mar.11
+SSS765,Grupo Carduus-Cirsium,25,A-leon,Coleas lesbia,a,sc,Mar.11
+SSS765,Grupo Baccharis spp.,6,A-leon,Coleas lesbia,a,sc,Mar.11
+SSS808,Solidago sp.,37,C-vias,Curculionidae sp11,c,sc,Mar.11
+SSS808,Chenopodeaceae,1,C-vias,Curculionidae sp11,c,sc,Mar.11
+SSS811,Solidago sp.,34,C-vias,Curculionidae sp12,c,sc,Mar.11
+SSS784,Conyza sp.,922,A-vias,Entypus ferrugipennis,a,sc,Mar.11
+SSS784,Hirschfeldia incana,7,A-vias,Entypus ferrugipennis,a,sc,Mar.11
+SSS784,Grupo Carduus-Cirsium,1,A-vias,Entypus ferrugipennis,a,sc,Mar.11
+SSS784,Chenopodeaceae,6,A-vias,Entypus ferrugipennis,a,sc,Mar.11
+SSS784,Poaceae,4,A-vias,Entypus ferrugipennis,a,sc,Mar.11
+SSS784,Grupo Eryngium spp.,1,A-vias,Entypus ferrugipennis,a,sc,Mar.11
+SSS777,Grupo Carduus-Cirsium,7,A-leon,Coleas lesbia,a,sc,Mar.11
+SSS777,Hirschfeldia incana,1,A-leon,Coleas lesbia,a,sc,Mar.11
+SSS777,Solidago sp.,1,A-leon,Coleas lesbia,a,sc,Mar.11
+SSS777,Grupo Baccharis spp.,2,A-leon,Coleas lesbia,a,sc,Mar.11
+SSS782,Grupo Carduus-Cirsium,24,A-leon,Coleas lesbia,a,sc,Mar.11
+SSS782,Hirschfeldia incana,25,A-leon,Coleas lesbia,a,sc,Mar.11
+SSS782,Solidago sp.,1,A-leon,Coleas lesbia,a,sc,Mar.11
+SSS782,Grupo Baccharis spp.,1,A-leon,Coleas lesbia,a,sc,Mar.11
+SSS782,Grupo Eryngium spp.,1,A-leon,Coleas lesbia,a,sc,Mar.11
+SSS798,Conyza sp.,40,A-vias,Polybia scutellaris,a,sc,Mar.11
+SSS798,Poaceae,32,A-vias,Polybia scutellaris,a,sc,Mar.11
+SSS779,Grupo Carduus-Cirsium,35,A-leon,Coleas lesbia,a,sc,Mar.11
+SSS770,Grupo Carduus-Cirsium,27,A-leon,Coleas lesbia,a,sc,Mar.11
+SSS770,Hirschfeldia incana,3,A-leon,Coleas lesbia,a,sc,Mar.11
+SSS770,Conyza sp.,5,A-leon,Coleas lesbia,a,sc,Mar.11
+SSS793,Grupo Carduus-Cirsium,36,A-vias,Lerodea eufala,a,sc,Mar.11
+SSS793,Conyza sp.,2,A-vias,Lerodea eufala,a,sc,Mar.11
+SSS772,Conyza sp.,98,A-leon,Noctuidea sp4,a,sc,Mar.11
+SSS772,Grupo Carduus-Cirsium,3,A-leon,Noctuidea sp4,a,sc,Mar.11
+SSS807,Solidago sp.,915,C-vias,Chauliognathus scriptus,c,sc,Mar.11
+SSS807,Grupo Carduus-Cirsium,6,C-vias,Chauliognathus scriptus,c,sc,Mar.11
+SSS807,Grupo Eryngium spp.,21,C-vias,Chauliognathus scriptus,c,sc,Mar.11
+SSS807,Hirschfeldia incana,2,C-vias,Chauliognathus scriptus,c,sc,Mar.11
+SSS771,Grupo Carduus-Cirsium,61,A-leon,Coleas lesbia,a,sc,Mar.11
+SSS771,Solidago sp.,1,A-leon,Coleas lesbia,a,sc,Mar.11
+SSS771,Hirschfeldia incana,3,A-leon,Coleas lesbia,a,sc,Mar.11
+SSS771,Asteraceae,3,A-leon,Coleas lesbia,a,sc,Mar.11
+SSS768,Grupo Carduus-Cirsium,10,A-leon,Coleas lesbia,a,sc,Mar.11
+SSS768,Hirschfeldia incana,1,A-leon,Coleas lesbia,a,sc,Mar.11
+SSS769,Grupo Carduus-Cirsium,3,A-leon,Coleas lesbia,a,sc,Mar.11
+SSS769,Grupo Eryngium spp.,1,A-leon,Coleas lesbia,a,sc,Mar.11
+SSS764,Grupo Carduus-Cirsium,293,A-leon,Coleas lesbia,a,sc,Mar.11
+SSS764,Hirschfeldia incana,3,A-leon,Coleas lesbia,a,sc,Mar.11
+SSS764,Conyza sp.,3,A-leon,Coleas lesbia,a,sc,Mar.11
+SSS810,Solidago sp.,62,C-vias,Bruchidius endotubercularis ,c,sc,Mar.11
+SSS810,Chenopodeaceae,1,C-vias,Bruchidius endotubercularis ,c,sc,Mar.11
+SSS776,Grupo Carduus-Cirsium,4,A-leon,Coleas lesbia,a,sc,Mar.11
+SSS776,Hirschfeldia incana,1,A-leon,Coleas lesbia,a,sc,Mar.11
+SSS776,Solidago sp.,1,A-leon,Coleas lesbia,a,sc,Mar.11
+SSS796,Conyza sp.,794,A-vias,Entypus ferrugipennis,a,sc,Mar.11
+SSS796,Poaceae,2,A-vias,Entypus ferrugipennis,a,sc,Mar.11
+SSS796,Grupo Carduus-Cirsium,53,A-vias,Entypus ferrugipennis,a,sc,Mar.11
+SSS781,Conyza sp.,6,A-leon,Dialictus sp.20,a,sc,Mar.11
+SSS781,Hirschfeldia incana,1,A-leon,Dialictus sp.20,a,sc,Mar.11
+SSS781,Chenopodeaceae,1,A-leon,Dialictus sp.20,a,sc,Mar.11
+SSS754,Grupo Carduus-Cirsium,1556,C-leon,Apis mellifera,c,sc,Mar.11
+SSS754,Malvaceae,1,C-leon,Apis mellifera,c,sc,Mar.11
+SSS754,Grupo Baccharis spp.,20,C-leon,Apis mellifera,c,sc,Mar.11
+SSS754,Asteraceae,1,C-leon,Apis mellifera,c,sc,Mar.11
+SSS754,Chenopodeaceae,2,C-leon,Apis mellifera,c,sc,Mar.11
+SSS754,Grupo Eryngium spp.,20,C-leon,Apis mellifera,c,sc,Mar.11
+SSS755,Grupo Carduus-Cirsium,1980,C-leon,Apis mellifera,c,sc,Mar.11
+SSS755,Conyza sp.,52,C-leon,Apis mellifera,c,sc,Mar.11
+SSS755,Hirschfeldia incana,24,C-leon,Apis mellifera,c,sc,Mar.11
+SSS755,Grupo Eryngium spp.,3,C-leon,Apis mellifera,c,sc,Mar.11
+SSS755,Poaceae,3,C-leon,Apis mellifera,c,sc,Mar.11
+SSS755,Chenopodeaceae,1,C-leon,Apis mellifera,c,sc,Mar.11
+SSS749,Grupo Carduus-Cirsium,1648,C-leon,Apis mellifera,c,sc,Mar.11
+SSS749,Grupo Eryngium spp.,10,C-leon,Apis mellifera,c,sc,Mar.11
+SSS749,Conyza sp.,8,C-leon,Apis mellifera,c,sc,Mar.11
+SSS749,Hirschfeldia incana,32,C-leon,Apis mellifera,c,sc,Mar.11
+SSS749,Poaceae,2,C-leon,Apis mellifera,c,sc,Mar.11
+SSS749,Chenopodeaceae,7,C-leon,Apis mellifera,c,sc,Mar.11
+SSS749,Grupo Lactuca-Sonchus,5,C-leon,Apis mellifera,c,sc,Mar.11
+SSS752,Grupo Carduus-Cirsium,2466,C-leon,Apis mellifera,c,sc,Mar.11
+SSS752,Hirschfeldia incana,10,C-leon,Apis mellifera,c,sc,Mar.11
+SSS752,Grupo Eryngium spp.,8,C-leon,Apis mellifera,c,sc,Mar.11
+SSS752,Conyza sp.,41,C-leon,Apis mellifera,c,sc,Mar.11
+SSS752,indeterminate,1,C-leon,Apis mellifera,c,sc,Mar.11
+SSS752,indeterminate,1,C-leon,Apis mellifera,c,sc,Mar.11
+SSS752,Poaceae,1,C-leon,Apis mellifera,c,sc,Mar.11
+SSS752,Chenopodeaceae,3,C-leon,Apis mellifera,c,sc,Mar.11
+SSS748,Grupo Carduus-Cirsium,2361,C-leon,Apis mellifera,c,sc,Mar.11
+SSS748,Chenopodeaceae,2,C-leon,Apis mellifera,c,sc,Mar.11
+SSS748,Conyza sp.,6,C-leon,Apis mellifera,c,sc,Mar.11
+SSS748,Hirschfeldia incana,6,C-leon,Apis mellifera,c,sc,Mar.11
+SSS748,Poaceae,1,C-leon,Apis mellifera,c,sc,Mar.11
+SSS748,Glycine max,1,C-leon,Apis mellifera,c,sc,Mar.11
+LLL22,Sisyrinchium platense,7,1agr,Toxomerus sp.,a,lc,Nov.10
+LLL22,Pamphalea bupleurifolia,45,1agr,Toxomerus sp.,a,lc,Nov.10
+LLL22,Grupo Eryngium spp.,4,1agr,Toxomerus sp.,a,lc,Nov.10
+LLL22,Aster squamatus,3,1agr,Toxomerus sp.,a,lc,Nov.10
+LLL22,Alternalthera sp.,1,1agr,Toxomerus sp.,a,lc,Nov.10
+LLL11,Lythrum sp.,9,2agr,Toxomerus sp.,a,lc,Nov.10
+LLL11,Aster squamatus,2,2agr,Toxomerus sp.,a,lc,Nov.10
+LLL11,Sisyrinchium platense,1,2agr,Toxomerus sp.,a,lc,Nov.10
+LLL11,Poaceae,6,2agr,Toxomerus sp.,a,lc,Nov.10
+LLL23,Poaceae,22,1agr,Toxomerus sp.,a,lc,Nov.10
+LLL23,Lythrum sp.,6,1agr,Toxomerus sp.,a,lc,Nov.10
+LLL23,Sisyrinchium platense,2,1agr,Toxomerus sp.,a,lc,Nov.10
+LLL23,Pamphalea bupleurifolia,1,1agr,Toxomerus sp.,a,lc,Nov.10
+LLL13,Lythrum sp.,6,2agr,Toxomerus sp.,a,lc,Nov.10
+LLL13,Pamphalea bupleurifolia,10,2agr,Toxomerus sp.,a,lc,Nov.10
+LLL13,Poaceae,7,2agr,Toxomerus sp.,a,lc,Nov.10
+LLL15,Poaceae,517,2agr,Oxysarcodexia varia,a,lc,Nov.10
+LLL15,Cypella herbertii,12,2agr,Oxysarcodexia varia,a,lc,Nov.10
+LLL15,Asteraceae,1,2agr,Oxysarcodexia varia,a,lc,Nov.10
+LLL17,Lythrum sp.,30,2agr,Toxomerus sp.,a,lc,Nov.10
+LLL17,Poaceae,7,2agr,Toxomerus sp.,a,lc,Nov.10
+LLL12,Sisyrinchium platense,745,2agr,Toxomerus sp.,a,lc,Nov.10
+LLL12,Cypella herbertii,1,2agr,Toxomerus sp.,a,lc,Nov.10
+LLL12,Poaceae,2,2agr,Toxomerus sp.,a,lc,Nov.10
+LLL12,Pamphalea bupleurifolia,1,2agr,Toxomerus sp.,a,lc,Nov.10
+LLL21,Lythrum sp.,1,2agr,Lerodea eufala,a,lc,Nov.10
+LLL21,Pamphalea bupleurifolia,1,2agr,Lerodea eufala,a,lc,Nov.10
+LLL21,Aster squamatus,2,2agr,Lerodea eufala,a,lc,Nov.10
+LLL21,Poaceae,3,2agr,Lerodea eufala,a,lc,Nov.10
+LLL21,Cypella herbertii,2,2agr,Lerodea eufala,a,lc,Nov.10
+LLL37,Lythrum sp.,7,1agr,Dialictus sp.1,a,lc,Nov.10
+LLL37,Aster squamatus,4,1agr,Dialictus sp.1,a,lc,Nov.10
+LLL37,Poaceae,3,1agr,Dialictus sp.1,a,lc,Nov.10
+LLL37,indeterminate,1,1agr,Dialictus sp.1,a,lc,Nov.10
+LLL24,Cypella herbertii,11,1agr,Oxysarcodexia varia,a,lc,Nov.10
+LLL24,Lythrum sp.,40,1agr,Oxysarcodexia varia,a,lc,Nov.10
+LLL24,Poaceae,68,1agr,Oxysarcodexia varia,a,lc,Nov.10
+LLL24,Asteraceae,7,1agr,Oxysarcodexia varia,a,lc,Nov.10
+LLL16,Cypella herbertii,1902,1agr,Dialictus sp.1,a,lc,Nov.10
+LLL16,Poaceae,5,1agr,Dialictus sp.1,a,lc,Nov.10
+LLL16,Lythrum sp.,2,1agr,Dialictus sp.1,a,lc,Nov.10
+LLL32,Grupo Eryngium spp.,220,Cl,Aristosyrphus sp.,c,lc,Nov.10
+LLL32,Cypella herbertii,3,Cl,Aristosyrphus sp.,c,lc,Nov.10
+LLL32,Poaceae,8,Cl,Aristosyrphus sp.,c,lc,Nov.10
+LLL36,Senecio sp.,365,1agr,Toxomerus sp.,a,lc,Nov.10
+LLL36,Poaceae,10,1agr,Toxomerus sp.,a,lc,Nov.10
+LLL36,Lythrum sp.,2,1agr,Toxomerus sp.,a,lc,Nov.10
+LLL10,Poaceae,28,2agr,Toxomerus sp.,a,lc,Nov.10
+LLL10,Aster squamatus,74,2agr,Toxomerus sp.,a,lc,Nov.10
+LLL10,Picrocia longifolia,2,2agr,Toxomerus sp.,a,lc,Nov.10
+LLL10,Lythrum sp.,46,2agr,Toxomerus sp.,a,lc,Nov.10
+LLL10,Sisyrinchium platense,5,2agr,Toxomerus sp.,a,lc,Nov.10
+LLL18,Poaceae,9,2agr,Toxomerus sp.,a,lc,Nov.10
+LLL18,Aster squamatus,1,2agr,Toxomerus sp.,a,lc,Nov.10
+LLL18,Lythrum sp.,14,2agr,Toxomerus sp.,a,lc,Nov.10
+LLL18,Picrocia longifolia,1,2agr,Toxomerus sp.,a,lc,Nov.10
+LLL26,Sisyrinchium platense,76,1agr,Toxomerus sp.,a,lc,Nov.10
+LLL26,Picrocia longifolia,64,1agr,Toxomerus sp.,a,lc,Nov.10
+LLL26,Pamphalea bupleurifolia,6,1agr,Toxomerus sp.,a,lc,Nov.10
+LLL26,Lythrum sp.,11,1agr,Toxomerus sp.,a,lc,Nov.10
+LLL26,Poaceae,8,1agr,Toxomerus sp.,a,lc,Nov.10
+LLL25,Lythrum sp.,13,1agr,Toxomerus sp.,a,lc,Nov.10
+LLL25,Hirschfeldia incana,1,1agr,Toxomerus sp.,a,lc,Nov.10
+LLL25,Poaceae,6,1agr,Toxomerus sp.,a,lc,Nov.10
+LLL25,Pamphalea bupleurifolia,2,1agr,Toxomerus sp.,a,lc,Nov.10
+LLL20,Lythrum sp.,10,2agr,Toxomerus sp.,a,lc,Nov.10
+LLL20,Poaceae,13,2agr,Toxomerus sp.,a,lc,Nov.10
+LLL20,Sisyrinchium platense,3,2agr,Toxomerus sp.,a,lc,Nov.10
+LLL19,Lythrum sp.,46,2agr,Toxomerus sp.,a,lc,Nov.10
+LLL19,Pamphalea bupleurifolia,5,2agr,Toxomerus sp.,a,lc,Nov.10
+LLL19,Poaceae,12,2agr,Toxomerus sp.,a,lc,Nov.10
+LLL35,Pamphalea bupleurifolia,47,2agr,Toxomerus sp.,a,lc,Nov.10
+LLL35,Aster squamatus,1,2agr,Toxomerus sp.,a,lc,Nov.10
+LLL35,Picrocia longifolia,2,2agr,Toxomerus sp.,a,lc,Nov.10
+LLL35,Alternalthera sp.,16,2agr,Toxomerus sp.,a,lc,Nov.10
+LLL35,Poaceae,8,2agr,Toxomerus sp.,a,lc,Nov.10
+LLL35,Malvaceae,2,2agr,Toxomerus sp.,a,lc,Nov.10
+LLL34,Poaceae,14,2agr,Toxomerus sp.,a,lc,Nov.10
+LLL34,Picrocia longifolia,1,2agr,Toxomerus sp.,a,lc,Nov.10
+LLL34,Grupo Crepis-Hypochoeris,1,2agr,Toxomerus sp.,a,lc,Nov.10
+LLL55,Grupo Eryngium spp.,279,Cl,Allograpta exotica,c,lc,Dic.10
+LLL55,Alternalthera sp.,2,Cl,Allograpta exotica,c,lc,Dic.10
+LLL55,Poaceae,1,Cl,Allograpta exotica,c,lc,Dic.10
+LLL55,Eucaliptus sp.,7,Cl,Allograpta exotica,c,lc,Dic.10
+LLL55,indeterminate,1,Cl,Allograpta exotica,c,lc,Dic.10
+LLL57,Grupo Eryngium spp.,233,Cl,Allograpta exotica,c,lc,Dic.10
+LLL57,Poaceae,1,Cl,Allograpta exotica,c,lc,Dic.10
+LLL14,Cypella herbertii,6512,2agr,Chalepogenus roitmani,a,lc,Nov.10
+LLL14,Lotus tenuis,117,2agr,Chalepogenus roitmani,a,lc,Nov.10
+LLL14,Poaceae,2,2agr,Chalepogenus roitmani,a,lc,Nov.10
+LLL14,Linum usitatissimum,2,2agr,Chalepogenus roitmani,a,lc,Nov.10
+LLL77,Grupo Eryngium spp.,51,2agr,Allograpta exotica,a,lc,Dic.10
+LLL77,Hirschfeldia incana,3,2agr,Allograpta exotica,a,lc,Dic.10
+LLL119,Cypella herbertii,2,1agr,Allograpta exotica,a,lc,Dic.10
+LLL119,Mentha pulegium,2,1agr,Allograpta exotica,a,lc,Dic.10
+LLL119,Poaceae,1,1agr,Allograpta exotica,a,lc,Dic.10
+LLL119,Grupo Eryngium spp.,499,1agr,Allograpta exotica,a,lc,Dic.10
+LLL119,Hirschfeldia incana,1,1agr,Allograpta exotica,a,lc,Dic.10
+LLL102,Hirschfeldia incana,5,Cl,Allograpta exotica,c,lc,Dic.10
+LLL102,Poaceae,5,Cl,Allograpta exotica,c,lc,Dic.10
+LLL102,Grupo Crepis-Hypochoeris,1,Cl,Allograpta exotica,c,lc,Dic.10
+LLL102,Aster squamatus,1,Cl,Allograpta exotica,c,lc,Dic.10
+LLL102,Grupo Eryngium spp.,646,Cl,Allograpta exotica,c,lc,Dic.10
+LLL104,Poaceae,4,Cl,Allograpta exotica,c,lc,Dic.10
+LLL104,Mentha pulegium,3,Cl,Allograpta exotica,c,lc,Dic.10
+LLL104,Grupo Crepis-Hypochoeris,4,Cl,Allograpta exotica,c,lc,Dic.10
+LLL104,Hirschfeldia incana,1,Cl,Allograpta exotica,c,lc,Dic.10
+LLL104,Grupo Eryngium spp.,71,Cl,Allograpta exotica,c,lc,Dic.10
+LLL54,Grupo Eryngium spp.,455,Cl,Allograpta exotica,c,lc,Dic.10
+LLL54,Hirschfeldia incana,3,Cl,Allograpta exotica,c,lc,Dic.10
+LLL54,Grupo Crepis-Hypochoeris,1,Cl,Allograpta exotica,c,lc,Dic.10
+LLL118,Grupo Eryngium spp.,59,1agr,Allograpta exotica,a,lc,Dic.10
+LLL118,Mentha pulegium,724,1agr,Allograpta exotica,a,lc,Dic.10
+LLL118,Cypella herbertii,14,1agr,Allograpta exotica,a,lc,Dic.10
+LLL118,Hirschfeldia incana,1,1agr,Allograpta exotica,a,lc,Dic.10
+LLL118,indeterminate,2,1agr,Allograpta exotica,a,lc,Dic.10
+LLL118,Eucaliptus sp.,2,1agr,Allograpta exotica,a,lc,Dic.10
+LLL79,Grupo Eryngium spp.,370,2agr,Allograpta exotica,a,lc,Dic.10
+LLL79,Eucaliptus sp.,1,2agr,Allograpta exotica,a,lc,Dic.10
+LLL79,Poaceae,8,2agr,Allograpta exotica,a,lc,Dic.10
+LLL79,Grupo Crepis-Hypochoeris,1,2agr,Allograpta exotica,a,lc,Dic.10
+LLL79,Hirschfeldia incana,3,2agr,Allograpta exotica,a,lc,Dic.10
+LLL116,Grupo Eryngium spp.,716,1agr,Oxysarcodexia varia,a,lc,Dic.10
+LLL116,Poaceae,5,1agr,Oxysarcodexia varia,a,lc,Dic.10
+LLL116,Mentha pulegium,1,1agr,Oxysarcodexia varia,a,lc,Dic.10
+LLL116,indeterminate,2,1agr,Oxysarcodexia varia,a,lc,Dic.10
+LLL115,Grupo Eryngium spp.,1013,1agr,Oxysarcodexia varia,a,lc,Dic.10
+LLL115,Grupo Crepis-Hypochoeris,3,1agr,Oxysarcodexia varia,a,lc,Dic.10
+LLL115,Mentha pulegium,1,1agr,Oxysarcodexia varia,a,lc,Dic.10
+LLL115,Aster squamatus,1,1agr,Oxysarcodexia varia,a,lc,Dic.10
+LLL115,indeterminate,1,1agr,Oxysarcodexia varia,a,lc,Dic.10
+LLL115,Hirschfeldia incana,1,1agr,Oxysarcodexia varia,a,lc,Dic.10
+LLL117,Grupo Crepis-Hypochoeris,154,1agr,Allograpta exotica,a,lc,Dic.10
+LLL117,Grupo Eryngium spp.,274,1agr,Allograpta exotica,a,lc,Dic.10
+LLL117,Aster squamatus,6,1agr,Allograpta exotica,a,lc,Dic.10
+LLL117,Poaceae,2,1agr,Allograpta exotica,a,lc,Dic.10
+LLL117,Eucaliptus sp.,1,1agr,Allograpta exotica,a,lc,Dic.10
+LLL76,Grupo Eryngium spp.,946,2agr,Oxysarcodexia varia,a,lc,Dic.10
+LLL76,Poaceae,13,2agr,Oxysarcodexia varia,a,lc,Dic.10
+LLL76,indeterminate,2,2agr,Oxysarcodexia varia,a,lc,Dic.10
+LLL76,indeterminate,1,2agr,Oxysarcodexia varia,a,lc,Dic.10
+LLL112,Poaceae,12,1agr,Oxysarcodexia varia,a,lc,Dic.10
+LLL112,Grupo Eryngium spp.,33,1agr,Oxysarcodexia varia,a,lc,Dic.10
+LLL112,Hirschfeldia incana,4,1agr,Oxysarcodexia varia,a,lc,Dic.10
+LLL112,indeterminate,1,1agr,Oxysarcodexia varia,a,lc,Dic.10
+LLL103,Grupo Eryngium spp.,164,Cl,Allograpta exotica,c,lc,Dic.10
+LLL103,Grupo Crepis-Hypochoeris,9,Cl,Allograpta exotica,c,lc,Dic.10
+LLL103,indeterminate,1,Cl,Allograpta exotica,c,lc,Dic.10
+LLL78,Poaceae,10,2agr,Oxysarcodexia varia,a,lc,Dic.10
+LLL78,Grupo Eryngium spp.,441,2agr,Oxysarcodexia varia,a,lc,Dic.10
+LLL78,indeterminate,1,2agr,Oxysarcodexia varia,a,lc,Dic.10
+LLL53,Hirschfeldia incana,5,Cl,Allograpta exotica,c,lc,Dic.10
+LLL53,Poaceae,7,Cl,Allograpta exotica,c,lc,Dic.10
+LLL53,Grupo Eryngium spp.,333,Cl,Allograpta exotica,c,lc,Dic.10
+LLL114,Grupo Eryngium spp.,122,1agr,Oxysarcodexia varia,a,lc,Dic.10
+LLL114,Poaceae,14,1agr,Oxysarcodexia varia,a,lc,Dic.10
+LLL114,Hirschfeldia incana,9,1agr,Oxysarcodexia varia,a,lc,Dic.10
+LLL114,indeterminate,2,1agr,Oxysarcodexia varia,a,lc,Dic.10
+LLL114,Mentha pulegium,12,1agr,Oxysarcodexia varia,a,lc,Dic.10
+LLL56,Poaceae,4,Cl,Allograpta exotica,c,lc,Dic.10
+LLL56,Pamphalea bupleurifolia,7,Cl,Allograpta exotica,c,lc,Dic.10
+LLL56,Hirschfeldia incana,1,Cl,Allograpta exotica,c,lc,Dic.10
+LLL56,Grupo Eryngium spp.,277,Cl,Allograpta exotica,c,lc,Dic.10
+LLL56,indeterminate,1,Cl,Allograpta exotica,c,lc,Dic.10
+LLL63,Grupo Eryngium spp.,61,1agr,Allograpta exotica,a,lc,Dic.10
+LLL63,Pamphalea bupleurifolia,15,1agr,Allograpta exotica,a,lc,Dic.10
+LLL63,Grupo Crepis-Hypochoeris,8,1agr,Allograpta exotica,a,lc,Dic.10
+LLL63,Cypella herbertii,4,1agr,Allograpta exotica,a,lc,Dic.10
+LLL63,Poaceae,1,1agr,Allograpta exotica,a,lc,Dic.10
+LLL63,Alternalthera sp.,3,1agr,Allograpta exotica,a,lc,Dic.10
+LLL62,Grupo Crepis-Hypochoeris,3,1agr,Chauliognatus scriptus,a,lc,Dic.10
+LLL62,Cypella herbertii,1,1agr,Chauliognatus scriptus,a,lc,Dic.10
+LLL62,Pamphalea bupleurifolia,1,1agr,Chauliognatus scriptus,a,lc,Dic.10
+LLL62,Grupo Eryngium spp.,973,1agr,Chauliognatus scriptus,a,lc,Dic.10
+LLL58,Poaceae,2,Cl,Chauliognatus scriptus,c,lc,Dic.10
+LLL58,Aster squamatus,6,Cl,Chauliognatus scriptus,c,lc,Dic.10
+LLL58,Solanum sp.,4,Cl,Chauliognatus scriptus,c,lc,Dic.10
+LLL58,Grupo Crepis-Hypochoeris,1,Cl,Chauliognatus scriptus,c,lc,Dic.10
+LLL58,Pamphalea bupleurifolia,1,Cl,Chauliognatus scriptus,c,lc,Dic.10
+LLL58,Grupo Eryngium spp.,698,Cl,Chauliognatus scriptus,c,lc,Dic.10
+LLL59,Aster squamatus,2,Cl,Allograpta exotica,c,lc,Dic.10
+LLL59,Pamphalea bupleurifolia,5,Cl,Allograpta exotica,c,lc,Dic.10
+LLL59,Poaceae,2,Cl,Allograpta exotica,c,lc,Dic.10
+LLL59,Hirschfeldia incana,1,Cl,Allograpta exotica,c,lc,Dic.10
+LLL59,Grupo Eryngium spp.,505,Cl,Allograpta exotica,c,lc,Dic.10
+LLL61,Acmella sp.,8,1agr,Tephritidae sp2,a,lc,Dic.10
+LLL61,Poaceae,2,1agr,Tephritidae sp2,a,lc,Dic.10
+LLL120,Grupo Eryngium spp.,1145,1agr,Tiphia sp.,a,lc,Dic.10
+LLL120,Cypella herbertii,1,1agr,Tiphia sp.,a,lc,Dic.10
+LLL120,Poaceae,3,1agr,Tiphia sp.,a,lc,Dic.10
+LLL120,indeterminate,2,1agr,Tiphia sp.,a,lc,Dic.10
+LLL113,Acmella sp.,1,1agr,Chauliognatus scriptus,a,lc,Dic.10
+LLL113,Grupo Crepis-Hypochoeris,1,1agr,Chauliognatus scriptus,a,lc,Dic.10
+LLL113,Poaceae,4,1agr,Chauliognatus scriptus,a,lc,Dic.10
+LLL113,Mentha pulegium,1,1agr,Chauliognatus scriptus,a,lc,Dic.10
+LLL113,Hirschfeldia incana,1,1agr,Chauliognatus scriptus,a,lc,Dic.10
+LLL113,Grupo Eryngium spp.,1069,1agr,Chauliognatus scriptus,a,lc,Dic.10
+LLL100,Grupo Eryngium spp.,1130,Cl,Chauliognatus scriptus,c,lc,Dic.10
+LLL100,Poaceae,2,Cl,Chauliognatus scriptus,c,lc,Dic.10
+LLL101,Grupo Eryngium spp.,5502,Cl,Chauliognatus scriptus,c,lc,Dic.10
+LLL101,Poaceae,4,Cl,Chauliognatus scriptus,c,lc,Dic.10
+LLL204,Grupo Eryngium spp.,227,2agr,Tricharaea occidua,a,lc,Ene.11
+LLL204,Poaceae,1,2agr,Tricharaea occidua,a,lc,Ene.11
+LLL180,Grupo Eryngium spp.,150,1agr,Tricharaea occidua,a,lc,Ene.11
+LLL212,Grupo Eryngium spp.,215,1agr,Tricharaea occidua,a,lc,Ene.11
+LLL212,Hirschfeldia incana,1,1agr,Tricharaea occidua,a,lc,Ene.11
+LLL212,Grupo Baccharis spp.,1,1agr,Tricharaea occidua,a,lc,Ene.11
+LLL212,Nothoscordum euosimum,37,1agr,Tricharaea occidua,a,lc,Ene.11
+LLL215,Grupo Eryngium spp.,195,1agr,Tricharaea occidua,a,lc,Ene.11
+LLL215,Poaceae,1,1agr,Tricharaea occidua,a,lc,Ene.11
+LLL174,Grupo Eryngium spp.,62,1agr,Tricharaea occidua,a,lc,Ene.11
+LLL186,Grupo Eryngium spp.,140,1agr,Oxysarcodexia varia,a,lc,Ene.11
+LLL186,Conyza sp.,1,1agr,Oxysarcodexia varia,a,lc,Ene.11
+LLL186,Mentha pulegium,4,1agr,Oxysarcodexia varia,a,lc,Ene.11
+LLL181,Grupo Eryngium spp.,23,1agr,Tricharaea occidua,a,lc,Ene.11
+LLL214,Grupo Eryngium spp.,107,1agr,Tricharaea occidua,a,lc,Ene.11
+LLL214,Nothoscordum euosimum,1,1agr,Tricharaea occidua,a,lc,Ene.11
+LLL179,Nothoscordum euosimum,5,1agr,Tricharaea occidua,a,lc,Ene.11
+LLL179,Chenopodeaceae,1,1agr,Tricharaea occidua,a,lc,Ene.11
+LLL179,Grupo Eryngium spp.,396,1agr,Tricharaea occidua,a,lc,Ene.11
+LLL219,Grupo Eryngium spp.,23,1agr,Dialictus sp.1,a,lc,Ene.11
+LLL219,Chenopodeaceae,1,1agr,Dialictus sp.1,a,lc,Ene.11
+LLL219,Poaceae,1,1agr,Dialictus sp.1,a,lc,Ene.11
+LLL219,Nothoscordum euosimum,278,1agr,Dialictus sp.1,a,lc,Ene.11
+LLL166,Chenopodeaceae,2,1agr,Oxysarcodexia varia,a,lc,Ene.11
+LLL166,Grupo Eryngium spp.,93,1agr,Oxysarcodexia varia,a,lc,Ene.11
+LLL183,Chenopodeaceae,1,1agr,Oxysarcodexia varia,a,lc,Ene.11
+LLL183,Grupo Eryngium spp.,413,1agr,Oxysarcodexia varia,a,lc,Ene.11
+LLL171,Grupo Eryngium spp.,486,1agr,Oxysarcodexia varia,a,lc,Ene.11
+LLL211,Lotus tenuis,21,1agr,Dialictus sp.1,a,lc,Ene.11
+LLL211,Grupo Eryngium spp.,4894,1agr,Dialictus sp.1,a,lc,Ene.11
+LLL211,Acmella sp.,78,1agr,Dialictus sp.1,a,lc,Ene.11
+LLL211,Grupo Eryngium spp.,1,1agr,Dialictus sp.1,a,lc,Ene.11
+LLL211,Chenopodeaceae,1,1agr,Dialictus sp.1,a,lc,Ene.11
+LLL182,Nothoscordum euosimum,6,1agr,Oxysarcodexia varia,a,lc,Ene.11
+LLL182,Grupo Eryngium spp.,358,1agr,Oxysarcodexia varia,a,lc,Ene.11
+LLL206,Grupo Eryngium spp.,269,2agr,Chauliognatus scriptus,a,lc,Ene.11
+LLL206,Nothoscordum euosimum,5,2agr,Chauliognatus scriptus,a,lc,Ene.11
+LLL218,Nothoscordum euosimum,562,1agr,Dialictus sp.1,a,lc,Ene.11
+LLL218,Lotus tenuis,5,1agr,Dialictus sp.1,a,lc,Ene.11
+LLL218,Grupo Eryngium spp.,52,1agr,Dialictus sp.1,a,lc,Ene.11
+LLL170,Grupo Eryngium spp.,65,1agr,Oxysarcodexia varia,a,lc,Ene.11
+LLL170,Asteraceae,1,1agr,Oxysarcodexia varia,a,lc,Ene.11
+LLL170,indeterminate,1,1agr,Oxysarcodexia varia,a,lc,Ene.11
+LLL144,Nothoscordum euosimum,1,2agr,Oxysarcodexia varia,a,lc,Ene.11
+LLL144,Grupo Eryngium spp.,211,2agr,Oxysarcodexia varia,a,lc,Ene.11
+LLL146,Grupo Eryngium spp.,29,2agr,Coleoptera sp6,a,lc,Ene.11
+LLL194,Cypella herbertii,1,2agr,Oxysarcodexia varia,a,lc,Ene.11
+LLL194,indeterminate,1,2agr,Oxysarcodexia varia,a,lc,Ene.11
+LLL194,Grupo Eryngium spp.,1000,2agr,Oxysarcodexia varia,a,lc,Ene.11
+LLL194,Poaceae,2,2agr,Oxysarcodexia varia,a,lc,Ene.11
+LLL194,Nothoscordum euosimum,1,2agr,Oxysarcodexia varia,a,lc,Ene.11
+LLL163,Pamphalea bupleurifolia,1,1agr,Myzinum sp5,a,lc,Ene.11
+LLL163,Nothoscordum euosimum,2,1agr,Myzinum sp5,a,lc,Ene.11
+LLL163,Asteraceae,1,1agr,Myzinum sp5,a,lc,Ene.11
+LLL163,Grupo Eryngium spp.,31,1agr,Myzinum sp5,a,lc,Ene.11
+LLL178,Asteraceae,1,1agr,Coleoptera sp6,a,lc,Ene.11
+LLL178,Nothoscordum euosimum,2,1agr,Coleoptera sp6,a,lc,Ene.11
+LLL178,Grupo Eryngium spp.,118,1agr,Coleoptera sp6,a,lc,Ene.11
+LLL165,Asteraceae,1,1agr,Oxysarcodexia varia,a,lc,Ene.11
+LLL165,indeterminate,1,1agr,Oxysarcodexia varia,a,lc,Ene.11
+LLL165,Grupo Eryngium spp.,290,1agr,Oxysarcodexia varia,a,lc,Ene.11
+LLL202,Nothoscordum euosimum,2202,2agr,Dialictus sp.1,a,lc,Ene.11
+LLL202,Cypella herbertii,690,2agr,Dialictus sp.1,a,lc,Ene.11
+LLL202,Grupo Eryngium spp.,2513,2agr,Dialictus sp.1,a,lc,Ene.11
+LLL202,Hirschfeldia incana,4,2agr,Dialictus sp.1,a,lc,Ene.11
+LLL202,Mentha pulegium,9,2agr,Dialictus sp.1,a,lc,Ene.11
+LLL202,Poaceae,1,2agr,Dialictus sp.1,a,lc,Ene.11
+LLL202,Acmella sp.,1,2agr,Dialictus sp.1,a,lc,Ene.11
+LLL167,Grupo Eryngium spp.,188,1agr,Oxysarcodexia varia,a,lc,Ene.11
+LLL167,indeterminate,1,1agr,Oxysarcodexia varia,a,lc,Ene.11
+LLL142,Grupo Eryngium spp.,133,2agr,Oxysarcodexia varia,a,lc,Ene.11
+LLL142,Nothoscordum euosimum,2,2agr,Oxysarcodexia varia,a,lc,Ene.11
+LLL164,Cypella herbertii,2,1agr,Coleoptera sp6,a,lc,Ene.11
+LLL164,Grupo Eryngium spp.,138,1agr,Coleoptera sp6,a,lc,Ene.11
+LLL175,Hirschfeldia incana,118,1agr,Dialictus sp.1,a,lc,Ene.11
+LLL175,Nothoscordum euosimum,1377,1agr,Dialictus sp.1,a,lc,Ene.11
+LLL205,Hirschfeldia incana,1,2agr,Coleoptera sp6,a,lc,Ene.11
+LLL205,Grupo Crepis-Hypochoeris,1,2agr,Coleoptera sp6,a,lc,Ene.11
+LLL205,Chenopodeaceae,1,2agr,Coleoptera sp6,a,lc,Ene.11
+LLL205,Grupo Eryngium spp.,43,2agr,Coleoptera sp6,a,lc,Ene.11
+LLL205,Poaceae,1,2agr,Coleoptera sp6,a,lc,Ene.11
+LLL190,Grupo Eryngium spp.,126,1agr,Oxysarcodexia varia,a,lc,Ene.11
+LLL190,indeterminate,1,1agr,Oxysarcodexia varia,a,lc,Ene.11
+LLL196,Asteraceae,1,2agr,Oxysarcodexia varia,a,lc,Ene.11
+LLL196,Chenopodeaceae,1,2agr,Oxysarcodexia varia,a,lc,Ene.11
+LLL196,Poaceae,1,2agr,Oxysarcodexia varia,a,lc,Ene.11
+LLL196,Grupo Eryngium spp.,354,2agr,Oxysarcodexia varia,a,lc,Ene.11
+LLL196,Lotus tenuis,25,2agr,Oxysarcodexia varia,a,lc,Ene.11
+LLL168,Chenopodeaceae,2,1agr,Oxysarcodexia varia,a,lc,Ene.11
+LLL168,Poaceae,2,1agr,Oxysarcodexia varia,a,lc,Ene.11
+LLL168,Nothoscordum euosimum,2,1agr,Oxysarcodexia varia,a,lc,Ene.11
+LLL168,Cypella herbertii,4,1agr,Oxysarcodexia varia,a,lc,Ene.11
+LLL168,Grupo Baccharis spp.,1,1agr,Oxysarcodexia varia,a,lc,Ene.11
+LLL168,Grupo Eryngium spp.,280,1agr,Oxysarcodexia varia,a,lc,Ene.11
+LLL185,Chenopodeaceae,2,1agr,Oxysarcodexia varia,a,lc,Ene.11
+LLL185,Nothoscordum euosimum,2,1agr,Oxysarcodexia varia,a,lc,Ene.11
+LLL185,Grupo Eryngium spp.,587,1agr,Oxysarcodexia varia,a,lc,Ene.11
+LLL176,Nothoscordum euosimum,2026,1agr,Dialictus sp.1,a,lc,Ene.11
+LLL176,Grupo Eryngium spp.,1,1agr,Dialictus sp.1,a,lc,Ene.11
+LLL176,Hirschfeldia incana,1,1agr,Dialictus sp.1,a,lc,Ene.11
+LLL176,Grupo Carduus-Cirsium,1,1agr,Dialictus sp.1,a,lc,Ene.11
+LLL150,Grupo Eryngium spp.,398,2agr,Tricharaea occidua,a,lc,Ene.11
+LLL140,Nothoscordum euosimum,1,2agr,Tricharaea occidua,a,lc,Ene.11
+LLL140,Grupo Eryngium spp.,172,2agr,Tricharaea occidua,a,lc,Ene.11
+LLL140,indeterminate,2,2agr,Tricharaea occidua,a,lc,Ene.11
+LLL139,Grupo Carduus-Cirsium,1,2agr,Tricharaea occidua,a,lc,Ene.11
+LLL139,Grupo Eryngium spp.,86,2agr,Tricharaea occidua,a,lc,Ene.11
+LLL151,Grupo Eryngium spp.,120,2agr,Tricharaea occidua,a,lc,Ene.11
+LLL149,Grupo Eryngium spp.,46,2agr,Tricharaea occidua,a,lc,Ene.11
+LLL149,Lotus tenuis,2,2agr,Tricharaea occidua,a,lc,Ene.11
+LLL173,Grupo Eryngium spp.,19,1agr,Tricharaea occidua,a,lc,Ene.11
+LLL138,Grupo Eryngium spp.,149,2agr,Tricharaea occidua,a,lc,Ene.11
+LLL138,Hirschfeldia incana,1,2agr,Tricharaea occidua,a,lc,Ene.11
+LLL141,Mentha pulegium,1,2agr,Tricharaea occidua,a,lc,Ene.11
+LLL141,Grupo Eryngium spp.,253,2agr,Tricharaea occidua,a,lc,Ene.11
+LLL152,Grupo Eryngium spp.,159,2agr,Tricharaea occidua,a,lc,Ene.11
+LLL145,Grupo Eryngium spp.,600,2agr,Chauliognatus scriptus,a,lc,Ene.11
+LLL145,Mentha pulegium,2,2agr,Chauliognatus scriptus,a,lc,Ene.11
+LLL135,Grupo Eryngium spp.,242,2agr,Chauliognatus scriptus,a,lc,Ene.11
+LLL135,Asteraceae,1,2agr,Chauliognatus scriptus,a,lc,Ene.11
+LLL188,Poaceae,2,1agr,Oxysarcodexia varia,a,lc,Ene.11
+LLL188,indeterminate,5,1agr,Oxysarcodexia varia,a,lc,Ene.11
+LLL188,Grupo Eryngium spp.,457,1agr,Oxysarcodexia varia,a,lc,Ene.11
+LLL172,Nothoscordum euosimum,6,1agr,Oxysarcodexia varia,a,lc,Ene.11
+LLL172,Poaceae,2,1agr,Oxysarcodexia varia,a,lc,Ene.11
+LLL172,Grupo Eryngium spp.,482,1agr,Oxysarcodexia varia,a,lc,Ene.11
+LLL213,Grupo Carduus-Cirsium,5,1agr,Oxysarcodexia varia,a,lc,Ene.11
+LLL213,Nothoscordum euosimum,14,1agr,Oxysarcodexia varia,a,lc,Ene.11
+LLL213,Hirschfeldia incana,1,1agr,Oxysarcodexia varia,a,lc,Ene.11
+LLL213,Lotus tenuis,19,1agr,Oxysarcodexia varia,a,lc,Ene.11
+LLL213,Chenopodeaceae,1,1agr,Oxysarcodexia varia,a,lc,Ene.11
+LLL213,Acmella sp.,1,1agr,Oxysarcodexia varia,a,lc,Ene.11
+LLL213,Grupo Eryngium spp.,1057,1agr,Oxysarcodexia varia,a,lc,Ene.11
+LLL137,Mentha pulegium,1,2agr,Coleoptera sp4,a,lc,Ene.11
+LLL137,Grupo Eryngium spp.,67,2agr,Coleoptera sp4,a,lc,Ene.11
+LLL147,Poaceae,1,2agr,Oxysarcodexia varia,a,lc,Ene.11
+LLL147,Mentha pulegium,1,2agr,Oxysarcodexia varia,a,lc,Ene.11
+LLL147,Nothoscordum euosimum,2,2agr,Oxysarcodexia varia,a,lc,Ene.11
+LLL147,Grupo Eryngium spp.,506,2agr,Oxysarcodexia varia,a,lc,Ene.11
+LLL169,Poaceae,2,1agr,Oxysarcodexia varia,a,lc,Ene.11
+LLL169,Asteraceae,1,1agr,Oxysarcodexia varia,a,lc,Ene.11
+LLL169,Grupo Eryngium spp.,255,1agr,Oxysarcodexia varia,a,lc,Ene.11
+LLL143,Hirschfeldia incana,1,2agr,Oxysarcodexia varia,a,lc,Ene.11
+LLL143,Grupo Eryngium spp.,290,2agr,Oxysarcodexia varia,a,lc,Ene.11
+LLL187,Hirschfeldia incana,1,1agr,Oxysarcodexia varia,a,lc,Ene.11
+LLL187,Grupo Carduus-Cirsium,1,1agr,Oxysarcodexia varia,a,lc,Ene.11
+LLL187,Grupo Eryngium spp.,104,1agr,Oxysarcodexia varia,a,lc,Ene.11
+LLL191,Poaceae,2,1agr,Oxysarcodexia varia,a,lc,Ene.11
+LLL191,Grupo Carduus-Cirsium,1,1agr,Oxysarcodexia varia,a,lc,Ene.11
+LLL191,Nothoscordum euosimum,3,1agr,Oxysarcodexia varia,a,lc,Ene.11
+LLL191,Grupo Eryngium spp.,378,1agr,Oxysarcodexia varia,a,lc,Ene.11
+LLL184,Nothoscordum euosimum,3,1agr,Oxysarcodexia varia,a,lc,Ene.11
+LLL184,Mentha pulegium,4,1agr,Oxysarcodexia varia,a,lc,Ene.11
+LLL184,Grupo Eryngium spp.,199,1agr,Oxysarcodexia varia,a,lc,Ene.11
+LLL148,Nothoscordum euosimum,7,2agr,Oxysarcodexia varia,a,lc,Ene.11
+LLL148,Grupo Eryngium spp.,259,2agr,Oxysarcodexia varia,a,lc,Ene.11
+LLL177,Grupo Eryngium spp.,149,1agr,Coleoptera sp6,a,lc,Ene.11
+LLL136,Nothoscordum euosimum,5,2agr,Chauliognatus scriptus,a,lc,Ene.11
+LLL136,Grupo Eryngium spp.,410,2agr,Chauliognatus scriptus,a,lc,Ene.11
+LLL189,Lotus tenuis,3,1agr,Oxysarcodexia varia,a,lc,Ene.11
+LLL189,Nothoscordum euosimum,1,1agr,Oxysarcodexia varia,a,lc,Ene.11
+LLL189,Hirschfeldia incana,1,1agr,Oxysarcodexia varia,a,lc,Ene.11
+LLL189,Mentha pulegium,2,1agr,Oxysarcodexia varia,a,lc,Ene.11
+LLL189,Grupo Eryngium spp.,489,1agr,Oxysarcodexia varia,a,lc,Ene.11
+LLL193,Lotus tenuis,2,2agr,Oxysarcodexia varia,a,lc,Ene.11
+LLL193,Asteraceae,2,2agr,Oxysarcodexia varia,a,lc,Ene.11
+LLL193,Chenopodeaceae,2,2agr,Oxysarcodexia varia,a,lc,Ene.11
+LLL193,Nothoscordum euosimum,3,2agr,Oxysarcodexia varia,a,lc,Ene.11
+LLL193,Grupo Eryngium spp.,104,2agr,Oxysarcodexia varia,a,lc,Ene.11
+LLL195,Lotus tenuis,1,2agr,Oxysarcodexia varia,a,lc,Ene.11
+LLL195,Poaceae,3,2agr,Oxysarcodexia varia,a,lc,Ene.11
+LLL195,Nothoscordum euosimum,2,2agr,Oxysarcodexia varia,a,lc,Ene.11
+LLL195,Grupo Eryngium spp.,472,2agr,Oxysarcodexia varia,a,lc,Ene.11
+LLL201,Nothoscordum euosimum,2689,2agr,Dialictus sp.1,a,lc,Ene.11
+LLL201,Grupo Eryngium spp.,1352,2agr,Dialictus sp.1,a,lc,Ene.11
+LLL201,Chenopodeaceae,1,2agr,Dialictus sp.1,a,lc,Ene.11
+LLL201,Hirschfeldia incana,8,2agr,Dialictus sp.1,a,lc,Ene.11
+LLL201,Cypella herbertii,1,2agr,Dialictus sp.1,a,lc,Ene.11
+LLL203,Nothoscordum euosimum,9,2agr,Dialictus sp.1,a,lc,Ene.11
+LLL203,Cypella herbertii,10,2agr,Dialictus sp.1,a,lc,Ene.11
+LLL203,Grupo Eryngium spp.,5179,2agr,Dialictus sp.1,a,lc,Ene.11
+LLL203,Conyza sp.,1,2agr,Dialictus sp.1,a,lc,Ene.11
+LLL203,Mentha pulegium,2,2agr,Dialictus sp.1,a,lc,Ene.11
+LLL203,Hirschfeldia incana,1,2agr,Dialictus sp.1,a,lc,Ene.11
+LLL207,Grupo Crepis-Hypochoeris,2,2agr,Dialictus sp.1,a,lc,Ene.11
+LLL207,Grupo Eryngium spp.,859,2agr,Dialictus sp.1,a,lc,Ene.11
+LLL207,Nothoscordum euosimum,5301,2agr,Dialictus sp.1,a,lc,Ene.11
+LLL207,Cypella herbertii,1,2agr,Dialictus sp.1,a,lc,Ene.11
+LLL207,Mentha pulegium,1,2agr,Dialictus sp.1,a,lc,Ene.11
+LLL327,Grupo Eryngium spp.,10,1agr,Dialictus sp.1,a,lc,Feb.11
+LLL327,Grupo Baccharis spp.,8,1agr,Dialictus sp.1,a,lc,Feb.11
+LLL327,Hirschfeldia incana,1,1agr,Dialictus sp.1,a,lc,Feb.11
+LLL327,Acmella sp.,2,1agr,Dialictus sp.1,a,lc,Feb.11
+LLL327,Nothoscordum euosimum,72,1agr,Dialictus sp.1,a,lc,Feb.11
+LLL270,Grupo Eryngium spp.,76,2agr,Tricharaea occidua,a,lc,Feb.11
+LLL270,Lotus tenuis,1,2agr,Tricharaea occidua,a,lc,Feb.11
+LLL262,Asteraceae,1,2agr,Oxysarcodexia varia,a,lc,Feb.11
+LLL262,Nothoscordum euosimum,4,2agr,Oxysarcodexia varia,a,lc,Feb.11
+LLL262,Grupo Eryngium spp.,60,2agr,Oxysarcodexia varia,a,lc,Feb.11
+LLL265,Chenopodeaceae,1,2agr,Tricharaea occidua,a,lc,Feb.11
+LLL265,Acmella sp.,1,2agr,Tricharaea occidua,a,lc,Feb.11
+LLL265,Grupo Eryngium spp.,102,2agr,Tricharaea occidua,a,lc,Feb.11
+LLL336,Acmella sp.,29,1agr,Oxysarcodexia varia,a,lc,Mar.11
+LLL336,Nothoscordum euosimum,1,1agr,Oxysarcodexia varia,a,lc,Mar.11
+LLL336,Hirschfeldia incana,2,1agr,Oxysarcodexia varia,a,lc,Mar.11
+LLL336,Grupo Crepis-Hypochoeris,1,1agr,Oxysarcodexia varia,a,lc,Mar.11
+LLL336,Grupo Eryngium spp.,280,1agr,Oxysarcodexia varia,a,lc,Mar.11
+LLL322,Aster squamatus,3,1agr,Oxysarcodexia varia,a,lc,Feb.11
+LLL322,Noticastrum sp. cf. Acuminatum,27,1agr,Oxysarcodexia varia,a,lc,Feb.11
+LLL322,Hirschfeldia incana,1,1agr,Oxysarcodexia varia,a,lc,Feb.11
+LLL322,Grupo Baccharis spp.,7,1agr,Oxysarcodexia varia,a,lc,Feb.11
+LLL322,Chenopodeaceae,1,1agr,Oxysarcodexia varia,a,lc,Feb.11
+LLL322,Nothoscordum euosimum,352,1agr,Oxysarcodexia varia,a,lc,Feb.11
+LLL322,Lotus tenuis,1,1agr,Oxysarcodexia varia,a,lc,Feb.11
+LLL264,Nothoscordum euosimum,4,2agr,Tricharaea occidua,a,lc,Feb.11
+LLL264,Grupo Eryngium spp.,186,2agr,Tricharaea occidua,a,lc,Feb.11
+LLL318,Grupo Eryngium spp.,62,1agr,Coleoptera sp6,a,lc,Feb.11
+LLL318,Lotus tenuis,6,1agr,Coleoptera sp6,a,lc,Feb.11
+LLL318,Nothoscordum euosimum,2,1agr,Coleoptera sp6,a,lc,Feb.11
+LLL318,Grupo Baccharis spp.,276,1agr,Coleoptera sp6,a,lc,Feb.11
+LLL246,Conyza sp.,6,2agr,Oxysarcodexia varia,a,lc,Feb.11
+LLL246,indeterminate,1,2agr,Oxysarcodexia varia,a,lc,Feb.11
+LLL246,Mentha pulegium,11,2agr,Oxysarcodexia varia,a,lc,Feb.11
+LLL246,Lotus tenuis,11,2agr,Oxysarcodexia varia,a,lc,Feb.11
+LLL246,Grupo Carduus-Cirsium,1,2agr,Oxysarcodexia varia,a,lc,Feb.11
+LLL246,Nothoscordum euosimum,1,2agr,Oxysarcodexia varia,a,lc,Feb.11
+LLL246,Chenopodeaceae,1,2agr,Oxysarcodexia varia,a,lc,Feb.11
+LLL246,Grupo Eryngium spp.,299,2agr,Oxysarcodexia varia,a,lc,Feb.11
+LLL248,Conyza sp.,246,2agr,Oxysarcodexia varia,a,lc,Feb.11
+LLL248,Mentha pulegium,2,2agr,Oxysarcodexia varia,a,lc,Feb.11
+LLL248,Nothoscordum euosimum,1,2agr,Oxysarcodexia varia,a,lc,Feb.11
+LLL248,Chenopodeaceae,1,2agr,Oxysarcodexia varia,a,lc,Feb.11
+LLL248,Grupo Eryngium spp.,22,2agr,Oxysarcodexia varia,a,lc,Feb.11
+LLL325,Grupo Baccharis spp.,13,1agr,Tachinidae sp2,a,lc,Feb.11
+LLL325,Conyza sp.,246,1agr,Tachinidae sp2,a,lc,Feb.11
+LLL325,Lotus tenuis,1,1agr,Tachinidae sp2,a,lc,Feb.11
+LLL325,Chenopodeaceae,2,1agr,Tachinidae sp2,a,lc,Feb.11
+LLL325,Grupo Eryngium spp.,479,1agr,Tachinidae sp2,a,lc,Feb.11
+LLL312,Grupo Carduus-Cirsium,1,1agr,Lerodea eufala,a,lc,Feb.11
+LLL302,Lotus tenuis,5,1agr,Dialictus sp.1,a,lc,Feb.11
+LLL302,Grupo Eryngium spp.,15,1agr,Dialictus sp.1,a,lc,Feb.11
+LLL302,Grupo Carduus-Cirsium,3,1agr,Dialictus sp.1,a,lc,Feb.11
+LLL302,Grupo Crepis-Hypochoeris,1,1agr,Dialictus sp.1,a,lc,Feb.11
+LLL302,Nothoscordum euosimum,1,1agr,Dialictus sp.1,a,lc,Feb.11
+LLL302,Conyza sp.,1,1agr,Dialictus sp.1,a,lc,Feb.11
+LLL302,Grupo Baccharis spp.,589,1agr,Dialictus sp.1,a,lc,Feb.11
+LLL326,Conyza sp.,5,1agr,Coleoptera sp6,a,lc,Feb.11
+LLL326,Grupo Baccharis spp.,4,1agr,Coleoptera sp6,a,lc,Feb.11
+LLL326,Nothoscordum euosimum,1,1agr,Coleoptera sp6,a,lc,Feb.11
+LLL326,Mentha pulegium,2,1agr,Coleoptera sp6,a,lc,Feb.11
+LLL326,Grupo Carduus-Cirsium,1,1agr,Coleoptera sp6,a,lc,Feb.11
+LLL326,Asteraceae,1,1agr,Coleoptera sp6,a,lc,Feb.11
+LLL326,Grupo Eryngium spp.,101,1agr,Coleoptera sp6,a,lc,Feb.11
+LLL311,Grupo Baccharis spp.,2,1agr,Dialictus sp.1,a,lc,Feb.11
+LLL311,Grupo Eryngium spp.,30,1agr,Dialictus sp.1,a,lc,Feb.11
+LLL311,Nothoscordum euosimum,33,1agr,Dialictus sp.1,a,lc,Feb.11
+LLL311,Lotus tenuis,6,1agr,Dialictus sp.1,a,lc,Feb.11
+LLL311,Noticastrum sp. cf. Acuminatum,48,1agr,Dialictus sp.1,a,lc,Feb.11
+LLL311,Phyla canescens,15,1agr,Dialictus sp.1,a,lc,Feb.11
+LLL266,Lotus tenuis,2,2agr,Tricharaea occidua,a,lc,Feb.11
+LLL266,Nothoscordum euosimum,1,2agr,Tricharaea occidua,a,lc,Feb.11
+LLL266,Conyza sp.,1,2agr,Tricharaea occidua,a,lc,Feb.11
+LLL266,Grupo Eryngium spp.,273,2agr,Tricharaea occidua,a,lc,Feb.11
+LLL267,Conyza sp.,1,2agr,Tricharaea occidua,a,lc,Feb.11
+LLL267,Asteraceae,1,2agr,Tricharaea occidua,a,lc,Feb.11
+LLL267,Grupo Eryngium spp.,272,2agr,Tricharaea occidua,a,lc,Feb.11
+LLL276,Lotus tenuis,2,2agr,Coleoptera sp4,a,lc,Feb.11
+LLL276,Phyla canescens,1,2agr,Coleoptera sp4,a,lc,Feb.11
+LLL276,Grupo Eryngium spp.,112,2agr,Coleoptera sp4,a,lc,Feb.11
+LLL249,Conyza sp.,1,2agr,Oxysarcodexia varia,a,lc,Feb.11
+LLL249,Lotus tenuis,2,2agr,Oxysarcodexia varia,a,lc,Feb.11
+LLL249,Mentha pulegium,3,2agr,Oxysarcodexia varia,a,lc,Feb.11
+LLL249,indeterminate,1,2agr,Oxysarcodexia varia,a,lc,Feb.11
+LLL249,Acmella sp.,1,2agr,Oxysarcodexia varia,a,lc,Feb.11
+LLL249,Grupo Eryngium spp.,202,2agr,Oxysarcodexia varia,a,lc,Feb.11
+LLL250,Mentha pulegium,277,2agr,Oxysarcodexia varia,a,lc,Feb.11
+LLL250,Grupo Eryngium spp.,268,2agr,Oxysarcodexia varia,a,lc,Feb.11
+LLL250,Nothoscordum euosimum,5,2agr,Oxysarcodexia varia,a,lc,Feb.11
+LLL250,Lotus tenuis,51,2agr,Oxysarcodexia varia,a,lc,Feb.11
+LLL250,Conyza sp.,2,2agr,Oxysarcodexia varia,a,lc,Feb.11
+LLL250,Acmella sp.,1,2agr,Oxysarcodexia varia,a,lc,Feb.11
+LLL250,Grupo Baccharis spp.,1,2agr,Oxysarcodexia varia,a,lc,Feb.11
+LLL250,indeterminate,1,2agr,Oxysarcodexia varia,a,lc,Feb.11
+LLL250,Grupo Carduus-Cirsium,1,2agr,Oxysarcodexia varia,a,lc,Feb.11
+LLL244,Conyza sp.,3,2agr,Oxysarcodexia varia,a,lc,Feb.11
+LLL244,Mentha pulegium,10,2agr,Oxysarcodexia varia,a,lc,Feb.11
+LLL244,Lotus tenuis,15,2agr,Oxysarcodexia varia,a,lc,Feb.11
+LLL244,Grupo Baccharis spp.,1,2agr,Oxysarcodexia varia,a,lc,Feb.11
+LLL244,Grupo Eryngium spp.,105,2agr,Oxysarcodexia varia,a,lc,Feb.11
+LLL256,Conyza sp.,4,2agr,Oxysarcodexia varia,a,lc,Feb.11
+LLL256,Nothoscordum euosimum,1,2agr,Oxysarcodexia varia,a,lc,Feb.11
+LLL256,Lotus tenuis,5,2agr,Oxysarcodexia varia,a,lc,Feb.11
+LLL256,Poaceae,1,2agr,Oxysarcodexia varia,a,lc,Feb.11
+LLL256,Grupo Carduus-Cirsium,1,2agr,Oxysarcodexia varia,a,lc,Feb.11
+LLL256,Grupo Eryngium spp.,262,2agr,Oxysarcodexia varia,a,lc,Feb.11
+LLL251,Mentha pulegium,5,2agr,Oxysarcodexia varia,a,lc,Feb.11
+LLL251,Lotus tenuis,2,2agr,Oxysarcodexia varia,a,lc,Feb.11
+LLL251,Grupo Baccharis spp.,1,2agr,Oxysarcodexia varia,a,lc,Feb.11
+LLL251,Conyza sp.,6,2agr,Oxysarcodexia varia,a,lc,Feb.11
+LLL251,Grupo Eryngium spp.,130,2agr,Oxysarcodexia varia,a,lc,Feb.11
+LLL269,Lotus tenuis,3,2agr,Tricharaea occidua,a,lc,Feb.11
+LLL269,Grupo Eryngium spp.,309,2agr,Tricharaea occidua,a,lc,Feb.11
+LLL253,Grupo Eryngium spp.,65,2agr,Tricharaea occidua,a,lc,Feb.11
+LLL253,Lotus tenuis,3,2agr,Tricharaea occidua,a,lc,Feb.11
+LLL253,Conyza sp.,1,2agr,Tricharaea occidua,a,lc,Feb.11
+LLL253,Chenopodeaceae,1,2agr,Tricharaea occidua,a,lc,Feb.11
+LLL252,Grupo Eryngium spp.,7,2agr,Tricharaea occidua,a,lc,Feb.11
+LLL252,Hirschfeldia incana,1,2agr,Tricharaea occidua,a,lc,Feb.11
+LLL259,Grupo Eryngium spp.,1632,2agr,Oxysarcodexia varia,a,lc,Feb.11
+LLL259,Grupo Carduus-Cirsium,4,2agr,Oxysarcodexia varia,a,lc,Feb.11
+LLL259,Conyza sp.,3,2agr,Oxysarcodexia varia,a,lc,Feb.11
+LLL259,Nothoscordum euosimum,1,2agr,Oxysarcodexia varia,a,lc,Feb.11
+LLL259,Lotus tenuis,54,2agr,Oxysarcodexia varia,a,lc,Feb.11
+LLL192,Grupo Eryngium spp.,3602,2agr,Dialictus sp.1,a,lc,Ene.11
+LLL192,Lotus tenuis,14,2agr,Dialictus sp.1,a,lc,Ene.11
+LLL192,Nothoscordum euosimum,211,2agr,Dialictus sp.1,a,lc,Ene.11
+LLL192,Acmella sp.,5,2agr,Dialictus sp.1,a,lc,Ene.11
+LLL192,Phyla canescens,39,2agr,Dialictus sp.1,a,lc,Ene.11
+LLL192,Mentha pulegium,1,2agr,Dialictus sp.1,a,lc,Ene.11
+LLL268,Lotus tenuis,1,2agr,Tricharaea occidua,a,lc,Feb.11
+LLL268,Conyza sp.,1,2agr,Tricharaea occidua,a,lc,Feb.11
+LLL268,Grupo Baccharis spp.,1,2agr,Tricharaea occidua,a,lc,Feb.11
+LLL268,Grupo Eryngium spp.,83,2agr,Tricharaea occidua,a,lc,Feb.11
+LLL314,Conyza sp.,1,1agr,Tricharaea occidua,a,lc,Feb.11
+LLL314,Grupo Eryngium spp.,4,1agr,Tricharaea occidua,a,lc,Feb.11
+LLL351,Grupo Eryngium spp.,90,2agr,Tricharaea occidua,a,lc,Mar.11
+LLL271,Conyza sp.,1,2agr,Tricharaea occidua,a,lc,Feb.11
+LLL271,Grupo Eryngium spp.,162,2agr,Tricharaea occidua,a,lc,Feb.11
+LLL324,Conyza sp.,1,1agr,Tricharaea occidua,a,lc,Feb.11
+LLL324,Acmella sp.,1,1agr,Tricharaea occidua,a,lc,Feb.11
+LLL324,Grupo Baccharis spp.,2,1agr,Tricharaea occidua,a,lc,Feb.11
+LLL324,Grupo Eryngium spp.,6,1agr,Tricharaea occidua,a,lc,Feb.11
+LLL272,Conyza sp.,1,2agr,Tricharaea occidua,a,lc,Feb.11
+LLL272,Grupo Eryngium spp.,204,2agr,Tricharaea occidua,a,lc,Feb.11
+LLL274,Lotus tenuis,2,2agr,Tricharaea occidua,a,lc,Feb.11
+LLL274,Grupo Baccharis spp.,1,2agr,Tricharaea occidua,a,lc,Feb.11
+LLL274,Grupo Eryngium spp.,34,2agr,Tricharaea occidua,a,lc,Feb.11
+LLL316,Conyza sp.,1,1agr,Tricharaea occidua,a,lc,Feb.11
+LLL316,Lotus tenuis,1,1agr,Tricharaea occidua,a,lc,Feb.11
+LLL316,Grupo Eryngium spp.,41,1agr,Tricharaea occidua,a,lc,Feb.11
+LLL273,Lotus tenuis,4,2agr,Tricharaea occidua,a,lc,Feb.11
+LLL273,Conyza sp.,2,2agr,Tricharaea occidua,a,lc,Feb.11
+LLL273,indeterminate,1,2agr,Tricharaea occidua,a,lc,Feb.11
+LLL273,Nothoscordum euosimum,1,2agr,Tricharaea occidua,a,lc,Feb.11
+LLL273,Grupo Eryngium spp.,283,2agr,Tricharaea occidua,a,lc,Feb.11
+LLL315,Grupo Baccharis spp.,2,1agr,Tricharaea occidua,a,lc,Feb.11
+LLL315,Conyza sp.,3,1agr,Tricharaea occidua,a,lc,Feb.11
+LLL315,Chenopodeaceae,1,1agr,Tricharaea occidua,a,lc,Feb.11
+LLL315,Lotus tenuis,3,1agr,Tricharaea occidua,a,lc,Feb.11
+LLL315,Grupo Eryngium spp.,5,1agr,Tricharaea occidua,a,lc,Feb.11
+LLL260,Conyza sp.,11,2agr,Oxysarcodexia varia,a,lc,Feb.11
+LLL260,Lotus tenuis,16,2agr,Oxysarcodexia varia,a,lc,Feb.11
+LLL260,Nothoscordum euosimum,2,2agr,Oxysarcodexia varia,a,lc,Feb.11
+LLL260,Grupo Eryngium spp.,1003,2agr,Oxysarcodexia varia,a,lc,Feb.11
+LLL320,Grupo Baccharis spp.,6,1agr,Oxysarcodexia varia,a,lc,Feb.11
+LLL320,Lotus tenuis,13,1agr,Oxysarcodexia varia,a,lc,Feb.11
+LLL320,Conyza sp.,1,1agr,Oxysarcodexia varia,a,lc,Feb.11
+LLL320,Grupo Carduus-Cirsium,1,1agr,Oxysarcodexia varia,a,lc,Feb.11
+LLL320,Grupo Eryngium spp.,6,1agr,Oxysarcodexia varia,a,lc,Feb.11
+LLL317,Grupo Eryngium spp.,1310,1agr,Chauliognatus scriptus,a,lc,Feb.11
+LLL317,Lotus tenuis,10,1agr,Chauliognatus scriptus,a,lc,Feb.11
+LLL317,Conyza sp.,2,1agr,Chauliognatus scriptus,a,lc,Feb.11
+LLL317,Nothoscordum euosimum,1,1agr,Chauliognatus scriptus,a,lc,Feb.11
+LLL317,Grupo Baccharis spp.,77,1agr,Chauliognatus scriptus,a,lc,Feb.11
+LLL261,Lotus tenuis,14,2agr,Oxysarcodexia varia,a,lc,Feb.11
+LLL261,Conyza sp.,10,2agr,Oxysarcodexia varia,a,lc,Feb.11
+LLL261,Grupo Eryngium spp.,69,2agr,Oxysarcodexia varia,a,lc,Feb.11
+LLL258,Lotus tenuis,1,2agr,Oxysarcodexia varia,a,lc,Feb.11
+LLL258,Grupo Carduus-Cirsium,1,2agr,Oxysarcodexia varia,a,lc,Feb.11
+LLL258,Conyza sp.,13,2agr,Oxysarcodexia varia,a,lc,Feb.11
+LLL258,Chenopodeaceae,1,2agr,Oxysarcodexia varia,a,lc,Feb.11
+LLL258,Mentha pulegium,9,2agr,Oxysarcodexia varia,a,lc,Feb.11
+LLL258,Nothoscordum euosimum,4,2agr,Oxysarcodexia varia,a,lc,Feb.11
+LLL258,Phyla canescens,1,2agr,Oxysarcodexia varia,a,lc,Feb.11
+LLL258,Grupo Eryngium spp.,535,2agr,Oxysarcodexia varia,a,lc,Feb.11
+LLL321,Lotus tenuis,21,1agr,Oxysarcodexia varia,a,lc,Feb.11
+LLL321,Conyza sp.,4,1agr,Oxysarcodexia varia,a,lc,Feb.11
+LLL321,Grupo Baccharis spp.,29,1agr,Oxysarcodexia varia,a,lc,Feb.11
+LLL321,Chenopodeaceae,1,1agr,Oxysarcodexia varia,a,lc,Feb.11
+LLL321,Poaceae,1,1agr,Oxysarcodexia varia,a,lc,Feb.11
+LLL321,Grupo Eryngium spp.,186,1agr,Oxysarcodexia varia,a,lc,Feb.11
+LLL247,Conyza sp.,8,2agr,Oxysarcodexia varia,a,lc,Feb.11
+LLL247,Lotus tenuis,3,2agr,Oxysarcodexia varia,a,lc,Feb.11
+LLL247,Acmella sp.,1,2agr,Oxysarcodexia varia,a,lc,Feb.11
+LLL247,Grupo Eryngium spp.,156,2agr,Oxysarcodexia varia,a,lc,Feb.11
+LLL257,Grupo Eryngium spp.,373,2agr,Oxysarcodexia varia,a,lc,Feb.11
+LLL257,Lotus tenuis,17,2agr,Oxysarcodexia varia,a,lc,Feb.11
+LLL257,Grupo Baccharis spp.,24,2agr,Oxysarcodexia varia,a,lc,Feb.11
+LLL257,Grupo Carduus-Cirsium,2,2agr,Oxysarcodexia varia,a,lc,Feb.11
+LLL257,Grupo Crepis-Hypochoeris,6,2agr,Oxysarcodexia varia,a,lc,Feb.11
+LLL257,Mentha pulegium,1,2agr,Oxysarcodexia varia,a,lc,Feb.11
+LLL257,Nothoscordum euosimum,2,2agr,Oxysarcodexia varia,a,lc,Feb.11
+LLL257,Conyza sp.,45,2agr,Oxysarcodexia varia,a,lc,Feb.11
+LLL275,Grupo Baccharis spp.,1,2agr,Lampyridae sp1,a,lc,Feb.11
+LLL275,Lotus tenuis,1,2agr,Lampyridae sp1,a,lc,Feb.11
+LLL275,Grupo Eryngium spp.,306,2agr,Lampyridae sp1,a,lc,Feb.11
+LLL323,Mentha pulegium,14,1agr,Oxysarcodexia varia,a,lc,Feb.11
+LLL323,Poaceae,2,1agr,Oxysarcodexia varia,a,lc,Feb.11
+LLL323,Grupo Eryngium spp.,243,1agr,Oxysarcodexia varia,a,lc,Feb.11
+LLL323,Lotus tenuis,11,1agr,Oxysarcodexia varia,a,lc,Feb.11
+LLL323,Conyza sp.,10,1agr,Oxysarcodexia varia,a,lc,Feb.11
+LLL323,Grupo Baccharis spp.,36,1agr,Oxysarcodexia varia,a,lc,Feb.11
+LLL323,Chenopodeaceae,1,1agr,Oxysarcodexia varia,a,lc,Feb.11
+LLL346,Poaceae,1,1agr,Oxysarcodexia varia,a,lc,Mar.11
+LLL346,Grupo Eryngium spp.,986,1agr,Oxysarcodexia varia,a,lc,Mar.11
+LLL346,Grupo Baccharis spp.,23,1agr,Oxysarcodexia varia,a,lc,Mar.11
+LLL346,Lotus tenuis,1,1agr,Oxysarcodexia varia,a,lc,Mar.11
+LLL346,Hirschfeldia incana,1,1agr,Oxysarcodexia varia,a,lc,Mar.11
+LLL263,Lotus tenuis,8,2agr,Oxysarcodexia varia,a,lc,Feb.11
+LLL263,Chenopodeaceae,3,2agr,Oxysarcodexia varia,a,lc,Feb.11
+LLL263,Conyza sp.,9,2agr,Oxysarcodexia varia,a,lc,Feb.11
+LLL263,Poaceae,1,2agr,Oxysarcodexia varia,a,lc,Feb.11
+LLL263,Grupo Carduus-Cirsium,3,2agr,Oxysarcodexia varia,a,lc,Feb.11
+LLL263,Nothoscordum euosimum,2,2agr,Oxysarcodexia varia,a,lc,Feb.11
+LLL263,Grupo Eryngium spp.,77,2agr,Oxysarcodexia varia,a,lc,Feb.11
+LLL245,Nothoscordum euosimum,2,2agr,Oxysarcodexia varia,a,lc,Feb.11
+LLL245,Conyza sp.,4,2agr,Oxysarcodexia varia,a,lc,Feb.11
+LLL245,Grupo Baccharis spp.,2,2agr,Oxysarcodexia varia,a,lc,Feb.11
+LLL245,Lotus tenuis,10,2agr,Oxysarcodexia varia,a,lc,Feb.11
+LLL245,Grupo Eryngium spp.,45,2agr,Oxysarcodexia varia,a,lc,Feb.11
+LLL313,Lotus tenuis,11,1agr,Oxysarcodexia varia,a,lc,Feb.11
+LLL313,Grupo Baccharis spp.,13,1agr,Oxysarcodexia varia,a,lc,Feb.11
+LLL313,Eucaliptus sp.,1,1agr,Oxysarcodexia varia,a,lc,Feb.11
+LLL313,Poaceae,1,1agr,Oxysarcodexia varia,a,lc,Feb.11
+LLL313,Conyza sp.,2,1agr,Oxysarcodexia varia,a,lc,Feb.11
+LLL313,Grupo Eryngium spp.,213,1agr,Oxysarcodexia varia,a,lc,Feb.11
+LLL347,Grupo Eryngium spp.,20,1agr,Oxysarcodexia varia,a,lc,Mar.11
+LLL255,Grupo Eryngium spp.,54,2agr,Oxysarcodexia varia,a,lc,Feb.11
+LLL255,Chenopodeaceae,1,2agr,Oxysarcodexia varia,a,lc,Feb.11
+LLL255,Conyza sp.,11,2agr,Oxysarcodexia varia,a,lc,Feb.11
+LLL255,Asteraceae,2,2agr,Oxysarcodexia varia,a,lc,Feb.11
+LLL255,Nothoscordum euosimum,3,2agr,Oxysarcodexia varia,a,lc,Feb.11
+LLL255,Grupo Carduus-Cirsium,3,2agr,Oxysarcodexia varia,a,lc,Feb.11
+LLL255,Lotus tenuis,9,2agr,Oxysarcodexia varia,a,lc,Feb.11
+LLL254,Grupo Eryngium spp.,91,2agr,Tricharaea occidua,a,lc,Feb.11
+LLL254,Conyza sp.,1,2agr,Tricharaea occidua,a,lc,Feb.11
+LLL254,Lotus tenuis,2,2agr,Tricharaea occidua,a,lc,Feb.11
+LLL319,Lotus tenuis,28,1agr,Oxysarcodexia varia,a,lc,Feb.11
+LLL319,Grupo Eryngium spp.,1280,1agr,Oxysarcodexia varia,a,lc,Feb.11
+LLL319,Conyza sp.,6,1agr,Oxysarcodexia varia,a,lc,Feb.11
+LLL319,indeterminate,1,1agr,Oxysarcodexia varia,a,lc,Feb.11
+LLL319,Grupo Baccharis spp.,33,1agr,Oxysarcodexia varia,a,lc,Feb.11
+AAA76,Condalia microphylla,1202,A-alfalfa,Apis mellifera,a,an,Nov.10
+AAA76,Medicago sativa,228,A-alfalfa,Apis mellifera,a,an,Nov.10
+AAA76,Poaceae,1,A-alfalfa,Apis mellifera,a,an,Nov.10
+AAA76,Hirschfeldia incana,292,A-alfalfa,Apis mellifera,a,an,Nov.10
+AAA76,Gaillardia megapotamica,3,A-alfalfa,Apis mellifera,a,an,Nov.10
+AAA172,Viguiera anchusaefolia,89,C-pastura,Crisopidae sp1,c,an,Nov.10
+AAA172,Condalia microphylla,39,C-pastura,Crisopidae sp1,c,an,Nov.10
+AAA123,Condalia microphylla,20,A-pastura,Astylus quadrilineatus,a,an,Nov.10
+AAA123,Hirschfeldia incana,624,A-pastura,Astylus quadrilineatus,a,an,Nov.10
+AAA51,Malrubium vulgare,173,C-alflafa,Coelioxys sp.,c,an,Nov.10
+AAA51,Pfaffia gnaphaloides,172,C-alflafa,Coelioxys sp.,c,an,Nov.10
+AAA51,Condalia microphylla,7,C-alflafa,Coelioxys sp.,c,an,Nov.10
+AAA51,Sphaeralcea crispa,11,C-alflafa,Coelioxys sp.,c,an,Nov.10
+AAA119,Condalia microphylla,1013,A-alfalfa,Apis mellifera,a,an,Nov.10
+AAA119,Poaceae,6,A-alfalfa,Apis mellifera,a,an,Nov.10
+AAA119,Chenopodeaceae,2,A-alfalfa,Apis mellifera,a,an,Nov.10
+AAA119,Pfaffia gnaphaloides,1,A-alfalfa,Apis mellifera,a,an,Nov.10
+AAA119,Medicago sativa,191,A-alfalfa,Apis mellifera,a,an,Nov.10
+AAA119,Hirschfeldia incana,53,A-alfalfa,Apis mellifera,a,an,Nov.10
+AAA59,Condalia microphylla,2,C-alflafa,Callonychium sp1.,c,an,Nov.10
+AAA59,Hirschfeldia incana,1,C-alflafa,Callonychium sp1.,c,an,Nov.10
+AAA59,Sphaeralcea crispa,15,C-alflafa,Callonychium sp1.,c,an,Nov.10
+AAA74,Condalia microphylla,6,A-alfalfa,Apis mellifera,a,an,Nov.10
+AAA74,Hirschfeldia incana,14,A-alfalfa,Apis mellifera,a,an,Nov.10
+AAA74,Poaceae,3,A-alfalfa,Apis mellifera,a,an,Nov.10
+AAA74,Chenopodeaceae,2,A-alfalfa,Apis mellifera,a,an,Nov.10
+AAA74,Medicago sativa,295,A-alfalfa,Apis mellifera,a,an,Nov.10
+AAA87,Hirschfeldia incana,17,A-alfalfa,Apis mellifera,a,an,Nov.10
+AAA87,Condalia microphylla,19,A-alfalfa,Apis mellifera,a,an,Nov.10
+AAA87,indeterminate,3,A-alfalfa,Apis mellifera,a,an,Nov.10
+AAA87,Viguiera anchusaefolia,4,A-alfalfa,Apis mellifera,a,an,Nov.10
+AAA87,Vicia sp.,8,A-alfalfa,Apis mellifera,a,an,Nov.10
+AAA87,Chenopodeaceae,1,A-alfalfa,Apis mellifera,a,an,Nov.10
+AAA87,Grupo Carduus-Cirsium,2,A-alfalfa,Apis mellifera,a,an,Nov.10
+AAA87,Poaceae,5,A-alfalfa,Apis mellifera,a,an,Nov.10
+AAA87,Medicago sativa,295,A-alfalfa,Apis mellifera,a,an,Nov.10
+AAA78,Condalia microphylla,263,A-alfalfa,Apis mellifera,a,an,Nov.10
+AAA78,Poaceae,1,A-alfalfa,Apis mellifera,a,an,Nov.10
+AAA78,Sphaeralcea crispa,1,A-alfalfa,Apis mellifera,a,an,Nov.10
+AAA78,Medicago sativa,133,A-alfalfa,Apis mellifera,a,an,Nov.10
+AAA78,Hirschfeldia incana,16,A-alfalfa,Apis mellifera,a,an,Nov.10
+AAA78,Vicia sp.,1,A-alfalfa,Apis mellifera,a,an,Nov.10
+AAA78,Chenopodeaceae,1,A-alfalfa,Apis mellifera,a,an,Nov.10
+AAA78,Asteraceae,1,A-alfalfa,Apis mellifera,a,an,Nov.10
+AAA81,Hirschfeldia incana,30,A-alfalfa,Coleoptera sp1,a,an,Nov.10
+AAA130,Medicago sativa,2,C-pastura,Bruchidius endotubercularis ,c,an,Nov.10
+AAA130,Hirschfeldia incana,1,C-pastura,Bruchidius endotubercularis ,c,an,Nov.10
+AAA130,Condalia microphylla,22,C-pastura,Bruchidius endotubercularis ,c,an,Nov.10
+AAA130,Viguiera anchusaefolia,44,C-pastura,Bruchidius endotubercularis ,c,an,Nov.10
+AAA130,Poaceae,5,C-pastura,Bruchidius endotubercularis ,c,an,Nov.10
+AAA130,Prosopis caldenia,3,C-pastura,Bruchidius endotubercularis ,c,an,Nov.10
+AAA120,Vicia sp.,33,A-alfalfa,Apis mellifera,a,an,Nov.10
+AAA120,Medicago sativa,353,A-alfalfa,Apis mellifera,a,an,Nov.10
+AAA120,Hirschfeldia incana,59,A-alfalfa,Apis mellifera,a,an,Nov.10
+AAA120,Viguiera anchusaefolia,7,A-alfalfa,Apis mellifera,a,an,Nov.10
+AAA120,Poaceae,6,A-alfalfa,Apis mellifera,a,an,Nov.10
+AAA120,Condalia microphylla,72,A-alfalfa,Apis mellifera,a,an,Nov.10
+AAA114,Hirschfeldia incana,22,A-alfalfa,Augochloropsis sp. 9,a,an,Nov.10
+AAA114,Nierembergia aristata,4,A-alfalfa,Augochloropsis sp. 9,a,an,Nov.10
+AAA114,Medicago sativa,624,A-alfalfa,Augochloropsis sp. 9,a,an,Nov.10
+AAA75,Condalia microphylla,211,A-alfalfa,Apis mellifera,a,an,Nov.10
+AAA75,Poaceae,4,A-alfalfa,Apis mellifera,a,an,Nov.10
+AAA75,Vicia sp.,1,A-alfalfa,Apis mellifera,a,an,Nov.10
+AAA75,Hirschfeldia incana,254,A-alfalfa,Apis mellifera,a,an,Nov.10
+AAA75,Medicago sativa,261,A-alfalfa,Apis mellifera,a,an,Nov.10
+AAA129,Viguiera anchusaefolia,342,C-pastura,Bruchidius endotubercularis ,c,an,Nov.10
+AAA129,Medicago sativa,4,C-pastura,Bruchidius endotubercularis ,c,an,Nov.10
+AAA129,indeterminate,3,C-pastura,Bruchidius endotubercularis ,c,an,Nov.10
+AAA128,Pfaffia gnaphaloides,6,C-pastura,Callonychium sp1.,c,an,Nov.10
+AAA128,Condalia microphylla,3,C-pastura,Callonychium sp1.,c,an,Nov.10
+AAA128,Hirschfeldia incana,2,C-pastura,Callonychium sp1.,c,an,Nov.10
+AAA128,Viguiera anchusaefolia,759,C-pastura,Callonychium sp1.,c,an,Nov.10
+AAA128,Rhynchosia senna,111,C-pastura,Callonychium sp1.,c,an,Nov.10
+AAA121,Chenopodeaceae,1,A-alfalfa,Psaenythia sp3,a,an,Nov.10
+AAA121,Medicago sativa,1924,A-alfalfa,Psaenythia sp3,a,an,Nov.10
+AAA121,Adesmia sp.,2841,A-alfalfa,Psaenythia sp3,a,an,Nov.10
+AAA121,Hirschfeldia incana,110,A-alfalfa,Psaenythia sp3,a,an,Nov.10
+AAA121,indeterminate,1,A-alfalfa,Psaenythia sp3,a,an,Nov.10
+AAA121,Pfaffia gnaphaloides,2,A-alfalfa,Psaenythia sp3,a,an,Nov.10
+AAA121,Viguiera anchusaefolia,2,A-alfalfa,Psaenythia sp3,a,an,Nov.10
+AAA58,Sphaeralcea crispa,142,C-alflafa,Rophitulus sp.,c,an,Nov.10
+AAA58,Hirschfeldia incana,3,C-alflafa,Rophitulus sp.,c,an,Nov.10
+AAA58,indeterminate,4,C-alflafa,Rophitulus sp.,c,an,Nov.10
+AAA54,Condalia microphylla,3,C-alflafa,Rophitulus sp.,c,an,Nov.10
+AAA54,Sphaeralcea crispa,65,C-alflafa,Rophitulus sp.,c,an,Nov.10
+AAA54,indeterminate,2,C-alflafa,Rophitulus sp.,c,an,Nov.10
+AAA54,Turnera sp.,1,C-alflafa,Rophitulus sp.,c,an,Nov.10
+AAA53,Condalia microphylla,5,C-alflafa,Rophitulus sp.,c,an,Nov.10
+AAA53,Poaceae,2,C-alflafa,Rophitulus sp.,c,an,Nov.10
+AAA53,Sphaeralcea crispa,49,C-alflafa,Rophitulus sp.,c,an,Nov.10
+AAA53,Turnera sp.,1,C-alflafa,Rophitulus sp.,c,an,Nov.10
+AAA53,Medicago sativa,2,C-alflafa,Rophitulus sp.,c,an,Nov.10
+AAA52,Medicago sativa,3,C-alflafa,Rophitulus sp.,c,an,Nov.10
+AAA52,Sphaeralcea crispa,62,C-alflafa,Rophitulus sp.,c,an,Nov.10
+AAA52,Poaceae,2,C-alflafa,Rophitulus sp.,c,an,Nov.10
+AAA52,Condalia microphylla,3,C-alflafa,Rophitulus sp.,c,an,Nov.10
+AAA52,Asteraceae,1,C-alflafa,Rophitulus sp.,c,an,Nov.10
+AAA52,Hirschfeldia incana,1,C-alflafa,Rophitulus sp.,c,an,Nov.10
+AAA50,Pfaffia gnaphaloides,18,C-alflafa,Rophitulus sp.,c,an,Nov.10
+AAA50,Condalia microphylla,6,C-alflafa,Rophitulus sp.,c,an,Nov.10
+AAA50,Sphaeralcea crispa,196,C-alflafa,Rophitulus sp.,c,an,Nov.10
+AAA50,indeterminate,6,C-alflafa,Rophitulus sp.,c,an,Nov.10
+AAA50,Hirschfeldia incana,1,C-alflafa,Rophitulus sp.,c,an,Nov.10
+AAA50,Turnera sp.,1,C-alflafa,Rophitulus sp.,c,an,Nov.10
+AAA109,Hirschfeldia incana,240,A-alfalfa,Psaenythia sp3,a,an,Nov.10
+AAA109,Medicago sativa,256,A-alfalfa,Psaenythia sp3,a,an,Nov.10
+AAA109,Turnera sp.,1,A-alfalfa,Psaenythia sp3,a,an,Nov.10
+AAA109,Sphaeralcea crispa,1,A-alfalfa,Psaenythia sp3,a,an,Nov.10
+AAA109,Grupo Carduus-Cirsium,1,A-alfalfa,Psaenythia sp3,a,an,Nov.10
+AAA109,Pfaffia gnaphaloides,2,A-alfalfa,Psaenythia sp3,a,an,Nov.10
+AAA109,Adesmia sp.,4898,A-alfalfa,Psaenythia sp3,a,an,Nov.10
+AAA117,Hirschfeldia incana,129,A-alfalfa,Psaenythia sp3,a,an,Nov.10
+AAA117,Medicago sativa,176,A-alfalfa,Psaenythia sp3,a,an,Nov.10
+AAA117,Adesmia sp.,3744,A-alfalfa,Psaenythia sp3,a,an,Nov.10
+AAA138,Viguiera anchusaefolia,63,C-pastura,Bruchidius endotubercularis ,c,an,Nov.10
+AAA138,Condalia microphylla,51,C-pastura,Bruchidius endotubercularis ,c,an,Nov.10
+AAA118,Vicia sp.,3,A-alfalfa,Apis mellifera,a,an,Nov.10
+AAA118,Hirschfeldia incana,53,A-alfalfa,Apis mellifera,a,an,Nov.10
+AAA118,Condalia microphylla,12,A-alfalfa,Apis mellifera,a,an,Nov.10
+AAA118,Poaceae,3,A-alfalfa,Apis mellifera,a,an,Nov.10
+AAA118,Medicago sativa,898,A-alfalfa,Apis mellifera,a,an,Nov.10
+AAA126,Hirschfeldia incana,590,A-pastura,Astylus quadrilineatus,a,an,Nov.10
+AAA126,Condalia microphylla,79,A-pastura,Astylus quadrilineatus,a,an,Nov.10
+AAA88,Condalia microphylla,17,A-alfalfa,Apis mellifera,a,an,Nov.10
+AAA88,Medicago sativa,352,A-alfalfa,Apis mellifera,a,an,Nov.10
+AAA88,Hirschfeldia incana,100,A-alfalfa,Apis mellifera,a,an,Nov.10
+AAA132,Viguiera anchusaefolia,249,C-pastura,Crisopidae sp1,c,an,Nov.10
+AAA132,Pfaffia gnaphaloides,2,C-pastura,Crisopidae sp1,c,an,Nov.10
+AAA132,Condalia microphylla,86,C-pastura,Crisopidae sp1,c,an,Nov.10
+AAA137,Viguiera anchusaefolia,76,C-pastura,Bruchidius endotubercularis ,c,an,Nov.10
+AAA137,Hirschfeldia incana,2,C-pastura,Bruchidius endotubercularis ,c,an,Nov.10
+AAA137,Condalia microphylla,2,C-pastura,Bruchidius endotubercularis ,c,an,Nov.10
+AAA158,Hirschfeldia incana,110,A-pastura,Astylus quadrilineatus,a,an,Nov.10
+AAA158,Condalia microphylla,251,A-pastura,Astylus quadrilineatus,a,an,Nov.10
+AAA62,Poaceae,33,C-alflafa,Colletes sp4,c,an,Nov.10
+AAA62,Grupo Carduus-Cirsium,1,C-alflafa,Colletes sp4,c,an,Nov.10
+AAA62,Condalia microphylla,915,C-alflafa,Colletes sp4,c,an,Nov.10
+AAA62,Viguiera anchusaefolia,1,C-alflafa,Colletes sp4,c,an,Nov.10
+AAA62,Hirschfeldia incana,5,C-alflafa,Colletes sp4,c,an,Nov.10
+AAA62,Medicago sativa,4,C-alflafa,Colletes sp4,c,an,Nov.10
+AAA173,Hirschfeldia incana,1,C-pastura,Crisopidae sp1,c,an,Nov.10
+AAA173,Poaceae,2,C-pastura,Crisopidae sp1,c,an,Nov.10
+AAA173,Condalia microphylla,3,C-pastura,Crisopidae sp1,c,an,Nov.10
+AAA173,Viguiera anchusaefolia,37,C-pastura,Crisopidae sp1,c,an,Nov.10
+AAA140,verbenaceae,1,C-pastura,Crisopidae sp1,c,an,Nov.10
+AAA140,Condalia microphylla,6,C-pastura,Crisopidae sp1,c,an,Nov.10
+AAA140,indeterminate,1,C-pastura,Crisopidae sp1,c,an,Nov.10
+AAA140,indeterminate,1,C-pastura,Crisopidae sp1,c,an,Nov.10
+AAA140,Viguiera anchusaefolia,95,C-pastura,Crisopidae sp1,c,an,Nov.10
+AAA68,Grupo Carduus-Cirsium,1,C-alflafa,Ammophila sp.,c,an,Nov.10
+AAA68,Sphaeralcea crispa,45,C-alflafa,Ammophila sp.,c,an,Nov.10
+AAA68,Poaceae,1,C-alflafa,Ammophila sp.,c,an,Nov.10
+AAA68,Condalia microphylla,73,C-alflafa,Ammophila sp.,c,an,Nov.10
+AAA68,Pfaffia gnaphaloides,200,C-alflafa,Ammophila sp.,c,an,Nov.10
+AAA159,Hirschfeldia incana,588,A-pastura,Astylus quadrilineatus,a,an,Nov.10
+AAA159,Poaceae,1,A-pastura,Astylus quadrilineatus,a,an,Nov.10
+AAA159,Viguiera anchusaefolia,1,A-pastura,Astylus quadrilineatus,a,an,Nov.10
+AAA159,Condalia microphylla,1019,A-pastura,Astylus quadrilineatus,a,an,Nov.10
+AAA69,Condalia microphylla,4,A-alfalfa,Apis mellifera,a,an,Nov.10
+AAA69,Pfaffia gnaphaloides,1,A-alfalfa,Apis mellifera,a,an,Nov.10
+AAA69,Viguiera anchusaefolia,1,A-alfalfa,Apis mellifera,a,an,Nov.10
+AAA69,Vicia sp.,1,A-alfalfa,Apis mellifera,a,an,Nov.10
+AAA69,Hirschfeldia incana,2391,A-alfalfa,Apis mellifera,a,an,Nov.10
+AAA69,Medicago sativa,302,A-alfalfa,Apis mellifera,a,an,Nov.10
+AAA125,Condalia microphylla,46,A-pastura,Astylus quadrilineatus,a,an,Nov.10
+AAA125,Hirschfeldia incana,1289,A-pastura,Astylus quadrilineatus,a,an,Nov.10
+AAA125,Poaceae,37,A-pastura,Astylus quadrilineatus,a,an,Nov.10
+AAA73,Poaceae,8,A-alfalfa,Apis mellifera,a,an,Nov.10
+AAA73,Condalia microphylla,10,A-alfalfa,Apis mellifera,a,an,Nov.10
+AAA73,Medicago sativa,510,A-alfalfa,Apis mellifera,a,an,Nov.10
+AAA73,Physalis sp.,92,A-alfalfa,Apis mellifera,a,an,Nov.10
+AAA73,Hirschfeldia incana,56,A-alfalfa,Apis mellifera,a,an,Nov.10
+AAA174,Condalia microphylla,93,C-pastura,Crisopidae sp1,c,an,Nov.10
+AAA174,Turnera sp.,1,C-pastura,Crisopidae sp1,c,an,Nov.10
+AAA174,indeterminate,1,C-pastura,Crisopidae sp1,c,an,Nov.10
+AAA174,Viguiera anchusaefolia,72,C-pastura,Crisopidae sp1,c,an,Nov.10
+AAA175,Physalis sp.,3,C-pastura,Crisopidae sp1,c,an,Nov.10
+AAA175,Condalia microphylla,11,C-pastura,Crisopidae sp1,c,an,Nov.10
+AAA175,Viguiera anchusaefolia,146,C-pastura,Crisopidae sp1,c,an,Nov.10
+AAA77,Condalia microphylla,4,A-alfalfa,Apis mellifera,a,an,Nov.10
+AAA77,Hirschfeldia incana,13,A-alfalfa,Apis mellifera,a,an,Nov.10
+AAA77,Poaceae,4,A-alfalfa,Apis mellifera,a,an,Nov.10
+AAA77,Physalis sp.,3,A-alfalfa,Apis mellifera,a,an,Nov.10
+AAA77,Medicago sativa,334,A-alfalfa,Apis mellifera,a,an,Nov.10
+AAA57,Turnera sp.,5,C-alflafa,Astylus sp1,c,an,Nov.10
+AAA57,Sphaeralcea crispa,202,C-alflafa,Astylus sp1,c,an,Nov.10
+AAA57,Medicago sativa,8,C-alflafa,Astylus sp1,c,an,Nov.10
+AAA57,Poaceae,1,C-alflafa,Astylus sp1,c,an,Nov.10
+AAA57,Condalia microphylla,1025,C-alflafa,Astylus sp1,c,an,Nov.10
+AAA57,Hirschfeldia incana,1,C-alflafa,Astylus sp1,c,an,Nov.10
+AAA57,Pfaffia gnaphaloides,1,C-alflafa,Astylus sp1,c,an,Nov.10
+AAA57,Chenopodeaceae,1,C-alflafa,Astylus sp1,c,an,Nov.10
+AAA112,Grupo Carduus-Cirsium,1,A-alfalfa,Bombyliidae sp2,a,an,Nov.10
+AAA112,Poaceae,3,A-alfalfa,Bombyliidae sp2,a,an,Nov.10
+AAA112,Viguiera anchusaefolia,1,A-alfalfa,Bombyliidae sp2,a,an,Nov.10
+AAA112,Condalia microphylla,1,A-alfalfa,Bombyliidae sp2,a,an,Nov.10
+AAA112,Medicago sativa,1,A-alfalfa,Bombyliidae sp2,a,an,Nov.10
+AAA112,Pfaffia gnaphaloides,101,A-alfalfa,Bombyliidae sp2,a,an,Nov.10
+AAA112,Hirschfeldia incana,117,A-alfalfa,Bombyliidae sp2,a,an,Nov.10
+AAA79,Hirschfeldia incana,564,A-alfalfa,Hemipenthes sp4,a,an,Nov.10
+AAA79,Condalia microphylla,5,A-alfalfa,Hemipenthes sp4,a,an,Nov.10
+AAA79,Grupo Crepis-Hypochoeris,2,A-alfalfa,Hemipenthes sp4,a,an,Nov.10
+AAA79,Poaceae,1,A-alfalfa,Hemipenthes sp4,a,an,Nov.10
+AAA79,Gaillardia megapotamica,1,A-alfalfa,Hemipenthes sp4,a,an,Nov.10
+AAA79,Medicago sativa,1,A-alfalfa,Hemipenthes sp4,a,an,Nov.10
+AAA79,Pfaffia gnaphaloides,22,A-alfalfa,Hemipenthes sp4,a,an,Nov.10
+AAA72,Medicago sativa,1,A-alfalfa,Dialictus sp.7,a,an,Nov.10
+AAA72,Condalia microphylla,1,A-alfalfa,Dialictus sp.7,a,an,Nov.10
+AAA72,Hirschfeldia incana,912,A-alfalfa,Dialictus sp.7,a,an,Nov.10
+AAA133,Condalia microphylla,383,C-pastura,Dialictus sp.4,c,an,Nov.10
+AAA133,Rhynchosia senna,116,C-pastura,Dialictus sp.4,c,an,Nov.10
+AAA133,indeterminate,1,C-pastura,Dialictus sp.4,c,an,Nov.10
+AAA135,Nierembergia aristata,80,C-pastura,Dactylozodes sp1,c,an,Nov.10
+AAA135,Rhynchosia senna,8,C-pastura,Dactylozodes sp1,c,an,Nov.10
+AAA135,Medicago sativa,7,C-pastura,Dactylozodes sp1,c,an,Nov.10
+AAA135,Condalia microphylla,11,C-pastura,Dactylozodes sp1,c,an,Nov.10
+AAA135,Hirschfeldia incana,1,C-pastura,Dactylozodes sp1,c,an,Nov.10
+AAA135,Poaceae,21,C-pastura,Dactylozodes sp1,c,an,Nov.10
+AAA135,indeterminate,4,C-pastura,Dactylozodes sp1,c,an,Nov.10
+AAA134,Condalia microphylla,336,C-pastura,Pachyminixi sp.,c,an,Nov.10
+AAA134,Poaceae,9,C-pastura,Pachyminixi sp.,c,an,Nov.10
+AAA134,Viguiera anchusaefolia,26,C-pastura,Pachyminixi sp.,c,an,Nov.10
+AAA134,Clematis denticulata,219,C-pastura,Pachyminixi sp.,c,an,Nov.10
+AAA115,Hirschfeldia incana,441,A-alfalfa,Isepeolus viperinus,a,an,Nov.10
+AAA115,Condalia microphylla,14,A-alfalfa,Isepeolus viperinus,a,an,Nov.10
+AAA115,Poaceae,2,A-alfalfa,Isepeolus viperinus,a,an,Nov.10
+AAA115,Viguiera anchusaefolia,1,A-alfalfa,Isepeolus viperinus,a,an,Nov.10
+AAA115,Gaillardia megapotamica,1,A-alfalfa,Isepeolus viperinus,a,an,Nov.10
+AAA115,Medicago sativa,115,A-alfalfa,Isepeolus viperinus,a,an,Nov.10
+AAA115,Pfaffia gnaphaloides,28,A-alfalfa,Isepeolus viperinus,a,an,Nov.10
+AAA122,Medicago sativa,8,A-alfalfa,Vanessa carye,a,an,Nov.10
+AAA122,Hirschfeldia incana,77,A-alfalfa,Vanessa carye,a,an,Nov.10
+AAA139,Viguiera anchusaefolia,1279,C-pastura,Dialictus sp.5,c,an,Nov.10
+AAA139,Condalia microphylla,108,C-pastura,Dialictus sp.5,c,an,Nov.10
+AAA127,Rhynchosia senna,1605,C-pastura,Dialictus sp.8,c,an,Nov.10
+AAA127,Condalia microphylla,18,C-pastura,Dialictus sp.8,c,an,Nov.10
+AAA55,Sphaeralcea crispa,1862,C-alflafa,Dialictus sp.5,c,an,Nov.10
+AAA55,Pfaffia gnaphaloides,1,C-alflafa,Dialictus sp.5,c,an,Nov.10
+AAA55,Medicago sativa,3,C-alflafa,Dialictus sp.5,c,an,Nov.10
+AAA55,Condalia microphylla,1,C-alflafa,Dialictus sp.5,c,an,Nov.10
+AAA176,Asteraceae,2,C-pastura,Ammophila sp.,c,an,Nov.10
+AAA176,Viguiera anchusaefolia,1388,C-pastura,Ammophila sp.,c,an,Nov.10
+AAA176,Clematis denticulata,4585,C-pastura,Ammophila sp.,c,an,Nov.10
+AAA176,Condalia microphylla,258,C-pastura,Ammophila sp.,c,an,Nov.10
+AAA176,Hirschfeldia incana,167,C-pastura,Ammophila sp.,c,an,Nov.10
+AAA176,Pfaffia gnaphaloides,46,C-pastura,Ammophila sp.,c,an,Nov.10
+AAA176,Chenopodeaceae,1,C-pastura,Ammophila sp.,c,an,Nov.10
+AAA176,Nierembergia aristata,4,C-pastura,Ammophila sp.,c,an,Nov.10
+AAA71,Hirschfeldia incana,8402,A-alfalfa,Apis mellifera,a,an,Nov.10
+AAA71,Poaceae,2,A-alfalfa,Apis mellifera,a,an,Nov.10
+AAA71,Pfaffia gnaphaloides,1,A-alfalfa,Apis mellifera,a,an,Nov.10
+AAA71,Condalia microphylla,53,A-alfalfa,Apis mellifera,a,an,Nov.10
+AAA99,Hirschfeldia incana,19412,A-alfalfa,Pseudagapostemon sp. 1,a,an,Nov.10
+AAA99,Pfaffia gnaphaloides,4,A-alfalfa,Pseudagapostemon sp. 1,a,an,Nov.10
+AAA99,Grupo Carduus-Cirsium,1,A-alfalfa,Pseudagapostemon sp. 1,a,an,Nov.10
+AAA80,Vicia sp.,1,A-alfalfa,Apis mellifera,a,an,Nov.10
+AAA80,Asteraceae,1,A-alfalfa,Apis mellifera,a,an,Nov.10
+AAA80,Hirschfeldia incana,10590,A-alfalfa,Apis mellifera,a,an,Nov.10
+AAA70,Hirschfeldia incana,6811,A-alfalfa,Apis mellifera,a,an,Nov.10
+AAA70,Condalia microphylla,1,A-alfalfa,Apis mellifera,a,an,Nov.10
+AAA70,Medicago sativa,2,A-alfalfa,Apis mellifera,a,an,Nov.10
+AAA136,Viguiera anchusaefolia,12958,C-pastura,Astylus quadrilineatus,c,an,Nov.10
+AAA136,Condalia microphylla,2741,C-pastura,Astylus quadrilineatus,c,an,Nov.10
+AAA131,Clematis denticulata,1782,C-pastura,Astylus sp1,c,an,Nov.10
+AAA131,Viguiera anchusaefolia,178,C-pastura,Astylus sp1,c,an,Nov.10
+AAA131,Hirschfeldia incana,6,C-pastura,Astylus sp1,c,an,Nov.10
+AAA131,Turnera sp.,1,C-pastura,Astylus sp1,c,an,Nov.10
+AAA131,Condalia microphylla,7332,C-pastura,Astylus sp1,c,an,Nov.10
+AAA113,Asteraceae,5,A-alfalfa,Apis mellifera,a,an,Nov.10
+AAA113,Condalia microphylla,5,A-alfalfa,Apis mellifera,a,an,Nov.10
+AAA113,Medicago sativa,14,A-alfalfa,Apis mellifera,a,an,Nov.10
+AAA113,Poaceae,1,A-alfalfa,Apis mellifera,a,an,Nov.10
+AAA113,Hirschfeldia incana,4961,A-alfalfa,Apis mellifera,a,an,Nov.10
+AAA124,Condalia microphylla,3206,A-pastura,Astylus quadrilineatus,a,an,Nov.10
+AAA124,Hirschfeldia incana,357,A-pastura,Astylus quadrilineatus,a,an,Nov.10
+AAA124,Medicago sativa,6,A-pastura,Astylus quadrilineatus,a,an,Nov.10
+AAA116,Hirschfeldia incana,4381,A-alfalfa,Astylus quadrilineatus,a,an,Nov.10
+AAA116,Medicago sativa,409,A-alfalfa,Astylus quadrilineatus,a,an,Nov.10
+AAA116,Condalia microphylla,116,A-alfalfa,Astylus quadrilineatus,a,an,Nov.10
+AAA413,Medicago sativa,1,A-alfalfa,Eurema deva,a,an,Ene.11
+AAA284,Hirschfeldia incana,20,A-alfalfa,Apis mellifera,a,an,Dic.10
+AAA284,Grupo Baccharis spp.,1,A-alfalfa,Apis mellifera,a,an,Dic.10
+AAA284,Salsola kali,1,A-alfalfa,Apis mellifera,a,an,Dic.10
+AAA284,Medicago sativa,1304,A-alfalfa,Apis mellifera,a,an,Dic.10
+AAA334,Salsola kali,4,A-alfalfa,Callonychium sp1.,a,an,Ene.11
+AAA334,Turnera sp.,10,A-alfalfa,Callonychium sp1.,a,an,Ene.11
+AAA334,Hirschfeldia incana,24,A-alfalfa,Callonychium sp1.,a,an,Ene.11
+AAA279,Grupo Carduus-Cirsium,51,A-alfalfa,Apis mellifera,a,an,Dic.10
+AAA279,Salsola kali,39,A-alfalfa,Apis mellifera,a,an,Dic.10
+AAA279,Hirschfeldia incana,40,A-alfalfa,Apis mellifera,a,an,Dic.10
+AAA279,Medicago sativa,59,A-alfalfa,Apis mellifera,a,an,Dic.10
+AAA404,Aloysia gratissima,448,C-pastura,Xylocopa splendidula,c,an,Ene.11
+AAA404,Annoda sp.,1,C-pastura,Xylocopa splendidula,c,an,Ene.11
+AAA404,Turnera sp.,110,C-pastura,Xylocopa splendidula,c,an,Ene.11
+AAA404,Mitracarpus sp.,30,C-pastura,Xylocopa splendidula,c,an,Ene.11
+AAA404,Chenopodeaceae,2,C-pastura,Xylocopa splendidula,c,an,Ene.11
+AAA404,Prosopis caldenia,3071,C-pastura,Xylocopa splendidula,c,an,Ene.11
+AAA337,Thelesperma sp.,594,A-alfalfa,Chauliognatus scriptus,a,an,Ene.11
+AAA337,Pfaffia gnaphaloides,8,A-alfalfa,Chauliognatus scriptus,a,an,Ene.11
+AAA337,Hirschfeldia incana,40,A-alfalfa,Chauliognatus scriptus,a,an,Ene.11
+AAA337,Medicago sativa,2,A-alfalfa,Chauliognatus scriptus,a,an,Ene.11
+AAA337,Salsola kali,5,A-alfalfa,Chauliognatus scriptus,a,an,Ene.11
+AAA337,Turnera sp.,1,A-alfalfa,Chauliognatus scriptus,a,an,Ene.11
+AAA337,Clematis denticulata,6,A-alfalfa,Chauliognatus scriptus,a,an,Ene.11
+AAA274,Medicago sativa,2115,A-alfalfa,Apis mellifera,a,an,Dic.10
+AAA274,Salsola kali,7,A-alfalfa,Apis mellifera,a,an,Dic.10
+AAA274,Hirschfeldia incana,16,A-alfalfa,Apis mellifera,a,an,Dic.10
+AAA282,Grupo Carduus-Cirsium,175,A-alfalfa,Apis mellifera,a,an,Dic.10
+AAA282,Clematis denticulata,1,A-alfalfa,Apis mellifera,a,an,Dic.10
+AAA282,Adesmia sp.,4,A-alfalfa,Apis mellifera,a,an,Dic.10
+AAA282,Thelesperma sp.,1,A-alfalfa,Apis mellifera,a,an,Dic.10
+AAA282,Vicia sp.,2,A-alfalfa,Apis mellifera,a,an,Dic.10
+AAA282,Salsola kali,2,A-alfalfa,Apis mellifera,a,an,Dic.10
+AAA282,Medicago sativa,89,A-alfalfa,Apis mellifera,a,an,Dic.10
+AAA282,Hirschfeldia incana,41,A-alfalfa,Apis mellifera,a,an,Dic.10
+AAA275,Adesmia sp.,9,A-alfalfa,Apis mellifera,a,an,Dic.10
+AAA275,Nierembergia aristata,4,A-alfalfa,Apis mellifera,a,an,Dic.10
+AAA275,Medicago sativa,170,A-alfalfa,Apis mellifera,a,an,Dic.10
+AAA275,Salsola kali,78,A-alfalfa,Apis mellifera,a,an,Dic.10
+AAA275,Grupo Carduus-Cirsium,1,A-alfalfa,Apis mellifera,a,an,Dic.10
+AAA275,Hirschfeldia incana,30,A-alfalfa,Apis mellifera,a,an,Dic.10
+AAA376,Grupo Baccharis spp.,454,C-pastura,Ammophila sp.,c,an,Ene.11
+AAA376,Asteraceae,1,C-pastura,Ammophila sp.,c,an,Ene.11
+AAA376,Pfaffia gnaphaloides,877,C-pastura,Ammophila sp.,c,an,Ene.11
+AAA376,Chenopodeaceae,37,C-pastura,Ammophila sp.,c,an,Ene.11
+AAA376,Mitracarpus sp.,5,C-pastura,Ammophila sp.,c,an,Ene.11
+AAA248,Medicago sativa,415,A-alfalfa,Apis mellifera,a,an,Dic.10
+AAA248,Grupo Carduus-Cirsium,1,A-alfalfa,Apis mellifera,a,an,Dic.10
+AAA248,Hirschfeldia incana,24,A-alfalfa,Apis mellifera,a,an,Dic.10
+AAA248,Chenopodeaceae,2,A-alfalfa,Apis mellifera,a,an,Dic.10
+AAA244,Hirschfeldia incana,16,A-alfalfa,Apis mellifera,a,an,Dic.10
+AAA244,Salsola kali,2,A-alfalfa,Apis mellifera,a,an,Dic.10
+AAA244,Grupo Carduus-Cirsium,1,A-alfalfa,Apis mellifera,a,an,Dic.10
+AAA244,Adesmia sp.,2,A-alfalfa,Apis mellifera,a,an,Dic.10
+AAA244,Medicago sativa,851,A-alfalfa,Apis mellifera,a,an,Dic.10
+AAA377,Grupo Baccharis spp.,10,C-pastura,Andrenidae sp2,c,an,Ene.11
+AAA377,Pfaffia gnaphaloides,15,C-pastura,Andrenidae sp2,c,an,Ene.11
+AAA377,Hirschfeldia incana,6,C-pastura,Andrenidae sp2,c,an,Ene.11
+AAA377,Sphaeralcea crispa,3,C-pastura,Andrenidae sp2,c,an,Ene.11
+AAA377,Turnera sp.,1,C-pastura,Andrenidae sp2,c,an,Ene.11
+AAA377,Viguiera anchusaefolia,2,C-pastura,Andrenidae sp2,c,an,Ene.11
+AAA249,Condalia microphylla,2,A-alfalfa,Apis mellifera,a,an,Dic.10
+AAA249,Grupo Carduus-Cirsium,1,A-alfalfa,Apis mellifera,a,an,Dic.10
+AAA249,Salsola kali,1,A-alfalfa,Apis mellifera,a,an,Dic.10
+AAA249,Hirschfeldia incana,155,A-alfalfa,Apis mellifera,a,an,Dic.10
+AAA249,Adesmia sp.,2,A-alfalfa,Apis mellifera,a,an,Dic.10
+AAA249,Medicago sativa,259,A-alfalfa,Apis mellifera,a,an,Dic.10
+AAA249,Chenopodeaceae,1,A-alfalfa,Apis mellifera,a,an,Dic.10
+AAA345,Solanum elaeagnifolium,100,A-alfalfa,Tiguipa sp.,a,an,Ene.11
+AAA345,Medicago sativa,111,A-alfalfa,Tiguipa sp.,a,an,Ene.11
+AAA345,Salsola kali,16,A-alfalfa,Tiguipa sp.,a,an,Ene.11
+AAA345,Conyza sp.,46,A-alfalfa,Tiguipa sp.,a,an,Ene.11
+AAA402,Thelesperma sp.,2,C-pastura,Bruchidius endotubercularis ,c,an,Ene.11
+AAA402,Hirschfeldia incana,1,C-pastura,Bruchidius endotubercularis ,c,an,Ene.11
+AAA408,Cuscuta sp.,14,A-alfalfa,Lepidoptera sp1,a,an,Ene.11
+AAA408,Medicago sativa,3,A-alfalfa,Lepidoptera sp1,a,an,Ene.11
+AAA408,Salsola kali,2,A-alfalfa,Lepidoptera sp1,a,an,Ene.11
+AAA379,Mitracarpus sp.,1,C-pastura,Bruchidius endotubercularis ,c,an,Ene.11
+AAA379,Poaceae,2,C-pastura,Bruchidius endotubercularis ,c,an,Ene.11
+AAA379,Pfaffia gnaphaloides,1,C-pastura,Bruchidius endotubercularis ,c,an,Ene.11
+AAA379,Chenopodeaceae,139,C-pastura,Bruchidius endotubercularis ,c,an,Ene.11
+AAA341,Thelesperma sp.,443,A-alfalfa,Trachypus petiolatus,a,an,Ene.11
+AAA341,Salsola kali,421,A-alfalfa,Trachypus petiolatus,a,an,Ene.11
+AAA341,Hirschfeldia incana,122,A-alfalfa,Trachypus petiolatus,a,an,Ene.11
+AAA243,Medicago sativa,983,A-alfalfa,Apis mellifera,a,an,Dic.10
+AAA243,Salsola kali,3,A-alfalfa,Apis mellifera,a,an,Dic.10
+AAA243,Hirschfeldia incana,36,A-alfalfa,Apis mellifera,a,an,Dic.10
+AAA342,Salsola kali,35,A-alfalfa,Trachypus petiolatus,a,an,Ene.11
+AAA342,Hirschfeldia incana,13,A-alfalfa,Trachypus petiolatus,a,an,Ene.11
+AAA342,Adesmia sp.,5,A-alfalfa,Trachypus petiolatus,a,an,Ene.11
+AAA342,Medicago sativa,2,A-alfalfa,Trachypus petiolatus,a,an,Ene.11
+AAA342,indeterminate,4,A-alfalfa,Trachypus petiolatus,a,an,Ene.11
+AAA342,Thelesperma sp.,988,A-alfalfa,Trachypus petiolatus,a,an,Ene.11
+AAA342,Pfaffia gnaphaloides,3,A-alfalfa,Trachypus petiolatus,a,an,Ene.11
+AAA392,Grupo Carduus-Cirsium,268,A-pastura,Augochloropsis sp. 9,a,an,Ene.11
+AAA392,Hirschfeldia incana,23,A-pastura,Augochloropsis sp. 9,a,an,Ene.11
+AAA392,Salsola kali,2,A-pastura,Augochloropsis sp. 9,a,an,Ene.11
+AAA392,Adesmia sp.,2,A-pastura,Augochloropsis sp. 9,a,an,Ene.11
+AAA392,Solanum elaeagnifolium,65,A-pastura,Augochloropsis sp. 9,a,an,Ene.11
+AAA335,Turnera sp.,4,A-alfalfa,Curculionidae sp11,a,an,Ene.11
+AAA335,Medicago sativa,2,A-alfalfa,Curculionidae sp11,a,an,Ene.11
+AAA335,Hirschfeldia incana,1,A-alfalfa,Curculionidae sp11,a,an,Ene.11
+AAA273,Hirschfeldia incana,4,A-alfalfa,Trimeria sp.,a,an,Dic.10
+AAA273,Medicago sativa,24,A-alfalfa,Trimeria sp.,a,an,Dic.10
+AAA410,Thelesperma sp.,333,A-alfalfa,Trimeria sp.,a,an,Ene.11
+AAA410,Hirschfeldia incana,134,A-alfalfa,Trimeria sp.,a,an,Ene.11
+AAA410,Medicago sativa,15,A-alfalfa,Trimeria sp.,a,an,Ene.11
+AAA410,Pfaffia gnaphaloides,46,A-alfalfa,Trimeria sp.,a,an,Ene.11
+AAA410,Salsola kali,10,A-alfalfa,Trimeria sp.,a,an,Ene.11
+AAA336,Pfaffia gnaphaloides,1,A-alfalfa,Curculionidae sp11,a,an,Ene.11
+AAA336,Salsola kali,1,A-alfalfa,Curculionidae sp11,a,an,Ene.11
+AAA336,Hirschfeldia incana,2,A-alfalfa,Curculionidae sp11,a,an,Ene.11
+AAA336,Turnera sp.,207,A-alfalfa,Curculionidae sp11,a,an,Ene.11
+AAA346,Turnera sp.,7,A-alfalfa,Trimeria sp.,a,an,Ene.11
+AAA346,Salsola kali,25,A-alfalfa,Trimeria sp.,a,an,Ene.11
+AAA346,Hirschfeldia incana,27,A-alfalfa,Trimeria sp.,a,an,Ene.11
+AAA346,Medicago sativa,2,A-alfalfa,Trimeria sp.,a,an,Ene.11
+AAA346,Adesmia sp.,2,A-alfalfa,Trimeria sp.,a,an,Ene.11
+AAA338,Medicago sativa,449,A-alfalfa,Exomalopsis sp1.,a,an,Ene.11
+AAA338,Salsola kali,1,A-alfalfa,Exomalopsis sp1.,a,an,Ene.11
+AAA338,Hirschfeldia incana,3,A-alfalfa,Exomalopsis sp1.,a,an,Ene.11
+AAA338,Solanum elaeagnifolium,197,A-alfalfa,Exomalopsis sp1.,a,an,Ene.11
+AAA339,Solanum elaeagnifolium,4,A-alfalfa,Trimeria sp.,a,an,Ene.11
+AAA339,Pfaffia gnaphaloides,1,A-alfalfa,Trimeria sp.,a,an,Ene.11
+AAA339,Salsola kali,2,A-alfalfa,Trimeria sp.,a,an,Ene.11
+AAA339,Medicago sativa,56,A-alfalfa,Trimeria sp.,a,an,Ene.11
+AAA339,Thelesperma sp.,2,A-alfalfa,Trimeria sp.,a,an,Ene.11
+AAA339,Hirschfeldia incana,8,A-alfalfa,Trimeria sp.,a,an,Ene.11
+AAA343,Thelesperma sp.,8,A-alfalfa,Trimeria sp.,a,an,Ene.11
+AAA343,Pfaffia gnaphaloides,1,A-alfalfa,Trimeria sp.,a,an,Ene.11
+AAA343,Salsola kali,3,A-alfalfa,Trimeria sp.,a,an,Ene.11
+AAA343,Medicago sativa,16,A-alfalfa,Trimeria sp.,a,an,Ene.11
+AAA343,Adesmia sp.,3,A-alfalfa,Trimeria sp.,a,an,Ene.11
+AAA343,Hirschfeldia incana,18,A-alfalfa,Trimeria sp.,a,an,Ene.11
+AAA412,Medicago sativa,555,A-alfalfa,Eucerini sp4,a,an,Ene.11
+AAA412,Solanum elaeagnifolium,149,A-alfalfa,Eucerini sp4,a,an,Ene.11
+AAA412,Hirschfeldia incana,9,A-alfalfa,Eucerini sp4,a,an,Ene.11
+AAA412,Salsola kali,6,A-alfalfa,Eucerini sp4,a,an,Ene.11
+AAA412,Grupo Carduus-Cirsium,6,A-alfalfa,Eucerini sp4,a,an,Ene.11
+AAA245,Cuscuta sp.,2,A-alfalfa,Euptoieta claudia,a,an,Dic.10
+AAA245,Salsola kali,3,A-alfalfa,Euptoieta claudia,a,an,Dic.10
+AAA245,Hirschfeldia incana,37,A-alfalfa,Euptoieta claudia,a,an,Dic.10
+AAA245,Thelesperma sp.,2,A-alfalfa,Euptoieta claudia,a,an,Dic.10
+AAA245,Poaceae,1,A-alfalfa,Euptoieta claudia,a,an,Dic.10
+AAA245,Totora ,4,A-alfalfa,Euptoieta claudia,a,an,Dic.10
+AAA306,Pfaffia gnaphaloides,1,A-alfalfa,Myzinum sp2,a,an,Ene.11
+AAA306,Salsola kali,245,A-alfalfa,Myzinum sp2,a,an,Ene.11
+AAA306,Adesmia sp.,2,A-alfalfa,Myzinum sp2,a,an,Ene.11
+AAA306,Cuscuta sp.,945,A-alfalfa,Myzinum sp2,a,an,Ene.11
+AAA306,Grupo Carduus-Cirsium,1,A-alfalfa,Myzinum sp2,a,an,Ene.11
+AAA288,Condalia microphylla,1,A-alfalfa,Apis mellifera,a,an,Dic.10
+AAA288,Grupo Carduus-Cirsium,109,A-alfalfa,Apis mellifera,a,an,Dic.10
+AAA288,Hirschfeldia incana,1690,A-alfalfa,Apis mellifera,a,an,Dic.10
+AAA288,Medicago sativa,40,A-alfalfa,Apis mellifera,a,an,Dic.10
+AAA378,Chenopodeaceae,6,C-pastura,Bruchidius endotubercularis ,c,an,Ene.11
+AAA378,Thelesperma sp.,13,C-pastura,Bruchidius endotubercularis ,c,an,Ene.11
+AAA378,Pfaffia gnaphaloides,1,C-pastura,Bruchidius endotubercularis ,c,an,Ene.11
+AAA281,Grupo Carduus-Cirsium,64,A-alfalfa,Apis mellifera,a,an,Dic.10
+AAA281,Medicago sativa,24,A-alfalfa,Apis mellifera,a,an,Dic.10
+AAA281,Salsola kali,4,A-alfalfa,Apis mellifera,a,an,Dic.10
+AAA281,Adesmia sp.,5,A-alfalfa,Apis mellifera,a,an,Dic.10
+AAA281,Hirschfeldia incana,31,A-alfalfa,Apis mellifera,a,an,Dic.10
+AAA278,Salsola kali,2,A-alfalfa,Apis mellifera,a,an,Dic.10
+AAA278,Grupo Carduus-Cirsium,136,A-alfalfa,Apis mellifera,a,an,Dic.10
+AAA278,Hirschfeldia incana,197,A-alfalfa,Apis mellifera,a,an,Dic.10
+AAA278,Medicago sativa,65,A-alfalfa,Apis mellifera,a,an,Dic.10
+AAA283,Medicago sativa,702,A-alfalfa,Apis mellifera,a,an,Dic.10
+AAA283,Salsola kali,3,A-alfalfa,Apis mellifera,a,an,Dic.10
+AAA283,indeterminate,1,A-alfalfa,Apis mellifera,a,an,Dic.10
+AAA283,Hirschfeldia incana,16,A-alfalfa,Apis mellifera,a,an,Dic.10
+AAA285,Medicago sativa,674,A-alfalfa,Apis mellifera,a,an,Dic.10
+AAA285,Hirschfeldia incana,141,A-alfalfa,Apis mellifera,a,an,Dic.10
+AAA240,Medicago sativa,7,A-alfalfa,Euptoieta claudia,a,an,Dic.10
+AAA240,Poaceae,1,A-alfalfa,Euptoieta claudia,a,an,Dic.10
+AAA240,Hirschfeldia incana,15,A-alfalfa,Euptoieta claudia,a,an,Dic.10
+AAA240,Grupo Carduus-Cirsium,2,A-alfalfa,Euptoieta claudia,a,an,Dic.10
+AAA240,Pfaffia gnaphaloides,3,A-alfalfa,Euptoieta claudia,a,an,Dic.10
+AAA277,Medicago sativa,455,A-alfalfa,Apis mellifera,a,an,Dic.10
+AAA277,Grupo Carduus-Cirsium,64,A-alfalfa,Apis mellifera,a,an,Dic.10
+AAA277,Salsola kali,9,A-alfalfa,Apis mellifera,a,an,Dic.10
+AAA277,Hirschfeldia incana,29,A-alfalfa,Apis mellifera,a,an,Dic.10
+AAA294,Grupo Baccharis spp.,8,C-pastura,Bombyliidae sp6,c,an,Dic.10
+AAA276,Medicago sativa,183,A-alfalfa,Apis mellifera,a,an,Dic.10
+AAA276,Grupo Carduus-Cirsium,1,A-alfalfa,Apis mellifera,a,an,Dic.10
+AAA276,Hirschfeldia incana,52,A-alfalfa,Apis mellifera,a,an,Dic.10
+AAA276,Salsola kali,1,A-alfalfa,Apis mellifera,a,an,Dic.10
+AAA340,Thelesperma sp.,906,A-alfalfa,Andrenidae sp2,a,an,Ene.11
+AAA340,Grupo Carduus-Cirsium,1,A-alfalfa,Andrenidae sp2,a,an,Ene.11
+AAA340,Salsola kali,48,A-alfalfa,Andrenidae sp2,a,an,Ene.11
+AAA340,Pfaffia gnaphaloides,7,A-alfalfa,Andrenidae sp2,a,an,Ene.11
+AAA340,Adesmia sp.,3,A-alfalfa,Andrenidae sp2,a,an,Ene.11
+AAA340,Medicago sativa,2,A-alfalfa,Andrenidae sp2,a,an,Ene.11
+AAA286,Grupo Carduus-Cirsium,98,A-alfalfa,Apis mellifera,a,an,Dic.10
+AAA286,Hirschfeldia incana,45,A-alfalfa,Apis mellifera,a,an,Dic.10
+AAA286,Salsola kali,3,A-alfalfa,Apis mellifera,a,an,Dic.10
+AAA286,Cuscuta sp.,6,A-alfalfa,Apis mellifera,a,an,Dic.10
+AAA286,Medicago sativa,42,A-alfalfa,Apis mellifera,a,an,Dic.10
+AAA286,Sphaeralcea crispa,1,A-alfalfa,Apis mellifera,a,an,Dic.10
+AAA286,Poaceae,1,A-alfalfa,Apis mellifera,a,an,Dic.10
+AAA242,Medicago sativa,337,A-alfalfa,Apis mellifera,a,an,Dic.10
+AAA242,Hirschfeldia incana,132,A-alfalfa,Apis mellifera,a,an,Dic.10
+AAA242,Salsola kali,3,A-alfalfa,Apis mellifera,a,an,Dic.10
+AAA242,Pfaffia gnaphaloides,1,A-alfalfa,Apis mellifera,a,an,Dic.10
+AAA287,Grupo Carduus-Cirsium,86,A-alfalfa,Apis mellifera,a,an,Dic.10
+AAA287,Salsola kali,5,A-alfalfa,Apis mellifera,a,an,Dic.10
+AAA287,Medicago sativa,68,A-alfalfa,Apis mellifera,a,an,Dic.10
+AAA287,Hirschfeldia incana,856,A-alfalfa,Apis mellifera,a,an,Dic.10
+AAA247,Medicago sativa,975,A-alfalfa,Apis mellifera,a,an,Dic.10
+AAA247,Salsola kali,4,A-alfalfa,Apis mellifera,a,an,Dic.10
+AAA247,Hirschfeldia incana,30,A-alfalfa,Apis mellifera,a,an,Dic.10
+AAA247,Turnera sp.,2,A-alfalfa,Apis mellifera,a,an,Dic.10
+AAA241,indeterminate,3,A-alfalfa,Apis mellifera,a,an,Dic.10
+AAA241,Grupo Carduus-Cirsium,1,A-alfalfa,Apis mellifera,a,an,Dic.10
+AAA241,Salsola kali,6,A-alfalfa,Apis mellifera,a,an,Dic.10
+AAA241,Medicago sativa,336,A-alfalfa,Apis mellifera,a,an,Dic.10
+AAA241,Hirschfeldia incana,19,A-alfalfa,Apis mellifera,a,an,Dic.10
+AAA361,Medicago sativa,22239,A-alfalfa,Xylocopa splendidula,a,an,Ene.11
+AAA361,indeterminate,3,A-alfalfa,Xylocopa splendidula,a,an,Ene.11
+AAA409,Salsola kali,200,A-alfalfa,Psaenythia sp3,a,an,Ene.11
+AAA409,Solanum elaeagnifolium,2184,A-alfalfa,Psaenythia sp3,a,an,Ene.11
+AAA409,Medicago sativa,165,A-alfalfa,Psaenythia sp3,a,an,Ene.11
+AAA246,Medicago sativa,2349,A-alfalfa,Apis mellifera,a,an,Dic.10
+AAA246,Salsola kali,7,A-alfalfa,Apis mellifera,a,an,Dic.10
+AAA246,indeterminate,1,A-alfalfa,Apis mellifera,a,an,Dic.10
+AAA246,Hirschfeldia incana,31,A-alfalfa,Apis mellifera,a,an,Dic.10
+AAA344,Solanum elaeagnifolium,3945,A-alfalfa,Exomalopsis sp1.,a,an,Ene.11
+AAA344,Medicago sativa,384,A-alfalfa,Exomalopsis sp1.,a,an,Ene.11
+AAA344,Salsola kali,3,A-alfalfa,Exomalopsis sp1.,a,an,Ene.11
+AAA344,Thelesperma sp.,7,A-alfalfa,Exomalopsis sp1.,a,an,Ene.11
+AAA344,Hirschfeldia incana,6,A-alfalfa,Exomalopsis sp1.,a,an,Ene.11
+AAA280,Medicago sativa,33,A-alfalfa,Apis mellifera,a,an,Dic.10
+AAA280,Cuscuta sp.,5,A-alfalfa,Apis mellifera,a,an,Dic.10
+AAA280,Hirschfeldia incana,2470,A-alfalfa,Apis mellifera,a,an,Dic.10
+AAA280,Grupo Carduus-Cirsium,118,A-alfalfa,Apis mellifera,a,an,Dic.10
+AAA411,Solanum elaeagnifolium,1569,A-alfalfa,Eucerini sp4,a,an,Ene.11
+AAA411,Medicago sativa,318,A-alfalfa,Eucerini sp4,a,an,Ene.11
+AAA411,Salsola kali,2,A-alfalfa,Eucerini sp4,a,an,Ene.11
+AAA414,Hirschfeldia incana,3,A-alfalfa,Psaenythia sp3,a,an,Ene.11
+AAA414,Turnera sp.,1,A-alfalfa,Psaenythia sp3,a,an,Ene.11
+AAA414,Grupo Carduus-Cirsium,4,A-alfalfa,Psaenythia sp3,a,an,Ene.11
+AAA414,Solanum elaeagnifolium,844,A-alfalfa,Psaenythia sp3,a,an,Ene.11
+AAA414,Thelesperma sp.,1,A-alfalfa,Psaenythia sp3,a,an,Ene.11
+AAA414,Salsola kali,116,A-alfalfa,Psaenythia sp3,a,an,Ene.11
+AAA414,Pfaffia gnaphaloides,1,A-alfalfa,Psaenythia sp3,a,an,Ene.11
+AAA414,Physalis sp.,564,A-alfalfa,Psaenythia sp3,a,an,Ene.11
+AAA503,Salsola kali,581,A-alfalfa,Apis mellifera,a,an,Feb.11
+AAA503,Thelesperma sp.,5,A-alfalfa,Apis mellifera,a,an,Feb.11
+AAA503,Grupo Baccharis spp.,2,A-alfalfa,Apis mellifera,a,an,Feb.11
+AAA503,Adesmia sp.,2,A-alfalfa,Apis mellifera,a,an,Feb.11
+AAA503,Vicia sp.,1,A-alfalfa,Apis mellifera,a,an,Feb.11
+AAA504,Grupo Baccharis spp.,2,A-alfalfa,Apis mellifera,a,an,Feb.11
+AAA504,indeterminate,5,A-alfalfa,Apis mellifera,a,an,Feb.11
+AAA504,Poaceae,1,A-alfalfa,Apis mellifera,a,an,Feb.11
+AAA504,Grupo Carduus-Cirsium,3,A-alfalfa,Apis mellifera,a,an,Feb.11
+AAA504,Medicago sativa,2,A-alfalfa,Apis mellifera,a,an,Feb.11
+AAA504,Cuscuta sp.,1,A-alfalfa,Apis mellifera,a,an,Feb.11
+AAA504,Salsola kali,455,A-alfalfa,Apis mellifera,a,an,Feb.11
+AAA581,Grupo Baccharis spp.,1378,C-pastura,Colletes bicolor,c,an,Feb.11
+AAA581,verbenaceae,4,C-pastura,Colletes bicolor,c,an,Feb.11
+AAA581,Grupo Carduus-Cirsium,1,C-pastura,Colletes bicolor,c,an,Feb.11
+AAA581,Medicago sativa,3,C-pastura,Colletes bicolor,c,an,Feb.11
+AAA581,Chenopodeaceae,29,C-pastura,Colletes bicolor,c,an,Feb.11
+AAA520,Grupo Baccharis spp.,135,C-pastura,Bombyliidae sp8,c,an,Feb.11
+AAA502,Salsola kali,71,A-alfalfa,Apis mellifera,a,an,Feb.11
+AAA502,Hirschfeldia incana,3,A-alfalfa,Apis mellifera,a,an,Feb.11
+AAA502,Grupo Baccharis spp.,4,A-alfalfa,Apis mellifera,a,an,Feb.11
+AAA502,Grupo Carduus-Cirsium,1,A-alfalfa,Apis mellifera,a,an,Feb.11
+AAA502,Medicago sativa,50,A-alfalfa,Apis mellifera,a,an,Feb.11
+AAA579,Salsola kali,7,C-pastura,Pseudodoros clavatus,c,an,Feb.11
+AAA579,Hirschfeldia incana,2,C-pastura,Pseudodoros clavatus,c,an,Feb.11
+AAA579,indeterminate,1,C-pastura,Pseudodoros clavatus,c,an,Feb.11
+AAA579,Grupo Baccharis spp.,124,C-pastura,Pseudodoros clavatus,c,an,Feb.11
+AAA539,Hirschfeldia incana,2,A-alfalfa,Apis mellifera,a,an,Feb.11
+AAA539,Salsola kali,6,A-alfalfa,Apis mellifera,a,an,Feb.11
+AAA539,Medicago sativa,920,A-alfalfa,Apis mellifera,a,an,Feb.11
+AAA552,Salsola kali,84,A-alfalfa,Apis mellifera,a,an,Feb.11
+AAA552,Hirschfeldia incana,6,A-alfalfa,Apis mellifera,a,an,Feb.11
+AAA552,Grupo Baccharis spp.,2,A-alfalfa,Apis mellifera,a,an,Feb.11
+AAA552,indeterminate,1,A-alfalfa,Apis mellifera,a,an,Feb.11
+AAA552,Medicago sativa,143,A-alfalfa,Apis mellifera,a,an,Feb.11
+AAA551,Medicago sativa,1758,A-alfalfa,Eucerini sp5,a,an,Feb.11
+AAA551,Salsola kali,22,A-alfalfa,Eucerini sp5,a,an,Feb.11
+AAA551,Grupo Baccharis spp.,1,A-alfalfa,Eucerini sp5,a,an,Feb.11
+AAA551,Grupo Carduus-Cirsium,1,A-alfalfa,Eucerini sp5,a,an,Feb.11
+AAA551,Hirschfeldia incana,63,A-alfalfa,Eucerini sp5,a,an,Feb.11
+AAA501,Hirschfeldia incana,2,A-alfalfa,Apis mellifera,a,an,Feb.11
+AAA501,Salsola kali,58,A-alfalfa,Apis mellifera,a,an,Feb.11
+AAA501,Adesmia sp.,1,A-alfalfa,Apis mellifera,a,an,Feb.11
+AAA501,Grupo Baccharis spp.,4,A-alfalfa,Apis mellifera,a,an,Feb.11
+AAA501,Medicago sativa,31,A-alfalfa,Apis mellifera,a,an,Feb.11
+AAA541,Salsola kali,43,A-alfalfa,Apis mellifera,a,an,Feb.11
+AAA541,Hirschfeldia incana,8,A-alfalfa,Apis mellifera,a,an,Feb.11
+AAA541,Grupo Carduus-Cirsium,2,A-alfalfa,Apis mellifera,a,an,Feb.11
+AAA541,Medicago sativa,575,A-alfalfa,Apis mellifera,a,an,Feb.11
+AAA554,Salsola kali,19,A-alfalfa,Apis mellifera,a,an,Feb.11
+AAA554,indeterminate,4,A-alfalfa,Apis mellifera,a,an,Feb.11
+AAA554,Hirschfeldia incana,2,A-alfalfa,Apis mellifera,a,an,Feb.11
+AAA554,Medicago sativa,255,A-alfalfa,Apis mellifera,a,an,Feb.11
+AAA611,Conyza sp.,51,A-pastura,Bombyliidae sp5,a,an,Mar.11
+AAA611,Mitracarpus sp.,8,A-pastura,Bombyliidae sp5,a,an,Mar.11
+AAA611,Asteraceae,1,A-pastura,Bombyliidae sp5,a,an,Mar.11
+AAA611,Clematis denticulata,1,A-pastura,Bombyliidae sp5,a,an,Mar.11
+AAA540,Salsola kali,159,A-alfalfa,Apis mellifera,a,an,Feb.11
+AAA540,Grupo Baccharis spp.,5,A-alfalfa,Apis mellifera,a,an,Feb.11
+AAA540,Grupo Carduus-Cirsium,1,A-alfalfa,Apis mellifera,a,an,Feb.11
+AAA540,Hirschfeldia incana,2,A-alfalfa,Apis mellifera,a,an,Feb.11
+AAA540,Adesmia sp.,5,A-alfalfa,Apis mellifera,a,an,Feb.11
+AAA540,Medicago sativa,368,A-alfalfa,Apis mellifera,a,an,Feb.11
+AAA557,Hirschfeldia incana,3,A-alfalfa,Apis mellifera,a,an,Feb.11
+AAA557,Salsola kali,738,A-alfalfa,Apis mellifera,a,an,Feb.11
+AAA557,Medicago sativa,35,A-alfalfa,Apis mellifera,a,an,Feb.11
+AAA557,indeterminate,5,A-alfalfa,Apis mellifera,a,an,Feb.11
+AAA544,Hirschfeldia incana,7,A-alfalfa,Apis mellifera,a,an,Feb.11
+AAA544,Grupo Carduus-Cirsium,2,A-alfalfa,Apis mellifera,a,an,Feb.11
+AAA544,Salsola kali,1879,A-alfalfa,Apis mellifera,a,an,Feb.11
+AAA544,Medicago sativa,24,A-alfalfa,Apis mellifera,a,an,Feb.11
+AAA553,Hirschfeldia incana,2,A-alfalfa,Apis mellifera,a,an,Feb.11
+AAA553,Medicago sativa,380,A-alfalfa,Apis mellifera,a,an,Feb.11
+AAA553,Thelesperma sp.,3,A-alfalfa,Apis mellifera,a,an,Feb.11
+AAA553,Salsola kali,99,A-alfalfa,Apis mellifera,a,an,Feb.11
+AAA490,Grupo Carduus-Cirsium,5,A-alfalfa,Apis mellifera,a,an,Feb.11
+AAA490,Medicago sativa,255,A-alfalfa,Apis mellifera,a,an,Feb.11
+AAA490,Hirschfeldia incana,5,A-alfalfa,Apis mellifera,a,an,Feb.11
+AAA490,Salsola kali,32,A-alfalfa,Apis mellifera,a,an,Feb.11
+AAA517,Condalia microphylla,1,C-pastura,Villa sp1,c,an,Feb.11
+AAA517,indeterminate,1,C-pastura,Villa sp1,c,an,Feb.11
+AAA517,Grupo Baccharis spp.,495,C-pastura,Villa sp1,c,an,Feb.11
+AAA517,Chenopodeaceae,5,C-pastura,Villa sp1,c,an,Feb.11
+AAA517,Hirschfeldia incana,1,C-pastura,Villa sp1,c,an,Feb.11
+AAA496,Hirschfeldia incana,5,A-alfalfa,Apis mellifera,a,an,Feb.11
+AAA496,Medicago sativa,7,A-alfalfa,Apis mellifera,a,an,Feb.11
+AAA496,Salsola kali,1407,A-alfalfa,Apis mellifera,a,an,Feb.11
+AAA496,Grupo Carduus-Cirsium,9,A-alfalfa,Apis mellifera,a,an,Feb.11
+AAA496,indeterminate,4,A-alfalfa,Apis mellifera,a,an,Feb.11
+AAA496,Grupo Baccharis spp.,1,A-alfalfa,Apis mellifera,a,an,Feb.11
+AAA486,Hirschfeldia incana,1,A-pastura,Ligaeidae sp1,a,an,Feb.11
+AAA486,Conyza sp.,3,A-pastura,Ligaeidae sp1,a,an,Feb.11
+AAA580,Chenopodeaceae,2,C-pastura,Pachyminixi sp3,c,an,Feb.11
+AAA580,Grupo Baccharis spp.,136,C-pastura,Pachyminixi sp3,c,an,Feb.11
+AAA580,indeterminate,1,C-pastura,Pachyminixi sp3,c,an,Feb.11
+AAA485,Grupo Carduus-Cirsium,2,A-pastura,Cerceris sp14,a,an,Feb.11
+AAA485,Conyza sp.,442,A-pastura,Cerceris sp14,a,an,Feb.11
+AAA485,Chenopodeaceae,1,A-pastura,Cerceris sp14,a,an,Feb.11
+AAA494,Medicago sativa,113,A-alfalfa,Apis mellifera,a,an,Feb.11
+AAA494,Grupo Carduus-Cirsium,5,A-alfalfa,Apis mellifera,a,an,Feb.11
+AAA494,Nierembergia aristata,4,A-alfalfa,Apis mellifera,a,an,Feb.11
+AAA494,Conyza sp.,2,A-alfalfa,Apis mellifera,a,an,Feb.11
+AAA494,Salsola kali,1447,A-alfalfa,Apis mellifera,a,an,Feb.11
+AAA494,Hirschfeldia incana,1,A-alfalfa,Apis mellifera,a,an,Feb.11
+AAA494,Pfaffia gnaphaloides,1,A-alfalfa,Apis mellifera,a,an,Feb.11
+AAA494,Cuscuta sp.,4,A-alfalfa,Apis mellifera,a,an,Feb.11
+AAA489,Medicago sativa,94,A-alfalfa,Apis mellifera,a,an,Feb.11
+AAA489,Hirschfeldia incana,2,A-alfalfa,Apis mellifera,a,an,Feb.11
+AAA489,Grupo Carduus-Cirsium,8,A-alfalfa,Apis mellifera,a,an,Feb.11
+AAA489,Salsola kali,46,A-alfalfa,Apis mellifera,a,an,Feb.11
+AAA549,Salsola kali,298,A-alfalfa,Psaenythia sp3,a,an,Feb.11
+AAA549,Physalis sp.,72,A-alfalfa,Psaenythia sp3,a,an,Feb.11
+AAA549,Hirschfeldia incana,2,A-alfalfa,Psaenythia sp3,a,an,Feb.11
+AAA549,Adesmia sp.,13,A-alfalfa,Psaenythia sp3,a,an,Feb.11
+AAA549,indeterminate,1,A-alfalfa,Psaenythia sp3,a,an,Feb.11
+AAA549,Thelesperma sp.,59,A-alfalfa,Psaenythia sp3,a,an,Feb.11
+AAA491,Medicago sativa,1,A-alfalfa,Hylephila phyleus,a,an,Feb.11
+AAA491,Salsola kali,1,A-alfalfa,Hylephila phyleus,a,an,Feb.11
+AAA492,Adesmia sp.,1,A-alfalfa,Myzinum sp6,a,an,Feb.11
+AAA492,Grupo Carduus-Cirsium,4,A-alfalfa,Myzinum sp6,a,an,Feb.11
+AAA492,Salsola kali,486,A-alfalfa,Myzinum sp6,a,an,Feb.11
+AAA492,Grupo Baccharis spp.,1,A-alfalfa,Myzinum sp6,a,an,Feb.11
+AAA492,Cuscuta sp.,1,A-alfalfa,Myzinum sp6,a,an,Feb.11
+AAA493,Grupo Carduus-Cirsium,1,A-alfalfa,Apis mellifera,a,an,Feb.11
+AAA493,Hirschfeldia incana,2,A-alfalfa,Apis mellifera,a,an,Feb.11
+AAA493,Cuscuta sp.,3,A-alfalfa,Apis mellifera,a,an,Feb.11
+AAA493,Medicago sativa,6,A-alfalfa,Apis mellifera,a,an,Feb.11
+AAA493,Salsola kali,2187,A-alfalfa,Apis mellifera,a,an,Feb.11
+AAA555,Conyza sp.,502,A-alfalfa,Cerceris sp13,a,an,Feb.11
+AAA555,Salsola kali,25,A-alfalfa,Cerceris sp13,a,an,Feb.11
+AAA555,Medicago sativa,3,A-alfalfa,Cerceris sp13,a,an,Feb.11
+AAA483,Grupo Carduus-Cirsium,1196,A-pastura,Megachile (Acentron) sp3,a,an,Feb.11
+AAA483,Hirschfeldia incana,209,A-pastura,Megachile (Acentron) sp3,a,an,Feb.11
+AAA483,Salsola kali,3,A-pastura,Megachile (Acentron) sp3,a,an,Feb.11
+AAA483,Grupo Baccharis spp.,12,A-pastura,Megachile (Acentron) sp3,a,an,Feb.11
+AAA548,Conyza sp.,403,A-alfalfa,Melissodes rufithorax,a,an,Feb.11
+AAA548,Grupo Carduus-Cirsium,20,A-alfalfa,Melissodes rufithorax,a,an,Feb.11
+AAA548,Hirschfeldia incana,50,A-alfalfa,Melissodes rufithorax,a,an,Feb.11
+AAA548,Pfaffia gnaphaloides,95,A-alfalfa,Melissodes rufithorax,a,an,Feb.11
+AAA548,Physalis sp.,133,A-alfalfa,Melissodes rufithorax,a,an,Feb.11
+AAA548,Salsola kali,61,A-alfalfa,Melissodes rufithorax,a,an,Feb.11
+AAA548,Medicago sativa,26,A-alfalfa,Melissodes rufithorax,a,an,Feb.11
+AAA548,Cuscuta sp.,10,A-alfalfa,Melissodes rufithorax,a,an,Feb.11
+AAA547,Salsola kali,800,A-alfalfa,Myzinum sp2,a,an,Feb.11
+AAA547,Medicago sativa,6,A-alfalfa,Myzinum sp2,a,an,Feb.11
+AAA547,Conyza sp.,189,A-alfalfa,Myzinum sp2,a,an,Feb.11
+AAA547,Cuscuta sp.,102,A-alfalfa,Myzinum sp2,a,an,Feb.11
+AAA518,Salsola kali,9,C-pastura,Heteroptera sp1,c,an,Feb.11
+AAA518,Grupo Baccharis spp.,1550,C-pastura,Heteroptera sp1,c,an,Feb.11
+AAA518,indeterminate,1,C-pastura,Heteroptera sp1,c,an,Feb.11
+AAA558,Salsola kali,682,A-alfalfa,Psaenythia sp3,a,an,Feb.11
+AAA558,Adesmia sp.,3,A-alfalfa,Psaenythia sp3,a,an,Feb.11
+AAA558,Medicago sativa,250,A-alfalfa,Psaenythia sp3,a,an,Feb.11
+AAA558,Hirschfeldia incana,4,A-alfalfa,Psaenythia sp3,a,an,Feb.11
+AAA558,Grupo Baccharis spp.,3,A-alfalfa,Psaenythia sp3,a,an,Feb.11
+AAA558,Pfaffia gnaphaloides,1,A-alfalfa,Psaenythia sp3,a,an,Feb.11
+AAA542,Salsola kali,5,A-alfalfa,Hylephila phyleus,a,an,Feb.11
+AAA542,Gaillardia megapotamica,3,A-alfalfa,Hylephila phyleus,a,an,Feb.11
+AAA546,Grupo Baccharis spp.,31,A-alfalfa,Bombyliidae sp5,a,an,Feb.11
+AAA546,Medicago sativa,2,A-alfalfa,Bombyliidae sp5,a,an,Feb.11
+AAA546,Salsola kali,207,A-alfalfa,Bombyliidae sp5,a,an,Feb.11
+AAA546,Adesmia sp.,2,A-alfalfa,Bombyliidae sp5,a,an,Feb.11
+AAA543,Salsola kali,2,A-alfalfa,Pyrgus communis,a,an,Feb.11
+AAA543,Medicago sativa,2,A-alfalfa,Pyrgus communis,a,an,Feb.11
+AAA543,Hirschfeldia incana,10,A-alfalfa,Pyrgus communis,a,an,Feb.11
+AAA545,Medicago sativa,199,A-alfalfa,Melissodes rufithorax,a,an,Feb.11
+AAA545,Hirschfeldia incana,217,A-alfalfa,Melissodes rufithorax,a,an,Feb.11
+AAA545,Salsola kali,36,A-alfalfa,Melissodes rufithorax,a,an,Feb.11
+AAA545,Grupo Carduus-Cirsium,1,A-alfalfa,Melissodes rufithorax,a,an,Feb.11
+AAA545,Pfaffia gnaphaloides,39,A-alfalfa,Melissodes rufithorax,a,an,Feb.11
+AAA545,Grupo Baccharis spp.,5,A-alfalfa,Melissodes rufithorax,a,an,Feb.11
+AAA488,Grupo Carduus-Cirsium,5,A-alfalfa,Apis mellifera,a,an,Feb.11
+AAA488,Salsola kali,35,A-alfalfa,Apis mellifera,a,an,Feb.11
+AAA488,Medicago sativa,73,A-alfalfa,Apis mellifera,a,an,Feb.11
+AAA488,Hirschfeldia incana,5,A-alfalfa,Apis mellifera,a,an,Feb.11
+AAA500,Hirschfeldia incana,7,A-alfalfa,Apis mellifera,a,an,Feb.11
+AAA500,Salsola kali,72,A-alfalfa,Apis mellifera,a,an,Feb.11
+AAA500,Medicago sativa,63,A-alfalfa,Apis mellifera,a,an,Feb.11
+AAA500,Grupo Baccharis spp.,5,A-alfalfa,Apis mellifera,a,an,Feb.11
+AAA583,Grupo Baccharis spp.,433,C-pastura,Heteroptera sp1,c,an,Feb.11
+AAA583,Salsola kali,16,C-pastura,Heteroptera sp1,c,an,Feb.11
+AAA583,Asteraceae,1,C-pastura,Heteroptera sp1,c,an,Feb.11
+AAA583,Hirschfeldia incana,2,C-pastura,Heteroptera sp1,c,an,Feb.11
+AAA499,Medicago sativa,249,A-alfalfa,Apis mellifera,a,an,Feb.11
+AAA499,Salsola kali,1037,A-alfalfa,Apis mellifera,a,an,Feb.11
+AAA499,Grupo Baccharis spp.,3,A-alfalfa,Apis mellifera,a,an,Feb.11
+AAA499,Adesmia sp.,6,A-alfalfa,Apis mellifera,a,an,Feb.11
+AAA499,Hirschfeldia incana,6,A-alfalfa,Apis mellifera,a,an,Feb.11
+AAA522,Hirschfeldia incana,6,C-pastura,Andrenidae sp3,c,an,Feb.11
+AAA522,Grupo Baccharis spp.,703,C-pastura,Andrenidae sp3,c,an,Feb.11
+AAA582,Grupo Carduus-Cirsium,12,C-pastura,Colletes sp4,c,an,Feb.11
+AAA582,Grupo Baccharis spp.,1191,C-pastura,Colletes sp4,c,an,Feb.11
+AAA582,Salsola kali,9,C-pastura,Colletes sp4,c,an,Feb.11
+AAA482,Poaceae,1,A-pastura,Cerceris sp13,a,an,Feb.11
+AAA482,Salsola kali,2,A-pastura,Cerceris sp13,a,an,Feb.11
+AAA482,Conyza sp.,771,A-pastura,Cerceris sp13,a,an,Feb.11
+AAA482,Grupo Carduus-Cirsium,3,A-pastura,Cerceris sp13,a,an,Feb.11
+AAA482,Hirschfeldia incana,5,A-pastura,Cerceris sp13,a,an,Feb.11
+AAA482,indeterminate,4,A-pastura,Cerceris sp13,a,an,Feb.11
+AAA524,Hirschfeldia incana,19,C-pastura,Ammophila sp.,c,an,Feb.11
+AAA524,Salsola kali,1,C-pastura,Ammophila sp.,c,an,Feb.11
+AAA524,Grupo Baccharis spp.,777,C-pastura,Ammophila sp.,c,an,Feb.11
+AAA524,indeterminate,1,C-pastura,Ammophila sp.,c,an,Feb.11
+AAA524,Condalia microphylla,2,C-pastura,Ammophila sp.,c,an,Feb.11
+AAA524,Glandularia sp.,9,C-pastura,Ammophila sp.,c,an,Feb.11
+AAA612,Hirschfeldia incana,2,A-pastura,Dialictus sp.8,a,an,Mar.11
+AAA612,Poaceae,1,A-pastura,Dialictus sp.8,a,an,Mar.11
+AAA612,Conyza sp.,94,A-pastura,Dialictus sp.8,a,an,Mar.11
+AAA481,Hirschfeldia incana,12,A-pastura,Tachysphex sp.,a,an,Feb.11
+AAA481,Grupo Carduus-Cirsium,10,A-pastura,Tachysphex sp.,a,an,Feb.11
+AAA481,Conyza sp.,251,A-pastura,Tachysphex sp.,a,an,Feb.11
+AAA481,Adesmia sp.,2,A-pastura,Tachysphex sp.,a,an,Feb.11
+AAA481,Poaceae,1,A-pastura,Tachysphex sp.,a,an,Feb.11
+AAA556,Adesmia sp.,1,A-alfalfa,Oxybelus sp7,a,an,Feb.11
+AAA556,Conyza sp.,540,A-alfalfa,Oxybelus sp7,a,an,Feb.11
+AAA556,Salsola kali,3,A-alfalfa,Oxybelus sp7,a,an,Feb.11
+AAA556,Pfaffia gnaphaloides,1,A-alfalfa,Oxybelus sp7,a,an,Feb.11
+AAA487,Hirschfeldia incana,38,A-alfalfa,Exomalopsis sp1.,a,an,Feb.11
+AAA487,Grupo Carduus-Cirsium,4,A-alfalfa,Exomalopsis sp1.,a,an,Feb.11
+AAA487,Salsola kali,16,A-alfalfa,Exomalopsis sp1.,a,an,Feb.11
+AAA487,Medicago sativa,363,A-alfalfa,Exomalopsis sp1.,a,an,Feb.11
+AAA550,Medicago sativa,683,A-alfalfa,Centris tricolor,a,an,Feb.11
+AAA550,Solanum elaeagnifolium,133,A-alfalfa,Centris tricolor,a,an,Feb.11
+AAA550,Hirschfeldia incana,8,A-alfalfa,Centris tricolor,a,an,Feb.11
+AAA550,Thelesperma sp.,1,A-alfalfa,Centris tricolor,a,an,Feb.11
+AAA550,Salsola kali,56,A-alfalfa,Centris tricolor,a,an,Feb.11
+AAA484,Thelesperma sp.,10,A-pastura,Tatochila sp.,a,an,Feb.11
+AAA484,Medicago sativa,2,A-pastura,Tatochila sp.,a,an,Feb.11
+AAA484,Grupo Carduus-Cirsium,754,A-pastura,Tatochila sp.,a,an,Feb.11
+AAA484,Hirschfeldia incana,29,A-pastura,Tatochila sp.,a,an,Feb.11
+AAA484,Salsola kali,2,A-pastura,Tatochila sp.,a,an,Feb.11
+AAA484,indeterminate,6,A-pastura,Tatochila sp.,a,an,Feb.11
+AAA568,Grupo Carduus-Cirsium,25,A-pastura,Cerceris sp13,a,an,Feb.11
+AAA568,Hirschfeldia incana,20,A-pastura,Cerceris sp13,a,an,Feb.11
+AAA568,Salsola kali,1,A-pastura,Cerceris sp13,a,an,Feb.11
+AAA568,Conyza sp.,818,A-pastura,Cerceris sp13,a,an,Feb.11
+AAA523,Salsola kali,2,C-pastura,Augochloropsis sp. 7,c,an,Feb.11
+AAA523,Grupo Baccharis spp.,2141,C-pastura,Augochloropsis sp. 7,c,an,Feb.11
+AAA523,Hirschfeldia incana,18,C-pastura,Augochloropsis sp. 7,c,an,Feb.11
+AAA519,Grupo Baccharis spp.,3886,C-pastura,Tachinidae sp41,c,an,Feb.11
+AAA519,Chenopodeaceae,24,C-pastura,Tachinidae sp41,c,an,Feb.11
+AAA519,Turnera sp.,1,C-pastura,Tachinidae sp41,c,an,Feb.11
+AAA519,Hirschfeldia incana,1,C-pastura,Tachinidae sp41,c,an,Feb.11
+AAA519,indeterminate,2,C-pastura,Tachinidae sp41,c,an,Feb.11
+AAA497,Solanum elaeagnifolium,10,A-alfalfa,Apis mellifera,a,an,Feb.11
+AAA497,Hirschfeldia incana,5,A-alfalfa,Apis mellifera,a,an,Feb.11
+AAA497,Salsola kali,98,A-alfalfa,Apis mellifera,a,an,Feb.11
+AAA497,Cuscuta sp.,2,A-alfalfa,Apis mellifera,a,an,Feb.11
+AAA497,Medicago sativa,85,A-alfalfa,Apis mellifera,a,an,Feb.11
+AAA498,Medicago sativa,182,A-alfalfa,Apis mellifera,a,an,Feb.11
+AAA498,Salsola kali,109,A-alfalfa,Apis mellifera,a,an,Feb.11
+AAA498,Grupo Carduus-Cirsium,1,A-alfalfa,Apis mellifera,a,an,Feb.11
+AAA498,Hirschfeldia incana,1,A-alfalfa,Apis mellifera,a,an,Feb.11
+AAA495,Salsola kali,2470,A-alfalfa,Apis mellifera,a,an,Feb.11
+AAA495,Grupo Carduus-Cirsium,2,A-alfalfa,Apis mellifera,a,an,Feb.11
+AAA495,Medicago sativa,103,A-alfalfa,Apis mellifera,a,an,Feb.11
+AAA495,Poaceae,1,A-alfalfa,Apis mellifera,a,an,Feb.11
+AAA495,indeterminate,1,A-alfalfa,Apis mellifera,a,an,Feb.11
+AAA521,Turnera sp.,1,C-pastura,Colletes sp4,c,an,Feb.11
+AAA521,Grupo Baccharis spp.,14984,C-pastura,Colletes sp4,c,an,Feb.11
+AAA521,Condalia microphylla,246,C-pastura,Colletes sp4,c,an,Feb.11
+AAA521,Hirschfeldia incana,549,C-pastura,Colletes sp4,c,an,Feb.11
+AAA521,Adesmia sp.,5,C-pastura,Colletes sp4,c,an,Feb.11
+AAA530,Medicago sativa,10130,A-alfalfa,Xylocopa ordinaria,a,an,Feb.11
+AAA530,Cucurbita sp.,61,A-alfalfa,Xylocopa ordinaria,a,an,Feb.11
+AAA530,Hirschfeldia incana,9,A-alfalfa,Xylocopa ordinaria,a,an,Feb.11
+AAA530,Grupo Baccharis spp.,4,A-alfalfa,Xylocopa ordinaria,a,an,Feb.11
+AAA530,Grupo Carduus-Cirsium,3,A-alfalfa,Xylocopa ordinaria,a,an,Feb.11
+AAA530,Salsola kali,179,A-alfalfa,Xylocopa ordinaria,a,an,Feb.11
