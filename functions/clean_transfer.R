@@ -21,7 +21,7 @@ clean_transfer <- function(file, site_data){
     standardise_name('animal_name') %>%
     standardise_name("plant_name")
   
-  transfer <- foreach(i=1:n_distinct(site_data$site_name)) %do% {
+  foreach(i=1:n_distinct(site_data$site_name)) %do% {
     site <- list()
     site$name <- site_data$site_name[i]
     site$locality <- site_data$locality[i]
@@ -36,5 +36,6 @@ clean_transfer <- function(file, site_data){
                           to = as.Date("2011-03-01"))
     site
   }
+  
   
 }

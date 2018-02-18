@@ -17,6 +17,7 @@ standardise_name <- function(df, column){
   df[cond, column] = str_replace(df[cond, column], regex('([0-9]+)'), function(x) paste0(' ', x))
   df[, column] = str_replace_all(df[, column], regex('\\.+'), '.')
   df[, column] = str_replace_all(df[, column], regex('\\s+'), ' ')
+  # df[, column] = str_replace_all(df[, column], "Grupo ", '')
   df[, column] = str_replace(df[, column], regex('[^(sp)]\\.$'), '')
   df[, column] = trimws(df[, column])
   df[, column] = paste(toupper(substr(df[, column], 1, 1)), substr(df[, column], 2, nchar(df[, column])), sep="")

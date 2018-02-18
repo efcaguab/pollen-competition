@@ -32,3 +32,7 @@ paper/drafts_and_submissions/\.DS_Store
 paper/rsconnect/
 
 data/datasets/raw/marrero2016/Workbook1\.xlsx
+
+\.drake/data/
+
+\.drake/keys/
