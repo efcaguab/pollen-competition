@@ -11,6 +11,7 @@ knitr::opts_chunk$set(echo = FALSE, message = FALSE,
                       warning = FALSE)
 options(xtable.comment = FALSE, 
         xtable.caption.placement = 'bottom',
+        xtable.size = 'small',
         booktabs = TRUE)
 library(drake)
 library(ggplot2)
