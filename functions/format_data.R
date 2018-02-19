@@ -1,0 +1,49 @@
+# Extract a data frame with deposition information 
+extract_dep_frame <- function(x){
+  x$deposition %>% 
+    # change list to a data frame
+    to_data_frame('deposition') %>%
+    # add column to specify between heterospecific and conspecific pollen 
+    mutate(pollen_category = recipient == donor, 
+           pollen_category = if_else(pollen_category, 
+                                     "conspecific", 
+                                     "heterospecific"), 
+           pollen_density = n_grains/n_stigma)
+}
+
+# Build a data frame from the lists joining the specified name
+to_data_frame <- function(z, frame_name){
+  plyr::ldply(z, function(y, frame_name){
+    y %>% extract2(frame_name) %>%
+      mutate(site_name = y$name,
+             season = paste(y$sampling$from, y$sampling$to))
+  }, frame_name = frame_name)
+}
+
+
+extract_closed_treatment_means <- function(x, grouping_vars = NULL){
+  
+  grouping_vars <- c(grouping_vars, "recipient", "pollen_category")
+
+  control <- x %>%
+    filter(treatment == 'closed') %>%
+    group_by_at(grouping_vars) %>%
+    summarise(pollen_density_closed = median(pollen_density, na.rm = T), 
+              pollen_density_closed_stdv = sd(pollen_density, na.rm = T))
+}
+
+calculate_pollination_gain <- function(x, grouping_vars = NULL){
+  
+  pollination_gain <- pollen_density %>%
+    filter(treatment == 'open') %>%
+    select_at(c(grouping_vars, 'plant', 'pollen_category', 'pollen_density')) %>%
+    left_join(control, by = grouping_vars) %>% 
+    mutate(pollination_gain = pollen_density - pollen_density_closed)
+  
+  # Explore control 
+  plants_without_control <- pollination_gain %>%
+    filter(is.na(pollen_density_closed)) %$%
+    recipient %>% unique() 
+  
+  pollen_density %>% filter(recipient %in% plants_without_control) %>% View
+}
