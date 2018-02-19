@@ -45,6 +45,7 @@ analysing <- drake_plan(
 
 reporting <- drake_plan(
   'publication/supp_info.pdf' = render('publication/supp_info.Rmd', quiet = TRUE),
+  'publication/manuscript.pdf' = render('publication/manuscript.Rmd', quiet = TRUE),
   file_targets = TRUE
 )
 
