@@ -1,0 +1,8 @@
+---
+title: "Pollen competition"
+author: "Fernando Cagua, Hugo Marrero, Jason Tylianakis, Daniel Stouffer"
+output: pdf_document
+header-includes:
+  - \usepackage{booktabs}
+---
+
