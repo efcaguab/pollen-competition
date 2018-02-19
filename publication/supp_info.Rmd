@@ -1,0 +1,103 @@
+---
+title: "Supplementary materials"
+author: "Fernando Cagua"
+output: pdf_document
+header-includes:
+  - \usepackage{booktabs}
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, 
+                      warning = FALSE)
+options(xtable.comment = FALSE, 
+        xtable.caption.placement = 'bottom',
+        booktabs = TRUE)
+library(drake)
+library(ggplot2)
+library(xtable)
+library(tidyr)
+```
+
+```{r}
+loadd(dep_frame, sites, consp_self)
+```
+
+```{r variation across sites, results='asis'}
+consp_self %>%
+  anova(test = "Chisq")  %>%
+  xtable(caption = 'Analysis of variance of conspecific pollen density in bagged flowers (self pollination rate).  Density were modelled using a quasipoisson distribution. The model suggests that self-pollination rates are species dependent but not across.')
+```
+
+
+```{r make figures per site}
+site_plots_conspecific <- dep_frame %>%
+  filter(pollen_category == 'conspecific') %>%
+  inner_join(sites, by = 'site_name') %>%
+  mutate(recipient_short = shorten_sp_name(recipient)) %>% 
+  plyr::dlply('site_name', function(x){
+    x %>%
+      ggplot(aes(y = pollen_density + 1, x = recipient_short,
+                 fill = treatment)) +
+      geom_boxplot(size = 0.25, outlier.size = 0.5, outlier.stroke = 0.5) +
+      scale_y_log10(breaks = c(10,100,1000)) +
+      coord_flip() + 
+      ggtitle(paste(x$locality[1], '-', x$land_use, x$fragment)) +
+      pub_theme() +
+      xlab(NULL) +
+      ylab('pollen density') +
+      scale_fill_brewer(palette = "Greys")
+  })
+
+legend <- cowplot::get_legend(site_plots_conspecific[[1]])
+ 
+site_plots_conspecific <- site_plots_conspecific %>%
+  plyr::llply(function(x) {
+    x + theme(legend.position = 'none', 
+              title = element_text(size = 6))
+  })
+
+site_plots_conspecific <- rlist::list.append(site_plots_conspecific, legend)
+```
+
+```{r plot conspecific per site, fig.height = 7, fig.cap="Conspecific pollen density across plant species for different sites."}
+cowplot::plot_grid(plotlist = site_plots_conspecific, ncol = 3)
+```
+
+```{r figure per plant}
+plant_plots_conspecific <- dep_frame %>%
+  filter(pollen_category == 'conspecific') %>%
+  inner_join(sites, by = 'site_name') %>%
+  mutate(recipient_short = shorten_sp_name(recipient)) %>%
+  group_by(recipient) %>%
+  mutate(n_sites = n_distinct(site_name)) %>%
+  group_by() %>%
+  filter(n_sites >= 2) %>%
+  plyr::dlply('recipient', function(x){
+    x %>%
+      ggplot(aes(y = pollen_density + 1, x = site_name,
+                 fill = treatment)) +
+      geom_boxplot(size = 0.25, outlier.size = 0.5, outlier.stroke = 0.5) +
+      scale_y_log10(breaks = c(10,100,1000)) +
+      coord_flip() +
+      ggtitle(paste(x$recipient[1])) +
+      pub_theme() +
+      xlab(NULL) +
+      ylab('pollen density') +
+      scale_fill_brewer(palette = "Greys")
+  })
+
+legend <- cowplot::get_legend(plant_plots_conspecific[[1]])
+
+plant_plots_conspecific <- plant_plots_conspecific %>%
+  plyr::llply(function(x) {
+    x + theme(legend.position = 'none',
+              title = element_text(size = 6))
+  })
+
+plant_plots_conspecific <- rlist::list.append(plant_plots_conspecific, legend)
+```
+
+```{r plot conspecific per plant, fig.height = 7, fig.cap="Conspecific pollen density across sites for different study species. Only species present in more than onse site are shown."}
+cowplot::plot_grid(plotlist = plant_plots_conspecific, ncol = 3)
+```
+
