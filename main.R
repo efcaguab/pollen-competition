@@ -19,7 +19,7 @@ list_files_with_exts(functions_folder, 'R') %>%
 
 # plan to clean data
 clean_data <- drake_plan(
-  sites = site_data('./data/raw/marrero-estigmatic_pollen.csv'),
+  sites = site_data('./data/raw/marrero-estigmatic_pollen.csv', './data/raw/site_names.csv'),
   deposition = clean_deposition('./data/raw/marrero-estigmatic_pollen.csv', sites),
   visitation_quant = clean_visitation_quant('./data/raw/marrero-quantitative_visits.csv', sites),
   visitation_qual = clean_visitation_qual('./data/raw/marrero-qualitative_visits.csv', sites),
@@ -38,8 +38,8 @@ format_data <- drake_plan(
 
 analysing <- drake_plan(
   consp_self = model_conspecific_self(dep_frame),
-  significant_gain_global = mann_withney_part_df(dep_frame, by = 'recipient', var = 'treatment'),
-  significant_gain_site = mann_withney_part_df(dep_frame, by = c('recipient', 'site_name'), var = 'treatment'),
+  significant_gain_global = mann_withney_part_df(dep_frame, by = 'recipient', var = 'treatment', conf.int = T),
+  significant_gain_site = mann_withney_part_df(dep_frame, by = c('recipient', 'site_name'), var = 'treatment', conf.int = T),
   strings_in_dots = 'literals'
 )
 
