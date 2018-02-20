@@ -54,10 +54,10 @@ site_names <- function(depostion) {
 }
 
 
-site_data <- function(file){
+site_data <- function(file, site_file){
   
   suppressMessages(data <- readr::read_csv(file))
-  
+  suppressMessages(site_name <- readr::read_csv(site_file))
   data %>%
     preformat_data() %>%
     group_by(site_name) %>%
@@ -74,7 +74,8 @@ site_data <- function(file){
            fragment_name_alt = gsub("alfalfa", "alfa", fragment_name_alt),
            fragment_name_alt = gsub("pastura", "pas", fragment_name_alt),
            fragment_name_alt = gsub("1agr", "A-1", fragment_name_alt),
-           fragment_name_alt = gsub("2agr", "A-2", fragment_name_alt))
+           fragment_name_alt = gsub("2agr", "A-2", fragment_name_alt)) %>% 
+    inner_join(site_name, by = 'locality')
   
 }
 
