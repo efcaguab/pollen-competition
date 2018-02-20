@@ -52,7 +52,6 @@ reporting <- drake_plan(
 # set up plan
 project_plan <- rbind(clean_data, format_data, analysing, reporting)
 project_config <- drake_config(project_plan)
-vis_drake_graph_sml0(project_config)
 
 # execute plan
 make(project_plan)
