@@ -51,8 +51,8 @@ consp_self %>%
   xtable(caption = 'Analysis of variance of conspecific pollen density in bagged flowers (self pollination rate).  Density were modelled using a quasipoisson distribution. The model suggests that self-pollination rates are species dependent but not across.')
 ```
 
-
-```{r make figures per site}
+```{r plot conspecific per site, fig.height = 7, fig.cap="Conspecific pollen density across plant species for different sites."}
+loadd(dep_frame, sites)
 site_plots_conspecific <- dep_frame %>%
   filter(pollen_category == 'conspecific') %>%
   inner_join(sites, by = 'site_name') %>%
@@ -80,13 +80,14 @@ site_plots_conspecific <- site_plots_conspecific %>%
   })
 
 site_plots_conspecific <- rlist::list.append(site_plots_conspecific, legend)
-```
 
-```{r plot conspecific per site, fig.height = 7, fig.cap="Conspecific pollen density across plant species for different sites."}
 cowplot::plot_grid(plotlist = site_plots_conspecific, ncol = 3)
+
 ```
 
-```{r figure per plant}
+
+```{r plot conspecific per plant, fig.height = 7, fig.cap="Conspecific pollen density across sites for different study species. Only species present in more than onse site are shown."}
+loadd(dep_frame, sites)
 plant_plots_conspecific <- dep_frame %>%
   filter(pollen_category == 'conspecific') %>%
   inner_join(sites, by = 'site_name') %>%
@@ -118,9 +119,6 @@ plant_plots_conspecific <- plant_plots_conspecific %>%
   })
 
 plant_plots_conspecific <- rlist::list.append(plant_plots_conspecific, legend)
-```
 
-```{r plot conspecific per plant, fig.height = 7, fig.cap="Conspecific pollen density across sites for different study species. Only species present in more than onse site are shown."}
 cowplot::plot_grid(plotlist = plant_plots_conspecific, ncol = 3)
 ```
-
