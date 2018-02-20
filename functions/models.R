@@ -1,6 +1,9 @@
 model_conspecific_self <- function(x){
-  glm(pollen_density ~ recipient * site_name, 
-             data = x, 
+  x %>%
+    rename(species = recipient, 
+           community = site_name) %>%
+    glm(pollen_density ~ species * community, 
+             data = ., 
              subset = treatment == 'closed', 
              family = 'quasipoisson')
 }
