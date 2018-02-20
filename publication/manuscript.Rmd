@@ -18,6 +18,7 @@ options(xtable.comment = FALSE,
         xtable.caption.placement = 'bottom',
         xtable.size = 'small',
         booktabs = TRUE)
+library(broom)
 ```
 
 ## Abstract
@@ -60,9 +61,38 @@ The increase on niche overlap was attributed to be positively associated with an
 
 ### Data analysis
 
-First, we explored wether animal pollination resulted, as expected, in an increase in the pollination service. To do that, we compared the conspecific pollen density on flower stigmas of flowers that were open to pollination and that of flowers that were bagged. We performed this comparisons using a non parametric Wilcoxon test both at the species level and at the species-site level. 
+First, we explored wether animal pollination resulted in a quantitative increase in the pollination service.
+To do that, we compared the conspecific pollen density on flower stigmas of flowers that were open to animal pollination and that of flowers that were bagged, where only self-pollination ocurred.
+We performed this comparisons using a non parametric Wilcoxon test both at the species level and at the community level. 
 
 ## Results
+
+```{r}
+loadd(significant_gain_global, significant_gain_site)
+
+sgg <- glance_table(significant_gain_global)
+prop_sig_global <- sum(sgg$p.value < 0.05) /
+  length(significant_gain_global)
+sgs <- glance_table(significant_gain_site)
+prop_sig_site <- sum(sgs$p.value < 0.05) /
+  length(significant_gain_site)
+
+consistency <- inner_join(sgg, sgs, by = 'recipient') %>% 
+  mutate_at(.vars = c('p.value.x', 'p.value.y'), 
+            .funs = function(x) x < 0.05) %>%
+  mutate(consistent = p.value.x == p.value.y) %>%
+  group_by(recipient) %>%
+  summarise(p.value.x = mean(p.value.x), 
+            consistent = all(consistent),
+            n_sites = n_distinct(site_name)) %>% 
+  filter(n_sites > 1)
+prop_consistency <- sum(consistency$consistent)/
+  nrow(consistency)
+```
+
+Over all study sites, we found that `r round(prop_sig_global*100)`% of species observed a significant increasse (at the $\alpha = 0.05$ level) in pollen density when comparing open and bagged flowers (Table S1). 
+When looking at the differences within sites, we found that only `r round(prop_consistency*100)`% of the species that were present in more than one site had the same response across community (Table S2; Figure S1 and S2). 
+Despite these differences, the community had a comparatively small effect on wether animal pollination increased the pollen density or not (Table S3).
 
 ## Discussion
 
