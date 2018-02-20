@@ -19,11 +19,33 @@ library(xtable)
 library(tidyr)
 ```
 
-```{r}
-loadd(dep_frame, sites, consp_self)
+```{r table species gain global, results = 'asis'}
+loadd(significant_gain_global, significant_gain_site, sites)
+glance_table(significant_gain_global) %>%
+  `rownames<-`(.$recipient) %>%
+  select(estimate, statistic, p.value) %>%
+  rename(`p value` = p.value,
+         `difference` = estimate) %>%
+  xtable(caption = "Results of testing the alternative hypothesis that the conspecific pollen density in open flowers is greater than the density in bagged flowers. ") %>%
+  print(sanitize.rownames.function = function(x) paste0('{\\emph{ ', x, '}}'))
+```
+
+```{r table species gain site, results = 'asis'}
+loadd(significant_gain_global, significant_gain_site, sites)
+glance_table(significant_gain_site) %>%
+  inner_join(sites, by = "site_name") %>%
+  mutate(site_name = paste(locality_name, land_use, fragment, sep = ' - '),
+         rowname = paste0('{\\emph{ ', recipient, '}} - ', site_name)) %>%
+  `rownames<-`(.$rowname) %>%
+  select(estimate, statistic, p.value) %>%
+  rename(`p value` = p.value,
+         `difference` = estimate) %>%
+  xtable(caption = "Results of testing the alternative hypothesis that the conspecific pollen density in open flowers is greater than the density in bagged flowers. ") %>%
+  print(sanitize.rownames.function = function(x) x)
 ```
 
 ```{r variation across sites, results='asis'}
+loadd(consp_self)
 consp_self %>%
   anova(test = "Chisq")  %>%
   xtable(caption = 'Analysis of variance of conspecific pollen density in bagged flowers (self pollination rate).  Density were modelled using a quasipoisson distribution. The model suggests that self-pollination rates are species dependent but not across.')
