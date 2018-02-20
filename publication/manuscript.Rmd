@@ -60,6 +60,8 @@ The increase on niche overlap was attributed to be positively associated with an
 
 ### Data analysis
 
+First, we explored wether animal pollination resulted, as expected, in an increase in the pollination service. To do that, we compared the conspecific pollen density on flower stigmas of flowers that were open to pollination and that of flowers that were bagged. We performed this comparisons using a non parametric Wilcoxon test both at the species level and at the species-site level. 
+
 ## Results
 
 ## Discussion
