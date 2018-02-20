@@ -28,26 +28,32 @@ library(tidyr)
 ```{r table species gain global, results = 'asis'}
 loadd(significant_gain_global, significant_gain_site, sites)
 glance_table(significant_gain_global) %>%
-  `rownames<-`(.$recipient) %>%
-  select(estimate, statistic, p.value) %>%
+  select(recipient, estimate, statistic, p.value) %>%
+  mutate(recipient = paste0('{\\emph{ ', recipient, '}}')) %>%
   rename(`p value` = p.value,
-         `difference` = estimate) %>%
-  xtable(caption = "Results of testing the alternative hypothesis that the conspecific pollen density in open flowers is greater than the density in bagged flowers. ") %>%
-  print(sanitize.rownames.function = function(x) paste0('{\\emph{ ', x, '}}'))
+         `difference` = estimate,
+         `plant species` = recipient) %>%
+  xtable(caption = "Results of testing the alternative hypothesis that the conspecific pollen density in open flowers is greater than the density in bagged flowers. Tests were performed at the species level (across communities).") %>%
+  print.xtable(sanitize.text.function = function(x) x)
 ```
 
 ```{r table species gain site, results = 'asis'}
 loadd(significant_gain_global, significant_gain_site, sites)
 glance_table(significant_gain_site) %>%
   inner_join(sites, by = "site_name") %>%
+  group_by(recipient) %>%
+  mutate(n_sites = n_distinct(site_name)) %>%
+  filter(n_sites > 1) %>%
+  group_by() %>%
   mutate(site_name = paste(locality_name, land_use, fragment, sep = ' - '),
-         rowname = paste0('{\\emph{ ', recipient, '}} - ', site_name)) %>%
-  `rownames<-`(.$rowname) %>%
-  select(estimate, statistic, p.value) %>%
+         recipient = paste0('{\\emph{ ', recipient, '}}')) %>%
+  select(recipient, site_name, estimate, statistic, p.value) %>%
   rename(`p value` = p.value,
-         `difference` = estimate) %>%
-  xtable(caption = "Results of testing the alternative hypothesis that the conspecific pollen density in open flowers is greater than the density in bagged flowers. ") %>%
-  print(sanitize.rownames.function = function(x) x)
+         `difference` = estimate,
+         `plant species` = recipient, 
+         `community` = site_name) %>%
+  xtable(caption = "Results of testing the alternative hypothesis that the conspecific pollen density in open flowers is greater than the density in bagged flowers. Tests were performed at the community level. Only species present in more than one community are shown.") %>%
+  print(sanitize.text.function = function(x) x)
 ```
 
 ```{r variation across sites, results='asis'}
