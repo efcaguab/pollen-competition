@@ -22,6 +22,34 @@ to_data_frame <- function(z, frame_name){
   }, frame_name = frame_name)
 }
 
+#' Extract a data frame with abundance information
+#'
+#' @param x armonised data list
+#'
+#' @return a data frame
+#'
+extract_abu_frame <- function(x){
+  x <- x$abundance %>%
+    to_data_frame('abundance') %>%
+    mutate(flowers = as.integer(flowers))
+  
+  species_site_abu <- x %>%
+    filter(plant_name != 'No plant',
+           !is.na(flowers)) %>%
+    group_by(plant_name, site_name) %>%
+    summarise(abu_com = sum(flowers)) %>%
+    group_by(site_name) %>%
+    mutate(abu_com_rel = scale(abu_com), 
+           abu_com_rel_log = scale(log(abu_com)))
+  
+  species_abu <- species_site_abu %>%
+    group_by(plant_name) %>%
+    summarise(abu_tot = sum(abu_com)) %>%
+    mutate(abu_tot_rel = scale(abu_tot), 
+           abu_tot_rel_log = scale(log(abu_tot)))
+  
+  inner_join(species_site_abu, species_abu, by = 'plant_name')
+}
 
 extract_closed_treatment_means <- function(x, grouping_vars = NULL){
   
