@@ -30,6 +30,7 @@ clean_data <- drake_plan(
 
 format_data <- drake_plan(
   dep_frame = extract_dep_frame(armonised_data),
+  abu_frame = extract_abu_frame(armonised_data),
   # control_dep_plant = extract_closed_treatment_means(dep_frame, c("season", "site_name", "plant")),
   # control_dep_site = extract_closed_treatment_means(dep_frame, c("season", "site_name")),
   # control_dep_global = extract_closed_treatment_means(dep_frame, NULL), 
