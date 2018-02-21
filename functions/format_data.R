@@ -15,8 +15,7 @@ extract_dep_frame <- function(x){
 to_data_frame <- function(z, frame_name){
   plyr::ldply(z, function(y, frame_name){
     y %>% extract2(frame_name) %>%
-      mutate(site_name = y$name,
-             season = paste(y$sampling$from, y$sampling$to))
+      mutate(site_name = y$name)
   }, frame_name = frame_name)
 }
 
