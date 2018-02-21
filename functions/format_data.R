@@ -8,7 +8,10 @@ extract_dep_frame <- function(x){
            pollen_category = if_else(pollen_category, 
                                      "conspecific", 
                                      "heterospecific"), 
-           pollen_density = n_grains/n_stigma)
+           pollen_density = n_grains/n_stigma, 
+           open = as.numeric(treatment == 'open'), 
+           closed = as.numeric(treatment == 'closed')) %>%
+    mutate(plant_name = recipient)
 }
 
 # Build a data frame from the lists joining the specified name
