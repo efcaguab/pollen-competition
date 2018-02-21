@@ -1,3 +1,9 @@
+#' Model to compare conspecific pollen deposition of closed vs open flowers
+#'
+#' @param x data frame with deposition data
+#'
+#' @return a glm model
+#' 
 model_conspecific_self <- function(x){
   x %>%
     rename(species = recipient, 
@@ -9,15 +15,32 @@ model_conspecific_self <- function(x){
 }
 
 
-mann_withney_part_df <- function(x, by = 'recipient', categ = 'conspecific', ...){
+#' Calculate multiple Mann Withney tests in a data frame
+#' 
+#' Each test is performed by grouping by the splitting column. Calls `mann_withney_df` which contains extra parameters for the test
+#'
+#' @param x a data frame 
+#' @param by column 
+#' @param ... other arguments to `mann_withney_df` 
+#' @param var column with numeric data for the test
+#'
+#' @return a list of tests
+#' 
+mann_withney_part_df <- function(x, by = 'recipient', var, ...){
   x %>% 
-    filter(pollen_category == categ) %>%
-    plyr::dlply(by, function(y){
-      try(mann_withney_df(y, ...))
+      plyr::dlply(by, function(y){
+      try(mann_withney_df(y, var, ...))
     })
 }
 
-# test mann withney inside a data frame column
+#' Test mann withney inside a data frame column
+#'
+#' @param x data frame
+#' @param var column with numeric data for the test
+#' @param treatments levels of variable that splits 
+#' @param alternative 
+#' @param conf.int 
+#'
 mann_withney_df <- function(x, var, treatments = c('open', 'closed'), alternative = 'greater', conf.int = FALSE){
   a <- x %>% 
     filter_at(var, any_vars(. == treatments[1])) %$% 

@@ -38,8 +38,8 @@ format_data <- drake_plan(
 
 analysing <- drake_plan(
   consp_self = model_conspecific_self(dep_frame),
-  significant_gain_global = mann_withney_part_df(dep_frame, by = 'recipient', var = 'treatment', conf.int = T),
-  significant_gain_site = mann_withney_part_df(dep_frame, by = c('recipient', 'site_name'), var = 'treatment', conf.int = T),
+  significant_gain_global = mann_withney_part_df(filter(dep_frame, pollen_category == 'conspecific'), by = 'recipient', var = 'treatment', conf.int = T),
+  significant_gain_site = mann_withney_part_df(filter(dep_frame, pollen_category == 'conspecific'), by = c('recipient', 'site_name'), var = 'treatment', conf.int = T),
   strings_in_dots = 'literals'
 )
 
