@@ -137,3 +137,30 @@ plant_plots_conspecific <- rlist::list.append(plant_plots_conspecific, legend)
 
 cowplot::plot_grid(plotlist = plant_plots_conspecific, ncol = 3)
 ```
+
+```{r abundance logtransformed or not, fig.height = 3, fig.cap = "Distribution of plant abundance as (A) raw counts of floral units across communities, and (B) after applying a data transformation in which the counts have been "}
+loadd(plant_rel_abu, sites)
+
+p1 <- plant_rel_abu %>%
+  inner_join(sites, by = 'site_name') %>%
+  ggplot() +
+  stat_density(aes(x = abu_com_rel_log, colour = locality_name),
+               position = position_identity(), geom = 'line') +
+  # stat_density(aes(x = abu_tot_rel_log), geom = 'line') +
+  scale_color_brewer(palette = "Set1") +
+  pub_theme() +
+  # guides(colour = guide_legend(title = 'locality'), linetype = guide_legend(title = 'land use')) +
+  labs(colour = 'locality', x = 'relative abundance')
+
+p2 <- plant_rel_abu %>%
+  inner_join(sites, by = 'site_name') %>%
+  ggplot(aes(x = abu_tot)) +
+  stat_density(position = position_identity(), geom = 'line') +
+  scale_color_brewer(palette = "Set1") +
+  pub_theme() +
+  labs(x = 'abundance (floral units)')
+
+cowplot::plot_grid(p2, p1, rel_widths = c(0.42, 0.58), labels = LETTERS[1:2], label_size = 8)
+
+```
+

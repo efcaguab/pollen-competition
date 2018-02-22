@@ -11,6 +11,9 @@ library(magrittr)
 library(knitr)
 library(rmarkdown)
 library(xtable)
+library(spaa)
+library(purrr)
+library(tidyr)
 
 # load functions
 functions_folder <- './functions'
@@ -31,6 +34,8 @@ clean_data <- drake_plan(
 format_data <- drake_plan(
   dep_frame = extract_dep_frame(armonised_data),
   abu_frame = extract_abu_frame(armonised_data),
+  plant_rel_abu = calculate_relative_abundance(abu_frame),
+  plant_pheno_overlap = calculate_phenology_overlap(abu_frame),
   # control_dep_plant = extract_closed_treatment_means(dep_frame, c("season", "site_name", "plant")),
   # control_dep_site = extract_closed_treatment_means(dep_frame, c("season", "site_name")),
   # control_dep_global = extract_closed_treatment_means(dep_frame, NULL), 
