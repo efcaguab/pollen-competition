@@ -14,6 +14,8 @@ library(xtable)
 library(spaa)
 library(purrr)
 library(tidyr)
+library(bookdown)
+library(tinytex)
 
 # load functions
 functions_folder <- './functions'
@@ -49,9 +51,12 @@ analysing <- drake_plan(
   strings_in_dots = 'literals'
 )
 
+
 reporting <- drake_plan(
-  'publication/supp_info.pdf' = render('publication/supp_info.Rmd', quiet = TRUE),
-  'publication/manuscript.pdf' = render('publication/manuscript.Rmd', quiet = TRUE),
+  'publication/supp_info.tex' = render('publication/supp_info.Rmd', quiet = TRUE),
+  'publication/supp_info.pdf' = latexmk('publication/supp_info.tex', clean = FALSE),
+  'publication/manuscript.tex' = render('publication/manuscript.Rmd', quiet = TRUE),
+  'publication/manuscript.pdf' = latexmk('publication/manuscript.tex', clean = FALSE),
   file_targets = TRUE
 )
 

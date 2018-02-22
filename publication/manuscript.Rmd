@@ -3,14 +3,20 @@ title: "Pollen competition"
 author: "Fernando Cagua, Hugo Marrero, Jason Tylianakis, Daniel Stouffer"
 bibliography: references.bib
 csl: ecology-letters.csl
-output: pdf_document
+output: 
+  bookdown::pdf_document2: 
+    keep_tex: yes
+    number_sections: false
+toc: false
 header-includes:
   - \usepackage{booktabs}
   - \usepackage{setspace}
+  - \usepackage{xr}
+  - \externaldocument{supp_info}
 ---
 
 \doublespacing
-
+ 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE, message = FALSE, 
                       warning = FALSE)
@@ -18,7 +24,7 @@ options(xtable.comment = FALSE,
         xtable.caption.placement = 'bottom',
         xtable.size = 'small',
         booktabs = TRUE)
-library(broom)
+library(broom) 
 ```
 
 ## Abstract
@@ -90,10 +96,10 @@ prop_consistency <- sum(consistency$consistent)/
   nrow(consistency)
 ```
 
-Over all study sites, we found that `r round(prop_sig_global*100)`% of species observed a significant increasse (at the $\alpha = 0.05$ level) in pollen density when comparing open and bagged flowers (Table S1). 
-When looking at the differences within sites, we found that only `r round(prop_consistency*100)`% of the species that were present in more than one site had the same response across community (Table S2; Figure S1 and S2). 
-Despite these differences, the community had a comparatively small effect on wether animal pollination increased the pollen density or not (Table S3).
+Over all study sites, we found that `r round(prop_sig_global*100)`% of species observed a significant increasse (at the $\alpha = 0.05$ level) in pollen density when comparing open and bagged flowers (Table \@ref(tab:table-species-gain-global)). 
+When looking at the differences within sites, we found that only `r round(prop_consistency*100)`% of the species that were present in more than one site had the same response across community (Table \@ref(tab:table-species-gain-site); Figure \@ref(fig:fig-conspecific-per-site) and \@ref(fig:fig-conspecific-per-plant)). 
+Despite these differences, the community had a comparatively small effect on wether animal pollination increased the pollen density or not (Table \@ref(tab:table-variation-across-sites)). 
 
-## Discussion
+## Discussion 
 
 ## References
