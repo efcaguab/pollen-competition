@@ -40,3 +40,12 @@ data/datasets/raw/marrero2016/Workbook1\.xlsx
 publication/manuscript\.pdf
 
 publication/supp_info\.pdf
+
+publication/supp_info_files/
+
+# Tex files
+*.aux
+*.log
+*.out
+*.tex
+*.toc
