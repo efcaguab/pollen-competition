@@ -6,11 +6,10 @@
 #'
 #' @return a data frame with pollen_gain column
 #'
-data_replicate <- function(de, category, ab, transformation = I, dummy_id){
   
-  de <- readd(dep_frame)
-  ab <- readd(plant_rel_abu)
-  ph <- readd(plant_pheno_overlap)
+  # de <- readd(dep_frame)
+  # ab <- readd(plant_rel_abu)
+  # ph <- readd(plant_pheno_overlap)
   
   category <- case_when(
     category == 'con' ~ 'conspecific',
@@ -19,8 +18,9 @@ data_replicate <- function(de, category, ab, transformation = I, dummy_id){
   
   get_deposition_sampled_data(de, category) %>%
     left_join(per_plant(ab), by = 'plant_name') %>%
-    left_join(per_community(ab), by = c('plant_name', 'site_name')) %>% View
-  
+    left_join(per_community(ab), by = c('plant_name', 'site_name')) %>% 
+    left_join(per_plant(ph), by = "plant_name") %>%
+    left_join(per_community(ab), by = c('plant_name', 'site_name'))
 }
 
 per_plant <- function(x){

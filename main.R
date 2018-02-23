@@ -52,6 +52,7 @@ boot_replicates <- drake_plan(
   rep = data_replicate(dep_frame, 
                        "pollen_category", 
                        plant_rel_abu,
+                       plant_pheno_overlap,
                        I, N), 
   mod = run_model(rep_pollen_category_N),
   strings_in_dots = 'literals'
