@@ -46,13 +46,31 @@ format_data <- drake_plan(
   strings_in_dots = 'literals'
 )
 
+n_replicates <- 2
+
+boot_replicates <- drake_plan(
+  rep = data_replicate(dep_frame, 
+                       "pollen_category", 
+                       plant_rel_abu,
+                       I, N), 
+  mod = run_model(rep_pollen_category_N),
+  strings_in_dots = 'literals'
+) %>%
+  evaluate_plan(rules = list(pollen_category = c('con', 'het'), N = 1:n_replicates)) 
+
+gather_replicates <- boot_replicates %>%
+  filter(grepl("mod", target)) %>%
+  split(str_sub(.$target, 5, 7)) %>%
+  map_dfr(~ gather_plan(.), .id = "pollen_category") %>%
+  mutate(target = paste(target, pollen_category, sep = "_")) %>%
+  select(-pollen_category)
+
 analysing <- drake_plan(
   consp_self = model_conspecific_self(dep_frame),
   significant_gain_global = mann_withney_part_df(filter(dep_frame, pollen_category == 'conspecific'), by = 'recipient', var = 'treatment', conf.int = T),
   significant_gain_site = mann_withney_part_df(filter(dep_frame, pollen_category == 'conspecific'), by = c('recipient', 'site_name'), var = 'treatment', conf.int = T),
   strings_in_dots = 'literals'
 )
-
 
 reporting <- drake_plan(
   'publication/supp_info.tex' = render('publication/supp_info.Rmd', quiet = TRUE),
@@ -63,9 +81,11 @@ reporting <- drake_plan(
 )
 
 # set up plan
-project_plan <- rbind(clean_data, format_data, analysing, reporting)
+project_plan <- rbind(clean_data, format_data,
+                      boot_replicates, gather_replicates,
+                      analysing, reporting)
 project_config <- drake_config(project_plan)
+vis_drake_graph_sml0(project_config)
 
 # execute plan
 make(project_plan)
-vis_drake_graph_sml0(project_config)
