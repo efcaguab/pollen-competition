@@ -24,7 +24,6 @@ options(xtable.comment = FALSE,
         xtable.caption.placement = 'bottom',
         xtable.size = 'small',
         booktabs = TRUE)
-library(broom) 
 ```
 
 ## Abstract

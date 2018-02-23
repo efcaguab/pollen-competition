@@ -11,11 +11,13 @@ library(magrittr)
 library(knitr)
 library(rmarkdown)
 library(xtable)
-library(spaa)
+library(spaa)  # niche overlap
 library(purrr)
 library(tidyr)
-library(bookdown)
+library(bookdown)  # figure and table references in reports
 library(tinytex)
+library(ggplot2)
+library(broom) 
 
 # load functions
 functions_folder <- './functions'

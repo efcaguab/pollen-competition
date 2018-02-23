@@ -22,11 +22,6 @@ options(xtable.comment = FALSE,
         xtable.caption.placement = 'bottom',
         xtable.size = 'small',
         booktabs = TRUE)
-library(drake)
-library(ggplot2)
-library(xtable)
-library(tidyr)
-library(stringr)
 ```
 
 ```{r table-species-gain-global, results = 'asis'}
