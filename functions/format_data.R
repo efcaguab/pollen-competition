@@ -123,13 +123,13 @@ global_and_site_overlap <- function(x, transformation = I){
   overlap_site <- x %>%
     niche_overlap(x$site_name, transformation = transformation) %>% 
     rename(site_name = split, 
-           temp_overlap_site = niche_overlap)
+           temp_overlap_com = niche_overlap)
   
   overlap_global <- x %>%
     group_by(plant_name) %>% 
     summarise_if(is.numeric, sum) %>%
     niche_overlap(transformation = transformation) %>% 
-    rename(temp_overlap_global = niche_overlap)
+    rename(temp_overlap_tot = niche_overlap)
   
   inner_join(overlap_global, overlap_site, by = 'plant_name')
 }
