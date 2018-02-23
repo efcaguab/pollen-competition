@@ -49,3 +49,5 @@ publication/supp_info_files/
 *.out
 *.tex
 *.toc
+
+\.drake/
