@@ -6,3 +6,7 @@ pub_theme <- function(){
           strip.text = element_text(hjust = 0),
           legend.title = element_text(hjust = 0.5))
 }
+
+remove_legend <- function(x){
+  x + theme(legend.position = 'none')
+}
