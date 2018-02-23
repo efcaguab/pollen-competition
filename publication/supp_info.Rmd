@@ -137,7 +137,7 @@ plant_plots_conspecific <- rlist::list.append(plant_plots_conspecific, legend)
 cowplot::plot_grid(plotlist = plant_plots_conspecific, ncol = 3)
 ```
 
-```{r fig-abundance-logtransformed-or-not, fig.height = 3, fig.cap = "Distribution of plant abundance as (A) raw counts of floral units across communities, and (B) after applying a data transformation in which the counts have been "}
+```{r fig-abundance-logtransformed-or-not, fig.height = 2.5, fig.cap = "Distribution of plant abundance as (A) raw counts of floral units across communities, and (B) after applying a data transformation in which the counts have been "}
 loadd(plant_rel_abu, sites)
 
 p1 <- plant_rel_abu %>%
