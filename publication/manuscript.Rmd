@@ -67,8 +67,17 @@ The increase on niche overlap was attributed to be positively associated with an
 ### Data analysis
 
 First, we explored wether animal pollination resulted in a quantitative increase in the pollination service.
-To do that, we compared the conspecific pollen density on flower stigmas of flowers that were open to animal pollination and that of flowers that were bagged, where only self-pollination ocurred.
-We performed this comparisons using a non parametric Wilcoxon test both at the species level and at the community level. 
+To do that, we compared the amount of conspecific pollen on stigmas from flowers open to animal pollination and that from flowers that were bagged, where only autogamus self-pollination ocurred.
+The difference between these two counts is not directly equivalent to the pollen deposited by animals because self-pollination is an adaptive trait [@Kalisz2003]. 
+Nevertheless, this difference still provides valuable indication of what the animal contribution to reproductive output.
+We performed this comparisons using a set of non parametric Wilcoxon tests both at the community and the the species level (grouping species across communities). 
+
+We then examined the extent to which the pollination service was influenced by the number of pollination partners while accounting for other metrics that describe the plant's pollination niche and community composition. 
+To do so, we fitted two sets of generalised linear models (GLM) with deposited pollen density (pollen count per stigma) as the response variable. 
+The first model focused on the conspecific pollen deposited on stigmas while the second model focused on the heterospecific pollen. 
+In this approach, the coefficients of both models as well as their relationship, provide an indication of the quantity and the quality of animal pollination as well as the trade-off between these two.
+
+In both models we expect animal pollination to be 
 
 ## Results
 
@@ -100,5 +109,7 @@ When looking at the differences within sites, we found that only `r round(prop_c
 Despite these differences, the community had a comparatively small effect on wether animal pollination increased the pollen density or not (Table \@ref(tab:table-variation-across-sites)). 
 
 ## Discussion 
+
+Relative small difference between conspecific animal and self pollination is conservative because crossing is better than cloning ()
 
 ## References
