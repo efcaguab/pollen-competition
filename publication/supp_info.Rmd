@@ -83,7 +83,7 @@ site_plots_conspecific <- dep_frame %>%
       pub_theme() +
       xlab(NULL) +
       ylab('pollen density') +
-      scale_fill_brewer(palette = "Greys")
+      scale_fill_brewer(palette = "Blues")
   })
 
 legend <- cowplot::get_legend(site_plots_conspecific[[1]])
@@ -125,7 +125,7 @@ plant_plots_conspecific <- dep_frame %>%
       pub_theme() +
       xlab(NULL) +
       ylab('pollen density') +
-      scale_fill_brewer(palette = "Greys")
+      scale_fill_brewer(palette = "Blues")
   })
 
 legend <- cowplot::get_legend(plant_plots_conspecific[[1]])
@@ -176,7 +176,7 @@ p1 <- plant_rel_abu %>%
   stat_density(aes(x = abu_com_rel_log, colour = locality_name),
                position = position_identity(), geom = 'line') +
   # stat_density(aes(x = abu_tot_rel_log), geom = 'line') +
-  scale_color_brewer(palette = "Set1") +
+  scale_color_brewer(palette = "Blues") +
   pub_theme() +
   # guides(colour = guide_legend(title = 'locality'), linetype = guide_legend(title = 'land use')) +
   labs(colour = 'locality', x = 'relative abundance')
@@ -185,7 +185,7 @@ p2 <- plant_rel_abu %>%
   inner_join(sites, by = 'site_name') %>%
   ggplot(aes(x = abu_tot)) +
   stat_density(position = position_identity(), geom = 'line') +
-  scale_color_brewer(palette = "Set1") +
+  scale_color_brewer(palette = "Blues") +
   pub_theme() +
   labs(x = 'abundance (floral units)')
 
