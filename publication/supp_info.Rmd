@@ -141,6 +141,32 @@ plant_plots_conspecific <- rlist::list.append(plant_plots_conspecific, legend)
 cowplot::plot_grid(plotlist = plant_plots_conspecific, ncol = 3)
 ```
 
+```{r fig-deposition-logtransformed-or-not, fig.height = 2.5, fig.cap = "Distribution of stigmatic pollen density plotted in (A) a linear scale, and (B) a logarithmic scale (zero values not shown)."}
+loadd(dep_frame, sites)
+
+p1 <- dep_frame %>%
+  mutate(pollen_category = paste(pollen_category, "pollen"), 
+         treatment = if_else(treatment == 'closed', 'bagged', treatment)) %>%
+  ggplot(aes(x = pollen_density, colour = treatment)) + 
+  stat_density(geom = "line") +
+  facet_wrap( ~ pollen_category, scales = "free") +
+  pub_theme() +
+  scale_color_brewer(palette = "Blues") +
+  labs(x = "pollen density (grains per stigma)", 
+       colour = "flower treatment") +
+  theme(legend.position = "top")
+  
+p2 <- p1 +
+  scale_x_log10()
+
+leg <- cowplot::get_legend(p1)
+
+cowplot::plot_grid(remove_legend(p1), remove_legend(p2), 
+                   labels = LETTERS[1:2], 
+                   label_size = 8) %>%
+  cowplot::plot_grid(leg, ., rel_heights = c(0.1, 0.9), ncol = 1)
+```
+
 ```{r fig-abundance-logtransformed-or-not, fig.height = 2.5, fig.cap = "Distribution of plant abundance as (A) raw counts of floral units across communities, and (B) after applying a data transformation in which the counts have been "}
 loadd(plant_rel_abu, sites)
 
