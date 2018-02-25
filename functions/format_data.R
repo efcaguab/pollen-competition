@@ -114,11 +114,12 @@ calculate_phenology_overlap <- function(x) {
   
   n_flowers <- flower_matrix(x)
   
-  overlap_linear <- global_and_site_overlap(n_flowers)
+  overlap_linear <- global_and_site_overlap(n_flowers) %>%
+    mutate(var_trans = 'lin')
   overlap_log <- global_and_site_overlap(n_flowers, function(x) log(x + 1)) %>%
-    rename_if(is.numeric, function(x) paste0(x, '_log'))
+    mutate(var_trans = 'log')
   
-  inner_join(overlap_linear, overlap_log, by = c("plant_name", "site_name"))
+  bind_rows(overlap_linear, overlap_log)
 }
 
 #' Calculate phenology overlap at the site and global scale
@@ -132,15 +133,26 @@ global_and_site_overlap <- function(x, transformation = I){
   overlap_site <- x %>%
     niche_overlap(x$site_name, transformation = transformation) %>% 
     rename(site_name = split, 
-           temp_overlap_com = niche_overlap)
+           tov = niche_overlap) %>%
+    mutate(scale = "community")
   
   overlap_global <- x %>%
     group_by(plant_name) %>% 
     summarise_if(is.numeric, sum) %>%
     niche_overlap(transformation = transformation) %>% 
-    rename(temp_overlap_tot = niche_overlap)
+    rename(tov = niche_overlap) %>%
+    mutate(scale = 'global') %>%
+    right_join(plant_site_combinations(overlap_site), by = c('plant_name'))
   
-  inner_join(overlap_global, overlap_site, by = 'plant_name')
+  bind_rows(overlap_site, overlap_global)
+}
+
+plant_site_combinations <- function(x){
+  x %>%
+    group_by() %>%
+    select(plant_name, site_name) %>%
+    distinct() %>%
+    complete(plant_name, site_name)
 }
 
 #' Spread flower abundance data so that each date is in a column
