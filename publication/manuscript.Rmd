@@ -108,13 +108,14 @@ Over all study sites, we found that `r round(prop_sig_global*100)`% of species o
 When looking at the differences within sites, we found that only `r round(prop_consistency*100)`% of the species that were present in more than one site had the same response across community (Table \@ref(tab:table-species-gain-site); Figure \@ref(fig:fig-conspecific-per-site) and \@ref(fig:fig-conspecific-per-plant)). 
 Despite these differences, the community had a comparatively small effect on wether animal pollination increased the pollen density or not (Table \@ref(tab:table-variation-across-sites)). 
 
-```{r model-results, fig.height = 2.5, fig.cap = "Model coefficients"}
+```{r model-results, fig.height = 3, fig.cap = "Model coefficients"}
 loadd(tidied_models)
 
 tidied_models %>%
-  filter(term != "(Intercept)", 
-         var_trans == 'log') %>%
-  group_by(pollen_category,scale, model, term) %>%
+  filter(term != "(Intercept)" #, 
+         # var_trans == 'log'
+         ) %>%
+  group_by(pollen_category,scale, model, var_trans, term) %>%
   summarise(estimate = first(estimate)) %>%
   ggplot(aes(x = estimate, 
              colour = pollen_category, 
@@ -128,9 +129,10 @@ tidied_models %>%
                scale = "count",
                bins = 15) +
   pub_theme() +
-  facet_grid(scale ~ term, scales = "free_x") +
+  facet_grid(scale ~ term + var_trans, scales = "free_x") +
   scale_color_brewer(palette = "Set1") +
-  scale_fill_brewer(palette = "Set1")
+  scale_fill_brewer(palette = "Set1") +
+  theme(legend.position = "bottom")
 ```
 
 
