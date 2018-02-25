@@ -76,22 +76,31 @@ extract_abu_frame <- function(x){
 #' @return a data frame with relative abiundance per site and global in linear and logarithmic scale
 #'
 calculate_relative_abundance <- function(x){
+  
+  # abundance per site
   species_site_abu <- x %>%
     filter(plant_name != 'No plant',
            !is.na(flowers)) %>%
     group_by(plant_name, site_name) %>%
-    summarise(abu_com = sum(flowers)) %>%
+    summarise(abu = sum(flowers)) %>%
     group_by(site_name) %>%
-    mutate(abu_com_rel = scale(abu_com), 
-           abu_com_rel_log = scale(log(abu_com)))
+    mutate(lin = scale(abu), 
+           log = scale(log(abu))) %>% 
+    gather("var_trans", "rab", lin, log) %>% 
+    mutate(scale = 'community')
   
+  # abudance per plant
   species_abu <- species_site_abu %>%
     group_by(plant_name) %>%
-    summarise(abu_tot = sum(abu_com)) %>%
-    mutate(abu_tot_rel = scale(abu_tot), 
-           abu_tot_rel_log = scale(log(abu_tot)))
-  
-  inner_join(species_site_abu, species_abu, by = 'plant_name')
+    summarise(abu = sum(abu)) %>%
+    mutate(lin = scale(abu), 
+           log = scale(log(abu))) %>%
+    gather("var_trans", "rab", lin, log) %>%
+    right_join(plant_site_combinations(species_site_abu), by = 'plant_name') %>%
+    mutate(scale= 'global')
+    
+  # put both together in a tidy frame
+    bind_rows(species_site_abu, species_abu) %>% group_by()
 }
 
 
