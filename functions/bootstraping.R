@@ -67,3 +67,26 @@ run_model <- function(d, method = "ML"){
 
 }
 
+# AGGREGATE MODELS --------------------------------------------------------
+
+glance_models <- function(...){
+  models <- list(...)
+  gather_models(models, glance)
+}
+
+tidy_models <- function(...){
+  models <- list(...)
+  gather_models(models, tidy)
+}
+
+gather_models <- function(models, fun){
+  fun_model <- function(x){
+    x %>%
+      map_df(~ fun(.), .id = "m") %>%
+      separate("m", c("pollen_category", "scale", "var_trans"))
+  }
+  
+  models %>% 
+    map_df(~ fun_model(.), .id = 'model')
+}
+
