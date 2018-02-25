@@ -1,3 +1,5 @@
+# PREPARE DATA ------------------------------------------------------------
+
 #' Generate replicate datasets for analysis of open-closed flowers
 #'
 #' @param de dep_frame
@@ -6,43 +8,20 @@
 #'
 #' @return a data frame with pollen_gain column
 #'
-data_replicate <- function(de, category, ab, ph, transformation = I, dummy_id){
+data_replicate <- function(de, ab, ph, transformation = I, dummy_id){
   
   # de <- readd(dep_frame)
+  # ab <- calculate_relative_abundance(readd(abu_frame))
+  # ph <- calculate_phenology_overlap(readd(abu_frame))
   # ab <- readd(plant_rel_abu)
   # ph <- readd(plant_pheno_overlap)
   
-  category <- case_when(
-    category == 'con' ~ 'conspecific',
-    TRUE ~ 'heterospecific'
-  )
-  
-  get_deposition_sampled_data(de, category) %>%
-    left_join(per_plant(ab), by = 'plant_name') %>%
-    left_join(per_community(ab), by = c('plant_name', 'site_name')) %>% 
-    left_join(per_plant(ph), by = "plant_name") %>%
-    left_join(per_community(ab), by = c('plant_name', 'site_name'))
-}
-
-#' Get global values per plant
-#'
-#' @param x data frame with some colums that contain the string 'tot'
-#'
-#' @return a data frame organised per plant
-#' 
-per_plant <- function(x){
-  x %>%
-    group_by(plant_name) %>%
-    summarise_at(vars(contains('tot')), unique)
-}
-
-#' Select only community relevant columns in a data frame
-#'
-#' @param x a data frame with plant and site name
-#'
-per_community <- function(x){
-  x %>% 
-    select_at(vars(-contains('tot')))
+  de$pollen_category %>%
+    unique() %>%
+    map_df(~ get_deposition_sampled_data(de, ., transformation)) %>% 
+    left_join(ab) %>%
+    left_join(ph) %>% 
+    group_by(scale)
 }
 
 #' Sample the deposition data to get a boostrap data replicate 
@@ -52,7 +31,7 @@ per_community <- function(x){
 #'
 #' @return a dataframe with bootstrap replicates
 #' 
-get_deposition_sampled_data <- function(x, category){
+get_deposition_sampled_data <- function(x, category, transformation){
   
   x %>%
     # only work with one category at a time
@@ -77,3 +56,4 @@ get_deposition_sampled_data <- function(x, category){
     mutate(pollen_gain = open - closed) %>%
     mutate(pollen_category = category)
 }
+
