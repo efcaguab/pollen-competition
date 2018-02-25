@@ -47,7 +47,7 @@ format_data <- drake_plan(
   strings_in_dots = 'literals'
 )
 
-n_replicates <- 100
+n_replicates <- 29
 transformation <- function(x) log(x + 1)
 
 boot_replicates <- drake_plan(
@@ -67,8 +67,6 @@ glance_replicates <- boot_replicates %>%
 tidy_replicates <- boot_replicates %>%
   filter(grepl("mod", target)) %>%
   gather_plan(., gather = "tidy_models", target = "tidied_models")
-
-
 
 analysing <- drake_plan(
   consp_self = model_conspecific_self(dep_frame),
@@ -94,5 +92,5 @@ project_plan <- rbind(clean_data, format_data,
 project_config <- drake_config(project_plan)
 
 # execute plan
-make(project_plan)
-vis_drake_graph(project_config, split_columns = T, targets_only = T)
+make(project_plan, parallelism = "parLapply", jobs = 4)
+# vis_drake_graph(project_config, split_columns = T, targets_only = T)
