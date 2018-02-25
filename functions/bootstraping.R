@@ -57,3 +57,13 @@ get_deposition_sampled_data <- function(x, category, transformation){
     mutate(pollen_category = category)
 }
 
+# MODELS ------------------------------------------------------------------
+
+run_model <- function(d, method = "ML"){
+  
+  d %>%
+    split(list(.$pollen_category, .$scale, .$var_trans)) %>%
+    map(~ lme(pollen_gain ~ rab + tov, random = ~ 1 | plant_name, na.action = na.omit, method = method, data = .))
+
+}
+
