@@ -1,5 +1,5 @@
 vis_drake_graph_sml0 <- function(config){
-  df <- dataframes_graph(config, split_columns = F)
+  df <- dataframes_graph(config, split_columns = T)
   nodes_to_remove <- df$nodes %>%
     filter(level == 0,
            type != 'file') %$% id
