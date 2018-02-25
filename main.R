@@ -2,7 +2,6 @@
 library(stats)
 library(utils)
 # additional packages
-library(dplyr)
 library(foreach)
 library(drake)
 library(tools)
@@ -18,6 +17,8 @@ library(bookdown)  # figure and table references in reports
 library(tinytex)
 library(ggplot2)
 library(broom) 
+library(nlme)
+library(dplyr)
 
 # load functions
 functions_folder <- './functions'
