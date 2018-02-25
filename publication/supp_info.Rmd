@@ -171,9 +171,11 @@ cowplot::plot_grid(remove_legend(p1), remove_legend(p2),
 loadd(plant_rel_abu, sites)
 
 p1 <- plant_rel_abu %>%
+  filter(scale == 'community', 
+         var_trans == 'log') %>%
   inner_join(sites, by = 'site_name') %>%
   ggplot() +
-  stat_density(aes(x = abu_com_rel_log, colour = locality_name),
+  stat_density(aes(x = rab, colour = locality_name),
                position = position_identity(), geom = 'line') +
   # stat_density(aes(x = abu_tot_rel_log), geom = 'line') +
   scale_color_brewer(palette = "Blues") +
@@ -182,8 +184,11 @@ p1 <- plant_rel_abu %>%
   labs(colour = 'locality', x = 'relative abundance')
 
 p2 <- plant_rel_abu %>%
+  filter(scale == 'global', 
+         var_trans == 'log') %>%
+  distinct() %>%
   inner_join(sites, by = 'site_name') %>%
-  ggplot(aes(x = abu_tot)) +
+  ggplot(aes(x = abu)) +
   stat_density(position = position_identity(), geom = 'line') +
   scale_color_brewer(palette = "Blues") +
   pub_theme() +
