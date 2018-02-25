@@ -46,25 +46,22 @@ format_data <- drake_plan(
   strings_in_dots = 'literals'
 )
 
-n_replicates <- 2
+n_replicates <- 3
+transformation <- function(x) log(x + 1)
 
 boot_replicates <- drake_plan(
   rep = data_replicate(dep_frame, 
-                       "pollen_category", 
                        plant_rel_abu,
                        plant_pheno_overlap,
-                       I, N), 
-  mod = run_model(rep_pollen_category_N),
+                       transformation, N), 
+  mod = run_model(rep_N),
   strings_in_dots = 'literals'
 ) %>%
-  evaluate_plan(rules = list(pollen_category = c('con', 'het'), N = 1:n_replicates)) 
+  evaluate_plan(rules = list(N = 1:n_replicates)) 
 
 gather_replicates <- boot_replicates %>%
   filter(grepl("mod", target)) %>%
-  split(str_sub(.$target, 5, 7)) %>%
-  map_dfr(~ gather_plan(.), .id = "pollen_category") %>%
-  mutate(target = paste(target, pollen_category, sep = "_")) %>%
-  select(-pollen_category)
+  gather_plan(., gather = "tidy_glance")
 
 analysing <- drake_plan(
   consp_self = model_conspecific_self(dep_frame),
@@ -86,7 +83,7 @@ project_plan <- rbind(clean_data, format_data,
                       boot_replicates, gather_replicates,
                       analysing, reporting)
 project_config <- drake_config(project_plan)
-vis_drake_graph_sml0(project_config)
 
 # execute plan
 make(project_plan)
+vis_drake_graph(project_config, split_columns = F, targets_only = T)
