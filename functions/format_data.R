@@ -24,7 +24,9 @@ extract_dep_frame <- function(x){
            pollen_density = n_grains/n_stigma, 
            open = as.numeric(treatment == 'open'), 
            closed = as.numeric(treatment == 'closed')) %>%
-    mutate(plant_name = recipient)
+    mutate(plant_name = recipient) %>%
+    mutate(pollen_density = if_else(pollen_category == 'heterospecific' &
+                                      treatment == 'closed', 0, pollen_density))
 }
 
 extract_closed_treatment_means <- function(x, grouping_vars = NULL){
