@@ -107,6 +107,7 @@ prop_consistency <- sum(consistency$consistent)/
 Over all study sites, we found that `r round(prop_sig_global*100)`% of species observed a significant increasse (at the $\alpha = 0.05$ level) in pollen density when comparing open and bagged flowers (Table \@ref(tab:table-species-gain-global)). 
 When looking at the differences within sites, we found that only `r round(prop_consistency*100)`% of the species that were present in more than one site had the same response across community (Table \@ref(tab:table-species-gain-site); Figure \@ref(fig:fig-conspecific-per-site) and \@ref(fig:fig-conspecific-per-plant)). 
 Despite these differences, the community had a comparatively small effect on wether animal pollination increased the pollen density or not (Table \@ref(tab:table-variation-across-sites)). 
+When comparing the performance of the models constructed at the community or study-wide level we found that the gain in conspecific pollen was better predicted by the community level models, while the gain in heterospecific pollen was better predicted by the study-wide models (Table \@ref(S-tab:table-global-vs-community-models). 
 
 ```{r model-results, fig.height = 3, fig.cap = "Model coefficients"}
 loadd(tidied_models)

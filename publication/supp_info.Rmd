@@ -195,6 +195,19 @@ p2 <- plant_rel_abu %>%
   labs(x = 'abundance (floral units)')
 
 cowplot::plot_grid(p2, p1, rel_widths = c(0.42, 0.58), labels = LETTERS[1:2], label_size = 8)
+```{r table-global-vs-community-models, results = 'asis'}
+loadd(wilcox_glo_com)
 
+wilcox_glo_com %>%
+  filter(quality %in% c("rmse", "sigma"), 
+         var_trans == "log") %>%
+  select(quality, pollen_category, min_scale, estimate, p.value) %>%
+  rename(`model metric` = quality,
+         `pollen type` = pollen_category, 
+         `best model set` = min_scale,
+         `shift estimate` = estimate, 
+         `p value` = p.value) %>%
+  xtable(digits = -1, caption = "Results of two sample paired Wilcoxon signed rank test comparing the root mean square error and the residual standard deviation of the model sets constructed using predictors computed at the community or study level.", 
+         label = "tab:table-global-vs-community-models")
 ```
 

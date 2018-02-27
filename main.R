@@ -91,6 +91,8 @@ models <- rbind(
   fixed_models, glanced_fixed_models, tidied_fixed_models
 )
 
+model_summaries <- drake_plan(
+  wilcox_glo_com = global_vs_community(glanced_fixed)
 )
 
 reporting <- drake_plan(
