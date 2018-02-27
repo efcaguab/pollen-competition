@@ -50,5 +50,3 @@ mann_withney_df <- function(x, var, treatments = c('open', 'closed'), alternativ
     pollen_density
   wilcox.test(a, b, alternative, conf.int = conf.int)
 }
-
-
