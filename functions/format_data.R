@@ -134,14 +134,16 @@ global_and_site_overlap <- function(x, transformation = I){
     niche_overlap(x$site_name, transformation = transformation) %>% 
     rename(site_name = split, 
            tov = niche_overlap) %>%
-    mutate(scale = "community")
+    mutate(scale = "community", 
+           tov = scale(tov))
   
   overlap_global <- x %>%
     group_by(plant_name) %>% 
     summarise_if(is.numeric, sum) %>%
     niche_overlap(transformation = transformation) %>% 
     rename(tov = niche_overlap) %>%
-    mutate(scale = 'global') %>%
+    mutate(scale = 'global', 
+           tov = scale(tov)) %>%
     right_join(plant_site_combinations(overlap_site), by = c('plant_name'))
   
   bind_rows(overlap_site, overlap_global)
