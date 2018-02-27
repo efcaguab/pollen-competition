@@ -8,7 +8,7 @@
 #'
 #' @return a data frame with pollen_gain column
 #'
-data_replicate <- function(de, ab, ph, transformation = I, dummy_id){
+data_replicate <- function(de, ab, ph, sites, transformation = I, dummy_id){
   
   # de <- readd(dep_frame)
   # ab <- calculate_relative_abundance(readd(abu_frame))
@@ -20,8 +20,10 @@ data_replicate <- function(de, ab, ph, transformation = I, dummy_id){
     unique() %>%
     map_df(~ get_deposition_sampled_data(de, ., transformation)) %>% 
     left_join(ab) %>%
-    left_join(ph) %>% 
-    group_by(scale)
+    left_join(ph) %>%
+    inner_join(sites) %>%
+    mutate(fragment = as.character(fragment)) %>%
+    group_by(scale) 
 }
 
 #' Sample the deposition data to get a boostrap data replicate 
