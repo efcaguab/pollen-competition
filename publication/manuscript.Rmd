@@ -34,7 +34,7 @@ options(xtable.comment = FALSE,
 
 ### Data collection
 
-We performed sampling in three locations, each located in a distinct phytogeograohic region of the Argentinean Pampas (Figure XX). 
+We performed sampling in three locations, each located in a distinct phytogeograohic region of the Argentinean Pampas. 
 The sampling locations are distributed across a gradient of precipitation with a humid temperate climate in the eastward Flooding Pampas and an drier as we move inland and westward towards the Pampean Grasslands.
 Across all sites, annual mean temperatures range between 14.8 and 15.8 Celsius. 
 
