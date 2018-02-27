@@ -77,7 +77,9 @@ extract_abu_frame <- function(x){
 #'
 #' @return a data frame with relative abiundance per site and global in linear and logarithmic scale
 #'
-calculate_relative_abundance <- function(x){
+calculate_relative_abundance <- function(x, dep_frame){
+  
+  focal_plants <- unique(dep_frame$plant_name)
   
   # abundance per site
   species_site_abu <- x %>%
@@ -85,7 +87,8 @@ calculate_relative_abundance <- function(x){
            !is.na(flowers)) %>%
     group_by(plant_name, site_name) %>%
     summarise(abu = sum(flowers)) %>%
-    group_by(site_name) %>%
+    group_by() %>%
+    filter(plant_name %in% focal_plants) %>%
     mutate(lin = scale(abu), 
            log = scale(log(abu))) %>% 
     gather("var_trans", "rab", lin, log) %>% 
@@ -95,6 +98,8 @@ calculate_relative_abundance <- function(x){
   species_abu <- species_site_abu %>%
     group_by(plant_name) %>%
     summarise(abu = sum(abu)) %>%
+    group_by() %>%
+    filter(plant_name %in% focal_plants) %>%
     mutate(lin = scale(abu), 
            log = scale(log(abu))) %>%
     gather("var_trans", "rab", lin, log) %>%
@@ -112,14 +117,22 @@ calculate_relative_abundance <- function(x){
 #'
 #' @return a data frame
 #'
-calculate_phenology_overlap <- function(x) {
+calculate_phenology_overlap <- function(x, dep_frame) {
   
+  focal_plants <- unique(dep_frame$plant_name)
   n_flowers <- flower_matrix(x)
   
   overlap_linear <- global_and_site_overlap(n_flowers) %>%
-    mutate(var_trans = 'lin')
+    mutate(var_trans = 'lin') %>%
+    filter(plant_name %in% focal_plants) %>%
+    group_by(scale) %>%
+    mutate(tov = scale(tov))
+           
   overlap_log <- global_and_site_overlap(n_flowers, function(x) log(x + 1)) %>%
-    mutate(var_trans = 'log')
+    mutate(var_trans = 'log') %>%
+    filter(plant_name %in% focal_plants) %>%
+    group_by(scale) %>%
+    mutate(tov = scale(tov))
   
   bind_rows(overlap_linear, overlap_log)
 }
@@ -136,16 +149,14 @@ global_and_site_overlap <- function(x, transformation = I){
     niche_overlap(x$site_name, transformation = transformation) %>% 
     rename(site_name = split, 
            tov = niche_overlap) %>%
-    mutate(scale = "community", 
-           tov = scale(tov))
+    mutate(scale = "community")
   
   overlap_global <- x %>%
     group_by(plant_name) %>% 
     summarise_if(is.numeric, sum) %>%
     niche_overlap(transformation = transformation) %>% 
     rename(tov = niche_overlap) %>%
-    mutate(scale = 'global', 
-           tov = scale(tov)) %>%
+    mutate(scale = 'global') %>%
     right_join(plant_site_combinations(overlap_site), by = c('plant_name'))
   
   bind_rows(overlap_site, overlap_global)
