@@ -132,15 +132,18 @@ Despite these differences, the community had a comparatively small effect on wet
 We found that the random structure that was best supported the data was consistently the one that included plant species grouped in communities as random effect (Table \@ref(S-tab:table-aic-random-models)).
 When comparing the performance of the models constructed at the community or study-wide level we found that the gain in conspecific pollen was better predicted by the community level models, while the gain in heterospecific pollen was better predicted by the study-wide models (Table \@ref(S-tab:table-global-vs-community-models). 
 
-```{r model-results, fig.height = 3, fig.cap = "Model coefficients"}
-loadd(tidied_models)
+```{r fig-model-results, fig.height = 3, fig.width = 3.4, fig.cap = "Model coefficients"}
+loadd(tidied_fixed, sites)
 
-tidied_models %>%
-  filter(term != "(Intercept)" #, 
-         # var_trans == 'log'
+tidied_fixed %>%
+  filter(term != "(Intercept)" , 
+         var_trans == 'log', 
+         scale == "community"
          ) %>%
   group_by(pollen_category,scale, model, var_trans, term) %>%
   summarise(estimate = first(estimate)) %>%
+  group_by() %>%
+  humanize() %>%
   ggplot(aes(x = estimate, 
              colour = pollen_category, 
              fill = pollen_category)) +
@@ -153,12 +156,11 @@ tidied_models %>%
                scale = "count",
                bins = 15) +
   pub_theme() +
-  facet_grid(scale ~ term + var_trans, scales = "free_x") +
+  facet_wrap( ~ term, scales = "free_x", ncol = 1) +
   scale_color_brewer(palette = "Set1") +
   scale_fill_brewer(palette = "Set1") +
   theme(legend.position = "bottom")
 ```
-
 
 ## Discussion 
 
