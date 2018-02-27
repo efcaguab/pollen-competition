@@ -46,6 +46,7 @@ format_data <- drake_plan(
   abu_frame = extract_abu_frame(armonised_data),
   plant_rel_abu = calculate_relative_abundance(abu_frame, dep_frame),
   plant_pheno_overlap = calculate_phenology_overlap(abu_frame, dep_frame),
+  vis_frame = extract_vis_frame(armonised_data),
   strings_in_dots = 'literals'
 )
 

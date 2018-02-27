@@ -216,3 +216,28 @@ niche_overlap <- function(x, split_by = 1, transformation = I){
     map_dfr(~ tibble(plant_name = names(.), niche_overlap = .), .id = .id) 
 }
 
+# DEGREE ------------------------------------------------------------------
+
+#' Extract visitation
+#'
+#' @param x 
+#'
+#' @return
+#' @export
+#'
+#' @examples
+extract_vis_frame <- function(x){
+
+  quant <- x$visitation_quant %>% 
+  to_data_frame("visitation") %>%
+    mutate(survey_type = "quantitative")
+  
+  qual <- x$visitation_qual %>%
+    to_data_frame("visitation") %>%
+    mutate(survey_type = "qualitative") %>%
+    select(-locality)
+  
+  bind_rows(quant, qual) 
+}
+
+}
