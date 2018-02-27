@@ -275,7 +275,7 @@ tidied_fixed %>%
 ```
 
 ```{r table-aic-random-models, results= 'asis'}
-loadd(glanced_random)
+loadd(glanced_random, random_effects)
 
 summ <- glanced_random %>%
   filter(var_trans == "log") %>%
@@ -288,14 +288,14 @@ summ <- glanced_random %>%
   mutate_if(is.numeric, round, digits = 1) %>% 
   mutate(delta_AIC = paste0(AIC_50, " [", AIC_05, ", ", AIC_95, "]")) %>%
   group_by() %>%
-  humanize() %>%
-  arrange(pollen_category, scale, random_effect) %>%
+  humanize(random_effects = random_effects) %>%
+  arrange(pollen_category, scale, random_name) %>%
   rename(`pollen category` = pollen_category, 
-         `random structure` = random_effect) 
+         `random structure` = random_name) 
 
 contingency_table <- summ %>%
   # select(-var_trans) %>%
-  ftable(row.vars = 4, col.vars = c(1, 2)) 
+  ftable(row.vars = 10, col.vars = c(1, 2)) 
   
 contingency_table[1:nrow(summ)] <- summ$delta_AIC
 

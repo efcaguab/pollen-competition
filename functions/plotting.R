@@ -18,10 +18,8 @@ remove_legend <- function(x){
 #' @param sites 
 #'
 #' @return
-#' @export
-#'
-#' @examples
-humanize <- function(x, sites = NA){
+#' 
+humanize <- function(x, sites = NA, random_effects = NA){
   if('site_name' %in% names(x)){
     x <- inner_join(x, sites, by = 'site_name')
   }
@@ -34,14 +32,7 @@ humanize <- function(x, sites = NA){
       ))
   }
   if('random_effect' %in% names(x)){
-    x <- x %>%
-      mutate(random_effect = case_when(
-        random_effect == 'plantINcommunity' ~ '1 | comunity / plant sp.',
-        random_effect == 'plantINfragment' ~ '1 | locality / land use / fragment / plant sp.',
-        random_effect == 'plantINlanduse' ~ '1 | locality / land use / plant sp.',
-        random_effect == 'plantINlocality' ~ '1 | locality / plant sp.', 
-        TRUE ~ '1 | plant sp.'
-      ))
+    x <- inner_join(x, random_effects, by = "random_effect")
   }
   x
 }
