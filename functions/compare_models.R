@@ -22,8 +22,15 @@ global_vs_community <- function(glanced_models_table){
     mutate(min_scale = if_else(estimate < 0, "community", "global"))
 }
 
-best_random_effect <- function(x){
-  x %>%
+#' Figure out best random effect
+#'
+#' @param x glanced_random
+#' @param random_effects data frame with random effects
+#'
+#' @return one-row data frame with the best one, name and formula
+#' 
+best_random_effect <- function(x, random_effects){
+  best <- x %>%
     group_by(pollen_category, scale, var_trans, model) %>%
     mutate(delta_AIC = AIC - min(AIC)) %>%
     group_by(pollen_category, scale, var_trans, random_effect) %>%
@@ -32,4 +39,7 @@ best_random_effect <- function(x){
     summarise(AIC_50 = median(AIC_50)) %>%
     filter(AIC_50 == min(AIC_50)) %$%
     random_effect
+  
+  random_effects %>%
+    filter(random_effect == best)
 }

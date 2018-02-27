@@ -77,11 +77,11 @@ run_random_models <- function(d, random_effects, method = "REML"){
     map(~ try(lme(pollen_gain ~ rab + tov, random = as.formula(.$random_formula[1]), na.action = na.omit, method = method, data = .)))
 }
 
-run_model <- function(d, method = "ML"){
+run_model <- function(d, best_random, method = "ML"){
   
   d %>%
     split(list(.$pollen_category, .$scale, .$var_trans)) %>%
-    map(~ lme(pollen_gain ~ rab + tov, random = ~ 1 | site_name / plant_name, na.action = na.omit, method = method, data = .))
+    map(~ lme(pollen_gain ~ rab + tov, random = as.formula(best_random$random_formula), na.action = na.omit, method = method, data = .))
 
 }
 
