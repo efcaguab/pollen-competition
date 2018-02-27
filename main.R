@@ -3,6 +3,8 @@ library(stats)
 library(utils)
 # additional packages
 library(foreach)
+library(sjstats)
+library(MuMIn)
 library(drake)
 library(tools)
 library(stringr)
@@ -19,6 +21,7 @@ library(ggplot2)
 library(broom) 
 library(nlme)
 library(dplyr)
+
 
 # load functions
 functions_folder <- './functions'
@@ -41,38 +44,53 @@ format_data <- drake_plan(
   abu_frame = extract_abu_frame(armonised_data),
   plant_rel_abu = calculate_relative_abundance(abu_frame),
   plant_pheno_overlap = calculate_phenology_overlap(abu_frame),
-  # control_dep_plant = extract_closed_treatment_means(dep_frame, c("season", "site_name", "plant")),
-  # control_dep_site = extract_closed_treatment_means(dep_frame, c("season", "site_name")),
-  # control_dep_global = extract_closed_treatment_means(dep_frame, NULL), 
   strings_in_dots = 'literals'
 )
-
-n_replicates <- 29
-transformation <- function(x) log(x + 1)
-
-boot_replicates <- drake_plan(
-  rep = data_replicate(dep_frame, 
-                       plant_rel_abu,
-                       plant_pheno_overlap,
-                       transformation, N), 
-  mod = run_model(rep_N),
-  strings_in_dots = 'literals'
-) %>%
-  evaluate_plan(rules = list(N = 1:n_replicates)) 
-
-glance_replicates <- boot_replicates %>%
-  filter(grepl("mod", target)) %>%
-  gather_plan(., gather = "glance_models", target = "glanced_models")
-
-tidy_replicates <- boot_replicates %>%
-  filter(grepl("mod", target)) %>%
-  gather_plan(., gather = "tidy_models", target = "tidied_models")
 
 analysing <- drake_plan(
   consp_self = model_conspecific_self(dep_frame),
   significant_gain_global = mann_withney_part_df(filter(dep_frame, pollen_category == 'conspecific'), by = 'recipient', var = 'treatment', conf.int = T),
   significant_gain_site = mann_withney_part_df(filter(dep_frame, pollen_category == 'conspecific'), by = c('recipient', 'site_name'), var = 'treatment', conf.int = T),
   strings_in_dots = 'literals'
+)
+
+n_replicates <- 100
+transformation <- function(x) log(x + 1)
+
+boot_replicates <- drake_plan(
+  rep = data_replicate(dep_frame, 
+                       plant_rel_abu,
+                       plant_pheno_overlap,
+                       sites, 
+                       transformation, N), 
+  strings_in_dots = 'literals'
+) %>%
+  evaluate_plan(rules = list(N = 1:n_replicates)) 
+
+random_models <- drake_plan(
+  random_mod = run_random_models(rep_N)
+) %>%
+  evaluate_plan(rules = list(N = 1:n_replicates)) 
+
+fixed_models <- drake_plan(
+  fixed_mod = run_model(rep_N)
+) %>%
+  evaluate_plan(rules = list(N = 1:n_replicates)) 
+
+glanced_random_models <- random_models %>%
+  gather_plan(., gather = "glance_random_models", target = "glanced_random")
+
+glanced_fixed_models <- fixed_models %>%
+    gather_plan(., gather = "glance_fixed_models", target = "glanced_fixed")
+
+tidied_fixed_models <- fixed_models %>%
+  gather_plan(., gather = "tidy_fixed_models", target = "tidied_fixed")
+
+models <- rbind(
+  random_models, glanced_random_models, 
+  fixed_models, glanced_fixed_models, tidied_fixed_models
+)
+
 )
 
 reporting <- drake_plan(
@@ -86,11 +104,12 @@ reporting <- drake_plan(
 # set up plan
 project_plan <- rbind(clean_data, format_data,
                       boot_replicates, 
-                      glance_replicates,
-                      tidy_replicates,
+                      models,
+                      model_summaries,
                       analysing, reporting)
 project_config <- drake_config(project_plan)
+# vis_drake_graph(project_config, split_columns = F, targets_only = T)
 
 # execute plan
-make(project_plan, parallelism = "parLapply", jobs = 4)
-# vis_drake_graph(project_config, split_columns = T, targets_only = T)
+# make(project_plan, parallelism = "parLapply", jobs = 4)
+make(project_plan)
