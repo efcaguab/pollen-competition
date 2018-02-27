@@ -1,6 +1,8 @@
 ---
-title: "Supplementary materials"
-author: "Fernando Cagua"
+title: "The pollination trade-off"
+subtitle: "Supplementary materials"
+author: "Fernando Cagua, Hugo Marrero, Jason Tylianakis, Daniel Stouffer"
+documentclass: book
 output: 
   bookdown::pdf_document2: 
     keep_tex: yes
@@ -22,6 +24,90 @@ options(xtable.comment = FALSE,
         xtable.caption.placement = 'bottom',
         xtable.size = 'small',
         booktabs = TRUE)
+```
+
+```{r fig-deposition-logtransformed-or-not, fig.height = 2, fig.cap = "Distribution of stigmatic pollen density plotted in (A) a linear scale, and (B) a logarithmic scale (zero values not shown)."}
+loadd(dep_frame, sites)
+
+p1 <- dep_frame %>%
+  mutate(pollen_category = paste(pollen_category, "pollen"), 
+         treatment = if_else(treatment == 'closed', 'bagged', treatment)) %>%
+  ggplot(aes(x = pollen_density, colour = treatment)) + 
+  stat_density(geom = "line") +
+  facet_wrap( ~ pollen_category, scales = "free") +
+  pub_theme() +
+  scale_color_brewer(palette = "Set1") +
+  labs(x = "pollen density (grains per stigma)", 
+       colour = "flower treatment") +
+  theme(legend.position = "top")
+  
+p2 <- p1 +
+  scale_x_log10()
+
+leg <- cowplot::get_legend(p1)
+
+cowplot::plot_grid(remove_legend(p1), remove_legend(p2), 
+                   labels = LETTERS[1:2], 
+                   label_size = 8) %>%
+  cowplot::plot_grid(leg, ., rel_heights = c(0.1, 0.9), ncol = 1)
+```
+
+```{r fig-deposition-gain-logtransformed-or-not, fig.height = 2, fig.cap = "Distribution of the difference on stigmatic pollen density between open and closed flowers for one of the bootstrap replicates used in the model sets. When (A) using directly the gain in pollen density and (B) when pollen density is log transormed prior to calculating the gain. "}
+loadd(rep_1)
+
+plot_dist <- function(fun){
+    rep_1 %>%
+      filter(scale == 'global', 
+             var_trans == 'lin') %>%
+      mutate_at(c('open', 'closed'), fun) %>% 
+      ggplot(aes(x = open - closed, colour = pollen_category)) +
+      stat_density(position = position_identity(), geom = "line") +
+      pub_theme() +
+      scale_color_brewer(palette = "Set1") +
+    theme(legend.position = "top") + 
+    labs(x = "gain in pollen density (open-closed)", 
+         colour = "pollen type")
+}
+
+p <- list(function(x) exp(x)-1, I) %>%
+  plyr::llply(plot_dist)
+
+leg <- cowplot::get_legend(p[[1]])
+cowplot::plot_grid(remove_legend(p[[1]]), remove_legend(p[[2]]), 
+                   labels = LETTERS[1:2], 
+                   label_size = 8,
+                   ncol = 2) %>%
+  cowplot::plot_grid(leg, ., rel_heights = c(0.1, 0.9), ncol = 1)
+```
+
+```{r fig-abundance-logtransformed-or-not, fig.height = 2, fig.cap = "Distribution of plant abundance as (A) raw counts of floral units across communities, and (B) after applying a data transformation in which the counts have been "}
+loadd(plant_rel_abu, sites)
+
+p1 <- plant_rel_abu %>%
+  filter(scale == 'community', 
+         var_trans == 'log') %>%
+  inner_join(sites, by = 'site_name') %>%
+  ggplot() +
+  stat_density(aes(x = rab, colour = locality_name),
+               position = position_identity(), geom = 'line') +
+  # stat_density(aes(x = abu_tot_rel_log), geom = 'line') +
+  scale_color_brewer(palette = "Set1") +
+  pub_theme() +
+  # guides(colour = guide_legend(title = 'locality'), linetype = guide_legend(title = 'land use')) +
+  labs(colour = 'locality', x = 'relative abundance')
+
+p2 <- plant_rel_abu %>%
+  filter(scale == 'global', 
+         var_trans == 'log') %>%
+  distinct() %>%
+  inner_join(sites, by = 'site_name') %>%
+  ggplot(aes(x = abu)) +
+  stat_density(position = position_identity(), geom = 'line') +
+  scale_color_brewer(palette = "Set1") +
+  pub_theme() +
+  labs(x = 'abundance (floral units)')
+
+cowplot::plot_grid(p2, p1, rel_widths = c(0.42, 0.58), labels = LETTERS[1:2], label_size = 8)
 ```
 
 ```{r table-species-gain-global, results = 'asis'}
@@ -83,7 +169,7 @@ site_plots_conspecific <- dep_frame %>%
       pub_theme() +
       xlab(NULL) +
       ylab('pollen density') +
-      scale_fill_brewer(palette = "Blues")
+      scale_fill_brewer(palette = "Set1")
   })
 
 legend <- cowplot::get_legend(site_plots_conspecific[[1]])
@@ -125,7 +211,7 @@ plant_plots_conspecific <- dep_frame %>%
       pub_theme() +
       xlab(NULL) +
       ylab('pollen density') +
-      scale_fill_brewer(palette = "Blues")
+      scale_fill_brewer(palette = "Set1")
   })
 
 legend <- cowplot::get_legend(plant_plots_conspecific[[1]])
@@ -141,60 +227,83 @@ plant_plots_conspecific <- rlist::list.append(plant_plots_conspecific, legend)
 cowplot::plot_grid(plotlist = plant_plots_conspecific, ncol = 3)
 ```
 
-```{r fig-deposition-logtransformed-or-not, fig.height = 2.5, fig.cap = "Distribution of stigmatic pollen density plotted in (A) a linear scale, and (B) a logarithmic scale (zero values not shown)."}
-loadd(dep_frame, sites)
+```{r fig-model-results, fig.height = 3, fig.cap = "Model coefficients"}
+loadd(tidied_fixed)
 
-p1 <- dep_frame %>%
-  mutate(pollen_category = paste(pollen_category, "pollen"), 
-         treatment = if_else(treatment == 'closed', 'bagged', treatment)) %>%
-  ggplot(aes(x = pollen_density, colour = treatment)) + 
-  stat_density(geom = "line") +
-  facet_wrap( ~ pollen_category, scales = "free") +
+tidied_fixed %>%
+  filter(term != "(Intercept)" #, 
+         # var_trans == 'log'
+         ) %>%
+  group_by(pollen_category,scale, model, var_trans, term) %>%
+  summarise(estimate = first(estimate)) %>%
+  group_by() %>%
+  humanize() %>%
+  ggplot(aes(x = estimate, 
+             colour = pollen_category)) +
+  geom_vline(xintercept = 0, linetype = 2, size = 0.25) +
+  geom_freqpoly(# alpha = 0.25,
+               position = position_identity(),
+               draw_quantiles = c(0.5, 0.95, 0.05), 
+               trim = F, 
+               scale = "count",
+               binwidth = 0.05, 
+               geom = "line") +
   pub_theme() +
-  scale_color_brewer(palette = "Blues") +
-  labs(x = "pollen density (grains per stigma)", 
-       colour = "flower treatment") +
-  theme(legend.position = "top")
-  
-p2 <- p1 +
-  scale_x_log10()
-
-leg <- cowplot::get_legend(p1)
-
-cowplot::plot_grid(remove_legend(p1), remove_legend(p2), 
-                   labels = LETTERS[1:2], 
-                   label_size = 8) %>%
-  cowplot::plot_grid(leg, ., rel_heights = c(0.1, 0.9), ncol = 1)
+  facet_grid(scale ~ term + var_trans, scales = "free_x") +
+  scale_color_brewer(palette = "Set1") +
+  scale_fill_brewer(palette = "Set1") +
+  theme(legend.position = "bottom")
 ```
 
-```{r fig-abundance-logtransformed-or-not, fig.height = 2.5, fig.cap = "Distribution of plant abundance as (A) raw counts of floral units across communities, and (B) after applying a data transformation in which the counts have been "}
-loadd(plant_rel_abu, sites)
+```{r fig-random-intercepts, fig.height= 3, fig.cap = "Random effect intercepts"}
+loadd(tidied_fixed, sites)
 
-p1 <- plant_rel_abu %>%
-  filter(scale == 'community', 
-         var_trans == 'log') %>%
-  inner_join(sites, by = 'site_name') %>%
-  ggplot() +
-  stat_density(aes(x = rab, colour = locality_name),
-               position = position_identity(), geom = 'line') +
-  # stat_density(aes(x = abu_tot_rel_log), geom = 'line') +
-  scale_color_brewer(palette = "Blues") +
+tidied_fixed %>%
+  separate("level", c("site_name", "plant_name"), sep = "/", remove = F) %>%
+  filter(term == "(Intercept)" ,
+         var_trans == 'log',
+         scale == "community", 
+         pollen_category == 'heterospecific'
+         ) %>%
+  humanize(sites) %>%
+  ggplot(aes(x = estimate, colour = plant_name, group = level)) +
+  geom_vline(xintercept = 0, linetype = 2, size = 0.25) +
+  geom_freqpoly(size = 0.25) +
+  facet_grid(locality_name + fragment ~ land_use) +
   pub_theme() +
-  # guides(colour = guide_legend(title = 'locality'), linetype = guide_legend(title = 'land use')) +
-  labs(colour = 'locality', x = 'relative abundance')
+  theme(legend.position = 'none')
+```
 
-p2 <- plant_rel_abu %>%
-  filter(scale == 'global', 
-         var_trans == 'log') %>%
-  distinct() %>%
-  inner_join(sites, by = 'site_name') %>%
-  ggplot(aes(x = abu)) +
-  stat_density(position = position_identity(), geom = 'line') +
-  scale_color_brewer(palette = "Blues") +
-  pub_theme() +
-  labs(x = 'abundance (floral units)')
+```{r table-aic-random-models, results= 'asis'}
+loadd(glanced_random)
 
-cowplot::plot_grid(p2, p1, rel_widths = c(0.42, 0.58), labels = LETTERS[1:2], label_size = 8)
+summ <- glanced_random %>%
+  filter(var_trans == "log") %>%
+  group_by(pollen_category, scale, var_trans, model) %>%
+  mutate(delta_AIC = AIC - min(AIC)) %>%
+  group_by(pollen_category, scale, var_trans, random_effect) %>%
+  summarise(AIC_50 = median(delta_AIC), 
+            AIC_05 = quantile(delta_AIC, 0.05),
+            AIC_95 = quantile(delta_AIC, 0.95)) %>% 
+  mutate_if(is.numeric, round, digits = 1) %>% 
+  mutate(delta_AIC = paste0(AIC_50, " [", AIC_05, ", ", AIC_95, "]")) %>%
+  group_by() %>%
+  humanize() %>%
+  arrange(pollen_category, scale, random_effect) %>%
+  rename(`pollen category` = pollen_category, 
+         `random structure` = random_effect) 
+
+contingency_table <- summ %>%
+  # select(-var_trans) %>%
+  ftable(row.vars = 4, col.vars = c(1, 2)) 
+  
+contingency_table[1:nrow(summ)] <- summ$delta_AIC
+
+xtableFtable(contingency_table, method = "col.compact", 
+             caption = paste('Comparison of the different random structures we considered. The table shows median delta AIC values of', n_distinct(glanced_random$model), "bootsrap resamples of the data. The 5th and 95th percentile are shown inside square brackets. Communities are defined by individual fragments but ignore the hierarchical arrangement of sampling sites."), 
+         label = 'tab:table-aic-random-models')
+```
+
 ```{r table-global-vs-community-models, results = 'asis'}
 loadd(wilcox_glo_com)
 
