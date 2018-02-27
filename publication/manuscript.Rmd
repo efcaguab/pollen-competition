@@ -26,6 +26,12 @@ options(xtable.comment = FALSE,
         booktabs = TRUE)
 ```
 
+## Questions & Observations
+
+* Is there a better way to obtain a plant metric of temporal overlap? --- *Will use decomposition and distance metrics for this instead of the Pianka method*
+* Results shown here use `r n_distinct(readd(glanced_random)$model)` bootstrap replicates. Will scale up to 1000 models once methods are nailed down. 
+* Should I include the analysis of global models at all? 
+
 ## Abstract
 
 ## Introduction
