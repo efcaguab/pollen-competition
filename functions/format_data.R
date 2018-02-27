@@ -240,4 +240,37 @@ extract_vis_frame <- function(x){
   bind_rows(quant, qual) 
 }
 
+#' Get degree info
+#'
+#' @param x vis_frame
+#' @param dep_frame for filtering out species that are not focal prior to scaling
+#'
+#' @return degree data frame
+#' 
+get_degree <- function(x, dep_frame){
+
+  focal_plants <- unique(dep_frame$plant_name)
+  
+  species_site_vis <- x %>%
+    group_by(plant_name, site_name) %>%
+    summarise(kn = n_distinct(animal_name)) %>%
+    group_by() %>%
+    filter(plant_name %in% focal_plants) %>%
+    mutate(lin = scale(kn), 
+           log = scale(log(kn))) %>%
+    gather("var_trans", "k", lin, log) %>%
+    mutate(scale = "community")
+      
+  species_vis <- x %>%
+    group_by(plant_name) %>%
+    summarise(kn = n_distinct(animal_name)) %>%
+    group_by() %>%
+    filter(plant_name %in% focal_plants) %>%
+    mutate(lin = scale(kn), 
+           log = scale(log(kn))) %>%
+    gather("var_trans", "k", lin, log) %>%
+    right_join(plant_site_combinations(species_site_vis), by = 'plant_name') %>%
+    mutate(scale = "global")
+  
+  bind_rows(species_site_vis, species_vis)
 }
