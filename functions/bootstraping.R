@@ -88,23 +88,27 @@ run_model <- function(d, method = "ML"){
   
   d %>%
     split(list(.$pollen_category, .$scale, .$var_trans)) %>%
-    map(~ lme(pollen_gain ~ rab + tov, random = ~ 1 | plant_name, na.action = na.omit, method = method, data = .))
+    map(~ lme(pollen_gain ~ rab + tov, random = ~ 1 | site_name / plant_name, na.action = na.omit, method = method, data = .))
 
 }
 
 # AGGREGATE MODELS --------------------------------------------------------
 
-glance_models <- function(...){
+glance_random_models <- function(...){
   models <- list(...)
-  gather_models(models, glance)
+  # models <- list(random_mod_1 = run_random_models(readd(rep_1)), random_mod_2 = run_random_models(readd(rep_2)))
+  gather_models(models, glance, c("pollen_category", "scale", "var_trans", "random_effect"))
 }
 
-tidy_models <- function(...){
+glance_fixed_models <- function(...){
   models <- list(...)
-  gather_models(models, tidy)
+  gather_models(models, glance, c("pollen_category", "scale", "var_trans"))
 }
 
-gather_models <- function(models, fun){
+tidy_fixed_models <- function(...){
+  models <- list(...)
+  gather_models(models, tidy, c("pollen_category", "scale", "var_trans"))
+}
   fun_model <- function(x){
     x %>%
       map_df(~ fun(.), .id = "m") %>%
