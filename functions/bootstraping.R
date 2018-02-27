@@ -61,6 +61,29 @@ get_deposition_sampled_data <- function(x, category, transformation){
 
 # MODELS ------------------------------------------------------------------
 
+#' Evaluate random effect models
+#'
+#' @param d rep_##
+#' @param method either 'REML' or 'ML'
+#'
+#' @return a list of models
+#' 
+run_random_models <- function(d, method = "REML"){
+  
+  random_effects <- list(
+    c("plant", "~ 1 | plant_name"), 
+    c("plantINlocality",  "~ 1 | locality / plant_name"), 
+    c("plantINlanduse", "~ 1 | locality / land_use / plant_name"),
+    c("plantINfragment", "~ 1 | locality / land_use / fragment / plant_name"),
+    c("plantINcommunity", "~ 1 | site_name / plant_name")
+  )
+  
+  rem <- random_effects %>%
+    map_df(~ mutate(d, random_formula = .[2], random_effect = .[1])) %>% 
+    split(list(.$pollen_category, .$scale, .$var_trans, .$random_effect)) %>%
+    map(~ try(lme(pollen_gain ~ rab + tov, random = as.formula(.$random_formula[1]), na.action = na.omit, method = method, data = .)))
+}
+
 run_model <- function(d, method = "ML"){
   
   d %>%
