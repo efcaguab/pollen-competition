@@ -109,10 +109,30 @@ tidy_fixed_models <- function(...){
   models <- list(...)
   gather_models(models, tidy, c("pollen_category", "scale", "var_trans"))
 }
+
+gather_models <- function(models, fun, subdivisions){
   fun_model <- function(x){
-    x %>%
-      map_df(~ fun(.), .id = "m") %>%
-      separate("m", c("pollen_category", "scale", "var_trans"))
+    x <- x[map_chr(x, class) != "try-error"]
+    
+    arrange_df <- function(a, y, z){
+      cbind(fun(a), 
+            n_plants = n_distinct(a$data$plant_name), 
+            n = a$dims$N, 
+            rmse = sjstats::rmse(a), 
+            r2 = y[[1]], 
+            o2 = y[[2]],
+            r2m = z[1], 
+            r2c = z[2])
+    }
+    
+    R2sjstats <- x %>%
+      map(~ r2(.))
+    
+    R2mumin <- x %>%
+      map(~ MuMIn::r.squaredGLMM(.))
+  
+    pmap_df(list(x, R2sjstats, R2mumin), .f = arrange_df, .id = "m") %>%
+      separate("m", subdivisions)
   }
   
   models %>% 
