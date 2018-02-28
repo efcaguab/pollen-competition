@@ -4,7 +4,9 @@ pub_theme <- function(){
           title = element_text(size = 8),
           strip.background = element_blank(),
           strip.text = element_text(hjust = 0),
-          legend.title = element_text(hjust = 0.5))
+          legend.title = element_text(hjust = 0.5), 
+          legend.key.size = unit(3, "mm"), 
+          legend.margin = margin())
 }
 
 remove_legend <- function(x){
