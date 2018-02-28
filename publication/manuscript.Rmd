@@ -73,32 +73,41 @@ Nevertheless, this difference still provides valuable indication of what the ani
 We performed this comparisons using a set of non parametric Mann-Whitney tests both at the community and the the species level (grouping species across communities). 
 
 Our main aim was to examine the extent to which the pollination service was influenced by the number of pollination partners while accounting for other metrics that describe the plant's pollination niche and community composition. 
-To do so, we fitted two sets of linear mixed models (R package `nlme 3.1-131`, @nlme2017] focusing on conspecific and heterospecific pollen respectively. 
-In both models, our response variable was the difference between pollen density (pollen counts per stigma) in open and bagged flowers. 
-The coefficients obtained in both sets as well as their relationship, provide an indication of the quantity and the quality of animal pollination as well as the trade-off between these two. 
+To do so, we fitted two sets of linear mixed models [using the R package `nlme 3.1-131`, @nlme2017] focusing on conspecific and heterospecific pollen respectively. 
+In both set of models, our response variable was the difference between pollen density (pollen counts per stigma) in open and bagged flowers. 
+We then used the coefficients fitted by both model sets—and the relationship between them—to provide an indication of the quantity and quality of animal pollination, and the potential trade-off between these two. 
 
-Each set was comprised by models of one twhousand bootstrap resampled replicates of the depositoin data. 
-We used bootstrap replicates because, as open and bagged flowers were not paired, this allowed us to model the *gain* in pollen density rather than density itself. 
+Each model set was based on one thousand bootstrap resamples of the deposition data. 
+We used bootstrap resampling because, as open and bagged flowers were not paired, this allowed us to directly model the *gain* in pollen density rather than density itself. 
 This strategy, not only simplified the model specification and intepretation, but also allowed us to easily evaluate the uncertainity of the model effects. 
 In each replicate we randomly sampled a number of open flowers within each community-species combination and an equal number of closed flowers. 
-We then log-transformed densities to improve normality of the data and minimise the impact of outliers (Figure \@ref(S-fig:fig-deposition-logtransformed-or-not) and \@ref(S-fig:fig-deposition-gain-logtransformed-or-not)). 
+We then log-transformed the pollen densities to improve normality and minimise the impact of outliers (Figure \@ref(S-fig:fig-deposition-logtransformed-or-not) and \@ref(S-fig:fig-deposition-gain-logtransformed-or-not)). 
 Finally, we calculated the difference between the pollen density among treatmemts. 
 This difference was the response variable in all our models. 
-As predictors, we included the species/degree (number of animal partners), the plants' relative abundance and the temporal niche overlap [others variables will be added]. 
+
+As predictors, we included the species/degree (number of animal partners) as well as other factors that could influence the trade-off. 
+Specifically, we included the plants' relative abundance and the temporal niche overlap. 
 To calculate the plant's relative abbundance we simply aggregated the flower counts in a community over the study period. 
 As with the deposition data, we found that log-transforming the abundance counts drastically improved normality (Figure \@ref(S-fig:fig-abundance-logtransformed-or-not)).
 We then the log-transformed abundance counts for each month between November 2010 and March 2011 to calculate the temporal niche overlap between plants. 
 Specifically, we used the Pianka's niche overlap index [@Pianka1973; `spaa 0.2.2` R package @Zhang2016] which calculates an overlap index for each pair of species in the community. 
 To calculate an overlap metric per species, we simply averaged the pairwise indices for a species. 
 To faciliate comparison across model estimates, we scaled all independent variables to have a mean of zero and a standard deviation of one. 
-In both set of models we evaluated a set of random effects which included plant species, community, wether the site was in an agricultural or restored fragment, and the locality. 
-We selected the best random structure by comparing the Akaike Information Criterion (AIC) of evaluated models fitted using restricted maximum likelyhood. 
 
-Aditionally, we repeated the procedure but instead of calculating the independent variables for each plant species at the community level, we did so across sites. 
+In both set of models we first evaluated a set of candidate random effects which included random intercepts for plant species as well as random slopes for the relationship between degree and pollen gain. 
+In addition we also tested intercepts assuming that the plant species grouping was hierachically nested in either their community, the land use, and the locality. 
+We selected the best random structure by comparing the median Akaike Information Criterion (AIC) of evaluated models fitted using restricted maximum likelyhood. 
+
+After determining the best random structure, we then focused on the model's fixed structure where we fitted the fixed effect coefficients using maximum likelyhood. 
+Because our purpose was to perform inter-model comparisons across multiple data resamples, we did not performed model selection. 
+Instead, in all model sets, we obtained the estimates for all the fixed effects we considered and then evaluated their relevance by examining their distribution. 
+
+In addition to the two main model sets we described, we repeated the procedure but instead of calculating the independent variables for each plant species at the community level, we did so across sites. 
 This served two purposes. 
 First, and most importantly, it allowed us to examine wether indeed community level information is necessary to explain the observed patterms or whether less granular data is sufficient. 
 Second, it had the added benefit that it allowed us to include some species for which not all data necessary to calculate the independent variables was available at the community level. 
-We assessed 
+
+Finally, to examine the relationship between both models we sampled from the posterior 
 
 ## Results
 
