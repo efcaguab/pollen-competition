@@ -8,22 +8,24 @@
 #'
 #' @return a data frame with pollen_gain column
 #'
-data_replicate <- function(de, ab, ph, sites, transformation = I, dummy_id){
+data_replicate <- function(de, ab, ph, k, sites, transformation = I, dummy_id){
   
   # de <- readd(dep_frame)
-  # ab <- calculate_relative_abundance(readd(abu_frame))
-  # ph <- calculate_phenology_overlap(readd(abu_frame))
+  # ab <- calculate_relative_abundance(readd(abu_frame), de)
+  # ph <- calculate_phenology_overlap(readd(abu_frame), de)
   # ab <- readd(plant_rel_abu)
   # ph <- readd(plant_pheno_overlap)
+  # k <- readd(degree)
   
   de$pollen_category %>%
     unique() %>%
     map_df(~ get_deposition_sampled_data(de, ., transformation)) %>% 
-    left_join(ab) %>%
-    left_join(ph) %>%
-    inner_join(sites) %>%
+    left_join(ab, by = c("site_name", "plant_name")) %>%
+    left_join(ph, by = c("site_name", "plant_name", "var_trans", "scale")) %>%
+    left_join(k, by = c("site_name", "plant_name", "var_trans", "scale")) %>%
+    inner_join(sites, by = "site_name") %>%
     mutate(fragment = as.character(fragment)) %>%
-    group_by(scale) 
+    group_by(scale)
 }
 
 #' Sample the deposition data to get a boostrap data replicate 
@@ -74,14 +76,14 @@ run_random_models <- function(d, random_effects, method = "REML"){
     split(.$random_effect) %>%
     map_df(~ mutate(d, random_formula = .$random_formula, random_effect = .$random_effect)) %>% 
     split(list(.$pollen_category, .$scale, .$var_trans, .$random_effect)) %>%
-    map(~ try(lme(pollen_gain ~ rab + tov, random = as.formula(.$random_formula[1]), na.action = na.omit, method = method, data = .)))
+    map(~ try(lme(pollen_gain ~ rab + tov + k, random = as.formula(.$random_formula[1]), na.action = na.omit, method = method, data = .)))
 }
 
 run_model <- function(d, best_random, method = "ML"){
   
   d %>%
     split(list(.$pollen_category, .$scale, .$var_trans)) %>%
-    map(~ lme(pollen_gain ~ rab + tov, random = as.formula(best_random$random_formula), na.action = na.omit, method = method, data = .))
+    map(~ lme(pollen_gain ~ rab + tov + k, random = as.formula(best_random$random_formula[1]), na.action = na.omit, method = method, data = .))
 
 }
 

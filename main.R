@@ -47,7 +47,7 @@ format_data <- drake_plan(
   plant_rel_abu = calculate_relative_abundance(abu_frame, dep_frame),
   plant_pheno_overlap = calculate_phenology_overlap(abu_frame, dep_frame),
   vis_frame = extract_vis_frame(armonised_data),
-  visitation = get_degree(vis_frame, dep_frame),
+  degree = get_degree(vis_frame, dep_frame),
   strings_in_dots = 'literals'
 )
 
@@ -65,6 +65,7 @@ boot_replicates <- drake_plan(
   rep = data_replicate(dep_frame, 
                        plant_rel_abu,
                        plant_pheno_overlap,
+                       degree, 
                        sites, 
                        transformation, N), 
   strings_in_dots = 'literals'
@@ -122,5 +123,5 @@ project_config <- drake_config(project_plan)
 # vis_drake_graph(project_config, split_columns = T, targets_only = T)
 
 # execute plan
-# make(project_plan, parallelism = "parLapply", jobs = 4)
-make(project_plan)
+make(project_plan, parallelism = "parLapply", jobs = 4)
+# make(project_plan)
