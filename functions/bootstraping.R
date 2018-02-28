@@ -24,7 +24,8 @@ data_replicate <- function(de, ab, ph, k, sites, transformation = I, dummy_id){
     left_join(ph, by = c("site_name", "plant_name", "var_trans", "scale")) %>%
     left_join(k, by = c("site_name", "plant_name", "var_trans", "scale")) %>%
     inner_join(sites, by = "site_name") %>%
-    mutate(fragment = as.character(fragment)) %>%
+    mutate(fragment = as.character(fragment),
+           site_plant = paste(plant_name, site_name, sep = ".")) %>%
     group_by(scale)
 }
 
