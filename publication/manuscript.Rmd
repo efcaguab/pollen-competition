@@ -135,11 +135,15 @@ prop_consistency <- sum(consistency$consistent)/
 ```
 
 Over all study sites, we found that `r round(prop_sig_global*100)`% of species observed a significant increasse (at the $\alpha = 0.05$ level) in pollen density when comparing open and bagged flowers (Table \@ref(S-tab:table-species-gain-global)). 
-When looking at the differences within sites, we found that only `r round(prop_consistency*100)`% of the species that were present in more than one site had the same response across community (Table \@ref(S-tab:table-species-gain-site); Figure \@ref(S-fig:fig-conspecific-per-site) and \@ref(S-fig:fig-conspecific-per-plant)). 
+When looking at the differences within sites, we found that only `r round(prop_consistency*100)`% of the species that were present in more than one site had the same response across community (Table \@ref(S-tab:table-species-gain-site)). 
 Despite these differences, the community had a comparatively small effect on wether animal pollination increased the pollen density or not (Table \@ref(S-tab:table-variation-across-sites)). 
 
 We found that the random structure that was best supported the data was consistently the one that included plant species grouped in communities as random effect (Table \@ref(S-tab:table-aic-random-models)).
-When comparing the performance of the models constructed at the community or study-wide level we found that the gain in conspecific pollen was better predicted by the community level models, while the gain in heterospecific pollen was better predicted by the study-wide models (Table \@ref(S-tab:table-global-vs-community-models). 
+When comparing the performance of the models constructed at the community or study-wide level we found that the gain in conspecific pollen was better predicted by the community level models, while the gain in heterospecific pollen was better predicted by the study-wide models (Table \@ref(S-tab:table-global-vs-community-models)). 
+This was so despite the fact that the model predictors calculated at the community level were highly correlated to those at the study wide level (Figure \@ref(S-fig:fig-global-community-correlations)).
+
+We found evidence that indicates that the number of species a plant interacts with (the species degree) is positively correlated with the heterospecific pollen density deposited. 
+To a smaller extent, degree is also negatively correlated with the density of conspecific pollen.
 
 ```{r fig-model-results, fig.height = 2, fig.cap = "Model coefficients"}
 loadd(tidied_fixed, sites)
