@@ -290,7 +290,7 @@ tidied_fixed %>%
 loadd(tidied_fixed, sites)
 
 tidied_fixed %>%
-  separate("level", c("site_name", "plant_name"), sep = "/", remove = F) %>%
+  separate("level", c("plant_name", "site_name"), sep = "\\.", remove = F) %>%
   filter(term == "(Intercept)" ,
          var_trans == 'log',
          scale == "community", 
