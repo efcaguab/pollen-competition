@@ -27,7 +27,8 @@ humanize <- function(x, sites = NA, random_effects = NA){
     x <- x %>%
       mutate(term = case_when(
         grepl('tov', term) ~ 'phenology overlap',
-        grepl('rab', term) ~ 'relative abundance', 
+        grepl('rab', term) ~ 'relative abundance',
+        grepl('k', term) ~ 'degree',
         TRUE ~ term
       ))
   }
