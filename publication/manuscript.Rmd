@@ -26,12 +26,6 @@ options(xtable.comment = FALSE,
         booktabs = TRUE)
 ```
 
-## Questions & Observations
-
-* Is there a better way to obtain a plant metric of temporal overlap? --- *Will use decomposition and distance metrics for this instead of the Pianka method*
-* Results shown here use `r n_distinct(readd(glanced_random)$model)` bootstrap replicates. Will scale up to 1000 models once methods are nailed down. 
-* Should I include the analysis of global models at all? 
-
 ## Abstract
 
 ## Introduction
@@ -171,5 +165,15 @@ tidied_fixed %>%
 ## Discussion 
 
 Relative small difference between conspecific animal and self pollination is conservative because crossing is better than cloning ()
+
+## Questions & Observations
+
+* Is there a better way to obtain a plant metric of temporal overlap? --- *Will use decomposition and distance metrics for this instead of the Pianka method*
+* Results shown here use `r n_distinct(readd(glanced_random)$model)` bootstrap replicates. Thinking about scale up to 1000 models once methods are nailed down but it doesn't seem to make much difference at all. 
+* Results about whether the community and global explanatory variables are better are inconclusive. Different indices of model quality suggest different things. While RMSE and $\sigma$ suggest that the global models explain better the gain in pollen, $R^2$ and $\omega^2$ suggest the opposite. What is the appropiate metric? Needs to be one that is unsensitive to sample size. 
+* Or, should I include the analysis of global models at all? Not sure it brings much to the discussion and might just make things confusing.
+* Currently there are three explanatory variables. I'm planning to add more but I'm currently unsure about which ones to include. I'm particularly interested in variables that involve the data found in pollen transfer networks and that potentially involve the abbundance of pollinators. I can think on many but it's easy to get carried away and want to include only variables that tell something new and have a clear rationale.  
+
+## Awknoledgements
 
 ## References
