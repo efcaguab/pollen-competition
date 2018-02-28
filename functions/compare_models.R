@@ -35,9 +35,14 @@ best_random_effect <- function(x, random_effects){
     mutate(delta_AIC = AIC - min(AIC)) %>%
     group_by(pollen_category, scale, var_trans, random_effect) %>%
     summarise(AIC_50 = median(delta_AIC)) %>% 
+    group_by() %>%
+    right_join(expand.grid(pollen_category = unique(.$pollen_category),
+                           scale = unique(.$scale),
+                           var_trans = unique(.$var_trans),
+                           random_effect = unique(.$random_effect))) %>%
     group_by(random_effect) %>%
     summarise(AIC_50 = median(AIC_50)) %>%
-    filter(AIC_50 == min(AIC_50)) %$%
+    filter(AIC_50 == min(AIC_50, na.rm = T)) %$%
     random_effect
   
   random_effects %>%
