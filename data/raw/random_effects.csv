@@ -3,4 +3,8 @@ plant,~ 1 | plant_name,1 | plant sp.
 plantINlocality,~ 1 | locality / plant_name,1 | locality / plant sp.
 plantINlanduse,~ 1 | locality / land_use / plant_name,1 | locality / land use / plant sp.
 plantINfragment,~ 1 | locality / land_use / fragment / plant_name,1 | locality / land use / fragment / plant sp.
-plantINcommunity,~ 1 | site_name / plant_name,1 | comunity / plant sp.
+plantINcommunity,~ 1 | site_name / plant_name,1 | community / plant sp.
+plantcommunity,~ 1 | site_plant, 1 | plant sp. in community
+degreeATplantcommunity,~ k | site_plant,degree | plant sp. in community
+degreeATplantINcommunity,~k | site_name / plant_name,degree | community / plant sp.
+degreeATplant,~ k | plant_name,degree | plant sp.
