@@ -315,18 +315,26 @@ summ <- glanced_random %>%
   group_by(pollen_category, scale, var_trans, random_effect) %>%
   summarise(AIC_50 = median(delta_AIC), 
             AIC_05 = quantile(delta_AIC, 0.05),
-            AIC_95 = quantile(delta_AIC, 0.95)) %>% 
+            AIC_95 = quantile(delta_AIC, 0.95), 
+            n = n()) %>% 
+  group_by() %>%
+  select(-var_trans) %>%
+  right_join(expand.grid(pollen_category = unique(.$pollen_category),
+                        scale = unique(.$scale),
+                        random_effect = unique(.$random_effect))) %>% 
   mutate_if(is.numeric, round, digits = 1) %>% 
-  mutate(delta_AIC = paste0(AIC_50, " [", AIC_05, ", ", AIC_95, "]")) %>%
+  mutate(delta_AIC = paste0(AIC_50, " [", AIC_05, ", ", AIC_95, "], n = ", n), 
+         delta_AIC = if_else(grepl("NA", delta_AIC), "---", delta_AIC)) %>%
   group_by() %>%
   humanize(random_effects = random_effects) %>%
-  arrange(pollen_category, scale, random_name) %>%
+  arrange(pollen_category, random_name, scale) %>%
   rename(`pollen category` = pollen_category, 
          `random structure` = random_name) 
 
-contingency_table <- summ %>%
-  # select(-var_trans) %>%
-  ftable(row.vars = 10, col.vars = c(1, 2)) 
+contingency_table <- xtabs( ~ `random structure` + `scale` + `pollen category` , data = summ) %>% ftable()
+
+# contingency_table <- summ %>%
+  # ftable.formula(`random structure` ~ `scale` + `pollen category`)
   
 contingency_table[1:nrow(summ)] <- summ$delta_AIC
 
