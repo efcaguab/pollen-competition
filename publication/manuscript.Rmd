@@ -132,12 +132,12 @@ Despite these differences, the community had a comparatively small effect on wet
 We found that the random structure that was best supported the data was consistently the one that included plant species grouped in communities as random effect (Table \@ref(S-tab:table-aic-random-models)).
 When comparing the performance of the models constructed at the community or study-wide level we found that the gain in conspecific pollen was better predicted by the community level models, while the gain in heterospecific pollen was better predicted by the study-wide models (Table \@ref(S-tab:table-global-vs-community-models). 
 
-```{r fig-model-results, fig.height = 3, fig.width = 3.4, fig.cap = "Model coefficients"}
+```{r fig-model-results, fig.height = 2, fig.cap = "Model coefficients"}
 loadd(tidied_fixed, sites)
 
 tidied_fixed %>%
   filter(term != "(Intercept)" , 
-         var_trans == 'log', 
+         var_trans == 'log',
          scale == "community"
          ) %>%
   group_by(pollen_category,scale, model, var_trans, term) %>%
@@ -148,18 +148,20 @@ tidied_fixed %>%
              colour = pollen_category, 
              fill = pollen_category)) +
   geom_vline(xintercept = 0, linetype = 2, size = 0.25) +
-  geom_freqpoly(geom = 'area',
-               # alpha = 0.25,
+  stat_density(geom = 'area',
+               alpha = 0.15,
                position = position_identity(),
                draw_quantiles = c(0.5, 0.95, 0.05), 
                trim = F, 
                scale = "count",
                bins = 15) +
   pub_theme() +
-  facet_wrap( ~ term, scales = "free_x", ncol = 1) +
-  scale_color_brewer(palette = "Set1") +
-  scale_fill_brewer(palette = "Set1") +
-  theme(legend.position = "bottom")
+  facet_grid( ~ term, scales = "free_x", space = "free_x") +
+  scale_color_manual(values = two_colour_scale_values) +
+  scale_fill_manual(values = two_colour_scale_values) +
+  scale_x_continuous(breaks = seq(-2,2, by = 0.25)) + 
+  theme(legend.position = "top") +
+  labs(colour = "", fill = "")
 ```
 
 ## Discussion 
