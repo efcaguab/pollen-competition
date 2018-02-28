@@ -2,7 +2,11 @@
 title: "The pollination trade-off"
 subtitle: "Supplementary materials"
 author: "Fernando Cagua, Hugo Marrero, Jason Tylianakis, Daniel Stouffer"
+bibliography: references.bib
+csl: ecology-letters.csl
 documentclass: book
+nocite: | 
+  @Xu2003, @Nakagawa2013
 output: 
   bookdown::pdf_document2: 
     keep_tex: yes
@@ -347,15 +351,17 @@ xtableFtable(contingency_table, method = "col.compact",
 loadd(wilcox_glo_com)
 
 wilcox_glo_com %>%
-  filter(quality %in% c("rmse", "sigma"), 
+  filter(quality %in% c("rmse", "sigma", "r2c", "o2"),
          var_trans == "log") %>%
   select(quality, pollen_category, min_scale, estimate, p.value) %>%
   rename(`model metric` = quality,
          `pollen type` = pollen_category, 
          `best model set` = min_scale,
          `shift estimate` = estimate, 
-         `p value` = p.value) %>%
-  xtable(digits = -1, caption = "Results of two sample paired Wilcoxon signed rank test comparing the root mean square error and the residual standard deviation of the model sets constructed using predictors computed at the community or study level.", 
+         `p value` = p.value) %>% 
+  xtable(digits = -1, caption = "Results of two sample paired Wilcoxon signed rank test comparing the root mean square error (rmse), the residual standard deviation (sigma), the conditional r-squared approximation as proposed by Nakagawa and Schielzeth (2013), and the omega-squared value as suggested by Xu (2003) of the model sets constructed using predictors computed at the community or study level.", 
          label = "tab:table-global-vs-community-models")
 ```
+
+# References
 
