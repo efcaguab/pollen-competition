@@ -107,8 +107,19 @@ tidy_fixed_models <- function(...){
 }
 
 gather_models <- function(models, fun, subdivisions){
+  if(identical(fun, glance)){
+    gather_glance(models, fun, subdivisions)
+  } else if(identical(fun, tidy)){
+    gather_tidy(models, fun, subdivisions)
+  }
+  
+}
+
+gather_glance <- function(models, fun, subdivisions){
+  
   fun_model <- function(x){
     x <- x[map_chr(x, class) != "try-error"]
+    
     
     arrange_df <- function(a, y, z){
       cbind(fun(a), 
@@ -123,10 +134,9 @@ gather_models <- function(models, fun, subdivisions){
     
     R2sjstats <- x %>%
       map(~ r2(.))
-    
     R2mumin <- x %>%
       map(~ MuMIn::r.squaredGLMM(.))
-  
+    
     pmap_df(list(x, R2sjstats, R2mumin), .f = arrange_df, .id = "m") %>%
       separate("m", subdivisions)
   }
@@ -135,3 +145,16 @@ gather_models <- function(models, fun, subdivisions){
     map_df(~ fun_model(.), .id = 'model')
 }
 
+gather_tidy <- function(models, fun, subdivisions){
+  
+  fun_model <- function(x){
+    x <- x[map_chr(x, class) != "try-error"]
+    
+    x %>%
+    map_df(~ fun(.),  .id = "m") %>%
+      separate("m", subdivisions)
+  }
+  
+  models %>% 
+    map_df(~ fun_model(.), .id = 'model')
+}
