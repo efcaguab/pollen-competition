@@ -37,3 +37,5 @@ humanize <- function(x, sites = NA, random_effects = NA){
   }
   x
 }
+
+two_colour_scale_values <- c("#f1a340", "#998ec3")
