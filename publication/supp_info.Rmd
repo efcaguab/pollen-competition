@@ -150,7 +150,7 @@ consp_self %>%
          label = 'tab:table-variation-across-sites')
 ```
 
-```{r fig-conspecific-per-site, fig.height = 7, fig.cap="Conspecific pollen density across plant species for different communities. Community names are abbreviated: AN stands for Anquilóo, LC for Las Chiclas, and SC for San Claudio."}
+```{r fig-conspecific-per-site, eval = FALSE, fig.height = 7, fig.cap="Conspecific pollen density across plant species for different communities. Community names are abbreviated: AN stands for Anquilóo, LC for Las Chiclas, and SC for San Claudio."}
 loadd(dep_frame, sites)
 site_plots_conspecific <- dep_frame %>%
   filter(pollen_category == 'conspecific') %>%
@@ -186,7 +186,7 @@ cowplot::plot_grid(plotlist = site_plots_conspecific, ncol = 3)
 
 ```
 
-```{r fig-conspecific-per-plant, fig.height = 7, fig.cap="Conspecific pollen density across communities for different study species. Only species present in more than onse site are shown. Community names are abbreviated: AN stands for Anquilóo, LC for Las Chiclas, and SC for San Claudio; A, and R indicate that the community corresponded to an agricultural or reserve site respectively."}
+```{r fig-conspecific-per-plant, eval = FALSE, fig.height = 7, fig.cap="Conspecific pollen density across communities for different study species. Only species present in more than onse site are shown. Community names are abbreviated: AN stands for Anquilóo, LC for Las Chiclas, and SC for San Claudio; A, and R indicate that the community corresponded to an agricultural or reserve site respectively."}
 loadd(dep_frame, sites)
 plant_plots_conspecific <- dep_frame %>%
   filter(pollen_category == 'conspecific') %>%
