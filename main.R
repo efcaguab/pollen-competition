@@ -6,6 +6,7 @@ library(foreach)
 library(sjstats)
 library(readr)
 library(MuMIn)
+library(smatr)
 library(drake)
 library(tools)
 library(stringr)
@@ -21,8 +22,8 @@ library(tinytex)
 library(ggplot2)
 library(broom) 
 library(nlme)
+library(tibble)
 library(dplyr)
-
 
 # load functions
 functions_folder <- './functions'
@@ -95,6 +96,12 @@ glanced_fixed_models <- fixed_models %>%
 tidied_fixed_models <- fixed_models %>%
   gather_plan(., gather = "tidy_fixed_models", target = "tidied_fixed")
 
+model_corr <- fixed_models %>%
+  gather_plan(., gather = "get_model_correlations", target = "model_correlations")
+
+het_con_linear_fit <- fixed_models %>%
+  gather_plan(., gather = "get_model_linear_fits", target = "model_linear_fits")
+
 fixed_summaries <- drake_plan(
   wilcox_glo_com = global_vs_community(glanced_fixed)
 )
@@ -111,6 +118,7 @@ model_plans <- rbind(
   random_models, glanced_random_models, 
   random_summaries, 
   fixed_models, glanced_fixed_models, tidied_fixed_models, 
+  model_corr, het_con_linear_fit,
   fixed_summaries, 
   predictions
 )

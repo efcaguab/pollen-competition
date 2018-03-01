@@ -160,3 +160,58 @@ gather_tidy <- function(models, fun, subdivisions){
   models %>% 
     map_df(~ fun_model(.), .id = 'model')
 }
+
+get_model_correlations <- function(...){
+  models <- list(...)
+  
+  pearson_slope <- function(x,y){
+    data.frame(pearson_slope = cov(x, y) * sd(y) / sd(x))
+  }
+  
+  pearson_slopes <- function(x){
+    x %>%
+      map(~ augment(.)) %>%
+      map(~ select(., pollen_category, scale, var_trans, site_name, plant_name, .fitted)) %>%
+      map_df(~ distinct(.)) %>%
+      spread(pollen_category, .fitted) %>% 
+      # ggplot(aes(x = conspecific, y = heterospecific, colour = interaction(scale, var_trans))) +
+      # geom_point() + geom_smooth(method = "lm") + coord_equal()
+      # qplot(conspecific, heterospecific, colour = interaction(scale, var_trans), data = .)
+      split(list(.$scale, .$var_trans)) %>%
+      map_df(~ pearson_slope(.$conspecific, .$heterospecific), .id = "m") %>%
+      separate(m, c("scale", "var_trans"))
+  }
+  
+  models %>%
+    map_df(~ pearson_slopes(.), .id = "model")
+}
+
+get_model_linear_fits <- function(...){
+  models <- list(...)
+  
+  pearson_slope <- function(x,y){
+    data.frame(pearson_slope = cov(x, y) * sd(y) / sd(x))
+  }
+  
+  pearson_slopes <- function(x){
+    x %>%
+      map(~ augment(.)) %>%
+      map(~ select(., pollen_category, scale, var_trans, site_name, plant_name, .fitted)) %>%
+      map_df(~ distinct(.)) %>%
+      spread(pollen_category, .fitted) %>% 
+      # ggplot(aes(x = conspecific, y = heterospecific, colour = interaction(scale, var_trans))) +
+      # geom_point() + geom_smooth(method = "lm") + coord_equal()
+      # qplot(conspecific, heterospecific, colour = interaction(scale, var_trans), data = .)
+      split(list(.$scale, .$var_trans)) %>%
+      map(~ sma(conspecific ~ heterospecific, data = .)) %>%
+      walk(~ plot(.)) %>%
+      map(~ coef(.)) %>%
+      map_df(~ rownames_to_column(as.data.frame(.)), .id = "m") %>%
+      rename(sma_parameter = rowname,
+             value  = '.') %>%
+      separate(m, c("scale", "var_trans"))
+  }
+  
+  models %>%
+    map_df(~ pearson_slopes(.), .id = "model")
+}
