@@ -99,11 +99,20 @@ fixed_summaries <- drake_plan(
   wilcox_glo_com = global_vs_community(glanced_fixed)
 )
 
+predictions <- drake_plan(
+  trade_off_predictions = trade_off_pred(tidied_fixed, 
+                                         wilcox_glo_com, 
+                                         list(plant_rel_abu, plant_pheno_overlap, degree), 
+                                         chosen_criteria = "nrmse"), 
+  strings_in_dots = "literals"
+)
+
 model_plans <- rbind(
   random_models, glanced_random_models, 
   random_summaries, 
   fixed_models, glanced_fixed_models, tidied_fixed_models, 
-  fixed_summaries
+  fixed_summaries, 
+  predictions
 )
 
 reporting <- drake_plan(
