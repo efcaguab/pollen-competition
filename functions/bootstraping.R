@@ -122,10 +122,12 @@ gather_glance <- function(models, fun, subdivisions){
     
     
     arrange_df <- function(a, y, z){
+      rmsee <- sjstats::rmse(a)
       cbind(fun(a), 
             n_plants = n_distinct(a$data$plant_name), 
             n = a$dims$N, 
-            rmse = sjstats::rmse(a), 
+            rmse = rmsee,
+            nrmse = rmsee/(max(a$data$pollen_gain) - min(a$data$pollen_gain)),
             r2 = y[[1]], 
             o2 = y[[2]],
             r2m = z[1], 

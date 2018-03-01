@@ -17,9 +17,16 @@ global_vs_community <- function(glanced_models_table){
       separate(m, c("pollen_category", "var_trans"))
   }
   
-  list(rmse = "rmse", sigma = "sigma", r2 = "r2", o2 = "o2", r2c = "r2c") %>%
+  positive_models <- c("rmse", "sigma", "nrmse")
+  
+  list(rmse = "rmse", sigma = "sigma", r2 = "r2", o2 = "o2", r2c = "r2c", nrmse = "nrmse") %>%
     map_df(~test_table(.), .id = "quality") %>%
-    mutate(min_scale = if_else(estimate < 0, "community", "global"))
+    mutate(min_scale = case_when(
+      estimate < 0 & quality %in% positive_models ~ "community",
+      estimate > 0 & quality %in% positive_models ~ "global",
+      estimate < 0 & !(quality %in% positive_models) ~ "global",
+      estimate > 0 & !(quality %in% positive_models) ~ "community"
+      ))
 }
 
 #' Figure out best random effect
