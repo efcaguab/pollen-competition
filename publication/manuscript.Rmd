@@ -11,10 +11,12 @@ toc: false
 header-includes:
   - \usepackage{booktabs}
   - \usepackage{setspace}
+  - \usepackage{lineno}
   - \usepackage{xr}
   - \externaldocument[S-]{supp_info}
 ---
 
+\linenumbers
 \doublespacing
  
 ```{r setup, include=FALSE}
