@@ -1,5 +1,0 @@
-ery.cam,thy.vel
-hal.sp.PM-0710,1,1
-las.gem.PM-0744,1,0
-sph.sp.PM-0542,0,1
-vil.hot.PM-0748,1,0
