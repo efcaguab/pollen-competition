@@ -40,7 +40,7 @@ p1 <- dep_frame %>%
   stat_density(geom = "line") +
   facet_wrap( ~ pollen_category, scales = "free") +
   pub_theme() +
-  scale_color_brewer(palette = "Set1") +
+  scale_color_manual(values = colour_scale_values) +
   labs(x = "pollen density (grains per stigma)", 
        colour = "flower treatment") +
   theme(legend.position = "top")
@@ -67,7 +67,7 @@ plot_dist <- function(fun){
       ggplot(aes(x = open - closed, colour = pollen_category)) +
       stat_density(position = position_identity(), geom = "line") +
       pub_theme() +
-      scale_color_brewer(palette = "Set1") +
+      scale_color_manual(values = colour_scale_values) +
     theme(legend.position = "top") + 
     labs(x = "gain in pollen density (open-closed)", 
          colour = "pollen type")
@@ -95,7 +95,7 @@ p1 <- plant_rel_abu %>%
   stat_density(aes(x = rab, colour = locality_name),
                position = position_identity(), geom = 'line') +
   # stat_density(aes(x = abu_tot_rel_log), geom = 'line') +
-  scale_color_brewer(palette = "Set1") +
+  scale_color_manual(values = colour_scale_values) +
   pub_theme() +
   # guides(colour = guide_legend(title = 'locality'), linetype = guide_legend(title = 'land use')) +
   labs(colour = 'locality', x = 'relative abundance')
@@ -107,7 +107,7 @@ p2 <- plant_rel_abu %>%
   inner_join(sites, by = 'site_name') %>%
   ggplot(aes(x = abu)) +
   stat_density(position = position_identity(), geom = 'line') +
-  scale_color_brewer(palette = "Set1") +
+  scale_color_manual(values = colour_scale_values) +
   pub_theme() +
   labs(x = 'abundance (floral units)')
 
@@ -173,7 +173,7 @@ site_plots_conspecific <- dep_frame %>%
       pub_theme() +
       xlab(NULL) +
       ylab('pollen density') +
-      scale_fill_brewer(palette = "Set1")
+      scale_fill_manual(values = colour_scale_values)
   })
 
 legend <- cowplot::get_legend(site_plots_conspecific[[1]])
@@ -215,7 +215,7 @@ plant_plots_conspecific <- dep_frame %>%
       pub_theme() +
       xlab(NULL) +
       ylab('pollen density') +
-      scale_fill_brewer(palette = "Set1")
+      scale_fill_manual(values = colour_scale_values)
   })
 
 legend <- cowplot::get_legend(plant_plots_conspecific[[1]])

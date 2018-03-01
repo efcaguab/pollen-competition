@@ -170,8 +170,8 @@ tidied_fixed %>%
                bins = 15) +
   pub_theme() +
   facet_grid( ~ term, scales = "free_x", space = "free_x") +
-  scale_color_manual(values = two_colour_scale_values) +
-  scale_fill_manual(values = two_colour_scale_values) +
+  scale_color_manual(values = colour_scale_values) +
+  scale_fill_manual(values = colour_scale_values) +
   scale_x_continuous(breaks = seq(-2,2, by = 0.25)) + 
   theme(legend.position = "top") +
   labs(colour = "", fill = "")
