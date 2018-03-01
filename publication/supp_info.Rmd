@@ -351,7 +351,7 @@ xtableFtable(contingency_table, method = "col.compact",
 loadd(wilcox_glo_com)
 
 wilcox_glo_com %>%
-  filter(quality %in% c("rmse", "sigma", "r2c", "o2"),
+  filter(quality %in% c("rmse", "sigma", "r2c", "o2", "nrmse"),
          var_trans == "log") %>%
   select(quality, pollen_category, min_scale, estimate, p.value) %>%
   rename(`model metric` = quality,
@@ -359,7 +359,7 @@ wilcox_glo_com %>%
          `best model set` = min_scale,
          `shift estimate` = estimate, 
          `p value` = p.value) %>% 
-  xtable(digits = -1, caption = "Results of two sample paired Wilcoxon signed rank test comparing the root mean square error (rmse), the residual standard deviation (sigma), the conditional r-squared approximation as proposed by Nakagawa and Schielzeth (2013), and the omega-squared value as suggested by Xu (2003) of the model sets constructed using predictors computed at the community or study level.", 
+  xtable(digits = -1, caption = "Results of two sample paired Wilcoxon signed rank test comparing different model quality metrics of the model sets using predictors computed across or within communities. Metrics are the root mean square error (rmse), the residual standard deviation (sigma), the conditional r-squared approximation as proposed by Nakagawa and Schielzeth (2013), the omega-squared value as suggested by Xu (2003), and the normalised root-mean-square error of the model sets constructed using predictors computed at the community or study level.", 
          label = "tab:table-global-vs-community-models")
 ```
 
