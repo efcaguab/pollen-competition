@@ -143,10 +143,10 @@ When comparing the performance of the models constructed at the community or stu
 This was so despite the fact that the model predictors calculated at the community level were highly correlated to those at the study wide level (Figure \@ref(S-fig:fig-global-community-correlations)). 
 Nevertheless, results from the within community models are similar both qualitatively and quantitatively (with the exception of phenology overlap, but that might change once I use a better metric, Figure \@ref(S-fig:fig-model-results)). 
 
-We found that the number of species a plant interacts with (the species degree) is positively correlated with the heterospecific pollen density deposited.
-To a smaller extent, degree is also negatively correlated with the density of conspecific pollen.
+We found that the gain in conspecific pollen is negatively affected by the plants relative abbundance and to a smaller extent by the species' degree (Figure \@ref(fig:fig-model-results-global). 
+The gain in heterospecific pollen was instead positively affected by degree and the plant's phenology overlap, but was also strongly negatively affected by the plant's relative abbundance. 
 
-```{r fig-model-results-global, fig.height = 2, fig.cap = "Model coefficients"}
+```{r fig-model-results-global, fig.height = 2, fig.cap = "Distribution of effect estimates for models of conspecific and heterospecific pollen density gain"}
 loadd(tidied_fixed, sites)
 
 tidied_fixed %>%
@@ -175,7 +175,7 @@ tidied_fixed %>%
   scale_fill_manual(values = colour_scale_values) +
   scale_x_continuous(breaks = seq(-2,2, by = 0.25)) + 
   theme(legend.position = "top") +
-  labs(colour = "", fill = "")
+  labs(colour = "", fill = "", x = "estimated effect on pollen gain")
 ```
 
 
