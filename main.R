@@ -111,6 +111,7 @@ reporting <- drake_plan(
   'publication/supp_info.pdf' = latexmk('publication/supp_info.tex', clean = FALSE),
   'publication/manuscript.tex' = render('publication/manuscript.Rmd', quiet = TRUE),
   'publication/manuscript.pdf' = latexmk('publication/manuscript.tex', clean = FALSE),
+  'publication/questions_observations_todo.pdf' = render('publication/questions_observations_todo.Rmd', quiet = TRUE),
   file_targets = TRUE
 )
 
