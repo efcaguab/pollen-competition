@@ -262,32 +262,36 @@ bind_rows(ab, ph, k) %>%
   pub_theme()
 ```
 
-```{r fig-model-results, fig.height = 3, fig.cap = "Model coefficients"}
-loadd(tidied_fixed)
+```{r fig-model-results, fig.height = 3.5, fig.cap = "Model coefficients"}
+loadd(tidied_fixed, sites)
 
 tidied_fixed %>%
-  filter(term != "(Intercept)" #, 
-         # var_trans == 'log'
+  filter(term != "(Intercept)" , 
+         var_trans == 'log'
+         # scale == "community"
          ) %>%
   group_by(pollen_category,scale, model, var_trans, term) %>%
   summarise(estimate = first(estimate)) %>%
   group_by() %>%
   humanize() %>%
   ggplot(aes(x = estimate, 
-             colour = pollen_category)) +
+             colour = pollen_category, 
+             fill = pollen_category)) +
   geom_vline(xintercept = 0, linetype = 2, size = 0.25) +
-  geom_freqpoly(# alpha = 0.25,
+  stat_density(geom = 'area',
+               alpha = 0.15,
                position = position_identity(),
                draw_quantiles = c(0.5, 0.95, 0.05), 
                trim = F, 
                scale = "count",
-               binwidth = 0.05, 
-               geom = "line") +
+               bins = 15) +
   pub_theme() +
-  facet_grid(scale ~ term + var_trans, scales = "free_x") +
-  scale_color_brewer(palette = "Set1") +
-  scale_fill_brewer(palette = "Set1") +
-  theme(legend.position = "bottom")
+  facet_grid(scale ~ term, scales = "free_x", space = "free_x") +
+  scale_color_manual(values = colour_scale_values) +
+  scale_fill_manual(values = colour_scale_values) +
+  scale_x_continuous(breaks = seq(-2,2, by = 0.25)) + 
+  theme(legend.position = "top") +
+  labs(colour = "", fill = "")
 ```
 
 ```{r fig-random-intercepts, eval = F, fig.height= 3, fig.cap = "Random effect intercepts"}
