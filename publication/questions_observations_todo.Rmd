@@ -8,8 +8,11 @@ output:
     keep_tex: no
     number_sections: false
 toc: false
+header-includes:
+  - \usepackage{setspace}
 ---
 
+\onehalfspacing
 
 1. This paper is almost entirely based on data that has already been published in separate units in Marrero et al. 2014, 2016, and 2017. 
 Marrero et al. 2014 used visitation data and determined that land uses (agricultural vs. restored) was correlated to differences on the degree of specialization and richness of plants and pollinators.
