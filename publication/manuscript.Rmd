@@ -145,13 +145,13 @@ This was so despite the fact that the model predictors calculated at the communi
 We found evidence that indicates that the number of species a plant interacts with (the species degree) is positively correlated with the heterospecific pollen density deposited. 
 To a smaller extent, degree is also negatively correlated with the density of conspecific pollen.
 
-```{r fig-model-results, fig.height = 2, fig.cap = "Model coefficients"}
+```{r fig-model-results-global, fig.height = 2, fig.cap = "Model coefficients"}
 loadd(tidied_fixed, sites)
 
 tidied_fixed %>%
   filter(term != "(Intercept)" , 
          var_trans == 'log',
-         scale == "community"
+         scale == "global"
          ) %>%
   group_by(pollen_category,scale, model, var_trans, term) %>%
   summarise(estimate = first(estimate)) %>%
