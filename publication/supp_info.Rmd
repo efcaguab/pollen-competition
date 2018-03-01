@@ -290,11 +290,11 @@ tidied_fixed %>%
   theme(legend.position = "bottom")
 ```
 
-```{r fig-random-intercepts, fig.height= 3, fig.cap = "Random effect intercepts"}
+```{r fig-random-intercepts, eval = F, fig.height= 3, fig.cap = "Random effect intercepts"}
 loadd(tidied_fixed, sites)
 
 tidied_fixed %>%
-  separate("level", c("plant_name", "site_name"), sep = "\\.", remove = F) %>%
+  separate("level", c("site_name", "plant_name"), sep = "/", remove = F) %>%
   filter(term == "(Intercept)" ,
          var_trans == 'log',
          scale == "community", 
