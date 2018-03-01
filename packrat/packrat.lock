@@ -758,7 +758,6 @@ Requires: lattice
 Package: nloptr
 Source: CRAN
 Version: 1.0.4
-Hash: 8053df240a4635aeb54fc68c6de67709
 
 Package: nnet
 Source: CRAN
