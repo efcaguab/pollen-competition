@@ -1,6 +1,6 @@
 ---
 title: "The pollination trade-off"
-subtitle: "Supplementary materials"
+subtitle: "Supplementary information"
 author: "Fernando Cagua, Hugo Marrero, Jason Tylianakis, Daniel Stouffer"
 bibliography: references.bib
 csl: ecology-letters.csl
