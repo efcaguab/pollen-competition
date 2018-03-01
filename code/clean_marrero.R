@@ -2,6 +2,7 @@
 
 library(dplyr)
 library(foreach)
+library(readr)
 
 # # script arguments 
 # args <- commandArgs(trailingOnly = TRUE)
