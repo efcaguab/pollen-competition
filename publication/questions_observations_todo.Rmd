@@ -16,13 +16,17 @@ header-includes:
 
 \onehalfspacing
 
+```{r, echo = F}
+loadd(glanced_random)
+```
+
 1. This paper is almost entirely based on data that has already been published in separate units in Marrero et al. 2014, 2016, and 2017. 
 Marrero et al. 2014 used visitation data and determined that land uses (agricultural vs. restored) was correlated to differences on the degree of specialization and richness of plants and pollinators.
 Marrero et al. 2016 used pollen deposition data and determined that the pollination service (both the absolute number and the proportion of conspecific pollen deposited on stigmas) is reduced in agricultural communities when compared to restored communities.
 Finally, Marrero et al. 2017 used pollen transfer networks and found that pollen diversity and pollination plant niche overlap (at the species level) is greater in agricultural communities. 
 The increase on niche overlap was attributed to be positively associated with an increased abundance of exotic plants.
 2. Is there a better way to obtain a plant metric of temporal overlap? --- *Will use decomposition and distance metrics for this instead of the Pianka method*
-3. Results shown here use `r n_distinct(readd(glanced_random)$model)` bootstrap replicates. Thinking about scale up to 1000 models once methods are nailed down but it doesn't seem to make much difference at all. 
+3. Results shown here use `r n_distinct(glanced_random$model)` bootstrap replicates. Thinking about scale up to 1000 models once methods are nailed down but it doesn't seem to make much difference at all. 
 4. Results about whether the community and global explanatory variables are better are inconclusive. Different indices of model quality suggest different things. While RMSE and $\sigma$ suggest that the global models explain better the gain in pollen, $R^2$ and $\omega^2$ suggest the opposite. What is the appropiate metric? Options shown in the supplementary info. At the end it needs to be a metric that is unsensitive to sample size. 
 5. Or, should I include the analysis of global models at all? Not sure it brings much to the discussion and might just make things confusing.
 6. Currently there are three explanatory variables. I'm planning to add more but I'm currently unsure about which ones to include. I'm particularly interested in variables that involve the data found in pollen transfer networks and that potentially involve the abbundance of pollinators. I can think on many but it's easy to get carried away and want to include only variables that tell something new and have a clear rationale. 
