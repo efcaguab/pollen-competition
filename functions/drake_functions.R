@@ -9,3 +9,7 @@ vis_drake_graph_sml0 <- function(config){
     filter(!(from %in% nodes_to_remove))
   render_drake_graph(df)
 }
+
+my_render <- function(file, quiet, ...){
+  render(file, quiet = quiet)
+}

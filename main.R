@@ -128,7 +128,7 @@ reporting <- drake_plan(
   'publication/supp_info.pdf' = latexmk('publication/supp_info.tex', clean = FALSE),
   'publication/manuscript.tex' = render('publication/manuscript.Rmd', quiet = TRUE),
   'publication/manuscript.pdf' = latexmk('publication/manuscript.tex', clean = FALSE),
-  'publication/questions_observations_todo.pdf' = render('publication/questions_observations_todo.Rmd', quiet = TRUE),
+  'publication/questions_observations_todo.pdf' = my_render('publication/questions_observations_todo.Rmd', quiet = TRUE, depends_on = 'publication/manuscript.pdf'),
   file_targets = TRUE
 )
 
@@ -141,5 +141,5 @@ project_config <- drake_config(project_plan)
 # vis_drake_graph(project_config, split_columns = T, targets_only = T)
 
 # execute plan
-# make(project_plan, parallelism = "parLapply", jobs = 2)
+# make(project_plan, parallelism = "parLapply", jobs = 7)
 make(project_plan)
