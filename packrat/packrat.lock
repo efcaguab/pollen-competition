@@ -1,6 +1,6 @@
 PackratFormat: 1.4
 PackratVersion: 0.4.8.1
-RVersion: 3.4.2
+RVersion: 3.4.3
 Repos: CRAN=https://cran.rstudio.com/
 
 Package: BH
@@ -539,6 +539,11 @@ Hash: bbf39be02775e8aa47f7a9bb2f59f427
 Requires: MASS, Matrix, bayesplot, broom, coin, dplyr, glmmTMB, lme4,
     lmtest, magrittr, modelr, nlme, prediction, purrr, pwr, rlang,
     sandwich, sjlabelled, sjmisc, tibble, tidyr, tidyselect
+
+Package: smatr
+Source: CRAN
+Version: 3.4-3
+Requires: plyr
 
 Package: snakecase
 Source: CRAN
