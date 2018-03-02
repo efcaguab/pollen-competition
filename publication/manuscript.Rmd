@@ -227,19 +227,11 @@ However, plants can obtain a larger proportion of conspecific pollen when they h
 
 ```{r fig-trade-off-predictions, fig.height= 2.5, fig.cap = "Trade off predictions j."}
 loadd(trade_off_predictions, model_linear_fits, tidied_fixed)
-# loadd(model_correlations)
 
-# p1 <- model_correlations %>%
-#   filter(var_trans == "log", 
-#          scale == "global") %>%
-#   ggplot(aes(x = pearson_slope)) + 
-#   geom_vline(xintercept = 0.5, size = 0.25, linetype = 2) +
-#   stat_density(trim = F, geom = "line") +
-#   pub_theme() +
-#   labs(x = "slope\n(heterospecific ~ conspecific pollen gain)")
-# 
 get_pred_range <- function(x){
-  tidied_fixed %>% filter(pollen_category == x, var_trans == "log", scale == "global") %$% estimate %>% range()
+  tidied_fixed %>% 
+    filter(pollen_category == x, var_trans == "log", scale == "global") %$% 
+    estimate %>% range()
 }
 
 ab_lines <- model_linear_fits %>%
@@ -260,9 +252,10 @@ p1 <- data_frame(x = get_pred_range("heterospecific"),
   geom_abline(slope = 1, intercept = 0, size = 0.25, linetype = 2) +
   geom_point(alpha = 0) +
   coord_equal(xlim = get_pred_range("heterospecific"),
-                  ylim = get_pred_range("conspecific")) +
+              ylim = get_pred_range("conspecific")) +
   pub_theme() +
-  labs(x = "gain in heterospecific pollen", y = "gain in conspecific pollen")
+  labs(x = "gain in heterospecific pollen", 
+       y = "gain in conspecific pollen")
 
 p2 <- trade_off_predictions %>%
   mutate_at(c("conspecific", "heterospecific"), exp) %>%
@@ -284,7 +277,9 @@ p2 <- trade_off_predictions %>%
        y = "proportion conspecific pollen gain", 
        x = "scaled variable value")
 
-cowplot::plot_grid(p1, p2, align = "h", axis = "tb", ncol = 2, labels = LETTERS[1:2], label_size = 8, rel_widths = c(0.35, 0.65))
+cowplot::plot_grid(p1, p2, 
+                   align = "h", axis = "tb", ncol = 2, labels = LETTERS[1:2], 
+                   label_size = 8, rel_widths = c(0.35, 0.65))
 ```
 
 ## Discussion 
@@ -293,7 +288,5 @@ This is, the data is best modelled when ignoring the hierarchical nature of the 
 Similarly, the relationship between degre and pollen gain does not seem to be species or community dependent. 
 
 Relative small difference between conspecific animal and self pollination is conservative because crossing is better than cloning ()
-
-## Awknowledgements
 
 ## References
