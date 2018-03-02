@@ -30,6 +30,8 @@ options(xtable.comment = FALSE,
 
 ## Abstract
 
+TBC
+
 ## Introduction
 
 Pollination systems play a disproportionally important role in food production and maintenance of global biodiversity. 
@@ -53,24 +55,23 @@ However, these competitive interactions between species pairs do not occur in is
 Instead, plants often ocurr in communities in which multiple competitive interactions operate simultaneusly and lead to emergent phenomena not observed at smaller scales. 
 
 Nevertheless, only a handful of studies have examined interspecific pollen transfer at the community level, and therefore we still understand little about how compeition for pollinators operates at this scale. 
-All together, the few existing studies show that, as expected, the effective result of mutualistic interactions is, in most cases, one of facilitation. 
+All together, existing studies show that, as expected, the effective result of mutualistic interactions is, in most cases, one of facilitation. 
 Importantly, they also show a large variability in this result—both across species and across communities. 
-However, the driving factors behind this variability are currently not understood.
+However, the driving factors behind this variability are currently not understood. 
 
-But understanding what makes species and communities different is important not only because the ecological and evolutionary implications. 
+Understanding what makes species and communities different is important not only because of its ecological and evolutionary implications. 
 It is also important because it is fundamentaly related to the way we understand and mathematically represent mutualistic systems. 
-An important proportion of widely used theoretical models of pollination account for the negative effects of mutualisim by shaping the benefits
+Some of the most widely used theoretical models of pollination account for the negative effects of mutualisim by adjusting the mutualistic benefit of an interaction so that it can be negatively affected by the number of mutualistic partners---the species degree. 
+The extent to which species degree affects the benefit is called *mutualistic trade-off*. 
+This approach, considerably simplifies the mathematical treatment of competition for pollinators. 
+At the same time it is based on the intuitive rationale that a species that interacts with few species benefits strongly from each of them, whereas a species that interacts with a large number of species does so comparatively weakly. 
+Although, the mutualistic trade-off has been shown to play a determining role on the stability and diversity of mutualistic communities, empirical evidence is scarce, to say the least.
 
-It is generally believed that there is a trade-off between the number of mutualistic parters a plant species has, and the strength of its interactions (mutualistic benefit).
-The trade-off arises from the premise that an increase on the number of mutualistic partners might increase facilitation, but might also increase competition for pollinators because it can lead to a reduction of the proportion of conspecific pollen deposited on the stigmas.
-Species properties and the environmental context seem to influence whether sharing pollinators leads to facilitation or competition [@Tur2016a], however the specific mechanisms behind these observations are poorly understood.
-Furthermore, recent theoretical advances that explicitly include the mutualistic trade-off in pollination models have highlighted its importance.
-Indeed, it has been shown that the trade-off is related to the feasibility and stability of mutualistic communities [@Rohr2014], the species' response to change [@Saavedra2013], the onset of critical transitions [@Dakos2014a], and the spread of perturbations [@Suweis2015].
-However, The extent to which the trade-off operates in nature and its relationship with facilitation-competition dynamics has not been empirically evaluated.
-Here, we used data on the quality and quantity of pollination in six pollination communities to quantify the empirical support for the mutualistic trade-off concept and identify the mechanisms that structure it.
-Contrasting to our initial expectation, we found that the mutualistic benefit is only weakly related to the number of pollination partners.
-We found that this relationship is weak because plants with a large number of shared partners are able to reduce the cost of sharing by increasing the niche partitioning.
-Importantly, the niche partitioning strategies are modulated by plant abundance and are not homogeneously employed by all plant species.
+Elucidating how the mechanisms and drivers of facilitation scales to the community level and its theoretical concequences has been elusive in part because of the large amounts of data required.
+Previous studies focus on the final picture of interspecific pollen transfer that is obtained by examining the pollen deposited on flower stigmas. 
+However, teasing appart the competition for pollinators also requires data that describes the structure of the interactions and the pollen flows that ocurr within it, while accounting for the traits of the species that integrate the community.
+Here, we examine a comprehensive data set that includes information about pollen deposition, transfer, visitation, species abundance, and species traits across diverse communities in the Argentinean Pampas. 
+Specifically, we ask first wether there is empirical support for the hipotezised relationship between the species degree and the quantity and quality of the pollination service. 
 
 ## Methods
 
