@@ -149,10 +149,16 @@ We tested the significance of this difference using a two sample paired Wilcoxon
 We chosed NRMSE because it provides an easily interpretable metric related to the quality of the predictions while being farily insensitive to sample size. 
 This inensitivity was desirable because the across communities models had often slightly larger sample sizes owing to the fact of some species not having all data necessary to calculate the independent variables at the community level.
 
-Finally, we focused on how the pollination trade-off was related to our explanatory variables. 
+Finally, we focused on how the relationship between conspecific and heterospecific pollen gain. 
+First we examined wether the pollination trade-off was related to our explanatory variables. 
 To do so, we harnessed the results from the conspecific and heterospecific pollen models that performed best (across or within communities). 
 To examine the relationship between these model sets, we sampled 100 estimates from the distribution of coefficients in each set. 
-For each of the samples, we then calculated the difference between the gain in conspecific and heterospecific pollen that would be predicted assuming mean values for the random intercepts and the other predictors.  
+For each of the samples, we then calculated the difference between the gain in conspecific and heterospecific pollen that would be predicted assuming mean values for the random intercepts and the other predictors. 
+
+Second, we calulated the the extent of facilitation. 
+For this purpose, as in @Tur2016a, we used the relationship between heterospecific and conspecific pollen. 
+We calculated an overal relationship by sampling the predictions from 100 conspecific/heterospecific model pairs and estimated the relationship by fitting an standardised major axis (SMA) to each pair [we used the R package `smatr 3.4-3`, @Warton2012a]. 
+We followed a similar procedure to calculate a relationship per species but instead of fitting a SMA per model pair, we did so across the 100 models for each species independently.
 
 ## Results
 
