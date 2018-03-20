@@ -71,7 +71,11 @@ Elucidating how the mechanisms and drivers of facilitation scales to the communi
 Previous studies focus on the final picture of interspecific pollen transfer that is obtained by examining the pollen deposited on flower stigmas. 
 However, teasing appart the competition for pollinators also requires data that describes the structure of the interactions and the pollen flows that ocurr within it, while accounting for the traits of the species that integrate the community.
 Here, we examine a comprehensive data set that includes information about pollen deposition, transfer, visitation, species abundance, and species traits across diverse communities in the Argentinean Pampas. 
-Specifically, we ask first wether there is empirical support for the hipotezised relationship between the species degree and the quantity and quality of the pollination service. 
+Specifically, we first estimate the gain on pollen that can be attributed to the mutualistic interactions. 
+Second, we investigate wether there is a relationship between this gain and a suite of variables that describe both the role of the plant species and the ecological context. 
+Here, we pay special attention to the role of species degree because of its ramifications to theoretical ecology. 
+At the same time, we examine wether the plant role and ecological context is best infered from dynamics occurring at the community level, or wether it can be well approximated using information available from all sites in which a species ocurr. 
+Third, and finaly, we explore how plant species differ on the extent to which competition for pollinators shapes facilitation. 
 
 ## Methods
 
