@@ -295,9 +295,12 @@ cowplot::plot_grid(p1, p2,
 
 ## Discussion 
 
-This is, the data is best modelled when ignoring the hierarchical nature of the experiment (communities nested in agricultural or restored fragments nested in localities).
-Similarly, the relationship between degre and pollen gain does not seem to be species or community dependent. 
-
-Relative small difference between conspecific animal and self pollination is conservative because crossing is better than cloning ()
+* We found that animal pollination only brings a small amount of extra conspecific pollen (compared to selfing) if any. This relatively small difference is probably very important though because crossing has been shown to be evolutionary better than cloning in the long term. 
+* The relationship between conspecific and heterospecific pollen is positive which indicates than net facilitation is the dominant outcome. This agrees with previous findings. However the amount of added conspecific pollen is in average smaller than the amount of added heterospecific pollen.
+* Despite finding that facilitation is the most common outcome. We also were able to find clear signature of competition for pollinators at the community level.
+* We found that, as assumed in pollination models, the mutualistic benefit is modulated by the species degree and therefore there is indeed evidence for a trade-off. Moreover, the trade off does not depend on the species or the community. Which is a good thing because we tend to simplify models by assuming a common trade-off for the whole community.
+* However the mutualistic benefit was not just modulated by the degree but other factors also played significant roles. 
+* These factors, in particular the plant relative abundance, was important at explaining the differences between plants. 
+* We found that models performed better when explanatory variables were constructed so that they take into account information across all the communities in which a species was present. This means that despite the particularities of each community (random effects acounted for a large proportion of the variance) we can still predict general outcomes by knowing some general traits about the plant species and how it relates to other plants in their community.
 
 ## References
