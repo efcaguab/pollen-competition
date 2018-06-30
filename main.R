@@ -124,11 +124,11 @@ model_plans <- rbind(
 )
 
 reporting <- drake_plan(
-  'publication/supp_info.tex' = render('publication/supp_info.Rmd', quiet = TRUE),
-  'publication/supp_info.pdf' = latexmk('publication/supp_info.tex', clean = FALSE),
-  'publication/manuscript.tex' = render('publication/manuscript.Rmd', quiet = TRUE),
-  'publication/manuscript.pdf' = latexmk('publication/manuscript.tex', clean = FALSE),
-  'publication/questions_observations_todo.pdf' = my_render('publication/questions_observations_todo.Rmd', quiet = TRUE, depends_on = 'publication/manuscript.pdf'),
+  'paper/supp_info.tex' = render('paper/supp_info.Rmd', quiet = TRUE),
+  'paper/supp_info.pdf' = latexmk('paper/supp_info.tex', clean = FALSE),
+  'paper/manuscript.tex' = render('paper/manuscript.Rmd', quiet = TRUE),
+  'paper/manuscript.pdf' = latexmk('paper/manuscript.tex', clean = FALSE),
+  'paper/questions_observations_todo.pdf' = my_render('paper/questions_observations_todo.Rmd', quiet = TRUE, depends_on = 'paper/manuscript.pdf'),
   file_targets = TRUE
 )
 
