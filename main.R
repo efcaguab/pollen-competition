@@ -1,3 +1,5 @@
+# Prepare workspace -------------------------------------------------------
+
 if(!packrat:::isPackratModeOn()) packrat::on()
 pkgconfig::set_config("drake::strings_in_dots" = "literals")
 
@@ -33,6 +35,8 @@ library(foreach)
 # load functions
 f <- lapply(list.files("code", full.names = T), source)
 
+# Clean data --------------------------------------------------------------
+
 # plan to clean data
 clean_data <- drake::drake_plan(
   sites = site_data(drake::file_in('./data/raw/marrero-estigmatic_pollen.csv'), drake::file_in('./data/raw/site_names.csv')),
@@ -54,7 +58,7 @@ format_data <- drake::drake_plan(
   degree = get_degree(vis_frame, dep_frame)
 )
 
-## BASIC ANALYSES
+# Basic analyses ----------------------------------------------------------
 
 analysing <- drake::drake_plan(
   consp_self = model_conspecific_self(dep_frame),
@@ -62,7 +66,7 @@ analysing <- drake::drake_plan(
   significant_gain_site = mann_withney_part_df(dplyr::filter(dep_frame, pollen_category == 'conspecific'), by = c('recipient', 'site_name'), var = 'treatment', conf.int = T)
 )
 
-## BOOTSTRAP MODELS ###
+# Bootstrap models --------------------------------------------------------
 
 n_replicates <- 10
 transformation <- function(x) log(x + 1)
@@ -129,7 +133,7 @@ model_plans <- rbind(
   predictions
 )
 
-## REPORTING ##
+# Plots -------------------------------------------------------------------
 
 reporting <- drake::drake_plan(
   'paper/supp_info.tex' = render('paper/supp_info.Rmd', quiet = TRUE),
@@ -139,6 +143,9 @@ reporting <- drake::drake_plan(
   'paper/questions_observations_todo.pdf' = my_render('paper/questions_observations_todo.Rmd', quiet = TRUE, depends_on = 'paper/manuscript.pdf'),
   file_targets = TRUE
 )
+
+# Reporting ---------------------------------------------------------------
+# Make all ----------------------------------------------------------------
 
 # set up plan
 project_plan <- rbind(clean_data, format_data,
