@@ -112,7 +112,9 @@ model_plans <- rbind(
 # Plots -------------------------------------------------------------------
 
 figure_plan <- drake::drake_plan(
-  fig_model_results_global = make_fig_model_results_global(tidied_fixed)
+  fig_model_results_global = make_fig_model_results_global(tidied_fixed), 
+  fig_con_hetero_gain = make_fig_con_hetero_gain(tidied_fixed, model_linear_fits), 
+  fig_proportion_vs_variables = make_fig_proportion_vs_variables(trade_off_predictions)
 )
 
 # Reporting ---------------------------------------------------------------
