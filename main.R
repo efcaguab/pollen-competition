@@ -1,34 +1,34 @@
-# basic R
-library(stats)
-library(utils)
-# additional packages
-library(foreach)
-library(sjstats)
-library(readr)
-library(MuMIn)
-library(smatr)
-library(drake)
-library(tools)
-library(stringr)
-library(magrittr)
-library(knitr)
-library(rmarkdown)
-library(xtable)
-library(spaa)  # niche overlap
-library(purrr)
-library(tidyr)
-library(bookdown)  # figure and table references in reports
-library(tinytex)
-library(ggplot2)
-library(broom) 
-library(nlme)
-library(tibble)
-library(dplyr)
+if(!packrat:::isPackratModeOn()) packrat::on()
+
+# # basic R
+# library(stats)
+# library(utils)
+# # additional packages
+# library(foreach)
+# library(sjstats)
+# library(readr)
+# library(MuMIn)
+# library(smatr)
+# library(drake)
+# library(tools)
+# library(stringr)
+# library(magrittr)
+# library(knitr)
+# library(rmarkdown)
+# library(xtable)
+# library(spaa)  # niche overlap
+# library(purrr)
+# library(tidyr)
+# library(bookdown)  # figure and table references in reports
+# library(tinytex)
+# library(ggplot2)
+# library(broom) 
+# library(nlme)
+# library(tibble)
+# library(dplyr)
 
 # load functions
-functions_folder <- './functions'
-list_files_with_exts(functions_folder, 'R') %>%
-  lapply(source) %>% invisible()
+f <- lapply(list.files("code", full.names = T), source)
 
 # plan to clean data
 clean_data <- drake_plan(
@@ -59,7 +59,7 @@ analysing <- drake_plan(
   strings_in_dots = 'literals'
 )
 
-n_replicates <- 100
+n_replicates <- 10
 transformation <- function(x) log(x + 1)
 
 boot_replicates <- drake_plan(
@@ -138,7 +138,7 @@ project_plan <- rbind(clean_data, format_data,
                       model_plans,
                       analysing, reporting)
 project_config <- drake_config(project_plan)
-# vis_drake_graph(project_config, split_columns = T, targets_only = T)
+vis_drake_graph(project_config, split_columns = T, targets_only = T)
 
 # execute plan
 # make(project_plan, parallelism = "parLapply", jobs = 7)
