@@ -45,10 +45,10 @@ mann_withney_part_df <- function(x, by = 'recipient', var, ...){
 #'
 mann_withney_df <- function(x, var, treatments = c('open', 'closed'), alternative = 'greater', conf.int = FALSE){
   a <- x %>% 
-    dplyr::filter_at(var, any_vars(. == treatments[1])) %$% 
+    dplyr::filter_at(var, dplyr::any_vars(. == treatments[1])) %$% 
     pollen_density
   b <- x %>% 
-    dplyr::filter_at(var, any_vars(. == treatments[2])) %$%
+    dplyr::filter_at(var, dplyr::any_vars(. == treatments[2])) %$%
     pollen_density
   wilcox.test(a, b, alternative, conf.int = conf.int)
 }
