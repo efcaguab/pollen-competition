@@ -5,32 +5,6 @@ pkgconfig::set_config("drake::strings_in_dots" = "literals")
 
 library(magrittr)
 library(foreach)
-# # basic R
-# library(stats)
-# library(utils)
-# # additional packages
-# library(foreach)
-# library(sjstats)
-# library(readr)
-# library(MuMIn)
-# library(smatr)
-# library(drake)
-# library(tools)
-# library(stringr)
-# library(magrittr)
-# library(knitr)
-# library(rmarkdown)
-# library(xtable)
-# library(spaa)  # niche overlap
-# library(purrr)
-# library(tidyr)
-# library(bookdown)  # figure and table references in reports
-# library(tinytex)
-# library(ggplot2)
-# library(broom) 
-# library(nlme)
-# library(tibble)
-# library(dplyr)
 
 # load functions
 f <- lapply(list.files("code", full.names = T), source)
