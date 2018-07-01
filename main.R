@@ -2,7 +2,7 @@ if(!packrat:::isPackratModeOn()) packrat::on()
 pkgconfig::set_config("drake::strings_in_dots" = "literals")
 
 library(magrittr)
-
+library(foreach)
 # # basic R
 # library(stats)
 # library(utils)
@@ -41,7 +41,7 @@ clean_data <- drake::drake_plan(
   visitation_qual = clean_visitation_qual(drake::file_in('./data/raw/marrero-qualitative_visits.csv'), sites),
   transfer = clean_transfer(drake::file_in('./data/raw/marrero-pollen_transfer.csv'), sites),
   abundance = clean_abundance(drake::file_in('./data/raw/marrero-abundance.csv'), sites),
-  random_effects = dplyr::read_csv(drake::file_in("./data/raw/random_effects.csv")),
+  random_effects = readr::read_csv(drake::file_in("./data/raw/random_effects.csv")),
   armonised_data = armonise_species_names(deposition, visitation_quant, visitation_qual, transfer, abundance)
 )
 

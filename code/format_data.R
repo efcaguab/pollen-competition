@@ -4,8 +4,8 @@
 # Build a data frame from the lists joining the specified name
 to_data_frame <- function(z, frame_name){
   plyr::ldply(z, function(y, frame_name){
-    y %>% extract2(frame_name) %>%
-      mutate(site_name = y$name)
+    y %>% magrittr::extract2(frame_name) %>%
+      dplyr::mutate(site_name = y$name)
   }, frame_name = frame_name)
 }
 
@@ -17,16 +17,17 @@ extract_dep_frame <- function(x){
     # change list to a data frame
     to_data_frame('deposition') %>%
     # add column to specify between heterospecific and conspecific pollen 
-    mutate(pollen_category = recipient == donor, 
-           pollen_category = if_else(pollen_category, 
-                                     "conspecific", 
-                                     "heterospecific"), 
-           pollen_density = n_grains/n_stigma, 
-           open = as.numeric(treatment == 'open'), 
-           closed = as.numeric(treatment == 'closed')) %>%
-    mutate(plant_name = recipient) %>%
-    mutate(pollen_density = if_else(pollen_category == 'heterospecific' &
-                                      treatment == 'closed', 0, pollen_density))
+    dplyr::mutate(
+      pollen_category = recipient == donor, 
+      pollen_category = dplyr::if_else(pollen_category, "conspecific", "heterospecific"),
+      pollen_density = n_grains/n_stigma, 
+      open = as.numeric(treatment == 'open'), 
+      closed = as.numeric(treatment == 'closed')) %>%
+    dplyr::mutate(plant_name = recipient) %>%
+    dplyr::mutate(pollen_density = dplyr::if_else(
+      pollen_category == 'heterospecific' & treatment == 'closed', 
+      0, 
+      pollen_density))
 }
 
 extract_closed_treatment_means <- function(x, grouping_vars = NULL){
@@ -34,9 +35,9 @@ extract_closed_treatment_means <- function(x, grouping_vars = NULL){
   grouping_vars <- c(grouping_vars, "recipient", "pollen_category")
 
   control <- x %>%
-    filter(treatment == 'closed') %>%
-    group_by_at(grouping_vars) %>%
-    summarise(pollen_density_closed = median(pollen_density, na.rm = T), 
+    dplyr::filter(treatment == 'closed') %>%
+    dplyr::group_by_at(grouping_vars) %>%
+    dplyr::summarise(pollen_density_closed = median(pollen_density, na.rm = T), 
               pollen_density_closed_stdv = sd(pollen_density, na.rm = T))
 }
 
@@ -253,7 +254,7 @@ get_degree <- function(x, dep_frame){
   
   species_site_vis <- x %>%
     group_by(plant_name, site_name) %>%
-    summarise(kn = n_distinct(animal_name)) %>%
+    summarise(kn = dplyr::n_distinct(animal_name)) %>%
     group_by() %>%
     filter(plant_name %in% focal_plants) %>%
     mutate(lin = scale(kn), 
@@ -263,7 +264,7 @@ get_degree <- function(x, dep_frame){
       
   species_vis <- x %>%
     group_by(plant_name) %>%
-    summarise(kn = n_distinct(animal_name)) %>%
+    summarise(kn = dplyr::n_distinct(animal_name)) %>%
     group_by() %>%
     filter(plant_name %in% focal_plants) %>%
     mutate(lin = scale(kn), 

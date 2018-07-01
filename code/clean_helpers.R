@@ -12,13 +12,13 @@
 #'   
 standardise_name <- function(df, column){
   class(df) <- 'data.frame'
-  df[, column] = str_replace(df[, column], regex('\\s(sp)'), ' sp.')
-  cond <- str_detect(df[, column], regex('([0-9]+)'))
-  df[cond, column] = str_replace(df[cond, column], regex('([0-9]+)'), function(x) paste0(' ', x))
-  df[, column] = str_replace_all(df[, column], regex('\\.+'), '.')
-  df[, column] = str_replace_all(df[, column], regex('\\s+'), ' ')
+  df[, column] = stringr::str_replace(df[, column], stringr::regex('\\s(sp)'), ' sp.')
+  cond <- stringr::str_detect(df[, column], stringr::regex('([0-9]+)'))
+  df[cond, column] = stringr::str_replace(df[cond, column], stringr::regex('([0-9]+)'), function(x) paste0(' ', x))
+  df[, column] = stringr::str_replace_all(df[, column], stringr::regex('\\.+'), '.')
+  df[, column] = stringr::str_replace_all(df[, column], stringr::regex('\\s+'), ' ')
   # df[, column] = str_replace_all(df[, column], "Grupo ", '')
-  df[, column] = str_replace(df[, column], regex('[^(sp)]\\.$'), '')
+  df[, column] = stringr::str_replace(df[, column], stringr::regex('[^(sp)]\\.$'), '')
   df[, column] = trimws(df[, column])
   df[, column] = paste(toupper(substr(df[, column], 1, 1)), substr(df[, column], 2, nchar(df[, column])), sep="")
   df
@@ -37,20 +37,20 @@ standardise_name <- function(df, column){
 site_names <- function(depostion) {
   
   extract_fragment_and_site_name <- function(x){
-    data.frame(fragment_name = x$fragment_name, 
-               # fragment = x$fragment,
-               site_name = x$name)
+    data.frame(
+      fragment_name = x$fragment_name, 
+      # fragment = x$fragment,
+      site_name = x$name)
   }
   
   deposition %>%
     plyr::ldply(extract_fragment_and_site_name) %>% 
-    mutate(fragment_name = paste(substr(site_name, 4, 5), 
-                                 fragment_name, 
-                                 sep = "_"), 
-           fragment_name = gsub("alfalfa", "alfa", fragment_name),
-           fragment_name = gsub("pastura", "pas", fragment_name),
-           fragment_name = gsub("1agr", "A-1", fragment_name),
-           fragment_name = gsub("2agr", "A-2", fragment_name))
+    dplyr::mutate(
+      fragment_name = paste(substr(site_name, 4, 5), fragment_name, sep = "_"), 
+      fragment_name = gsub("alfalfa", "alfa", fragment_name),
+      fragment_name = gsub("pastura", "pas", fragment_name),
+      fragment_name = gsub("1agr", "A-1", fragment_name),
+      fragment_name = gsub("2agr", "A-2", fragment_name))
 }
 
 
@@ -60,29 +60,29 @@ site_data <- function(file, site_file){
   suppressMessages(site_name <- readr::read_csv(site_file))
   data %>%
     preformat_data() %>%
-    group_by(site_name) %>%
-    summarise(locality = unique(site), 
-              land_use = unique(land_use),
-              fragment = unique(fragment),
-              fragment_name = unique(fragment_name)) %>%
-    mutate(land_use = if_else(land_use == "a", "agricultural", "reserve")) %>%
-    group_by( )%>%
+    dplyr::group_by(site_name) %>%
+    dplyr::summarise(
+      locality = unique(site), 
+      land_use = unique(land_use),
+      fragment = unique(fragment),
+      fragment_name = unique(fragment_name)) %>%
+    dplyr::mutate(land_use = dplyr::if_else(land_use == "a", "agricultural", "reserve")) %>%
+    dplyr::group_by()%>%
     # standarise site names =/ (alternative)
-    mutate(fragment_name_alt = paste(substr(site_name, 4, 5), 
-                                     fragment_name, 
-                                     sep = "_"), 
-           fragment_name_alt = gsub("alfalfa", "alfa", fragment_name_alt),
-           fragment_name_alt = gsub("pastura", "pas", fragment_name_alt),
-           fragment_name_alt = gsub("1agr", "A-1", fragment_name_alt),
-           fragment_name_alt = gsub("2agr", "A-2", fragment_name_alt)) %>% 
-    inner_join(site_name, by = 'locality')
+    dplyr::mutate(
+      fragment_name_alt = paste(substr(site_name, 4, 5), fragment_name, sep = "_"), 
+      fragment_name_alt = gsub("alfalfa", "alfa", fragment_name_alt),
+      fragment_name_alt = gsub("pastura", "pas", fragment_name_alt),
+      fragment_name_alt = gsub("1agr", "A-1", fragment_name_alt),
+      fragment_name_alt = gsub("2agr", "A-2", fragment_name_alt)) %>% 
+    dplyr::inner_join(site_name, by = 'locality')
   
 }
 
 preformat_data <- function(data){
   data %>% 
-    group_by(site, land_use) %>%
-    mutate(fragment_name = fragment, 
+    dplyr::group_by(site, land_use) %>%
+    dplyr::mutate(fragment_name = fragment, 
            fragment_name = gsub("\x92", "i", fragment_name),
            fragment = as.numeric(as.factor(fragment)),
            site_name = paste("MA", site, toupper(land_use), fragment, sep = "_"))

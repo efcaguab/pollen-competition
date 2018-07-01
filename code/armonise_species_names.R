@@ -5,25 +5,28 @@ armonise_species_names <- function(deposition,
                                    abundance){
   # Correct plant's species names
   # Bacharis sp: En SC y en LC es Baccharis pingraea y en AN  Baccharis ulicina.
-  deposition <- plyr::llply(deposition, function(x){
+  deposition <- purrr::map(deposition, function(x){
     if(x$locality %in% c("SC", "LC")){
-      change_names_site(x, 
-                        affected_col = c("plant_name", "donor", "recipient"),
-                        from = "Baccharis sp.", 
-                        to = "Baccharis pingraea")
+      change_names_site(
+        x, 
+        affected_col = c("plant_name", "donor", "recipient"),
+        from = "Baccharis sp.", 
+        to = "Baccharis pingraea")
     } else if(x$locality %in% c("AN")){
-      change_names_site(x, 
-                        affected_col = c("plant_name", "donor", "recipient"),
-                        from = "Baccharis sp.", 
-                        to = "Baccharis ulicina")
+      change_names_site(
+        x, 
+        affected_col = c("plant_name", "donor", "recipient"),
+        from = "Baccharis sp.", 
+        to = "Baccharis ulicina")
     }
   })
   
-  datasets <- list(deposition = deposition, 
-       visitation_quant = visitation_quant, 
-       visitation_qual = visitation_qual,
-       transfer = transfer, 
-       abundance = abundance)
+  datasets <- list(
+    deposition = deposition, 
+    visitation_quant = visitation_quant, 
+    visitation_qual = visitation_qual,
+    transfer = transfer, 
+    abundance = abundance)
   
   datasets %>% 
     # Family to species changes --- not controversial
@@ -83,10 +86,12 @@ armonise_species_names <- function(deposition,
 change <- function(x, from, to, affected_col = c("plant_name", "donor", "recipient")){
   # function to change in each dataset
   change_in_dataset <- function(y, from, to, affected_col){
-    plyr::llply(y, change_names_site, 
-                affected_col = affected_col, 
-                from = from, 
-                to = to)
+    plyr::llply(
+      y, 
+      change_names_site, 
+      affected_col = affected_col, 
+      from = from, 
+      to = to)
   }
   # make the changes across
   plyr::llply(x, change_in_dataset, from = from, to = to, affected_col = affected_col)
