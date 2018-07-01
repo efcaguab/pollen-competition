@@ -125,6 +125,12 @@ Source: CRAN
 Version: 1.0.1
 Hash: f61c7888f8ac300ef6ee5ee2b5d43143
 
+Package: foreach
+Source: CRAN
+Version: 1.4.4
+Hash: 4df5ab2c8c35382dacab75d414da6748
+Requires: iterators
+
 Package: formatR
 Source: CRAN
 Version: 1.5
@@ -168,6 +174,12 @@ Source: CRAN
 Version: 0.6
 Hash: aa3d5b7912b5fed4b546ed5cd2a1760b
 
+Package: hms
+Source: CRAN
+Version: 0.4.2
+Hash: b4096a4f6a6736138e9a825c2baaacf0
+Requires: pkgconfig, rlang
+
 Package: htmltools
 Source: CRAN
 Version: 0.3.6
@@ -191,6 +203,11 @@ Source: CRAN
 Version: 1.2.1
 Hash: a979d42385efda8e8aca7882a296ab50
 Requires: magrittr, pkgconfig
+
+Package: iterators
+Source: CRAN
+Version: 1.0.9
+Hash: c2dc1341675d2508c180221949e40e98
 
 Package: jsonlite
 Source: CRAN
@@ -262,6 +279,12 @@ Source: CRAN
 Version: 0.2.0
 Hash: 81a8008a5e7858552503935f1abe48aa
 
+Package: plyr
+Source: CRAN
+Version: 1.8.4
+Hash: c55fb89c35c97156ff505fc90346110f
+Requires: Rcpp
+
 Package: praise
 Source: CRAN
 Version: 1.0.0
@@ -272,6 +295,12 @@ Source: CRAN
 Version: 0.2.5
 Hash: 8b0c16db10c7e20b70cd37779a673a8b
 Requires: magrittr, rlang, tibble
+
+Package: readr
+Source: CRAN
+Version: 1.1.1
+Hash: ca6ad2638b5295fdb97e6bdcfd0f8568
+Requires: BH, R6, Rcpp, hms, tibble
 
 Package: rlang
 Source: CRAN
