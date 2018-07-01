@@ -10,6 +10,7 @@ pub_theme <- function(){
 }
 
 remove_legend <- function(x){
+  require(ggplot2)
   x + theme(legend.position = 'none')
 }
 
@@ -22,20 +23,20 @@ remove_legend <- function(x){
 #' @return
 #' 
 humanize <- function(x, sites = NA, random_effects = NA){
-  if('site_name' %in% names(x)){
-    x <- inner_join(x, sites, by = 'site_name')
+  if ('site_name' %in% names(x)) {
+    x <- dplyr::inner_join(x, sites, by = 'site_name')
   }
-  if('term' %in% names(x)){
+  if ('term' %in% names(x)) {
     x <- x %>%
-      mutate(term = case_when(
+      dplyr::mutate(term = dplyr::case_when(
         grepl('tov', term) ~ 'phenology overlap',
         grepl('rab', term) ~ 'relative abundance',
         grepl('k', term) ~ 'degree',
         TRUE ~ term
       ))
   }
-  if('random_effect' %in% names(x)){
-    x <- inner_join(x, random_effects, by = "random_effect")
+  if ('random_effect' %in% names(x)) {
+    x <- dplyr::inner_join(x, random_effects, by = "random_effect")
   }
   x
 }
