@@ -159,7 +159,7 @@ We followed a similar procedure to calculate a relationship per species but inst
 ## Results
 
 ```{r differences-in-self-pollination}
-loadd(significant_gain_global, significant_gain_site)
+drake::loadd(significant_gain_global, significant_gain_site)
 
 sgg <- glance_table(significant_gain_global)
 prop_sig_global <- sum(sgg$p.value < 0.05) /
@@ -169,7 +169,7 @@ prop_sig_site <- sum(sgs$p.value < 0.05) /
   length(significant_gain_site)
 
 consistency <- dplyr::inner_join(sgg, sgs, by = 'recipient') %>% 
-  mutate_at(.vars = c('p.value.x', 'p.value.y'), 
+  dplyr::mutate_at(.vars = c('p.value.x', 'p.value.y'), 
             .funs = function(x) x < 0.05) %>%
   dplyr::mutate(consistent = p.value.x == p.value.y) %>%
   dplyr::group_by(recipient) %>%
