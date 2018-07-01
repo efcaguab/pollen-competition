@@ -172,15 +172,15 @@ sgs <- glance_table(significant_gain_site)
 prop_sig_site <- sum(sgs$p.value < 0.05) /
   length(significant_gain_site)
 
-consistency <- inner_join(sgg, sgs, by = 'recipient') %>% 
+consistency <- dplyr::inner_join(sgg, sgs, by = 'recipient') %>% 
   mutate_at(.vars = c('p.value.x', 'p.value.y'), 
             .funs = function(x) x < 0.05) %>%
-  mutate(consistent = p.value.x == p.value.y) %>%
-  group_by(recipient) %>%
-  summarise(p.value.x = mean(p.value.x), 
+  dplyr::mutate(consistent = p.value.x == p.value.y) %>%
+  dplyr::group_by(recipient) %>%
+  dplyr::summarise(p.value.x = mean(p.value.x), 
             consistent = all(consistent),
-            n_sites = n_distinct(site_name)) %>% 
-  filter(n_sites > 1)
+            n_sites = dplyr::n_distinct(site_name)) %>% 
+  dplyr::filter(n_sites > 1)
 prop_consistency <- sum(consistency$consistent)/
   nrow(consistency)
 ```
