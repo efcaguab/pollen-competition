@@ -318,6 +318,11 @@ Source: CRAN
 Version: 0.7
 Hash: e2ebaff8160aff3e6b32e6e78a693c2d
 
+Package: spaa
+Source: CRAN
+Version: 0.2.2
+Hash: c8cfb8106fe0b27a209094d896aa603e
+
 Package: storr
 Source: CRAN
 Version: 1.1.3
@@ -346,6 +351,13 @@ Source: CRAN
 Version: 1.4.2
 Hash: 83895360ce4f8d2ce92eee00526b5b0b
 Requires: cli, crayon, pillar, rlang
+
+Package: tidyr
+Source: CRAN
+Version: 0.8.1
+Hash: b3c2471de7579cac40b4683e614ae72a
+Requires: Rcpp, dplyr, glue, magrittr, purrr, rlang, stringi, tibble,
+    tidyselect
 
 Package: tidyselect
 Source: CRAN
