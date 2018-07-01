@@ -1,4 +1,5 @@
 if(!packrat:::isPackratModeOn()) packrat::on()
+pkgconfig::set_config("drake::strings_in_dots" = "literals")
 
 # # basic R
 # library(stats)
@@ -49,14 +50,12 @@ format_data <- drake_plan(
   plant_pheno_overlap = calculate_phenology_overlap(abu_frame, dep_frame),
   vis_frame = extract_vis_frame(armonised_data),
   degree = get_degree(vis_frame, dep_frame),
-  strings_in_dots = 'literals'
 )
 
 analysing <- drake_plan(
   consp_self = model_conspecific_self(dep_frame),
   significant_gain_global = mann_withney_part_df(filter(dep_frame, pollen_category == 'conspecific'), by = 'recipient', var = 'treatment', conf.int = T),
   significant_gain_site = mann_withney_part_df(filter(dep_frame, pollen_category == 'conspecific'), by = c('recipient', 'site_name'), var = 'treatment', conf.int = T),
-  strings_in_dots = 'literals'
 )
 
 n_replicates <- 10
@@ -69,7 +68,6 @@ boot_replicates <- drake_plan(
                        degree, 
                        sites, 
                        transformation, N), 
-  strings_in_dots = 'literals'
 ) %>%
   evaluate_plan(rules = list(N = 1:n_replicates)) 
 
@@ -111,7 +109,6 @@ predictions <- drake_plan(
                                          wilcox_glo_com, 
                                          list(plant_rel_abu, plant_pheno_overlap, degree), 
                                          chosen_criteria = "nrmse"), 
-  strings_in_dots = "literals"
 )
 
 model_plans <- rbind(
