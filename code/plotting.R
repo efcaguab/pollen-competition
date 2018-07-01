@@ -40,4 +40,7 @@ humanize <- function(x, sites = NA, random_effects = NA){
   x
 }
 
-colour_scale_values <- c("#d7301f", "#fdcc8a", "#fc8d59", "#fef0d9")
+# colour scale values 
+c_scale <- function() {
+  c("#d7301f", "#fdcc8a", "#fc8d59", "#fef0d9")
+}
