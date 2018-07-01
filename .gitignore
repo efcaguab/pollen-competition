@@ -45,3 +45,6 @@ publication/supp_info_files/
 publication/manuscript_files/figure-latex/
 publication/questions_observations_todo\.pdf
 packrat/lib*/
+paper/manuscript_files/
+paper/manuscript\.pdf
+paper/questions_observations_todo\.pdf
