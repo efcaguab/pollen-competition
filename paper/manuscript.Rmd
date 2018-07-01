@@ -22,10 +22,6 @@ header-includes:
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE, message = FALSE, 
                       warning = FALSE)
-options(xtable.comment = FALSE, 
-        xtable.caption.placement = 'bottom',
-        xtable.size = 'small',
-        booktabs = TRUE)
 ```
 
 ## Abstract
