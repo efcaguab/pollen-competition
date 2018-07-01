@@ -61,30 +61,24 @@ boot_replicates <- drake::drake_plan(
     degree, 
     sites, 
     transformation, 
-    N)
-) %>%
+    N)) %>%
   drake::evaluate_plan(rules = list(N = 1:n_replicates)) 
 
 random_models <- drake::drake_plan(
   random_mod = run_random_models(rep_N, random_effects)
 ) %>%
   drake::evaluate_plan(rules = list(N = 1:n_replicates)) 
-
 glanced_random_models <- random_models %>%
   drake::gather_plan(., gather = "glance_random_models", target = "glanced_random")
-
 random_summaries <- drake::drake_plan(
   best_random = best_random_effect(glanced_random, random_effects)
 )
 
 fixed_models <- drake::drake_plan(
-  fixed_mod = run_model(rep_N, best_random)
-) %>%
+  fixed_mod = run_model(rep_N, best_random)) %>%
   drake::evaluate_plan(rules = list(N = 1:n_replicates)) 
-
 glanced_fixed_models <- fixed_models %>%
     drake::gather_plan(., gather = "glance_fixed_models", target = "glanced_fixed")
-
 tidied_fixed_models <- fixed_models %>%
   drake::gather_plan(., gather = "tidy_fixed_models", target = "tidied_fixed")
 
