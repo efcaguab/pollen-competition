@@ -97,7 +97,7 @@ predictions <- drake::drake_plan(
     tidied_fixed, 
     wilcox_glo_com, 
     list(plant_rel_abu, plant_pheno_overlap, degree), 
-    chosen_criteria = "nrmse")
+    chosen_criteria = "r2c")
 )
 
 model_plans <- rbind(
