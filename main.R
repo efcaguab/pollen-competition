@@ -117,23 +117,24 @@ model_plans <- rbind(
 
 # Plots -------------------------------------------------------------------
 
-reporting <- drake::drake_plan(
-  'paper/supp_info.tex' = render('paper/supp_info.Rmd', quiet = TRUE),
-  'paper/supp_info.pdf' = latexmk('paper/supp_info.tex', clean = FALSE),
-  'paper/manuscript.tex' = render('paper/manuscript.Rmd', quiet = TRUE),
-  'paper/manuscript.pdf' = latexmk('paper/manuscript.tex', clean = FALSE),
-  'paper/questions_observations_todo.pdf' = my_render('paper/questions_observations_todo.Rmd', quiet = TRUE, depends_on = 'paper/manuscript.pdf'),
-  file_targets = TRUE
+figure_plan <- drake::drake_plan(
+  fig_model_results_global = make_fig_model_results_global(tidied_fixed)
 )
 
 # Reporting ---------------------------------------------------------------
 # Make all ----------------------------------------------------------------
 
 # set up plan
-project_plan <- rbind(clean_data, format_data,
-                      boot_replicates, 
-                      model_plans,
-                      analysing, reporting)
+project_plan <- rbind(
+  clean_data_plan, 
+  format_data_plan,
+  boot_replicates, 
+  model_plans,
+  basic_analyses_plan,
+  figure_plan#, 
+  #reporting_plan
+  )
+# project_plan <- rbind(clean_data_plan, format_data_plan, basic_analyses_plan)
 project_config <- drake::drake_config(project_plan)
 drake::vis_drake_graph(project_config, targets_only = T)
 
