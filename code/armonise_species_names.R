@@ -46,9 +46,9 @@ armonise_species_names <- function(deposition,
     # there are two verbena species only overlap in the visitation_quali
     # dataset. Verbena intermedia seems to be better represented in other
     # datasets for the same locations so just gonna assign it there
-    # plyr::llply(visitation_qual, function(x) filter(x$visitation, grepl("Verbena", plant_name)))
-    # plyr::llply(deposition, function(x) filter(x$deposition, grepl("Verbena", donor)))
-    # plyr::llply(transfer, function(x) filter(x$transfer, grepl("Verbena", plant_name)))
+    # plyr::llply(visitation_qual, function(x) dplyr::filter(x$visitation, grepl("Verbena", plant_name)))
+    # plyr::llply(deposition, function(x) dplyr::filter(x$deposition, grepl("Verbena", donor)))
+    # plyr::llply(transfer, function(x) dplyr::filter(x$transfer, grepl("Verbena", plant_name)))
     change("Verbena sp.", "Verbena intermedia") %>%
     # Viola sp. was used in the abundance dataset
     change("Viola sp.","Viola arvensis") %>%
@@ -65,15 +65,15 @@ armonise_species_names <- function(deposition,
     change("Rubiaceae", "Mitracarpus sp.") %>%
     ### POTENTIALLY POLLEMIC
     # Inconlclusive about trifolium
-    # plyr::llply(visitation_qual, function(x) filter(x$visitation, grepl("Trifolium", plant_name)))
-    # plyr::llply(deposition, function(x) filter(x$deposition, grepl("Trifolium", donor)))
-    # plyr::llply(transfer, function(x) filter(x$transfer, grepl("Trifolium", plant_name)))
-    # plyr::llply(abundance, function(x) filter(x$abundance, grepl("Trifolium", plant_name)))
+    # plyr::llply(visitation_qual, function(x) dplyr::filter(x$visitation, grepl("Trifolium", plant_name)))
+    # plyr::llply(deposition, function(x) dplyr::filter(x$deposition, grepl("Trifolium", donor)))
+    # plyr::llply(transfer, function(x) dplyr::filter(x$transfer, grepl("Trifolium", plant_name)))
+    # plyr::llply(abundance, function(x) dplyr::filter(x$abundance, grepl("Trifolium", plant_name)))
     # Changing solanum sp to solanum sisymbriifolium based on viistation qualitative information, shady
-    # plyr::llply(visitation_qual, function(x) filter(x$visitation, grepl("Solanum", plant_name)))
-    # plyr::llply(deposition, function(x) filter(x$deposition, grepl("Solanum", donor)))
-    # plyr::llply(transfer, function(x) filter(x$transfer, grepl("Solanum", plant_name)))
-    # plyr::llply(abundance, function(x) filter(x$abundance, grepl("Solanum", plant_name)))
+    # plyr::llply(visitation_qual, function(x) dplyr::filter(x$visitation, grepl("Solanum", plant_name)))
+    # plyr::llply(deposition, function(x) dplyr::filter(x$deposition, grepl("Solanum", donor)))
+    # plyr::llply(transfer, function(x) dplyr::filter(x$transfer, grepl("Solanum", plant_name)))
+    # plyr::llply(abundance, function(x) dplyr::filter(x$abundance, grepl("Solanum", plant_name)))
     change("Solanum sp.", "Solanum sisymbriifolium") %>%
     change("Senecio sp.", "Senecio pulcher") %>%
     change("Physalis sp.", "Physalis viscosa") %>%

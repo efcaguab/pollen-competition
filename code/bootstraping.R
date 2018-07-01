@@ -19,14 +19,15 @@ data_replicate <- function(de, ab, ph, k, sites, transformation = I, dummy_id){
   
   de$pollen_category %>%
     unique() %>%
-    map_df(~ get_deposition_sampled_data(de, ., transformation)) %>% 
-    left_join(ab, by = c("site_name", "plant_name")) %>%
-    left_join(ph, by = c("site_name", "plant_name", "var_trans", "scale")) %>%
-    left_join(k, by = c("site_name", "plant_name", "var_trans", "scale")) %>%
-    inner_join(sites, by = "site_name") %>%
-    mutate(fragment = as.character(fragment),
-           site_plant = paste(plant_name, site_name, sep = ".")) %>%
-    group_by(scale)
+    purrr::map_df(~ get_deposition_sampled_data(de, ., transformation)) %>% 
+    dplyr::left_join(ab, by = c("site_name", "plant_name")) %>%
+    dplyr::left_join(ph, by = c("site_name", "plant_name", "var_trans", "scale")) %>%
+    dplyr::left_join(k, by = c("site_name", "plant_name", "var_trans", "scale")) %>%
+   dplyr::inner_join(sites, by = "site_name") %>%
+    dplyr::mutate(
+      fragment = as.character(fragment),
+      site_plant = paste(plant_name, site_name, sep = ".")) %>%
+    dplyr::group_by(scale)
 }
 
 #' Sample the deposition data to get a boostrap data replicate 
@@ -40,26 +41,27 @@ get_deposition_sampled_data <- function(x, category, transformation){
   
   x %>%
     # only work with one category at a time
-    filter(pollen_category == category) %>%
-    select(plant, site_name, plant_name, treatment, pollen_density) %>%
-    group_by(site_name, plant_name) %>%
+    dplyr::filter(pollen_category == category) %>%
+    dplyr::select(plant, site_name, plant_name, treatment, pollen_density) %>%
+    dplyr::group_by(site_name, plant_name) %>%
     # find number of pairs that should be done per species-site combination
-    mutate(n_closed = length(pollen_density[treatment == 'closed']), 
-           n_open = length(pollen_density[treatment == 'open']), 
-           n_samples = min(n_closed, n_open)) %>% 
+    dplyr::mutate(
+      n_closed = length(pollen_density[treatment == 'closed']), 
+      n_open = length(pollen_density[treatment == 'open']), 
+      n_samples = min(n_closed, n_open)) %>% 
     # sample the number of pairs with replacement
     split(list(.$site_name, .$plant_name, .$treatment), drop = T) %>%
-    map_df(~ sample_n(., size = .$n_samples[1], replace = T)) %>%
-    group_by(site_name, plant_name, treatment) %>%
+    purrr::map_df(~ dplyr::sample_n(., size = .$n_samples[1], replace = T)) %>%
+    dplyr::group_by(site_name, plant_name, treatment) %>%
     # make a dummy id to pair samples
-    mutate(dummy_id = 1:n()) %>% 
-    select(-plant, -n_open, -n_closed, -n_samples) %>%
+    dplyr::mutate(dummy_id = 1:n()) %>% 
+    dplyr::select(-plant, -n_open, -n_closed, -n_samples) %>%
     # transform count data if desired
-    mutate(pollen_density = transformation(pollen_density)) %>%
+    dplyr::mutate(pollen_density = transformation(pollen_density)) %>%
     # pair samples
-    spread(treatment, pollen_density) %>% 
-    mutate(pollen_gain = open - closed) %>%
-    mutate(pollen_category = category)
+    tidyr::spread(treatment, pollen_density) %>% 
+    dplyr::mutate(pollen_gain = open - closed) %>%
+    dplyr::mutate(pollen_category = category)
 }
 
 # MODELS ------------------------------------------------------------------
@@ -75,16 +77,16 @@ run_random_models <- function(d, random_effects, method = "REML"){
   
   rem <- random_effects %>%
     split(.$random_effect) %>%
-    map_df(~ mutate(d, random_formula = .$random_formula, random_effect = .$random_effect)) %>% 
+   purrr::map_df(~ dplyr::mutate(d, random_formula = .$random_formula, random_effect = .$random_effect)) %>% 
     split(list(.$pollen_category, .$scale, .$var_trans, .$random_effect)) %>%
-    map(~ try(lme(pollen_gain ~ rab + tov + k, random = as.formula(.$random_formula[1]), na.action = na.omit, method = method, data = .)))
+    purrr::map(~ try(nlme::lme(pollen_gain ~ rab + tov + k, random = as.formula(.$random_formula[1]), na.action = na.omit, method = method, data = .)))
 }
 
 run_model <- function(d, best_random, method = "ML"){
   
   d %>%
     split(list(.$pollen_category, .$scale, .$var_trans)) %>%
-    map(~ lme(pollen_gain ~ rab + tov + k, random = as.formula(best_random$random_formula[1]), na.action = na.omit, method = method, data = .))
+    purrr::map(~ nlme::lme(pollen_gain ~ rab + tov + k, random = as.formula(best_random$random_formula[1]), na.action = na.omit, method = method, data = .))
 
 }
 
@@ -93,23 +95,23 @@ run_model <- function(d, best_random, method = "ML"){
 glance_random_models <- function(...){
   models <- list(...)
   # models <- list(random_mod_1 = run_random_models(readd(rep_1)), random_mod_2 = run_random_models(readd(rep_2)))
-  gather_models(models, glance, c("pollen_category", "scale", "var_trans", "random_effect"))
+  gather_models(models, broom::glance, c("pollen_category", "scale", "var_trans", "random_effect"))
 }
 
 glance_fixed_models <- function(...){
   models <- list(...)
-  gather_models(models, glance, c("pollen_category", "scale", "var_trans"))
+  gather_models(models, broom::glance, c("pollen_category", "scale", "var_trans"))
 }
 
 tidy_fixed_models <- function(...){
   models <- list(...)
-  gather_models(models, tidy, c("pollen_category", "scale", "var_trans"))
+  gather_models(models, broom::tidy, c("pollen_category", "scale", "var_trans"))
 }
 
 gather_models <- function(models, fun, subdivisions){
-  if(identical(fun, glance)){
+  if(identical(fun, broom::glance)){
     gather_glance(models, fun, subdivisions)
-  } else if(identical(fun, tidy)){
+  } else if(identical(fun, broom::tidy)){
     gather_tidy(models, fun, subdivisions)
   }
   
@@ -118,47 +120,47 @@ gather_models <- function(models, fun, subdivisions){
 gather_glance <- function(models, fun, subdivisions){
   
   fun_model <- function(x){
-    x <- x[map_chr(x, class) != "try-error"]
+    x <- x[purrr::map_chr(x, class) != "try-error"]
     
     
-    arrange_df <- function(a, y, z){
-      rmsee <- sjstats::rmse(a)
+    arrange_df <- function(a, z){
+      # rmsee <- sjstats::rmse(a)
       cbind(fun(a), 
-            n_plants = n_distinct(a$data$plant_name), 
+            n_plants = dplyr::n_distinct(a$data$plant_name), 
             n = a$dims$N, 
-            rmse = rmsee,
-            nrmse = rmsee/(max(a$data$pollen_gain) - min(a$data$pollen_gain)),
-            r2 = y[[1]], 
-            o2 = y[[2]],
+            # rmse = rmsee,
+            # nrmse = rmsee/(max(a$data$pollen_gain) - min(a$data$pollen_gain)),
+            # r2 = y[[1]], 
+            # o2 = y[[2]],
             r2m = z[1], 
             r2c = z[2])
     }
     
-    R2sjstats <- x %>%
-      map(~ r2(.))
+    # R2sjstats <- x %>%
+      # purrr::map(~ sjstats::r2(.))
     R2mumin <- x %>%
-      map(~ MuMIn::r.squaredGLMM(.))
+      purrr::map(~ MuMIn::r.squaredGLMM(.))
     
-    pmap_df(list(x, R2sjstats, R2mumin), .f = arrange_df, .id = "m") %>%
-      separate("m", subdivisions)
+    purrr::pmap_df(list(x, R2mumin), .f = arrange_df, .id = "m") %>%
+     tidyr::separate("m", subdivisions)
   }
   
   models %>% 
-    map_df(~ fun_model(.), .id = 'model')
+   purrr::map_df(~ fun_model(.), .id = 'model')
 }
 
 gather_tidy <- function(models, fun, subdivisions){
   
   fun_model <- function(x){
-    x <- x[map_chr(x, class) != "try-error"]
+    x <- x[purrr::map_chr(x, class) != "try-error"]
     
     x %>%
-    map_df(~ fun(.),  .id = "m") %>%
-      separate("m", subdivisions)
+   purrr::map_df(~ fun(.),  .id = "m") %>%
+     tidyr::separate("m", subdivisions)
   }
   
   models %>% 
-    map_df(~ fun_model(.), .id = 'model')
+   purrr::map_df(~ fun_model(.), .id = 'model')
 }
 
 get_model_correlations <- function(...){
@@ -170,20 +172,20 @@ get_model_correlations <- function(...){
   
   pearson_slopes <- function(x){
     x %>%
-      map(~ augment(.)) %>%
-      map(~ select(., pollen_category, scale, var_trans, site_name, plant_name, .fitted)) %>%
-      map_df(~ distinct(.)) %>%
-      spread(pollen_category, .fitted) %>% 
+      purrr::map(~ broom::augment(.)) %>%
+      purrr::map(~ dplyr::select(., pollen_category, scale, var_trans, site_name, plant_name, .fitted)) %>%
+     purrr::map_df(~ dplyr::distinct(.)) %>%
+      tidyr::spread(pollen_category, .fitted) %>% 
       # ggplot(aes(x = conspecific, y = heterospecific, colour = interaction(scale, var_trans))) +
       # geom_point() + geom_smooth(method = "lm") + coord_equal()
       # qplot(conspecific, heterospecific, colour = interaction(scale, var_trans), data = .)
       split(list(.$scale, .$var_trans)) %>%
-      map_df(~ pearson_slope(.$conspecific, .$heterospecific), .id = "m") %>%
-      separate(m, c("scale", "var_trans"))
+     purrr::map_df(~ pearson_slope(.$conspecific, .$heterospecific), .id = "m") %>%
+     tidyr::separate(m, c("scale", "var_trans"))
   }
   
   models %>%
-    map_df(~ pearson_slopes(.), .id = "model")
+   purrr::map_df(~ pearson_slopes(.), .id = "model")
 }
 
 get_model_linear_fits <- function(...){
@@ -195,23 +197,23 @@ get_model_linear_fits <- function(...){
   
   pearson_slopes <- function(x){
     x %>%
-      map(~ augment(.)) %>%
-      map(~ select(., pollen_category, scale, var_trans, site_name, plant_name, .fitted)) %>%
-      map_df(~ distinct(.)) %>%
-      spread(pollen_category, .fitted) %>% 
+      purrr::map(~ broom::augment(.)) %>%
+      purrr::map(~ dplyr::select(., pollen_category, scale, var_trans, site_name, plant_name, .fitted)) %>%
+     purrr::map_df(~ dplyr::distinct(.)) %>%
+      tidyr::spread(pollen_category, .fitted) %>% 
       # ggplot(aes(x = conspecific, y = heterospecific, colour = interaction(scale, var_trans))) +
       # geom_point() + geom_smooth(method = "lm") + coord_equal()
       # qplot(conspecific, heterospecific, colour = interaction(scale, var_trans), data = .)
       split(list(.$scale, .$var_trans)) %>%
-      map(~ sma(conspecific ~ heterospecific, data = .)) %>%
-      walk(~ plot(.)) %>%
-      map(~ coef(.)) %>%
-      map_df(~ rownames_to_column(as.data.frame(.)), .id = "m") %>%
-      rename(sma_parameter = rowname,
+      purrr::map(~ smatr::sma(conspecific ~ heterospecific, data = .)) %>%
+      purrr::walk(~ plot(.)) %>%
+      purrr::map(~ coef(.)) %>%
+     purrr::map_df(~ tibble::rownames_to_column(as.data.frame(.)), .id = "m") %>%
+      dplyr::rename(sma_parameter = rowname,
              value  = '.') %>%
-      separate(m, c("scale", "var_trans"))
+     tidyr::separate(m, c("scale", "var_trans"))
   }
   
   models %>%
-    map_df(~ pearson_slopes(.), .id = "model")
+   purrr::map_df(~ pearson_slopes(.), .id = "model")
 }

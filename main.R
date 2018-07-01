@@ -38,7 +38,7 @@ f <- lapply(list.files("code", full.names = T), source)
 # Clean data --------------------------------------------------------------
 
 # plan to clean data
-clean_data <- drake::drake_plan(
+clean_data_plan <- drake::drake_plan(
   sites = site_data(drake::file_in('./data/raw/marrero-estigmatic_pollen.csv'), drake::file_in('./data/raw/site_names.csv')),
   deposition = clean_deposition(drake::file_in('./data/raw/marrero-estigmatic_pollen.csv'), sites),
   visitation_quant = clean_visitation_quant(drake::file_in('./data/raw/marrero-quantitative_visits.csv'), sites),
@@ -49,7 +49,7 @@ clean_data <- drake::drake_plan(
   armonised_data = armonise_species_names(deposition, visitation_quant, visitation_qual, transfer, abundance)
 )
 
-format_data <- drake::drake_plan(
+format_data_plan <- drake::drake_plan(
   dep_frame = extract_dep_frame(armonised_data),
   abu_frame = extract_abu_frame(armonised_data),
   plant_rel_abu = calculate_relative_abundance(abu_frame, dep_frame),
@@ -60,10 +60,18 @@ format_data <- drake::drake_plan(
 
 # Basic analyses ----------------------------------------------------------
 
-analysing <- drake::drake_plan(
+basic_analyses_plan <- drake::drake_plan(
   consp_self = model_conspecific_self(dep_frame),
-  significant_gain_global = mann_withney_part_df(dplyr::filter(dep_frame, pollen_category == 'conspecific'), by = 'recipient', var = 'treatment', conf.int = T),
-  significant_gain_site = mann_withney_part_df(dplyr::filter(dep_frame, pollen_category == 'conspecific'), by = c('recipient', 'site_name'), var = 'treatment', conf.int = T)
+  significant_gain_global = mann_withney_part_df(
+    dplyr::filter(dep_frame, pollen_category == 'conspecific'), 
+    by = 'recipient', 
+    var = 'treatment', 
+    conf.int = T),
+  significant_gain_site = mann_withney_part_df(
+    dplyr::filter(dep_frame, pollen_category == 'conspecific'), 
+    by = c('recipient', 'site_name'), 
+    var = 'treatment', 
+    conf.int = T)
 )
 
 # Bootstrap models --------------------------------------------------------

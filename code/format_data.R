@@ -46,7 +46,7 @@ calculate_pollination_gain <- function(x, grouping_vars = NULL){
   pollination_gain <- pollen_density %>%
     dplyr::filter(treatment == 'open') %>%
     select_at(c(grouping_vars, 'plant', 'pollen_category', 'pollen_density')) %>%
-    left_join(control, by = grouping_vars) %>% 
+   dplyr::left_join(control, by = grouping_vars) %>% 
     dplyr::mutate(pollination_gain = pollen_density - pollen_density_closed)
   
   # Explore control 
