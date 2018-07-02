@@ -2,7 +2,7 @@
 title: "The pollination trade-off"
 subtitle: "Supplementary information"
 author: "Fernando Cagua, Hugo Marrero, Jason Tylianakis, Daniel Stouffer"
-bibliography: references.bib
+# bibliography: references.bib
 csl: ecology-letters.csl
 documentclass: book
 nocite: | 
@@ -31,137 +31,87 @@ options(xtable.comment = FALSE,
 ```
 
 ```{r fig-deposition-logtransformed-or-not, fig.height = 2, fig.cap = "Distribution of stigmatic pollen density plotted in (A) a linear scale, and (B) a logarithmic scale (zero values not shown)."}
-loadd(dep_frame, sites)
+drake::loadd(fig_pollen_density)
 
-p1 <- dep_frame %>%
-  mutate(pollen_category = paste(pollen_category, "pollen"), 
-         treatment = if_else(treatment == 'closed', 'bagged', treatment)) %>%
-  ggplot(aes(x = pollen_density, colour = treatment)) + 
-  stat_density(geom = "line") +
-  facet_wrap( ~ pollen_category, scales = "free") +
-  pub_theme() +
-  scale_color_manual(values = colour_scale_values) +
-  labs(x = "pollen density (grains per stigma)", 
-       colour = "flower treatment") +
-  theme(legend.position = "top")
-  
-p2 <- p1 +
-  scale_x_log10()
-
-leg <- cowplot::get_legend(p1)
-
-cowplot::plot_grid(remove_legend(p1), remove_legend(p2), 
-                   labels = LETTERS[1:2], 
-                   label_size = 8) %>%
+leg <- cowplot::get_legend(fig_pollen_density[[1]])
+cowplot::plot_grid(
+  remove_legend(fig_pollen_density[[1]]),
+  remove_legend(fig_pollen_density[[2]]), 
+  labels = LETTERS[1:2], 
+  label_size = 8) %>%
   cowplot::plot_grid(leg, ., rel_heights = c(0.1, 0.9), ncol = 1)
 ```
 
 ```{r fig-deposition-gain-logtransformed-or-not, fig.height = 2, fig.cap = "Distribution of the difference on stigmatic pollen density between open and closed flowers for one of the bootstrap replicates used in the model sets. When (A) using directly the gain in pollen density and (B) when pollen density is log transormed prior to calculating the gain. "}
-loadd(rep_1)
+drake::loadd(fig_pollen_density_diff)
 
-plot_dist <- function(fun){
-    rep_1 %>%
-      filter(scale == 'global', 
-             var_trans == 'lin') %>%
-      mutate_at(c('open', 'closed'), fun) %>% 
-      ggplot(aes(x = open - closed, colour = pollen_category)) +
-      stat_density(position = position_identity(), geom = "line") +
-      pub_theme() +
-      scale_color_manual(values = colour_scale_values) +
-    theme(legend.position = "top") + 
-    labs(x = "gain in pollen density (open-closed)", 
-         colour = "pollen type")
-}
-
-p <- list(function(x) exp(x)-1, I) %>%
-  plyr::llply(plot_dist)
-
-leg <- cowplot::get_legend(p[[1]])
-cowplot::plot_grid(remove_legend(p[[1]]), remove_legend(p[[2]]), 
-                   labels = LETTERS[1:2], 
-                   label_size = 8,
-                   ncol = 2) %>%
+leg <- cowplot::get_legend(fig_pollen_density_diff[[1]])
+cowplot::plot_grid(
+  remove_legend(fig_pollen_density_diff[[1]]), 
+  remove_legend(fig_pollen_density_diff[[2]]), 
+  labels = LETTERS[1:2], 
+  label_size = 8,
+  ncol = 2) %>%
   cowplot::plot_grid(leg, ., rel_heights = c(0.1, 0.9), ncol = 1)
 ```
 
 ```{r fig-abundance-logtransformed-or-not, fig.height = 2, fig.cap = "Distribution of plant abundance as (A) raw counts of floral units across communities, and (B) after applying a data transformation in which the counts have been "}
-loadd(plant_rel_abu, sites)
+drake::loadd(fig_abundance)
 
-p1 <- plant_rel_abu %>%
-  filter(scale == 'community', 
-         var_trans == 'log') %>%
-  inner_join(sites, by = 'site_name') %>%
-  ggplot() +
-  stat_density(aes(x = rab, colour = locality_name),
-               position = position_identity(), geom = 'line') +
-  # stat_density(aes(x = abu_tot_rel_log), geom = 'line') +
-  scale_color_manual(values = colour_scale_values) +
-  pub_theme() +
-  # guides(colour = guide_legend(title = 'locality'), linetype = guide_legend(title = 'land use')) +
-  labs(colour = 'locality', x = 'relative abundance')
-
-p2 <- plant_rel_abu %>%
-  filter(scale == 'global', 
-         var_trans == 'log') %>%
-  distinct() %>%
-  inner_join(sites, by = 'site_name') %>%
-  ggplot(aes(x = abu)) +
-  stat_density(position = position_identity(), geom = 'line') +
-  scale_color_manual(values = colour_scale_values) +
-  pub_theme() +
-  labs(x = 'abundance (floral units)')
-
-cowplot::plot_grid(p2, p1, rel_widths = c(0.42, 0.58), labels = LETTERS[1:2], label_size = 8)
+cowplot::plot_grid(
+  fig_abundance[[2]], 
+  fig_abundance[[2]],
+  rel_widths = c(0.42, 0.58), labels = LETTERS[1:2], label_size = 8)
 ```
 
 ```{r table-species-gain-global, results = 'asis'}
-loadd(significant_gain_global, significant_gain_site, sites)
+drake::loadd(significant_gain_global, significant_gain_site, sites)
 glance_table(significant_gain_global) %>%
-  select(recipient, estimate, statistic, p.value) %>%
-  mutate(recipient = paste0('{\\emph{ ', recipient, '}}')) %>%
-  rename(`p value` = p.value,
+  dplyr::select(recipient, estimate, statistic, p.value) %>%
+  dplyr::mutate(recipient = paste0('{\\emph{ ', recipient, '}}')) %>%
+  dplyr::rename(`p value` = p.value,
          `difference` = estimate,
          `plant species` = recipient) %>%
-  xtable(caption = "\\label{tab:table-species-gain-global} Results of testing the alternative hypothesis that the conspecific pollen density in open flowers is greater than the density in bagged flowers. Tests were performed at the species level (across communities).") %>%
-  print.xtable(sanitize.text.function = function(x) x)
+  knitr::kable(
+    caption = "Results of testing the alternative hypothesis that the conspecific pollen density in open flowers is greater than the density in bagged flowers. Tests were performed at the species level (across communities).", 
+    escape = FALSE)
 ```
 
 ```{r table-species-gain-site, results = 'asis'}
-loadd(significant_gain_global, significant_gain_site, sites)
+drake::loadd(significant_gain_global, significant_gain_site, sites)
 glance_table(significant_gain_site) %>%
-  inner_join(sites, by = "site_name") %>%
-  group_by(recipient) %>%
-  mutate(n_sites = n_distinct(site_name)) %>%
-  filter(n_sites > 1) %>%
-  group_by() %>%
-  mutate(site_name = paste(locality_name, land_use, fragment, sep = ' - '),
+ dplyr::inner_join(sites, by = "site_name") %>%
+  dplyr::group_by(recipient) %>%
+  dplyr::mutate(n_sites = dplyr::n_distinct(site_name)) %>%
+  dplyr::filter(n_sites > 1) %>%
+  dplyr::group_by() %>%
+  dplyr::mutate(site_name = paste(locality_name, land_use, fragment, sep = ' - '),
          recipient = paste0('{\\emph{ ', recipient, '}}')) %>%
-  select(recipient, site_name, estimate, statistic, p.value) %>%
-  rename(`p value` = p.value,
+  dplyr::select(recipient, site_name, estimate, statistic, p.value) %>%
+  dplyr::rename(`p value` = p.value,
          `difference` = estimate,
          `plant species` = recipient, 
          `community` = site_name) %>%
-  xtable(caption = "Results of testing the alternative hypothesis that the conspecific pollen density in open flowers is greater than the density in bagged flowers. Tests were performed at the community level. Only species present in more than one community are shown.", 
-         label= "tab:table-species-gain-site") %>%
-  print(sanitize.text.function = function(x) x)
+  knitr::kable(caption = "Results of testing the alternative hypothesis that the conspecific pollen density in open flowers is greater than the density in bagged flowers. Tests were performed at the community level. Only species present in more than one community are shown.")
 ```
 
 ```{r table-variation-across-sites, results='asis'}
-loadd(consp_self)
+drake::loadd(consp_self)
 consp_self %>%
   anova(test = "Chisq")  %>%
-  xtable(caption = 'Analysis of variance of conspecific pollen density in bagged flowers (self pollination rate).  Density were modelled using a quasipoisson distribution. The model suggests that self-pollination rates are species dependent but not across.', 
+  xtable::xtable(caption = 'Analysis of variance of conspecific pollen density in bagged flowers (self pollination rate).  Density were modelled using a quasipoisson distribution. The model suggests that self-pollination rates are species dependent but not across.',
          label = 'tab:table-variation-across-sites')
 ```
 
 ```{r fig-conspecific-per-site, eval = FALSE, fig.height = 7, fig.cap="Conspecific pollen density across plant species for different communities. Community names are abbreviated: AN stands for Anquilóo, LC for Las Chiclas, and SC for San Claudio."}
-loadd(dep_frame, sites)
+drake::loadd(dep_frame, sites)
+library(ggplot2)
 site_plots_conspecific <- dep_frame %>%
-  filter(pollen_category == 'conspecific') %>%
-  inner_join(sites, by = 'site_name') %>%
-  mutate(recipient_short = shorten_sp_name(recipient)) %>%
-  mutate(pollen_category = paste(pollen_category, "pollen"), 
-         treatment = if_else(treatment == 'closed', 'bagged', treatment)) %>% 
+  dplyr::filter(pollen_category == 'conspecific') %>%
+ dplyr::inner_join(sites, by = 'site_name') %>%
+  dplyr::mutate(recipient_short = shorten_sp_name(recipient)) %>%
+  dplyr::mutate(pollen_category = paste(pollen_category, "pollen"), 
+         treatment = dplyr::if_else(treatment == 'closed', 'bagged', treatment)) %>% 
   plyr::dlply('site_name', function(x){
     x %>%
       ggplot(aes(y = pollen_density + 1, x = recipient_short,
@@ -173,7 +123,7 @@ site_plots_conspecific <- dep_frame %>%
       pub_theme() +
       xlab(NULL) +
       ylab('pollen density') +
-      scale_fill_manual(values = colour_scale_values)
+      scale_fill_manual(values = c_scale())
   })
 
 legend <- cowplot::get_legend(site_plots_conspecific[[1]])
@@ -191,19 +141,19 @@ cowplot::plot_grid(plotlist = site_plots_conspecific, ncol = 3)
 ```
 
 ```{r fig-conspecific-per-plant, eval = FALSE, fig.height = 7, fig.cap="Conspecific pollen density across communities for different study species. Only species present in more than onse site are shown. Community names are abbreviated: AN stands for Anquilóo, LC for Las Chiclas, and SC for San Claudio; A, and R indicate that the community corresponded to an agricultural or reserve site respectively."}
-loadd(dep_frame, sites)
+drake::loadd(dep_frame, sites)
 plant_plots_conspecific <- dep_frame %>%
-  filter(pollen_category == 'conspecific') %>%
-  inner_join(sites, by = 'site_name') %>%
-  mutate(recipient_short = shorten_sp_name(recipient)) %>%
-  mutate(pollen_category = paste(pollen_category, "pollen"), 
-         treatment = if_else(treatment == 'closed', 'bagged', treatment)) %>%
-  group_by(recipient) %>%
-  mutate(n_sites = n_distinct(site_name), 
+  dplyr::filter(pollen_category == 'conspecific') %>%
+ dplyr::inner_join(sites, by = 'site_name') %>%
+  dplyr::mutate(recipient_short = shorten_sp_name(recipient)) %>%
+  dplyr::mutate(pollen_category = paste(pollen_category, "pollen"), 
+         treatment = dplyr::if_else(treatment == 'closed', 'bagged', treatment)) %>%
+  dplyr::group_by(recipient) %>%
+  dplyr::mutate(n_sites = dplyr::n_distinct(site_name), 
          site_name = `str_sub<-`(site_name, 1, 3, value = ''), 
          site_name = str_replace_all(site_name, '_', ' - ')) %>%
-  group_by() %>%
-  filter(n_sites >= 2) %>%
+  dplyr::group_by() %>%
+  dplyr::filter(n_sites >= 2) %>%
   plyr::dlply('recipient', function(x){
     x %>%
       ggplot(aes(y = pollen_density + 1, x = site_name,
@@ -215,7 +165,7 @@ plant_plots_conspecific <- dep_frame %>%
       pub_theme() +
       xlab(NULL) +
       ylab('pollen density') +
-      scale_fill_manual(values = colour_scale_values)
+      scale_fill_manual(values = c_scale())
   })
 
 legend <- cowplot::get_legend(plant_plots_conspecific[[1]])
@@ -232,25 +182,25 @@ cowplot::plot_grid(plotlist = plant_plots_conspecific, ncol = 3)
 ```
 
 ```{r fig-global-community-correlations, fig.height = 2.5, fig.cap = "Relationship between the model's independent variables calculated at the community level and at the study-wide level."}
-loadd(plant_rel_abu, plant_pheno_overlap, degree, sites)
+drake::loadd(plant_rel_abu, plant_pheno_overlap, degree, sites)
 
 ab <- plant_rel_abu %>%
-  select(-abu) %>%
-  rename(value = rab) %>%
-  mutate(term = "rab") 
+  dplyr::select(-abu) %>%
+  dplyr::rename(value = rab) %>%
+  dplyr::mutate(term = "rab") 
   
 ph <- plant_pheno_overlap %>%
-  rename(value = tov) %>%
-  mutate(term = "tov")
+  dplyr::rename(value = tov) %>%
+  dplyr::mutate(term = "tov")
 
 k <- degree %>%
-  select(-kn) %>%
-  rename(value = k) %>%
-  mutate(term = "k")
+  dplyr::select(-kn) %>%
+  dplyr::rename(value = k) %>%
+  dplyr::mutate(term = "k")
 
-bind_rows(ab, ph, k) %>%
-  filter(var_trans == "log") %>%
-  spread(scale, value) %>%
+dplyr::bind_rows(ab, ph, k) %>%
+  dplyr::filter(var_trans == "log") %>%
+  tidyr::spread(scale, value) %>%
   humanize(sites) %>%
   ggplot(aes(x = community, y = global)) +
   geom_smooth(method = "lm", colour = "black", size = 0.75) +
@@ -263,16 +213,16 @@ bind_rows(ab, ph, k) %>%
 ```
 
 ```{r fig-model-results, fig.height = 3.5, fig.cap = "Model coefficients"}
-loadd(tidied_fixed, sites)
+drake::loadd(tidied_fixed, sites)
 
 tidied_fixed %>%
-  filter(term != "(Intercept)" , 
+  dplyr::filter(term != "(Intercept)" , 
          var_trans == 'log'
          # scale == "community"
          ) %>%
-  group_by(pollen_category,scale, model, var_trans, term) %>%
-  summarise(estimate = first(estimate)) %>%
-  group_by() %>%
+  dplyr::group_by(pollen_category,scale, model, var_trans, term) %>%
+  dplyr::summarise(estimate = first(estimate)) %>%
+  dplyr::group_by() %>%
   humanize() %>%
   ggplot(aes(x = estimate, 
              colour = pollen_category, 
@@ -287,19 +237,19 @@ tidied_fixed %>%
                bins = 15) +
   pub_theme() +
   facet_grid(scale ~ term, scales = "free_x", space = "free_x") +
-  scale_color_manual(values = colour_scale_values) +
-  scale_fill_manual(values = colour_scale_values) +
+  scale_color_manual(values = c_scale()) +
+  scale_fill_manual(values = c_scale()) +
   scale_x_continuous(breaks = seq(-2,2, by = 0.25)) + 
   theme(legend.position = "top") +
   labs(colour = "", fill = "")
 ```
 
 ```{r fig-random-intercepts, eval = F, fig.height= 3, fig.cap = "Random effect intercepts"}
-loadd(tidied_fixed, sites)
+drake::loadd(tidied_fixed, sites)
 
 tidied_fixed %>%
-  separate("level", c("site_name", "plant_name"), sep = "/", remove = F) %>%
-  filter(term == "(Intercept)" ,
+ tidyr::separate("level", c("site_name", "plant_name"), sep = "/", remove = F) %>%
+  dplyr::filter(term == "(Intercept)" ,
          var_trans == 'log',
          scale == "community", 
          pollen_category == 'heterospecific'
@@ -313,30 +263,30 @@ tidied_fixed %>%
   theme(legend.position = 'none')
 ```
 
-```{r table-aic-random-models, results= 'asis'}
-loadd(glanced_random, random_effects)
+```{r eval = FALSE, table-aic-random-models, results= 'asis'}
+drake::loadd(glanced_random, random_effects)
 
 summ <- glanced_random %>%
-  filter(var_trans == "log") %>%
-  group_by(pollen_category, scale, var_trans, model) %>%
-  mutate(delta_AIC = AIC - min(AIC)) %>%
-  group_by(pollen_category, scale, var_trans, random_effect) %>%
-  summarise(AIC_50 = median(delta_AIC), 
+  dplyr::filter(var_trans == "log") %>%
+  dplyr::group_by(pollen_category, scale, var_trans, model) %>%
+  dplyr::mutate(delta_AIC = AIC - min(AIC)) %>%
+  dplyr::group_by(pollen_category, scale, var_trans, random_effect) %>%
+  dplyr::summarise(AIC_50 = median(delta_AIC), 
             AIC_05 = quantile(delta_AIC, 0.05),
             AIC_95 = quantile(delta_AIC, 0.95), 
             n = n()) %>% 
-  group_by() %>%
-  select(-var_trans) %>%
-  right_join(expand.grid(pollen_category = unique(.$pollen_category),
+  dplyr::group_by() %>%
+  dplyr::select(-var_trans) %>%
+  dplyr::right_join(expand.grid(pollen_category = unique(.$pollen_category),
                         scale = unique(.$scale),
                         random_effect = unique(.$random_effect))) %>% 
-  mutate_if(is.numeric, round, digits = 1) %>% 
-  mutate(delta_AIC = paste0(AIC_50, " [", AIC_05, ", ", AIC_95, "], n = ", n), 
-         delta_AIC = if_else(grepl("NA", delta_AIC), "---", delta_AIC)) %>%
-  group_by() %>%
+  dplyr::mutate_if(is.numeric, round, digits = 1) %>% 
+  dplyr::mutate(delta_AIC = paste0(AIC_50, " [", AIC_05, ", ", AIC_95, "], n = ", n), 
+         delta_AIC = dplyr::if_else(grepl("NA", delta_AIC), "---", delta_AIC)) %>%
+  dplyr::group_by() %>%
   humanize(random_effects = random_effects) %>%
-  arrange(pollen_category, random_name, scale) %>%
-  rename(`pollen category` = pollen_category, 
+  dplyr::arrange(pollen_category, random_name, scale) %>%
+  dplyr::rename(`pollen category` = pollen_category, 
          `random structure` = random_name) 
 
 contingency_table <- xtabs( ~ `random structure` + `scale` + `pollen category` , data = summ) %>% ftable()
@@ -346,24 +296,24 @@ contingency_table <- xtabs( ~ `random structure` + `scale` + `pollen category` ,
   
 contingency_table[1:nrow(summ)] <- summ$delta_AIC
 
-xtableFtable(contingency_table, method = "col.compact", 
-             caption = paste('Comparison of the different random structures we considered. The table shows median delta AIC values of', n_distinct(glanced_random$model), "bootsrap resamples of the data. The 5th and 95th percentile are shown inside square brackets. Communities are defined by individual fragments but ignore the hierarchical arrangement of sampling sites."), 
+xtable::xtableFtable(contingency_table, method = "col.compact", 
+             caption = paste('Comparison of the different random structures we considered. The table shows median delta AIC values of', dplyr::n_distinct(glanced_random$model), "bootsrap resamples of the data. The 5th and 95th percentile are shown inside square brackets. Communities are defined by individual fragments but ignore the hierarchical arrangement of sampling sites."), 
          label = 'tab:table-aic-random-models')
 ```
 
 ```{r table-global-vs-community-models, results = 'asis'}
-loadd(wilcox_glo_com)
+drake::loadd(wilcox_glo_com)
 
 wilcox_glo_com %>%
-  filter(quality %in% c("rmse", "sigma", "r2c", "o2", "nrmse"),
+  dplyr::filter(quality %in% c("rmse", "sigma", "r2c", "o2", "nrmse"),
          var_trans == "log") %>%
-  select(quality, pollen_category, min_scale, estimate, p.value) %>%
-  rename(`model metric` = quality,
+  dplyr::select(quality, pollen_category, min_scale, estimate, p.value) %>%
+  dplyr::rename(`model metric` = quality,
          `pollen type` = pollen_category, 
          `best model set` = min_scale,
          `shift estimate` = estimate, 
          `p value` = p.value) %>% 
-  xtable(digits = -1, caption = "Results of two sample paired Wilcoxon signed rank test comparing different model quality metrics of the model sets using predictors computed across or within communities. Metrics are the root mean square error (rmse), the residual standard deviation (sigma), the conditional r-squared approximation as proposed by Nakagawa and Schielzeth (2013), the omega-squared value as suggested by Xu (2003), and the normalised root-mean-square error of the model sets constructed using predictors computed at the community or study level.", 
+  xtable::xtable(digits = -1, caption = "Results of two sample paired Wilcoxon signed rank test comparing different model quality metrics of the model sets using predictors computed across or within communities. Metrics are the root mean square error (rmse), the residual standard deviation (sigma), the conditional r-squared approximation as proposed by Nakagawa and Schielzeth (2013), the omega-squared value as suggested by Xu (2003), and the normalised root-mean-square error of the model sets constructed using predictors computed at the community or study level.", 
          label = "tab:table-global-vs-community-models")
 ```
 
