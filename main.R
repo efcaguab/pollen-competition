@@ -114,13 +114,16 @@ model_plans <- rbind(
 figure_plan <- drake::drake_plan(
   fig_model_results_global = make_fig_model_results_global(tidied_fixed), 
   fig_con_hetero_gain = make_fig_con_hetero_gain(tidied_fixed, model_linear_fits), 
-  fig_proportion_vs_variables = make_fig_proportion_vs_variables(trade_off_predictions)
+  fig_proportion_vs_variables = make_fig_proportion_vs_variables(trade_off_predictions),
+  fig_pollen_density = make_fig_pollen_density(dep_frame), 
+  fig_pollen_density_diff = make_fig_pollen_density_diff(rep_1), 
+  fig_abundance = make_fig_abundance(plant_rel_abu, sites)
 )
 
 # Reporting ---------------------------------------------------------------
 
 reporting_plan <- drake::drake_plan(
-  # render_pdf(drake::knitr_in('paper/supp-info.Rmd'), drake::file_out('paper/supp-info.pdf'), clean_md = FALSE),
+  render_pdf(drake::knitr_in('paper/supp-info.Rmd'), drake::file_out('paper/supp-info.pdf'), clean_md = FALSE),
   render_pdf(drake::knitr_in('paper/manuscript.Rmd'), drake::file_out('paper/manuscript.pdf'), clean_md = FALSE),
   render_pdf(drake::file_in('paper/questions_observations_todo.Rmd'), drake::file_out('paper/questions_observations_todo.pdf'), clean_md = FALSE))
 
