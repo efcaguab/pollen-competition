@@ -32,6 +32,10 @@ format_data_plan <- drake::drake_plan(
   degree = get_degree(vis_frame, dep_frame)
 )
 
+traits_plan <- drake::drake_plan(
+  plant_traits = read_plant_traits(drake::file_in('data/raw/plant_traits.csv'))
+)
+
 # Basic analyses ----------------------------------------------------------
 
 basic_analyses_plan <- drake::drake_plan(
@@ -132,6 +136,7 @@ reporting_plan <- drake::drake_plan(
 # set up plan
 project_plan <- rbind(
   clean_data_plan, 
+  traits_plan,
   format_data_plan,
   boot_replicates, 
   model_plans,
