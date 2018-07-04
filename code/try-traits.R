@@ -120,6 +120,31 @@ format_trait_matrices <- function(x, remove_na_traits, remove_na_abu) {
     purrr::map(dplyr::mutate_if, is.character, as.factor) %>%
     purrr::map(dplyr::mutate_if, is.factor, function(x) as.numeric(x) - 1) %>%
     purrr::map2(sp_names, `rownames<-`)
+}
+
+#' Get species coordinates in the Functional space
+#'
+#' @param trait_matrices a list with lists of trait matrics
+#' @param corr correction to use, defaults to Cailliez, wich was the one Camille used
+#' @param messages wether to print annoying thingis or not
+#'
+#' @return
+#' @export
+#'
+#' @examples
+get_species_coords <- function(trait_matrices, corr = "cailliez", messages = FALSE) {
+  trait_matrices %>%
+    purrr::map(function(x){
+      x %>%
+        # calliez correction required to account for NAs, were interested in the principal coordinate analyssis as well so need to tell it to print it out
+        purrr::map(FD::dbFD, corr = corr, print.pco = T, messages = messages) %>%
+        purrr::map(`$`, "x.axes")
+    })
+     
+}
+
+# 
+
 
 #' Select the plant_name column and create a column that is TRUE
 #'
