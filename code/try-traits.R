@@ -49,6 +49,77 @@ read_plant_traits <- function(traits_file) {
   #   dplyr::arrange(plant_name) %>% View
 }
 
+#' Make trait matrices global and community level
+#'
+#' @param plant_traits traits data frame
+#' @param abu_frame abundance data frame
+#' @param remove_na_traits wether to remove the plants without traits before computation
+#' @param remove_na_abu wether to remove the plants without seasonal abundace
+#'
+#' @return a list of length two. The first correspond to community scale and the
+#'   second to global scale
+#'
+make_trait_matrices <- function(plant_traits, abu_frame, remove_na_traits = TRUE, remove_na_abu = TRUE) {
+  
+  # first arrange things so that there is a list for community and a list for global
+  scaled_abu <- abu_frame %>%
+    dplyr::mutate(flowers = log(flowers), 
+                  flowers = scale(flowers), 
+                  flowers = as.numeric(flowers)) 
+  
+  per_community <- plant_traits %>% 
+    dplyr::full_join(flower_matrix(scaled_abu), by = "plant_name")  %>%
+    split(.$site_name) 
+  
+  global <- scaled_abu %>%
+    flower_matrix() %>%
+    dplyr::group_by(plant_name) %>%
+    dplyr::summarise_if(is.numeric, sum, na.rm = TRUE) %>%
+    dplyr::mutate(site_name = "global") %>%
+    dplyr::full_join(plant_traits, ., by = "plant_name") %>%
+    list(.)
+  
+  community_and_global_traits <- list(community = per_community, 
+       global = global)
+  
+  # fix the matrices
+  community_and_global_traits %>%
+    purrr::map(format_trait_matrices, remove_na_traits, remove_na_abu)
+}
+
+#' Fix trait matrix list
+#' 
+#' Puts factors to numeric in the way that FD wants it
+#'
+#' @param x trait matrix list 
+#' @param remove_na_traits wether to remove the plants without traits before computation
+#' @param remove_na_abu wether to remove the plants without seasonal abundace
+#'
+#' @return a fixed trait matrix
+#'
+format_trait_matrices <- function(x, remove_na_traits, remove_na_abu) {
+  
+  if (remove_na_traits) x %<>% purrr::map(dplyr::filter, !is.na(growth_form))
+  if (remove_na_abu) x %<>% purrr::map(dplyr::filter, !is.na(`2011-01-01`))
+  
+  trait_matrices <- x %>%
+    purrr::map(function(x) {
+      x %<>%
+        `class<-`("data.frame") 
+      row.names(x) <- as.character(x$plant_name)
+      x
+    })
+  
+  sp_names <- trait_matrices %>%
+    purrr::map(rownames)
+  
+  # binary need to be converted to 0s and 1s for FD:dbFD to work
+  # data with species-traits needs to have rownmaes 
+  trait_matrices %>%
+    purrr::map(dplyr::select, -plant_name, -site_name) %>%
+    purrr::map(dplyr::mutate_if, is.character, as.factor) %>%
+    purrr::map(dplyr::mutate_if, is.factor, function(x) as.numeric(x) - 1) %>%
+    purrr::map2(sp_names, `rownames<-`)
 
 #' Select the plant_name column and create a column that is TRUE
 #'
