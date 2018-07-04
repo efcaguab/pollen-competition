@@ -40,5 +40,30 @@ read_plant_traits <- function(traits_file) {
     change_names("plant_name", "Sonchus sp", "Sonchus sp.") %>%
     change_names("plant_name", "Vicia linearifolia", "Vicia linealifolia") %>%
     change_names("plant_name", "Hydrocotyle sp.", "Hydrocotile sp.")
+  
+  # The following code was used to manually test that the species names coincide
+  # ap <- select_plant_name(abu_frame, col_name = "in_abu")
+  # dp <- select_plant_name(dep_frame, col_name = "in_dep")
+  # dplyr::full_join(ap, dp, by = "plant_name") %>%
+  #   dplyr::full_join(trait_df) %>% 
+  #   dplyr::arrange(plant_name) %>% View
 }
 
+
+#' Select the plant_name column and create a column that is TRUE
+#'
+#' To be used to indicate that a species is present in a data frame. Used to
+#' manually check the species names in the traits file
+#'
+#' @param x a data frame
+#' @param col_name name of the column with TRUES
+#'
+#' @return a data frame with two columns, plant_name and the indicated by
+#'   col_name
+#'   
+select_plant_name <- function(x, col_name){
+  x %>%
+    dplyr::select(plant_name) %>%
+    dplyr::mutate(!!col_name := TRUE) %>%
+    dplyr::distinct()
+}
