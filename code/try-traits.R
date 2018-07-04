@@ -49,6 +49,24 @@ read_plant_traits <- function(traits_file) {
   #   dplyr::arrange(plant_name) %>% View
 }
 
+#' Select the plant_name column and create a column that is TRUE
+#'
+#' To be used to indicate that a species is present in a data frame. Used to
+#' manually check the species names in the traits file
+#'
+#' @param x a data frame
+#' @param col_name name of the column with TRUES
+#'
+#' @return a data frame with two columns, plant_name and the indicated by
+#'   col_name
+#'   
+select_plant_name <- function(x, col_name){
+  x %>%
+    dplyr::select(plant_name) %>%
+    dplyr::mutate(!!col_name := TRUE) %>%
+    dplyr::distinct()
+}
+
 #' Make trait matrices global and community level
 #'
 #' @param plant_traits traits data frame
@@ -128,10 +146,8 @@ format_trait_matrices <- function(x, remove_na_traits, remove_na_abu) {
 #' @param corr correction to use, defaults to Cailliez, wich was the one Camille used
 #' @param messages wether to print annoying thingis or not
 #'
-#' @return
-#' @export
+#' @return a list with the same structure and 
 #'
-#' @examples
 get_species_coords <- function(trait_matrices, corr = "cailliez", messages = FALSE) {
   trait_matrices %>%
     purrr::map(function(x){
@@ -141,25 +157,4 @@ get_species_coords <- function(trait_matrices, corr = "cailliez", messages = FAL
         purrr::map(`$`, "x.axes")
     })
      
-}
-
-# 
-
-
-#' Select the plant_name column and create a column that is TRUE
-#'
-#' To be used to indicate that a species is present in a data frame. Used to
-#' manually check the species names in the traits file
-#'
-#' @param x a data frame
-#' @param col_name name of the column with TRUES
-#'
-#' @return a data frame with two columns, plant_name and the indicated by
-#'   col_name
-#'   
-select_plant_name <- function(x, col_name){
-  x %>%
-    dplyr::select(plant_name) %>%
-    dplyr::mutate(!!col_name := TRUE) %>%
-    dplyr::distinct()
 }
