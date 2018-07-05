@@ -224,7 +224,8 @@ pianka_fun <- function(x){
 
 horn_fun <- function(x){
   x %>%
-    vegan::vegdist(method = "horn")
+    vegan::vegdist(method = "horn") %>%
+    subtract(1, .)
 }
 
 # DEGREE ------------------------------------------------------------------
