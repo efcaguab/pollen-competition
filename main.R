@@ -30,7 +30,8 @@ format_data_plan <- drake::drake_plan(
   plant_pheno_overlap = calculate_phenology_overlap(abu_frame, dep_frame),
   vis_frame = extract_vis_frame(armonised_data),
   degree = get_degree(vis_frame, dep_frame), 
-  tra_frame = extract_tra_frame(armonised_data)
+  tra_frame = extract_tra_frame(armonised_data), 
+  pollen_overlap = get_pollen_overlap(tra_frame)
 )
 
 traits_plan <- drake::drake_plan(
@@ -42,6 +43,9 @@ traits_plan <- drake::drake_plan(
 )
 
 # Basic analyses ----------------------------------------------------------
+
+# TODO: Check that the missing plants with deposition are fine
+# TODO: Impute the community values with a fit from the global values?
 
 basic_analyses_plan <- drake::drake_plan(
   consp_self = model_conspecific_self(dep_frame),
