@@ -29,7 +29,8 @@ format_data_plan <- drake::drake_plan(
   plant_rel_abu = calculate_relative_abundance(abu_frame, dep_frame),
   plant_pheno_overlap = calculate_phenology_overlap(abu_frame, dep_frame),
   vis_frame = extract_vis_frame(armonised_data),
-  degree = get_degree(vis_frame, dep_frame)
+  degree = get_degree(vis_frame, dep_frame), 
+  tra_frame = extract_tra_frame(armonised_data)
 )
 
 traits_plan <- drake::drake_plan(

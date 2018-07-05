@@ -286,3 +286,9 @@ get_degree <- function(vis_frame, dep_frame){
   
   dplyr::bind_rows(species_site_vis, species_vis)
 }
+
+# format pollen transfer data
+extract_tra_frame <- function(armonised_data){
+  x <- armonised_data$transfer %>%
+    to_data_frame('transfer') 
+}
