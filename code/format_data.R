@@ -145,9 +145,9 @@ calculate_phenology_overlap <- function(x, dep_frame) {
 #'
 #' @return a data frame
 #'
-global_and_site_overlap <- function(x, transformation = I){
+global_and_site_overlap <- function(x, transformation = I, dist_fun = pianka_fun){
   overlap_site <- x %>%
-    niche_overlap(x$site_name, transformation = transformation) %>% 
+    niche_overlap(x$site_name, transformation = transformation, dist_fun = dist_fun) %>% 
     dplyr::rename(site_name = split, 
            tov = niche_overlap) %>%
     dplyr::mutate(scale = "community")
@@ -155,7 +155,7 @@ global_and_site_overlap <- function(x, transformation = I){
   overlap_global <- x %>%
     dplyr::group_by(plant_name) %>% 
     dplyr::summarise_if(is.numeric, sum) %>%
-    niche_overlap(transformation = transformation) %>% 
+    niche_overlap(transformation = transformation, dist_fun = dist_fun) %>% 
     dplyr::rename(tov = niche_overlap) %>%
     dplyr::mutate(scale = 'global') %>%
     dplyr::right_join(plant_site_combinations(overlap_site), by = c('plant_name'))
@@ -195,7 +195,7 @@ flower_matrix <- function(x){
 #'
 #' @return a data frame
 #'
-niche_overlap <- function(x, split_by = 1, transformation = I){
+niche_overlap <- function(x, split_by = 1, transformation = I, dist_fun = pianka_fun){
   
   if(length(split_by) == 1) {
     .id = NULL
@@ -210,11 +210,21 @@ niche_overlap <- function(x, split_by = 1, transformation = I){
     purrr::map(~ `row.names<-`(., .$plant_name)) %>%
     purrr::map(~ as.matrix(dplyr::select_if(., is.numeric))) %>%
     purrr::map(~ transformation(.)) %>%
-    purrr::map(~ t(.)) %>%
-    purrr::map(~ spaa::niche.overlap(., method = 'pianka')) %>%
+    purrr::map(dist_fun) %>%
     purrr::map(~ as.matrix(.)) %>%
     purrr::map(~ rowMeans(.)) %>%
     purrr::map_dfr(~ dplyr::data_frame(plant_name = names(.), niche_overlap = .), .id = .id) 
+}
+
+pianka_fun <- function(x){
+  x %>%
+    t() %>%
+    spaa::niche.overlap(method = "pianka")
+}
+
+horn_fun <- function(x){
+  x %>%
+    vegan::vegdist(method = "horn")
 }
 
 # DEGREE ------------------------------------------------------------------
