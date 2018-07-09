@@ -1,7 +1,7 @@
 ---
 title: "The pollination trade-off"
 author: "Fernando Cagua, Hugo Marrero, Jason Tylianakis, Daniel Stouffer"
-bibliography: references.bib
+#bibliography: references.bib
 csl: ecology-letters.csl
 output: 
   bookdown::pdf_document2: 
