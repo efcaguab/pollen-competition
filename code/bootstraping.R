@@ -8,10 +8,10 @@
 #'
 #' @return a data frame with pollen_gain column
 #'
-data_replicate <- function(de, ab, ph, k, sites, transformation = I, dummy_id){
+data_replicate <- function(de, imputed_abundance, imputed_overlap, imputed_degree, imputed_originality, sites, transformation = I, dummy_id){
   
-  # de <- readd(dep_frame)
-  # ab <- calculate_relative_abundance(readd(abu_frame), de)
+  # de <- drake::readd(dep_frame)
+  # ab <- drake::readd(plant_rel_abu)
   # ph <- calculate_phenology_overlap(readd(abu_frame), de)
   # ab <- readd(plant_rel_abu)
   # ph <- readd(plant_pheno_overlap)
@@ -20,14 +20,23 @@ data_replicate <- function(de, ab, ph, k, sites, transformation = I, dummy_id){
   de$pollen_category %>%
     unique() %>%
     purrr::map_df(~ get_deposition_sampled_data(de, ., transformation)) %>% 
-    dplyr::left_join(ab, by = c("site_name", "plant_name")) %>%
-    dplyr::left_join(ph, by = c("site_name", "plant_name", "var_trans", "scale")) %>%
-    dplyr::left_join(k, by = c("site_name", "plant_name", "var_trans", "scale")) %>%
-   dplyr::inner_join(sites, by = "site_name") %>%
+    repeat_df("scale", c("community", "imputed")) %>% 
+    dplyr::left_join(imputed_abundance, by = c("site_name", "plant_name", "scale")) %>% 
+    dplyr::left_join(imputed_overlap, by = c("site_name", "plant_name", "scale")) %>% 
+    dplyr::left_join(imputed_degree, by = c("site_name", "plant_name", "scale")) %>% 
+    dplyr::left_join(imputed_originality, by = c("site_name", "plant_name", "scale")) %>%
+    dplyr::inner_join(sites, by = "site_name") %>% 
     dplyr::mutate(
       fragment = as.character(fragment),
-      site_plant = paste(plant_name, site_name, sep = ".")) %>%
+      site_plant = paste(plant_name, site_name, sep = "."), 
+      var_trans = "log") %>%
     dplyr::group_by(scale)
+}
+
+
+repeat_df <- function(x, var_name, var_values){
+  var_values %>%
+    purrr::map_dfr(~ dplyr::mutate(x, !!var_name := .)) 
 }
 
 #' Sample the deposition data to get a boostrap data replicate 
