@@ -76,9 +76,10 @@ transformation <- function(x) log(x + 1)
 boot_replicates <- drake::drake_plan(
   rep = data_replicate(
     dep_frame, 
-    plant_rel_abu,
-    plant_pheno_overlap,
-    degree, 
+    imputed_abundance,
+    imputed_overlap,
+    imputed_degree, 
+    imputed_originality,
     sites, 
     transformation, 
     N)) %>%

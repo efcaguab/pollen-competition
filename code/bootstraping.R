@@ -84,18 +84,18 @@ get_deposition_sampled_data <- function(x, category, transformation){
 #' 
 run_random_models <- function(d, random_effects, method = "REML"){
   
-  rem <- random_effects %>%
+  random_effects %>%
     split(.$random_effect) %>%
-   purrr::map_df(~ dplyr::mutate(d, random_formula = .$random_formula, random_effect = .$random_effect)) %>% 
+    purrr::map_df(~ dplyr::mutate(d, random_formula = .$random_formula, random_effect = .$random_effect)) %>% 
     split(list(.$pollen_category, .$scale, .$var_trans, .$random_effect)) %>%
-    purrr::map(~ try(nlme::lme(pollen_gain ~ rab + tov + k, random = as.formula(.$random_formula[1]), na.action = na.omit, method = method, data = .)))
+    purrr::map(~ try(nlme::lme(pollen_gain ~ abn + pov + deg + org, random = as.formula(.$random_formula[1]), na.action = na.omit, method = method, data = .)))
 }
 
 run_model <- function(d, best_random, method = "ML"){
   
   d %>%
     split(list(.$pollen_category, .$scale, .$var_trans)) %>%
-    purrr::map(~ nlme::lme(pollen_gain ~ rab + tov + k, random = as.formula(best_random$random_formula[1]), na.action = na.omit, method = method, data = .))
+    purrr::map(~ nlme::lme(pollen_gain ~ abn + pov + deg + org, random = as.formula(best_random$random_formula[1]), na.action = na.omit, method = method, data = .))
 
 }
 
