@@ -59,7 +59,7 @@ trade_off_pred <- function(tidied_fixed,
   min_max <- function(x){
     foreach (i = 1:ncol(x), .combine = rbind) %do% {
       if(names(x)[i] %in% fixed_effect_terms){
-        dplyr::data_frame(term = names(x)[i], min = min(x[names(x)[i]]), max = max(x[names(x)[i]]))
+        dplyr::data_frame(term = names(x)[i], min = min(x[names(x)[i]], na.rm = T), max = max(x[names(x)[i]], na.rm = T))
       }
     }
   }
