@@ -42,6 +42,13 @@ traits_plan <- drake::drake_plan(
   org_frame = get_species_originality(species_coords, abu_frame)
 )
 
+imputation_plan <- drake::drake_plan(
+  imputed_degree = impute_degree(degree), 
+  imputed_abundance = impute_abundace(plant_rel_abu), 
+  imputed_originality = impute_originality(org_frame), 
+  imputed_overlap = impute_overlap(pollen_overlap)
+)
+
 # Basic analyses ----------------------------------------------------------
 
 # TODO: Check that the missing plants with deposition are fine
@@ -147,11 +154,12 @@ project_plan <- rbind(
   clean_data_plan, 
   traits_plan,
   format_data_plan,
-  boot_replicates, 
-  model_plans,
-  basic_analyses_plan,
-  figure_plan, 
-  reporting_plan
+  imputation_plan,
+  # boot_replicates, 
+  # model_plans,
+  basic_analyses_plan
+  # figure_plan, 
+  # reporting_plan
   )
 
 project_config <- drake::drake_config(project_plan)
