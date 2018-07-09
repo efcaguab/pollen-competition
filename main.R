@@ -117,7 +117,7 @@ predictions <- drake::drake_plan(
   trade_off_predictions = trade_off_pred(
     tidied_fixed, 
     wilcox_glo_com, 
-    list(plant_rel_abu, plant_pheno_overlap, degree), 
+    list(imputed_abundance, imputed_overlap, imputed_degree, imputed_originality), 
     chosen_criteria = "r2c")
 )
 
@@ -156,11 +156,11 @@ project_plan <- rbind(
   traits_plan,
   format_data_plan,
   imputation_plan,
-  # boot_replicates, 
-  # model_plans,
-  basic_analyses_plan
-  # figure_plan, 
-  # reporting_plan
+  boot_replicates,
+  model_plans,
+  basic_analyses_plan,
+  figure_plan,
+  reporting_plan
   )
 
 project_config <- drake::drake_config(project_plan)

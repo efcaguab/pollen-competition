@@ -12,7 +12,7 @@ global_vs_community <- function(glanced_models_table){
       dplyr::select(pollen_category, model, scale, var_trans, metric) %>% 
       tidyr::spread(scale, metric) %>%
       split(list(.$pollen_category, .$var_trans)) %>%
-      purrr::map(~ wilcox.test(.$community, .$global, paired = T, conf.int = T, alternative = "two.sided")) %>%
+      purrr::map(~ wilcox.test(.$community, .$imputed, paired = T, conf.int = T, alternative = "two.sided")) %>%
      purrr::map_df(~ broom::tidy(.), .id = "m") %>%
      tidyr::separate(m, c("pollen_category", "var_trans"))
   }
@@ -23,8 +23,8 @@ global_vs_community <- function(glanced_models_table){
    purrr::map_df(~test_table(.), .id = "quality") %>%
     dplyr::mutate(min_scale = dplyr::case_when(
       estimate < 0 & quality %in% positive_models ~ "community",
-      estimate > 0 & quality %in% positive_models ~ "global",
-      estimate < 0 & !(quality %in% positive_models) ~ "global",
+      estimate > 0 & quality %in% positive_models ~ "imputed",
+      estimate < 0 & !(quality %in% positive_models) ~ "imputed",
       estimate > 0 & !(quality %in% positive_models) ~ "community"
       ))
 }
