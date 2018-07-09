@@ -31,7 +31,9 @@ get_species_originality <- function(species_coords, abu_frame) {
     dplyr::mutate(scale = "global") %>%
     dplyr::right_join(plant_site_combinations(originality_community), by = c('plant_name'))
   
-  dplyr::bind_rows(originality_community, originality_global)
+  dplyr::bind_rows(originality_community, originality_global) %>%
+    dplyr::group_by(scale) %>%
+    dplyr::mutate(org = scale(originality))
   
   # dplyr::inner_join(originality_global, originality_community, by = c("plant_name", "site_name")) %$%
   # plot(originality.x, originality.y)
