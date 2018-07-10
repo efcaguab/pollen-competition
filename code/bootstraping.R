@@ -175,6 +175,11 @@ gather_tidy <- function(models, fun, subdivisions){
 get_model_correlations <- function(...){
   models <- list(...)
   
+  # remove failed models
+  failed <- purrr::map(models, purrr::map_chr, class) %>%
+    purrr::map_lgl(~ any("try-error" %in% .)) 
+  models <- models[!failed]
+  
   pearson_slope <- function(x,y){
     data.frame(pearson_slope = cov(x, y) * sd(y) / sd(x))
   }
@@ -199,6 +204,11 @@ get_model_correlations <- function(...){
 
 get_model_linear_fits <- function(...){
   models <- list(...)
+  
+  # remove failed models
+  failed <- purrr::map(models, purrr::map_chr, class) %>%
+    purrr::map_lgl(~ any("try-error" %in% .)) 
+  models <- models[!failed]
   
   pearson_slope <- function(x,y){
     data.frame(pearson_slope = cov(x, y) * sd(y) / sd(x))
