@@ -2,7 +2,7 @@ make_fig_con_hetero_gain <- function(tidied_fixed, model_linear_fits) {
   require(ggplot2)
   ab_lines <- model_linear_fits %>%
     dplyr::filter(var_trans == "log",
-                  scale == "global") %>%
+                  scale == "imputed") %>%
     tidyr::spread(data = ., key = sma_parameter, value = value)
   
   dplyr::data_frame(x = get_pred_range(tidied_fixed, "heterospecific"),

@@ -7,7 +7,7 @@ make_fig_model_results_global <- function(tidied_fixed) {
     dplyr::filter(
       term != "(Intercept)" , 
       var_trans == 'log',
-      scale == "global") %>%
+      scale == "imputed") %>%
     dplyr::group_by(pollen_category,scale, model, var_trans, term) %>%
     dplyr::summarise(estimate = dplyr::first(estimate)) %>%
     dplyr::group_by() %>%
