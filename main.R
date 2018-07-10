@@ -164,7 +164,7 @@ project_plan <- rbind(
   )
 
 project_config <- drake::drake_config(project_plan)
-drake::vis_drake_graph(project_config, targets_only = T)
+# drake::vis_drake_graph(project_config, targets_only = T)
 
 # execute plan
 # make(project_plan, parallelism = "parLapply", jobs = 7)
