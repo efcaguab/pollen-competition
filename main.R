@@ -167,5 +167,5 @@ project_config <- drake::drake_config(project_plan)
 # drake::vis_drake_graph(project_config, targets_only = T)
 
 # execute plan
-# make(project_plan, parallelism = "parLapply", jobs = 7)
-drake::make(project_plan)
+drake::make(project_plan, parallelism = "parLapply", jobs = 3)
+# drake::make(project_plan)
