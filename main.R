@@ -70,7 +70,7 @@ basic_analyses_plan <- drake::drake_plan(
 
 # Bootstrap models --------------------------------------------------------
 
-n_replicates <- 10
+n_replicates <- 30
 transformation <- function(x) log(x + 1)
 
 boot_replicates <- drake::drake_plan(
