@@ -95,7 +95,7 @@ run_model <- function(d, best_random, method = "ML"){
   
   d %>%
     split(list(.$pollen_category, .$scale, .$var_trans)) %>%
-    purrr::map(~ nlme::lme(pollen_gain ~ abn + pov + deg + org, random = as.formula(best_random$random_formula[1]), na.action = na.omit, method = method, data = .))
+    purrr::map(~ try(nlme::lme(pollen_gain ~ abn + pov + deg + org, random = as.formula(best_random$random_formula[1]), na.action = na.omit, method = method, data = .)))
 
 }
 
