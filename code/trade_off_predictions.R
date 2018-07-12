@@ -18,7 +18,8 @@ trade_off_pred <- function(tidied_fixed,
     dplyr::filter(!grepl("Intercept", term)) %$% 
     term %>% unique()
   
-  trade_off_grid <- seq(-2.5,3,length.out = 100)
+  # trade_off_grid <- seq(-2.5,4.8,length.out = 100)
+  trade_off_grid <- rnorm(100, sd = 2)
   
   pred_df <- expand.grid(
     value = trade_off_grid, 
@@ -41,7 +42,7 @@ trade_off_pred <- function(tidied_fixed,
              var_trans == vt, 
              scale == model_type) %>%
       dplyr::group_by(term) %>%
-      dplyr::summarise_if(is.numeric, median) %>%
+      dplyr::summarise_if(is.numeric, median) %>% 
       dplyr::mutate(intercept = estimate[term == "(Intercept)"], 
              response = estimate * value + intercept) %>%
       dplyr::filter(term != "(Intercept)") %>%
