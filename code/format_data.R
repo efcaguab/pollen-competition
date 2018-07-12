@@ -228,6 +228,15 @@ horn_fun <- function(x){
     subtract(1, .)
 }
 
+overlap_contrib <- function(y){
+  total <- mean(horn_fun(y))
+  contrib <- matrix(1, ncol = 1, nrow = nrow(y))
+  for (i in 1:nrow(y)) {
+    contrib[i, 1] <- total - mean(horn_fun(y[-i, ]))
+  }
+  rownames(contrib) <- rownames(y)
+  contrib
+}
 # DEGREE ------------------------------------------------------------------
 
 #' Extract visitation
