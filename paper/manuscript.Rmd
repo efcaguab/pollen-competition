@@ -1,6 +1,6 @@
 ---
 title: "The pollination trade-off"
-author: "Fernando Cagua, Hugo Marrero, Jason Tylianakis, Daniel Stouffer"
+author: "Fernando Cagua^1^, Hugo Marrero^2^, Jason Tylianakis^1^, Daniel Stouffer^1^"
 #bibliography: references.bib
 csl: ecology-letters.csl
 output: 
@@ -19,6 +19,12 @@ header-includes:
 \linenumbers
 \doublespacing
  
+^1^ Centre for Integrative Ecology, School of Biological Sciences, University of Canterbury, Private Bag 4800, Christchurch 8041, New Zealand
+
+^2^ Hugo's address
+
+**Author for correspondence:** E. Fernando Cagua (efc29@uclive.ac.nz) - Centre for Integrative Ecology, School of Biological Sciences, University of Canterbury, Private Bag 4800, Christchurch 8140, New Zealand
+
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE, message = FALSE, 
                       warning = FALSE)
