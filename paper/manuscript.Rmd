@@ -70,6 +70,9 @@ We hypothezise that XX??
 ### Data collection
 # Methods
 
+Elucidating how the mechanisms and drivers of facilitation scales to the community level and its theoretical concequences has been elusive in part because of the large amounts of data required.
+Previous studies focus on the final picture of interspecific pollen transfer that is obtained by examining the pollen deposited on flower stigmas. 
+However, as we have described, teasing appart competition for pollinators also requires data that describes the structure of the interactions and the pollen flows that ocurr within it, while accounting for the traits of the species that integrate the community. 
 Here, we examine a comprehensive data set that includes information about pollen deposition, transfer, visitation, species abundance, and species traits across diverse communities in the Argentinean Pampas. 
 We performed sampling in three locations, each located in a distinct phytogeograohic region of the Argentinean Pampas. 
 The sampling locations are distributed across a gradient of precipitation with a humid temperate climate in the eastward Flooding Pampas and an drier as we move inland and westward towards the Pampean Grasslands.
