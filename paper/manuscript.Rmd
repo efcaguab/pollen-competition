@@ -42,40 +42,30 @@ The possible negative effects of competition for pollinators have been long reco
 Based mainly on two-species systems, it is currently clear that they have the potential to drive the evolution of flower phenologies, morphologies and reproductive strategies as well as driving ecological diferentiation. 
 However, these competitive interactions between species pairs do not occur in isolation. 
 Plants often ocurr in communities in which multiple competitive interactions operate simultaneusly and lead to emergent phenomena not observed at smaller scales. 
-Here, we explore the signatures competition for pollinators in diverse natural communities, where empirical data is more scarce. 
 
-At the community scale, competition for pollination might arrise from changes in the quantity and quality of pollination. 
-Quantity is mainly affected by competition for visits, where plants with more atractive flowers reduce the number of visits for those less atractive and therefore they may experience a reduction in the amount of conspecific pollen received. 
-Quality is mainly affected by a more subtle but perhaps more important mechanism—interspecific pollen transfer, where even receiving a visit might not translate into net facilitation. 
-This is so because focal plant might receive pollen from a different species, or conversely pollen from the focal plant might be lost to different species. 
-Generally speaking the larger the proportion of conspecific relative to heterospecific pollen the higher the quality of the pollination service.
+The most obvious ecological factor influencing the cost of sharing pollinators is the species degree---the number of interaction partners. 
+The extent to which species degree affects the benefit is called mutualistic trade-off. 
+This trade-off is fundamental to the way we model and mathematically represent mutualistic systems because it considerably simplifies the mathematical treatment of competition for pollinators. 
+Furthermore the mutualistic trade-off has been shown to play a determining role on the stability and diversity of mutualistic communities. 
+Yet, empirical evidence of the trade-off at the community scale is scarce, to say the least. 
 
-Only a handful of studies have examined interspecific pollen transfer at the community level, and therefore we still understand little about how compeition for pollinators operates at this scale. 
-All together, existing studies at the community scale show that, as expected, the effective result of mutualistic interactions is, in most cases, one of facilitation. 
-Importantly, they also show a large variability in this result—both across species and across communities. 
-However, the driving factors behind this variability are currently not understood. 
-
-One of the most intuitive drivers of this variability, and therefore widely used in theoretical models of mutualism to account for the neggative effects of mutualism is the species degree---the number of mutualistic partners. 
-It is based on the intuitive rationale that a species that interacts with few species benefits strongly from each of them, whereas a species that interacts with a large number of species does so comparatively weakly. 
-Recent empirical evidence suggest that other factors might also play an important role shaping the competition for pollination. 
-For instance, species with original traits (far from the community centroid) have been shown to generally have fewer interaction partners. 
+Although the relationship between degree and the costs of the pollination service is intuitive, elucidating the magnitude of the trade-off at the community scale has been elusive because multiple other factors like traits, abundance, and the share of the pollen pool lmight be involved.
+For instance, recent empirical evidence suggest that species with original traits (far from the community centroid) generally have fewer interaction partners. 
+This evidence is aligned with the intuitive rationale that a species that interacts with few species benefits strongly from each of them, whereas a species that interacts with a large number of species does so comparatively weakly. 
 If evolutionary specialisation occur by changing traits to focus on fewer but better partners, we should expect a reduction of competition for pollination in species with original traits. 
-Similarly, it might also be the case that density is the dominant force driving pollen transfer. 
+Alternatively, it might also be the case that density is the dominant force driving pollen transfer. 
 Abundant species might experience a dilution of the available pollinators but might also comprise a greater component of the pollen source pool being transported by pollinators.  
-In this case a potential reduction in the quantity of pollination could be compensated by an increase in the quality of pollination. 
+In this case, a potential reduction in the quantity of pollination could be compensated by an increase in the quality of pollination. 
 
-Elucidating how the mechanisms and drivers of facilitation scales to the community level and its theoretical concequences has been elusive in part because of the large amounts of data required.
-Previous studies focus on the final picture of interspecific pollen transfer that is obtained by examining the pollen deposited on flower stigmas. 
-However, as we have described, teasing appart competition for pollinators also requires data that describes the structure of the interactions and the pollen flows that ocurr within it, while accounting for the traits of the species that integrate the community. 
-Here, we examine a comprehensive data set that includes information about pollen deposition, transfer, visitation, species abundance, and species traits across diverse communities in the Argentinean Pampas. 
-
-## Methods
-First, we estimate the gain on pollen that can be attributed to the mutualistic interactions. 
-Second, we investigate wether there is a relationship between this gain and a a suite of variables that together describe the role of the plant species and the ecological context. 
+Here, we explore the signature of the mutualistic trade-off in diverse natural communities. 
+To tease appart the multiple factors that operate at the community scale we use data that describes both the structure of the interactions and the pollen flows that ocurr within it, all while accounting for the traits of the species that integrate the community.
+Specifically, we first estimate the gain on pollen that can be attributed to the mutualistic interactions. 
+Second, we investigate wether there is a relationship between this gain and the species degree, trait originality, abundance, and contribution to the pollen pool, which together describe the role of the plant species and the ecological context.  
 Third, and finaly, we explore how these variables shape the quantity and quality of pollination and ultimately the competition for pollinators.
 **TODO: Mini conclusion here**
 
 ### Data collection
+# Methods
 
 We performed sampling in three locations, each located in a distinct phytogeograohic region of the Argentinean Pampas. 
 The sampling locations are distributed across a gradient of precipitation with a humid temperate climate in the eastward Flooding Pampas and an drier as we move inland and westward towards the Pampean Grasslands.
