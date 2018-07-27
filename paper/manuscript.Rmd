@@ -43,24 +43,20 @@ Based mainly on two-species systems, it is currently clear that they have the po
 However, these competitive interactions between species pairs do not occur in isolation. 
 Plants often ocurr in communities in which multiple competitive interactions operate simultaneusly and lead to emergent phenomena not observed at smaller scales. 
 
-The most obvious ecological factor influencing the cost of sharing pollinators is the species degree---the number of interaction partners. 
-The extent to which species degree affects the benefit is called mutualistic trade-off. 
-This trade-off is fundamental to the way we model and mathematically represent mutualistic systems because it considerably simplifies the mathematical treatment of competition for pollinators. 
-Furthermore the mutualistic trade-off has been shown to play a determining role on the stability and diversity of mutualistic communities. 
-Yet, empirical evidence of the trade-off at the community scale is scarce, to say the least. 
-
-Although the relationship between degree and the costs of the pollination service is intuitive, elucidating the magnitude of the trade-off at the community scale has been elusive because multiple other factors like traits, abundance, and the share of the pollen pool lmight be involved.
+Perhaps the most obvious ecological factor influencing the cost of sharing pollinators is the species degree---the number of interaction partners. 
+Yet, evidence at the community scale of **the mutualistic trade-off**---the extent to which species degree affects the benefit---is scarce, to say the least. 
+Furthermore, although the relationship between degree and the costs of the pollination service is relatively intuitive, elucidating the magnitude of the trade-off at the community scale has been elusive because multiple other factors like traits, abundance, and the share of the pollen pool lmight be involved.
 For instance, recent empirical evidence suggest that species with original traits (far from the community centroid) generally have fewer interaction partners. 
 This evidence is aligned with the intuitive rationale that a species that interacts with few species benefits strongly from each of them, whereas a species that interacts with a large number of species does so comparatively weakly. 
 If evolutionary specialisation occur by changing traits to focus on fewer but better partners, we should expect a reduction of competition for pollination in species with original traits. 
 Alternatively, it might also be the case that density is the dominant force driving pollen transfer. 
-Abundant species might experience a dilution of the available pollinators but might also comprise a greater component of the pollen source pool being transported by pollinators.  
+Abundant species might experience a dilution of the available pollinators but might also comprise a greater component of the pollen source pool being transported by pollinators. 
 In this case, a potential reduction in the quantity of pollination could be compensated by an increase in the quality of pollination. 
 
 Here, we explore the signature of the mutualistic trade-off in diverse natural communities. 
 To tease appart the multiple factors that operate at the community scale we use data that describes both the structure of the interactions and the pollen flows that ocurr within it, all while accounting for the traits of the species that integrate the community.
 Specifically, we first estimate the gain on pollen that can be attributed to the mutualistic interactions. 
-Second, we investigate wether there is a relationship between this gain and the species degree, trait originality, abundance, and contribution to the pollen pool, which together describe the role of the plant species and the ecological context.  
+Second, we investigate wether there is a relationship between this gain and the species degree, trait originality, abundance, and contribution to the pollen pool, which together describe the role of the plant species and the ecological context. 
 Third, and finaly, we explore how these variables shape the quantity and quality of pollination and ultimately the competition for pollinators.
 **TODO: Mini conclusion here**
 
