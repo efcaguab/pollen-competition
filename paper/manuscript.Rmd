@@ -213,7 +213,7 @@ cowplot::plot_grid(
   label_size = 8, rel_widths = c(0.35, 0.65))
 ```
 
-## Discussion 
+# Discussion 
 
 * We found that animal pollination only brings a small amount of extra conspecific pollen (compared to selfing) if any. This relatively small difference is probably very important though because crossing has been shown to be evolutionary better than cloning in the long term. 
 * The relationship between conspecific and heterospecific pollen is positive which indicates than net facilitation is the dominant outcome. This agrees with previous findings. However the amount of added conspecific pollen is in average smaller than the amount of added heterospecific pollen.
@@ -223,4 +223,4 @@ cowplot::plot_grid(
 * These factors, in particular the plant relative abundance, was important at explaining the differences between plants. 
 * We found that models performed better when explanatory variables were constructed so that they take into account information across all the communities in which a species was present. This means that despite the particularities of each community (random effects acounted for a large proportion of the variance) we can still predict general outcomes by knowing some general traits about the plant species and how it relates to other plants in their community.
 
-## References
+# References
