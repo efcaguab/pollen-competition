@@ -142,7 +142,7 @@ We selected the best random structure by comparing the median Akaike Information
 After determining the best random structure, we then focused on the model's fixed structure where we fitted the fixed effect coefficients using maximum likelyhood. 
 Because our purpose was to perform inter-model comparisons across multiple data resamples, we did not perform model selection. 
 Instead, in all model sets, we obtained the estimates for all the fixed effects we considered and then evaluated their relevance by examining their distribution. 
-Nevertheless, because some of our independent variables might be colinear, we also looked at how the effect of each predictor changed when each of them were removed once at a time.
+Nevertheless, because we expect some of our independent variables to be related to each other, we also looked at how the effect of each predictor changed when each of them were removed once at a time.
 
 At the community scale, sharing mutualistic partners might induce competition for pollination mainly trough two mechanisms. 
 The first is competition for visits, where plants with more atractive flowers reduce the number of visits for those less atractive. 
@@ -152,17 +152,10 @@ Interspecific pollen transfer affects the *quality* of the pollination service b
 Generally speaking the larger the proportion of conspecific relative to heterospecific pollen the higher the quality of the pollination service. 
 
 The results from both model set—and the relationship between them—provide indication of both the quantity and quality of animal pollination, and the potential trade-off between these two. 
-
-Finally, we focused on how the relationship between conspecific and heterospecific pollen gain. 
-First we examined wether the pollination trade-off was related to our explanatory variables. 
-To do so, we harnessed the results from the conspecific and heterospecific pollen models that performed best (across or within communities). 
-To examine the relationship between these model sets, we sampled 100 estimates from the distribution of coefficients in each set. 
+To examine the relationship between our explanatory variables and the quantity of pollination we simply examine the results of the models of conspecific pollen gain. 
+To examine the relationship with the quality of pollination, we sampled 100 estimates from the distribution of coefficients in each of the two model sets. 
 For each of the samples, we then calculated the difference between the gain in conspecific and heterospecific pollen that would be predicted assuming mean values for the random intercepts and the other predictors. 
-
-Second, we calulated the the extent of facilitation. 
-For this purpose, as in @Tur2016a, we used the relationship between heterospecific and conspecific pollen. 
-We calculated an overal relationship by sampling the predictions from 100 conspecific/heterospecific model pairs and estimated the relationship by fitting an standardised major axis (SMA) to each pair [we used the R package `smatr 3.4-3`, @Warton2012a]. 
-We followed a similar procedure to calculate a relationship per species but instead of fitting a SMA per model pair, we did so across the 100 models for each species independently.
+This allowed us to estimate the proportion between heterospecific and conspecific pollen gain which we use as a proxy of the quality of pollination. 
 
 # Results
 
