@@ -30,9 +30,13 @@ knitr::opts_chunk$set(echo = FALSE, message = FALSE,
                       warning = FALSE)
 ```
 
-## Abstract
+\clearpage
+
+# Abstract
 
 TBC
+
+\clearpage
 
 # Introduction
 
@@ -62,18 +66,20 @@ In this case, a potential reduction in the quantity of pollination could be comp
 Here, we explore the signature of the mutualistic trade-off in diverse natural communities. 
 To tease appart the multiple factors that operate at the community scale we use data that describes both the structure of the interactions and the pollen flows that ocurr within it, all while accounting for the traits of the species that integrate the community.
 Specifically, we first estimate the gain on pollen that can be attributed to the mutualistic interactions. 
-Second, we investigate wether there is a relationship between this gain (of both conspecific and heterospecific pollen and by extension the quantity and quality of pollination) and the species degree, trait originality, abundance, and contribution to the pollen pool, which together describe the role of the plant species and the ecological context. 
+Second, we investigate wether there is a relationship between this gain (of both conspecific and heterospecific pollen and by extension the quantity and quality of pollination) and the species degree, functional originality, abundance, and contribution to the pollen pool, which together describe the role of the plant species and the ecological context. 
 Third, and finaly, we explore how these variables shape the quantity and quality of pollination and ultimately the competition for pollinators. 
 We hypothezise that XX??
 **TODO: Mini conclusion here**
 
-### Data collection
 # Methods
 
 Elucidating how the mechanisms and drivers of facilitation scales to the community level and its theoretical concequences has been elusive in part because of the large amounts of data required.
 Previous studies focus on the final picture of interspecific pollen transfer that is obtained by examining the pollen deposited on flower stigmas. 
 However, as we have described, teasing appart competition for pollinators also requires data that describes the structure of the interactions and the pollen flows that ocurr within it, while accounting for the traits of the species that integrate the community. 
 Here, we examine a comprehensive data set that includes information about pollen deposition, transfer, visitation, species abundance, and species traits across diverse communities in the Argentinean Pampas. 
+
+## Data collection
+
 We performed sampling in three locations, each located in a distinct phytogeograohic region of the Argentinean Pampas. 
 The sampling locations are distributed across a gradient of precipitation with a humid temperate climate in the eastward Flooding Pampas and an drier as we move inland and westward towards the Pampean Grasslands.
 Across all sites, annual mean temperatures range between 14.8 and 15.8 Celsius. 
@@ -98,7 +104,7 @@ Two days after inflorecense, we analysed the pollen grains in the flowers' pisti
 
 More details about the study sites, data collection, and laboratory protocols can be found in Marrero *et al.* (2014, 2016, and 2017).
 
-### Data analysis
+## Data analysis
 
 First, we explored wether animal pollination resulted in a quantitative increase in the pollination service.
 To do that, we compared the amount of conspecific pollen on stigmas from flowers open to animal pollination and that from flowers that were bagged, where only autogamus self-pollination ocurred.
@@ -106,28 +112,28 @@ The difference between these two counts is not directly equivalent to the pollen
 Nevertheless, this difference still provides valuable indication of what the animal contribution to reproductive output.
 We performed this comparisons using a set of non parametric Mann-Whitney tests both at the community and the the species level (grouping species across communities). 
 
-Our main aim was to examine the extent to which the pollination service was influenced by the number of pollination partners while accounting for other metrics that describe the plant's pollination niche and community composition. 
-To do so, we fitted four sets of linear mixed models [using the R package `nlme 3.1-131`, @nlme2017] which differed on whether the pollen deposited was conspecific or heterospecific and on wether independent variables were calculated across communities or independently within each community. 
-In all set of models, our response variable was the difference between pollen density (pollen counts per stigma) between open and bagged flowers. 
-All together the results from each model set—and the relationship between them—provide with two important pieces of information. 
-First,  they provide indication of both the quantity and quality of animal pollination, and the potential trade-off between these two. 
-Second, it allowed us to examine wether indeed community level information is necessary to explain the observed patterms or whether less granular data is sufficient. 
+Second, we examine wether there is a relationship between this gain and several ecological variables that can affect the mutualistic trade-off. To do so, we fitted two sets of linear mixed models [using the R package `nlme 3.1-131`, @nlme2017] which differed on whether the pollen deposited was conspecific or heterospecific. 
+In both set of models, our response variable was the difference between pollen density (pollen counts per stigma) between open and bagged flowers. 
+Both model sets were based on the same one hundred bootstrap resamples of the deposition data. 
 
-All model sets were based on the same one hundred bootstrap resamples of the deposition data. 
 We used bootstrap resampling because, as open and bagged flowers were not paired, this allowed us to directly model the *gain* in pollen density rather than density itself. 
 This strategy, not only simplified the model specification and intepretation, but also allowed us to easily evaluate the uncertainity of the model results.  
 In each replicate we randomly sampled with replacement a number of open flowers within each community-species combination and an equal number of closed flowers. 
-We then log-transformed the pollen densities to improve normality and minimise the impact of outliers (Figure \@ref(S-fig:fig-deposition-logtransformed-or-not) and \@ref(S-fig:fig-deposition-gain-logtransformed-or-not)). 
+We then log-transformed the pollen densities to improve normality and minimise the impact of outliers (Figure \@ref(S-fig:fig-deposition-logtransformed-or-not) and \@ref(S-fig:fig-deposition-gain-logtransformed-or-not)), this generally offered better results that a generalised linear model with poisson (or quasiposson) error structure. 
 Finally, we calculated the difference between the pollen density among treatmemts. 
 This difference was the response variable in all our models. 
 
-As predictors, we included the species/degree (number of animal partners) as well as other factors that could influence the trade-off. 
-Specifically, we included the plants' relative abundance and the temporal niche overlap. 
-To calculate the plant's relative abbundance we simply aggregated the flower counts over the study period—either across communities of for each community depending on the model set. 
-As with the deposition data, we found that log-transforming the abundance counts drastically improved normality (Figure \@ref(S-fig:fig-abundance-logtransformed-or-not)).
-We then the log-transformed abundance counts for each month between November 2010 and March 2011 to calculate the temporal niche overlap between plants. 
-Specifically, we used the Pianka's niche overlap index [@Pianka1973; `spaa 0.2.2` R package @Zhang2016] which calculates an overlap index for each pair of species—again, across and within  communities depending on the model set. 
-To calculate an overlap metric per species, we simply averaged the pairwise indices for a species. 
+As predictors, we included species degree, the species' functional originality, the plant relative abbundance, and the plant species' share on the pollen pool. 
+Species degree was calculated from combining the quantitative and qualitative visitation networks and corresponds to the number of animal species that were observed to visit the plant species in the community where it was sampled. 
+Functional originality is defined as the distance of a species from the community trait average--the centroid of functional space of the community [LEGENDGRE; @coux_linking_2016-1]. 
+Specifically, we recorded morphological traits that relate to plant type (herb, shrub, climber), life cycle (annual, perenial), flower coloration, and whether the species is native in the study region or not. 
+As phenology has been shown to be a key mechanisms of niche diferentiation among plants, we also included the plant abundance in each of the survey months (November to March) as an additional trait in our analysis. 
+This approach allowed us to integrate the originality in phenological niche alongside the originality on other functional traits. 
+All traits were scaled to have a mean of zero and a standard deviation of one prior to calculating the centroid of the functional space. 
+The species-specific functional coordinates were calculated using the R package `FD 1.0-12` [@laliberte_distance-based_2010]. 
+To calculate the plant's relative abbundance we simply aggregated the flower counts for each plant species in the community.
+As with the deposition data, we found that log-transforming the abundance counts drastically improved normality (Figure \@ref(S-fig:fig-abundance-logtransformed-or-not)). 
+Finally the species' share of the pollen pool was calculated as the proportion of pollen of that species in the pollen counts being carried by pollinators from the community. 
 To faciliate comparison across model estimates, we scaled all independent variables to have a mean of zero and a standard deviation of one. 
 
 In all set of models we first evaluated a set of candidate random effects which included random intercepts for plant species as well as random slopes for the relationship between degree and pollen gain. 
@@ -136,11 +142,16 @@ We selected the best random structure by comparing the median Akaike Information
 After determining the best random structure, we then focused on the model's fixed structure where we fitted the fixed effect coefficients using maximum likelyhood. 
 Because our purpose was to perform inter-model comparisons across multiple data resamples, we did not perform model selection. 
 Instead, in all model sets, we obtained the estimates for all the fixed effects we considered and then evaluated their relevance by examining their distribution. 
+Nevertheless, because some of our independent variables might be colinear, we also looked at how the effect of each predictor changed when each of them were removed once at a time.
 
-We compared the performance of the within and across communities model sets using the root-mean-square error normalised by the interquartile range (NRMSE). 
-We tested the significance of this difference using a two sample paired Wilcoxon signed rank test for conspecific and heterospecific pollen models. 
-We chosed NRMSE because it provides an easily interpretable metric related to the quality of the predictions while being farily insensitive to sample size. 
-This inensitivity was desirable because the across communities models had often slightly larger sample sizes owing to the fact of some species not having all data necessary to calculate the independent variables at the community level.
+At the community scale, sharing mutualistic partners might induce competition for pollination mainly trough two mechanisms. 
+The first is competition for visits, where plants with more atractive flowers reduce the number of visits for those less atractive. 
+Competition for visits affects the *quantity* of the pollination service as it induces a reduction in the amount of conspecific pollen received by flowers. 
+The second, more subtle, mechanism is interspecific pollen transfer, where even receiving a visit might not translate into net facilitation. 
+Interspecific pollen transfer affects the *quality* of the pollination service because a focal plant might receive pollen from a different species, or conversely pollen from the focal plant might be lost to different species. 
+Generally speaking the larger the proportion of conspecific relative to heterospecific pollen the higher the quality of the pollination service. 
+
+The results from both model set—and the relationship between them—provide indication of both the quantity and quality of animal pollination, and the potential trade-off between these two. 
 
 Finally, we focused on how the relationship between conspecific and heterospecific pollen gain. 
 First we examined wether the pollination trade-off was related to our explanatory variables. 
@@ -153,7 +164,7 @@ For this purpose, as in @Tur2016a, we used the relationship between heterospecif
 We calculated an overal relationship by sampling the predictions from 100 conspecific/heterospecific model pairs and estimated the relationship by fitting an standardised major axis (SMA) to each pair [we used the R package `smatr 3.4-3`, @Warton2012a]. 
 We followed a similar procedure to calculate a relationship per species but instead of fitting a SMA per model pair, we did so across the 100 models for each species independently.
 
-## Results
+# Results
 
 ```{r differences-in-self-pollination}
 drake::loadd(significant_gain_global, significant_gain_site)
