@@ -80,22 +80,27 @@ select_plant_name <- function(x, col_name){
 make_trait_matrices <- function(plant_traits, abu_frame, remove_na_traits = TRUE, remove_na_abu = TRUE) {
   
   # first arrange things so that there is a list for community and a list for global
-  scaled_abu <- abu_frame %>%
-    dplyr::mutate(flowers = log(flowers), 
-                  flowers = scale(flowers), 
-                  flowers = as.numeric(flowers)) 
+  log_abu <- abu_frame %>%
+    dplyr::mutate(flowers = log(flowers)) 
   
   per_community <- plant_traits %>% 
-    dplyr::full_join(flower_matrix(scaled_abu), by = "plant_name")  %>%
+    dplyr::full_join(flower_matrix(log_abu), by = "plant_name")  %>% 
+    dplyr::group_by(site_name) %>%
+    dplyr::mutate_at(dplyr::vars(dplyr::contains("2011"), dplyr::contains("2010")), scale) %>% 
+    dplyr::mutate_at(dplyr::vars(dplyr::contains("2011"), dplyr::contains("2010")), as.numeric) %>% 
+    dplyr::filter(site_name != "MA_AN_R_1") %>%
     split(.$site_name) 
   
-  global <- scaled_abu %>%
+  global <- log_abu %>%
     flower_matrix() %>%
     dplyr::group_by(plant_name) %>%
     dplyr::summarise_if(is.numeric, sum, na.rm = TRUE) %>%
     dplyr::mutate(site_name = "global") %>%
-    dplyr::full_join(plant_traits, ., by = "plant_name") %>%
+    dplyr::full_join(plant_traits, ., by = "plant_name") %>% 
+    dplyr::mutate_at(dplyr::vars(dplyr::contains("2011"), dplyr::contains("2010")), scale) %>%
+    dplyr::mutate_at(dplyr::vars(dplyr::contains("2011"), dplyr::contains("2010")), as.numeric) %>% 
     list(.)
+  # NEED TO SCALE THIS
   
   community_and_global_traits <- list(community = per_community, 
        global = global)
@@ -136,7 +141,9 @@ format_trait_matrices <- function(x, remove_na_traits, remove_na_abu) {
   trait_matrices %>%
     purrr::map(dplyr::select, -plant_name, -site_name) %>%
     purrr::map(dplyr::mutate_if, is.character, as.factor) %>%
-    purrr::map(dplyr::mutate_if, is.factor, function(x) as.numeric(x) - 1) %>%
+    purrr::map(dplyr::mutate_if, is.factor, function(x) as.numeric(x) - 1) %>% 
+    # purrr::map(~ dplyr::select_at(., dplyr::vars(dplyr::contains("2011"), dplyr::contains("2010")))) %>%
+    # purrr::map(~ dplyr::select(., growth_form, native, longevity, flower_color)) %>%
     purrr::map2(sp_names, `rownames<-`)
 }
 
