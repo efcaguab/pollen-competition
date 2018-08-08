@@ -98,10 +98,9 @@ make_trait_matrices <- function(plant_traits, abu_frame, remove_na_traits = TRUE
     dplyr::mutate(site_name = "global") %>%
     dplyr::full_join(plant_traits, ., by = "plant_name") %>% 
     dplyr::mutate_at(dplyr::vars(dplyr::contains("2011"), dplyr::contains("2010")), scale) %>%
-    dplyr::mutate_at(dplyr::vars(dplyr::contains("2011"), dplyr::contains("2010")), as.numeric) %>% 
+    dplyr::mutate_at(dplyr::vars(dplyr::contains("2011"), dplyr::contains("2010")), as.numeric) %>%
     list(.)
-  # NEED TO SCALE THIS
-  
+
   community_and_global_traits <- list(community = per_community, 
        global = global)
   
