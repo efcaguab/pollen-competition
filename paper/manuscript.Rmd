@@ -223,4 +223,53 @@ cowplot::plot_grid(
 * These factors, in particular the plant relative abundance, was important at explaining the differences between plants. 
 * We found that models performed better when explanatory variables were constructed so that they take into account information across all the communities in which a species was present. This means that despite the particularities of each community (random effects acounted for a large proportion of the variance) we can still predict general outcomes by knowing some general traits about the plant species and how it relates to other plants in their community.
 
+Understanding what makes species and communities different is important not only because of its ecological and evolutionary implications. 
+It is also important because it is fundamentaly related to the way we understand and mathematically represent mutualistic systems. 
+Some of the most widely used theoretical models of pollination account for the negative effects of mutualisim by adjusting the mutualistic benefit of an interaction so that it can be negatively affected by the number of mutualistic partners---the species degree. 
+The extent to which species degree affects the benefit is called *mutualistic trade-off*. 
+This approach, considerably simplifies the mathematical treatment of competition for pollinators. 
+At the same time it is based on the intuitive rationale that a species that interacts with few species benefits strongly from each of them, whereas a species that interacts with a large number of species does so comparatively weakly. 
+Although, the mutualistic trade-off has been shown to play a determining role on the stability and diversity of mutualistic communities, empirical evidence is scarce, to say the least.
+
+
+
+It is based on the intuitive rationale that a species that interacts with few species benefits strongly from each of them, whereas a species that interacts with a large number of species does so comparatively weakly. 
+
+
+At the community scale, understanding the costs of sharing mutualistic partners at the community scale is important not only because of its ecological and evolutionary implications. It is also important because it is fundamentaly related to the way we understand and mathematically represent mutualistic systems. Some of the most widely used theoretical models of pollination account for the negative effects of mutualisim by adjusting the mutualistic benefit of an interaction so that it can be negatively affected by the number of mutualistic partners—the species degree. 
+The extent to which species degree affects the benefit is called mutualistic trade-off. This approach,
+37 considerably simplifies the mathematical treatment of competition for pollinators. At the same time it is
+38 based on the intuitive rationale that a species that interacts with few species benefits strongly from each
+39 of them, whereas a species that interacts with a large number of species does so comparatively weakly.
+40 Although, the mutualistic trade-off has been shown to play a determining role on the stability and diversity
+41 of mutualistic communities, empirical evidence is scarce, to say the least.
+
+
+
+At the community scale other factors we would expect 
+
+
+Here, we explore the signatures competition for pollinators in diverse natural communities, where empirical data is more scarce. 
+
+Here we examine the signature, at the community scale, that sharing mutualistic partners has in the quality and quantity of pollination. 
+Although seeimgly a simple question, teasing appart the signature of this "trade-off" has been elusive in part because of the large amounts of data required. 
+Most studies that have examined competition for pollinators are based the pollen deposited on flower stigmas. 
+However 
+
+All together, existing studies at the community scale show that, as expected, the effective result of sharing mutualistic partners, in most cases, one of facilitation. 
+We hipothezise that 
+Recent empirical evidence suggest that the intuitive rationale that a species that interacts with few species benefits strongly from each of them, whereas a species that interacts with a large number of species does so comparatively weakly. 
+However, they also show a large variability in this result—both across species and across communities. 
+One of the most intuitive drivers of the variability in competition, and therefore widely used in theoretical models of mutualism to account for the neggative effects of mutualism, is the species degree---the number of mutualistic partners. 
+It is based on the intuitive rationale 
+ that other factors might also play an important role shaping the competition for pollination. 
+
+
+
+First, we estimate the gain on pollen that can be attributed to the mutualistic interactions. 
+Second, we investigate wether there is a relationship between this gain and a a suite of variables that together describe the role of the plant species and the ecological context. 
+Third, and finaly, we explore how these variables shape the quantity and quality of pollination and ultimately the competition for pollinators.
+**TODO: Mini conclusion here**
+
+
 # References
