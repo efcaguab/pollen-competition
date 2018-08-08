@@ -89,10 +89,10 @@ However, due to the lack of available sites in the Flooding Pampas, it was only 
 We visited each fragment in November 2010 and February 2011. 
 In each of these visits we gathered information related to abundance, plant-pollinator visitation, pollen transfer, and pollen deposition.
 
-Abbundance was estimated using two 50 m randomly located transects in each fragment. In a first sampling we counted all units of floral attraction taht were found in a 2 m wide strip. In a second sampling we counted and collected all floral visitors while walking at a pace of 10 m per minute [@Marrero2014; @Memmott1999]. 
-We constructed quantitative visitation networks using information about the floral visitors collected during abundance transects [@Marrero2014]. 
+Abbundance was estimated using two 50 m randomly located transects in each fragment. In a first sampling we counted all units of floral attraction taht were found in a 2 m wide strip. In a second sampling we counted and collected all floral visitors while walking at a pace of 10 m per minute [@marrero_effect_2014; @memmott_structure_1999]. 
+We constructed quantitative visitation networks using information about the floral visitors collected during abundance transects [@marrero_effect_2014]. 
 In addition, we also constructed qualitative visitation networks during independent two hour observations of floral visits across each fragment.
-We estimated pollen transfer by examining the pollen loads present on the collected floral visitors [@Marrero2017]. 
+We estimated pollen transfer by examining the pollen loads present on the collected floral visitors [@marrero_exotic_2017]. 
 Where the pollen count on an individual was estimated to be less than 2,000 grains, we identified every grain to the species level whenever possible and to pollen complexes when it was not. 
 When the pollen count was above 2,000 grains, we clasified approx. 50% of pollen and total pollen counts were extrapollated [@Bosch2009]. 
 If more than 10 pollen grains from a plant species were identified, we assumed that pollination service between the plant and the pollinator existed. 
