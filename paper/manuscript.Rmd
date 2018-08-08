@@ -94,9 +94,9 @@ We constructed quantitative visitation networks using information about the flor
 In addition, we also constructed qualitative visitation networks during independent two hour observations of floral visits across each fragment.
 We estimated pollen transfer by examining the pollen loads present on the collected floral visitors [@marrero_exotic_2017]. 
 Where the pollen count on an individual was estimated to be less than 2,000 grains, we identified every grain to the species level whenever possible and to pollen complexes when it was not. 
-When the pollen count was above 2,000 grains, we clasified approx. 50% of pollen and total pollen counts were extrapollated [@Bosch2009]. 
+When the pollen count was above 2,000 grains, we clasified approx. 50% of pollen and total pollen counts were extrapollated [@bosch_plant-pollinator_2009]. 
 If more than 10 pollen grains from a plant species were identified, we assumed that pollination service between the plant and the pollinator existed. 
-Finally, we analised pollen deposition in a subset of the plant community [@Marrero2016]. 
+Finally, we analised pollen deposition in a subset of the plant community [@marrero_agricultural_2016]. 
 This subset comprised between three and nine of the most common entomophilus species that were flowering during the samplimg period while ensuring that the chosen species covered a wide range on a specialization-generalization gradient. 
 In the selected plants we removed all flowers except buds that were expected to go into inflorecense on the next day. 
 A quarter of these buds were bagged to prevent animal pollination. 
@@ -108,11 +108,11 @@ More details about the study sites, data collection, and laboratory protocols ca
 
 First, we explored wether animal pollination resulted in a quantitative increase in the pollination service.
 To do that, we compared the amount of conspecific pollen on stigmas from flowers open to animal pollination and that from flowers that were bagged, where only autogamus self-pollination ocurred.
-The difference between these two counts is not directly equivalent to the pollen deposited by animals because self-pollination is an adaptive trait [@Kalisz2003]. 
+The difference between these two counts is not directly equivalent to the pollen deposited by animals because self-pollination is an adaptive trait [@kalisz_benefits_2003]. 
 Nevertheless, this difference still provides valuable indication of what the animal contribution to reproductive output.
 We performed this comparisons using a set of non parametric Mann-Whitney tests both at the community and the the species level (grouping species across communities). 
 
-Second, we examine wether there is a relationship between this gain and several ecological variables that can affect the mutualistic trade-off. To do so, we fitted two sets of linear mixed models [using the R package `nlme 3.1-131`, @nlme2017] which differed on whether the pollen deposited was conspecific or heterospecific. 
+Second, we examine wether there is a relationship between this gain and several ecological variables that can affect the mutualistic trade-off. To do so, we fitted two sets of linear mixed models [using the R package `nlme 3.1-131`, @pinheiro_nlme_2018] which differed on whether the pollen deposited was conspecific or heterospecific. 
 In both set of models, our response variable was the difference between pollen density (pollen counts per stigma) between open and bagged flowers. 
 Both model sets were based on the same one hundred bootstrap resamples of the deposition data. 
 
