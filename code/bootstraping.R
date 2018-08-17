@@ -8,7 +8,7 @@
 #'
 #' @return a data frame with pollen_gain column
 #'
-data_replicate <- function(de, imputed_abundance, imputed_overlap, imputed_degree, imputed_originality, sites, transformation = I, dummy_id){
+data_replicate <- function(de, imputed_abundance, imputed_pollen, imputed_degree, imputed_originality, sites, transformation = I, dummy_id){
   
   # de <- drake::readd(dep_frame)
   # ab <- drake::readd(plant_rel_abu)
@@ -22,7 +22,7 @@ data_replicate <- function(de, imputed_abundance, imputed_overlap, imputed_degre
     purrr::map_df(~ get_deposition_sampled_data(de, ., transformation)) %>% 
     repeat_df("scale", c("community", "imputed")) %>% 
     dplyr::left_join(imputed_abundance, by = c("site_name", "plant_name", "scale")) %>% 
-    dplyr::left_join(imputed_overlap, by = c("site_name", "plant_name", "scale")) %>% 
+    dplyr::left_join(imputed_pollen, by = c("site_name", "plant_name", "scale")) %>% 
     dplyr::left_join(imputed_degree, by = c("site_name", "plant_name", "scale")) %>% 
     dplyr::left_join(imputed_originality, by = c("site_name", "plant_name", "scale")) %>%
     dplyr::inner_join(sites, by = "site_name") %>% 
@@ -88,7 +88,7 @@ run_random_models <- function(d, random_effects, method = "REML"){
     split(.$random_effect) %>%
     purrr::map_df(~ dplyr::mutate(d, random_formula = .$random_formula, random_effect = .$random_effect)) %>% 
     split(list(.$pollen_category, .$scale, .$var_trans, .$random_effect)) %>%
-    purrr::map(~ try(nlme::lme(pollen_gain ~ abn + pov + deg + org, random = as.formula(.$random_formula[1]), na.action = na.omit, method = method, data = .)))
+    purrr::map(~ try(nlme::lme(pollen_gain ~ abn + poc + deg + org, random = as.formula(.$random_formula[1]), na.action = na.omit, method = method, data = .)))
 }
 
 run_model <- function(d, best_random, method = "ML"){

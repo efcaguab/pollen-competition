@@ -26,12 +26,12 @@ impute_originality <- function(org_frame){
   models_as_df(models, datasets, "org")
 }
 
-impute_overlap <- function(pollen_overlap) {
- datasets <- pollen_overlap %>%
-   split_dataset("pollen_overlap", "pov")
+impute_pollen <- function(pollen_contribution) {
+ datasets <- pollen_contribution %>%
+   split_dataset("grain", "poc")
  models <- datasets %>%
-   purrr::map(~lme4::lmer(community ~ global +  (global | plant_name) + (global | site_name), data = .))
- models_as_df(models, datasets, "pov")
+   purrr::map(~lme4::lmer(community ~ global +  (1 | plant_name) + (1 | site_name), data = .))
+ models_as_df(models, datasets, "poc")
 }
 
 # Auxiliary functions to impute variables -------------------------
@@ -39,10 +39,10 @@ impute_overlap <- function(pollen_overlap) {
 models_as_df <- function(x, datasets, val){
   x %>%
     purrr::map2_dfr(datasets, ~modelr::add_predictions(.y, .x)) %>% 
-    dplyr::mutate(imputed = dplyr::if_else(is.na(community), pred, community)) %>%
+    dplyr::mutate(imputed = dplyr::if_else(is.na(community), pred, community)) %>% 
     dplyr::filter(var_trans == "log") %>%
     dplyr::select(-var_trans, -global, -pred) %>% 
-    tidyr::gather(key = scale, value = !!val, c(community, imputed))
+    tidyr::gather(key = scale, value = !!val, c(community, imputed)) 
 }
 
 split_dataset <- function(x, remove = NULL, spread_var = NULL){

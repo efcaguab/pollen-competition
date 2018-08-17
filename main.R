@@ -31,7 +31,7 @@ format_data_plan <- drake::drake_plan(
   vis_frame = extract_vis_frame(armonised_data),
   degree = get_degree(vis_frame, dep_frame), 
   tra_frame = extract_tra_frame(armonised_data), 
-  pollen_overlap = get_pollen_overlap(tra_frame)
+  pollen_contribution = get_pollen_contribution(tra_frame)
 )
 
 traits_plan <- drake::drake_plan(
@@ -46,7 +46,7 @@ imputation_plan <- drake::drake_plan(
   imputed_degree = impute_degree(degree), 
   imputed_abundance = impute_abundace(plant_rel_abu), 
   imputed_originality = impute_originality(org_frame), 
-  imputed_overlap = impute_overlap(pollen_overlap)
+  imputed_pollen = impute_pollen(pollen_contribution)
 )
 
 # Basic analyses ----------------------------------------------------------
@@ -77,7 +77,7 @@ boot_replicates <- drake::drake_plan(
   rep = data_replicate(
     dep_frame, 
     imputed_abundance,
-    imputed_overlap,
+    imputed_pollen,
     imputed_degree, 
     imputed_originality,
     sites, 
