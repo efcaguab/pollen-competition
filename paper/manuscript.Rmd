@@ -125,12 +125,12 @@ This difference was the response variable in all our models.
 
 As predictors, we included species degree, the species' functional originality, the plant relative abbundance, and the plant species' share on the pollen pool. 
 Species degree was calculated from combining the quantitative and qualitative visitation networks and corresponds to the number of animal species that were observed to visit the plant species in the community where it was sampled. 
-Functional originality is defined as the distance of a species from the community trait average--the centroid of functional space of the community [LEGENDGRE; @coux_linking_2016-1]. 
+Functional originality is defined as the distance of a species from the community trait average--the centroid of functional space of the community [@laliberte_distance-based_2010; @coux_linking_2016-1]. 
 Specifically, we recorded morphological traits that relate to plant type (herb, shrub, climber), life cycle (annual, perenial), flower coloration, and whether the species is native in the study region or not. 
 As phenology has been shown to be a key mechanisms of niche diferentiation among plants, we also included the plant abundance in each of the survey months (November to March) as an additional trait in our analysis. 
 This approach allowed us to integrate the originality in phenological niche alongside the originality on other functional traits. 
 All traits were scaled to have a mean of zero and a standard deviation of one prior to calculating the centroid of the functional space. 
-The species-specific functional coordinates were calculated using the R package `FD 1.0-12` [@laliberte_distance-based_2010]. 
+The species-specific functional coordinates were calculated using the R package `FD 1.0-12` [@laliberte_distance-based_2010; @laliberte_fd_2014]. 
 To calculate the plant's relative abbundance we simply aggregated the flower counts for each plant species in the community.
 As with the deposition data, we found that log-transforming the abundance counts drastically improved normality (Figure \@ref(S-fig:fig-abundance-logtransformed-or-not)). 
 Finally the species' share of the pollen pool was calculated as the proportion of pollen of that species in the pollen counts being carried by pollinators from the community. 
