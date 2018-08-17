@@ -55,17 +55,18 @@ cowplot::plot_grid(
   cowplot::plot_grid(leg, ., rel_heights = c(0.1, 0.9), ncol = 1)
 ```
 
-```{r fig-abundance-logtransformed-or-not, fig.height = 2, fig.cap = "Distribution of plant abundance as (A) raw counts of floral units across communities, and (B) after applying a data transformation in which the counts have been "}
+```{r fig-abundance-logtransformed-or-not, fig.height = 2, fig.cap = "Distribution of plant abundance as (A) raw counts of floral units across communities, and (B) after applying a data transformation in which the counts have been log transformed and scaled to have a mean of zero and a standard deviation of one."}
 drake::loadd(fig_abundance)
 
 cowplot::plot_grid(
   fig_abundance[[2]], 
-  fig_abundance[[2]],
+  fig_abundance[[1]],
   rel_widths = c(0.42, 0.58), labels = LETTERS[1:2], label_size = 8)
 ```
 
 ```{r table-species-gain-global, results = 'asis'}
 drake::loadd(significant_gain_global, significant_gain_site, sites)
+
 glance_table(significant_gain_global) %>%
   dplyr::select(recipient, estimate, statistic, p.value) %>%
   dplyr::mutate(recipient = paste0('{\\emph{ ', recipient, '}}')) %>%
@@ -154,7 +155,6 @@ site_plots_conspecific <- site_plots_conspecific %>%
 site_plots_conspecific <- rlist::list.append(site_plots_conspecific, legend)
 
 cowplot::plot_grid(plotlist = site_plots_conspecific, ncol = 3)
-
 ```
 
 ```{r fig-conspecific-per-plant, eval = FALSE, fig.height = 7, fig.cap="Conspecific pollen density across communities for different study species. Only species present in more than onse site are shown. Community names are abbreviated: AN stands for Anquilóo, LC for Las Chiclas, and SC for San Claudio; A, and R indicate that the community corresponded to an agricultural or reserve site respectively."}
