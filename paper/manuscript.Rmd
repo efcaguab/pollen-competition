@@ -13,7 +13,7 @@ header-includes:
   - \usepackage{setspace}
   - \usepackage{lineno}
   - \usepackage{xr}
-  - \externaldocument[S-]{supp_info}
+  - \externaldocument[S-]{supp-info}
 ---
 
 \linenumbers
