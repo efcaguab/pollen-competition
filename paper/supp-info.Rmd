@@ -74,12 +74,15 @@ glance_table(significant_gain_global) %>%
          `plant species` = recipient) %>%
   knitr::kable(
     caption = "Results of testing the alternative hypothesis that the conspecific pollen density in open flowers is greater than the density in bagged flowers. Tests were performed at the species level (across communities).", 
-    escape = FALSE)
+    escape = FALSE, 
+    booktabs = TRUE, 
+    linesep = c("")) %>%
+  kableExtra::kable_styling(font_size = 8)
 ```
 
 ```{r table-species-gain-site, results = 'asis'}
 drake::loadd(significant_gain_global, significant_gain_site, sites)
-glance_table(significant_gain_site) %>%
+table_frame <- glance_table(significant_gain_site) %>%
  dplyr::inner_join(sites, by = "site_name") %>%
   dplyr::group_by(recipient) %>%
   dplyr::mutate(n_sites = dplyr::n_distinct(site_name)) %>%
@@ -91,16 +94,30 @@ glance_table(significant_gain_site) %>%
   dplyr::rename(`p value` = p.value,
          `difference` = estimate,
          `plant species` = recipient, 
-         `community` = site_name) %>%
-  knitr::kable(caption = "Results of testing the alternative hypothesis that the conspecific pollen density in open flowers is greater than the density in bagged flowers. Tests were performed at the community level. Only species present in more than one community are shown.")
+         `community` = site_name)
+
+seps <-dplyr::if_else(table_frame$`plant species` == 
+  dplyr::lag(table_frame$`plant species`), "", "\\addlinespace") %>%
+  na.omit()
+
+table_frame %>%
+  knitr::kable(
+    caption = "Results of testing the alternative hypothesis that the conspecific pollen density in open flowers is greater than the density in bagged flowers. Tests were performed at the community level. Only species present in more than one community are shown.", 
+    escape = FALSE, 
+    booktabs = TRUE, 
+    linesep = seps, 
+    digits = 3) %>%
+  kableExtra::kable_styling(font_size = 8)
 ```
 
 ```{r table-variation-across-sites, results='asis'}
 drake::loadd(consp_self)
 consp_self %>%
   anova(test = "Chisq")  %>%
-  xtable::xtable(caption = 'Analysis of variance of conspecific pollen density in bagged flowers (self pollination rate).  Density were modelled using a quasipoisson distribution. The model suggests that self-pollination rates are species dependent but not across.',
-         label = 'tab:table-variation-across-sites')
+  knitr::kable(
+    caption = 'Analysis of variance of conspecific pollen density in bagged flowers (self pollination rate).  Density were modelled using a quasipoisson distribution. The model suggests that self-pollination rates are species dependent but not across.',
+    booktabs = TRUE) %>%
+  kableExtra::kable_styling(font_size = 8)
 ```
 
 ```{r fig-conspecific-per-site, eval = FALSE, fig.height = 7, fig.cap="Conspecific pollen density across plant species for different communities. Community names are abbreviated: AN stands for Anquilóo, LC for Las Chiclas, and SC for San Claudio."}
