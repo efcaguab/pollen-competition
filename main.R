@@ -109,23 +109,26 @@ model_corr <- fixed_models %>%
 het_con_linear_fit <- fixed_models %>%
   drake::gather_plan(., gather = "get_model_linear_fits", target = "model_linear_fits")
 
-fixed_summaries <- drake::drake_plan(
-  wilcox_glo_com = global_vs_community(glanced_fixed)
-)
+best_model_formula <- "pollen_gain ~  abn + poc + deg + org"
 
+fixed_summaries <- drake::drake_plan(
+  wilcox_glo_com = global_vs_community(glanced_fixed, model_formula = best_model_formula)
+)
 predictions <- drake::drake_plan(
   trade_off_predictions = trade_off_pred(
     tidied_fixed, 
     wilcox_glo_com, 
-    list(imputed_abundance, imputed_overlap, imputed_degree, imputed_originality), 
-    chosen_criteria = "r2c")
+    list(imputed_abundance, imputed_pollen, imputed_degree, imputed_originality), 
+    chosen_criteria = "r2c", 
+    model_formula = best_model_formula)
 )
 
 model_plans <- rbind(
   random_models, glanced_random_models, 
   random_summaries, 
   fixed_models, glanced_fixed_models, tidied_fixed_models, 
-  model_corr, het_con_linear_fit,
+  model_corr,
+  het_con_linear_fit,
   fixed_summaries, 
   predictions
 )

@@ -4,17 +4,18 @@
 #'
 #' @return a data frame with wilcoxong comparisons
 #' 
-global_vs_community <- function(glanced_models_table){
+global_vs_community <- function(glanced_models_table, model_formula){
   
   test_table <- function(x){
     glanced_models_table %>%
+      # dplyr::filter(fixed_formula == best_model_formula) %>%
       dplyr::rename_at(x, function(x) "metric") %>%
-      dplyr::select(pollen_category, model, scale, var_trans, metric) %>% 
-      tidyr::spread(scale, metric) %>%
-      split(list(.$pollen_category, .$var_trans)) %>%
+      dplyr::select(pollen_category, model, scale, var_trans, metric, fixed_formula) %>% 
+      tidyr::spread(scale, metric) %>% 
+      split(list(.$pollen_category, .$var_trans, .$fixed_formula)) %>% 
       purrr::map(~ wilcox.test(.$community, .$imputed, paired = T, conf.int = T, alternative = "two.sided")) %>%
-     purrr::map_df(~ broom::tidy(.), .id = "m") %>%
-     tidyr::separate(m, c("pollen_category", "var_trans"))
+     purrr::map_df(~ broom::tidy(.), .id = "m") %>% 
+     tidyr::separate(m, c("pollen_category", "var_trans", "fixed_formula"), sep = "\\.")
   }
   
   positive_models <- c("rmse", "sigma", "nrmse")
@@ -54,4 +55,15 @@ best_random_effect <- function(x, random_effects){
   
   random_effects %>%
     dplyr::filter(random_effect == best)
+}
+
+# Figure out best fixed model formula
+get_best_fixed_model_formula <- function(glanced_fixed) {
+  glanced_fixed %>%
+    dplyr::group_by(model, pollen_category, scale) %>%
+    dplyr::mutate(delta_AIC = AIC - min(AIC), 
+                  delta_AIC_rank = dplyr::min_rank(delta_AIC)) %>% 
+    dplyr::group_by(fixed_formula) %>%
+    dplyr::summarise_at(dplyr::vars(delta_AIC, delta_AIC_rank), median) %>% 
+    dplyr::arrange(delta_AIC) %>% View()
 }

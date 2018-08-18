@@ -1,4 +1,4 @@
-
+## Need to filter this so it uses only the results from the best model set
 make_fig_model_results_global <- function(tidied_fixed) {
   
   require(ggplot2)
@@ -8,7 +8,7 @@ make_fig_model_results_global <- function(tidied_fixed) {
       term != "(Intercept)" , 
       var_trans == 'log',
       scale == "imputed") %>%
-    dplyr::group_by(pollen_category,scale, model, var_trans, term) %>%
+    dplyr::group_by(pollen_category,scale, model, var_trans, term, fixed_formula) %>%
     dplyr::summarise(estimate = dplyr::first(estimate)) %>%
     dplyr::group_by() %>%
     humanize() %>%
@@ -26,7 +26,7 @@ make_fig_model_results_global <- function(tidied_fixed) {
       # scale = "count"
       ) +
     pub_theme() +
-    facet_grid( ~ term, scales = "free_x", space = "free_x") +
+    facet_grid(fixed_formula ~ term, scales = "free_x", space = "free_x") +
     scale_color_manual(values = c_scale()) +
     scale_fill_manual(values = c_scale()) +
     scale_x_continuous(breaks = seq(-2,2, by = 0.25)) + 

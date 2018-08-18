@@ -2,7 +2,8 @@ trade_off_pred <- function(tidied_fixed,
                            wilcox_glo_com, 
                            variables = NA,
                            chosen_criteria = "r2c",
-                           vt = "log"){
+                           vt = "log", 
+                           model_formula){
 
   # td <- tidied_fixed %>%
     # dplyr::filter(var_trans == "log") 
@@ -15,7 +16,8 @@ trade_off_pred <- function(tidied_fixed,
     model %>% unique()
   
   fixed_effect_terms <- tidied_fixed %>%
-    dplyr::filter(!grepl("Intercept", term)) %$% 
+    dplyr::filter(!grepl("Intercept", term), 
+                  fixed_formula == model_formula) %$% 
     term %>% unique()
   
   # trade_off_grid <- seq(-2.5,4.8,length.out = 100)

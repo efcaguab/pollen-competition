@@ -93,28 +93,43 @@ run_random_models <- function(d, random_effects, method = "REML"){
 
 run_model <- function(d, best_random, method = "ML"){
   
-  d %>%
-    split(list(.$pollen_category, .$scale, .$var_trans)) %>%
-    purrr::map(~ try(nlme::lme(pollen_gain ~ abn + pov + deg + org, random = as.formula(best_random$random_formula[1]), na.action = na.omit, method = method, data = .)))
+  vars <- c("abn", "poc", "deg", "org")
+  
+  paste("pollen_gain ~ ", combn_formulas(vars)) %>%
+    purrr::map_df(~ dplyr::mutate(d, fixed_formula = .)) %>% 
+    split(list(.$pollen_category, .$scale, .$var_trans, .$fixed_formula)) %>%
+    purrr::map(~ try(nlme::lme(as.formula(.$fixed_formula[1]), random = as.formula(best_random$random_formula[1]), na.action = na.omit, method = method, data = .)))
 
 }
+
+#
+combn_formulas <- function(vars, null_model = TRUE, from = 1){
+  v <- from:length(vars) %>%
+    purrr::map(~ combn(vars, .)) %>%
+    purrr::map(apply, 2, paste, collapse = " + ") %>%
+    unlist()
+  if (null_model) {
+    v <- c("1", v)
+  }
+  return(v)
+} 
 
 # AGGREGATE MODELS --------------------------------------------------------
 
 glance_random_models <- function(...){
   models <- list(...)
   # models <- list(random_mod_1 = run_random_models(readd(rep_1)), random_mod_2 = run_random_models(readd(rep_2)))
-  gather_models(models, broom::glance, c("pollen_category", "scale", "var_trans", "random_effect"))
+  gather_models(models, broom::glance, c("pollen_category", "scale", "var_trans", "random_effect")) 
 }
 
 glance_fixed_models <- function(...){
   models <- list(...)
-  gather_models(models, broom::glance, c("pollen_category", "scale", "var_trans"))
+  gather_models(models, broom::glance, c("pollen_category", "scale", "var_trans", "fixed_formula"))
 }
 
 tidy_fixed_models <- function(...){
   models <- list(...)
-  gather_models(models, broom::tidy, c("pollen_category", "scale", "var_trans"))
+  gather_models(models, broom::tidy, c("pollen_category", "scale", "var_trans", "fixed_formula"))
 }
 
 gather_models <- function(models, fun, subdivisions){
@@ -151,7 +166,7 @@ gather_glance <- function(models, fun, subdivisions){
       purrr::map(~ MuMIn::r.squaredGLMM(.))
     
     purrr::pmap_df(list(x, R2mumin), .f = arrange_df, .id = "m") %>%
-     tidyr::separate("m", subdivisions)
+     tidyr::separate("m", subdivisions, sep = "\\.")
   }
   
   models %>% 
@@ -165,7 +180,7 @@ gather_tidy <- function(models, fun, subdivisions){
     
     x %>%
    purrr::map_df(~ fun(.),  .id = "m") %>%
-     tidyr::separate("m", subdivisions)
+     tidyr::separate("m", subdivisions, sep = "\\.")
   }
   
   models %>% 
@@ -187,15 +202,15 @@ get_model_correlations <- function(...){
   pearson_slopes <- function(x){
     x %>%
       purrr::map(~ broom::augment(.)) %>%
-      purrr::map(~ dplyr::select(., pollen_category, scale, var_trans, site_name, plant_name, .fitted)) %>%
-     purrr::map_df(~ dplyr::distinct(.)) %>%
+      purrr::map(~ dplyr::select(., pollen_category, scale, var_trans, site_name, plant_name, fixed_formula, .fitted)) %>% 
+      purrr::map_df(~ dplyr::distinct(.)) %>%  
       tidyr::spread(pollen_category, .fitted) %>% 
       # ggplot(aes(x = conspecific, y = heterospecific, colour = interaction(scale, var_trans))) +
       # geom_point() + geom_smooth(method = "lm") + coord_equal()
       # qplot(conspecific, heterospecific, colour = interaction(scale, var_trans), data = .)
-      split(list(.$scale, .$var_trans)) %>%
+      split(list(.$fixed_formula, .$scale, .$var_trans)) %>%
      purrr::map_df(~ pearson_slope(.$conspecific, .$heterospecific), .id = "m") %>%
-     tidyr::separate(m, c("scale", "var_trans"))
+     tidyr::separate(m, c("scale", "var_trans", "fixed_formula"), sep = "\\.")
   }
   
   models %>%
@@ -216,21 +231,21 @@ get_model_linear_fits <- function(...){
   
   pearson_slopes <- function(x){
     x %>%
-      purrr::map(~ broom::augment(.)) %>%
-      purrr::map(~ dplyr::select(., pollen_category, scale, var_trans, site_name, plant_name, .fitted)) %>%
-     purrr::map_df(~ dplyr::distinct(.)) %>%
+      purrr::map(~ broom::augment(.)) %>% 
+      purrr::map(~ dplyr::select(., pollen_category, scale, var_trans, site_name, plant_name, fixed_formula, .fitted)) %>%
+     purrr::map_df(~ dplyr::distinct(.)) %>%  
       tidyr::spread(pollen_category, .fitted) %>% 
       # ggplot(aes(x = conspecific, y = heterospecific, colour = interaction(scale, var_trans))) +
       # geom_point() + geom_smooth(method = "lm") + coord_equal()
       # qplot(conspecific, heterospecific, colour = interaction(scale, var_trans), data = .)
-      split(list(.$scale, .$var_trans)) %>%
+      split(list(.$scale, .$var_trans, .$fixed_formula)) %>%
       purrr::map(~ smatr::sma(conspecific ~ heterospecific, data = .)) %>%
-      purrr::walk(~ plot(.)) %>%
-      purrr::map(~ coef(.)) %>%
+      # purrr::walk(~ plot(.)) %>%
+      purrr::map(~ coef(.)) %>% 
      purrr::map_df(~ tibble::rownames_to_column(as.data.frame(.)), .id = "m") %>%
       dplyr::rename(sma_parameter = rowname,
              value  = '.') %>%
-     tidyr::separate(m, c("scale", "var_trans"))
+     tidyr::separate(m, c("scale", "var_trans", "fixed_formula"), sep = "\\.")
   }
   
   models %>%
