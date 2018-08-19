@@ -59,11 +59,24 @@ best_random_effect <- function(x, random_effects){
 
 # Figure out best fixed model formula
 get_best_fixed_model_formula <- function(glanced_fixed) {
-  glanced_fixed %>%
+ by_formula <- glanced_fixed %>%
     dplyr::group_by(model, pollen_category, scale) %>%
     dplyr::mutate(delta_AIC = AIC - min(AIC), 
                   delta_AIC_rank = dplyr::min_rank(delta_AIC)) %>% 
-    dplyr::group_by(fixed_formula) %>%
-    dplyr::summarise_at(dplyr::vars(delta_AIC, delta_AIC_rank), median) %>% 
-    dplyr::arrange(delta_AIC) %>% View()
+    dplyr::group_by(fixed_formula)
+ 
+ by_formula_and_category <- by_formula %>%
+   dplyr::group_by(pollen_category, scale, add = TRUE)
+ 
+ list(by_formula, by_formula_and_category) %>%
+   purrr::map(~dplyr::summarise_at(., dplyr::vars(delta_AIC, delta_AIC_rank), median)) %>%
+   `names<-`(c("aggregated", "by_model_set"))
+}
+
+get_likelyhoods <- function(x){
+  exp(x * 0.5* (-1)) 
+}
+
+get_weights <- function(x){
+  x / sum(x)
 }
