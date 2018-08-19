@@ -29,11 +29,23 @@ humanize <- function(x, sites = NA, random_effects = NA){
   if ('term' %in% names(x)) {
     x <- x %>%
       dplyr::mutate(term = dplyr::case_when(
-        grepl('tov', term) ~ 'phenology overlap',
+        grepl('org', term) ~ 'trait originality',
+        grepl('abn', term) ~ 'relative abundance',
         grepl('rab', term) ~ 'relative abundance',
+        grepl('deg', term) ~ 'degree',
         grepl('k', term) ~ 'degree',
+        grepl('poc', term) ~ 'share pollen pool',
         TRUE ~ term
       ))
+  }
+  if ('fixed_formula' %in% names(x)) {
+    x <- x %>%
+      dplyr::mutate(
+        fixed_formula = stringr::str_replace(fixed_formula, "pollen_gain ~", ""),
+        fixed_formula = stringr::str_replace(fixed_formula, "abn", "a"),
+        fixed_formula = stringr::str_replace(fixed_formula, "poc", "p"),
+        fixed_formula = stringr::str_replace(fixed_formula, "org", "t"),
+        fixed_formula = stringr::str_replace(fixed_formula, "deg", "k"))
   }
   if ('random_effect' %in% names(x)) {
     x <- dplyr::inner_join(x, random_effects, by = "random_effect")
