@@ -141,7 +141,8 @@ figure_plan <- drake::drake_plan(
   fig_proportion_vs_variables = make_fig_proportion_vs_variables(trade_off_predictions),
   fig_pollen_density = make_fig_pollen_density(dep_frame), 
   fig_pollen_density_diff = make_fig_pollen_density_diff(rep_1), 
-  fig_abundance = make_fig_abundance(plant_rel_abu, sites)
+  fig_abundance = make_fig_abundance(plant_rel_abu, sites), 
+  fig_community_global_scatter = make_fig_community_global_scatter(plant_rel_abu, org_frame, degree, sites, pollen_contribution)
 )
 
 # Reporting ---------------------------------------------------------------
