@@ -43,9 +43,10 @@ shorten_sp_name <- function(x){
 #' @return a character string
 #'
 mini_dot <- function(x){
+  require(stringr)
   space_location <- stringr::str_locate(x, ' ')
-  if(!any(is.na(space_location))){
-    stringr::str_sub(x, 2, space_location[1]) <- ". "
+  if (!any(is.na(space_location))) {
+    str_sub(x, 2, space_location[1]) <- ". "
     x
   } else{
     x
