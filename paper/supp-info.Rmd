@@ -202,36 +202,8 @@ cowplot::plot_grid(plotlist = plant_plots_conspecific, ncol = 3)
 drake::readd(fig_community_global_scatter)
 ```
 
-```{r fig-model-results, fig.height = 3.5, fig.cap = "Model coefficients"}
-drake::loadd(tidied_fixed, sites)
-
-tidied_fixed %>%
-  dplyr::filter(term != "(Intercept)" , 
-         var_trans == 'log'
-         # scale == "community"
-         ) %>%
-  dplyr::group_by(pollen_category,scale, model, var_trans, term) %>%
-  dplyr::summarise(estimate = first(estimate)) %>%
-  dplyr::group_by() %>%
-  humanize() %>%
-  ggplot(aes(x = estimate, 
-             colour = pollen_category, 
-             fill = pollen_category)) +
-  geom_vline(xintercept = 0, linetype = 2, size = 0.25) +
-  stat_density(geom = 'area',
-               alpha = 0.15,
-               position = position_identity(),
-               draw_quantiles = c(0.5, 0.95, 0.05), 
-               trim = F, 
-               scale = "count",
-               bins = 15) +
-  pub_theme() +
-  facet_grid(scale ~ term, scales = "free_x", space = "free_x") +
-  scale_color_manual(values = c_scale()) +
-  scale_fill_manual(values = c_scale()) +
-  scale_x_continuous(breaks = seq(-2,2, by = 0.25)) + 
-  theme(legend.position = "top") +
-  labs(colour = "", fill = "")
+```{r fig-model-results, fig.height = 5, fig.cap = "Model coefficients"}
+drake::readd(fig_all_model_results)
 ```
 
 ```{r fig-random-intercepts, eval = F, fig.height= 3, fig.cap = "Random effect intercepts"}

@@ -103,6 +103,10 @@ glanced_fixed_models <- fixed_models %>%
 tidied_fixed_models <- fixed_models %>%
   drake::gather_plan(., gather = "tidy_fixed_models", target = "tidied_fixed")
 
+aic_plan <- drake::drake_plan(
+  model_formula_ranking = get_best_fixed_model_formula(glanced_fixed)
+)
+
 model_corr <- fixed_models %>%
   drake::gather_plan(., gather = "get_model_correlations", target = "model_correlations")
 
@@ -142,6 +146,7 @@ figure_plan <- drake::drake_plan(
   fig_pollen_density = make_fig_pollen_density(dep_frame), 
   fig_pollen_density_diff = make_fig_pollen_density_diff(rep_1), 
   fig_abundance = make_fig_abundance(plant_rel_abu, sites), 
+  fig_all_model_results = make_fig_all_model_results(tidied_fixed, sites, model_formula_ranking), 
   fig_community_global_scatter = make_fig_community_global_scatter(plant_rel_abu, org_frame, degree, sites, pollen_contribution)
 )
 
@@ -162,6 +167,7 @@ project_plan <- rbind(
   imputation_plan,
   boot_replicates,
   model_plans,
+  aic_plan,
   basic_analyses_plan,
   figure_plan,
   reporting_plan
