@@ -20,8 +20,8 @@ make_fig_all_model_results <- function(tidied_fixed, sites, model_formula_rankin
   tidied_fixed %>%
     dplyr::filter(term != "(Intercept)" , 
                   var_trans == 'log', 
-                  fixed_formula %in% best_model_formulas
-                  # scale == "community"
+                  fixed_formula %in% best_model_formulas,
+                  scale == "community"
     ) %>%
     dplyr::group_by(pollen_category,scale, model, var_trans, term, fixed_formula) %>%
     dplyr::summarise(estimate = dplyr::first(estimate)) %>%
@@ -36,7 +36,7 @@ make_fig_all_model_results <- function(tidied_fixed, sites, model_formula_rankin
                  position = position_identity(),
                  trim = F) +
     pub_theme() +
-    facet_grid(fixed_formula   + scale ~ term, scales = "free_x", space = "free_x") +
+    facet_grid(fixed_formula ~ term, scales = "free_x", space = "free_x") +
     scale_color_manual(values = c_scale()) +
     scale_fill_manual(values = c_scale()) +
     scale_x_continuous(breaks = seq(-2,2, by = 0.25)) + 
