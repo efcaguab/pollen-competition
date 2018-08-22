@@ -157,10 +157,32 @@ contingency_table <- xtabs( ~ `random structure` + `scale` + `pollen category` ,
   # ftable.formula(`random structure` ~ `scale` + `pollen category`)
   
 contingency_table[1:nrow(summ)] <- summ$delta_AIC
+```{r table-aic-fixed-models, results= 'asis'}
+drake::loadd(model_formula_ranking)
 
 xtable::xtableFtable(contingency_table, method = "col.compact", 
              caption = paste('Comparison of the different random structures we considered. The table shows median delta AIC values of', dplyr::n_distinct(glanced_random$model), "bootsrap resamples of the data. The 5th and 95th percentile are shown inside square brackets. Communities are defined by individual fragments but ignore the hierarchical arrangement of sampling sites."), 
          label = 'tab:table-aic-random-models')
+model_formula_ranking$by_model_set %>% 
+  dplyr::filter(scale == "community") %>%
+  dplyr::mutate(delta_AIC = paste0(round(delta_AIC, 1), 
+                                  " [", 
+                                  round(delta_AIC_quantile_05, 1),
+                                  " ,", 
+                                  round(delta_AIC_quantile_95, 1),
+                                  "]")) %>% 
+  dplyr::group_by() %>%
+  humanize(formula_long = TRUE) %>% 
+  dplyr::mutate(fixed_formula = paste("~", fixed_formula)) %>%
+  dplyr::arrange(pollen_category, delta_AIC_rank) %>%
+  dplyr::select(pollen_category, fixed_formula, delta_AIC) %>%
+  dplyr::rename(`pollen type` = pollen_category, 
+                `fixed structure` = fixed_formula) %>%
+  knitr::kable(caption = paste('Comparison of the different fixed structures we considered. The table shows median delta AIC values of', dplyr::n_distinct(glanced_random$model), "bootsrap resamples of the data. The 5th and 95th percentile are shown inside square brackets."),
+               booktabs = TRUE) %>%
+  kableExtra::kable_styling(font_size = 8) %>%
+  kableExtra::column_spec(column = 1, bold=T) %>%
+  kableExtra::collapse_rows(columns = 1, latex_hline = "major", valign = "middle")
 ```
 
 ```{r table-variable-importance, results='asis'}
