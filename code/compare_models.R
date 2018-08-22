@@ -69,8 +69,20 @@ get_best_fixed_model_formula <- function(glanced_fixed) {
    dplyr::group_by(pollen_category, scale, add = TRUE)
  
  list(by_formula, by_formula_and_category) %>%
-   purrr::map(~dplyr::summarise_at(., dplyr::vars(delta_AIC, delta_AIC_rank), median)) %>%
+   purrr::map(~dplyr::summarise_at(., 
+                                   dplyr::vars(delta_AIC, delta_AIC_rank),
+                                   dplyr::funs(median, quantile_05, quantile_95, dplyr::n()))) %>% 
+   purrr::map(~dplyr::mutate(., delta_AIC = delta_AIC_median, 
+                             delta_AIC_rank = delta_AIC_rank_median)) %>%
    `names<-`(c("aggregated", "by_model_set"))
+}
+
+quantile_05 <- function(x){
+  quantile(x, 0.05)
+}
+
+quantile_95 <- function(x){
+  quantile(x, 0.95)
 }
 
 get_likelyhoods <- function(x){
