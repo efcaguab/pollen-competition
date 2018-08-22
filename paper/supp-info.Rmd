@@ -125,29 +125,6 @@ consp_self %>%
 drake::readd(fig_community_global_scatter)
 ```
 
-```{r fig-model-results, fig.height = 5, fig.cap = "Model coefficients"}
-drake::readd(fig_all_model_results)
-```
-
-```{r fig-random-intercepts, eval = F, fig.height= 3, fig.cap = "Random effect intercepts"}
-drake::loadd(tidied_fixed, sites)
-
-tidied_fixed %>%
- tidyr::separate("level", c("site_name", "plant_name"), sep = "/", remove = F) %>%
-  dplyr::filter(term == "(Intercept)" ,
-         var_trans == 'log',
-         scale == "community", 
-         pollen_category == 'heterospecific'
-         ) %>%
-  humanize(sites) %>%
-  ggplot(aes(x = estimate, colour = plant_name, group = level)) +
-  geom_vline(xintercept = 0, linetype = 2, size = 0.25) +
-  geom_freqpoly(size = 0.25) +
-  facet_grid(locality_name + fragment ~ land_use) +
-  pub_theme() +
-  theme(legend.position = 'none')
-```
-
 ```{r eval = FALSE, table-aic-random-models, results= 'asis'}
 drake::loadd(glanced_random, random_effects)
 
@@ -200,6 +177,8 @@ wilcox_glo_com %>%
          `p value` = p.value) %>% 
   xtable::xtable(digits = -1, caption = "Results of two sample paired Wilcoxon signed rank test comparing different model quality metrics of the model sets using predictors computed across or within communities. Metrics are the root mean square error (rmse), the residual standard deviation (sigma), the conditional r-squared approximation as proposed by Nakagawa and Schielzeth (2013), the omega-squared value as suggested by Xu (2003), and the normalised root-mean-square error of the model sets constructed using predictors computed at the community or study level.", 
          label = "tab:table-global-vs-community-models")
+```{r fig-model-results, fig.height = 3.5, fig.cap = "Distribution of effect estimates for models of conspecific and heterospecific pollen density gain. Only results for the models with the most parsimonous fixed effects. "}
+drake::readd(fig_all_model_results)
 ```
 
 # References
