@@ -19,10 +19,11 @@ remove_legend <- function(x){
 #'
 #' @param x a data frame -- usually tidy frame
 #' @param sites 
+#' @param formula_long Should the formula terms be converted to long names?
 #'
 #' @return
 #' 
-humanize <- function(x, sites = NA, random_effects = NA){
+humanize <- function(x, sites = NA, random_effects = NA, formula_long = FALSE){
   if ('site_name' %in% names(x)) {
     x <- dplyr::inner_join(x, sites, by = 'site_name')
   }
@@ -39,13 +40,23 @@ humanize <- function(x, sites = NA, random_effects = NA){
       ))
   }
   if ('fixed_formula' %in% names(x)) {
-    x <- x %>%
-      dplyr::mutate(
-        fixed_formula = stringr::str_replace(fixed_formula, "pollen_gain ~", ""),
-        fixed_formula = stringr::str_replace(fixed_formula, "abn", "a"),
-        fixed_formula = stringr::str_replace(fixed_formula, "poc", "p"),
-        fixed_formula = stringr::str_replace(fixed_formula, "org", "t"),
-        fixed_formula = stringr::str_replace(fixed_formula, "deg", "k"))
+    if (formula_long == TRUE) {
+      x <- x %>%
+        dplyr::mutate(
+          fixed_formula = stringr::str_replace(fixed_formula, "pollen_gain ~", ""),
+          fixed_formula = stringr::str_replace(fixed_formula, "abn", "abundance"),
+          fixed_formula = stringr::str_replace(fixed_formula, "poc", "share pollen"),
+          fixed_formula = stringr::str_replace(fixed_formula, "org", "trait originality"),
+          fixed_formula = stringr::str_replace(fixed_formula, "deg", "degree"))
+    } else {
+      x <- x %>%
+        dplyr::mutate(
+          fixed_formula = stringr::str_replace(fixed_formula, "pollen_gain ~", ""),
+          fixed_formula = stringr::str_replace(fixed_formula, "abn", "a"),
+          fixed_formula = stringr::str_replace(fixed_formula, "poc", "p"),
+          fixed_formula = stringr::str_replace(fixed_formula, "org", "t"),
+          fixed_formula = stringr::str_replace(fixed_formula, "deg", "k"))
+    }
   }
   if ('random_effect' %in% names(x)) {
     x <- dplyr::inner_join(x, random_effects, by = "random_effect")
