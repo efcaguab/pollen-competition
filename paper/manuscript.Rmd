@@ -194,10 +194,13 @@ Nevertheless, results from the within community models are similar both qualitat
 We found that the gain in conspecific pollen is negatively affected by the plants relative abbundance and to a smaller extent by the species' degree (Figure \@ref(fig:fig-model-results-global). 
 The gain in heterospecific pollen was instead positively affected by degree and the plant's phenology overlap, but was also strongly negatively affected by the plant's relative abbundance. 
 
-```{r fig-model-results-global, fig.height = 2, fig.cap = "Distribution of effect estimates for models of conspecific and heterospecific pollen density gain. Results are shown for models with explanatory var"}
-drake::readd(fig_model_results_global)
+```{r fig-model-results-global, fig.height = 1.5, fig.cap = "Distribution of effect estimates for models of conspecific and heterospecific pollen density gain. Results are shown for models with explanatory var"}
+drake::readd(fig_coefficient_averages)
 ```
 
+```{r fig-average-qual-quant, fig.height=2, fig.width=3.5, fig.cap="asd"}
+drake::readd(fig_average_qual_quant)
+```
 The gain in conspecific pollen is positively correlated with the gain in heterospecific pollen. 
 The slope of the relationship is such that it is more likely that the gain on heterospecific pollen increases faster than the gain on conspecific pollen (Figure \@ref(fig:fig-trade-off-predictions)A). 
 In addition, we found that from all the explanatory variables examined, only the plant's relative abbundance has a positive effect on the proportion of conspecific pollen gained (Figure \@ref(fig:fig-trade-off-predictions)B). 

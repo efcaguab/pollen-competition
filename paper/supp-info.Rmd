@@ -188,6 +188,9 @@ model_formula_ranking$by_model_set %>%
 
 ```{r table-variable-importance, results='asis'}
 drake::loadd(model_formula_ranking)
+```{r fig-model-results, fig.height = 3.5, fig.cap = "Distribution of effect estimates for models of conspecific and heterospecific pollen density gain. Only results for the models with the most parsimonous fixed effects. "}
+drake::readd(fig_all_model_results)
+```
 
 # get the terms in the models
 terms <- model_formula_ranking$aggregated$fixed_formula %>%
@@ -199,7 +202,6 @@ terms <- model_formula_ranking$aggregated$fixed_formula %>%
 terms <- terms[terms != "1"]
 
 model_weights <- model_formula_ranking$by_model_set %>%
-  dplyr::filter(scale == "community") %>%
   dplyr::group_by(pollen_category) %>%
   dplyr::mutate(likelyhood = get_likelyhoods(delta_AIC_median), 
                 weight = get_weights(likelyhood))
@@ -227,9 +229,16 @@ crosses %>%
   kableExtra::kable_styling(font_size = 8) %>%
   kableExtra::add_header_above(c(" ", "variable importance" = 2))
 ```
+```{r fig_effect_quant_qual, fig.height=3.5, fig.cap="asd"}
+drake::loadd(fig_effect_quant_qual)
 
 ```{r fig-model-results, fig.height = 3.5, fig.cap = "Distribution of effect estimates for models of conspecific and heterospecific pollen density gain. Only results for the models with the most parsimonous fixed effects. "}
 drake::readd(fig_all_model_results)
+cowplot::plot_grid(
+ fig_effect_quant_qual[[1]], 
+ fig_effect_quant_qual[[2]],
+  labels = LETTERS[1:2], 
+  label_size = 8, ncol = 2)
 ```
 
 # References

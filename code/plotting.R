@@ -23,7 +23,7 @@ remove_legend <- function(x){
 #'
 #' @return
 #' 
-humanize <- function(x, sites = NA, random_effects = NA, formula_long = FALSE){
+humanize <- function(x, sites = NA, random_effects = NA, formula_long = FALSE, term_long = TRUE){
   if ('site_name' %in% names(x)) {
     x <- dplyr::inner_join(x, sites, by = 'site_name')
   }
@@ -31,11 +31,11 @@ humanize <- function(x, sites = NA, random_effects = NA, formula_long = FALSE){
     x <- x %>%
       dplyr::mutate(term = dplyr::case_when(
         grepl('org', term) ~ 'trait originality',
-        grepl('abn', term) ~ 'relative abundance',
-        grepl('rab', term) ~ 'relative abundance',
+        grepl('abn', term) ~ 'abundance',
+        grepl('rab', term) ~ 'abundance',
         grepl('deg', term) ~ 'degree',
         grepl('k', term) ~ 'degree',
-        grepl('poc', term) ~ 'share pollen pool',
+        grepl('poc', term) ~ 'share pollen',
         TRUE ~ term
       ))
   }

@@ -116,7 +116,9 @@ het_con_linear_fit <- fixed_models %>%
 best_model_formula <- "pollen_gain ~  abn + poc + deg + org"
 
 fixed_summaries <- drake::drake_plan(
-  wilcox_glo_com = global_vs_community(glanced_fixed, model_formula = best_model_formula)
+  wilcox_glo_com = global_vs_community(glanced_fixed, model_formula = best_model_formula), 
+  summary_effects = get_summary_effects(tidied_fixed), 
+  coefficient_averages = get_coefficient_averages(tidied_fixed, model_formula_ranking, N = 99)
 )
 predictions <- drake::drake_plan(
   trade_off_predictions = trade_off_pred(
@@ -147,7 +149,10 @@ figure_plan <- drake::drake_plan(
   fig_pollen_density_diff = make_fig_pollen_density_diff(rep_1), 
   fig_abundance = make_fig_abundance(plant_rel_abu, sites), 
   fig_all_model_results = make_fig_all_model_results(tidied_fixed, sites, model_formula_ranking), 
-  fig_community_global_scatter = make_fig_community_global_scatter(plant_rel_abu, org_frame, degree, sites, pollen_contribution)
+  fig_community_global_scatter = make_fig_community_global_scatter(plant_rel_abu, org_frame, degree, sites, pollen_contribution),
+  fig_effect_quant_qual = make_fig_effect_quant_qual(summary_effects, model_formula_ranking), 
+  fig_coefficient_averages = make_fig_coefficient_avarages(coefficient_averages), 
+  fig_average_qual_quant = make_fig_average_quant_qual(coefficient_averages)
 )
 
 # Reporting ---------------------------------------------------------------
