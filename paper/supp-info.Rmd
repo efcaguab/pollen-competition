@@ -186,60 +186,20 @@ model_formula_ranking$by_model_set %>%
   kableExtra::collapse_rows(columns = 1, latex_hline = "major", valign = "middle")
 ```
 
-```{r table-variable-importance, results='asis'}
-drake::loadd(model_formula_ranking)
 ```{r fig-model-results, fig.height = 3.5, fig.cap = "Distribution of effect estimates for models of conspecific and heterospecific pollen density gain. Only results for the models with the most parsimonous fixed effects. "}
 drake::readd(fig_all_model_results)
 ```
 
-# get the terms in the models
-terms <- model_formula_ranking$aggregated$fixed_formula %>%
-  stringr::str_remove("pollen_gain ~  ") %>%
-  stringr::str_split(stringr::fixed(" + ")) %>%
-  unlist() %>%
-  unique() 
-# remove the null model
-terms <- terms[terms != "1"]
-
-model_weights <- model_formula_ranking$by_model_set %>%
-  dplyr::group_by(pollen_category) %>%
-  dplyr::mutate(likelyhood = get_likelyhoods(delta_AIC_median), 
-                weight = get_weights(likelyhood))
-
-crosses <- purrr::cross2(terms, c("conspecific", "heterospecific"))
-crosses %>%
-  purrr::map(~model_weights$weight[stringr::str_detect(model_weights$fixed_formula, .[[1]]) & model_weights$pollen_category == .[[2]]]) %>%
-  purrr::map(sum) %>%
-  purrr::map2_df(crosses, 
-              ~ dplyr::data_frame(
-                var = .y[[1]],
-                pollen_category = .y[[2]], 
-                importance = .x)
-              ) %>%
-  dplyr::mutate(importance = round(importance, digits = 3)) %>%
-  dplyr::rename(term = var) %>%
-  humanize() %>%
-  tidyr::spread(pollen_category, importance) %>%
-  dplyr::arrange(dplyr::desc(conspecific), heterospecific) %>%
-  dplyr::rename(`fixed effect`= term, 
-                `conspecific pollen` = conspecific, 
-                `heterospecific pollen` = heterospecific) %>%
-  knitr::kable(caption = "Relative variable impotance of the four vaariables included as fixed effects. Variable importance was calculated as the sum of the median Akaike weights (Table \\ref{tab:table-aic-fixed-models}) of each candidate model set that includes the variable.", 
-               booktabs = TRUE) %>%
-  kableExtra::kable_styling(font_size = 8) %>%
-  kableExtra::add_header_above(c(" ", "variable importance" = 2))
-```
 ```{r fig_effect_quant_qual, fig.height=3.5, fig.cap="asd"}
 drake::loadd(fig_effect_quant_qual)
 
-```{r fig-model-results, fig.height = 3.5, fig.cap = "Distribution of effect estimates for models of conspecific and heterospecific pollen density gain. Only results for the models with the most parsimonous fixed effects. "}
-drake::readd(fig_all_model_results)
 cowplot::plot_grid(
  fig_effect_quant_qual[[1]], 
  fig_effect_quant_qual[[2]],
   labels = LETTERS[1:2], 
   label_size = 8, ncol = 2)
 ```
+
 
 # References
 

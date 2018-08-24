@@ -140,9 +140,9 @@ In all set of models we first evaluated a set of candidate random effects which 
 In addition we also tested random intercepts assuming that the plant species grouping was hierachically nested in either their community, the land use, and the locality. 
 We selected the best random structure by comparing the median Akaike Information Criterion (AIC) of evaluated models fitted using restricted maximum likelyhood. 
 After determining the best random structure, we then focused on the model's fixed structure where we fitted the fixed effect coefficients using maximum likelyhood. 
-Because our purpose was to perform inter-model comparisons across multiple data resamples, we did not perform model selection. 
-Instead, in all model sets, we obtained the estimates for all the fixed effects we considered and then evaluated their relevance by examining their distribution. 
-Nevertheless, because we expect some of our independent variables to be related to each other, we also looked at how the effect of each predictor changed when each of them were removed once at a time.
+In all model sets, we obtained the estimates for all the fixed effects we considered and then evaluated their relevance by examining their distribution. 
+Nevertheless, we obtained the calculated the relative importance of the explanatory variables by comparing the sum the Akaike weights of the models that include each variable. 
+In addition, because we expect some of our independent variables to be related to each other, we also looked at how the effect of each predictor changed when each of them were removed once at a time.
 
 At the community scale, sharing mutualistic partners might induce competition for pollination mainly trough two mechanisms. 
 The first is competition for visits, where plants with more atractive flowers reduce the number of visits for those less atractive. 
@@ -187,11 +187,57 @@ When looking at the differences within sites, we found that only `r round(prop_c
 Despite these differences, the community had a comparatively small effect on wether animal pollination increased the pollen density or not (Table \@ref(S-tab:table-variation-across-sites)). 
 
 We found that the random structure that was best supported the data was consistently the one that included plant species nested in community as the grouping factors (Table \@ref(S-tab:table-aic-random-models)). 
+We also found that the models AIC story
+
+
+```{r table-variable-importance, results='asis'}
+drake::loadd(model_formula_ranking)
+
+# get the terms in the models
+terms <- model_formula_ranking$aggregated$fixed_formula %>%
+  stringr::str_remove("pollen_gain ~  ") %>%
+  stringr::str_split(stringr::fixed(" + ")) %>%
+  unlist() %>%
+  unique() 
+# remove the null model
+terms <- terms[terms != "1"]
+
+model_weights <- model_formula_ranking$by_model_set %>%
+  dplyr::filter(scale == "community") %>%
+  dplyr::group_by(pollen_category) %>%
+  dplyr::mutate(likelyhood = get_likelyhoods(delta_AIC_median), 
+                weight = get_weights(likelyhood))
+
+crosses <- purrr::cross2(terms, c("conspecific", "heterospecific"))
+crosses %>%
+  purrr::map(~model_weights$weight[stringr::str_detect(model_weights$fixed_formula, .[[1]]) & model_weights$pollen_category == .[[2]]]) %>%
+  purrr::map(sum) %>%
+  purrr::map2_df(crosses, 
+              ~ dplyr::data_frame(
+                var = .y[[1]],
+                pollen_category = .y[[2]], 
+                importance = .x)
+              ) %>%
+  dplyr::mutate(importance = round(importance, digits = 3)) %>%
+  dplyr::rename(term = var) %>%
+  humanize() %>%
+  tidyr::spread(pollen_category, importance) %>%
+  dplyr::arrange(dplyr::desc(conspecific), heterospecific) %>%
+  dplyr::rename(`fixed effect`= term, 
+                `conspecific pollen` = conspecific, 
+                `heterospecific pollen` = heterospecific) %>%
+  knitr::kable(caption = "Relative variable impotance of the four vaariables included as fixed effects. Variable importance was calculated as the sum of the median Akaike weights (Table \\ref{tab:table-aic-fixed-models}) of each candidate model set that includes the variable.", 
+               booktabs = TRUE) %>%
+  kableExtra::kable_styling(font_size = 8) %>%
+  kableExtra::add_header_above(c(" ", "variable importance" = 2))
+```
+
+
 When comparing the performance of the models constructed at the community or study-wide level we found that the gain in conspecific pollen was better approximated by the model sets using predictors calculated across communities (Table \@ref(S-tab:table-global-vs-community-models)). 
 This was so despite the fact that the model predictors calculated at the community level were highly correlated to those at the study wide level (Figure \@ref(S-fig:fig-global-community-correlations)). 
 Nevertheless, results from the within community models are similar both qualitatively and quantitatively (with the exception of phenology overlap, but that might change once I use a better metric, Figure \@ref(S-fig:fig-model-results)). 
 
-We found that the gain in conspecific pollen is negatively affected by the plants relative abbundance and to a smaller extent by the species' degree (Figure \@ref(fig:fig-model-results-global). 
+We found that the gain in conspecific pollen is negatively affected by the plants relative abbundance and to a smaller extent by the species' degree (Figure \@ref(fig:fig-model-results-global)). 
 The gain in heterospecific pollen was instead positively affected by degree and the plant's phenology overlap, but was also strongly negatively affected by the plant's relative abbundance. 
 
 ```{r fig-model-results-global, fig.height = 1.5, fig.cap = "Distribution of effect estimates for models of conspecific and heterospecific pollen density gain. Results are shown for models with explanatory var"}
@@ -201,6 +247,8 @@ drake::readd(fig_coefficient_averages)
 ```{r fig-average-qual-quant, fig.height=2, fig.width=3.5, fig.cap="asd"}
 drake::readd(fig_average_qual_quant)
 ```
+
+
 The gain in conspecific pollen is positively correlated with the gain in heterospecific pollen. 
 The slope of the relationship is such that it is more likely that the gain on heterospecific pollen increases faster than the gain on conspecific pollen (Figure \@ref(fig:fig-trade-off-predictions)A). 
 In addition, we found that from all the explanatory variables examined, only the plant's relative abbundance has a positive effect on the proportion of conspecific pollen gained (Figure \@ref(fig:fig-trade-off-predictions)B). 
@@ -208,7 +256,8 @@ For most of the parameter space plants obtain a larger proportion of heteropspec
 However, plants can obtain a larger proportion of conspecific pollen when they have high abundance and to a smaller extent when they have a low degree. 
 When examining the extent of facilitation at the species level, we found that XXX (Figure \@ref(fig:fig-trade-off-predictions)B).
 
-```{r fig-trade-off-predictions, fig.height= 2.5, fig.cap = "The interplay between the gain on heterospecific and conspecific pollen. (A) Overall and species-level relationship. Grey lines indicate the relationship in each of the samples, the median is indicated with a black solid line. Dotted lines show the relationship for each species. Invasive species are shown in red. (B) The proportion of conspecific pollen relative to the total amount of pollen gained trough animal pollination and its relationship to our set of explanatory variables."}
+
+```{r fig-trade-off-predictions, fig.height= 2, fig.cap = "The interplay between the gain on heterospecific and conspecific pollen. (A) Overall and species-level relationship. Grey lines indicate the relationship in each of the samples, the median is indicated with a black solid line. Dotted lines show the relationship for each species. Invasive species are shown in red. (B) The proportion of conspecific pollen relative to the total amount of pollen gained trough animal pollination and its relationship to our set of explanatory variables."}
 cowplot::plot_grid(
   drake::readd(fig_con_hetero_gain), 
   drake::readd(fig_proportion_vs_variables), 
