@@ -152,7 +152,7 @@ figure_plan <- drake::drake_plan(
   fig_all_model_results = make_fig_all_model_results(tidied_fixed, sites, model_formula_ranking), 
   fig_community_global_scatter = make_fig_community_global_scatter(plant_rel_abu, org_frame, degree, sites, pollen_contribution),
   fig_effect_quant_qual = make_fig_effect_quant_qual(summary_effects, model_formula_ranking), 
-  fig_coefficient_averages = make_fig_coefficient_avarages(coefficient_averages), 
+  fig_coefficient_averages = make_fig_coefficient_avarages(coefficient_averages, variable_importance), 
   fig_average_qual_quant = make_fig_average_quant_qual(coefficient_averages), 
   fig_correlation = make_fig_correlation(rep_1)
 )
