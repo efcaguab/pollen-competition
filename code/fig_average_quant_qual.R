@@ -15,7 +15,7 @@ make_fig_average_quant_qual <- function(coefficient_averages){
     dplyr::group_by(scale, term, var) %>%
     dplyr::summarise_at("estimate", dplyr::funs(mean, quantile_05, quantile_95))
   params <- list(
-    tile_width = 0.95,
+    tile_width = 0.9,
     scale_length = 5
   )
   params$scale = scales::brewer_pal(palette = "RdYlGn")(params$scale_length)
@@ -27,14 +27,15 @@ make_fig_average_quant_qual <- function(coefficient_averages){
    dplyr::mutate(label1 = round(mean, 3), 
                  label2 = paste0("[", round(quantile_05, 3), ", ", round(quantile_95, 3), "]"), 
                  var = forcats::fct_relevel(var, c("quantity", "quality")), 
-                 term = forcats::fct_relevel(term, c("degree", "abundance", "trait originality"))) %>%
+                 term = forcats::fct_relevel(term, c("abundance", "degree"), after = 2)) %>%
     ggplot(aes(x = term, y = var)) +
     geom_tile(aes(fill = mean), 
               width = params$tile_width, 
-              height = params$tile_width) +
+              height = 1-((1-params$tile_width)/3)) +
     geom_text(aes(label = label1), 
               nudge_x = 0.15, 
-              size = 2.8) +
+              size = 2.8, 
+              colour = "grey20") +
     geom_text(aes(label = label2), 
               nudge_x = -0.15, 
               size = 2.5) +
@@ -44,10 +45,11 @@ make_fig_average_quant_qual <- function(coefficient_averages){
                          low = params$scale[1]) +
     pub_theme() +
     coord_flip() +
-   scale_y_discrete(position= "top", name = "") +
-   scale_x_discrete(name = "") +
+   scale_y_discrete(position= "top", name = "effect on pollination", expand = c(0,0)) +
+   scale_x_discrete(name = "", expand = c(0,0)) +
     theme(panel.border = element_blank(), 
-          axis.title.x = element_blank(), 
+          axis.title.x = element_text(size = 8, face = "bold"),
+          axis.text.x = element_text(size = 8),
           axis.title.y = element_blank(), 
           axis.ticks = element_blank())
 }
