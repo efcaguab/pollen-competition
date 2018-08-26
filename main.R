@@ -118,7 +118,8 @@ best_model_formula <- "pollen_gain ~  abn + poc + deg + org"
 fixed_summaries <- drake::drake_plan(
   wilcox_glo_com = global_vs_community(glanced_fixed, model_formula = best_model_formula), 
   summary_effects = get_summary_effects(tidied_fixed), 
-  coefficient_averages = get_coefficient_averages(tidied_fixed, model_formula_ranking, N = 99)
+  coefficient_averages = get_coefficient_averages(tidied_fixed, model_formula_ranking, N = 99), 
+  variable_importance = get_variable_importance(model_formula_ranking)
 )
 predictions <- drake::drake_plan(
   trade_off_predictions = trade_off_pred(
