@@ -187,6 +187,9 @@ model_formula_ranking$by_model_set %>%
 ```
 
 ```{r fig-model-results, fig.height = 3.5, fig.cap = "Distribution of effect estimates for models of conspecific and heterospecific pollen density gain. Only results for the models with the most parsimonous fixed effects. "}
+```{r fig-correlation, fig.height = 4.5, fig.cap = "Corelation between the explanatory variables included in the statistical models."}
+drake::readd(fig_correlation)
+```
 drake::readd(fig_all_model_results)
 ```
 
