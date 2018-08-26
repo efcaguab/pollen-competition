@@ -9,11 +9,11 @@ make_fig_all_model_results <- function(tidied_fixed, sites, model_formula_rankin
                   weights = get_weights(likelyhood)) %>% 
     dplyr::arrange(delta_AIC) %>% 
     dplyr::mutate(cum_weight = cumsum(weights), 
-                  best_set = dplyr::lag(cum_weight) < 0.95, 
+                  best_set = dplyr::lag(cum_weight) < 0.99, 
                   best_set = dplyr::if_else(is.na(best_set), TRUE, best_set)) %>%
     dplyr::filter(best_set) 
   
-  best_model_formulas <- best_models %$%
+  best_model_formulas <- model_formula_ranking$by_model_set %$%
     fixed_formula %>%
     unique()
   
