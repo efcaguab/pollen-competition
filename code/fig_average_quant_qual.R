@@ -15,41 +15,53 @@ make_fig_average_quant_qual <- function(coefficient_averages){
     dplyr::group_by(scale, term, var) %>%
     dplyr::summarise_at("estimate", dplyr::funs(mean, quantile_05, quantile_95))
   params <- list(
-    tile_width = 0.9,
+    tile_width = 0.95,
     scale_length = 5
   )
   params$scale = scales::brewer_pal(palette = "RdYlGn")(params$scale_length)
 
-  quant_qual %>%
+  p <- quant_qual %>%
     dplyr::filter(scale == "community") %>%
     dplyr::group_by() %>%
     humanize() %>%
    dplyr::mutate(label1 = round(mean, 3), 
                  label2 = paste0("[", round(quantile_05, 3), ", ", round(quantile_95, 3), "]"), 
-                 var = forcats::fct_relevel(var, c("quantity", "quality")), 
-                 term = forcats::fct_relevel(term, c("abundance", "degree"), after = 2)) %>%
+                 # var = forcats::fct_relevel(var, c("quantity", "quality")), 
+                 term = forcats::fct_relevel(term, c("degree", "abundance", "trait originality"), after = 0)) %>%
     ggplot(aes(x = term, y = var)) +
     geom_tile(aes(fill = mean), 
-              width = params$tile_width, 
-              height = 1-((1-params$tile_width)/3)) +
-    geom_text(aes(label = label1), 
-              nudge_x = 0.15, 
-              size = 2.8, 
-              colour = "grey20") +
-    geom_text(aes(label = label2), 
-              nudge_x = -0.15, 
-              size = 2.5) +
-    scale_fill_gradient2(name = "mean\neffect", 
+              height = params$tile_width, 
+              width = 1-((1-params$tile_width)/2)) +
+    geom_text(aes(label = label1, 
+                  colour = abs(mean)> 0.5), 
+              nudge_y = 0.15, 
+              size = 2.6, 
+              fontface = "bold") +
+    geom_text(aes(label = label2, 
+                  colour = abs(mean)> 0.5), 
+              nudge_y = -0.15, 
+              size = 1.9) +
+    scale_fill_gradient2(name = "mean effect", 
                          high = params$scale[params$scale_length], 
-                         mid = params$scale[3],
+                         mid = "white",
                          low = params$scale[1]) +
+    scale_color_manual(values = c("grey30", "white")) +
     pub_theme() +
-    coord_flip() +
-   scale_y_discrete(position= "top", name = "effect on pollination", expand = c(0,0)) +
-   scale_x_discrete(name = "", expand = c(0,0)) +
-    theme(panel.border = element_blank(), 
-          axis.title.x = element_text(size = 8, face = "bold"),
-          axis.text.x = element_text(size = 8),
+    # coord_flip() +
+    labs(title = "mean effect") +
+   scale_y_discrete(expand = c(0,0), 
+                    name = "effect on the", 
+                    labels = c("quality of\npollination", "quantity of\npollination")) +
+   scale_x_discrete(position = "top", expand = c(0,0)) +
+    theme(legend.position = "none", 
+          panel.border = element_blank(), 
+          axis.title.x = element_blank(),
+          axis.text.y = element_text(size = 7),
           axis.title.y = element_blank(), 
-          axis.ticks = element_blank())
+          axis.ticks = element_blank(), 
+          plot.title = element_text(size = 7, face = "bold", hjust = 0))
+  
+  # pdf(width = 3.25, height = 1.1)
+  p
+  # dev.off()
 }
