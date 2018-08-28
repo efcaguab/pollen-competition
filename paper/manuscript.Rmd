@@ -106,11 +106,15 @@ More details about the study sites, data collection, and laboratory protocols ca
 
 ## Data analysis
 
+### Pollen gain from animal pollination
+
 First, we explored wether animal pollination resulted in a quantitative increase in the pollination service.
 To do that, we compared the amount of conspecific pollen on stigmas from flowers open to animal pollination and that from flowers that were bagged, where only autogamus self-pollination ocurred.
 The difference between these two counts is not directly equivalent to the pollen deposited by animals because self-pollination is an adaptive trait [@kalisz_benefits_2003]. 
 Nevertheless, this difference still provides valuable indication of what the animal contribution to reproductive output.
 We performed this comparisons using a set of non parametric Mann-Whitney tests both at the community and the the species level (grouping species across communities). 
+
+### Conspeficic and heterospecific pollen gain
 
 Second, we examine wether there is a relationship between this gain and several ecological variables that can affect the mutualistic trade-off. To do so, we fitted two sets of linear mixed models [using the R package `nlme 3.1-131`, @pinheiro_nlme_2018] which differed on whether the pollen deposited was conspecific or heterospecific. 
 In both set of models, our response variable was the difference between pollen density (pollen counts per stigma) between open and bagged flowers. 
@@ -138,11 +142,20 @@ To faciliate comparison across model estimates, we scaled all independent variab
 
 In all set of models we first evaluated a set of candidate random effects which included random intercepts for plant species as well as random slopes for the relationship between degree and pollen gain. 
 In addition we also tested random intercepts assuming that the plant species grouping was hierachically nested in either their community, the land use, and the locality. 
-We selected the best random structure by comparing the median Akaike Information Criterion (AIC) of evaluated models fitted using restricted maximum likelyhood. 
-After determining the best random structure, we then focused on the model's fixed structure where we fitted the fixed effect coefficients using maximum likelyhood. 
-In all model sets, we obtained the estimates for all the fixed effects we considered and then evaluated their relevance by examining their distribution. 
-Nevertheless, we obtained the calculated the relative importance of the explanatory variables by comparing the sum the Akaike weights of the models that include each variable. 
-In addition, because we expect some of our independent variables to be related to each other, we also looked at how the effect of each predictor changed when each of them were removed once at a time.
+We selected the best random structure by comparing the median Akaike Information Criterion for small samples (AICc) of evaluated models fitted using restricted maximum likelyhood. 
+After determining the best random structure, we then focused on the model's fixed structure. 
+First we fitted all possible combinations of explanatory variables to the same bootstrap resamples used previously. 
+Similar to the random models, we then determined the likelyhood of each candidate model set by calculating the median AICc of each candidate model set. 
+
+We used multi-model inference to calculate the relative importance of each variable and its mean effect on pollen gain.
+The relative importance of the explanatory variables was calculated by adding the median weight of the candidate models that included the variable. 
+Then, to calculate the effect that each variable had on the gain of conspecific and heterospecific pollen we sampled 100 times from the estimated coefficients in each candidate model set proportional to the median likelyhood of each set. 
+This sampling allowed us to build a model averaged distribution of the effect that each predictor had on pollen gain. 
+If a variable was not included in a model set we setted the estimate of its coefficient in the model to zero. 
+Estimating the models using multiple combinations of the variables allowed us to evaluate how the effect of each predictor changed when each of them were removed once at a time. 
+This is important because we expect some of our predictors to be related to each other.
+
+### Quantity and quality of pollination
 
 At the community scale, sharing mutualistic partners might induce competition for pollination mainly trough two mechanisms. 
 The first is competition for visits, where plants with more atractive flowers reduce the number of visits for those less atractive. 
@@ -151,11 +164,12 @@ The second, more subtle, mechanism is interspecific pollen transfer, where even 
 Interspecific pollen transfer affects the *quality* of the pollination service because a focal plant might receive pollen from a different species, or conversely pollen from the focal plant might be lost to different species. 
 Generally speaking the larger the proportion of conspecific relative to heterospecific pollen the higher the quality of the pollination service. 
 
-The results from both model set—and the relationship between them—provide indication of both the quantity and quality of animal pollination, and the potential trade-off between these two. 
-To examine the relationship between our explanatory variables and the quantity of pollination we simply examine the results of the models of conspecific pollen gain. 
-To examine the relationship with the quality of pollination, we sampled 100 estimates from the distribution of coefficients in each of the two model sets. 
-For each of the samples, we then calculated the difference between the gain in conspecific and heterospecific pollen that would be predicted assuming mean values for the random intercepts and the other predictors. 
-This allowed us to estimate the proportion between heterospecific and conspecific pollen gain which we use as a proxy of the quality of pollination. 
+The mean effects we calculated from the model sets of conspecific and heterospecific pollen—and the relationship between them—provide indication of both the quantity and quality of animal pollination. 
+To examine the relationship between our explanatory variables and the quantity of pollination, we repeated the sampling used to estimate the distribution of the effects of conspecific and heterospecific gain. 
+The effects were then calculated from the mean effects on the gain on cospecific pollen. 
+To examine the quality of pollination we while the effects on the quality of pollination were calculated from the mean difference between the effects on the gain on consspecific and heterospecific pollen. 
+
+Finally facilitation XX
 
 # Results
 
