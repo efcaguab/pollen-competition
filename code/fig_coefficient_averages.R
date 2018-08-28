@@ -13,17 +13,17 @@ make_fig_coefficient_avarages <- function(coefficient_averages, variable_importa
                                                    "heterospecific pollen")) %>%
     # add fake point lower so that I can include the importance labels
     dplyr::group_by(pollen_category) %>%
-    dplyr::mutate(estimate = dplyr::if_else(min(estimate) == estimate,
-                                            estimate - 0.1, 
+    dplyr::mutate(estimate = dplyr::if_else(max(estimate) == estimate,
+                                            estimate + 0.1, 
                                             estimate))
   
   # to get the x aesthetic for the importance labels
   min_values <- dist %>%
-    dplyr::summarise(x = min(estimate)) %>%
+    dplyr::summarise(x = max(estimate)) %>%
     dplyr::mutate(x = dplyr::if_else(pollen_category == "heterospecific pollen", 
-                                     x + 0.03, 
+                                     x - 0.03, 
                                      x), 
-                  title = "relative\nimportance")
+                  title = "relative var.\nimportance")
   
   imp <- variable_importance %>%
     tidyr::gather(key = "pollen_category", value = "importance", conspecific, heterospecific) %>%
@@ -60,10 +60,10 @@ make_fig_coefficient_avarages <- function(coefficient_averages, variable_importa
     geom_text(data = min_values, 
               aes(label = title, x = x, y = 4.9), 
               fontface = "bold",
-              size = 2.6, 
-              nudge_x = -0.05, 
-              hjust = "left", 
-              lineheight = 0.6) +
+              size = 2.2, 
+              nudge_x = 0.06, 
+              hjust = "right", 
+              lineheight = 0.7) +
     # coord_flip() +
     pub_theme() +
     facet_grid(~ pollen_category, space = "free_x", scales = "free_x") +
@@ -78,7 +78,7 @@ make_fig_coefficient_avarages <- function(coefficient_averages, variable_importa
           panel.border = element_blank(), 
           panel.grid.major.x = element_line(size = 0.25), 
           axis.ticks = element_blank(), 
-          strip.text = element_text(size = 7, face = "bold")) +
+          strip.text = element_text(size = 7, face = "bold", hjust = 0)) +
     labs(colour = "", fill = "", x = "estimated effect on pollen gain", y = "")
 
   # pdf(width = 6.5, height = 2)
