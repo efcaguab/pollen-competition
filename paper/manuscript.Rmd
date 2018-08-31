@@ -284,12 +284,10 @@ However, plants can obtain a larger proportion of conspecific pollen when they h
 When examining the extent of facilitation at the species level, we found that XXX (Figure \@ref(fig:fig-trade-off-predictions)B).
 
 
-```{r fig-trade-off-predictions, fig.height= 2, fig.cap = "The interplay between the gain on heterospecific and conspecific pollen. (A) Overall and species-level relationship. Grey lines indicate the relationship in each of the samples, the median is indicated with a black solid line. Dotted lines show the relationship for each species. Invasive species are shown in red. (B) The proportion of conspecific pollen relative to the total amount of pollen gained trough animal pollination and its relationship to our set of explanatory variables."}
-cowplot::plot_grid(
-  drake::readd(fig_con_hetero_gain), 
-  drake::readd(fig_proportion_vs_variables), 
-  align = "h", axis = "tb", ncol = 2, labels = LETTERS[1:2], 
-  label_size = 8, rel_widths = c(0.35, 0.65))
+```{r fig-trade-off-predictions, fig.height= 3.1, fig.width = 3.25, fig.cap = "The interplay between the gain on heterospecific and conspecific pollen. (A) Overall and species-level relationship. Grey lines indicate the relationship in each of the samples, the median is indicated with a black solid line. Dotted lines show the relationship for each species. Invasive species are shown in red."}
+# pdf(width = 3.25, height = 3.1)
+  drake::readd(fig_con_hetero_gain)
+  # dev.off()
 ```
 
 # Discussion 
