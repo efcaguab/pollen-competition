@@ -62,3 +62,13 @@ inspect_family(all_plants, file = './data/raw/compositae.csv') # too many... use
 inspect_family(all_plants, file = './data/raw/malvaceae.csv') # none with deposition...
 inspect_family(all_plants, file = './data/raw/rubiaceae.csv') # this would work... but no deposition 
 
+
+# Imputed pollen 17-08-18 -------------------------------------------------
+
+drake::loadd(imputed_pollen)
+
+imputed_pollen %>%
+  tidyr::spread(scale, poc) %>% View
+  ggplot(aes(community, imputed)) +
+  geom_point() +
+  geom_smooth(method = "lm")
