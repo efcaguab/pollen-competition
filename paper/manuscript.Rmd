@@ -271,7 +271,7 @@ We found that the gain in conspecific pollen is negatively affected by the plant
 The gain in heterospecific pollen was instead positively affected by degree and the plant's phenology overlap, but was also strongly negatively affected by the plant's relative abbundance. 
 
 
-```{r fig-average-qual-quant, fig.height=2, fig.width=3.5, fig.cap="asd"}
+```{r fig-average-qual-quant, fig.height=1.1, fig.width=3.25, fig.cap="asd"}
 drake::readd(fig_average_qual_quant)
 ```
 
