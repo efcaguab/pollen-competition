@@ -111,7 +111,7 @@ table_frame %>%
   kableExtra::kable_styling(font_size = 8)
 ```
 
-```{r table-variation-across-sites, results='asis'}
+```{r table-variation-across-sites, eval=FALSE, results='asis'}
 drake::loadd(consp_self)
 consp_self %>%
   anova(test = "Chisq")  %>%
