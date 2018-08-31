@@ -106,54 +106,51 @@ More details about the study sites, data collection, and laboratory protocols ca
 
 ## Data analysis
 
-### Pollen gain from animal pollination
-
-First, we explored wether animal pollination resulted in a quantitative increase in the pollination service.
-To do that, we compared the amount of conspecific pollen on stigmas from flowers open to animal pollination and that from flowers that were bagged, where only autogamus self-pollination ocurred.
-The difference between these two counts is not directly equivalent to the pollen deposited by animals because self-pollination is an adaptive trait [@kalisz_benefits_2003]. 
-Nevertheless, this difference still provides valuable indication of what the animal contribution to reproductive output.
-We performed this comparisons using a set of non parametric Mann-Whitney tests both at the community and the the species level (grouping species across communities). 
-
 ### Conspeficic and heterospecific pollen gain
 
-Second, we examine wether there is a relationship between this gain and several ecological variables that can affect the mutualistic trade-off. To do so, we fitted two sets of linear mixed models [using the R package `nlme 3.1-131`, @pinheiro_nlme_2018] which differed on whether the pollen deposited was conspecific or heterospecific. 
+First, we examine wether there is a relationship between the gain of pollen induced by animal pollination and several ecological variables that can affect the mutualistic trade-off. 
+To do so, we used a combination of multi-model inferencewe and bootstrap resampling of the data sets. 
+In summary we fitted two sets of linear mixed models [using the R package `nlme 3.1-131`, @pinheiro_nlme_2018] which differed on whether the pollen deposited was conspecific or heterospecific. 
 In both set of models, our response variable was the difference between pollen density (pollen counts per stigma) between open and bagged flowers. 
-Both model sets were based on the same one hundred bootstrap resamples of the deposition data. 
+Each model set was based on the same one hundred bootstrap resamples of the deposition data. 
 
 We used bootstrap resampling because, as open and bagged flowers were not paired, this allowed us to directly model the *gain* in pollen density rather than density itself. 
-This strategy, not only simplified the model specification and intepretation, but also allowed us to easily evaluate the uncertainity of the model results.  
-In each replicate we randomly sampled with replacement a number of open flowers within each community-species combination and an equal number of closed flowers. 
+This strategy, not only simplified the model specification and intepretation, but most importantly it also allowed us to easily evaluate the uncertainity of the model results. 
+In each data replicate we randomly sampled with replacement a number of open flowers within each community-species combination and an equal number of closed flowers. 
 We then log-transformed the pollen densities to improve normality and minimise the impact of outliers (Figure \@ref(S-fig:fig-deposition-logtransformed-or-not) and \@ref(S-fig:fig-deposition-gain-logtransformed-or-not)), this generally offered better results that a generalised linear model with poisson (or quasiposson) error structure. 
 Finally, we calculated the difference between the pollen density among treatmemts. 
 This difference was the response variable in all our models. 
 
-As predictors, we included species degree, the species' functional originality, the plant relative abbundance, and the plant species' share on the pollen pool. 
+As predictors, we included species degree, the plant relative abbundance, the plant species' share on the pollen pool, and the species' functional originality. 
 Species degree was calculated from combining the quantitative and qualitative visitation networks and corresponds to the number of animal species that were observed to visit the plant species in the community where it was sampled. 
+The plant's relative abbundance we simply aggregated the flower counts for each plant species in the community.
+As with the deposition data, we found that log-transforming the abundance counts drastically improved normality (Figure \@ref(S-fig:fig-abundance-logtransformed-or-not)). 
+The species' share of the pollen pool was calculated as the proportion of pollen of that species in the pollen counts being carried by pollinators from the community. 
+
 Functional originality is defined as the distance of a species from the community trait average--the centroid of functional space of the community [@laliberte_distance-based_2010; @coux_linking_2016-1]. 
 Specifically, we recorded morphological traits that relate to plant type (herb, shrub, climber), life cycle (annual, perenial), flower coloration, and whether the species is native in the study region or not. 
 As phenology has been shown to be a key mechanisms of niche diferentiation among plants, we also included the plant abundance in each of the survey months (November to March) as an additional trait in our analysis. 
 This approach allowed us to integrate the originality in phenological niche alongside the originality on other functional traits. 
 All traits were scaled to have a mean of zero and a standard deviation of one prior to calculating the centroid of the functional space. 
 The species-specific functional coordinates were calculated using the R package `FD 1.0-12` [@laliberte_distance-based_2010; @laliberte_fd_2014]. 
-To calculate the plant's relative abbundance we simply aggregated the flower counts for each plant species in the community.
-As with the deposition data, we found that log-transforming the abundance counts drastically improved normality (Figure \@ref(S-fig:fig-abundance-logtransformed-or-not)). 
-Finally the species' share of the pollen pool was calculated as the proportion of pollen of that species in the pollen counts being carried by pollinators from the community. 
-To faciliate comparison across model estimates, we scaled all independent variables to have a mean of zero and a standard deviation of one. 
+To faciliate comparison across model estimates, we scaled all independent variables to have a mean of zero and a standard deviation of one.
 
-In all set of models we first evaluated a set of candidate random effects which included random intercepts for plant species as well as random slopes for the relationship between degree and pollen gain. 
-In addition we also tested random intercepts assuming that the plant species grouping was hierachically nested in either their community, the land use, and the locality. 
-We selected the best random structure by comparing the median Akaike Information Criterion for small samples (AICc) of evaluated models fitted using restricted maximum likelyhood. 
-After determining the best random structure, we then focused on the model's fixed structure. 
-First we fitted all possible combinations of explanatory variables to the same bootstrap resamples used previously. 
-Similar to the random models, we then determined the likelyhood of each candidate model set by calculating the median AICc of each candidate model set. 
-
+In both set of models we first evaluated a set of candidate random effects which included random intercepts for plant species as well as random slopes for the relationship between degree and pollen gain. 
+In addition we also tested for random intercepts that assumed that the plant species grouping was hierachically nested in either their community, the land use, and the locality. 
+We selected the best random structure by comparing the median Akaike Information Criterion (AIC) of evaluated models. 
+After determining the best random structure, we then focused on the model's fixed structure composed by our explanatory variables. 
 We used multi-model inference to calculate the relative importance of each variable and its mean effect on pollen gain.
-The relative importance of the explanatory variables was calculated by adding the median weight of the candidate models that included the variable. 
-Then, to calculate the effect that each variable had on the gain of conspecific and heterospecific pollen we sampled 100 times from the estimated coefficients in each candidate model set proportional to the median likelyhood of each set. 
-This sampling allowed us to build a model averaged distribution of the effect that each predictor had on pollen gain. 
-If a variable was not included in a model set we setted the estimate of its coefficient in the model to zero. 
-Estimating the models using multiple combinations of the variables allowed us to evaluate how the effect of each predictor changed when each of them were removed once at a time. 
-This is important because we expect some of our predictors to be related to each other.
+First we fitted all possible combinations of explanatory variables to the same bootstrap resamples used previously. 
+This yielded one hundred models for each "candidate formula"---a particular combination of explanatory variables. 
+We then determined the likelyhood of each candidate formula and its relative wheight by calculating the median $\Delta$AIC of the one hundred models that constitute it. 
+As AIC is only useful to compare models with the same response variable, the $\Delta$AIC of each candidate formula was calculated indepenently for each bootstrap resample.
+Calculating the median value of each candidate formula allowed us to estimate the relative importance of the explanatory variables  using the standard methods of adding the median weight of the candidate models that included the variable. 
+
+To calculate the effect that each variable had on the gain of conspecific and heterospecific pollen we sampled from the estimated coefficients in each candidate model proportional to the median likelyhood of each set. 
+In other words, the estimated coefficients from more likely candidate constitute a larger share of the distribution of coefficients. 
+When a variable was not included in a model set we setted the estimate of its coefficient in the model to zero. 
+We expect some of our predictors to be correlated to each other. Estimating the models using multiple combinations of explanatory variables also allowed us to evaluate the potential collinearity between them. 
+To do so we inspect how the effect of the explanatory variables changed across candidate formulaes, when one or more of them were removed in turns. 
 
 ### Quantity and quality of pollination
 
