@@ -161,12 +161,22 @@ The second, more subtle, mechanism is interspecific pollen transfer, where even 
 Interspecific pollen transfer affects the *quality* of the pollination service because a focal plant might receive pollen from a different species, or conversely pollen from the focal plant might be lost to different species. 
 Generally speaking the larger the proportion of conspecific relative to heterospecific pollen the higher the quality of the pollination service. 
 
-The mean effects we calculated from the model sets of conspecific and heterospecific pollen—and the relationship between them—provide indication of both the quantity and quality of animal pollination. 
-To examine the relationship between our explanatory variables and the quantity of pollination, we repeated the sampling used to estimate the distribution of the effects of conspecific and heterospecific gain. 
-The effects were then calculated from the mean effects on the gain on cospecific pollen. 
-To examine the quality of pollination we while the effects on the quality of pollination were calculated from the mean difference between the effects on the gain on consspecific and heterospecific pollen. 
+To evaluate the quantity of pollination we first, we explored wether animal pollination resulted in a quantitative increase in the amount of conspeific pollen. 
+To do that, we compared the amount of conspecific pollen on stigmas from flowers open to animal pollination and that from flowers that were bagged, where only autogamus self-pollination ocurred. 
+The difference between these two counts is not directly equivalent to the pollen deposited by animals because self-pollination is an adaptive trait [@kalisz_benefits_2003].  
+Nevertheless, this difference still provides valuable indication of what the animal contribution to reproductive output. 
+We performed this comparisons using a set of non parametric Mann-Whitney tests both at the community and the the species level (grouping species across communities). 
+Second, we calculated the relationship between the ecological variables included in the models of pollen gain and the quantity of pollination. 
+To do so, we simply calculated the mean value of the distribution of the effects of conspecific pollen gain. 
+Again, we used bootstrap resampling from the coefficient distributions to calculate the confidence intervals of the mean. 
 
-Finally facilitation XX
+The quality of pollination can be estimated by the relationship that exists between the gain in conspecific and heterospecific pollen. 
+First, we calculated an overal relationship by sampling the predictions from 100 conspecific/heterospecific model pairs and estimated the relationship by fitting an standardised major axis (SMA) to each pair (we used the R package smatr 3.4-3, Warton et al. 2012). 
+We then followed a similar procedure to calculate a relationship per species in a community but instead of fitting a SMA per model pair, we did this across the 100 models for each random intercept independently. 
+This allowed us to estimate the extent of facilitation for each plant species in its community. 
+We also calculated the relationship between the ecological variables and the quality of pollination. 
+To do so we calculated the mean difference between a sample of the distribution of the effects of conspecific pollen gain and a sample of those of heterospecific pollen gain. 
+Similar to the mean effects on the quantity of pollination, we used bootstrap resamplong to calculate confidence intervals of the means. 
 
 # Results
 
