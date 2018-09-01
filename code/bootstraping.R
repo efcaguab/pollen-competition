@@ -219,35 +219,49 @@ get_model_correlations <- function(...){
 
 get_model_linear_fits <- function(...){
   models <- list(...)
-  
-  # remove failed models
-  failed <- purrr::map(models, purrr::map_chr, class) %>%
-    purrr::map_lgl(~ any("try-error" %in% .)) 
-  models <- models[!failed]
-  
-  pearson_slope <- function(x,y){
-    data.frame(pearson_slope = cov(x, y) * sd(y) / sd(x))
-  }
+  models <- remove_failed_models(models)
   
   pearson_slopes <- function(x){
     x %>%
-      purrr::map(~ broom::augment(.)) %>% 
-      purrr::map(~ dplyr::select(., pollen_category, scale, var_trans, site_name, plant_name, fixed_formula, .fitted)) %>%
-     purrr::map_df(~ dplyr::distinct(.)) %>%  
-      tidyr::spread(pollen_category, .fitted) %>% 
+      expand_model_predictions() %>% 
       # ggplot(aes(x = conspecific, y = heterospecific, colour = interaction(scale, var_trans))) +
       # geom_point() + geom_smooth(method = "lm") + coord_equal()
       # qplot(conspecific, heterospecific, colour = interaction(scale, var_trans), data = .)
-      split(list(.$scale, .$var_trans, .$fixed_formula)) %>%
-      purrr::map(~ smatr::sma(conspecific ~ heterospecific, data = .)) %>%
-      # purrr::walk(~ plot(.)) %>%
-      purrr::map(~ coef(.)) %>% 
-     purrr::map_df(~ tibble::rownames_to_column(as.data.frame(.)), .id = "m") %>%
-      dplyr::rename(sma_parameter = rowname,
-             value  = '.') %>%
+      split(list(.$scale, .$var_trans, .$fixed_formula)) %>% 
+      get_sma_conspecific_heterospecific() %>%
      tidyr::separate(m, c("scale", "var_trans", "fixed_formula"), sep = "\\.")
   }
   
   models %>%
    purrr::map_df(~ pearson_slopes(.), .id = "model")
 }
+
+remove_failed_models <- function(models){
+  # remove failed models
+  failed <- purrr::map(models, purrr::map_chr, class) %>%
+    purrr::map_lgl(~ any("try-error" %in% .)) 
+  models <- models[!failed]
+  models
+}
+
+expand_model_predictions <- function(x){
+  x %>% purrr::map(~ broom::augment(.)) %>% 
+    purrr::map(~ dplyr::select(., pollen_category, scale, var_trans, site_name, plant_name, fixed_formula, .fitted)) %>%  
+    purrr::map_df(~ dplyr::distinct(.)) %>%  
+    tidyr::spread(pollen_category, .fitted)
+}
+
+pearson_slope <- function(x,y){
+  data.frame(pearson_slope = cov(x, y) * sd(y) / sd(x))
+}
+
+get_sma_conspecific_heterospecific <- function(x){
+  x %>%
+    purrr::map(~ smatr::sma(conspecific ~ heterospecific, data = .)) %>%
+    # purrr::walk(~ plot(.)) %>%
+    purrr::map(~ coef(.)) %>% 
+    purrr::map_df(~ tibble::rownames_to_column(as.data.frame(.)), .id = "m") %>%
+    dplyr::rename(sma_parameter = rowname,
+                  value  = '.') 
+}
+
