@@ -32,6 +32,20 @@ knitr::opts_chunk$set(echo = FALSE, message = FALSE,
 
 \clearpage
 
+### To do
+
+* References to the introduction
+* Settle on analyses
+* Nail down discussion
+* Abstract
+
+### Questions
+
+* Should I separate the "phenology originality" from the "functional originality"?
+* Gain in pollen vs. absolute amount of pollen?
+
+\clearpage
+
 # Abstract
 
 TBC
