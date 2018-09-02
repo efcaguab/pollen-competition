@@ -272,13 +272,6 @@ get_model_linear_fits_species <- function(...){
   
   # remove failed models
   models <- remove_failed_models(models)
-  
   models %>%
-    purrr::map_df(expand_model_predictions, .id = "model") %>% 
-    # Calculate one fit per site name - species combiation
-    split(list(.$scale, .$var_trans, .$fixed_formula, .$site_name, .$plant_name),
-          # need to use a different separator than "." cause that's used in the species names
-          drop = T, sep = "*") %>% 
-    get_sma_conspecific_heterospecific() %>%
-    tidyr::separate(m, c("scale", "var_trans", "fixed_formula", "site_name", "plant_name"), sep = "\\*")
+    purrr::map_df(expand_model_predictions, .id = "model") 
 }

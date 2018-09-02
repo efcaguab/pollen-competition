@@ -113,6 +113,9 @@ model_corr <- fixed_models %>%
 het_con_linear_fit <- fixed_models %>%
   drake::gather_plan(., gather = "get_model_linear_fits", target = "model_linear_fits")
 
+het_con_linear_fit_sp <- fixed_models %>%
+  drake::gather_plan(., gather = "get_model_linear_fits_species", target = "model_linear_fits_species")
+
 best_model_formula <- "pollen_gain ~  abn + poc + deg + org"
 
 fixed_summaries <- drake::drake_plan(
@@ -121,6 +124,7 @@ fixed_summaries <- drake::drake_plan(
   coefficient_averages = get_coefficient_averages(tidied_fixed, model_formula_ranking, N = 99), 
   variable_importance = get_variable_importance(model_formula_ranking)
 )
+
 predictions <- drake::drake_plan(
   trade_off_predictions = trade_off_pred(
     tidied_fixed, 
@@ -135,7 +139,7 @@ model_plans <- rbind(
   random_summaries, 
   fixed_models, glanced_fixed_models, tidied_fixed_models, 
   model_corr,
-  het_con_linear_fit,
+  het_con_linear_fit, het_con_linear_fit_sp,
   fixed_summaries, 
   predictions
 )
