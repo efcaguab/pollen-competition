@@ -1,4 +1,4 @@
-make_fig_con_hetero_gain <- function(tidied_fixed, model_linear_fits, model_formula_ranking) {
+make_fig_con_hetero_gain <- function(tidied_fixed, model_linear_fits, model_formula_ranking, model_linear_fits_species) {
   require(ggplot2)
   
   model_weights <- model_formula_ranking$aggregated %>%
@@ -14,24 +14,51 @@ make_fig_con_hetero_gain <- function(tidied_fixed, model_linear_fits, model_form
     tidyr::spread(data = ., key = sma_parameter, value = value) %>%
     dplyr::inner_join(model_weights, by = "fixed_formula") %>%
     dplyr::group_by(model, scale) %>%
-    dplyr::sample_n(size = 1, weight = weight)%>%
+    dplyr::sample_n(size = 1, weight = weight) %>%
     dplyr::group_by()
   
+  points_sp <- model_linear_fits_species %>%
+    dplyr::filter(var_trans == "log",
+                  scale == "community") %>% 
+  #   tidyr::spread(data = ., key = sma_parameter, value = value) %>% 
+    dplyr::inner_join(model_weights, by = "fixed_formula") %>% 
+    dplyr::group_by(site_name, plant_name, scale, model) %>%
+    dplyr::sample_n(size = 1, weight = weight) %>%
+    dplyr::group_by()
+  
+  points_sp_summarised <- points_sp %>%
+    dplyr::group_by(plant_name, site_name) %>%
+    dplyr::summarise_at(c("conspecific", "heterospecific"), 
+                        dplyr::funs(median, quantile_05,quantile_95))
+
   dplyr::data_frame(x = get_pred_range(tidied_fixed, "heterospecific"),
                    y = get_pred_range(tidied_fixed, "conspecific")) %>%
-    ggplot(aes(x, y)) +
+    ggplot() +
     geom_abline(data = ab_lines, 
                 aes(slope = slope, intercept = elevation), 
                 size = 0.1, linetype = 1, colour = "grey", 
                 alpha = 0.5) +
+    
+    geom_errorbar(data = points_sp_summarised, 
+                  aes(x = heterospecific_median, ymin = conspecific_quantile_05, ymax = conspecific_quantile_95), 
+                  show.legend = F, alpha = 0.5, colour = "grey") + 
+    geom_errorbarh(data = points_sp_summarised, 
+                  aes(x = heterospecific_median, 
+                      y = conspecific_median,
+                      xmin = heterospecific_quantile_05, xmax = heterospecific_quantile_95), 
+                  show.legend = F, alpha = 0.5, colour = "grey") + 
+    geom_point(data = points_sp_summarised,
+               aes(x = heterospecific_median, y = conspecific_median), 
+               alpha = 1, show.legend = FALSE, shape = 21, colour = "black", size = 1) +
     geom_abline(data = dplyr::summarise_if(ab_lines, is.numeric, median),
-    aes(slope = slope, intercept = elevation),
-    size = 0.5, linetype = 1, colour = "black") +
+                aes(slope = slope, intercept = elevation),
+                size = 0.5, linetype = 1, colour = "black") +
     geom_abline(slope = 1, intercept = 0, size = 0.25, linetype = 2) +
-    geom_point(alpha = 0) +
+    geom_hline(yintercept = 0, size = 0.25, linetype = 2) +
     coord_equal(xlim = get_pred_range(tidied_fixed, "heterospecific"),
                 ylim = get_pred_range(tidied_fixed, "conspecific")) +
     pub_theme() +
+    scale_color_discrete() +
     labs(x = "gain in heterospecific pollen", 
          y = "gain in conspecific pollen")
 }
