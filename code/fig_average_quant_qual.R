@@ -14,10 +14,12 @@ make_fig_average_quant_qual <- function(coefficient_averages){
     dplyr::summarise_at("estimate", mean) %>% 
     dplyr::group_by(scale, term, var) %>%
     dplyr::summarise_at("estimate", dplyr::funs(mean, quantile_05, quantile_95))
+  
   params <- list(
     tile_width = 0.95,
     scale_length = 5
   )
+  
   params$scale = scales::brewer_pal(palette = "RdYlGn")(params$scale_length)
 
   p <- quant_qual %>%
@@ -33,12 +35,12 @@ make_fig_average_quant_qual <- function(coefficient_averages){
               height = params$tile_width, 
               width = 1-((1-params$tile_width)/2)) +
     geom_text(aes(label = label1, 
-                  colour = abs(mean)> 0.5), 
+                  colour = abs(mean)> 0.4), 
               nudge_y = 0.15, 
               size = 2.6, 
               fontface = "bold") +
     geom_text(aes(label = label2, 
-                  colour = abs(mean)> 0.5), 
+                  colour = abs(mean)> 0.4), 
               nudge_y = -0.15, 
               size = 1.9) +
     scale_fill_gradient2(name = "mean effect", 
