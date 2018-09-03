@@ -7,7 +7,7 @@ make_fig_coefficient_avarages <- function(coefficient_averages, variable_importa
     # dplyr::summarise(estimate = mean(estimate)) %>%
     dplyr::group_by() %>%
     humanize() %>%
-    dplyr::mutate(term = forcats::fct_relevel(term, c("abundance", "degree"), after = 2), 
+    dplyr::mutate(term = forcats::fct_relevel(term, c("func. originality", "abundance", "degree"), after = 2), 
                   pollen_category = dplyr::if_else(pollen_category == "conspecific", 
                                                    "conspecific pollen  ", 
                                                    "heterospecific pollen")) %>%
@@ -21,13 +21,13 @@ make_fig_coefficient_avarages <- function(coefficient_averages, variable_importa
   min_values <- dist %>%
     dplyr::summarise(x = max(estimate)) %>%
     dplyr::mutate(x = dplyr::if_else(pollen_category == "heterospecific pollen", 
-                                     x - 0.03, 
+                                     x, 
                                      x), 
                   title = "relative var.\nimportance")
   
   imp <- variable_importance %>%
     tidyr::gather(key = "pollen_category", value = "importance", conspecific, heterospecific) %>%
-    dplyr::mutate(term = forcats::fct_relevel(term, c("abundance", "degree"), after = 2), 
+    dplyr::mutate(term = forcats::fct_relevel(term, c("func. originality", "abundance", "degree"), after = 2), 
                   pollen_category = dplyr::if_else(pollen_category == "conspecific", 
                                                    "conspecific pollen  ", 
                                                    "heterospecific pollen"), 
@@ -35,26 +35,31 @@ make_fig_coefficient_avarages <- function(coefficient_averages, variable_importa
                   label = sprintf("%.2f", importance)) %>%
     dplyr::inner_join(min_values, by = "pollen_category")
   
+  dist %<>% 
+    dplyr::inner_join(imp)
   
-  p <- dist %>%
+  dist %>%
+    dplyr::filter(estimate != 0) %>%
     ggplot(aes(x = estimate,
                y = term,
                colour = pollen_category, 
                # vline_color = pollen_category, 
                fill = pollen_category)) +
-    geom_vline(xintercept = 0, linetype = 1, size = 0.25, color = "grey75") +
-    geom_density_ridges(alpha = 0.25, 
-                        panel_scaling = T, 
+    geom_vline(xintercept = 0, linetype = 2, size = 0.25, color = "black") +
+    geom_density_ridges(aes(alpha = importance), 
+                        # alpha = 0.25, 
+                        panel_scaling = F, 
                         scale = 1.5, 
                         quantile_lines = F, quantiles = 2, 
                         vline_linetype = 1, 
                         vline_size = 0.25, 
-                        rel_min_height = 0) +
+                        rel_min_height = 0, 
+                        bandwidth = 0.015) +
     geom_text(data = imp, 
               aes(label = label, y = as.numeric(term),
                   x = x), 
               fill = "white", 
-              size = 2.6, 
+              size = 2.7, 
               nudge_y = 0.2, 
               fontface = "bold") +
     geom_text(data = min_values, 
@@ -67,8 +72,10 @@ make_fig_coefficient_avarages <- function(coefficient_averages, variable_importa
     # coord_flip() +
     pub_theme() +
     facet_grid(~ pollen_category, space = "free_x", scales = "free_x") +
-    scale_color_manual(values = c_scale()) +
-    scale_fill_manual(values = c_scale()) +
+    scale_color_manual(values = c_scale()[c(1,2)]) +
+    scale_fill_manual(values = c_scale()[c(1,2)]) +
+    scale_size_continuous(range = c(0.25, 0.5)) +
+    scale_alpha_continuous(range = c(0.1, 0.25)) +
     scale_x_continuous(expand = c(0,0), 
                        breaks = seq(-2,2, by = 0.2)) +
     scale_y_discrete(expand = c(0.01,0.1)) +
@@ -79,10 +86,10 @@ make_fig_coefficient_avarages <- function(coefficient_averages, variable_importa
           panel.grid.major.x = element_line(size = 0.25), 
           axis.ticks = element_blank(), 
           strip.text = element_text(size = 7, face = "bold", hjust = 0)) +
-    labs(colour = "", fill = "", x = "estimated effect on pollen gain", y = "")
+    labs(colour = "", fill = "", x = "estimated effect on pollen density gain", y = "")
 
   # pdf(width = 6.5, height = 2)
-  p
+  # p
   # dev.off()
 }
 
