@@ -73,9 +73,9 @@ make_fig_coefficient_avarages <- function(coefficient_averages, variable_importa
     pub_theme() +
     facet_grid(~ pollen_category, space = "free_x", scales = "free_x") +
     scale_color_manual(values = c_scale()[c(1,2)]) +
-    scale_fill_manual(values = c_scale()[c(1,2)]) +
+    scale_fill_manual(values = rgb(t(round(col2rgb(c_scale()[c(1,2)])*1.009)), maxColorValue = 255)) +
     scale_size_continuous(range = c(0.25, 0.5)) +
-    scale_alpha_continuous(range = c(0.1, 0.25)) +
+    scale_alpha_continuous(range = c(0.7, 0.7)) +
     scale_x_continuous(expand = c(0,0), 
                        breaks = seq(-2,2, by = 0.2)) +
     scale_y_discrete(expand = c(0.01,0.1)) +
