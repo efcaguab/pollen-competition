@@ -75,15 +75,13 @@ This evidence is aligned with the intuitive rationale that a species that intera
 If evolutionary specialisation occur by changing traits to focus on fewer but better partners, we should expect a reduction of competition for pollination in species with original traits. 
 Alternatively, it might also be the case that density is the dominant force driving pollen transfer. 
 Abundant species might experience a dilution of the available pollinators but might also comprise a greater component of the pollen source pool being transported by pollinators. 
-In this case, a potential reduction in the quantity of pollination could be compensated by an increase in the quality of pollination. 
+In this case, a potential reduction in the quantity of pollination could be compensated by an increase in the quality of pollination.
 
-Here, we explore the signature of the mutualistic trade-off in diverse natural communities. 
+Here, we explore the role that competition for pollinators plays on the quantity and quality of the pollination service and look for the signature of the mutualistic trade-off in diverse natural communities. 
 To tease appart the multiple factors that operate at the community scale we use data that describes both the structure of the interactions and the pollen flows that ocurr within it, all while accounting for the traits of the species that integrate the community.
 Specifically, we first estimate the gain on pollen that can be attributed to the mutualistic interactions. 
 Second, we investigate wether there is a relationship between this gain (of both conspecific and heterospecific pollen and by extension the quantity and quality of pollination) and the species degree, functional originality, abundance, and contribution to the pollen pool, which together describe the role of the plant species and the ecological context. 
 Third, and finaly, we explore how these variables shape the quantity and quality of pollination and ultimately the competition for pollinators. 
-We hypothezise that XX??
-**TODO: Mini conclusion here**
 
 # Methods
 
