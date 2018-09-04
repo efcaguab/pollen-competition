@@ -30,7 +30,7 @@ humanize <- function(x, sites = NA, random_effects = NA, formula_long = FALSE, t
   if ('term' %in% names(x)) {
     x <- x %>%
       dplyr::mutate(term = dplyr::case_when(
-        grepl('org', term) ~ 'trait originality',
+        grepl('org', term) ~ 'func. originality',
         grepl('abn', term) ~ 'abundance',
         grepl('rab', term) ~ 'abundance',
         grepl('deg', term) ~ 'degree',
@@ -46,7 +46,7 @@ humanize <- function(x, sites = NA, random_effects = NA, formula_long = FALSE, t
           fixed_formula = stringr::str_replace(fixed_formula, "pollen_gain ~", ""),
           fixed_formula = stringr::str_replace(fixed_formula, "abn", "abundance"),
           fixed_formula = stringr::str_replace(fixed_formula, "poc", "share pollen"),
-          fixed_formula = stringr::str_replace(fixed_formula, "org", "trait originality"),
+          fixed_formula = stringr::str_replace(fixed_formula, "org", "func. originality"),
           fixed_formula = stringr::str_replace(fixed_formula, "deg", "degree"))
     } else {
       x <- x %>%
