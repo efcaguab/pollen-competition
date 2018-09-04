@@ -204,9 +204,6 @@ variable_importance %>%
   kableExtra::add_header_above(c(" ", "variable importance" = 2))
 ```
 
-```{r fig-model-results-global, fig.height = 2, fig.cap = "Distribution of effect estimates for models of conspecific and heterospecific pollen density gain. Results are shown for models with explanatory var"}
-drake::readd(fig_coefficient_averages)
-```
 
 Overall we observed that species degree, abundance, and share of the pollen pool had a neggative effect on the gain of conspecific pollen, while functional originality had a positive effect. 
 This 
@@ -245,9 +242,6 @@ Over all study sites, we found that `r round(prop_sig_global*100)`% of species o
 When looking at the differences within sites, we found that only `r round(prop_consistency*100)`% of the species that were present in more than one site had the same response across community (Table \@ref(S-tab:table-species-gain-site)). 
 In addition, using the results from the models of conspecific pollen gain, we found that from all the explanatory variables examined, only the plant's functional originality has a positive effect on the quantity of pollination (Figure \@ref(fig:fig-average-qual-quant)). 
 
-```{r fig-average-qual-quant, fig.height=1.1, fig.width=3.25, fig.cap="asd"}
-drake::readd(fig_average_qual_quant)
-```
 
 We then examined the quality of pollination, which is given by the relationship between conspecific and heterospecific pollen.
 We found that, overall, the gain in conspecific pollen is positively correlated with the gain in heterospecific pollen. 
@@ -255,10 +249,18 @@ The slope of the relationship is such that it is more likely that the gain on he
 At the species level, we found that XXX (Figure \@ref(fig:fig-trade-off-predictions)B). 
 Furthermore, by examining the difference between the conspecific and heterospecific pollen gain, we found that the species abundance has an important positive effect in the quality of pollination, while the share in the pollen pool and, to an smaller extent, the species degree have a negative effect. 
 
-```{r fig-trade-off-predictions, fig.height= 3.1, fig.width = 3.25, fig.cap = "The interplay between the gain on heterospecific and conspecific pollen. (A) Overall and species-level relationship. Grey lines indicate the relationship in each of the samples, the median is indicated with a black solid line. Dotted lines show the relationship for each species. Invasive species are shown in red."}
+```{r fig-model-results-global, fig.height = 2, fig.cap = "Distribution of effect estimates of models of conspecific and heterospecific pollen density gained with animal pollination. Results are shown for models that included explanatory variable. The median relative variable impotance of the four variables for each model set is shown next to each distribution. Variable importance was calculated as the sum of the median Akaike weights (Table \\ref{S-tab:table-aic-fixed-models}) of each candidate model set that includes the variable."}
+drake::readd(fig_coefficient_averages)
+```
+
+```{r fig-trade-off-predictions, fig.height= 2.3, fig.width = 3.25, fig.cap = "The interplay between the gain on heterospecific and conspecific pollen. Each dot indicates the corresponding gains for a species in its community (which corresponded to the random effects in our models). Grey lines indicate the overall relationship in each of the bootstrap replicates and were calculated by sampling the predictions from 100 conspecific/heterospecific model pairs and estimated the relationship by fitting an standardised major axis (SMA) to each pair (we used the R package smatr 3.4-3, Warton et al. 2012)."}
 # pdf(width = 3.25, height = 3.1)
   drake::readd(fig_con_hetero_gain)
   # dev.off()
+```
+
+```{r fig-average-qual-quant, fig.height=1.1, fig.width=3.25, fig.cap="Mean relative effect of ecological variables on the quantity and quality of pollination. Confidence intervals of the mean (at the 0.05 level) are shown in square brackets. "}
+drake::readd(fig_average_qual_quant)
 ```
 
 # Discussion 
