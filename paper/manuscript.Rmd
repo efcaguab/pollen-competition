@@ -118,13 +118,23 @@ More details about the study sites, data collection, and laboratory protocols ca
 
 ## Data analysis
 
-### Conspeficic and heterospecific pollen gain
+At the community scale, sharing mutualistic partners might induce competition for pollination mainly trough two mechanisms. 
+The first is competition for visits, where plants with more atractive flowers reduce the number of visits for those less atractive. 
+Competition for visits affects the *quantity* of the pollination service as it induces a reduction in the amount of conspecific pollen received by flowers. 
+The second, more subtle, mechanism is interspecific pollen transfer, where even receiving a visit might not translate into net facilitation. 
+Interspecific pollen transfer affects the *quality* of the pollination service because a focal plant might receive pollen from a different species, or conversely pollen from the focal plant might be lost to different species. 
+Generally speaking the larger the proportion of conspecific relative to heterospecific pollen the higher the quality of the pollination service. 
 
-First, we examine wether there is a relationship between the gain of pollen induced by animal pollination and several ecological variables that can affect the mutualistic trade-off. 
-To do so, we used a combination of multi-model inferencewe and bootstrap resampling of the data sets. 
-In summary we fitted two sets of linear mixed models [using the R package `nlme 3.1-131`, @pinheiro_nlme_2018] which differed on whether the pollen deposited was conspecific or heterospecific. 
-In both set of models, our response variable was the difference between pollen density (pollen counts per stigma) between open and bagged flowers. 
-Each model set was based on the same one hundred bootstrap resamples of the deposition data. 
+We explore the quantity of pollination service by examining two metrics. 
+First, we use the absolute amount of conspecific pollen (pollen counts per stigma) deposited on flowers open to animal pollination. 
+Second, we use the relative amount of conspecific pollen—the difference between the absolute amount and the that from flowers that were bagged. 
+We use both metrics simultaneously because, in the one hand, the relative amount acknowledges that autogamus self-pollination can ocurr and hence might be a better indication of the pollen that has been actually deposited by mutualistic partners.  
+On the other, self-pollination is an adaptive trait [@kalisz_benefits_2003] and some plants are not self-fertile, even if their pollen gets deposited on the stigma. 
+Nevertheless, this difference still provides valuable indication of what the animal contribution to reproductive output. 
+Both metrics complement each other and provide a more complete picture of the quantitative aspect of pollination service. 
+Similarly, to explore the quality of pollination we examine the relationship that exists between both the absolute and relative amount of conspecific pollen and heterospecific pollen. 
+We use the relative amount of heterospecific pollen for our calculations. 
+However, because the amount of heterospecific pollen in bagged flowers was negligible, results are almost identical if we use the absolute amounts. 
 
 We used bootstrap resampling because, as open and bagged flowers were not paired, this allowed us to directly model the *gain* in pollen density rather than density itself. 
 This strategy, not only simplified the model specification and intepretation, but most importantly it also allowed us to easily evaluate the uncertainity of the model results. 
@@ -164,31 +174,10 @@ When a variable was not included in a model set we setted the estimate of its co
 We expect some of our predictors to be correlated to each other. Estimating the models using multiple combinations of explanatory variables also allowed us to evaluate the potential collinearity between them. 
 To do so we inspect how the effect of the explanatory variables changed across candidate formulaes, when one or more of them were removed in turns. 
 
-### Quantity and quality of pollination
-
-At the community scale, sharing mutualistic partners might induce competition for pollination mainly trough two mechanisms. 
-The first is competition for visits, where plants with more atractive flowers reduce the number of visits for those less atractive. 
-Competition for visits affects the *quantity* of the pollination service as it induces a reduction in the amount of conspecific pollen received by flowers. 
-The second, more subtle, mechanism is interspecific pollen transfer, where even receiving a visit might not translate into net facilitation. 
-Interspecific pollen transfer affects the *quality* of the pollination service because a focal plant might receive pollen from a different species, or conversely pollen from the focal plant might be lost to different species. 
-Generally speaking the larger the proportion of conspecific relative to heterospecific pollen the higher the quality of the pollination service. 
-
-To evaluate the quantity of pollination we first, we explored wether animal pollination resulted in a quantitative increase in the amount of conspeific pollen. 
-To do that, we compared the amount of conspecific pollen on stigmas from flowers open to animal pollination and that from flowers that were bagged, where only autogamus self-pollination ocurred. 
-The difference between these two counts is not directly equivalent to the pollen deposited by animals because self-pollination is an adaptive trait [@kalisz_benefits_2003].  
-Nevertheless, this difference still provides valuable indication of what the animal contribution to reproductive output. 
-We performed this comparisons using a set of non parametric Mann-Whitney tests both at the community and the the species level (grouping species across communities). 
-Second, we calculated the relationship between the ecological variables included in the models of pollen gain and the quantity of pollination. 
-To do so, we simply calculated the mean value of the distribution of the effects of conspecific pollen gain. 
+After calculating the effects of the ecological variables in heterospecific and conspecific pollen densities, we can now evaluate their effect in the quality and quantity of pollination. 
+For the quantity of pollination, we simply calculated the mean value of the distribution of the effect for both the absolute and relative conspecific pollen densities. 
 Again, we used bootstrap resampling from the coefficient distributions to calculate the confidence intervals of the mean. 
-
-The quality of pollination can be estimated by the relationship that exists between the gain in conspecific and heterospecific pollen. 
-First, we calculated an overal relationship by sampling the predictions from 100 conspecific/heterospecific model pairs and estimated the relationship by fitting an standardised major axis (SMA) to each pair (we used the R package smatr 3.4-3, Warton et al. 2012). 
-We then followed a similar procedure to calculate a relationship per species in a community but instead of fitting a SMA per model pair, we did this across the 100 models for each random intercept independently. 
-This allowed us to estimate the extent of facilitation for each plant species in its community. 
-We also calculated the relationship between the ecological variables and the quality of pollination. 
-To do so we calculated the mean difference between a sample of the distribution of the effects of conspecific pollen gain and a sample of those of heterospecific pollen gain. 
-Similar to the mean effects on the quantity of pollination, we used bootstrap resamplong to calculate confidence intervals of the means. 
+For the quality of pollination, we calculated the mean difference between a sample of the distribution of the effects of conspecific pollen and a sample of those of heterospecific pollen gain. Similar to the mean effects on the quantity of pollination, we used bootstrap resamplong to calculate confidence intervals of the means.estimated by the relationship that exists between the gain in cspecific and heterospecific pollen.
 
 # Results
 
