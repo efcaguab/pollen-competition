@@ -87,7 +87,7 @@ Third, and finaly, we explore how these variables shape the quantity and quality
 
 Elucidating how the mechanisms and drivers of facilitation scales to the community level and its theoretical concequences has been elusive in part because of the large amounts of data required.
 Previous studies focus on the final picture of interspecific pollen transfer that is obtained by examining the pollen deposited on flower stigmas. 
-However, as we have described, teasing appart competition for pollinators also requires data that describes the structure of the interactions and the pollen flows that ocurr within it, while accounting for the traits of the species that integrate the community. 
+However, as we have described, teasing appart competition for pollinators and evaluating wether there is a trade-off between the number of partners and the mutualistic benefit also requires data that describes the structure of the interactions and the pollen flows that ocurr within it, while accounting for the traits of the species that integrate the community. 
 Here, we examine a comprehensive data set that includes information about pollen deposition, transfer, visitation, species abundance, and species traits across diverse communities in the Argentinean Pampas. 
 
 ## Data collection
@@ -136,14 +136,17 @@ Similarly, to explore the quality of pollination we examine the relationship tha
 We use the relative amount of heterospecific pollen for our calculations. 
 However, because the amount of heterospecific pollen in bagged flowers was negligible, results are almost identical if we use the absolute amounts. 
 
+To study the amounts of deposited pollen, which are needed to construct our metrics of pollination quantity and quality, we use three sets of linear fixed models [using the R package `nlme 3.1-131`, @pinheiro_nlme_2018]—two for conspecific pollen (absolute and relative) and one for heterospecific pollen. 
+This modelling approach allowed us to simultaneously explore wether there is a relationship between the benefit of animal pollination and several ecological variables that can affect the mutualistic trade-off. 
+In addition, to estimate and incorporate the uncertainity associated to our results we used a combination of multi-model inference and bootstrap resampling. 
+
+Each model set was based on the same one hundred bootstrap resamples of the deposition data. 
 We used bootstrap resampling because, as open and bagged flowers were not paired, this allowed us to directly model the *gain* in pollen density rather than density itself. 
-This strategy, not only simplified the model specification and intepretation, but most importantly it also allowed us to easily evaluate the uncertainity of the model results. 
 In each data replicate we randomly sampled with replacement a number of open flowers within each community-species combination and an equal number of closed flowers. 
 We then log-transformed the pollen densities to improve normality and minimise the impact of outliers (Figure \@ref(S-fig:fig-deposition-logtransformed-or-not) and \@ref(S-fig:fig-deposition-gain-logtransformed-or-not)), this generally offered better results that a generalised linear model with poisson (or quasiposson) error structure. 
-Finally, we calculated the difference between the pollen density among treatmemts. 
-This difference was the response variable in all our models. 
+Finally, for the models of the relative amounts of pollen we calculated the difference between the pollen density among treatmemts. 
 
-As predictors, we included species degree, the plant relative abbundance, the plant species' share on the pollen pool, and the species' functional originality. 
+As predictors in all model sets, we included species degree, the plant relative abbundance, the plant species' share on the pollen pool, and the species' functional originality. 
 Species degree was calculated from combining the quantitative and qualitative visitation networks and corresponds to the number of animal species that were observed to visit the plant species in the community where it was sampled. 
 The plant's relative abbundance we simply aggregated the flower counts for each plant species in the community.
 As with the deposition data, we found that log-transforming the abundance counts drastically improved normality (Figure \@ref(S-fig:fig-abundance-logtransformed-or-not)). 
@@ -157,11 +160,11 @@ All traits were scaled to have a mean of zero and a standard deviation of one pr
 The species-specific functional coordinates were calculated using the R package `FD 1.0-12` [@laliberte_distance-based_2010; @laliberte_fd_2014]. 
 To faciliate comparison across model estimates, we scaled all independent variables to have a mean of zero and a standard deviation of one.
 
-In both set of models we first evaluated a set of candidate random effects which included random intercepts for plant species as well as random slopes for the relationship between degree and pollen gain. 
+In all three sets of models we first evaluated a set of candidate random effects which included random intercepts for plant species as well as random slopes for the relationship between degree and pollen gain. 
 In addition we also tested for random intercepts that assumed that the plant species grouping was hierachically nested in either their community, the land use, and the locality. 
 We selected the best random structure by comparing the median Akaike Information Criterion (AIC) of evaluated models. 
 After determining the best random structure, we then focused on the model's fixed structure composed by our explanatory variables. 
-We used multi-model inference to calculate the relative importance of each variable and its mean effect on pollen gain.
+We used multi-model inference to calculate the relative importance of each variable and its mean effect on pollen density.
 First we fitted all possible combinations of explanatory variables to the same bootstrap resamples used previously. 
 This yielded one hundred models for each "candidate formula"---a particular combination of explanatory variables. 
 We then determined the likelyhood of each candidate formula and its relative wheight by calculating the median $\Delta$AIC of the one hundred models that constitute it. 
