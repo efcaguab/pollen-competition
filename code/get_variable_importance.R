@@ -15,7 +15,7 @@ get_variable_importance <- function(model_formula_ranking){
     dplyr::mutate(likelyhood = get_likelyhoods(delta_AIC_median), 
                   weight = get_weights(likelyhood))
   
-  crosses <- purrr::cross2(terms, c("conspecific", "heterospecific"))
+  crosses <- purrr::cross2(terms, unique(model_formula_ranking$by_model_set$pollen_category))
   crosses %>%
     purrr::map(~model_weights$weight[stringr::str_detect(model_weights$fixed_formula, .[[1]]) & model_weights$pollen_category == .[[2]]]) %>%
     purrr::map(sum) %>%
