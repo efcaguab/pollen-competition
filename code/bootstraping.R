@@ -48,7 +48,7 @@ repeat_df <- function(x, var_name, var_values){
 #' 
 get_deposition_sampled_data <- function(x, category, transformation){
   
-  x %>%
+  df <- x %>%
     # only work with one category at a time
     dplyr::filter(pollen_category == category) %>%
     dplyr::select(plant, site_name, plant_name, treatment, pollen_density) %>%
@@ -68,9 +68,17 @@ get_deposition_sampled_data <- function(x, category, transformation){
     # transform count data if desired
     dplyr::mutate(pollen_density = transformation(pollen_density)) %>%
     # pair samples
-    tidyr::spread(treatment, pollen_density) %>% 
+    tidyr::spread(treatment, pollen_density)
+  
+  relative <- df %>% 
     dplyr::mutate(pollen_gain = open - closed) %>%
     dplyr::mutate(pollen_category = category)
+    
+  absolute <- df %>%
+    dplyr::mutate(pollen_gain = open) %>%
+    dplyr::mutate(pollen_category = paste0(category, "_abs"))
+  
+  dplyr::bind_rows(relative, absolute)
 }
 
 # MODELS ------------------------------------------------------------------
