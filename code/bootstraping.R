@@ -264,13 +264,26 @@ pearson_slope <- function(x,y){
 }
 
 get_sma_conspecific_heterospecific <- function(x){
-  x %>%
+  # one relationship for absolute values of conspecific pollen and one for relative ones
+  absolute <- x %>%
+    purrr::map(~ smatr::sma(conspecific_abs ~ heterospecific, data = .)) %>%
+    # purrr::walk(~ plot(.)) %>%
+    purrr::map(~ coef(.)) %>% 
+    purrr::map_df(~ tibble::rownames_to_column(as.data.frame(.)), .id = "m") %>%
+    dplyr::rename(sma_parameter = rowname,
+                  value  = '.') %>%
+    dplyr::mutate(rel = "absolute")
+  
+  relative <- x %>%
     purrr::map(~ smatr::sma(conspecific ~ heterospecific, data = .)) %>%
     # purrr::walk(~ plot(.)) %>%
     purrr::map(~ coef(.)) %>% 
     purrr::map_df(~ tibble::rownames_to_column(as.data.frame(.)), .id = "m") %>%
     dplyr::rename(sma_parameter = rowname,
-                  value  = '.') 
+                  value  = '.') %>%
+    dplyr::mutate(rel = "relative")
+  
+  dplyr::bind_rows(absolute, relative)
 }
 
 # linear relationship between conspecific and heterospecific pollen per species
