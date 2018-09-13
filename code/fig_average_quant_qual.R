@@ -46,7 +46,7 @@ format_qqplot <- function(x, y){
       theme(axis.text.x = element_blank()) 
   }
   x +
-    theme(plot.margin = unit(c(1,1,1,1), "mm")) +
+    theme(plot.margin = unit(0.5 * c(1,1,1,1), "mm")) +
     scale_x_discrete(position = y, expand = c(0,0))
 }
 
