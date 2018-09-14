@@ -85,14 +85,12 @@ plot_metric <- function(x, this_metric, params){
     scale_y_discrete(expand = c(0,0), 
                      name = paste0(this_metric)) +# , 
     # labels = c("quality of\npollination", "quantity of\npollination")) +
-    
     theme(legend.position = "none", 
           panel.border = element_blank(), 
           axis.title.x = element_blank(),
-          axis.text.y = element_text(size = 7, angle = 90, hjust = 0.5),
+          axis.text.y = element_text(size = 7, angle = 90, hjust = 0.5, colour = rev(RColorBrewer::brewer.pal(4, "OrRd")), face = "bold"),
           axis.text.x = element_text(size = 7),
           axis.title.y = element_text(size = 7, face = "bold"),
           axis.ticks = element_blank(), 
           plot.title = element_text(size = 7, face = "bold", hjust = 0))
-  
 }
