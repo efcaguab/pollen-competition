@@ -87,7 +87,7 @@ make_fig_con_hetero_gain <- function(tidied_fixed, model_linear_fits, model_form
     scale_colour_manual(values = rev(RColorBrewer::brewer.pal(4, "OrRd"))) +
     pub_theme() +
     labs(x = "heterospecific pollen density gain",
-         y = "conspecific pollen pollen density gain") +
+         y = "conspecific pollen density gain") +
     theme(legend.position = c(0.01,0.98), 
           legend.direction = "horizontal", 
           legend.justification = c(0,1), 
