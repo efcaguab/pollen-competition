@@ -35,8 +35,8 @@ knitr::opts_chunk$set(echo = FALSE, message = FALSE,
 ### To do
 
 * References to the introduction
-* Discussion from bulletpoints to actual paragraphs. I will do that once we all agree with the quantitative methodology and getting some contributions for the interpretation of the results
-* Spellcheck everything
+* Discussion from bullet-points to actual paragraphs. I will do that once we all agree with the quantitative methodology and getting some contributions for the interpretation of the results
+* Spell-check everything
 * Finish off the supplementary materials
 * Write the abstract
 
@@ -45,29 +45,29 @@ knitr::opts_chunk$set(echo = FALSE, message = FALSE,
 Feel free to come back here after you've read the manuscript. Thanks!
 
 * __Originality__: Currently the plants phenology are included in the traits. The relative abundance of the plant in each of the five a survey months is included as a trait. This allows to maintain the model simple and it could be easily argued that phenological strategy can be considered as another trait. However I'm not convinced that it is a good idea to keep them together, especially because differences in phenology is a rather intuitive factor/strategy to overcome competition for pollination. Do you think I should separate traits from phenology? If yes, should I use the same "originality" approach to determine how different each species is? 
-* __Traits__: Currently I don't mention much traits in the discussion. I think the trait component is valuable and interesting but sadly at the moment the data quality is poor. Only 4 traits have been compiled: growth form, longevity, flower colour, and wether the plant is native to the region. It won't be possible to gather all of the traits used by @coux_linking_2016-1 from the literature but hopefully it is for a good proportion of them. Daniel and Jason, could we discuss options here? 
-* __Conspecific pollen__: Previously I used, as Hugo did in his papers, the gain in conspecific pollen in open flowers relative to the amount of in bagged flowers as the indication of the "quantity" of the pollination service. After thinking more about the limitations of this metric (pollinatorsalso take pollen from stigmas, some plants are not self-fertile, different maturation times for male/female organs, etc) I decided it would be best to include both the total and the relative pollen amounts in the mansucript. This add more nuance to the story and interpretation which is not cool, but I think together they overcome each other's problems. What do you think about it?
+* __Traits__: Currently I don't mention much traits in the discussion. I think the trait component is valuable and interesting but sadly at the moment the data quality is poor. Only 4 traits have been compiled: growth form, longevity, flower colour, and whether the plant is native to the region. It won't be possible to gather all of the traits used by @coux_linking_2016-1 from the literature but hopefully it is for a good proportion of them. Daniel and Jason, could we discuss options here? 
+* __Conspecific pollen__: Previously I used, as Hugo did in his papers, the gain in conspecific pollen in open flowers relative to the amount of in bagged flowers as the indication of the "quantity" of the pollination service. After thinking more about the limitations of this metric (pollinators also take pollen from stigmas, some plants are not self-fertile, different maturation times for male/female organs, etc.) I decided it would be best to include both the total and the relative pollen amounts in the manuscript. This add more nuance to the story and interpretation which is not cool, but I think together they overcome each other's problems. What do you think about it?
 * __Naming__: I currently use absolute and relative pollen gain as names for the two previous metrics. I think it's OK but I feel there might be better options. Any ideas?
-* __Quantity & quality__: This version of the paper uses quantity/quality to frame the results. I think that's pretty neat. However, different studies define quantity and quality in different ways. Hugo for example used the relative amount of conspecific pollen as an indication of quantity and the amount of heterospecific pollen for quality. We discussed earlier that a good indication could be the _proportion_ of heterospecific pollen instead. What do you think? Should I ditch quantity/quality and stick to conspecific/heterospecific pollen instead? Should I stay with the current definitions of quantity and quality of pollination? This probably needs meeting/skype, but it would be good to think about it.
+* __Quantity & quality__: This version of the paper uses quantity/quality to frame the results. I think that's pretty neat. However, different studies define quantity and quality in different ways. Hugo for example used the relative amount of conspecific pollen as an indication of quantity and the amount of heterospecific pollen for quality. We discussed earlier that a good indication could be the _proportion_ of heterospecific pollen instead. What do you think? Should I ditch quantity/quality and stick to conspecific/heterospecific pollen instead? Should I stay with the current definitions of quantity and quality of pollination? This probably needs meeting/Skype, but it would be good to think about it.
 * __Pollen transfer__: Currently all I'm using from the pollen transfer networks is the share of a plant in the pollen pool. That fits nice with the density hypothesis but its rather simplistic. Any ideas? 
-* __Pollen in bagged flowers__: Jason, you mentioned that pollen in bagged flowers can be due to selfing or wind. You meant wind moving flowers and that causing pollen to be deposited on stigmas? Wouldnt that count as selfing too?
+* __Pollen in bagged flowers__: Jason, you mentioned that pollen in bagged flowers can be due to selfing or wind. You meant wind moving flowers and that causing pollen to be deposited on stigmas? Wouldn't that count as selfing too?
 
 \clearpage
 
 # Introduction
 
 Pollination systems play a disproportionally important role in food production and maintenance of global biodiversity. 
-In the context of animal pollination, the support to biodiversity is fundamentally achieved by virtue of intra-species facilition—the positive feedback loops that exist between plants that share pollinators or pollinators that share plants. 
+In the context of animal pollination, the support to biodiversity is fundamentally achieved by virtue of intra-species facilitation—the positive feedback loops that exist between plants that share pollinators or pollinators that share plants. 
 Facilitation is able to promote species coexistence because it offsets the effects of direct competition for resources. 
 Indeed, studies that are fundamental to our current knowledge of mutualism predict that an upper limit to biodiversity is achieved when the number of mutualistic partners is maximised in a community. 
 And yet, fully connected natural pollination communities do not exist. 
 
 This is so, because sharing a mutualistic partner also has costs. 
-The end result is that, when the cummulative costs have a negative impact on fitness, species also start competing for mutualistic partners. 
+The end result is that, when the cumulative costs have a negative impact on fitness, species also start competing for mutualistic partners. 
 The possible negative effects of competition for pollinators have been long recognised and widely documented.
-Based mainly on two-species systems, it is currently clear that they have the potential to drive the evolution of flower phenologies, morphologies and reproductive strategies as well as driving ecological diferentiation. 
+Based mainly on two-species systems, it is currently clear that they have the potential to drive the evolution of flower phenologies, morphologies and reproductive strategies as well as driving ecological differentiation. 
 However, these competitive interactions between species pairs do not occur in isolation. 
-Plants often ocurr in communities in which multiple competitive interactions operate simultaneusly and lead to emergent phenomena not observed at smaller scales. 
+Plants often occur in communities in which multiple competitive interactions operate simultaneously and lead to emergent phenomena not observed at smaller scales. 
 
 Perhaps the most obvious ecological factor influencing the cost of sharing pollinators is the species degree---the number of interaction partners. 
 Yet, evidence at the community scale of **the mutualistic trade-off**---the extent to which species degree affects the benefit---is scarce, to say the least. 
@@ -80,21 +80,21 @@ Abundant species might experience a dilution of the available pollinators but mi
 In this case, a potential reduction in the quantity of pollination could be compensated by an increase in the quality of pollination.
 
 Here, we explore the role that competition for pollinators plays on the quantity and quality of the pollination service and look for the signature of the mutualistic trade-off in diverse natural communities. 
-To tease appart the multiple factors that operate at the community scale we use data that describes both the structure of the interactions and the pollen flows that ocurr within it, all while accounting for the traits of the species that integrate the community.
+To tease apart the multiple factors that operate at the community scale we use data that describes both the structure of the interactions and the pollen flows that occur within it, all while accounting for the traits of the species that integrate the community.
 Specifically, we first estimate the gain on pollen that can be attributed to the mutualistic interactions. 
-Second, we investigate wether there is a relationship between this gain (of both conspecific and heterospecific pollen and by extension the quantity and quality of pollination) and the species degree, functional originality, abundance, and contribution to the pollen pool, which together describe the role of the plant species and the ecological context. 
-Third, and finaly, we explore how these variables shape the quantity and quality of pollination and ultimately the competition for pollinators. 
+Second, we investigate whether there is a relationship between this gain (of both conspecific and heterospecific pollen and by extension the quantity and quality of pollination) and the species degree, functional originality, abundance, and contribution to the pollen pool, which together describe the role of the plant species and the ecological context. 
+Third, and finally, we explore how these variables shape the quantity and quality of pollination and ultimately the competition for pollinators. 
 
 # Methods
 
-Elucidating how the mechanisms and drivers of facilitation scales to the community level and its theoretical concequences has been elusive in part because of the large amounts of data required.
+Elucidating how the mechanisms and drivers of facilitation scales to the community level and its theoretical consequences has been elusive in part because of the large amounts of data required.
 Previous studies focus on the final picture of interspecific pollen transfer that is obtained by examining the pollen deposited on flower stigmas. 
-However, as we have described, teasing appart competition for pollinators and evaluating wether there is a trade-off between the number of partners and the mutualistic benefit also requires data that describes the structure of the interactions and the pollen flows that ocurr within it, while accounting for the traits of the species that integrate the community. 
-Here, we examine a comprehensive data set that includes information about pollen deposition, transfer, visitation, species abundance, and species traits across diverse communities in the Argentinean Pampas. 
+However, as we have described, teasing apart competition for pollinators and evaluating whether there is a trade-off between the number of partners and the mutualistic benefit also requires data that describes the structure of the interactions and the pollen flows that occur within it, while accounting for the traits of the species that integrate the community. 
+Here, we examine a comprehensive data set that includes information about pollen deposition, transfer, visitation, species abundance, and species traits across diverse communities in the Argentinian Pampas. 
 
 ## Data collection
 
-We performed sampling in three locations, each located in a distinct phytogeograohic region of the Argentinean Pampas. 
+We performed sampling in three locations, each located in a distinct region of the Argentinian Pampas. 
 The sampling locations are distributed across a gradient of precipitation with a humid temperate climate in the eastward Flooding Pampas and an drier as we move inland and westward towards the Pampean Grasslands.
 Across all sites, annual mean temperatures range between 14.8 and 15.8 Celsius. 
 
@@ -103,25 +103,25 @@ However, due to the lack of available sites in the Flooding Pampas, it was only 
 We visited each fragment in November 2010 and February 2011. 
 In each of these visits we gathered information related to abundance, plant-pollinator visitation, pollen transfer, and pollen deposition.
 
-Abbundance was estimated using two 50 m randomly located transects in each fragment. In a first sampling we counted all units of floral attraction taht were found in a 2 m wide strip. In a second sampling we counted and collected all floral visitors while walking at a pace of 10 m per minute [@marrero_effect_2014; @memmott_structure_1999]. 
+Abundance was estimated using two 50 m randomly located transects in each fragment. In a first sampling we counted all units of floral attraction that were found in a 2 m wide strip. In a second sampling we counted and collected all floral visitors while walking at a pace of 10 m per minute [@marrero_effect_2014; @memmott_structure_1999]. 
 We constructed quantitative visitation networks using information about the floral visitors collected during abundance transects [@marrero_effect_2014]. 
 In addition, we also constructed qualitative visitation networks during independent two hour observations of floral visits across each fragment.
 We estimated pollen transfer by examining the pollen loads present on the collected floral visitors [@marrero_exotic_2017]. 
 Where the pollen count on an individual was estimated to be less than 2,000 grains, we identified every grain to the species level whenever possible and to pollen complexes when it was not. 
-When the pollen count was above 2,000 grains, we clasified approx. 50% of pollen and total pollen counts were extrapollated [@bosch_plant-pollinator_2009]. 
+When the pollen count was above 2,000 grains, we classified approx. 50% of pollen and total pollen counts were extrapolated [@bosch_plant-pollinator_2009]. 
 If more than 10 pollen grains from a plant species were identified, we assumed that pollination service between the plant and the pollinator existed. 
-Finally, we analised pollen deposition in a subset of the plant community [@marrero_agricultural_2016]. 
-This subset comprised between three and nine of the most common entomophilus species that were flowering during the samplimg period while ensuring that the chosen species covered a wide range on a specialization-generalization gradient. 
-In the selected plants we removed all flowers except buds that were expected to go into inflorecense on the next day. 
+Finally, we analysed pollen deposition in a subset of the plant community [@marrero_agricultural_2016]. 
+This subset comprised between three and nine of the most common entomophilus species that were flowering during the sampling period while ensuring that the chosen species covered a wide range on a specialization-generalization gradient. 
+In the selected plants we removed all flowers except buds that were expected to go into inflorescence on the next day. 
 A quarter of these buds were bagged to prevent animal pollination. 
-Two days after inflorecense, we analysed the pollen grains in the flowers' pistils and classified them between conspecific and heterospecific pollen. 
+Two days after inflorescence, we analysed the pollen grains in the flowers' pistils and classified them between conspecific and heterospecific pollen. 
 
 More details about the study sites, data collection, and laboratory protocols can be found in Marrero *et al.* (2014, 2016, and 2017).
 
 ## Data analysis
 
 At the community scale, sharing mutualistic partners might induce competition for pollination mainly trough two mechanisms. 
-The first is competition for visits, where plants with more atractive flowers reduce the number of visits for those less atractive. 
+The first is competition for visits, where plants with more attractive flowers reduce the number of visits for those less attractive. 
 Competition for visits affects the *quantity* of the pollination service as it induces a reduction in the amount of conspecific pollen received by flowers. 
 The second, more subtle, mechanism is interspecific pollen transfer, where even receiving a visit might not translate into net facilitation. 
 Interspecific pollen transfer affects the *quality* of the pollination service because a focal plant might receive pollen from a different species, or conversely pollen from the focal plant might be lost to different species. 
@@ -130,7 +130,7 @@ Generally speaking the larger the proportion of conspecific relative to heterosp
 We explore the quantity of pollination service by examining two metrics. 
 First, we use the absolute amount of conspecific pollen (pollen counts per stigma) found on flowers open to animal pollination. 
 Second, we use the relative amount of conspecific pollen—the difference between the absolute amount and the that from flowers that were bagged. 
-We use both metrics simultaneously because, in the one hand, the relative amount acknowledges that autogamus self-pollination can ocurr and hence might be a better indication of the pollen that has been actually deposited by mutualistic partners. 
+We use both metrics simultaneously because, in the one hand, the relative amount acknowledges that autogamus self-pollination can occur and hence might be a better indication of the pollen that has been actually deposited by mutualistic partners. 
 On the other, self-pollination is an adaptive trait [@kalisz_benefits_2003] and some plants are not self-fertile, even if their pollen gets deposited on the stigma. 
 <!-- Nevertheless, this difference still provides valuable indication of what the animal contribution to reproductive output.  -->
 Both metrics complement each other and provide a complete picture of the quantitative aspect of pollination service. 
@@ -139,50 +139,50 @@ We use the relative amount of heterospecific pollen for our calculations.
 However, because the amount of heterospecific pollen in bagged flowers was negligible, results are almost identical if we use the absolute amounts. 
 
 To study the amounts of deposited pollen, which are needed to construct our metrics of pollination quantity and quality, we use three sets of linear fixed models [using the R package `nlme 3.1-131`, @pinheiro_nlme_2018]—two for conspecific pollen (absolute and relative) and one for heterospecific pollen. 
-This modelling approach allowed us to simultaneously explore wether there is a relationship between the benefit of animal pollination and several ecological variables that can affect the mutualistic trade-off. 
-In addition, to estimate and incorporate the uncertainity associated to our results we used a combination of multi-model inference and bootstrap resampling. 
+This modelling approach allowed us to simultaneously explore whether there is a relationship between the benefit of animal pollination and several ecological variables that can affect the mutualistic trade-off. 
+In addition, to estimate and incorporate the uncertainty associated to our results we used a combination of multi-model inference and bootstrap resampling. 
 
 Each model set was based on the same one hundred bootstrap resamples of the deposition data. 
 We used bootstrap resampling because, as open and bagged flowers were not paired, this allowed us to directly model the *gain* in pollen density rather than density itself. 
 In each data replicate we randomly sampled with replacement a number of open flowers within each community-species combination and an equal number of closed flowers. 
-We then log-transformed the pollen densities to improve normality and minimise the impact of outliers (Figure \@ref(S-fig:fig-deposition-logtransformed-or-not) and \@ref(S-fig:fig-deposition-gain-logtransformed-or-not)), this generally offered better results that a generalised linear model with poisson (or quasiposson) error structure. 
-Finally, for the models of the relative amounts of pollen we calculated the difference between the pollen density among treatmemts. 
+We then log-transformed the pollen densities to improve normality and minimise the impact of outliers (Figure \@ref(S-fig:fig-deposition-log-transformed-or-not) and \@ref(S-fig:fig-deposition-gain-log-transformed-or-not)), this generally offered better results that a generalised linear model with poisson (or quasiposson) error structure. 
+Finally, for the models of the relative amounts of pollen we calculated the difference between the pollen density among treatments. 
 
-As predictors in all model sets, we included species degree, the plant relative abbundance, the plant species' share on the pollen pool, and the species' functional originality. 
+As predictors in all model sets, we included species degree, the plant relative abundance, the plant species' share on the pollen pool, and the species' functional originality. 
 Species degree was calculated from combining the quantitative and qualitative visitation networks and corresponds to the number of animal species that were observed to visit the plant species in the community where it was sampled. 
-The plant's relative abbundance we simply aggregated the flower counts for each plant species in the community.
-As with the deposition data, we found that log-transforming the abundance counts drastically improved normality (Figure \@ref(S-fig:fig-abundance-logtransformed-or-not)). 
+The plant's relative abundance we simply aggregated the flower counts for each plant species in the community.
+As with the deposition data, we found that log-transforming the abundance counts drastically improved normality (Figure \@ref(S-fig:fig-abundance-log-transformed-or-not)). 
 The species' share of the pollen pool was calculated as the proportion of pollen of that species in the pollen counts being carried by pollinators from the community. 
 
 Functional originality is defined as the distance of a species from the community trait average--the centroid of functional space of the community [@laliberte_distance-based_2010; @coux_linking_2016-1]. 
-Specifically, we recorded morphological traits that relate to plant type (herb, shrub, climber), life cycle (annual, perenial), flower coloration, and whether the species is native in the study region or not. 
-As phenology has been shown to be a key mechanisms of niche diferentiation among plants, we also included the plant abundance in each of the survey months (November to March) as an additional trait in our analysis. 
+Specifically, we recorded morphological traits that relate to plant type (herb, shrub, climber), life cycle (annual, perennial), flower colouration, and whether the species is native in the study region or not. 
+As phenology has been shown to be a key mechanisms of niche differentiation among plants, we also included the plant abundance in each of the survey months (November to March) as an additional trait in our analysis. 
 This approach allowed us to integrate the originality in phenological niche alongside the originality on other functional traits. 
 All traits were scaled to have a mean of zero and a standard deviation of one prior to calculating the centroid of the functional space. 
 The species-specific functional coordinates were calculated using the R package `FD 1.0-12` [@laliberte_distance-based_2010; @laliberte_fd_2014]. 
-To faciliate comparison across model estimates, we scaled all independent variables to have a mean of zero and a standard deviation of one.
+To facilitate comparison across model estimates, we scaled all independent variables to have a mean of zero and a standard deviation of one.
 
 In all three sets of models we first evaluated a set of candidate random effects which included random intercepts for plant species as well as random slopes for the relationship between degree and pollen gain. 
-In addition we also tested for random intercepts that assumed that the plant species grouping was hierachically nested in either their community, the land use, and the locality. 
+In addition we also tested for random intercepts that assumed that the plant species grouping was hierarchically nested in either their community, the land use, and the locality. 
 We selected the best random structure by comparing the median Akaike Information Criterion (AIC) of evaluated models. 
 After determining the best random structure, we then focused on the model's fixed structure composed by our explanatory variables. 
 We used multi-model inference to calculate the relative importance of each variable and its mean effect on pollen density.
 First we fitted all possible combinations of explanatory variables to the same bootstrap resamples used previously. 
 This yielded one hundred models for each "candidate formula"---a particular combination of explanatory variables. 
-We then determined the likelyhood of each candidate formula and its relative wheight by calculating the median $\Delta$AIC of the one hundred models that constitute it. 
-As AIC is only useful to compare models with the same response variable, the $\Delta$AIC of each candidate formula was calculated indepenently for each bootstrap resample.
+We then determined the likelihood of each candidate formula and its relative weight by calculating the median $\Delta$AIC of the one hundred models that constitute it. 
+As AIC is only useful to compare models with the same response variable, the $\Delta$AIC of each candidate formula was calculated independently for each bootstrap resample.
 Calculating the median value of each candidate formula allowed us to estimate the relative importance of the explanatory variables  using the standard methods of adding the median weight of the candidate models that included the variable. 
 
-To calculate the effect that each variable had on the gain of conspecific and heterospecific pollen we sampled from the estimated coefficients in each candidate model proportional to the median likelyhood of each set. 
+To calculate the effect that each variable had on the gain of conspecific and heterospecific pollen we sampled from the estimated coefficients in each candidate model proportional to the median likelihood of each set. 
 In other words, the estimated coefficients from more likely candidate constitute a larger share of the distribution of coefficients. 
 When a variable was not included in a model set we setted the estimate of its coefficient in the model to zero. 
 We expect some of our predictors to be correlated to each other. Estimating the models using multiple combinations of explanatory variables also allowed us to evaluate the potential collinearity between them. 
-To do so we inspect how the effect of the explanatory variables changed across candidate formulaes, when one or more of them were removed in turns. 
+To do so we inspect how the effect of the explanatory variables changed across candidate formulae, when one or more of them were removed in turns. 
 
 After calculating the effects of the ecological variables in heterospecific and conspecific pollen densities, we can now evaluate their effect in the quality and quantity of pollination. 
 For the quantity of pollination, we simply calculated the mean value of the distribution of the effect for both the absolute and relative conspecific pollen densities. 
 Again, we used bootstrap resampling from the coefficient distributions to calculate the confidence intervals of the mean. 
-For the quality of pollination, we calculated the mean difference between a sample of the distribution of the effects of conspecific pollen and a sample of those of heterospecific pollen gain. Similar to the mean effects on the quantity of pollination, we used bootstrap resamplong to calculate confidence intervals of the means.estimated by the relationship that exists between the gain in cspecific and heterospecific pollen.
+For the quality of pollination, we calculated the mean difference between a sample of the distribution of the effects of conspecific pollen and a sample of those of heterospecific pollen gain. Similar to the mean effects on the quantity of pollination, we used bootstrap resampling to calculate confidence intervals of the means.estimated by the relationship that exists between the gain in conspecific and heterospecific pollen.
 
 # Results
 
@@ -210,9 +210,9 @@ prop_consistency <- sum(consistency$consistent)/
 ```
 
 We found that, for both the model sets of conspecific and heterospecific pollen, the random structure that was best supported by the data was the one that included plant species nested in community as the grouping factors (Table \@ref(S-tab:table-aic-random-models)). 
-When looking at the relative amount of conspecific pollen gained, we observe that only `r round(prop_sig_global*100)`% of species in their communities observed a significant increasse in conspecific pollen density when comparing open and bagged flowers (Table \@ref(S-tab:table-species-gain-global)).
+When looking at the relative amount of conspecific pollen gained, we observe that only `r round(prop_sig_global*100)`% of species in their communities observed a significant increase in conspecific pollen density when comparing open and bagged flowers (Table \@ref(S-tab:table-species-gain-global)).
 We also observed a positive relationship between the gain in heterospecific pollen and both the relative and absolute gain of conspecific pollen (Figure \@ref(fig:fig-trade-off-predictions)). 
-The slope of the relationship is such that across plant species in their communitues heterospecific pollen is gained slower than the absolute amount of conspecific pollen but faster than the amount of conspecific pollen relative to the potential selfing. 
+The slope of the relationship is such that across plant species in their communities heterospecific pollen is gained slower than the absolute amount of conspecific pollen but faster than the amount of conspecific pollen relative to the potential selfing. 
 
 ```{r fig-trade-off-predictions, fig.height= 2.3, fig.width = 3.25, fig.cap = "The interplay between the gain on heterospecific and conspecific pollen. Each dot indicates the predicted median gains for a species in its community (which correspons to the selected random effects in all of our models). The horizontal and vertical bars under each dot indicate the 0.05 bootstrap confidence intervals of the estimates. The solid lines indicate the overall relationship in each of the bootstrap replicates and were calculated by sampling the predictions from 100 conspecific/heterospecific model pairs and estimated the relationship by fitting an standardised major axis (SMA) to each pair (we used the R package smatr 3.4-3, Warton et al. 2012). The dashed line indicates the isoline at which heterospecific pollen is gained at the same rate than conspecific pollen."}
 # pdf(width = 3.25, height = 3.1)
@@ -228,8 +228,8 @@ Surprisingly, the species degree was comparatively less important for predicting
 drake::readd(fig_coefficient_averages)
 ```
 
-Overall we observed that species degree and abundance had a neggative relationship with the gain of both absolute and relative conspecific pollen. 
-Functional originallity had a weak negative relationship with the absolute gain of conspecific pollen but a small positive effect on the relative gain. 
+Overall we observed that species degree and abundance had a negative relationship with the gain of both absolute and relative conspecific pollen. 
+Functional originality had a weak negative relationship with the absolute gain of conspecific pollen but a small positive effect on the relative gain. 
 The plant's share in the community pollen pool, had opposite effects, with a  positive relationship with the absolute gain and a negative relationship with the relative gain of conspecific pollen.
 Although relative abundance, degree, and the share in the pollen pool were positively correlated (Figure \@ref(S-fig:fig-correlation)), the effect that each of them had on conspecific pollen was relatively similar among models that included all or just some of these three explanatory variables (Figure \@ref(S-fig:fig-model-results)). 
 
@@ -240,9 +240,9 @@ For instance, when the species abundance was not accounted for, both the species
 <!-- Over all study sites, we found that `r round(prop_sig_global*100)`% of species observed a significant increasse (at the $\alpha = 0.05$ level) in conspecific pollen density when comparing open and bagged flowers (Table \@ref(S-tab:table-species-gain-global)).  -->
 <!-- When looking at the differences within sites, we found that only `r round(prop_consistency*100)`% of the species that were present in more than one site had the same response across community (Table \@ref(S-tab:table-species-gain-site)).  -->
 Using the results from the models of conspecific and heterospecific pollen gain we then examined the relationship between the explanatory variables and the quantity and quality of pollination (Figure \@ref(fig:fig-average-qual-quant)). 
-Degree, had a neggative, albeit relativelly small, effect on both the quantity and quality of pollination. 
-The species relative abbundance has a large possitive effect to the quality of pollination accompained by a relatively smaller negative impact on the quantity. 
-Finally, the plant's functional originallity and its share in the pollen pool have a moderate positive impact on its quantity but also a negative impact on the quality. 
+Degree, had a negative, albeit relatively small, effect on both the quantity and quality of pollination. 
+The species relative abundance has a large positive effect to the quality of pollination accompanied by a relatively smaller negative impact on the quantity. 
+Finally, the plant's functional originality and its share in the pollen pool have a moderate positive impact on its quantity but also a negative impact on the quality. 
 
 ```{r fig-average-qual-quant, fig.height=2, fig.width=3.25, fig.cap="Mean relative effect of ecological variables on the quantity and quality of pollination. Results are shown for values calculated with both the absolute gain in pollen density (abs.) and the gain relative to selfing (rel.). Bootstrap confidence intervals of the mean (at the 0.05 level) are shown in square brackets. "}
 drake::readd(fig_average_qual_quant)
@@ -250,13 +250,13 @@ drake::readd(fig_average_qual_quant)
 
 # Discussion 
 
-* We did find a trade-off between the number of partners a species interacts with and the mutualistic service. Interacting with more species alone is often accompained by a decreasse in both the quantity and quality of pollination. 
+* We did find a trade-off between the number of partners a species interacts with and the mutualistic service. Interacting with more species alone is often accompanied by a decreases in both the quantity and quality of pollination. 
 * However, the effect and importance of this trade-off is comparatively small when considering other factors that describe the species niche and its ecological settings. 
-* We found that animal pollination only brings a small amount of extra conspecific pollen (compared selfing) if any. This relatively small difference is probably very important because, first, some plants simply aren't self-fertile, even if their pollen gets deposited on the stigma. Second, in some flowers there is temporary separation in the maturation of the sexes (dichogamy) that favors cross-pollination as, evolutonary, it has been shown to be a better strategy than cloning. 
-* Overal it seems like density seems to be a dominant force behind pollen transfer. If you have many individuals of your species, you get fewer visits (dilution of the pollinators flying around), which is relfected in a smaller amount of deposited pollen. We show that abundant plants also tend to comprise a greater component of the pollen source pool and so the end result is that get more conspecific pollen per visit than heterospecific pollen. 
-* Our result of the comparatively weak effect of the mutualistic trade-off is important because it is fundamentaly related to the way we understand and mathematically represent mutualistic systems. 
-Some of the most widely used theoretical models of pollination account for the negative effects of mutualisim by adjusting the mutualistic benefit of an interaction so that it can be negatively affected by the number of mutualistic partners---the species degree. 
+* We found that animal pollination only brings a small amount of extra conspecific pollen (compared selfing) if any. This relatively small difference is probably very important because, first, some plants simply aren't self-fertile, even if their pollen gets deposited on the stigma. Second, in some flowers there is temporary separation in the maturation of the sexes (dichogamy) that favours cross-pollination as, evolutionary, it has been shown to be a better strategy than cloning. 
+* Overall it seems like density seems to be a dominant force behind pollen transfer. If you have many individuals of your species, you get fewer visits (dilution of the pollinators flying around), which is reflected in a smaller amount of deposited pollen. We show that abundant plants also tend to comprise a greater component of the pollen source pool and so the end result is that get more conspecific pollen per visit than heterospecific pollen. 
+* Our result of the comparatively weak effect of the mutualistic trade-off is important because it is fundamentally related to the way we understand and mathematically represent mutualistic systems. 
+Some of the most widely used theoretical models of pollination account for the negative effects of mutualism by adjusting the mutualistic benefit of an interaction so that it can be negatively affected by the number of mutualistic partners---the species degree. 
 This approach, considerably simplifies the mathematical treatment of competition for pollinators. 
-However we show that care must be taken because the neggative effects of the mutualistic trade-off in both the quantity and quality of pollinaton can be offset by density mechanisms. Species with large degrees also tend be abundant and prolific pollen producers. 
+However we show that care must be taken because the negative effects of the mutualistic trade-off in both the quantity and quality of pollination can be offset by density mechanisms. Species with large degrees also tend be abundant and prolific pollen producers. 
 
 # References
