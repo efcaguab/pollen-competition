@@ -126,12 +126,12 @@ Interspecific pollen transfer affects the *quality* of the pollination service b
 Generally speaking the larger the proportion of conspecific relative to heterospecific pollen the higher the quality of the pollination service. 
 
 We explore the quantity of pollination service by examining two metrics. 
-First, we use the absolute amount of conspecific pollen (pollen counts per stigma) deposited on flowers open to animal pollination. 
+First, we use the absolute amount of conspecific pollen (pollen counts per stigma) found on flowers open to animal pollination. 
 Second, we use the relative amount of conspecific pollen—the difference between the absolute amount and the that from flowers that were bagged. 
-We use both metrics simultaneously because, in the one hand, the relative amount acknowledges that autogamus self-pollination can ocurr and hence might be a better indication of the pollen that has been actually deposited by mutualistic partners.  
+We use both metrics simultaneously because, in the one hand, the relative amount acknowledges that autogamus self-pollination can ocurr and hence might be a better indication of the pollen that has been actually deposited by mutualistic partners. 
 On the other, self-pollination is an adaptive trait [@kalisz_benefits_2003] and some plants are not self-fertile, even if their pollen gets deposited on the stigma. 
-Nevertheless, this difference still provides valuable indication of what the animal contribution to reproductive output. 
-Both metrics complement each other and provide a more complete picture of the quantitative aspect of pollination service. 
+<!-- Nevertheless, this difference still provides valuable indication of what the animal contribution to reproductive output.  -->
+Both metrics complement each other and provide a complete picture of the quantitative aspect of pollination service. 
 Similarly, to explore the quality of pollination we examine the relationship that exists between both the absolute and relative amount of conspecific pollen and heterospecific pollen. 
 We use the relative amount of heterospecific pollen for our calculations. 
 However, because the amount of heterospecific pollen in bagged flowers was negligible, results are almost identical if we use the absolute amounts. 
