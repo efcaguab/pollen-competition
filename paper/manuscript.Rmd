@@ -35,20 +35,22 @@ knitr::opts_chunk$set(echo = FALSE, message = FALSE,
 ### To do
 
 * References to the introduction
-* Settle on analyses
-* Nail down discussion
-* Abstract
+* Discussion from bulletpoints to actual paragraphs. I will do that once we all agree with the quantitative methodology and getting some contributions for the interpretation of the results
+* Spellcheck everything
+* Finish off the supplementary materials
+* Write the abstract
 
 ### Questions
 
-* Should I separate the "phenology originality" from the "functional originality"?
-* Gain in pollen vs. absolute amount of pollen?
+Feel free to come back here after you've read the manuscript. Thanks!
 
-\clearpage
-
-# Abstract
-
-TBC
+* __Originality__: Currently the plants phenology are included in the traits. The relative abundance of the plant in each of the five a survey months is included as a trait. This allows to maintain the model simple and it could be easily argued that phenological strategy can be considered as another trait. However I'm not convinced that it is a good idea to keep them together, especially because differences in phenology is a rather intuitive factor/strategy to overcome competition for pollination. Do you think I should separate traits from phenology? If yes, should I use the same "originality" approach to determine how different each species is? 
+* __Traits__: Currently I don't mention much traits in the discussion. I think the trait component is valuable and interesting but sadly at the moment the data quality is poor. Only 4 traits have been compiled: growth form, longevity, flower colour, and wether the plant is native to the region. It won't be possible to gather all of the traits used by @coux_linking_2016-1 from the literature but hopefully it is for a good proportion of them. Daniel and Jason, could we discuss options here? 
+* __Conspecific pollen__: Previously I used, as Hugo did in his papers, the gain in conspecific pollen in open flowers relative to the amount of in bagged flowers as the indication of the "quantity" of the pollination service. After thinking more about the limitations of this metric (pollinatorsalso take pollen from stigmas, some plants are not self-fertile, different maturation times for male/female organs, etc) I decided it would be best to include both the total and the relative pollen amounts in the mansucript. This add more nuance to the story and interpretation which is not cool, but I think together they overcome each other's problems. What do you think about it?
+* __Naming__: I currently use absolute and relative pollen gain as names for the two previous metrics. I think it's OK but I feel there might be better options. Any ideas?
+* __Quantity & quality__: This version of the paper uses quantity/quality to frame the results. I think that's pretty neat. However, different studies define quantity and quality in different ways. Hugo for example used the relative amount of conspecific pollen as an indication of quantity and the amount of heterospecific pollen for quality. We discussed earlier that a good indication could be the _proportion_ of heterospecific pollen instead. What do you think? Should I ditch quantity/quality and stick to conspecific/heterospecific pollen instead? Should I stay with the current definitions of quantity and quality of pollination? This probably needs meeting/skype, but it would be good to think about it.
+* __Pollen transfer__: Currently all I'm using from the pollen transfer networks is the share of a plant in the pollen pool. That fits nice with the density hypothesis but its rather simplistic. Any ideas? 
+* __Pollen in bagged flowers__: Jason, you mentioned that pollen in bagged flowers can be due to selfing or wind. You meant wind moving flowers and that causing pollen to be deposited on stigmas? Wouldnt that count as selfing too?
 
 \clearpage
 
