@@ -165,8 +165,7 @@ figure_plan <- drake::drake_plan(
 
 reporting_plan <- drake::drake_plan(
   render_pdf(drake::knitr_in('paper/supp-info.Rmd'), drake::file_out('paper/supp-info.pdf'), clean_md = FALSE),
-  render_pdf(drake::knitr_in('paper/manuscript.Rmd'), drake::file_out('paper/manuscript.pdf'), clean_md = FALSE),
-  render_pdf(drake::file_in('paper/questions_observations_todo.Rmd'), drake::file_out('paper/questions_observations_todo.pdf'), clean_md = FALSE))
+  render_pdf(drake::knitr_in('paper/manuscript.Rmd'), drake::file_out('paper/manuscript.pdf'), clean_md = FALSE))
 
 # Make all ----------------------------------------------------------------
 
@@ -188,5 +187,5 @@ project_config <- drake::drake_config(project_plan)
 # drake::vis_drake_graph(project_config, targets_only = T)
 
 # execute plan
-drake::make(project_plan, parallelism = "parLapply", jobs = 3)
-# drake::make(project_plan)
+# drake::make(project_plan, parallelism = "parLapply", jobs = 3)
+drake::make(project_plan)
