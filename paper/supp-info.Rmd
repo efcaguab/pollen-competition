@@ -42,7 +42,7 @@ cowplot::plot_grid(
   cowplot::plot_grid(leg, ., rel_heights = c(0.1, 0.9), ncol = 1)
 ```
 
-```{r fig-deposition-gain-logtransformed-or-not, fig.height = 2, fig.cap = "Distribution of the difference on stigmatic pollen density between open and closed flowers for one of the bootstrap replicates used in the model sets. When (A) using directly the gain in pollen density and (B) when pollen density is log transormed prior to calculating the gain. "}
+```{r fig-deposition-gain-log-transformed-or-not, fig.height = 1.9, fig.cap = "Distribution of the stigmatic pollen density for one of the bootstrap replicates used in the model sets. When (A) using directly the gain in pollen density and (B) when pollen density is log transormed (for the relative amount of conspecific pollen, density was log-transformed prior to calculating the gain).", eval=T}
 drake::loadd(fig_pollen_density_diff)
 
 leg <- cowplot::get_legend(fig_pollen_density_diff[[1]])
