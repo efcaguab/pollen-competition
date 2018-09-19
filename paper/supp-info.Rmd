@@ -30,7 +30,7 @@ options(xtable.comment = FALSE,
         booktabs = TRUE)
 ```
 
-```{r fig-deposition-logtransformed-or-not, fig.height = 2, fig.cap = "Distribution of stigmatic pollen density plotted in (A) a linear scale, and (B) a logarithmic scale (zero values not shown)."}
+```{r fig-deposition-log-transformed-or-not, fig.height = 2, fig.cap = "Distribution of stigmatic pollen density plotted in (A) a linear scale, and (B) a logarithmic scale (zero values not shown).", eval=F}
 drake::loadd(fig_pollen_density)
 
 leg <- cowplot::get_legend(fig_pollen_density[[1]])

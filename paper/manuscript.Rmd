@@ -145,7 +145,7 @@ In addition, to estimate and incorporate the uncertainty associated to our resul
 Each model set was based on the same one hundred bootstrap resamples of the deposition data. 
 We used bootstrap resampling because, as open and bagged flowers were not paired, this allowed us to directly model the *gain* in pollen density rather than density itself. 
 In each data replicate we randomly sampled with replacement a number of open flowers within each community-species combination and an equal number of closed flowers. 
-We then log-transformed the pollen densities to improve normality and minimise the impact of outliers (Figure \@ref(S-fig:fig-deposition-log-transformed-or-not) and \@ref(S-fig:fig-deposition-gain-log-transformed-or-not)), this generally offered better results that a generalised linear model with poisson (or quasiposson) error structure. 
+We then log-transformed the pollen densities to improve normality and minimise the impact of outliers (Figure \@ref(S-fig:fig-deposition-gain-log-transformed-or-not)), this generally offered better results that a generalised linear model with poisson (or quasiposson) error structure. 
 Finally, for the models of the relative amounts of pollen we calculated the difference between the pollen density among treatments. 
 
 As predictors in all model sets, we included species degree, the plant relative abundance, the plant species' share on the pollen pool, and the species' functional originality. 
