@@ -228,12 +228,12 @@ Surprisingly, the species degree was comparatively less important for predicting
 drake::readd(fig_coefficient_averages)
 ```
 
-Overall we observed that species degree and abundance had a negative relationship with the gain of both absolute and relative conspecific pollen. 
+Overall we observed that species degree and abundance had a negative relationship with the gain of both absolute and relative conspecific pollen (Figure \@ref(fig:fig-model-results-global)). 
 Functional originality had a weak negative relationship with the absolute gain of conspecific pollen but a small positive effect on the relative gain. 
 The plant's share in the community pollen pool, had opposite effects, with a  positive relationship with the absolute gain and a negative relationship with the relative gain of conspecific pollen.
 Although relative abundance, degree, and the share in the pollen pool were positively correlated (Figure \@ref(S-fig:fig-correlation)), the effect that each of them had on conspecific pollen was relatively similar among models that included all or just some of these three explanatory variables (Figure \@ref(S-fig:fig-model-results)). 
 
-The gain in heterospecific pollen was negatively related to the species abundance but positively to the species' share in the pollen pool, functional originality, and degree. 
+The gain in heterospecific pollen was negatively related to the species abundance but positively to the species' share in the pollen pool, functional originality, and degree (Figure \@ref(fig:fig-model-results-global)). 
 Compared to the models of conspecific pollen, the collinearity in the explanatory variables had a larger impact in the models of heterospecific pollen. 
 For instance, when the species abundance was not accounted for, both the species' share in the pollen pool and its functional originality have a negative relationship with the gain in heterospecific pollen (Figure \@ref(S-fig:fig-model-results)). 
 
