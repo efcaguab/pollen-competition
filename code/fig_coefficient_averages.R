@@ -14,12 +14,7 @@ make_fig_coefficient_avarages <- function(coefficient_averages, variable_importa
                                             estimate + 0.15, 
                                             estimate)) %>%
     dplyr::filter(pollen_category != "heterospecific_abs") %>%
-    dplyr::group_by() %>%
-    dplyr::mutate(pollen_category = dplyr::case_when(
-      pollen_category == "conspecific" ~ "conspecific (relative)", 
-      pollen_category == "conspecific_abs" ~ "conspecific (absolute)", 
-      TRUE ~ "heterospecific"
-    ))
+    dplyr::group_by()
   
   # to get the x aesthetic for the importance labels
   min_values <- dist %>%
@@ -29,11 +24,6 @@ make_fig_coefficient_avarages <- function(coefficient_averages, variable_importa
   
   imp <- variable_importance %>%
     tidyr::gather(key = "pollen_category", value = "importance", -term) %>%
-    dplyr::mutate(pollen_category = dplyr::case_when(
-      pollen_category == "conspecific" ~ "conspecific (relative)", 
-      pollen_category == "conspecific_abs" ~ "conspecific (absolute)", 
-      TRUE ~ "heterospecific"
-    )) %>%
     dplyr::mutate(term = forcats::fct_relevel(term, c("func. originality", "abundance", "degree"), after = 2), 
                   # pollen_category = dplyr::if_else(pollen_category == "conspecific", 
                                                    # "conspecific pollen  ", 
