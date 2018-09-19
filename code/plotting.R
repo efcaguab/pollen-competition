@@ -24,7 +24,7 @@ remove_legend <- function(x){
 #' @return
 #' 
 humanize <- function(x, sites = NA, random_effects = NA, formula_long = FALSE, term_long = TRUE){
-  if ('site_name' %in% names(x)) {
+  if ('site_name' %in% names(x) & !is.na(sites)) {
     x <- dplyr::inner_join(x, sites, by = 'site_name')
   }
   if ('term' %in% names(x)) {
@@ -60,6 +60,15 @@ humanize <- function(x, sites = NA, random_effects = NA, formula_long = FALSE, t
   }
   if ('random_effect' %in% names(x)) {
     x <- dplyr::inner_join(x, random_effects, by = "random_effect")
+  }
+  if ('pollen_category' %in% names(x)) {
+    x <- x %>%
+      dplyr::filter(pollen_category != "heterospecific_abs") %>%
+      dplyr::mutate(pollen_category = dplyr::case_when(
+        grepl('conspecific_abs', pollen_category) ~ 'conspecific (absolute)',
+        grepl('conspecific', pollen_category) ~ 'conspecific (relative)',
+        TRUE ~ 'heterospecific'
+      ))
   }
   x
 }

@@ -27,7 +27,7 @@ get_variable_importance <- function(model_formula_ranking){
     ) %>%
     dplyr::mutate(importance = round(importance, digits = 3)) %>%
     dplyr::rename(term = var) %>%
-    humanize() %>%
+    humanize() %>% 
     tidyr::spread(pollen_category, importance) %>%
-    dplyr::arrange(dplyr::desc(conspecific), heterospecific)
+    dplyr::arrange(dplyr::desc(heterospecific))
 }
