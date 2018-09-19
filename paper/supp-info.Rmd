@@ -42,7 +42,7 @@ cowplot::plot_grid(
   cowplot::plot_grid(leg, ., rel_heights = c(0.1, 0.9), ncol = 1)
 ```
 
-```{r fig-deposition-gain-log-transformed-or-not, fig.height = 1.9, fig.cap = "Distribution of the stigmatic pollen density for one of the bootstrap replicates used in the model sets. When (A) using directly the gain in pollen density and (B) when pollen density is log transormed (for the relative amount of conspecific pollen, density was log-transformed prior to calculating the gain).", eval=T}
+```{r fig-deposition-gain-log-transformed-or-not, fig.height = 1.8, fig.cap = "Distribution of the stigmatic pollen density for one of the bootstrap replicates used in the model sets. When (A) using directly the gain in pollen density and (B) when pollen density is log transormed (for the relative amount of conspecific pollen, density was log-transformed prior to calculating the gain).", eval=T}
 drake::loadd(fig_pollen_density_diff)
 
 leg <- cowplot::get_legend(fig_pollen_density_diff[[1]])
@@ -55,7 +55,7 @@ cowplot::plot_grid(
   cowplot::plot_grid(leg, ., rel_heights = c(0.1, 0.9), ncol = 1)
 ```
 
-```{r fig-abundance-logtransformed-or-not, fig.height = 2, fig.cap = "Distribution of plant abundance as (A) raw counts of floral units across communities, and (B) after applying a data transformation in which the counts have been log transformed and scaled to have a mean of zero and a standard deviation of one."}
+```{r fig-abundance-logtransformed-or-not, fig.height = 1.65, fig.cap = "Distribution of plant abundance as (A) raw counts of floral units across communities, and (B) after applying a data transformation in which the counts have been log transformed and scaled to have a mean of zero and a standard deviation of one."}
 drake::loadd(fig_abundance)
 
 cowplot::plot_grid(
