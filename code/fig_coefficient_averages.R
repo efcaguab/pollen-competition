@@ -45,8 +45,7 @@ make_fig_coefficient_avarages <- function(coefficient_averages, variable_importa
                # vline_color = pollen_category, 
                fill = pollen_category)) +
     geom_vline(xintercept = 0, linetype = 2, size = 0.25, color = "grey30") +
-    geom_density_ridges(aes(alpha = importance), 
-                        # alpha = 0.25, 
+    geom_density_ridges(alpha = 0.65, 
                         panel_scaling = F, 
                         scale = 1.5, 
                         quantile_lines = F, quantiles = 2, 
@@ -56,9 +55,9 @@ make_fig_coefficient_avarages <- function(coefficient_averages, variable_importa
                         bandwidth = 0.015) +
     geom_text(data = imp, 
               aes(label = label, y = as.numeric(term),
-                  x = x), 
+                  x = x, size = importance), 
               fill = "white", 
-              size = 2.65, 
+              # size = 2.65, 
               nudge_y = 0.2, 
               nudge_x = -0.04,
               fontface = "bold") +
@@ -74,14 +73,14 @@ make_fig_coefficient_avarages <- function(coefficient_averages, variable_importa
     facet_grid(~ pollen_category, space = "free_x", scales = "free_x") +
     scale_color_manual(values = rev(RColorBrewer::brewer.pal(4, "OrRd"))) +
     scale_fill_manual(values = rev(RColorBrewer::brewer.pal(4, "OrRd"))) +
-    scale_size_continuous(range = c(0.25, 0.5)) +
-    scale_alpha_continuous(range = c(0.7, 0.7)) +
+    scale_size_continuous(range = c(2.2, 2.65)) +
+    # scale_alpha_continuous(range = c(0.7, 0.7)) +
     scale_x_continuous(expand = c(0,0), 
                        breaks = seq(-2,2, by = 0.4)) +
     scale_y_discrete(expand = c(0.01,0.1)) +
     # scale_discrete_manual("vline_color", values = c_scale()) +
     theme(legend.position = "none", 
-          legend.direction = "vertical",
+          legend.direction = "horizontal",
           panel.border = element_blank(), 
           panel.grid.major.x = element_line(size = 0.25), 
           axis.ticks = element_blank(),
