@@ -64,68 +64,7 @@ cowplot::plot_grid(
   rel_widths = c(0.42, 0.58), labels = LETTERS[1:2], label_size = 8)
 ```
 
-```{r table-species-gain-global, results = 'asis'}
-drake::loadd(significant_gain_global, significant_gain_site, sites)
-
-glance_table(significant_gain_global) %>%
-  dplyr::select(recipient, estimate, statistic, p.value) %>%
-  dplyr::mutate(recipient = paste0('{\\emph{ ', recipient, '}}')) %>%
-  dplyr::rename(`p value` = p.value,
-         `difference` = estimate,
-         `plant species` = recipient) %>%
-  knitr::kable(
-    caption = "Results of testing the alternative hypothesis that the conspecific pollen density in open flowers is greater than the density in bagged flowers. Tests were performed at the species level (across communities).", 
-    escape = FALSE, 
-    booktabs = TRUE, 
-    linesep = c("")) %>%
-  kableExtra::kable_styling(font_size = 8)
-```
-
-```{r table-species-gain-site, results = 'asis'}
-drake::loadd(significant_gain_global, significant_gain_site, sites)
-table_frame <- glance_table(significant_gain_site) %>%
- dplyr::inner_join(sites, by = "site_name") %>%
-  dplyr::group_by(recipient) %>%
-  dplyr::mutate(n_sites = dplyr::n_distinct(site_name)) %>%
-  dplyr::filter(n_sites > 1) %>%
-  dplyr::group_by() %>%
-  dplyr::mutate(site_name = paste(locality_name, land_use, fragment, sep = ' - '),
-         recipient = paste0('{\\emph{ ', recipient, '}}')) %>%
-  dplyr::select(recipient, site_name, estimate, statistic, p.value) %>%
-  dplyr::rename(`p value` = p.value,
-         `difference` = estimate,
-         `plant species` = recipient, 
-         `community` = site_name)
-
-seps <-dplyr::if_else(table_frame$`plant species` == 
-  dplyr::lag(table_frame$`plant species`), "", "\\addlinespace") %>%
-  na.omit()
-
-table_frame %>%
-  knitr::kable(
-    caption = "Results of testing the alternative hypothesis that the conspecific pollen density in open flowers is greater than the density in bagged flowers. Tests were performed at the community level. Only species present in more than one community are shown.", 
-    escape = FALSE, 
-    booktabs = TRUE, 
-    linesep = seps, 
-    digits = 3) %>%
-  kableExtra::kable_styling(font_size = 8)
-```
-
-```{r table-variation-across-sites, eval=FALSE, results='asis'}
-drake::loadd(consp_self)
-consp_self %>%
-  anova(test = "Chisq")  %>%
-  knitr::kable(
-    caption = 'Analysis of variance of conspecific pollen density in bagged flowers (self pollination rate).  Density were modelled using a quasipoisson distribution. The model suggests that self-pollination rates are species dependent but not across.',
-    booktabs = TRUE) %>%
-  kableExtra::kable_styling(font_size = 8)
-```
-
-```{r fig-global-community-correlations, fig.height = 2, fig.cap = "Relationship between the model's independent variables calculated at the community level and at the study-wide level."}
-drake::readd(fig_community_global_scatter)
-```
-
-```{r table-aic-random-models, results= 'asis'}
+```{r table-aic-random-models, results= 'asis', eval=T}
 drake::loadd(glanced_random, random_effects)
 
 summ <- glanced_random %>%
@@ -161,7 +100,24 @@ summ %>%
   kableExtra::collapse_rows(columns = 1, latex_hline = "major", valign = "middle")
 ```
 
-```{r table-aic-fixed-models, results= 'asis'}
+```{r table-species-gain-global, results = 'asis', eval=T}
+drake::loadd(significant_gain_global, significant_gain_site, sites)
+
+glance_table(significant_gain_global) %>%
+  dplyr::select(recipient, estimate, statistic, p.value) %>%
+  dplyr::mutate(recipient = paste0('{\\emph{ ', recipient, '}}')) %>%
+  dplyr::rename(`p value` = p.value,
+         `difference` = estimate,
+         `plant species` = recipient) %>%
+  knitr::kable(
+    caption = "Results of testing the alternative hypothesis that the conspecific pollen density in open flowers is greater than the density in bagged flowers. Tests were performed at the species level (across communities).", 
+    escape = FALSE, 
+    booktabs = TRUE, 
+    linesep = c("")) %>%
+  kableExtra::kable_styling(font_size = 8)
+```
+
+```{r table-aic-fixed-models, results= 'asis', eval=T}
 drake::loadd(model_formula_ranking)
 
 model_formula_ranking$by_model_set %>% 
@@ -185,17 +141,61 @@ model_formula_ranking$by_model_set %>%
   kableExtra::column_spec(column = 1, bold=T) %>%
   kableExtra::collapse_rows(columns = 1, latex_hline = "major", valign = "middle")
 ```
-
-```{r fig-correlation, fig.height = 4.5, fig.cap = "Corelation between the explanatory variables included in the statistical models."}
+ 
+```{r fig-correlation, fig.height = 4.5, fig.cap = "Corelation between the explanatory variables included in the statistical models.", eval=T}
 drake::readd(fig_correlation)
 ```
-
-
-```{r fig-model-results, fig.height = 7, fig.cap = "Distribution of effect estimates for models of conspecific and heterospecific pollen density gain. Only results for the models with the most parsimonous fixed effects. "}
+ 
+```{r fig-model-results, fig.height = 7, fig.cap = "Distribution of effect estimates for models of conspecific and heterospecific pollen density gain. Only results for the models with the most parsimonous fixed effects.", eval=T}
 drake::readd(fig_all_model_results)
 ```
 
-```{r fig_effect_quant_qual, fig.height=3.5, fig.cap="asd"}
+
+```{r table-species-gain-site, results = 'asis', eval=F}
+drake::loadd(significant_gain_global, significant_gain_site, sites)
+table_frame <- glance_table(significant_gain_site) %>%
+ dplyr::inner_join(sites, by = "site_name") %>%
+  dplyr::group_by(recipient) %>%
+  dplyr::mutate(n_sites = dplyr::n_distinct(site_name)) %>%
+  dplyr::filter(n_sites > 1) %>%
+  dplyr::group_by() %>%
+  dplyr::mutate(site_name = paste(locality_name, land_use, fragment, sep = ' - '),
+         recipient = paste0('{\\emph{ ', recipient, '}}')) %>%
+  dplyr::select(recipient, site_name, estimate, statistic, p.value) %>%
+  dplyr::rename(`p value` = p.value,
+         `difference` = estimate,
+         `plant species` = recipient, 
+         `community` = site_name)
+
+seps <-dplyr::if_else(table_frame$`plant species` == 
+  dplyr::lag(table_frame$`plant species`), "", "\\addlinespace") %>%
+  na.omit()
+
+table_frame %>%
+  knitr::kable(
+    caption = "Results of testing the alternative hypothesis that the conspecific pollen density in open flowers is greater than the density in bagged flowers. Tests were performed at the community level. Only species present in more than one community are shown.", 
+    escape = FALSE, 
+    booktabs = TRUE, 
+    linesep = seps, 
+    digits = 3) %>%
+  kableExtra::kable_styling(font_size = 8)
+```
+
+```{r table-variation-across-sites, eval=FALSE, results='asis', eval=F}
+drake::loadd(consp_self)
+consp_self %>%
+  anova(test = "Chisq")  %>%
+  knitr::kable(
+    caption = 'Analysis of variance of conspecific pollen density in bagged flowers (self pollination rate).  Density were modelled using a quasipoisson distribution. The model suggests that self-pollination rates are species dependent but not across.',
+    booktabs = TRUE) %>%
+  kableExtra::kable_styling(font_size = 8)
+```
+
+```{r fig-global-community-correlations, fig.height = 2, fig.cap = "Relationship between the model's independent variables calculated at the community level and at the study-wide level.", eval=F}
+drake::readd(fig_community_global_scatter)
+```
+
+```{r fig_effect_quant_qual, fig.height=3.5, fig.cap="asd", eval=F}
 drake::loadd(fig_effect_quant_qual)
 
 cowplot::plot_grid(
@@ -204,7 +204,3 @@ cowplot::plot_grid(
   labels = LETTERS[1:2], 
   label_size = 8, ncol = 2)
 ```
-
-
-# References
-
