@@ -37,7 +37,6 @@ knitr::opts_chunk$set(echo = FALSE, message = FALSE,
 * References to the introduction
 * Discussion from bullet-points to actual paragraphs. I will do that once we all agree with the quantitative methodology and getting some contributions for the interpretation of the results
 * Spell-check everything
-* Finish off the supplementary materials
 * Write the abstract
 
 ### Questions
