@@ -1,3 +1,8 @@
+---
+output:
+  word_document: default
+  html_document: default
+---
 # The pollination trade-off
 
 _Fernando Cagua, Hugo Marrero, Jason Tylianakis, Daniel Stouffer_
