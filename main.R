@@ -144,7 +144,18 @@ model_plans <- rbind(
   predictions
 )
 
-# Plots -------------------------------------------------------------------
+analyses_plan <- rbind(
+  clean_data_plan, 
+  traits_plan,
+  format_data_plan,
+  imputation_plan,
+  boot_replicates,
+  model_plans,
+  aic_plan,
+  basic_analyses_plan
+)
+
+# Paper -------------------------------------------------------------------
 
 figure_plan <- drake::drake_plan(
   fig_model_results_global = make_fig_model_results_global(tidied_fixed), 
@@ -161,26 +172,21 @@ figure_plan <- drake::drake_plan(
   fig_correlation = make_fig_correlation(rep_1)
 )
 
-# Reporting ---------------------------------------------------------------
-
 reporting_plan <- drake::drake_plan(
   render_pdf(drake::knitr_in('paper/supp-info.Rmd'), drake::file_out('paper/supp-info.pdf'), clean_md = FALSE),
   render_pdf(drake::knitr_in('paper/manuscript.Rmd'), drake::file_out('paper/manuscript.pdf'), clean_md = FALSE))
+
+paper_plan <- rbind(
+  figure_plan, 
+  reporting_plan
+)
 
 # Make all ----------------------------------------------------------------
 
 # set up plan
 project_plan <- rbind(
-  clean_data_plan, 
-  traits_plan,
-  format_data_plan,
-  imputation_plan,
-  boot_replicates,
-  model_plans,
-  aic_plan,
-  basic_analyses_plan,
-  figure_plan,
-  reporting_plan
+  analyses_plan,
+  paper_plan
   )
 
 project_config <- drake::drake_config(project_plan)
