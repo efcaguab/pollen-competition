@@ -9,11 +9,13 @@ _Fernando Cagua, Hugo Marrero, Jason Tylianakis, Daniel Stouffer_
 
 200-250 words
 
-In the context of animal pollination, sharing pollinators between plant species is a balancing act between two ecological opposites, mutualism and competition. 
-Sharing pollinators is beneficial because plant species can harness the positive feedback loops that it creates. 
-It can also be detrimental to co-flowering plants because sharing pollinators can lead to pollen being lost on foreign flowers and stigma surface being lost to foreign pollen. 
-Although both mutualism and competition play an important role in shaping species interactions, competition is much poorly understood at the community level. 
-Specifically, here we quantify the presumed negative impact that the number of interacting species plays on the pollination service. 
-To tease apart the multiple factors that operate at the community scale we use data that describes both the structure of the interactions and the pollen flows that occur within it, all while accounting for the traits of the species that integrate the community. 
-We found that indeed there is a trade-off between the number of interacting partners and both the quantity and quality of pollination. 
-However, its role on pollination service is relatively small when compared to other ecological factors.  Competition for pollinators are more strongly shaped by density effects caused by the species abundance and amount of pollen it produces, as well as the plant's functional originality. 
+In the context of animal-mediated pollination, sharing pollinators between plant species creates a balancing act between two ecological opposites: mutualism and competition. 
+Sharing pollinators can be beneficial because it allows plant species to harness positive feedback loops between populations. 
+It can also be detrimental to co-flowering plants because pollen can be lost to foreign flowers and stigma surface can be occupied by foreign pollen.
+However, these detrimental effects of sharing pollinators are poorly understood at the community level because, at this scale, many other factors play a role in shaping species interactions. 
+Specifically, here we quantify the potential negative impact that the number of interacting species can play on the pollination service while accounting for the structure of the interactions, the pollen flows that occur within it, and the traits of the species that integrate the community. 
+We found that there is indeed a trade-off between the number of interacting partners and both the quantity and quality of pollination received by different flowering plants. 
+However, the trade-off's role on pollination service is relatively small when compared to other ecological factors. 
+In particular, competition for pollinators is more strongly shaped by density effects caused by the species abundance and the amount of pollen the plant produces, as well as its functional originality. 
+While sharing pollinators has been shown to be detrimental for plant fitness in many theoretical and experimental studies, when scaling up to empirical communities, we show that plants can compensate these detrimental effects using other ecological mechanisms. 
+
