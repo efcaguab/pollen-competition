@@ -17,5 +17,4 @@ Specifically, here we quantify the potential negative impact that the number of 
 We found that there is indeed a trade-off between the number of interacting partners and both the quantity and quality of pollination received by different flowering plants. 
 However, the trade-off's role on pollination service is relatively small when compared to other ecological factors. 
 In particular, competition for pollinators is more strongly shaped by density effects caused by the species abundance and the amount of pollen the plant produces, as well as its functional originality. 
-While sharing pollinators has been shown to be detrimental for plant fitness in many theoretical and experimental studies, when scaling up to empirical communities, we show that plants can compensate these detrimental effects using other ecological mechanisms. 
-
+While sharing pollinators can be detrimental for plant fitness, when scaling up to empirical communities, we show that plants can compensate for these detrimental effects using other ecological mechanisms.
