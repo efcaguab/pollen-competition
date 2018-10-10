@@ -18,9 +18,9 @@ getwd()
 # load needed data
 load_data_plan <- drake::drake_plan(
   abc_tidied_fixed = drake::readd("tidied_fixed", character_only = T), 
-  abc_model_linear_fits = drake::readd("model_linear_fits"), 
-  abc_model_formula_ranking = drake::readd("model_formula_ranking"), 
-  abc_model_linear_fits_species = drake::readd("model_linear_fits_species")
+  abc_model_linear_fits = drake::readd("model_linear_fits", character_only = T), 
+  abc_model_formula_ranking = drake::readd("model_formula_ranking", character_only = T), 
+  abc_model_linear_fits_species = drake::readd("model_linear_fits_species", character_only = T)
 )
 
 figure_het_con_plan <- drake::drake_plan(
