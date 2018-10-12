@@ -1,4 +1,4 @@
-get_figure_elements <- function(tidied_fixed, abc_model_linear_fits, model_formula_ranking, model_linear_fits_species){
+get_figure_elements <- function(tidied_fixed, model_linear_fits, model_formula_ranking, model_linear_fits_species){
   require(ggplot2)
   
   model_weights <- model_formula_ranking$aggregated %>%
@@ -44,12 +44,65 @@ get_figure_elements <- function(tidied_fixed, abc_model_linear_fits, model_formu
     dplyr::rename(rel = "con_type") %>%
     dplyr::mutate(rel = dplyr::case_when(rel == "conspecific" ~ "relative", TRUE ~ "absolute"))
   
+   list(
+     model_weights = model_weights,
+     ab_lines = ab_lines,
+     ab_lines_summarised = ab_lines_summarised,
+     points_sp = points_sp, 
+     points_sp_summarised = points_sp_summarised)
+}
+
+make_fig_het_con_abc <- function(fe, tidied_fixed, colour_pallete){
+  
   pa <- RColorBrewer::brewer.pal(4, "OrRd")
   major_labs <- c(0,10,100, 1000)
   minor_labs <- c(0, 5, 10, 50, 100, 500, 1000)
   major_breaks <- log(major_labs + 1)
   minor_breaks <- log(minor_labs + 1)
   
-  list(model_weights, ab_lines, ab_lines_summarised, points_sp, points_sp_summarised, pa)
+  dplyr::data_frame(x = get_pred_range(tidied_fixed, "heterospecific"),
+                    y = get_pred_range(tidied_fixed, "conspecific")) %>%
+    ggplot() +
+    geom_abline(slope = 1, intercept = 0, size = 0.25, linetype = 2) +
+    geom_errorbar(data = fe$points_sp_summarised,
+                  aes(x = heterospecific_median, 
+                      ymin = conspecific_quantile_05, 
+                      ymax = conspecific_quantile_95, 
+                      colour = rel),
+                  show.legend = F, alpha = 0.25) +
+    geom_errorbarh(data = fe$points_sp_summarised,
+                   aes(x = heterospecific_median,
+                       y = conspecific_median,
+                       xmin = heterospecific_quantile_05, 
+                       xmax = heterospecific_quantile_95, 
+                       colour = rel),
+                   show.legend = F, alpha = 0.25) +
+    geom_point(data = fe$points_sp_summarised,
+               aes(x = heterospecific_median, 
+                   y = conspecific_median, 
+                   colour = rel),
+               alpha = 1, show.legend = T, shape = 21, size = 1) +
+    geom_abline(data = fe$ab_lines,
+                aes(slope = slope, 
+                    intercept = elevation, 
+                    colour = rel),
+                size = 0.1, linetype = 1,
+                alpha = 0.25) +
+    geom_abline(data = fe$ab_lines_summarised, 
+                aes(slope = slope, intercept = elevation, colour = rel), 
+                size = 0.5, linetype = 1) + 
+    # geom_hline(yintercept = 0, size = 0.25, linetype = 2) +
+    scale_x_continuous(breaks = major_breaks, labels = major_labs, minor_breaks = minor_breaks) +
+    scale_y_continuous(breaks = major_breaks, labels = major_labs, minor_breaks = minor_breaks) +
+    scale_colour_manual(values = ) +
+    pub_theme() +
+    labs(x = "heterospecific pollen density gain",
+         y = "conspecific pollen density gain") +
+    theme(legend.position = c(0.01,0.98), 
+          legend.direction = "horizontal", 
+          legend.justification = c(0,1), 
+          legend.title = element_blank(), 
+          legend.background = element_rect(fill = "white"), 
+          panel.grid.major = element_line(size = 0.25), 
+          axis.title = element_text(size = 8, colour = "grey20"))
 }
-
