@@ -41,6 +41,7 @@ publication/supp_info_files/
 *.tex
 *.toc
 \.drake/
+.drake_abc/
 publication/manuscript_files/figure-latex/
 publication/questions_observations_todo\.pdf
 packrat/lib*/
