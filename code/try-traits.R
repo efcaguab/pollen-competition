@@ -153,16 +153,23 @@ format_trait_matrices <- function(x, remove_na_traits, remove_na_abu) {
 #' @param trait_matrices a list with lists of trait matrics
 #' @param corr correction to use, defaults to Cailliez, wich was the one Camille used
 #' @param messages wether to print annoying thingis or not
+#' @param weighted wether to weight the traits according to the number of columns they use, 
 #'
 #' @return a list with the same structure and 
 #'
-get_species_coords <- function(trait_matrices, corr = "cailliez", messages = FALSE) {
+get_species_coords <- function(trait_matrices, corr = "cailliez", messages = FALSE, weighted = FALSE) {
+  n_traits <- ncol(trait_matrices[[1]][[1]])
+  if (!weighted) {
+    weights <- rep(1, n_traits)
+  } else {
+    n_abu_surveys <- 5
+    weights <- c(rep(1, n_traits - n_abu_surveys), rep(1/n_abu_surveys, n_abu_surveys))
+  }
   trait_matrices %>%
     purrr::map(function(x){
       x %>%
         # calliez correction required to account for NAs, were interested in the principal coordinate analyssis as well so need to tell it to print it out
-        purrr::map(FD::dbFD, corr = corr, print.pco = T, messages = messages) %>%
+        purrr::map(FD::dbFD, corr = corr, print.pco = T, messages = messages, w = weights) %>%
         purrr::map(`$`, "x.axes")
     })
-     
 }

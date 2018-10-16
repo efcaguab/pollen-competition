@@ -37,7 +37,7 @@ format_data_plan <- drake::drake_plan(
 traits_plan <- drake::drake_plan(
   plant_traits = read_plant_traits(drake::file_in('data/raw/plant_traits.csv')), 
   trait_matrices = make_trait_matrices(plant_traits, abu_frame, TRUE, TRUE), 
-  species_coords = get_species_coords(trait_matrices), 
+  species_coords = get_species_coords(trait_matrices, weighted = TRUE), 
   unq_frame = get_species_uniqueness(species_coords), 
   org_frame = get_species_originality(species_coords, abu_frame)
 )
