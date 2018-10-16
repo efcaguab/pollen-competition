@@ -86,8 +86,9 @@ make_trait_matrices <- function(plant_traits, abu_frame, remove_na_traits = TRUE
   per_community <- plant_traits %>% 
     dplyr::full_join(flower_matrix(log_abu), by = "plant_name")  %>% 
     dplyr::group_by(site_name) %>%
-    dplyr::mutate_at(dplyr::vars(dplyr::contains("2011"), dplyr::contains("2010")), scale) %>% 
-    dplyr::mutate_at(dplyr::vars(dplyr::contains("2011"), dplyr::contains("2010")), as.numeric) %>% 
+    # not necessary as now we are using absolute abundances (log-transformed)
+    # dplyr::mutate_at(dplyr::vars(dplyr::contains("2011"), dplyr::contains("2010")), scale) %>% 
+    dplyr::mutate_at(dplyr::vars(dplyr::contains("2011"), dplyr::contains("2010")), as.numeric) %>%
     dplyr::filter(site_name != "MA_AN_R_1") %>%
     split(.$site_name) 
   
@@ -97,7 +98,8 @@ make_trait_matrices <- function(plant_traits, abu_frame, remove_na_traits = TRUE
     dplyr::summarise_if(is.numeric, sum, na.rm = TRUE) %>%
     dplyr::mutate(site_name = "global") %>%
     dplyr::full_join(plant_traits, ., by = "plant_name") %>% 
-    dplyr::mutate_at(dplyr::vars(dplyr::contains("2011"), dplyr::contains("2010")), scale) %>%
+    # not necessary as now we are using absolute abundances (log-transformed)
+    # dplyr::mutate_at(dplyr::vars(dplyr::contains("2011"), dplyr::contains("2010")), scale) %>%
     dplyr::mutate_at(dplyr::vars(dplyr::contains("2011"), dplyr::contains("2010")), as.numeric) %>%
     list(.)
 
