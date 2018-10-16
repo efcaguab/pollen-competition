@@ -89,7 +89,7 @@ make_trait_matrices <- function(plant_traits, abu_frame, remove_na_traits = TRUE
     # not necessary as now we are using absolute abundances (log-transformed)
     # dplyr::mutate_at(dplyr::vars(dplyr::contains("2011"), dplyr::contains("2010")), scale) %>% 
     dplyr::mutate_at(dplyr::vars(dplyr::contains("2011"), dplyr::contains("2010")), as.numeric) %>%
-    dplyr::filter(site_name != "MA_AN_R_1") %>%
+    # dplyr::filter(site_name != "MA_AN_R_1") %>%
     split(.$site_name) 
   
   global <- log_abu %>%
