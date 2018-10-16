@@ -155,7 +155,7 @@ gather_glance <- function(models, fun, subdivisions){
     x <- x[purrr::map_chr(x, class) != "try-error"]
     
     
-    arrange_df <- function(a, z){
+    arrange_df <- function(a, z, y){
       # rmsee <- sjstats::rmse(a)
       cbind(fun(a), 
             n_plants = dplyr::n_distinct(a$data$plant_name), 
@@ -165,7 +165,8 @@ gather_glance <- function(models, fun, subdivisions){
             # r2 = y[[1]], 
             # o2 = y[[2]],
             r2m = z[1], 
-            r2c = z[2])
+            r2c = z[2], 
+            AICc = y[1])
     }
     
     # R2sjstats <- x %>%
@@ -173,8 +174,13 @@ gather_glance <- function(models, fun, subdivisions){
     R2mumin <- x %>%
       purrr::map(~ MuMIn::r.squaredGLMM(.))
     
-    purrr::pmap_df(list(x, R2mumin), .f = arrange_df, .id = "m") %>%
-     tidyr::separate("m", subdivisions, sep = "\\.")
+    AICc <- x %>%
+      purrr::map(MuMIn::AICc)
+    
+    purrr::pmap_df(list(x, R2mumin, AICc), .f = arrange_df, .id = "m") %>%
+     tidyr::separate("m", subdivisions, sep = "\\.") %>%
+      dplyr::mutate(AIC_nc = AIC, 
+                    AIC = AICc) 
   }
   
   models %>% 
