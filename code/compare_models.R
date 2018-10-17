@@ -77,12 +77,12 @@ get_best_fixed_model_formula <- function(glanced_fixed) {
    `names<-`(c("aggregated", "by_model_set"))
 }
 
-quantile_05 <- function(x){
-  quantile(x, 0.05)
+quantile_05 <- function(x, na.rm = FALSE){
+  quantile(x, 0.05, na.rm = na.rm)
 }
 
-quantile_95 <- function(x){
-  quantile(x, 0.95)
+quantile_95 <- function(x, na.rm = FALSE){
+  quantile(x, 0.95, na.rm = na.rm)
 }
 
 get_likelyhoods <- function(x){

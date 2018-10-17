@@ -38,7 +38,7 @@ make_fig_con_hetero_gain <- function(tidied_fixed, model_linear_fits, model_form
   points_sp_summarised <- points_sp %>%
     dplyr::group_by(plant_name, site_name, con_type) %>%
     dplyr::summarise_at(dplyr::vars(dplyr::contains("specific")), 
-                        dplyr::funs(median, quantile_05,quantile_95)) %>%
+                        dplyr::funs(median, quantile_05,quantile_95), na.rm = T) %>%
     dplyr::mutate_if(is.numeric, I) %>%
     dplyr::group_by() %>%
     dplyr::rename(rel = "con_type") %>%
