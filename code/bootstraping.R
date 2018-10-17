@@ -57,7 +57,7 @@ get_deposition_sampled_data <- function(x, category, transformation){
     dplyr::mutate(
       n_closed = length(pollen_density[treatment == 'closed']), 
       n_open = length(pollen_density[treatment == 'open']), 
-      n_samples = min(n_closed, n_open)) %>% 
+      n_samples = max(n_closed, n_open)) %>% 
     # sample the number of pairs with replacement
     split(list(.$site_name, .$plant_name, .$treatment), drop = T) %>%
     purrr::map_df(~ dplyr::sample_n(., size = .$n_samples[1], replace = T)) %>%
