@@ -45,10 +45,11 @@ get_pollen_dominance <- function(tra_frame, vis_frame){
     dplyr::mutate(n_visits_sp = sum(n_visits, na.rm = T), 
                   prop_visits = n_visits/n_visits_sp) %>%
     dplyr::group_by(site_name, plant_name) %>%
-    dplyr::summarise(poc = log(sum(prop_visits * grain)), 
-                     poc = scale(poc), 
-                     var_trans = "log", 
-                     scale = "community") 
+    dplyr::summarise(grain = sum(grain), 
+                     poc = sum(log(prop_visits * grain))) %>%
+    dplyr::mutate(poc = scale(poc), 
+                  var_trans = "log", 
+                  scale = "community") 
   
   vis_for_tra_global <- vis_frame %>%
     dplyr::mutate(n_visits = dplyr::if_else(survey_type == "quantitative", n_visits, 1L)) %>%
@@ -64,12 +65,12 @@ get_pollen_dominance <- function(tra_frame, vis_frame){
     dplyr::mutate(n_visits_sp = sum(n_visits, na.rm = T), 
                   prop_visits = n_visits/n_visits_sp) %>%
     dplyr::group_by(site_name, plant_name) %>%
-    dplyr::summarise(poc = log(sum(prop_visits * grain)), 
-                     poc = scale(poc), 
-                     var_trans = "log", 
-                     scale = "global") 
+    dplyr::summarise(grain = sum(grain), 
+                     poc = sum(log(prop_visits * grain))) %>% 
+    dplyr::mutate(poc = scale(poc), 
+                  var_trans = "log", 
+                  scale = "global") 
   
-  dplyr::bind_rows(pollen, pollen_global) %>%
-    dplyr::select(-grain_log, -total_pollen) 
+  dplyr::bind_rows(pollen, pollen_global)
 }
 
