@@ -31,7 +31,7 @@ format_data_plan <- drake::drake_plan(
   vis_frame = extract_vis_frame(armonised_data),
   degree = get_degree(vis_frame, dep_frame), 
   tra_frame = extract_tra_frame(armonised_data), 
-  pollen_contribution = get_pollen_contribution(tra_frame)
+  pollen_contribution = get_pollen_dominance(tra_frame, vis_frame)
 )
 
 traits_plan <- drake::drake_plan(
