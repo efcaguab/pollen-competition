@@ -298,6 +298,6 @@ get_degree <- function(vis_frame, dep_frame){
 
 # format pollen transfer data
 extract_tra_frame <- function(armonised_data){
-  x <- armonised_data$transfer %>%
+  armonised_data$transfer %>%
     to_data_frame('transfer') 
 }
