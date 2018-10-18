@@ -7,7 +7,7 @@ make_fig_pollen_density_diff <- function(rep_1){
 
 plot_dist <- function(fun, rep_1){
   rep_1 %>%
-    dplyr::filter(scale == 'imputed', 
+    dplyr::filter(scale == 'community', 
                   var_trans == 'log') %>%
     dplyr::mutate_at(c('open', 'closed', 'pollen_gain'), fun) %>% 
     humanize() %>% 

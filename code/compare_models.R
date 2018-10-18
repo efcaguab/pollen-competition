@@ -4,14 +4,29 @@
 #'
 #' @return a data frame with wilcoxong comparisons
 #' 
-global_vs_community <- function(glanced_models_table, model_formula){
+global_vs_community <- function(glanced_models_table, model_formula, preferred = "community"){
+  
+  # determine if imputed has been calculated
+  if ("imputed" %in% unique(glanced_models_table$scale)){
+    imputed_calculated <- TRUE
+  } else {
+    imputed_calculated <- FALSE
+  }
   
   test_table <- function(x){
-    glanced_models_table %>%
+    spread_models <- glanced_models_table %>%
       # dplyr::filter(fixed_formula == best_model_formula) %>%
       dplyr::rename_at(x, function(x) "metric") %>%
       dplyr::select(pollen_category, model, scale, var_trans, metric, fixed_formula) %>% 
-      tidyr::spread(scale, metric) %>% 
+      tidyr::spread(scale, metric)
+    
+    # if imputed was not calculated
+    if(!imputed_calculated){
+      spread_models %<>%
+        dplyr::mutate(imputed = community)   
+    }
+    
+    spread_models %>%
       split(list(.$pollen_category, .$var_trans, .$fixed_formula)) %>% 
       purrr::map(~ wilcox.test(.$community, .$imputed, paired = T, conf.int = T, alternative = "two.sided")) %>%
      purrr::map_df(~ broom::tidy(.), .id = "m") %>% 
@@ -20,7 +35,7 @@ global_vs_community <- function(glanced_models_table, model_formula){
   
   positive_models <- c("rmse", "sigma", "nrmse")
   
-  list(sigma = "sigma", r2c = "r2c") %>%
+  glo_com <- list(sigma = "sigma", r2c = "r2c") %>%
    purrr::map_df(~test_table(.), .id = "quality") %>%
     dplyr::mutate(min_scale = dplyr::case_when(
       estimate < 0 & quality %in% positive_models ~ "community",
@@ -28,6 +43,13 @@ global_vs_community <- function(glanced_models_table, model_formula){
       estimate < 0 & !(quality %in% positive_models) ~ "imputed",
       estimate > 0 & !(quality %in% positive_models) ~ "community"
       ))
+  
+  if(!imputed_calculated){
+    glo_com %<>%
+      dplyr::mutate(min_scale = preferred)
+  }
+  
+  glo_com
 }
 
 #' Figure out best random effect

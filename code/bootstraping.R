@@ -30,6 +30,7 @@ data_replicate <- function(de, imputed_abundance, imputed_pollen, imputed_degree
       fragment = as.character(fragment),
       site_plant = paste(plant_name, site_name, sep = "."), 
       var_trans = "log") %>%
+    dplyr::filter(scale == "community") %>%
     dplyr::group_by(scale)
 }
 
