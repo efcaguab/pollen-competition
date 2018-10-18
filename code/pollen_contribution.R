@@ -38,7 +38,10 @@ get_pollen_dominance <- function(tra_frame, vis_frame){
   
   pollen <- tra_frame %>%
     dplyr::group_by(site_name, plant_name, animal_name) %>%
-    dplyr::summarise(grain = mean(grain)) %>% 
+    dplyr::summarise(grain = mean(grain)) %>%
+    dplyr::group_by(site_name, animal_name) %>%
+    dplyr::mutate(grain_pol = sum(grain), 
+                  prop_grain = grain/grain_pol) %>% 
     dplyr::left_join(vis_for_tra) %>% 
     dplyr::mutate(n_visits = dplyr::if_else(is.na(n_visits), 1L, n_visits)) %>%
     dplyr::group_by(site_name, animal_name) %>%
@@ -46,7 +49,10 @@ get_pollen_dominance <- function(tra_frame, vis_frame){
                   prop_visits = n_visits/n_visits_sp) %>%
     dplyr::group_by(site_name, plant_name) %>%
     dplyr::summarise(grain = sum(grain), 
-                     poc = sum(log(prop_visits * grain))) %>%
+                     # the mean number of grains of plant in pollinator sp. i *
+                     # the proportion of grains of plant in pollinator sp. i *
+                     # the proportion of visits that pollinator sp. i makes on plant
+                     poc = sum(log(grain * prop_visits * prop_grain))) %>%
     dplyr::mutate(poc = scale(poc), 
                   var_trans = "log", 
                   scale = "community") 
@@ -59,6 +65,9 @@ get_pollen_dominance <- function(tra_frame, vis_frame){
   pollen_global <- tra_frame %>%
     dplyr::group_by(site_name, plant_name, animal_name) %>%
     dplyr::summarise(grain = mean(grain)) %>% 
+    dplyr::group_by(site_name, animal_name) %>%
+    dplyr::mutate(grain_pol = sum(grain), 
+                  prop_grain = grain/grain_pol) %>% 
     dplyr::left_join(vis_for_tra_global) %>% 
     dplyr::mutate(n_visits = dplyr::if_else(is.na(n_visits), 1L, n_visits)) %>%
     dplyr::group_by(animal_name) %>%
@@ -66,7 +75,7 @@ get_pollen_dominance <- function(tra_frame, vis_frame){
                   prop_visits = n_visits/n_visits_sp) %>%
     dplyr::group_by(site_name, plant_name) %>%
     dplyr::summarise(grain = sum(grain), 
-                     poc = sum(log(prop_visits * grain))) %>% 
+                     poc = sum(log(grain * prop_visits * prop_grain))) %>%
     dplyr::mutate(poc = scale(poc), 
                   var_trans = "log", 
                   scale = "global") 
