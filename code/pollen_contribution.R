@@ -24,3 +24,52 @@ get_pollen_contribution <- function(tra_frame){
   dplyr::bind_rows(pollen, pollen_global) %>%
     dplyr::select(-grain_log, -total_pollen) 
 }
+
+
+# Pollen dominance is the proportion of pollen that each plant species has in
+# the pollen pool of each interacting species, multiplied by the proportion of
+# visits that each of the interacting species makes to the focal plant species
+get_pollen_dominance <- function(tra_frame, vis_frame){
+  
+  vis_for_tra <- vis_frame %>%
+    dplyr::mutate(n_visits = dplyr::if_else(survey_type == "quantitative", n_visits, 1L)) %>%
+    dplyr::group_by(site_name, plant_name, animal_name) %>%
+    dplyr::summarise(n_visits = sum(n_visits))
+  
+  pollen <- tra_frame %>%
+    dplyr::group_by(site_name, plant_name, animal_name) %>%
+    dplyr::summarise(grain = mean(grain)) %>% 
+    dplyr::left_join(vis_for_tra) %>% 
+    dplyr::mutate(n_visits = dplyr::if_else(is.na(n_visits), 1L, n_visits)) %>%
+    dplyr::group_by(site_name, animal_name) %>%
+    dplyr::mutate(n_visits_sp = sum(n_visits, na.rm = T), 
+                  prop_visits = n_visits/n_visits_sp) %>%
+    dplyr::group_by(site_name, plant_name) %>%
+    dplyr::summarise(poc = log(sum(prop_visits * grain)), 
+                     poc = scale(poc), 
+                     var_trans = "log", 
+                     scale = "community") 
+  
+  vis_for_tra_global <- vis_frame %>%
+    dplyr::mutate(n_visits = dplyr::if_else(survey_type == "quantitative", n_visits, 1L)) %>%
+    dplyr::group_by(plant_name, animal_name) %>%
+    dplyr::summarise(n_visits = sum(n_visits))
+  
+  pollen_global <- tra_frame %>%
+    dplyr::group_by(site_name, plant_name, animal_name) %>%
+    dplyr::summarise(grain = mean(grain)) %>% 
+    dplyr::left_join(vis_for_tra_global) %>% 
+    dplyr::mutate(n_visits = dplyr::if_else(is.na(n_visits), 1L, n_visits)) %>%
+    dplyr::group_by(animal_name) %>%
+    dplyr::mutate(n_visits_sp = sum(n_visits, na.rm = T), 
+                  prop_visits = n_visits/n_visits_sp) %>%
+    dplyr::group_by(site_name, plant_name) %>%
+    dplyr::summarise(poc = log(sum(prop_visits * grain)), 
+                     poc = scale(poc), 
+                     var_trans = "log", 
+                     scale = "global") 
+  
+  dplyr::bind_rows(pollen, pollen_global) %>%
+    dplyr::select(-grain_log, -total_pollen) 
+}
+

@@ -94,12 +94,24 @@ dplyr::anti_join(animals_transfer, animals_visitation) %T>% View %$%
   unique(site_name)
 
 vis_for_tra <- vis_frame %>%
-  dplyr::mutate(n_visits = dplyr::if_else(survey_type == "quantitative", n_visits, 1)) %>%
+  dplyr::mutate(n_visits = dplyr::if_else(survey_type == "quantitative", n_visits, 1L)) %>%
   dplyr::group_by(site_name, plant_name, animal_name) %>%
   dplyr::summarise(n_visits = sum(n_visits))
 
-tra_frame %>%
+pollen_share_per_int <- tra_frame %>%
   dplyr::group_by(site_name, plant_name, animal_name) %>%
   dplyr::summarise(grain = mean(grain)) %>% 
-  dplyr::left_join(vis_for_tra) %>% View
+  dplyr::left_join(vis_for_tra) %>% 
+  dplyr::mutate(n_visits = dplyr::if_else(is.na(n_visits), 1L, n_visits)) %>%
+  dplyr::group_by(site_name, animal_name) %>%
+  dplyr::mutate(n_visits_sp = sum(n_visits, na.rm = T), 
+                prop_visits = n_visits/n_visits_sp)
+
+pollen_share_per_int %>% 
+  ggplot(aes(x = log(grain * prop_visits))) +
+  geom_density()
   
+pollen_share_per_int %>%
+  dplyr::group_by(site_name, plant_name) %>%
+  dplyr::summarise(share = log(sum(prop_visits * grain))) %$%
+  hist(share)
