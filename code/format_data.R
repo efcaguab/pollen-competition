@@ -85,13 +85,13 @@ calculate_relative_abundance <- function(x, dep_frame){
   # abundance per site
   species_site_abu <- x %>%
     dplyr::filter(plant_name != 'No plant',
-           !is.na(flowers)) %>%
+                  !is.na(flowers)) %>%
     dplyr::group_by(plant_name, site_name) %>%
     dplyr::summarise(abu = sum(flowers)) %>%
     dplyr::group_by() %>%
     dplyr::filter(plant_name %in% focal_plants) %>%
     dplyr::mutate(lin = scale(abu), 
-           log = scale(log(abu))) %>% 
+                  log = scale(log(abu))) %>% 
     tidyr::gather("var_trans", "rab", lin, log) %>% 
     dplyr::mutate(scale = 'community')
   
@@ -102,13 +102,13 @@ calculate_relative_abundance <- function(x, dep_frame){
     dplyr::group_by() %>%
     dplyr::filter(plant_name %in% focal_plants) %>%
     dplyr::mutate(lin = scale(abu), 
-           log = scale(log(abu))) %>%
+                  log = scale(log(abu))) %>%
     tidyr::gather("var_trans", "rab", lin, log) %>%
     dplyr::right_join(plant_site_combinations(species_site_abu), by = 'plant_name') %>%
     dplyr::mutate(scale= 'global')
-    
+  
   # put both together in a tidy frame
-    dplyr::bind_rows(species_site_abu, species_abu) %>% dplyr::group_by()
+  dplyr::bind_rows(species_site_abu, species_abu) %>% dplyr::group_by()
 }
 
 
@@ -128,7 +128,7 @@ calculate_phenology_overlap <- function(x, dep_frame) {
     dplyr::filter(plant_name %in% focal_plants) %>%
     dplyr::group_by(scale) %>%
     dplyr::mutate(tov = scale(tov))
-           
+  
   overlap_log <- global_and_site_overlap(n_flowers, function(x) log(x + 1)) %>%
     dplyr::mutate(var_trans = 'log') %>%
     dplyr::filter(plant_name %in% focal_plants) %>%
@@ -149,7 +149,7 @@ global_and_site_overlap <- function(x, transformation = I, dist_fun = pianka_fun
   overlap_site <- x %>%
     niche_overlap(x$site_name, transformation = transformation, dist_fun = dist_fun) %>% 
     dplyr::rename(site_name = split, 
-           tov = niche_overlap) %>%
+                  tov = niche_overlap) %>%
     dplyr::mutate(scale = "community")
   
   overlap_global <- x %>%
@@ -180,7 +180,7 @@ plant_site_combinations <- function(x){
 flower_matrix <- function(x){
   x %>%
     dplyr::filter(plant_name != 'No plant',
-           !is.na(flowers)) %>%
+                  !is.na(flowers)) %>%
     dplyr::group_by(site_name, date, plant_name) %>%
     dplyr::summarise(flowers = sum(flowers)) %>%
     # tidyr::complete(site_name, date, plant_name, fill = list(flowers = 0)) %>%
@@ -248,9 +248,9 @@ overlap_contrib <- function(y){
 #'
 #' @examples
 extract_vis_frame <- function(x){
-
+  
   quant <- x$visitation_quant %>% 
-  to_data_frame("visitation") %>%
+    to_data_frame("visitation") %>%
     dplyr::mutate(survey_type = "quantitative")
   
   qual <- x$visitation_qual %>%
@@ -269,7 +269,7 @@ extract_vis_frame <- function(x){
 #' @return degree data frame
 #' 
 get_degree <- function(vis_frame, dep_frame){
-
+  
   focal_plants <- unique(dep_frame$plant_name)
   
   species_site_vis <- vis_frame %>%
@@ -278,17 +278,17 @@ get_degree <- function(vis_frame, dep_frame){
     dplyr::group_by() %>%
     dplyr::filter(plant_name %in% focal_plants) %>%
     dplyr::mutate(lin = scale(kn), 
-           log = scale(log(kn))) %>%
+                  log = scale(log(kn))) %>%
     tidyr::gather("var_trans", "k", lin, log) %>%
     dplyr::mutate(scale = "community")
-      
+  
   species_vis <- vis_frame %>%
     dplyr::group_by(plant_name) %>%
     dplyr::summarise(kn = dplyr::n_distinct(animal_name)) %>%
     dplyr::group_by() %>%
     dplyr::filter(plant_name %in% focal_plants) %>%
     dplyr::mutate(lin = scale(kn), 
-           log = scale(log(kn))) %>%
+                  log = scale(log(kn))) %>%
     tidyr::gather("var_trans", "k", lin, log) %>%
     dplyr::right_join(plant_site_combinations(species_site_vis), by = 'plant_name') %>%
     dplyr::mutate(scale = "global")
