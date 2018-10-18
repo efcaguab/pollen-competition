@@ -72,3 +72,34 @@ imputed_pollen %>%
   ggplot(aes(community, imputed)) +
   geom_point() +
   geom_smooth(method = "lm")
+
+# Checking match between transfer and visitation network ------------------
+
+drake::loadd(tra_frame, vis_frame)
+
+animals_transfer <- tra_frame %>%
+  dplyr::select(site_name, animal_name) %>%
+  dplyr::distinct() %>%
+  dplyr::mutate(in_tra = 1) %>%
+  dplyr::group_by(site_name)
+
+animals_visitation <- vis_frame %>%
+  dplyr::select(site_name, animal_name) %>%
+  dplyr::distinct() %>%
+  dplyr::mutate(in_vis = 1) %>%
+  dplyr::group_by(site_name)
+
+# there seems to be a relatively good agreement, all species with transfer also have registered visits, although not all insects with visits have been registered for transfer
+dplyr::anti_join(animals_transfer, animals_visitation) %T>% View %$% 
+  unique(site_name)
+
+vis_for_tra <- vis_frame %>%
+  dplyr::mutate(n_visits = dplyr::if_else(survey_type == "quantitative", n_visits, 1)) %>%
+  dplyr::group_by(site_name, plant_name, animal_name) %>%
+  dplyr::summarise(n_visits = sum(n_visits))
+
+tra_frame %>%
+  dplyr::group_by(site_name, plant_name, animal_name) %>%
+  dplyr::summarise(grain = mean(grain)) %>% 
+  dplyr::left_join(vis_for_tra) %>% View
+  
