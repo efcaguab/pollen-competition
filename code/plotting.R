@@ -66,6 +66,7 @@ humanize <- function(x, sites = NA, random_effects = NA, formula_long = FALSE, t
       dplyr::filter(pollen_category != "heterospecific_abs") %>%
       dplyr::mutate(pollen_category = dplyr::case_when(
         grepl('conspecific_abs', pollen_category) ~ 'conspecific (absolute)',
+        grepl('conspecific_ctr', pollen_category) ~ 'conspecific (control)',
         grepl('conspecific', pollen_category) ~ 'conspecific (relative)',
         TRUE ~ 'heterospecific'
       ))

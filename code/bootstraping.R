@@ -53,33 +53,43 @@ get_deposition_sampled_data <- function(x, category, transformation){
     # only work with one category at a time
     dplyr::filter(pollen_category == category) %>%
     dplyr::select(plant, site_name, plant_name, treatment, pollen_density) %>%
-    dplyr::group_by(site_name, plant_name) %>%
+    dplyr::group_by(site_name, plant_name) %>% 
     # find number of pairs that should be done per species-site combination
     dplyr::mutate(
       n_closed = length(pollen_density[treatment == 'closed']), 
       n_open = length(pollen_density[treatment == 'open']), 
-      n_samples = max(n_closed, n_open)) %>% 
-    # sample the number of pairs with replacement
-    split(list(.$site_name, .$plant_name, .$treatment), drop = T) %>%
-    purrr::map_df(~ dplyr::sample_n(., size = .$n_samples[1], replace = T)) %>%
+      n_samples = max(n_closed, n_open)) %>%
+    split(list(.$site_name, .$plant_name, .$treatment), drop = T)
+  
+  arrange_group <- . %>%
     dplyr::group_by(site_name, plant_name, treatment) %>%
     # make a dummy id to pair samples
     dplyr::mutate(dummy_id = 1:n()) %>% 
     dplyr::select(-plant, -n_open, -n_closed, -n_samples) %>%
     # transform count data if desired
-    dplyr::mutate(pollen_density = transformation(pollen_density)) %>%
+    # dplyr::mutate(pollen_density = transformation(pollen_density)) %>% 
     # pair samples
     tidyr::spread(treatment, pollen_density)
   
+  control <- df  %>%
+    purrr::map_df(~ dplyr::sample_n(., size = .$n_closed[1], replace = T)) %>%
+    arrange_group() %>%
+    dplyr::mutate(pollen_gain = transformation(closed)) %>%
+    dplyr::mutate(pollen_category = paste0(category, "_ctr"))
+ 
   relative <- df %>% 
-    dplyr::mutate(pollen_gain = open - closed) %>%
+    purrr::map_df(~ dplyr::sample_n(., size = .$n_samples[1], replace = T)) %>%
+    arrange_group() %>%
+    dplyr::mutate(pollen_gain = transformation(open) - transformation(closed)) %>%
     dplyr::mutate(pollen_category = category)
     
-  absolute <- df %>%
-    dplyr::mutate(pollen_gain = open) %>%
+  absolute <- df %>% 
+    purrr::map_df(~ dplyr::sample_n(., size = .$n_open[1], replace = T)) %>%
+    arrange_group() %>%
+    dplyr::mutate(pollen_gain = transformation(open)) %>%
     dplyr::mutate(pollen_category = paste0(category, "_abs"))
   
-  dplyr::bind_rows(relative, absolute)
+  dplyr::bind_rows(control, relative, absolute) 
 }
 
 # MODELS ------------------------------------------------------------------
