@@ -31,7 +31,8 @@ data_replicate <- function(de, imputed_abundance, imputed_pollen, imputed_degree
       site_plant = paste(plant_name, site_name, sep = "."), 
       var_trans = "log") %>%
     dplyr::filter(scale == "community") %>%
-    dplyr::group_by(scale)
+    dplyr::group_by(scale) %>%
+    dplyr::filter(pollen_category != "heterospecific_ctr")
 }
 
 
@@ -283,7 +284,7 @@ pearson_slope <- function(x,y){
 get_sma_conspecific_heterospecific <- function(x){
   # one relationship for absolute values of conspecific pollen and one for relative ones
   absolute <- x %>%
-    purrr::map(~ smatr::sma(conspecific_abs ~ heterospecific, data = .)) %>%
+    purrr::map(~ smatr::sma(conspecific_abs ~ heterospecific_abs, data = .)) %>%
     # purrr::walk(~ plot(.)) %>%
     purrr::map(~ coef(.)) %>% 
     purrr::map_df(~ tibble::rownames_to_column(as.data.frame(.)), .id = "m") %>%
