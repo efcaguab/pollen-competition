@@ -4,7 +4,7 @@ get_summary_effects <- function(tidied_fixed){
   tidied_fixed %>%
     dplyr::filter(term != "(Intercept)") %>%
     dplyr::group_by(pollen_category, scale, fixed_formula, term, model) %>%
-    dplyr::summarise(estimate = unique(estimate)) %>%
+    dplyr::summarise(estimate = mean(estimate)) %>%
     dplyr::group_by(pollen_category, scale, fixed_formula, term) %>%
     dplyr::sample_n(size = 999, replace = TRUE) %>% 
     dplyr::mutate(sample_n = 1:n()) %>% 

@@ -16,7 +16,7 @@ get_coeficient_estimate_sample <- function(sample_n, tidied_fixed, model_weights
   tidied_fixed %>%
     dplyr::filter(term != "(Intercept)") %>% 
     dplyr::group_by(model, pollen_category, scale, fixed_formula, term) %>%
-    dplyr::summarise(estimate = unique(estimate)) %>% 
+    dplyr::summarise(estimate = mean(estimate)) %>% 
     dplyr::group_by() %>% 
     # complete cases. The estimate of the term for the models in which it wasn't present is zero
     tidyr::complete(model, pollen_category, scale, fixed_formula, term, fill = list(estimate = 0)) %>% 
