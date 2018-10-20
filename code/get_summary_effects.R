@@ -10,8 +10,8 @@ get_summary_effects <- function(tidied_fixed){
     dplyr::mutate(sample_n = 1:n()) %>% 
     dplyr::select(-model) %>%
     tidyr::spread(key = pollen_category, value = estimate) %>% 
-    dplyr::mutate(quantity = conspecific, 
-                  quality = conspecific - heterospecific) %>% 
+    dplyr::mutate(quantity = conspecific_abs, 
+                  quality = conspecific_abs - heterospecific_abs) %>% 
     dplyr::group_by(scale, fixed_formula, term) %>%
     dplyr::summarise_at(dplyr::vars(quantity, quality), dplyr::funs(freq_t, parametric_t, median))
 }
