@@ -28,8 +28,7 @@ make_fig_con_hetero_gain <- function(tidied_fixed, model_linear_fits, model_form
                         dplyr::funs(median, quantile_05,quantile_95), na.rm = T) %>%
     dplyr::mutate_if(is.numeric, I) %>%
     dplyr::group_by() %>%
-    dplyr::rename(rel = "con_type") %>%
-    dplyr::mutate(rel = dplyr::case_when(rel == "conspecific" ~ "relative", TRUE ~ "absolute"))
+    dplyr::rename(rel = "con_type") 
   
   pa <- RColorBrewer::brewer.pal(4, "OrRd")
   major_labs <- c(0,10,100, 1000)
