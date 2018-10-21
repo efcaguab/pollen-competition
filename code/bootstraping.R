@@ -286,7 +286,7 @@ get_sma_conspecific_heterospecific <- function(x){
     dplyr::mutate(rel = "absolute")
   
   relative <- x %>%
-    purrr::map(~ smatr::sma(conspecific ~ heterospecific, data = .)) %>%
+    purrr::map(~ smatr::sma(conspecific ~ heterospecific_abs, data = .)) %>%
     # purrr::walk(~ plot(.)) %>%
     purrr::map(~ coef(.)) %>% 
     purrr::map_df(~ tibble::rownames_to_column(as.data.frame(.)), .id = "m") %>%
@@ -294,7 +294,16 @@ get_sma_conspecific_heterospecific <- function(x){
                   value  = '.') %>%
     dplyr::mutate(rel = "relative")
   
-  dplyr::bind_rows(absolute, relative)
+  control <- x %>%
+    purrr::map(~ smatr::sma(conspecific_ctr ~ heterospecific_abs, data = .)) %>%
+    # purrr::walk(~ plot(.)) %>%
+    purrr::map(~ coef(.)) %>% 
+    purrr::map_df(~ tibble::rownames_to_column(as.data.frame(.)), .id = "m") %>%
+    dplyr::rename(sma_parameter = rowname,
+                  value  = '.') %>%
+    dplyr::mutate(rel = "control")
+  
+  dplyr::bind_rows(absolute, relative, control)
 }
 
 # linear relationship between conspecific and heterospecific pollen per species
