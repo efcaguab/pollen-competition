@@ -31,8 +31,8 @@ make_fig_con_hetero_gain <- function(tidied_fixed, model_linear_fits, model_form
     dplyr::rename(rel = "con_type") 
   
   pa <- RColorBrewer::brewer.pal(4, "OrRd")
-  major_labs <- c(0,10,100, 1000)
-  minor_labs <- c(0, 5, 10, 50, 100, 500, 1000)
+  major_labs <- c(0,10,100, 1000, 10000)
+  minor_labs <- c(0, 5, 10, 50, 100, 500, 1000, 10000)
   major_breaks <- log(major_labs + 1)
   minor_breaks <- log(minor_labs + 1)
 
