@@ -220,9 +220,11 @@ When looking at the relative amount of conspecific pollen gained, we observe tha
 We also observed a positive relationship between the gain in heterospecific pollen and both the relative and absolute gain of conspecific pollen (Figure \@ref(fig:fig-trade-off-predictions)). 
 The slope of the relationship is such that across plant species in their communities heterospecific pollen is gained slower than the absolute amount of conspecific pollen but faster than the amount of conspecific pollen relative to the potential selfing. 
 
-```{r fig-trade-off-predictions, fig.height= 2.3, fig.width = 3.25, fig.cap = "The interplay between the gain on heterospecific and conspecific pollen. Each dot indicates the predicted median gains for a species in its community (which correspons to the selected random effects in all of our models). The horizontal and vertical bars under each dot indicate the 0.05 bootstrap confidence intervals of the estimates. The solid lines indicate the overall relationship in each of the bootstrap replicates and were calculated by sampling the predictions from 100 conspecific/heterospecific model pairs and estimated the relationship by fitting an standardised major axis (SMA) to each pair (we used the R package smatr 3.4-3, Warton et al. 2012). The dashed line indicates the isoline at which heterospecific pollen is gained at the same rate than conspecific pollen."}
-# pdf(width = 3.25, height = 3.1)
-  drake::readd(fig_con_hetero_gain)
+```{r fig-trade-off-predictions, fig.height= 3, fig.width = 6.5, fig.cap = "The interplay between the gain on heterospecific and conspecific pollen. Each dot indicates the predicted median gains for a species in its community (which correspons to the selected random effects in all of our models). The horizontal and vertical bars under each dot indicate the 0.05 bootstrap confidence intervals of the estimates. The solid lines indicate the overall relationship in each of the bootstrap replicates and were calculated by sampling the predictions from 100 conspecific/heterospecific model pairs and estimated the relationship by fitting an standardised major axis (SMA) to each pair (we used the R package smatr 3.4-3, Warton et al. 2012). The dashed line indicates the isoline at which heterospecific pollen is gained at the same rate than conspecific pollen."}
+# pdf(width = 6.5, height = 3.25)
+  cowplot::plot_grid(
+    drake::readd(fig_con_con),
+    drake::readd(fig_con_hetero_gain))
   # dev.off()
 ```
 

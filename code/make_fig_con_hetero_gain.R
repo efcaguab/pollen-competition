@@ -108,3 +108,84 @@ get_pred_range <- function(tidied_fixed, x, var_trans = "log", scale = "global")
     estimate %>% 
     range()
 }
+
+make_fig_con_con <- function(model_formula_ranking, model_linear_fits_species){
+  
+  require(ggplot2)
+  
+  major_labs <- c(0,10,100, 1000, 10000)
+  minor_labs <- c(0, 5, 10, 50, 100, 500, 1000, 10000)
+  major_breaks <- log(major_labs + 1)
+  minor_breaks <- log(minor_labs + 1)
+  
+  model_weights <- model_formula_ranking$aggregated %>%
+    # dplyr::filter(scale == "community") %>%
+    # dplyr::group_by(pollen_category) %>%
+    dplyr::mutate(likelyhood = get_likelyhoods(delta_AIC_median), 
+                  weight = get_weights(likelyhood)) %>%
+    dplyr::select(fixed_formula, weight)
+  
+  points_sp <- model_linear_fits_species %>%
+    dplyr::filter(var_trans == "log",
+                  scale == "community") %>% 
+    #   tidyr::spread(data = ., key = sma_parameter, value = value) %>% 
+    dplyr::inner_join(model_weights, by = "fixed_formula") %>% 
+    dplyr::group_by(site_name, plant_name, scale, model) %>%
+    dplyr::sample_n(size = 1, weight = weight) %>%
+    dplyr::group_by() %>%
+    tidyr::gather("con_type", "conspecific", dplyr::contains("conspecific")) 
+  
+  points_sp_con <- points_sp %>%
+    tidyr::spread(con_type, conspecific)
+  
+  points_sp_summarised_con <- points_sp_con  %>%
+    dplyr::group_by(plant_name, site_name) %>%
+    dplyr::summarise_at(dplyr::vars(dplyr::contains("specific")), 
+                        dplyr::funs(median, quantile_05,quantile_95), na.rm = T) %>%
+    dplyr::mutate_if(is.numeric, I)
+  
+  # conspecific abs vs control
+  points_sp_con  %>% 
+    ggplot() +
+    geom_abline(slope = 1, intercept = 0, size = 0.25, linetype = 2) +
+    geom_errorbar(data = points_sp_summarised_con,
+                  aes(x = conspecific_ctr_median,
+                      ymin = conspecific_abs_quantile_05,
+                      ymax = conspecific_abs_quantile_95),
+                  show.legend = F, alpha = 0.25) +
+    geom_errorbarh(data = points_sp_summarised_con,
+                   aes(y = conspecific_abs_median,
+                       x = conspecific_ctr_median,
+                       xmin = conspecific_ctr_quantile_05,
+                       xmax = conspecific_ctr_quantile_95),
+                   show.legend = F, alpha = 0.25) +
+    geom_point(data = points_sp_summarised_con,
+               aes(x = conspecific_ctr_median,
+                   y = conspecific_abs_median),
+               alpha = 1, show.legend = T, shape = 21, size = 1) +
+    geom_smooth(aes(x = conspecific_ctr, 
+                    y = conspecific_abs, 
+                    group = model),
+                method = "lm", se = F,
+                size = 0.1, 
+                alpha = 0.25, 
+                colour = "black") +
+    geom_smooth(aes(x = conspecific_ctr, 
+                    y = conspecific_abs),
+                method = "lm", se = F,
+                size = 0.5, 
+                alpha = 1, 
+                colour = "black") +
+    scale_x_continuous(breaks = major_breaks, labels = major_labs, minor_breaks = minor_breaks) +
+    scale_y_continuous(breaks = major_breaks, labels = major_labs, minor_breaks = minor_breaks) +
+    pub_theme() +
+    labs(x = "control - conspecific pollen density",
+         y = "conspecific pollen density") +
+    theme(legend.position = c(0.01,0.98),
+          legend.direction = "horizontal",
+          legend.justification = c(0,1),
+          legend.title = element_blank(),
+          legend.background = element_rect(fill = "white"),
+          panel.grid.major = element_line(size = 0.25),
+          axis.title = element_text(size = 8, colour = "grey20"))
+}
