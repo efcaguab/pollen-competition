@@ -36,6 +36,11 @@ make_fig_con_hetero_gain <- function(tidied_fixed, model_linear_fits, model_form
   major_breaks <- log(major_labs + 1)
   minor_breaks <- log(minor_labs + 1)
 
+  points_sp_summarised %<>%
+    dplyr::filter(rel != "conspecific")
+  points_sp %<>%
+    dplyr::filter(con_type != "conspecific")
+
   p <- dplyr::data_frame(x = get_pred_range(tidied_fixed, "heterospecific"),
                          y = get_pred_range(tidied_fixed, "conspecific")) %>%
     ggplot() +
@@ -188,4 +193,41 @@ make_fig_con_con <- function(model_formula_ranking, model_linear_fits_species){
           legend.background = element_rect(fill = "white"),
           panel.grid.major = element_line(size = 0.25),
           axis.title = element_text(size = 8, colour = "grey20"))
+}
+
+
+
+
+make_fig_con_hetero_empirical <- function(dep_frame){
+  View(dep_frame)
+  
+  dep_frame %>%
+    dplyr::select(site_name, plant, plant_name, treatment, pollen_category, pollen_density) %>%
+    dplyr::mutate(pollen_density = log(pollen_density + 1)) %>% 
+    tidyr::spread(pollen_category, pollen_density) %>% 
+    dplyr::group_by(site_name, plant_name) %>% 
+    dplyr::mutate(heterospecific = fill_heterospecific_closed(heterospecific, treatment)) %>% 
+    dplyr::group_by(site_name, plant_name, treatment) %>%
+    dplyr::summarise_at(c("conspecific", "heterospecific"), median) %>%
+    ggplot(aes(x = heterospecific, y = conspecific, color = treatment)) +
+    geom_point() +
+    geom_smooth(method = "lm")
+}
+
+fill_heterospecific_closed <- function(heterospecific, treatment){
+  # if there are  open bags
+  if ("open" %in% treatment) {
+    # if there is just one open bag
+    if (sum("open" == treatment) == 1) {
+      heterospecific[treatment == "closed"] <- heterospecific[treatment == "open"]
+    } else{
+      heterospecific[treatment == "closed"] <- 
+        sample(x = heterospecific[treatment == "open"], 
+               size = length(heterospecific[treatment == "closed"]),
+               replace = T)
+    }
+  } else {
+    heterospecific[treatment == "closed"] <- NA
+  }
+ heterospecific 
 }
