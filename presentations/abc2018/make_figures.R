@@ -26,7 +26,11 @@ model_linear_fits_species = drake::readd("model_linear_fits_species", character_
 
 figure_het_con_plan <- drake::drake_plan(
   fig_con_hetero_elements = get_figure_elements(tidied_fixed, model_linear_fits, model_formula_ranking, model_linear_fits_species),
-  fig_canvas = make_fig_het_con_abc(fig_con_hetero_elements, tidied_fixed, rep("white", 2))
+  make_fig_het_con_abc(fig_con_hetero_elements, 
+                       tidied_fixed, 
+                       colour_pallete = rep("black", 2), 
+                       colour_guide = "none",
+                       filename = drake::file_out("presentations/abc2018/figures/fig_con_hetero_canvas.pdf"))
 )
 
 figures_plan <- rbind(

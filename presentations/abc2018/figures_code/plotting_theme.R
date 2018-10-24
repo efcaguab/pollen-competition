@@ -1,6 +1,6 @@
 # theme for abc presentation figures
 abc_theme <- function(){
-    theme(text = element_text(size = 16, colour = "white", family = "Space Mono"), 
+    theme(text = element_text(size = 18, colour = "white", family = "Space Mono"), 
           axis.text = element_text(colour = "grey75"),
           plot.title = element_text(face = "bold"),
           rect = element_rect(fill = "black"),
