@@ -53,10 +53,18 @@ figure_het_con_plan <- drake::drake_plan(
                        filename = drake::file_out("presentations/abc2018/figures/fig_con_hetero_absolute_rel_smooth.png"))
 )
 
+coefficient_averages <- drake::readd("coefficient_averages", character_only = T)
 
+figure_quant_qual_plan <- drake::drake_plan(
+  make_fig_mean_quant_qual(coefficient_averages, 
+                           width = ggplot2::unit(12, "in"),
+                           height = ggplot2::unit(4.5, "in"),
+                           filename = drake::file_out("presentations/abc2018/figures/fig_quant_qual.png"))
+)
 
 figures_plan <- rbind(
-  figure_het_con_plan
+  figure_het_con_plan, 
+  figure_quant_qual_plan
 )
 
 abc_config <- drake::drake_config(figures_plan, cache = abc_cache)
