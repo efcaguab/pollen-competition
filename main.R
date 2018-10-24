@@ -144,6 +144,10 @@ model_plans <- rbind(
   predictions
 )
 
+pca_plan <- drake::drake_plan(
+  species_pca = get_pca(imputed_abundance, imputed_pollen, imputed_degree, imputed_originality, sites)
+)
+
 analyses_plan <- rbind(
   clean_data_plan, 
   traits_plan,
@@ -152,7 +156,8 @@ analyses_plan <- rbind(
   boot_replicates,
   model_plans,
   aic_plan,
-  basic_analyses_plan
+  basic_analyses_plan, 
+  pca_plan
 )
 
 # Paper -------------------------------------------------------------------
