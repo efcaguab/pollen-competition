@@ -8,19 +8,6 @@ get_figure_elements <- function(tidied_fixed, model_linear_fits, model_formula_r
                   weight = get_weights(likelyhood)) %>%
     dplyr::select(fixed_formula, weight)
   
-  ab_lines <- model_linear_fits %>%
-    dplyr::filter(var_trans == "log", 
-                  scale == "community") %>%
-    tidyr::spread(data = ., key = sma_parameter, value = value) %>%
-    dplyr::inner_join(model_weights, by = "fixed_formula") %>%
-    dplyr::group_by(model, scale) %>%
-    dplyr::sample_n(size = 1, weight = weight) %>%
-    dplyr::group_by()
-  
-  ab_lines_summarised <- ab_lines %>%
-    dplyr::group_by(rel) %>%
-    dplyr::summarise_if(is.numeric, median)
-  
   points_sp <- model_linear_fits_species %>%
     dplyr::filter(var_trans == "log",
                   scale == "community") %>% 
@@ -38,21 +25,25 @@ get_figure_elements <- function(tidied_fixed, model_linear_fits, model_formula_r
   points_sp_summarised <- points_sp %>%
     dplyr::group_by(plant_name, site_name, con_type) %>%
     dplyr::summarise_at(dplyr::vars(dplyr::contains("specific")), 
-                        dplyr::funs(median, quantile_05,quantile_95)) %>%
+                        dplyr::funs(median, quantile_05,quantile_95), na.rm = T) %>%
     dplyr::mutate_if(is.numeric, I) %>%
     dplyr::group_by() %>%
-    dplyr::rename(rel = "con_type") %>%
-    dplyr::mutate(rel = dplyr::case_when(rel == "conspecific" ~ "relative", TRUE ~ "absolute"))
+    dplyr::rename(rel = "con_type") 
+  
+  points_sp_summarised %<>%
+    dplyr::filter(rel != "conspecific")
+  
+  points_sp %<>%
+    dplyr::filter(con_type != "conspecific")
   
    list(
      model_weights = model_weights,
-     ab_lines = ab_lines,
-     ab_lines_summarised = ab_lines_summarised,
      points_sp = points_sp, 
      points_sp_summarised = points_sp_summarised)
 }
 
-make_fig_het_con_abc <- function(fe, tidied_fixed, colour_pallete){
+make_fig_het_con_abc <- function(fe, tidied_fixed, colour_pallete = rev(RColorBrewer::brewer.pal(4, "OrRd")), filename, colour_guide = "legend"){
+  require(ggplot2)
   
   pa <- RColorBrewer::brewer.pal(4, "OrRd")
   major_labs <- c(0,10,100, 1000)
@@ -60,49 +51,63 @@ make_fig_het_con_abc <- function(fe, tidied_fixed, colour_pallete){
   major_breaks <- log(major_labs + 1)
   minor_breaks <- log(minor_labs + 1)
   
-  dplyr::data_frame(x = get_pred_range(tidied_fixed, "heterospecific"),
+  p <- dplyr::data_frame(x = get_pred_range(tidied_fixed, "heterospecific"),
                     y = get_pred_range(tidied_fixed, "conspecific")) %>%
     ggplot() +
-    geom_abline(slope = 1, intercept = 0, size = 0.25, linetype = 2) +
+    geom_abline(slope = 1, intercept = 0, size = 0.25, linetype = 2, colour = "white") +
     geom_errorbar(data = fe$points_sp_summarised,
-                  aes(x = heterospecific_median, 
-                      ymin = conspecific_quantile_05, 
-                      ymax = conspecific_quantile_95, 
+                  aes(x = heterospecific_median,
+                      ymin = conspecific_quantile_05,
+                      ymax = conspecific_quantile_95,
                       colour = rel),
                   show.legend = F, alpha = 0.25) +
     geom_errorbarh(data = fe$points_sp_summarised,
                    aes(x = heterospecific_median,
                        y = conspecific_median,
-                       xmin = heterospecific_quantile_05, 
-                       xmax = heterospecific_quantile_95, 
+                       xmin = heterospecific_quantile_05,
+                       xmax = heterospecific_quantile_95,
                        colour = rel),
                    show.legend = F, alpha = 0.25) +
     geom_point(data = fe$points_sp_summarised,
-               aes(x = heterospecific_median, 
-                   y = conspecific_median, 
+               aes(x = heterospecific_median,
+                   y = conspecific_median,
                    colour = rel),
                alpha = 1, show.legend = T, shape = 21, size = 1) +
-    geom_abline(data = fe$ab_lines,
-                aes(slope = slope, 
-                    intercept = elevation, 
-                    colour = rel),
-                size = 0.1, linetype = 1,
-                alpha = 0.25) +
-    geom_abline(data = fe$ab_lines_summarised, 
-                aes(slope = slope, intercept = elevation, colour = rel), 
-                size = 0.5, linetype = 1) + 
-    # geom_hline(yintercept = 0, size = 0.25, linetype = 2) +
-    scale_x_continuous(breaks = major_breaks, labels = major_labs, minor_breaks = minor_breaks) +
-    scale_y_continuous(breaks = major_breaks, labels = major_labs, minor_breaks = minor_breaks) +
-    scale_colour_manual(values = ) +
-    pub_theme() +
-    labs(x = "heterospecific pollen density gain",
-         y = "conspecific pollen density gain") +
-    theme(legend.position = c(0.01,0.98), 
-          legend.direction = "horizontal", 
-          legend.justification = c(0,1), 
-          legend.title = element_blank(), 
-          legend.background = element_rect(fill = "white"), 
-          panel.grid.major = element_line(size = 0.25), 
-          axis.title = element_text(size = 8, colour = "grey20"))
+    geom_smooth(data = fe$points_sp,
+                aes(x = heterospecific_abs,
+                    y = conspecific,
+                    colour = con_type, 
+                    group = interaction(con_type, model)),
+                size = 0.1, 
+                linetype = 1,
+                alpha = 0.25,
+                show.legend = T,
+                method = "lm", se = F) +
+    geom_smooth(data = fe$points_sp,
+                aes(x = heterospecific_abs,
+                    y = conspecific,
+                    colour = con_type),
+                size = 0.5, 
+                linetype = 1,
+                alpha = 1,
+                show.legend = T,
+                method = "lm", se = F) +
+    scale_x_continuous(limits = c(0,8), breaks = major_breaks, labels = major_labs, minor_breaks = minor_breaks) +
+    scale_y_continuous(limits = c(0,8), breaks = major_breaks, labels = major_labs, minor_breaks = minor_breaks) +
+    scale_colour_manual(values = colour_pallete,
+                        labels = c("relative", "absolute", "control")) +
+    guides(colour = colour_guide) +
+    abc_theme() +
+    labs(title = "conspecific vs. heterospecific pollen",
+         subtitle = "pollen grains per stigma",
+           x = "heterospecific",
+         y = "conspecific") +
+    theme(legend.position = c(0.01,0.98),
+          legend.direction = "horizontal",
+          legend.justification = c(0,1),
+          legend.title = element_blank(),
+          panel.grid.major = element_line(size = 0.25)) +
+    coord_equal()
+  
+  ggsave(filename, plot = p, device = cairo_pdf, bg = "black")
 }
