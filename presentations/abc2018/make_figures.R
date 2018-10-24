@@ -62,9 +62,66 @@ figure_quant_qual_plan <- drake::drake_plan(
                            filename = drake::file_out("presentations/abc2018/figures/fig_quant_qual.png"))
 )
 
+species_pca <- drake::readd("species_pca", character_only = TRUE)
+highlighted_plant <- c("Carduus acanthoides", "Hirschfeldia incana", "Sphaeralcea crispa", "Verbena intermedia", "Mentha pulegium")
+
+figure_pca_plan <- drake::drake_plan(
+  make_fig_pca_abc(species_pca, 
+                   alpha_poly = 0, 
+                   alpha_point = 0, 
+                   alpha_loadings = 0,
+                   filename = drake::file_out("presentations/abc2018/figures/pca_canvas.png")),
+  make_fig_pca_abc(species_pca, 
+                   alpha_poly = 0, 
+                   alpha_point = 0, 
+                   alpha_loadings = 1,
+                   filename = drake::file_out("presentations/abc2018/figures/pca_loadings.png")),
+  make_fig_pca_abc(species_pca, 
+                   alpha_poly = 0, 
+                   alpha_point = 1, 
+                   alpha_loadings = 0.25,
+                   filename = drake::file_out("presentations/abc2018/figures/pca_points.png")),
+  make_fig_pca_abc(species_pca, 
+                   alpha_poly = 0.25, 
+                   alpha_point = 0.25, 
+                   alpha_loadings = 0.25,
+                   filename = drake::file_out("presentations/abc2018/figures/pca_poly.png")),
+  make_fig_pca_abc(species_pca, 
+                   alpha_poly = 0.25, 
+                   alpha_point = 0.25, 
+                   alpha_loadings = 0.25,
+                   highlighted_plant = highlighted_plant[1],
+                   filename = drake::file_out("presentations/abc2018/figures/pca_sp1.png")),
+  make_fig_pca_abc(species_pca, 
+                   alpha_poly = 0.25, 
+                   alpha_point = 0.25, 
+                   alpha_loadings = 0.25,
+                   highlighted_plant = highlighted_plant[1:2],
+                   filename = drake::file_out("presentations/abc2018/figures/pca_sp2.png")), 
+  make_fig_pca_abc(species_pca, 
+                   alpha_poly = 0.25, 
+                   alpha_point = 0.25, 
+                   alpha_loadings = 0.25,
+                   highlighted_plant = highlighted_plant[1:3],
+                   filename = drake::file_out("presentations/abc2018/figures/pca_sp3.png")), 
+  make_fig_pca_abc(species_pca, 
+                   alpha_poly = 0.25, 
+                   alpha_point = 0.25, 
+                   alpha_loadings = 0.25,
+                   highlighted_plant = highlighted_plant[1:4],
+                   filename = drake::file_out("presentations/abc2018/figures/pca_sp4.png")),
+  make_fig_pca_abc(species_pca, 
+                   alpha_poly = 0.25, 
+                   alpha_point = 0.25, 
+                   alpha_loadings = 0.25,
+                   highlighted_plant = highlighted_plant,
+                   filename = drake::file_out("presentations/abc2018/figures/pca_sp5.png"))
+)
+
 figures_plan <- rbind(
   figure_het_con_plan, 
-  figure_quant_qual_plan
+  figure_quant_qual_plan, 
+  figure_pca_plan
 )
 
 abc_config <- drake::drake_config(figures_plan, cache = abc_cache)
