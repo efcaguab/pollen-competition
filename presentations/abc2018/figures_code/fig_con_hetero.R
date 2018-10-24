@@ -98,7 +98,7 @@ make_fig_het_con_abc <- function(fe, tidied_fixed, colour_pallete = rev(RColorBr
                         labels = c("relative", "absolute", "control")) +
     guides(colour = colour_guide) +
     abc_theme() +
-    labs(title = "conspecific vs. heterospecific pollen",
+    labs(title = "conspecific vs. heterospecific",
          subtitle = "pollen grains per stigma",
            x = "heterospecific",
          y = "conspecific") +
@@ -109,5 +109,5 @@ make_fig_het_con_abc <- function(fe, tidied_fixed, colour_pallete = rev(RColorBr
           panel.grid.major = element_line(size = 0.25)) +
     coord_equal()
   
-  ggsave(filename, plot = p, device = cairo_pdf, bg = "black")
+  ggsave(filename, plot = p, device = "png", bg = "black")
 }

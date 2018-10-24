@@ -30,7 +30,7 @@ figure_het_con_plan <- drake::drake_plan(
                        tidied_fixed, 
                        colour_pallete = rep("black", 2), 
                        colour_guide = "none",
-                       filename = drake::file_out("presentations/abc2018/figures/fig_con_hetero_canvas.pdf"))
+                       filename = drake::file_out("presentations/abc2018/figures/fig_con_hetero_canvas.png"))
 )
 
 figures_plan <- rbind(
