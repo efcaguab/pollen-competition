@@ -30,8 +30,30 @@ figure_het_con_plan <- drake::drake_plan(
                        tidied_fixed, 
                        colour_pallete = rep("black", 2), 
                        colour_guide = "none",
-                       filename = drake::file_out("presentations/abc2018/figures/fig_con_hetero_canvas.png"))
+                       filename = drake::file_out("presentations/abc2018/figures/fig_con_hetero_canvas.png")),
+  make_fig_het_con_abc(fig_con_hetero_elements, 
+                       tidied_fixed, 
+                       colour_pallete = c(rev(RColorBrewer::brewer.pal(4, "OrRd"))[1], NA), 
+                       colour_guide = "none",
+                       add_smooth = FALSE, 
+                       filename = drake::file_out("presentations/abc2018/figures/fig_con_hetero_absolute.png")),
+  make_fig_het_con_abc(fig_con_hetero_elements, 
+                       tidied_fixed, 
+                       colour_pallete = c(rev(RColorBrewer::brewer.pal(4, "OrRd"))[1], NA), 
+                       colour_guide = "none",
+                       add_smooth = TRUE, 
+                       alpha_points_factor = 0.25,
+                       filename = drake::file_out("presentations/abc2018/figures/fig_con_hetero_absolute_smooth.png")),
+  make_fig_het_con_abc(fig_con_hetero_elements, 
+                       tidied_fixed, 
+                       colour_pallete = rev(RColorBrewer::brewer.pal(4, "OrRd")), 
+                       colour_guide = "legend",
+                       add_smooth = TRUE, 
+                       alpha_points_factor = 1,
+                       filename = drake::file_out("presentations/abc2018/figures/fig_con_hetero_absolute_rel_smooth.png"))
 )
+
+
 
 figures_plan <- rbind(
   figure_het_con_plan
