@@ -42,7 +42,12 @@ get_figure_elements <- function(tidied_fixed, model_linear_fits, model_formula_r
      points_sp_summarised = points_sp_summarised)
 }
 
-make_fig_het_con_abc <- function(fe, tidied_fixed, colour_pallete = rev(RColorBrewer::brewer.pal(4, "OrRd")), filename, colour_guide = "legend"){
+make_fig_het_con_abc <- function(fe, 
+                                 tidied_fixed, 
+                                 colour_pallete = rev(RColorBrewer::brewer.pal(4, "OrRd")), 
+                                 filename, colour_guide = "legend", 
+                                 add_smooth = TRUE, 
+                                 alpha_points_factor = 1){
   require(ggplot2)
   
   pa <- RColorBrewer::brewer.pal(4, "OrRd")
@@ -60,19 +65,26 @@ make_fig_het_con_abc <- function(fe, tidied_fixed, colour_pallete = rev(RColorBr
                       ymin = conspecific_quantile_05,
                       ymax = conspecific_quantile_95,
                       colour = rel),
-                  show.legend = F, alpha = 0.25) +
+                  show.legend = F, 
+                  alpha = 0.5 * alpha_points_factor, 
+                  size = 0.5) +
     geom_errorbarh(data = fe$points_sp_summarised,
                    aes(x = heterospecific_median,
                        y = conspecific_median,
                        xmin = heterospecific_quantile_05,
                        xmax = heterospecific_quantile_95,
                        colour = rel),
-                   show.legend = F, alpha = 0.25) +
+                   show.legend = F, 
+                   alpha = 0.5 * alpha_points_factor) +
     geom_point(data = fe$points_sp_summarised,
                aes(x = heterospecific_median,
                    y = conspecific_median,
-                   colour = rel),
-               alpha = 1, show.legend = T, shape = 21, size = 1) +
+                   colour = rel, 
+                   fill = rel),
+               alpha = 1 * alpha_points_factor,
+               show.legend = T, shape = 21, size = 2)
+  if (add_smooth) {
+    p <- p+
     geom_smooth(data = fe$points_sp,
                 aes(x = heterospecific_abs,
                     y = conspecific,
@@ -80,31 +92,35 @@ make_fig_het_con_abc <- function(fe, tidied_fixed, colour_pallete = rev(RColorBr
                     group = interaction(con_type, model)),
                 size = 0.1, 
                 linetype = 1,
-                alpha = 0.25,
+                alpha = 0.15,
                 show.legend = T,
                 method = "lm", se = F) +
     geom_smooth(data = fe$points_sp,
                 aes(x = heterospecific_abs,
                     y = conspecific,
                     colour = con_type),
-                size = 0.5, 
+                size = 1, 
                 linetype = 1,
                 alpha = 1,
                 show.legend = T,
-                method = "lm", se = F) +
+                method = "lm", se = F) 
+    }
+  p <- p +
     scale_x_continuous(limits = c(0,8), breaks = major_breaks, labels = major_labs, minor_breaks = minor_breaks) +
     scale_y_continuous(limits = c(0,8), breaks = major_breaks, labels = major_labs, minor_breaks = minor_breaks) +
     scale_colour_manual(values = colour_pallete,
-                        labels = c("relative", "absolute", "control")) +
-    guides(colour = colour_guide) +
+                        labels = c("open", "control", "control")) +
+    scale_fill_manual(values = colour_pallete,
+                      labels = c("open", "control", "control")) +    
+    guides(colour = colour_guide, fill = colour_guide) +
     abc_theme() +
     labs(title = "conspecific vs. heterospecific",
          subtitle = "pollen grains per stigma",
            x = "heterospecific",
          y = "conspecific") +
-    theme(legend.position = c(0.01,0.98),
-          legend.direction = "horizontal",
-          legend.justification = c(0,1),
+    theme(legend.position = c(0.98,0.02),
+          legend.direction = "vertical",
+          legend.justification = c(1,0),
           legend.title = element_blank(),
           panel.grid.major = element_line(size = 0.25)) +
     coord_equal()
