@@ -107,6 +107,15 @@ quantile_95 <- function(x, na.rm = FALSE){
   quantile(x, 0.95, na.rm = na.rm)
 }
 
+quantile_025 <- function(x, na.rm = FALSE){
+  quantile(x, 0.025, na.rm = na.rm)
+}
+
+quantile_975 <- function(x, na.rm = FALSE){
+  quantile(x, 0.975, na.rm = na.rm)
+}
+
+
 get_likelyhoods <- function(x){
   exp(x * 0.5* (-1)) 
 }
