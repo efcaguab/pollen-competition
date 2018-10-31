@@ -28,7 +28,7 @@ impute_originality <- function(org_frame){
 
 impute_pollen <- function(pollen_contribution) {
  datasets <- pollen_contribution %>%
-   split_dataset("grain", "poc")
+   split_dataset(c("grain", "pollen_cont"), "poc")
  models <- datasets %>%
    purrr::map(~lme4::lmer(community ~ global +  (1 | plant_name) + (1 | site_name), data = .))
  models_as_df(models, datasets, "poc")

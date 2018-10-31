@@ -48,7 +48,8 @@ get_pollen_dominance <- function(tra_frame, vis_frame){
     dplyr::mutate(n_visits_sp = sum(n_visits, na.rm = T), 
                   prop_visits = n_visits/n_visits_sp) %>%
     dplyr::group_by(site_name, plant_name) %>%
-    dplyr::summarise(grain = sum(grain), 
+    dplyr::summarise(pollen_cont = sum(grain * prop_visits * prop_grain), 
+                     grain = sum(grain),
                      # the mean number of grains of plant in pollinator sp. i *
                      # the proportion of grains of plant in pollinator sp. i *
                      # the proportion of visits that pollinator sp. i makes on plant
@@ -74,7 +75,8 @@ get_pollen_dominance <- function(tra_frame, vis_frame){
     dplyr::mutate(n_visits_sp = sum(n_visits, na.rm = T), 
                   prop_visits = n_visits/n_visits_sp) %>%
     dplyr::group_by(site_name, plant_name) %>%
-    dplyr::summarise(grain = sum(grain), 
+    dplyr::summarise(pollen_cont = sum(grain * prop_visits * prop_grain),
+                     grain = sum(grain),
                      poc = log(sum(grain * prop_visits * prop_grain))) %>%
     dplyr::mutate(poc = scale(poc), 
                   var_trans = "log", 
