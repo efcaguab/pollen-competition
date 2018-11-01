@@ -31,7 +31,7 @@ get_pca_data <- function(plant_rel_abu, pollen_contribution, degree, org_frame, 
 }
 
 # calculate several flavors of PCA
-get_pca <- function(pca_data, imputation_variants = 1:3){
+get_pca <- function(pca_data, imputation_variants = 0:2){
   pca_data %>%
     split(.$pca_type) %>%
     purrr::cross2(imputation_variants) %>% 
@@ -84,6 +84,130 @@ get_factominer_pca <- function(x, ...) {
     FactoMineR::PCA(quali.sup = quali.sup, ...)
 }
 
+# find convex hull volumes defined by points of a category
+convex_hull_volume <- function(this_pca, col, dims = 2){
+  this_pca %>%
+    get_pc_coords() %>%
+    split(.[col]) %>%
+    purrr::map(dplyr::select_if, is.numeric) %>%
+    # discard groups that do not contain enough points to create a simplex one
+    # point more than the dimensions
+    purrr::map(dplyr::select, 1:dims) %>%
+    purrr::discard(~ nrow(.x) < dims + 1) %>%
+    purrr::map(geometry::convhulln, "FA") %>%
+    purrr::map_dfr(~ data.frame(vol = extract2(., "vol")), .id = col)
+}
+
+# find distances of points in a category (median, mean, min, max)
+distance_between_points <- function(this_pca, col){
+  this_pca %>%
+    get_pc_coords() %>%
+    split(.[col]) %>%
+    purrr::map(dplyr::select_if, is.numeric) %>%
+    purrr::map(dist) %>%
+    purrr::map_dfr(~ data.frame(median_dist = median(.), 
+                                mean_dist = mean(.)), .id = col)
+}
+
+# get a data frame with the principal compoment coordinates of a FactoMiner PCA object
+get_pc_coords <- function(this_pca){
+  this_pca$call$X %>%
+    dplyr::select_if(function(x) !is.numeric(x)) %>%
+    dplyr::bind_cols(as.data.frame(this_pca$ind$coord))
+}
+
+# get both distances and volumes from one call and return results in a data frame
+# dims specifies the number of dimensions to be used for the convex hull
+get_pca_sizes_df <- function(this_pca, col, dims = 2){
+  distance <- distance_between_points(this_pca, col) 
+  volume <- convex_hull_volume(this_pca, col, dims)
+  dplyr::full_join(distance, volume, by = col)
+}
+
+# randomise groupings in a FactoMiner::PCA object
+# randomises the column `col` in the call 
+# randomisation can be constrained by `constrain_col`
+randomise_pca_groupings <- function(this_pca, col, constrain_col = NULL){
+  random_pca <- this_pca
+  if (is.null(constrain_col)){
+    new_factor <- this_pca$call$X %>%
+      extract2(col) %>%
+      as.character() %>%
+      sample(replace = FALSE) %>%
+      as.factor()
+  } else {
+    new_factor <- this_pca$call$X %>%
+      extract(c(col, constrain_col)) %>%
+      split(.[constrain_col]) %>%
+      purrr::map(extract2, col) %>%
+      purrr::map(as.character) %>%
+      purrr::map(sample, replace = FALSE) %>%
+      unlist() %>%
+      `names<-`(NULL) %>%
+      as.factor()
+  }
+  random_pca$call$X[col] <- new_factor
+  random_pca
+}
+
+# run the randomisations and get the distances/volumes for a FactoMiner PCA object with groupings
+# return a list with the randomisations, the empirical and the pca_type, threshold (bad practice?)
+run_randomisations_pca <- function(this_pca, col, constrain_col, dims = 2, n_rand = 99){
+  random <- 1:n_rand %>%
+    purrr::map(~ randomise_pca_groupings(this_pca, col, constrain_col)) %>%
+    purrr::map_df(get_pca_sizes_df, col, .id = "n_sample")
+    
+  empirical <- get_pca_sizes_df(this_pca, col, dims = dims) %>%
+    dplyr::mutate(n_sample = as.character(0))
+  
+  list(empirical = empirical, 
+       random = random, 
+       pca_type = as.character(this_pca$call$X$pca_type[1]), 
+       na_threshold = as.character(this_pca$call$X$threshold[1]))
+}
+
+# call the randomisations with parameters for the plants
+all_randomisations_plant_name <- function(pcas, n_rand){
+  pcas %>%
+    purrr::keep(function(x) as.character(x$call$X$pca_type[1]) == "across") %>%
+    purrr::map(run_randomisations_pca, 
+               col = "plant_name", 
+               constrain_col = NULL, 
+               dim = 2,
+               n_rand = n_rand) %>%
+    purrr::map_df(randomisation_as_df)
+}
+
+# call the randomisations with parameters for the sites
+all_randomisations_site_name <- function(pcas, n_rand){
+  pcas %>%
+    purrr::keep(function(x) as.character(x$call$X$pca_type[1]) == "within") %>%
+    purrr::map(run_randomisations_pca, 
+               col = "site_name", 
+               constrain_col = "plant_name", 
+               dim = 2, 
+               n_rand = n_rand) %>%
+    purrr::map_df(randomisation_as_df)
+}
+
+# convert the result of a call to a data frame
+randomisation_as_df <- function(x){
+  x %$%
+    dplyr::bind_rows(empirical, random) %>%
+    dplyr::mutate(pca_type = x$pca_type, na_threshold = x$na_threshold)
+}
+
+# get cumedist ranking for the randomisation results to get the permanova
+get_permanova <- function(x, col){
+  var <- rlang::syms(col)
+  x %>%
+  dplyr::group_by(!!var[[1]], na_threshold, pca_type) %>%
+    dplyr::mutate_if(is.numeric, dplyr::percent_rank) %>%
+    # sample 0 corresponds to the empirical distances
+    dplyr::filter(n_sample == 0) %>%
+    tidyr::gather(key = "metric", value = "value", dplyr::contains("dist"), dplyr::contains("vol")) %>%
+    dplyr::group_by()
+}
 make_fig_pca <- function(pc_analysis){
   
   require(ggplot2)

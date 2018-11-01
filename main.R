@@ -146,7 +146,11 @@ model_plans <- rbind(
 
 pca_plan <- drake::drake_plan(
   pca_data = get_pca_data(plant_rel_abu, pollen_contribution, degree, org_frame, sites),
-  pcas = get_pca(pca_data, imputation_variants = 1:3)
+  pcas = get_pca(pca_data, imputation_variants = 0:1), 
+  random_plant_distances = all_randomisations_plant_name(pcas, 99), 
+  random_site_distances = all_randomisations_site_name(pcas, 99), 
+  permanova_plant_distances = get_permanova(random_plant_distances, "plant_name"),
+  permanova_site_distances = get_permanova(random_site_distances, "site_name")
 )
 
 analyses_plan <- rbind(
