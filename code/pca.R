@@ -208,6 +208,37 @@ get_permanova <- function(x, col){
     tidyr::gather(key = "metric", value = "value", dplyr::contains("dist"), dplyr::contains("vol")) %>%
     dplyr::group_by()
 }
+
+plot_permanova_dist <- function(permanova_plant_distances, permanova_site_distances){
+  permanova_plant_distances %>%
+    dplyr::filter(na_threshold %in% c(0,1)) %>%
+    dplyr::group_by(plant_name) %>%
+    dplyr::mutate(mean_value = mean(value, na.rm = T)) %>%
+    dplyr::group_by() %>% 
+    dplyr::filter(!is.na(mean_value)) %>%
+    dplyr::mutate(plant_name = forcats::fct_reorder(plant_name, mean_value)) %>% 
+    ggplot(aes(y = value, x = plant_name, colour = na_threshold)) +
+    geom_point(aes(shape = value < 0.05 | value > 0.95), position = position_dodge(width = 1)) +
+    facet_grid(~ metric) +
+    coord_flip() +
+    pub_theme()
+  
+  permanova_site_distances %>%
+    dplyr::filter(na_threshold  %in% c(0,1)) %>%
+    dplyr::group_by(site_name) %>%
+    dplyr::mutate(mean_value = mean(value, na.rm = T)) %>%
+    dplyr::group_by() %>% 
+    dplyr::filter(!is.na(mean_value)) %>%
+    dplyr::mutate(site_name = forcats::fct_reorder(site_name, mean_value)) %>% 
+    ggplot(aes(y = value, x = site_name, colour = na_threshold)) +
+    geom_point(aes(shape = value < 0.05 | value > 0.95), position = position_dodge(width = 1)) +
+    facet_grid(~ metric) +
+    coord_flip() +
+    pub_theme()
+}
+
+
+
 make_fig_pca <- function(pc_analysis){
   
   require(ggplot2)
