@@ -145,7 +145,8 @@ model_plans <- rbind(
 )
 
 pca_plan <- drake::drake_plan(
-  species_pca = get_pca(imputed_abundance, imputed_pollen, imputed_degree, imputed_originality, sites)
+  pca_data = get_pca_data(plant_rel_abu, pollen_contribution, degree, org_frame, sites),
+  pcas = get_pca(pca_data, imputation_variants = 1:3)
 )
 
 analyses_plan <- rbind(
