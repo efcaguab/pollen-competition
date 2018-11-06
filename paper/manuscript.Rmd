@@ -37,7 +37,9 @@ knitr::opts_chunk$set(echo = FALSE, message = FALSE,
 * Use AICc instead of AIC (no change in results)
 * To keep signature of phenology, absolute flower counts (log-transformed) are used instead of relative abundances
 * Columns in the trait matrix for phenology are scaled so that it doesn't count 5 times as much as other traits
-* Boostraping resampling worked 
+* Only modeling open and bagged pollen counts, using the bagged as a control. So not showing the results of the relative pollen count (open vs bagged flowers) anymore
+* Introduced visit efficiency instead of share in the pollen pool as it is a better predictor. 
+* Use a PCA of the explanatory variables to understand different plant strategies
 
 ### To do
 
