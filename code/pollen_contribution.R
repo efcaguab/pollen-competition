@@ -87,3 +87,72 @@ get_pollen_dominance <- function(tra_frame, vis_frame){
   dplyr::bind_rows(pollen, pollen_global)
 }
 
+
+logspace <- function(d1, d2, n) {
+  exp(log(10)*seq(log10(d1),log10(d2),length.out = n))
+}
+
+make_plot_visit_efficiency <- function(pollen_contribution, vis_frame, bins_x, bins_y){
+  
+  # drake::loadd(pollen_contribution, vis_frame)
+  # bins <- 6
+  require(ggplot2)
+  
+  vis <- vis_frame %>%
+    dplyr::mutate(n_visits = dplyr::if_else(survey_type == "quantitative", n_visits, 1L)) %>%
+    dplyr::group_by(site_name, plant_name, animal_name) %>%
+    dplyr::summarise(n_visits = sum(n_visits)) %>%
+    dplyr::group_by(site_name, plant_name) %>%
+    dplyr::summarise(n_visits = sum(n_visits)) %>%
+    dplyr::group_by()
+  
+  eff <- pollen_contribution %>%
+    dplyr::filter(scale == "community", var_trans == "log") %>%
+    dplyr::group_by()
+  
+  cuts_n_visits <- logspace(1,1000, bins_x + 1)
+  cuts_grain <- logspace(1,100000, bins_y + 1)
+  
+  visit_efficiency <- dplyr::full_join(vis, eff, by = c("site_name", "plant_name")) %>% 
+    dplyr::filter_all(dplyr::all_vars(!is.na(.))) 
+  
+  visit_efficiency %>%
+    bin_visit_efficiency(cuts_n_visits, cuts_grain) %>% 
+    ggplot(aes(x = n_visits, y = grain)) +
+    # geom_point() +
+    # geom_smooth(method = "lm")
+    geom_tile(aes(fill = pollen_cont), 
+              alpha = 0.75) +
+    # geom_contour(aes(z = pollen_cont)) +
+    geom_point(data = visit_efficiency, aes(fill = poc),
+               colour = "black",
+               shape = 21,
+               size = 2) +
+    scale_x_log10(breaks = round(cuts_n_visits[c(T,F)], digits = 1)) +
+    scale_y_log10(breaks = round(cuts_grain[c(T,F)], digits = 1)) +
+    scale_fill_viridis_c() +
+    labs(fill = "visit\nefficiency", 
+         x = "visits received", 
+         y = "grains transported by pollinators") +
+    pub_theme()
+}
+
+bin_visit_efficiency <- function(x,cuts_n_visits = logspace(1,250, 11), cuts_grain = logspace(1,100000, 11)){
+  x %>%
+    # bin
+    dplyr::mutate(n_visits = cut_visit_metric(n_visits, cuts_n_visits),
+                  grain = cut_visit_metric(grain, cuts_grain)) %>% 
+    dplyr::group_by(n_visits, grain) %>% 
+    dplyr::summarise(pollen_cont = median(poc, na.rm = T)) %>% 
+    dplyr::group_by() %>%
+    dplyr::mutate_at(c("n_visits", "grain"), as.character) %>%
+    dplyr::mutate_at(c("n_visits", "grain"), as.numeric) 
+}
+
+cut_visit_metric <- function(x, breaks){
+  cut(x, 
+      breaks = breaks, 
+      include.lowest = TRUE, 
+      right = FALSE, 
+      labels = 10^na.omit((log10(breaks) + log10(dplyr::lead(breaks)))/2))
+}
