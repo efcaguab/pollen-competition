@@ -122,19 +122,27 @@ make_plot_visit_efficiency <- function(pollen_contribution, vis_frame, bins_x, b
     # geom_point() +
     # geom_smooth(method = "lm")
     geom_tile(aes(fill = pollen_cont), 
-              alpha = 0.75) +
+              alpha = 0.5) +
     # geom_contour(aes(z = pollen_cont)) +
     geom_point(data = visit_efficiency, aes(fill = poc),
                colour = "black",
                shape = 21,
                size = 2) +
     scale_x_log10(breaks = round(cuts_n_visits[c(T,F)], digits = 1)) +
-    scale_y_log10(breaks = round(cuts_grain[c(T,F)], digits = 1)) +
+    scale_y_log10(breaks = round(cuts_grain[c(T,F, F, F)], digits = 1)) +
     scale_fill_viridis_c() +
-    labs(fill = "visit\nefficiency", 
+    labs(fill ="", 
          x = "visits received", 
-         y = "grains transported by pollinators") +
-    pub_theme()
+         y = "grains carried by pollinators") +
+    pub_theme() +
+    theme(legend.position = "right", 
+          legend.justification = c(1,0), 
+          legend.direction = "vertical", 
+          legend.box.background = element_rect(colour = NA, fill = NA), 
+          legend.background = element_rect(colour = NA, fill = NA),
+          legend.box.margin = margin(2,2,2,2), 
+          legend.key.height = unit(7, "mm"), 
+          legend.title.align = 0)
 }
 
 bin_visit_efficiency <- function(x,cuts_n_visits = logspace(1,250, 11), cuts_grain = logspace(1,100000, 11)){
