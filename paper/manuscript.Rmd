@@ -73,10 +73,9 @@ And yet, fully connected natural pollination communities do not exist.
 This is so, because sharing a mutualistic partner also has costs [@waser_interspecific_1978]. 
 The end result is that, when the cumulative costs have a negative impact on fitness, species also start competing for mutualistic partners.   
 The possible negative effects of competition for pollinators have been long recognised [@robertson_philosophy_1895] and widely documented both experimentally [@lewis_experimental_1961] and theoretically [@levin_competition_1970]. 
-Multiple factors (like the number of shared pollinators, the plants relative abundance, the visitator fidelity, and phenology and other traits) have been shown to modulate the strength of competition and in turn the fitness outcome [@bobisud_pollinator_1975; @mitchell_new_2009; @morales_interspecific_2008; @feinsinger_pollinationiscommunity_1987; @campbell_pollinator_1985]. 
-It is currently clear that these neghative effects on fitness have the potential to drive the evolution of flower phenologies, morphologies and reproductive strategies, as well as driving ecological differentiation [@mitchell_new_2009]. 
-With few exceptions [@rathcke_interactions_1988; @lopezaraizamikel_impact_2007], these findings are based on two-species systems, nevertheless, competitive interactions between species pairs do not occur in isolation. 
-Instead, plants often occur in communities in which multiple competitive interactions operate simultaneously and lead to emergent phenomena not observed at smaller scales. 
+Multiple factors (like the number of shared pollinators, the plants' relative abundance, visitator fidelity, and traits) have been shown to modulate the strength of competition and in turn the fitness outcome [@bobisud_pollinator_1975; @mitchell_new_2009; @morales_interspecific_2008; @feinsinger_pollinationiscommunity_1987; @campbell_pollinator_1985]. 
+It is currently clear that these neghative effects on fitness have the potential to drive the evolution of flower phenologies, morphologies and reproductive strategies, as well as driving ecological differentiation [@mitchell_new_2009; @caruso_competition_2000]. 
+With few exceptions [@rathcke_interactions_1988; @lopezaraizamikel_impact_2007], these findings are based mostly on two-species systems.  However, competitive interactions between species pairs do not occur in isolation. 
 
 Perhaps the most obvious ecological factor influencing the cost of sharing pollinators is the species degree---the number of interaction partners. 
 Yet, evidence at the community scale of **the mutualistic trade-off**---the extent to which species degree affects the benefit---is scarce, to say the least. 
