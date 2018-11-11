@@ -62,15 +62,15 @@ Pollination systems play a disproportionally important role in food production a
 In the context of animal pollination, the support to biodiversity is fundamentally achieved by virtue of inter-species facilitation—the positive feedback loops that exist between plants that share pollinators or pollinators that share plants. 
 Facilitation is able to promote species coexistence because it offsets the effects of direct competition for resources [@stachowicz_mutualism_2001]. 
 Indeed, studies that are fundamental to our current knowledge of mutualism predict that an upper limit to biodiversity is achieved when the number of mutualistic partners is maximised in a community [@bastolla_architecture_2009]. 
-And yet, fully connected natural pollination communities do not exist. 
+And yet, not every species of pollinator in natural communities interacts with every species of plant. 
 
 This is so because sharing a mutualistic partner also has costs [@waser_interspecific_1978]. 
-The end result is that, when the cumulative costs have a negative impact on fitness, species also start competing for mutualistic partners.   
+As soon as there are costs plant start competing for mutualistic partners, even if this competition is not strong enough to produce a **net** negative effect in fitness.
 The possible negative effects of competition for pollinators have been long recognised [@robertson_philosophy_1895] and widely documented both experimentally [@lewis_experimental_1961] and theoretically [@levin_competition_1970]. 
 Multiple factors (like the number of shared pollinators, the plants' relative abundance, visitor fidelity, and traits) have been shown to modulate the strength of competition and in turn the fitness outcome [@bobisud_pollinator_1975; @mitchell_new_2009; @morales_interspecific_2008; @feinsinger_effects_1987; @campbell_pollinator_1985]. 
 It is currently clear that the effects of these factors on fitness have the potential to drive the evolution of flower phenologies, morphologies and reproductive strategies, as well as driving ecological differentiation [@mitchell_new_2009; @caruso_competition_2000]. 
 
-The main two mechanisms through which these ecological factors can affect plant fertilization are (i) by reducing the number of conspecific pollen grains on stigmas or (ii) by increasing the deposition of heterospecific pollen [@morales_interspecific_2008]. 
+The main two mechanisms through which these ecological factors can affect plant fertilization are (*i*) by reducing the number of conspecific pollen grains on stigmas or (*ii*) by increasing the deposition of heterospecific pollen [@morales_interspecific_2008]. 
 For example, plants with more attractive flowers might reduce the number of visits---and hence the amount of conspecific pollen---for those less attractive [@yang_pollinator_2011]. 
 We denote this as the *quantity* of the pollination service. 
 More subtly, when plants share pollination partners, even receiving a visit might not translate into fertilization due to interspecific pollen transfer [@campbell_mechanism_1985]. 
