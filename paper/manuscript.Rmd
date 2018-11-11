@@ -13,6 +13,8 @@ header-includes:
   - \usepackage{setspace}
   - \usepackage{lineno}
   - \usepackage{xr}
+  - \newcommand{\R}[1]{\label{#1}\linelabel{#1}}
+  - \newcommand{\lr}[1]{page~\pageref{#1}, line~\lineref{#1}}
   - \externaldocument[S-]{supp-info}
 ---
 
