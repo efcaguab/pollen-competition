@@ -54,6 +54,9 @@ knitr::opts_chunk$set(echo = FALSE, message = FALSE,
 
 Feel free to come back here after you've read the manuscript. Thanks!
 
+* Do you know of a reasonable reference for the claims in \lr{ref-needed-possitive-loops}?
+* I got feedback that "denote" in \lr{denote} might be overly formal? 
+
 * __Traits__: Currently I don't mention traits in the discussion. I think the trait component is valuable and interesting but sadly at the moment, the data quality is poor. Only 4 traits have been compiled: growth form, longevity, flower colour, and whether the plant is native to the region. It won't be possible to gather all of the traits used by @coux_linking_2016 from the literature but hopefully, it is for a good proportion of them. Daniel and Jason, could we discuss options here? 
 
 \clearpage
@@ -79,7 +82,7 @@ X, Y, Z
 # Introduction
 
 Animal pollination systems play a disproportionally important role in food production and maintenance of global biodiversity [@bascompte_plant-animal_2007; @klein_importance_2007; @ollerton_how_2011]. 
-Alongside the direct mutualisms between plants and their pollinators, the support to biodiversity is substantially achieved as a result of inter-species facilitation—the positive feedback loops that exist between plants that share pollinators or pollinators that share plants [HelpWithRefPlease]. 
+Alongside the direct mutualisms between plants and their pollinators, \R{ref-needed-possitive-loops} the support to biodiversity is substantially achieved as a result of inter-species facilitation—the positive feedback loops that exist between plants that share pollinators or pollinators that share plant. 
 Facilitation is able to promote species coexistence because it offsets the effects of direct competition for resources [@stachowicz_mutualism_2001]. 
 Indeed, studies that are fundamental to our current knowledge of mutualism predict that the maximum number of coexisting species---an upper limit to biodiversity---is achieved when the number of mutualistic partners is maximised in a community [@bastolla_architecture_2009]. 
 And yet, not every pollinator species in natural communities interacts with every species of plant. 
@@ -92,7 +95,7 @@ It is currently clear that the effects of these factors on fitness have the pote
 
 The main two mechanisms through which these ecological factors can affect plant fertilization are: (*i*) by reducing the number of conspecific pollen grains on stigmas or (*ii*) by increasing the deposition of heterospecific pollen [@morales_interspecific_2008]. 
 For example, plants with more attractive flowers might reduce the number of visits---and hence the amount of conspecific pollen deposited by animals---for those less attractive [@yang_pollinator_2011]. 
-We denote [] this as the *quantity* of the pollination service. 
+We denote \R{denote} this as the *quantity* of the pollination service. 
 More subtly, when plants share pollination partners, even receiving a visit might not translate into fertilization due to interspecific pollen transfer [@campbell_mechanism_1985]. 
 Interspecific pollen transfer affects the pollination service because a focal plant might receive pollen from a different species, or conversely, pollen from the focal plant might be lost to different species. 
 Generally speaking, the higher the proportion of conspecific relative to heterospecific pollen the higher the *quality* of the pollination service. 
