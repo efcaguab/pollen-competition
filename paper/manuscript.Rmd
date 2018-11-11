@@ -59,7 +59,7 @@ Feel free to come back here after you've read the manuscript. Thanks!
 # Introduction
 
 Pollination systems play a disproportionally important role in food production and maintenance of global biodiversity [@bascompte_plant-animal_2007; @klein_importance_2007; @ollerton_how_2011]. 
-In the context of animal pollination, the support to biodiversity is fundamentally achieved by virtue of intra-species facilitation—the positive feedback loops that exist between plants that share pollinators or pollinators that share plants. 
+In the context of animal pollination, the support to biodiversity is fundamentally achieved by virtue of inter-species facilitation—the positive feedback loops that exist between plants that share pollinators or pollinators that share plants. 
 Facilitation is able to promote species coexistence because it offsets the effects of direct competition for resources [@stachowicz_mutualism_2001]. 
 Indeed, studies that are fundamental to our current knowledge of mutualism predict that an upper limit to biodiversity is achieved when the number of mutualistic partners is maximised in a community [@bastolla_architecture_2009]. 
 And yet, fully connected natural pollination communities do not exist. 
