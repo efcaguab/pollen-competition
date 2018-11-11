@@ -134,13 +134,6 @@ More details about the study sites, data collection, and laboratory protocols ca
 
 ## Data analysis
 
-At the community scale, sharing mutualistic partners might induce competition for pollination mainly trough two mechanisms. 
-The first is competition for visits, where plants with more attractive flowers reduce the number of visits for those less attractive. 
-Competition for visits affects the *quantity* of the pollination service as it induces a reduction in the amount of conspecific pollen received by flowers. 
-The second, more subtle, mechanism is interspecific pollen transfer, where even receiving a visit might not translate into net facilitation. 
-Interspecific pollen transfer affects the *quality* of the pollination service because a focal plant might receive pollen from a different species, or conversely pollen from the focal plant might be lost to different species. 
-Generally speaking the larger the proportion of conspecific relative to heterospecific pollen the higher the quality of the pollination service. 
-
 We explore the quantity of pollination service by examining two metrics. 
 First, we use the absolute amount of conspecific pollen (pollen counts per stigma) found on flowers open to animal pollination. 
 Second, we use the relative amount of conspecific pollen—the difference between the absolute amount and the that from flowers that were bagged. 
