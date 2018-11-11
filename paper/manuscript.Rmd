@@ -66,18 +66,27 @@ And yet, fully connected natural pollination communities do not exist.
 This is so, because sharing a mutualistic partner also has costs [@waser_interspecific_1978]. 
 The end result is that, when the cumulative costs have a negative impact on fitness, species also start competing for mutualistic partners.   
 The possible negative effects of competition for pollinators have been long recognised [@robertson_philosophy_1895] and widely documented both experimentally [@lewis_experimental_1961] and theoretically [@levin_competition_1970]. 
-Multiple factors (like the number of shared pollinators, the plants' relative abundance, visitator fidelity, and traits) have been shown to modulate the strength of competition and in turn the fitness outcome [@bobisud_pollinator_1975; @mitchell_new_2009; @morales_interspecific_2008; @feinsinger_pollinationiscommunity_1987; @campbell_pollinator_1985]. 
-It is currently clear that these neghative effects on fitness have the potential to drive the evolution of flower phenologies, morphologies and reproductive strategies, as well as driving ecological differentiation [@mitchell_new_2009; @caruso_competition_2000]. 
-With few exceptions [@rathcke_interactions_1988; @lopezaraizamikel_impact_2007], these findings are based mostly on two-species systems.  However, competitive interactions between species pairs do not occur in isolation. 
+Multiple factors (like the number of shared pollinators, the plants' relative abundance, visitator fidelity, and traits) have been shown to modulate the strength of competition and in turn the fitness outcome [@bobisud_pollinator_1975; @mitchell_new_2009; @morales_interspecific_2008; @feinsinger_effects_1987; @campbell_pollinator_1985]. 
+It is currently clear that the effects of these factors on fitness have the potential to drive the evolution of flower phenologies, morphologies and reproductive strategies, as well as driving ecological differentiation [@mitchell_new_2009; @caruso_competition_2000]. 
+
+The main two mechanisms through which these ecological factors can affect plant fertilization are (i) by reducing the amount of conspecific pollen loads on stigmas or (ii) by increassing the deposition of heterospecific pollen [@morales_interspecific_2008]. 
+For example, plants with more atrtactive flowers might reduce the number of visits---and hence the amount of conspecific pollen---for those less attractive [@yang_pollinator_2011]. 
+We denote this as the the *quantity* of the pollination service. 
+More subtly, when plants share pollination partners, even receiving a visit might not translate into fertilization due to interspecific pollen transfer [@campbell_mechanism_1985]. 
+Interspecific pollen transfer affects the pollination service because a focal plant might receive pollen from a different species, or conversely pollen from the focal plant might be lost to different species. 
+Generally speaking, the higher the proportion of conspecific relative to heterospecific pollen the higher the *quality* of the pollination service. 
+With few exceptions [@rathcke_interactions_1988; @lopezaraizamikel_impact_2007; @tur_evaluating_2016; @hegland_relative_2009; @aizen_reproductive_2010], most of what we know about competition vs. facilitation in pollination systems and its relationship to the quantity and quality of pollination is based mostly on two-species systems. 
+However, competitive interactions between species pairs do not occur in isolation. 
 
 Instead, plants often occur in communities in which multiple intertwined factors operate simultaneously and lead to emergent phenomena not observed at smaller scales. 
 For instance, recent empirical evidence suggest that species with original traits generally have fewer interaction partners [@coux_linking_2016]. 
 This evidence is aligned with the intuitive rationale that a species that interacts with few species benefits strongly from each of them, whereas a species that interacts with a large number of species does so comparatively weakly. 
-If evolutionary specialisation occur by changing traits to focus on fewer but better partners, we should expect a reduction of competition for pollination in species with original traits and an increasse in species with a large number of interaction partners. 
-Alternatively, it might also be the case that density is the dominant force driving pollen transfer. 
-Abundant species might experience a dilution of the available pollinators but might also comprise a greater component of the pollen source pool being transported by pollinators. 
-In this case, a potential reduction in the quantity of pollination (the amount of conspecific pollen received) could be compensated by an increase in the quality of pollination (the amount of conspecific relative to heterospecific pollen received).
-When we take into account the fact that for example a species' generalism and its relative abundance are likely to be positively associated [@sargent_role_2006], distinguishing the strategies that plants might adopt to minimise competition becomes even harder because coorelated factors might lead to competing costs.
+If evolutionary specialisation occur by changing traits to focus on fewer but better partners [@caruso_competition_2000], we should expect a reduction of competition for pollination in species with original traits and an increasse in species with a large number of interaction partners [@gibson_can_2012]. 
+Alternatively, it might also be the case that density is the dominant force driving pollen transfer [@seifan_outcome_2014]. 
+Abundant species might experience a dilution of the available pollinators [@feinsinger_effects_1987] but might also receive more effective visits by capitalising on a larger share of both the pollen being transported by pollinators and animal visits compared to other species. 
+In this case, a potential reduction in the quantity of pollination (the amount of conspecific pollen received) could be compensated by an increase in the quality of pollination (the amount of conspecific relative to heterospecific pollen received). 
+To complicate things more, autonomus self-pollination can also influence a plant sensitivity to competition for pollination because it can ensure reproduction even in the absense of outcross pollen [@kalisz_benefits_2003]. 
+As multiple, potentially correlated, factors may act simultaneously, understanding their relative importance and how plant species harness them to minimise competition for pollination within their communities requires extensive data describing both the structure of the interactions and the pollen flows that occur within it. 
 
 Here, we explore competiton for pollination at the community scale using comprehensive empirical data from eleven plant-pollinator communities in the Argentinean Pampas. 
 First, we ask the extent to which the outcome of animal mediated pollination is facilitation or competition. 
