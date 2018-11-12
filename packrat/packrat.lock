@@ -212,8 +212,8 @@ Hash: e3318ec2d42d15a38485bab047d114ba
 
 Package: data.table
 Source: CRAN
-Version: 1.11.4
-Hash: d8736a5fe41e5ebef191c43f5e22652f
+Version: 1.11.8
+Hash: 67c877937c790a0cadb71284febb6b34
 
 Package: devtools
 Source: CRAN
@@ -229,8 +229,8 @@ Hash: 08eed0c80510af29bb15f840ccfe37ce
 
 Package: digest
 Source: CRAN
-Version: 0.6.15
-Hash: 1f202ebd812ac7192be3739245746a13
+Version: 0.6.18
+Hash: 65f62365ec69ddd17230d2ffe891a6ab
 
 Package: dotCall64
 Source: CRAN
@@ -449,6 +449,18 @@ Source: CRAN
 Version: 1.20
 Hash: 9c6b215d1d02b97586c8232e94533e6a
 Requires: evaluate, highr, markdown, stringr, yaml
+
+Package: koRpus
+Source: CRAN
+Version: 0.11-5
+Hash: 94da0d45bfa89ad87523b32e12d8a45b
+Requires: data.table, sylly
+
+Package: koRpus.lang.en
+Source: CRAN
+Version: 0.1-2
+Hash: 85acc5e1dd66e0aaa388185114ad897f
+Requires: koRpus, sylly.en
 
 Package: labeling
 Source: CRAN
@@ -832,14 +844,25 @@ Hash: dbcc044753e1745d707f20b4b6fa1634
 
 Package: stringi
 Source: CRAN
-Version: 1.2.3
-Hash: bccbb90bf5e1c53f659359c06c0dde79
+Version: 1.2.4
+Hash: 03ab60ef7fa4627b38ad67c95ce6b04c
 
 Package: stringr
 Source: CRAN
 Version: 1.3.1
 Hash: 9f417a1d899ed1f080942ab36998e8b5
 Requires: glue, magrittr, stringi
+
+Package: sylly
+Source: CRAN
+Version: 0.1-5
+Hash: 9c7177b60736323b9ad644087e73f9e9
+
+Package: sylly.en
+Source: CRAN
+Version: 0.1-3
+Hash: d6558f7431511ff2b3bfea857e8acbe3
+Requires: sylly
 
 Package: testthat
 Source: CRAN
@@ -913,6 +936,34 @@ Package: withr
 Source: CRAN
 Version: 2.1.2
 Hash: d534108bcd5f34ec73e9eb523751ba20
+
+Package: wordcount.lite
+Source: github
+Version: 0.2.0
+Hash: f19fffdc188de2de9d94f00d0405fa4b
+Requires: stringi
+GithubRepo: wordcount_lite
+GithubUsername: efcaguab
+GithubRef: master
+GithubSha1: f49ff55b451ca814d51a406db785614b0c2df570
+RemoteHost: https://api.github.com
+RemoteRepo: wordcount_lite
+RemoteUsername: efcaguab
+RemoteSha: f49ff55b451ca814d51a406db785614b0c2df570
+
+Package: wordcountaddin
+Source: github
+Version: 0.2.0
+Hash: b44c2927293ca3044cdffe2aed53804b
+Requires: stringi
+GithubRepo: wordcount_lite
+GithubUsername: efcaguab
+GithubRef: master
+GithubSha1: 832d7fae5f338e50bdfb2b963623f4d55864c3ff
+RemoteHost: https://api.github.com
+RemoteRepo: wordcount_lite
+RemoteUsername: efcaguab
+RemoteSha: 832d7fae5f338e50bdfb2b963623f4d55864c3ff
 
 Package: xfun
 Source: CRAN
