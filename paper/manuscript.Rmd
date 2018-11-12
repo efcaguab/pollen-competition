@@ -30,7 +30,12 @@ header-includes:
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE, message = FALSE, 
                       warning = FALSE)
+drake::loadd(msc_wordcount)
 ```
+
+
+**Manuscript length:** approx. `r format(msc_wordcount$n_words_stri, big.mark = ",")` words including abstract and awknoledgements, `r msc_wordcount$reading_time_stri` reading time.
+
 
 \clearpage
 
