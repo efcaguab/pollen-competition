@@ -115,3 +115,70 @@ pollen_share_per_int %>%
   dplyr::group_by(site_name, plant_name) %>%
   dplyr::summarise(share = log(sum(prop_visits * grain))) %$%
   hist(share)
+
+# Number of shared pollinators
+
+drake::loadd(vis_frame)
+
+nets <- vis_frame %>%
+  split(.$site_name) %>%
+  purrr::map(~ xtabs(n_visits~ animal_name + plant_name, data = ., sparse = T)) %>%
+  purrr::map(as.matrix) %>% 
+  as.matrix() 
+
+
+
+find_interacting_species <- function(x, sp_name, type, int_col_name){
+  type <- rlang::sym(type)
+  # int_col_name <- rlang::enquo(int_col_name)
+  x %>%
+    dplyr::filter(!!type == sp_name) %>%
+    extract2(int_col_name) %>%
+    unique()
+}
+
+find_interacting_animals <- function(x, plant_name){
+  find_interacting_species(x, plant_name, "plant_name", "animal_name")
+}
+
+find_n_interacting_plants <- function(x, animal_name){
+  find_interacting_species(x, animal_name, "animal_name", "plant_name") %>%
+    dplyr::n_distinct()
+}
+
+is_animal_shared <- function(x, animal_name) {
+  find_n_interacting_plants(x, animal_name) > 1
+}
+
+n_shared_animals <- function(x, plant_name){
+  find_interacting_animals(x, plant_name) %>%
+    purrr::map_lgl(is_animal_shared, x = x) %>%
+    sum()
+}
+
+n_shared_pol_community <- function(x){
+  x %$%
+    unique(plant_name) %>% 
+    {`names<-`(., .)} %>%
+    purrr::map_df(~ dplyr::data_frame(n_shared_pol = n_shared_animals(x, plant_name = .)), .id = "plant_name")
+}
+
+n_shared_df <- vis_frame %>%
+  dplyr::filter(animal_name != "X") %>%
+  split(.$site_name) %>%
+  purrr::map_df(n_shared_pol_community, .id = "site_name") 
+
+drake::loadd(degree)
+require(ggplot2)
+
+degree %>%
+  dplyr::filter(var_trans == "lin", 
+                scale == "community") %>%
+  dplyr::full_join(n_shared_df) %>% View
+  dplyr::mutate(n_shared_pol = dplyr::if_else(is.na(n_shared_pol), 
+                                              0L, n_shared_pol)) %>% 
+  ggplot(aes(x = kn, y = n_shared_pol)) +
+  geom_point(shape = 21, stat = "sum") +
+  geom_smooth(method = "lm") +
+  scale_x_continuous(trans = "log1p") +
+  scale_y_continuous(trans = "log1p")
