@@ -129,6 +129,38 @@ Elucidating how the mechanisms and drivers of facilitation scales to the communi
 Previous studies focus on the final picture of interspecific pollen transfer that is obtained by examining the pollen deposited on flower stigmas. 
 However, as we have described, teasing apart competition for pollinators and evaluating whether there is a trade-off between the number of partners and the mutualistic benefit also requires data that describes the structure of the interactions and the pollen flows that occur within it, while accounting for the traits of the species that integrate the community. 
 Here, we examine a comprehensive data set that includes information about pollen deposition, transfer, visitation, species abundance, and species traits across diverse communities in the Argentinian Pampas. 
+## Competition vs. facilitation
+
+Our first objective is to identify whether, at the community level, the net outcome of animal-mediated pollination is facilitation or competition. 
+A first line of evidence can be found in the relationship between heterospecific and conspecific pollen deposited in plant stigmas [@tur_evaluating_2016]. 
+This is so, because heterospecific pollen can be seen as the cost that plants must pay for receiving conspecific pollen from shared pollinators. 
+A neggative relationship (when shared pollinators increasse heterospecific pollen loads and decreasse conspecific loads) may indicate that competition for pollination is strong. 
+This negative relationship could arrise, for example, when other, more dominant species, monopolizes a limited number of pollinators [@ref], when heterospecific pollen deposited in the stigma interfers with deposition of conspecific pollen [@ref], or when conspecific pollen is lost to heterospecific stigmas [@ref]. 
+In contrast, a positive relationship (when sharing pollinators increasses heterospecfic pollen loads but also conspecific pollen deposition) is what should be observed if facilitation is the dominant outcome. 
+For example when the abbundance of shared pollinators is positively influenced by floral resources and the positive effects ripple trough the mutualistic network [@ref]. 
+
+A second line of evidence could be obtained by examining the difference between the amount conspecific pollen deposited in flower stigmas *with* and *without* animal mediated pollination. 
+It has been shown that self-pollination is favorable to plant reproduction when competition for pollination is strong because it provides insurance against a poor pollination service [@ref]. 
+If competition for pollination is sufficiently strong, then the amount of conspecific pollen deposited in flower stigmas when animal pollination is prevented would be higher than the amount deposited when floral visits are allowed. 
+The opposite pattern, may indicate that plants benefit from animal mediated pollination, as even a small difference between outcross and self pollen may be important to plant fitness [@ref], particularly so for non-self-fertile species or those in which there is temporary separation in the maturation of the sexes (dichogamy). 
+
+### Data collection
+
+In each of the studied communities, we quantified pollen deposition in a subset of plant species. 
+This subset comprised between three and nine of the most common entomophilus species that were flowering during the sampling period while ensuring that the chosen species covered a wide range on a specialization-generalization gradient. 
+Briefly, in each of the selected plants, we removed all flowers except buds that were expected to go into inflorescence on the next day. 
+Approximately a quarter of these buds were bagged to prevent animal pollination. 
+Two days after inflorescence, we counted the pollen grains in the flowers' pistils, classified them between conspecific and heterospecific pollen, and calculated the number of pollen grains per stigma in each flower. 
+More details about the study sites and data colletion and laboratory protocols can be found in @marrero_agricultural_2016. 
+
+
+### Data analysis
+
+Similar to @tur_evaluating_2016, to evaluate the relationship between heterospecific and conspecific pollen, we used a generalised linear mixed model (GLMM) with a Poisson error distribution in each of our communities. 
+In these models, the number conspecific pollen grains per stigma was the response variable and the number of heterospecific grains the predictor. 
+The slope and intercept of this relationship was allowed to differ between plant species, which were included as a random effect. 
+Models were fitted using the function `lmer` from the R package `lme4 1.1-19` [@ref]
+To compare the conspecific pollen deposited with and without animal mediated pollination, we performed a Mann-Withney U test of the number of conspecific pollen grains per stigma in un-bagged and bagged flowers for each of the studied species in a community. 
 
 ## Data collection
 
