@@ -301,3 +301,83 @@ extract_tra_frame <- function(armonised_data){
   armonised_data$transfer %>%
     to_data_frame('transfer') 
 }
+
+
+# number of shared pollinators --------------------------------------------
+
+# find the species that interact with another one
+# x is the data frame with at least two columns
+# sp_name is the name of the species of interest
+# type is the name of the column containing sp_name
+# int_col_name the name of the column containing the name of int. species
+find_interacting_species <- function(x, sp_name, type, int_col_name){
+  type <- rlang::sym(type)
+  # int_col_name <- rlang::enquo(int_col_name)
+  x %>%
+    dplyr::filter(!!type == sp_name) %>%
+    extract2(int_col_name) %>%
+    unique()
+}
+
+# A wrapper to find_interacting_species when the species of interest is a plant
+find_interacting_animals <- function(x, plant_name){
+  find_interacting_species(x, plant_name, "plant_name", "animal_name")
+}
+
+# Gives the number of plants an animal interacts with
+find_n_interacting_plants <- function(x, animal_name){
+  find_interacting_species(x, animal_name, "animal_name", "plant_name") %>%
+    dplyr::n_distinct()
+}
+
+# see if the animal of interest interacts with more than 1 species
+is_animal_shared <- function(x, animal_name) {
+  find_n_interacting_plants(x, animal_name) > 1
+}
+
+# count the number of shared animals a plant has
+count_n_shared_animals <- function(x, plant_name){
+  interacting_animals <- find_interacting_animals(x, plant_name)
+  # X represents that the plant species was sampled but no interacting species were found. In that case we assume no shared polinator
+  n_shared_animals <- interacting_animals %>%
+    purrr::map_lgl(is_animal_shared, x = x) %>%
+    sum()
+  if ("X" %in% interacting_animals) {
+    n_shared_animals - 1
+  } else {
+    n_shared_animals
+  }
+}
+
+# count the number of shared animals for all plants in data frame X
+count_n_shared_pol_community <- function(x){
+  x %$%
+    unique(plant_name) %>% 
+    {`names<-`(., .)} %>%
+    purrr::map_df(~ dplyr::data_frame(n_shared_pol = count_n_shared_animals(x, plant_name = .)), .id = "plant_name")
+}
+
+get_shared_pol <- function(vis_frame){
+  
+  species_site_shar <- vis_frame %>%
+    split(.$site_name) %>%
+    purrr::map_df(count_n_shared_pol_community, .id = "site_name") %>%
+    dplyr::group_by() %>%
+    dplyr::mutate(kn = n_shared_pol, 
+                  lin = scale(kn), 
+                  log = scale(log(kn + 1))) %>%
+    tidyr::gather("var_trans", "k", lin, log) %>%
+    dplyr::mutate(scale = "community")
+  
+  species_shar <- vis_frame %>%
+    count_n_shared_pol_community() %>%
+    dplyr::group_by() %>%
+    dplyr::mutate(kn = n_shared_pol, 
+                  lin = scale(kn), 
+                  log = scale(log(kn + 1))) %>%
+    tidyr::gather("var_trans", "k", lin, log) %>%
+    dplyr::right_join(plant_site_combinations(species_site_shar), by = 'plant_name') %>%
+    dplyr::mutate(scale = "global")
+  
+  dplyr::bind_rows(species_site_shar, species_shar)
+}

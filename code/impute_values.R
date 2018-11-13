@@ -17,6 +17,13 @@ impute_degree <- function(degree){
   models_as_df(models, datasets, "deg")
 }
 
+impute_shared <- function(shar_pol){
+  datasets <- split_dataset(shar_pol, c("n_shared_pol", "kn"), "k")
+  models <-  datasets %>%
+    purrr::map(~ lm(community ~ global , data = .))
+  models_as_df(models, datasets, "deg")
+}
+
 impute_originality <- function(org_frame){
   datasets <- org_frame %>%
     dplyr::mutate(var_trans = "log") %>%

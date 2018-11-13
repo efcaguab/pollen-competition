@@ -30,6 +30,7 @@ format_data_plan <- drake::drake_plan(
   # plant_pheno_overlap = calculate_phenology_overlap(abu_frame, dep_frame),
   vis_frame = extract_vis_frame(armonised_data),
   degree = get_degree(vis_frame, dep_frame), 
+  shar_pol = get_shared_pol(vis_frame),
   tra_frame = extract_tra_frame(armonised_data), 
   pollen_contribution = get_pollen_dominance(tra_frame, vis_frame)
 )
@@ -43,7 +44,8 @@ traits_plan <- drake::drake_plan(
 )
 
 imputation_plan <- drake::drake_plan(
-  imputed_degree = impute_degree(degree), 
+  imputed_degree_legacy = impute_degree(degree), 
+  imputed_degree = impute_shared(shar_pol), 
   imputed_abundance = impute_abundace(plant_rel_abu), 
   imputed_originality = impute_originality(org_frame), 
   imputed_pollen = impute_pollen(pollen_contribution)
