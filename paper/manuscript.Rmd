@@ -123,10 +123,12 @@ On the contrary, if species role is flexible, we should expect plants to be able
 
 # Methods
 
-Elucidating how the mechanisms and drivers of facilitation scales to the community level and its theoretical consequences has been elusive in part because of the large amounts of data required.
-Previous studies focus on the final picture of interspecific pollen transfer that is obtained by examining the pollen deposited on flower stigmas. 
-However, as we have described, teasing apart competition for pollinators and evaluating whether there is a trade-off between the number of partners and the mutualistic benefit also requires data that describes the structure of the interactions and the pollen flows that occur within it, while accounting for the traits of the species that integrate the community. 
-Here, we examine a comprehensive data set that includes information about pollen deposition, transfer, visitation, species abundance, and species traits across diverse communities in the Argentinian Pampas. 
+We collected data from eleven coflowering plant communities and their pollinators distributed across three locations, each in a distinct reagion of the Argentinian Pampas. 
+These locations are distributed across a gradient of precipitation with a humid temperate climate in the eastward Flooding Pampas and a climate drier as we move inland and westward towards the Pampean Grasslands.
+Annual mean temperatures range between 14.8 and 15.8 Celsius. 
+In each location, we sampled two restored and two agricultural fragments, except in the Flooding Pampas, where due to the lack of available sites, we were only able to sample one restored fragment.
+We visited fragments between December 2010 and February 2011. 
+
 ## Competition vs. facilitation
 
 Our first objective is to identify whether, at the community level, the net outcome of animal-mediated pollination is facilitation or competition. 
