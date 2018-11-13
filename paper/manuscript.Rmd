@@ -42,30 +42,28 @@ drake::loadd(msc_wordcount, abs_wordcount)
 
 \clearpage
 
-### Changes
+# Draft Info
+
+## Changes
 
 * Now using AICc instead of AIC to evaluate models (no change in results)
-* Changes to traits: (*a*) to keep signature of phenology, absolute flower counts (log-transformed) are used instead of relative abundances. Also, now (*b*) columns in the trait matrix for phenology are scaled so that it doesn't count 5 times as much as other traits.
+* Traits: (*a*) to keep signature of phenology, absolute flower counts (log-transformed) are used instead of relative abundances. Also, now (*b*) columns in the trait matrix for phenology are scaled so that it doesn't count 5 times as much as other traits.
 * The absolute/relative/gain terminology was confusing. Now  I'm modelling open and bagged pollen counts directly, using the bagged as a sort of control.
 * Introduced visit efficacy instead of the share in the pollen pool as a predictor in the model. Turns out to be a better predictor and also incorporates quantitative visitation data which was missing from the previous models. 
-* Now I use a PCA of the explanatory variables to understand different plant strategies. 
-* Introduction has been rewritten to be more *hypothesis* oriented. The manuscript also includes references throughout.
-* Added abstract
+* Now I use a PCA of the explanatory variables to understand different plant strategies and give a deeper teratment to the facilitation/competition question. 
 
-### To do
+## To do
 
-* Spell-check everything
-* Decide on a journal. The manuscript is currently written for an interdisciplinary one. 
-* Check reference list
+* Spell-check everything & check that reference list is correct.
+* Choose journal (the manuscript is written for an interdisciplinary journal). 
 
-### Questions
+## Questions
 
 Feel free to come back here after you've read the manuscript. Thanks!
 
 * Do you know of a reasonable reference for the claims in \lr{ref-needed-possitive-loops}?
 * I got feedback that "denote" in \lr{denote} might be overly formal? 
-
-* __Traits__: Currently I don't mention traits in the discussion. I think the trait component is valuable and interesting but sadly at the moment, the data quality is poor. Only 4 traits have been compiled: growth form, longevity, flower colour, and whether the plant is native to the region. It won't be possible to gather all of the traits used by @coux_linking_2016 from the literature but hopefully, it is for a good proportion of them. Daniel and Jason, could we discuss options here? 
+* Hugo. Some journals require publication of data alongside with the paper. Is it OK to consider those? Or you preffer to keep data private?
 
 \clearpage
 
