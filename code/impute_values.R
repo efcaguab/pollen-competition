@@ -33,12 +33,20 @@ impute_originality <- function(org_frame){
   models_as_df(models, datasets, "org")
 }
 
-impute_pollen <- function(pollen_contribution) {
+impute_pollen_dominance <- function(pollen_contribution) {
  datasets <- pollen_contribution %>%
    split_dataset(c("grain", "pollen_cont"), "poc")
  models <- datasets %>%
    purrr::map(~lme4::lmer(community ~ global +  (1 | plant_name) + (1 | site_name), data = .))
  models_as_df(models, datasets, "poc")
+}
+
+impute_pollen_contrib <- function(pollen_contribution) {
+  datasets <- pollen_contribution %>%
+    split_dataset(c("grain", "pollen_cont"), "poc")
+  models <- datasets %>%
+    purrr::map(~lme4::lmer(community ~ global +  (1 | plant_name) + (1 | site_name), data = .))
+  models_as_df(models, datasets, "poc")
 }
 
 # Auxiliary functions to impute variables -------------------------

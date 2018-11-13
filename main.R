@@ -32,7 +32,8 @@ format_data_plan <- drake::drake_plan(
   degree = get_degree(vis_frame, dep_frame), 
   shar_pol = get_shared_pol(vis_frame),
   tra_frame = extract_tra_frame(armonised_data), 
-  pollen_contribution = get_pollen_dominance(tra_frame, vis_frame)
+  pollen_dominance = get_pollen_dominance(tra_frame, vis_frame),
+  pollen_contribution = get_pollen_contribution(tra_frame)
 )
 
 traits_plan <- drake::drake_plan(
@@ -48,7 +49,8 @@ imputation_plan <- drake::drake_plan(
   imputed_degree = impute_shared(shar_pol), 
   imputed_abundance = impute_abundace(plant_rel_abu), 
   imputed_originality = impute_originality(org_frame), 
-  imputed_pollen = impute_pollen(pollen_contribution)
+  imputed_pollen = impute_pollen_dominance(pollen_dominance),
+  imputed_pollen_legacy = impute_pollen_contrib(pollen_contribution)
 )
 
 # Basic analyses ----------------------------------------------------------

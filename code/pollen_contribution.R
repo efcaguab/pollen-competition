@@ -9,6 +9,7 @@ get_pollen_contribution <- function(tra_frame){
     dplyr::group_by(site_name) %>%
     dplyr::mutate(total_pollen = sum(grain_log), 
                   poc = grain_log/total_pollen, 
+                  pollen_cont = poc,
                   poc = scale(poc), 
                   var_trans = "log", 
                   scale = "community")
@@ -17,6 +18,7 @@ get_pollen_contribution <- function(tra_frame){
     dplyr::group_by() %>%
     dplyr::mutate(total_pollen = sum(grain_log), 
                   poc = grain_log/total_pollen, 
+                  pollen_cont = poc,
                   poc = scale(poc), 
                   var_trans = "log", 
                   scale = "global")
