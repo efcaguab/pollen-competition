@@ -116,6 +116,25 @@ pollen_share_per_int %>%
   dplyr::summarise(share = log(sum(prop_visits * grain))) %$%
   hist(share)
 
+
+
+# Facilitation - competition ----------------------------------------------
+
+drake::loadd(dep_frame)
+require(ggplot2)
+
+dep_frame %>% 
+  dplyr::filter(treatment == "open") %>%
+  dplyr::select(plant, recipient, site_name, pollen_density, pollen_category) %>%
+  tidyr::spread(key = "pollen_category", value = "pollen_density") %>% 
+  ggplot(aes(x = heterospecific, y = conspecific, colour = recipient, group = interaction(recipient, site_name))) +
+  geom_point() +
+  geom_smooth(method = "lm", se = 0) +
+  # scale_x_continuous(trans = "log1p") +
+  # scale_y_continuous(trans = "log1p") +
+  # facet_wrap(~site_name, scales = "free") +
+  theme(legend.position = "none")
+
 # Number of shared pollinators
 
 drake::loadd(vis_frame)
