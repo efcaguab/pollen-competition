@@ -484,8 +484,8 @@ Hash: f5e0d09f4e42d749ae0f893cff1817b6
 
 Package: lme4
 Source: CRAN
-Version: 1.1-17
-Hash: 2d41de93b052c48162d40c324b3000f2
+Version: 1.1-19
+Hash: e088371956c61950db053c5672f861f2
 Requires: Rcpp, RcppEigen, minqa, nlme, nloptr
 
 Package: lubridate
