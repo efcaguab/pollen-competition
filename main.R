@@ -70,7 +70,7 @@ basic_analyses_plan <- drake::drake_plan(
 
 # Bootstrap models --------------------------------------------------------
 
-n_replicates <- 99
+n_replicates <- 9
 transformation <- function(x) log(x + 1)
 
 boot_replicates <- drake::drake_plan(
@@ -146,7 +146,7 @@ model_plans <- rbind(
 
 pca_plan <- drake::drake_plan(
   pca_data = get_pca_data(plant_rel_abu, pollen_contribution, degree, org_frame, sites),
-  pcas = get_pca(pca_data, imputation_variants = 0:1), 
+  pcas = get_pca(pca_data, imputation_variants = 0:2), 
   random_plant_distances = all_randomisations_plant_name(pcas, 99), 
   random_site_distances = all_randomisations_site_name(pcas, 99), 
   permanova_plant_distances = get_permanova(random_plant_distances, "plant_name"),
