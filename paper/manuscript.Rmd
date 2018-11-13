@@ -112,7 +112,7 @@ Both describing the structure of the interactions and the pollen flows that occu
 
 Here, we explore competition for pollination at the community scale using comprehensive empirical data from eleven plant-pollinator communities in the Argentinian Pampas. 
 First, we ask the extent to which the outcome of animal-mediated pollination is facilitation or competition. 
-If facilitation is the primary outcome we would expect (*i*) a larger amount of conspecific pollen deposited in stigmas when flowers are open to animal pollinators than that due to self-pollination and (*ii*) an overall positive relationship between the amount of conspecific pollen deposited in stigmas and the heterospecific pollen [@tur_evaluating_2016]. 
+If facilitation is the primary outcome we would expect (*i*) an overall positive relationship between the amount of conspecific pollen deposited in stigmas and the heterospecific pollen [@tur_evaluating_2016] and (*ii*) a larger amount of conspecific pollen deposited in stigmas when flowers are open to animal pollinators than that due to self-pollination. 
 Second, we investigate the relative contribution that four ecological factors, that together, describe the role of the plant species and the ecological context, have on competition for pollination. 
 We hypothesize that competition for pollination at the community level should increase as the number of pollination partners a plant has increases (species degree).
 However, other factors like the plant's functional originality, its relative abundance, and the visit effectiveness, should have the potential to compensate this increase in competition by improving either the quality or the quality of pollination. 
