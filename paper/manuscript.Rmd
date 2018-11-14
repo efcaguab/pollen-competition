@@ -162,11 +162,13 @@ The slope and intercept of this relationship was allowed to differ between plant
 Models were fitted using the function `lmer` from the R package `lme4 1.1-19` [@ref]
 To compare the conspecific pollen deposited with and without animal mediated pollination, we performed a Mann-Withney U test of the number of conspecific pollen grains per stigma in un-bagged and bagged flowers for each of the studied species in a community. 
 
-## Data collection
+## Effect of ecological factors in the pollination service 
 
-We performed sampling in three locations, each located in a distinct region of the Argentinian Pampas. 
-The sampling locations are distributed across a gradient of precipitation with a humid temperate climate in the eastward Flooding Pampas and an drier as we move inland and westward towards the Pampean Grasslands.
-Across all sites, annual mean temperatures range between 14.8 and 15.8 Celsius. 
+Our second objetive is to investigate the relative contribution that different factors that describe the plants' role and its ecological context have on the pollination service. 
+Specifically, we investigate the effect of (*i*) the number of shared pollinators, (*ii*) the plants relative abundance, (*iii*) the plants functional originality, and (*iv*) the mean visit effectiveness---a metric that combines the share of pollen that a plant species is able to place on each of their floral visitors and the number of visits it receives from them. 
+Here, we define visit efectiveness of the pollinator species *i* to plant species *j* as the proportion between the visits of *i* to *j* and all visits of *i*, multiplied by the proportion between the number of pollen grains of *j* attached to individuals of *i* and all pollen attached to individuals of *i*.
+
+### Data collection
 
 In each location, we sampled two restored and two agricultural fragments. 
 However, due to the lack of available sites in the Flooding Pampas, it was only possible to sample one restored site.
