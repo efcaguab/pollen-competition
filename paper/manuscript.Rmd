@@ -146,13 +146,13 @@ The opposite pattern, may indicate that plants benefit from animal mediated poll
 
 ### Data collection
 
-In each of the studied communities, we quantified pollen deposition in a subset of plant species. 
-This subset comprised between three and nine of the most common entomophilus species that were flowering during the sampling period while ensuring that the chosen species covered a wide range on a specialization-generalization gradient. 
+In each of the studied communities, we quantified pollen deposition in a subset of plant species between December 2010 and February 2011. 
+This subset comprised between three and nine common entomophilus species that were flowering during the sampling period. 
+We chosed plant species such that they cover a wide range on a specialization-generalization gradient and a wide range of abundances. 
 Briefly, in each of the selected plants, we removed all flowers except buds that were expected to go into inflorescence on the next day. 
 Approximately a quarter of these buds were bagged to prevent animal pollination. 
 Two days after inflorescence, we counted the pollen grains in the flowers' pistils, classified them between conspecific and heterospecific pollen, and calculated the number of pollen grains per stigma in each flower. 
 More details about the study sites and data colletion and laboratory protocols can be found in @marrero_agricultural_2016. 
-
 
 ### Data analysis
 
