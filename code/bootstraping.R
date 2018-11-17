@@ -108,7 +108,7 @@ run_model <- function(d, best_random, method = "ML"){
   
   vars <- c("abn", "poc", "deg", "org")
   
-  paste("pollen_gain ~ ", combn_formulas(vars)) %>%
+  paste("pollen_gain ~ ", combn_formulas(vars, from = 2, null_model = F)) %>%
     purrr::map_df(~ dplyr::mutate(d, fixed_formula = .)) %>% 
     split(list(.$pollen_category, .$scale, .$var_trans, .$fixed_formula)) %>%
     purrr::map(~ try(nlme::lme(as.formula(.$fixed_formula[1]), random = parse_random_formula(best_random$random_formula[1]), na.action = na.omit, method = method, data = .)))
