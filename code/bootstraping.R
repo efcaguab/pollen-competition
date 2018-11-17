@@ -101,7 +101,7 @@ run_random_models <- function(d, random_effects, method = "REML"){
     split(.$random_effect) %>%
     purrr::map_df(~ dplyr::mutate(d, random_formula = .$random_formula, random_effect = .$random_effect)) %>% 
     split(list(.$pollen_category, .$scale, .$var_trans, .$random_effect)) %>%
-    purrr::map(~ try(nlme::lme(pollen_gain ~ abn + poc + deg + org, random = as.formula(.$random_formula[1]), na.action = na.omit, method = method, data = .)))
+    purrr::map(~ try(nlme::lme(pollen_gain ~ abn + poc + deg + org, random = parse_random_formula(.$random_formula[1]), na.action = na.omit, method = method, data = .)))
 }
 
 run_model <- function(d, best_random, method = "ML"){
@@ -111,7 +111,7 @@ run_model <- function(d, best_random, method = "ML"){
   paste("pollen_gain ~ ", combn_formulas(vars)) %>%
     purrr::map_df(~ dplyr::mutate(d, fixed_formula = .)) %>% 
     split(list(.$pollen_category, .$scale, .$var_trans, .$fixed_formula)) %>%
-    purrr::map(~ try(nlme::lme(as.formula(.$fixed_formula[1]), random = as.formula(best_random$random_formula[1]), na.action = na.omit, method = method, data = .)))
+    purrr::map(~ try(nlme::lme(as.formula(.$fixed_formula[1]), random = parse_random_formula(best_random$random_formula[1]), na.action = na.omit, method = method, data = .)))
 
 }
 
@@ -126,6 +126,13 @@ combn_formulas <- function(vars, null_model = TRUE, from = 1){
   }
   return(v)
 } 
+
+parse_random_formula <- function(x, env  = y){
+  strsplit(x, split = "+", fixed = TRUE) %>% 
+    unlist() %>%
+    as.list() %>%
+    lapply(as.formula)
+}
 
 # AGGREGATE MODELS --------------------------------------------------------
 
