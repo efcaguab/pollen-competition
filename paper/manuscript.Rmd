@@ -227,63 +227,6 @@ We define the species strategy in a community as its coordinates in PCA space.
 For each species that was present in two or more communities, we then calculate (*i*) the median distance between the strategies that the species uses different communities, and (*ii*) the area of the convex hull defined by these points in the first two principal components. 
 We then compare these two metrics to those obtained with 99 Monte Carlo randomisations of plant strategies that replace the focal plant strategy by one of another species in its community.
 
-We explore the quantity of pollination service by examining two metrics. 
-First, we use the absolute amount of conspecific pollen (pollen counts per stigma) found on flowers open to animal pollination. 
-Second, we use the relative amount of conspecific pollen—the difference between the absolute amount and the that from flowers that were bagged. 
-We use both metrics simultaneously because, in the one hand, the relative amount acknowledges that autogamus self-pollination can occur and hence might be a better indication of the pollen that has been actually deposited by mutualistic partners. 
-On the other, self-pollination is an adaptive trait [@kalisz_benefits_2003] and some plants are not self-fertile, even if their pollen gets deposited on the stigma. 
-<!-- Nevertheless, this difference still provides valuable indication of what the animal contribution to reproductive output.  -->
-Both metrics complement each other and provide a complete picture of the quantitative aspect of pollination service. 
-Similarly, to explore the quality of pollination we examine the relationship that exists between both the absolute and relative amount of conspecific pollen and heterospecific pollen. 
-We use the relative amount of heterospecific pollen for our calculations. 
-However, because the amount of heterospecific pollen in bagged flowers was negligible, results are almost identical if we use the absolute amounts. 
-
-To study the amounts of deposited pollen, which are needed to construct our metrics of pollination quantity and quality, we use three sets of linear fixed models [using the R package `nlme 3.1-131`, @pinheiro_nlme_2018]—two for conspecific pollen (absolute and relative) and one for heterospecific pollen. 
-This modelling approach allowed us to simultaneously explore whether there is a relationship between the benefit of animal pollination and several ecological variables that can affect the mutualistic trade-off. 
-In addition, to estimate and incorporate the uncertainty associated to our results we used a combination of multi-model inference and bootstrap resampling. 
-
-Each model set was based on the same one hundred bootstrap resamples of the deposition data. 
-We used bootstrap resampling because, as open and bagged flowers were not paired, this allowed us to directly model the *gain* in pollen density rather than density itself. 
-In each data replicate we randomly sampled with replacement a number of open flowers within each community-species combination and an equal number of closed flowers. 
-We then log-transformed the pollen densities to improve normality and minimise the impact of outliers (Figure \@ref(S-fig:fig-deposition-gain-log-transformed-or-not)), this generally offered better results that a generalised linear model with poisson (or quasiposson) error structure. 
-Finally, for the models of the relative amounts of pollen we calculated the difference between the pollen density among treatments. 
-
-As predictors in all model sets, we included species degree, the plant relative abundance, the plant species' share on the pollen pool, and the species' functional originality. 
-Species degree was calculated from combining the quantitative and qualitative visitation networks and corresponds to the number of animal species that were observed to visit the plant species in the community where it was sampled. 
-The plant's relative abundance we simply aggregated the flower counts for each plant species in the community.
-As with the deposition data, we found that log-transforming the abundance counts drastically improved normality (Figure \@ref(S-fig:fig-abundance-log-transformed-or-not)). 
-The species' share of the pollen pool was calculated as the proportion of pollen of that species in the pollen counts being carried by pollinators from the community. 
-
-Functional originality is defined as the distance of a species from the community trait average--the centroid of functional space of the community [@laliberte_distance-based_2010; @coux_linking_2016-1]. 
-Specifically, we recorded morphological traits that relate to plant type (herb, shrub, climber), life cycle (annual, perennial), flower colouration, and whether the species is native in the study region or not. 
-As phenology has been shown to be a key mechanisms of niche differentiation among plants, we also included the plant abundance in each of the survey months (November to March) as an additional trait in our analysis. 
-This approach allowed us to integrate the originality in phenological niche alongside the originality on other functional traits. 
-All traits were scaled to have a mean of zero and a standard deviation of one prior to calculating the centroid of the functional space. 
-The species-specific functional coordinates were calculated using the R package `FD 1.0-12` [@laliberte_distance-based_2010; @laliberte_fd_2014]. 
-To facilitate comparison across model estimates, we scaled all independent variables to have a mean of zero and a standard deviation of one.
-
-In all three sets of models we first evaluated a set of candidate random effects which included random intercepts for plant species as well as random slopes for the relationship between degree and pollen gain. 
-In addition we also tested for random intercepts that assumed that the plant species grouping was hierarchically nested in either their community, the land use, and the locality. 
-We selected the best random structure by comparing the median Akaike Information Criterion (AIC) of evaluated models. 
-After determining the best random structure, we then focused on the model's fixed structure composed by our explanatory variables. 
-We used multi-model inference to calculate the relative importance of each variable and its mean effect on pollen density.
-First we fitted all possible combinations of explanatory variables to the same bootstrap resamples used previously. 
-This yielded one hundred models for each "candidate formula"---a particular combination of explanatory variables. 
-We then determined the likelihood of each candidate formula and its relative weight by calculating the median $\Delta$AIC of the one hundred models that constitute it. 
-As AIC is only useful to compare models with the same response variable, the $\Delta$AIC of each candidate formula was calculated independently for each bootstrap resample.
-Calculating the median value of each candidate formula allowed us to estimate the relative importance of the explanatory variables  using the standard methods of adding the median weight of the candidate models that included the variable. 
-
-To calculate the effect that each variable had on the gain of conspecific and heterospecific pollen we sampled from the estimated coefficients in each candidate model proportional to the median likelihood of each set. 
-In other words, the estimated coefficients from more likely candidate constitute a larger share of the distribution of coefficients. 
-When a variable was not included in a model set we setted the estimate of its coefficient in the model to zero. 
-We expect some of our predictors to be correlated to each other. Estimating the models using multiple combinations of explanatory variables also allowed us to evaluate the potential collinearity between them. 
-To do so we inspect how the effect of the explanatory variables changed across candidate formulae, when one or more of them were removed in turns. 
-
-After calculating the effects of the ecological variables in heterospecific and conspecific pollen densities, we can now evaluate their effect in the quality and quantity of pollination. 
-For the quantity of pollination, we simply calculated the mean value of the distribution of the effect for both the absolute and relative conspecific pollen densities. 
-Again, we used bootstrap resampling from the coefficient distributions to calculate the confidence intervals of the mean. 
-For the quality of pollination, we calculated the mean difference between a sample of the distribution of the effects of conspecific pollen and a sample of those of heterospecific pollen gain. Similar to the mean effects on the quantity of pollination, we used bootstrap resampling to calculate confidence intervals of the means.estimated by the relationship that exists between the gain in conspecific and heterospecific pollen.
-
 # Results
 
 ```{r differences-in-self-pollination}
