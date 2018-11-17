@@ -61,7 +61,7 @@ drake::loadd(msc_wordcount, abs_wordcount)
 
 Feel free to come back here after you've read the manuscript. Thanks!
 
-* Do you know of a reasonable reference for the claims in \lr{ref-needed-possitive-loops}?
+* Do you know of a reasonable reference for the claims in \lr{ref-needed-possitive-loops} and \lr{ref2}?
 * I got feedback that "denote" in \lr{denote} might be overly formal? 
 * Hugo. Some journals require publication of data alongside with the paper. Is it OK to consider those? Or you preffer to keep data private?
 
@@ -134,14 +134,14 @@ Our first objective is to identify whether, at the community level, the net outc
 The first line of evidence can be found in the relationship between heterospecific and conspecific pollen deposited in plant stigmas [@tur_evaluating_2016]. 
 This is so because heterospecific pollen can be seen as the cost that plants must pay for receiving conspecific pollen from shared pollinators. 
 A negative relationship (when shared pollinators increase heterospecific pollen loads and decrease conspecific loads) may indicate that competition for pollination is strong. 
-This negative relationship could arise, for example, when other, more dominant species, monopolizes a limited number of pollinators [@ref], when heterospecific pollen deposited in the stigma interferes with deposition of conspecific pollen [@ref], or when conspecific pollen is lost to heterospecific stigmas [@ref]. 
+This negative relationship could arise, for example, when other, more dominant species, monopolizes a limited number of pollinators [@mitchell_new_2009], when heterospecific pollen deposited in the stigma interferes with deposition of conspecific pollen [@runquist_pollinator-mediated_2012], or when conspecific pollen is lost to heterospecific stigmas [@mitchell_new_2009; @muchhala_interspecific_2012]. 
 In contrast, a positive relationship (when sharing pollinators increases heterospecific pollen loads but also conspecific pollen deposition) is what should be observed if facilitation is the dominant outcome. 
-For example, when the abundance of shared pollinators is positively influenced by floral resources and these positive effects ripple through the mutualistic network [@ref]. 
+For example, when the abundance of shared pollinators is positively influenced by floral resources and these positive effects ripple through the mutualistic network [@liao_presence_2011]. 
 
 The second line of evidence could be obtained by examining the difference between the amount conspecific pollen deposited in flower stigmas *with* and *without* animal-mediated pollination. 
-It has been shown that self-pollination is favourable to plant reproduction when competition for pollination is strong because it provides insurance against a poor pollination service [@ref]. 
+It has been shown that self-pollination is favourable to plant reproduction when competition for pollination is strong because it provides insurance against a poor pollination service [@kalisz_benefits_2003]. 
 If competition for pollination is sufficiently strong, then the amount of conspecific pollen deposited in flower stigmas when animal pollination is prevented could be higher than the amount deposited when floral visits are allowed. 
-In contrast, the opposite pattern may indicate that plants benefit from animal-mediated pollination---even a small difference between outcross and self-pollen may be important to plant fitness [@ref]. 
+In contrast, the opposite pattern may indicate that plants benefit from animal-mediated pollination---even a small difference between outcross and self-pollen may be important to plant fitness \R{ref2}[@ref]. 
 This is particularly so for non-self-fertile species or those in which there is a temporary separation in the maturation of the sexes (dichogamy). 
 
 ### Data collection
@@ -159,7 +159,7 @@ More details about the study sites and data collection and laboratory protocols 
 Similar to @tur_evaluating_2016, to evaluate the relationship between heterospecific and conspecific pollen, we used a generalised linear mixed model (GLMM) with a Poisson error distribution in each of our communities. 
 In these models, the number conspecific pollen grains per stigma was the response variable and the number of heterospecific grains the predictor. 
 The slope and intercept of this relationship were allowed to differ between plant species, which were modelled as a random effect. 
-Models were fitted using the function `lmer` from the R package `lme4 1.1-19` [@ref]
+Models were fitted using the function `lmer` from the R package `lme4 1.1-19` [@bates_fitting_2015]
 To compare the conspecific pollen deposited with and without animal-mediated pollination, we performed a Mann-Withney U test of the number of conspecific pollen grains per stigma between un-bagged and bagged flowers for each of the studied species in a community. 
 
 ## Effect of ecological factors in the pollination service 
