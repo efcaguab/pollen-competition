@@ -219,7 +219,13 @@ Again, here we used bootstrap resampling to estimate the uncertainity arround th
 
 ## Plant strategies
 
-## Data analysis
+Or last objective is to tease appart the strategies that plants might use to reduce competition and, importantly, how the community context influences these strategies. 
+If community context plays a relatively small role, we should expect plants to adopt similar strategies across different communities. 
+Alternatively, if community plays a large role, we should be able to observe differences in the strategy a plant species across communities. 
+We first use a principal component analysis (PCA) of the four ecological variables. 
+We define the species strategy in a community as its coordinates in PCA space. 
+For each species that was present in two or more communities, we then calculate (*i*) the median distance between the strategies that the species uses different communities, and (*ii*) the area of the convex hull defined by these points in the first two principal components. 
+We then compare these two metrics to those obtained with 99 Monte Carlo randomisations of plant strategies that replace the focal plant strategy by one of another species in its community.
 
 We explore the quantity of pollination service by examining two metrics. 
 First, we use the absolute amount of conspecific pollen (pollen counts per stigma) found on flowers open to animal pollination. 
