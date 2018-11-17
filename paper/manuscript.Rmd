@@ -123,109 +123,110 @@ On the contrary, if species role is flexible, we should expect plants to be able
 
 # Methods
 
-We collected data from eleven coflowering plant communities and their pollinators distributed across three locations, each in a distinct reagion of the Argentinian Pampas. 
-These locations are distributed across a gradient of precipitation with a humid temperate climate in the eastward Flooding Pampas and a climate drier as we move inland and westward towards the Pampean Grasslands.
+We collected data from eleven co-flowering plant communities and their pollinators distributed across three locations, each in a distinct region of the Argentinian Pampas. 
+These locations are distributed across a gradient of precipitation with a humid temperate climate in the eastward Flooding Pampas and drier as we move inland and westward towards the Pampean Grasslands.
 Annual mean temperatures range between 14.8 and 15.8 Celsius. 
 In each location, we sampled two restored and two agricultural fragments, except in the Flooding Pampas, where due to the lack of available sites, we were only able to sample one restored fragment.
 
 ## Competition vs. facilitation
 
 Our first objective is to identify whether, at the community level, the net outcome of animal-mediated pollination is facilitation or competition. 
-A first line of evidence can be found in the relationship between heterospecific and conspecific pollen deposited in plant stigmas [@tur_evaluating_2016]. 
-This is so, because heterospecific pollen can be seen as the cost that plants must pay for receiving conspecific pollen from shared pollinators. 
-A neggative relationship (when shared pollinators increasse heterospecific pollen loads and decreasse conspecific loads) may indicate that competition for pollination is strong. 
-This negative relationship could arrise, for example, when other, more dominant species, monopolizes a limited number of pollinators [@ref], when heterospecific pollen deposited in the stigma interfers with deposition of conspecific pollen [@ref], or when conspecific pollen is lost to heterospecific stigmas [@ref]. 
-In contrast, a positive relationship (when sharing pollinators increasses heterospecfic pollen loads but also conspecific pollen deposition) is what should be observed if facilitation is the dominant outcome. 
-For example when the abbundance of shared pollinators is positively influenced by floral resources and the positive effects ripple trough the mutualistic network [@ref]. 
+The first line of evidence can be found in the relationship between heterospecific and conspecific pollen deposited in plant stigmas [@tur_evaluating_2016]. 
+This is so because heterospecific pollen can be seen as the cost that plants must pay for receiving conspecific pollen from shared pollinators. 
+A negative relationship (when shared pollinators increase heterospecific pollen loads and decrease conspecific loads) may indicate that competition for pollination is strong. 
+This negative relationship could arise, for example, when other, more dominant species, monopolizes a limited number of pollinators [@ref], when heterospecific pollen deposited in the stigma interferes with deposition of conspecific pollen [@ref], or when conspecific pollen is lost to heterospecific stigmas [@ref]. 
+In contrast, a positive relationship (when sharing pollinators increases heterospecific pollen loads but also conspecific pollen deposition) is what should be observed if facilitation is the dominant outcome. 
+For example, when the abundance of shared pollinators is positively influenced by floral resources and these positive effects ripple through the mutualistic network [@ref]. 
 
-A second line of evidence could be obtained by examining the difference between the amount conspecific pollen deposited in flower stigmas *with* and *without* animal mediated pollination. 
-It has been shown that self-pollination is favorable to plant reproduction when competition for pollination is strong because it provides insurance against a poor pollination service [@ref]. 
-If competition for pollination is sufficiently strong, then the amount of conspecific pollen deposited in flower stigmas when animal pollination is prevented would be higher than the amount deposited when floral visits are allowed. 
-The opposite pattern, may indicate that plants benefit from animal mediated pollination, as even a small difference between outcross and self pollen may be important to plant fitness [@ref], particularly so for non-self-fertile species or those in which there is temporary separation in the maturation of the sexes (dichogamy). 
+The second line of evidence could be obtained by examining the difference between the amount conspecific pollen deposited in flower stigmas *with* and *without* animal-mediated pollination. 
+It has been shown that self-pollination is favourable to plant reproduction when competition for pollination is strong because it provides insurance against a poor pollination service [@ref]. 
+If competition for pollination is sufficiently strong, then the amount of conspecific pollen deposited in flower stigmas when animal pollination is prevented could be higher than the amount deposited when floral visits are allowed. 
+In contrast, the opposite pattern may indicate that plants benefit from animal-mediated pollination---even a small difference between outcross and self-pollen may be important to plant fitness [@ref]. 
+This is particularly so for non-self-fertile species or those in which there is a temporary separation in the maturation of the sexes (dichogamy). 
 
 ### Data collection
 
 In each of the studied communities, we quantified pollen deposition in a subset of plant species between December 2010 and February 2011. 
-This subset comprised between three and nine common entomophilus species that were flowering during the sampling period. 
-We chosed plant species such that they cover a wide range on a specialization-generalization gradient and a wide range of abundances. 
+This subset comprised of between three and nine common insect-pollinated (entomophilous) species that were flowering during the sampling period. 
+We choose plant species so that they cover a wide range on a specialization-generalization gradient as well as a wide range of abundances. 
 Briefly, in each of the selected plants, we removed all flowers except buds that were expected to go into inflorescence on the next day. 
 Approximately a quarter of these buds were bagged to prevent animal pollination. 
 Two days after inflorescence, we counted the pollen grains in the flowers' pistils, classified them between conspecific and heterospecific pollen, and calculated the number of pollen grains per stigma in each flower. 
-More details about the study sites and data colletion and laboratory protocols can be found in @marrero_agricultural_2016. 
+More details about the study sites and data collection and laboratory protocols can be found in @marrero_agricultural_2016. 
 
 ### Data analysis
 
 Similar to @tur_evaluating_2016, to evaluate the relationship between heterospecific and conspecific pollen, we used a generalised linear mixed model (GLMM) with a Poisson error distribution in each of our communities. 
 In these models, the number conspecific pollen grains per stigma was the response variable and the number of heterospecific grains the predictor. 
-The slope and intercept of this relationship was allowed to differ between plant species, which were included as a random effect. 
+The slope and intercept of this relationship were allowed to differ between plant species, which were modelled as a random effect. 
 Models were fitted using the function `lmer` from the R package `lme4 1.1-19` [@ref]
-To compare the conspecific pollen deposited with and without animal mediated pollination, we performed a Mann-Withney U test of the number of conspecific pollen grains per stigma in un-bagged and bagged flowers for each of the studied species in a community. 
+To compare the conspecific pollen deposited with and without animal-mediated pollination, we performed a Mann-Withney U test of the number of conspecific pollen grains per stigma between un-bagged and bagged flowers for each of the studied species in a community. 
 
 ## Effect of ecological factors in the pollination service 
 
-Our second objetive is to investigate the relative contribution that different factors that describe the plants' role and its ecological context have on the pollination service. 
+Our second objective is to investigate the relative contribution that different factors that describe the plants' role and its ecological context have on the pollination service. 
 Specifically, we investigate the effect of (*i*) the number of shared pollinators, (*ii*) the plants relative abundance, (*iii*) the mean visit effectiveness---a metric that combines the share of pollen that a plant species is able to place on each of their floral visitors and the number of visits it receives from them, and (*iv*) the plants functional originality.
-Here, we define visit efectiveness of the pollinator species *i* to plant species *j* as the proportion between the visits of *i* to *j* and all visits of *i*, multiplied by the proportion between the number of pollen grains of *j* attached to individuals of *i* and all pollen attached to individuals of *i*.
+Here, we define visit effectiveness of the pollinator species *i* to plant species *j* as the proportion between the visits of *i* to *j* and all visits of *i*, multiplied by the proportion between the number of pollen grains of *j* attached to individuals of *i* and all pollen attached to individuals of *i*.
 
 ### Data collection
 
-To obtain the number of shared pollinators for each species (*i*), we collected data to construct qualitative and quantitative polination networks. 
-Qualitative networks were constructed based on two hour observations of floral visits in each fragment. 
+To obtain the number of shared pollinators for each species (*i*), we collected data to construct qualitative and quantitative pollination networks. 
+Qualitative networks were constructed based on two-hour observations of floral visits in each fragment. 
 Quantitative networks were constructed using two 50 m randomly located transects in each transect. 
 We counted and collected all floral visitors found in a 2 m wide strip while walking at a pace of 10 m per minute [@marrero_effect_2014; @memmott_structure_1999]. 
 We visited the transects each month between November 2010 and March 2011. 
-To obtain plant abundance (*ii*), we counted all units of floral atraction found during an independent sampling of the same transects used to construct the quantitative visitation networks. 
+To obtain plant abundance (*ii*), we counted all units of floral attraction found during an independent sampling of the same transects used to construct the quantitative visitation networks. 
 To estimate visit effectiveness (*iii*), in addition to the visitation networks we need to construct pollen transfer networks. 
 To construct the transfer networks we examined the pollen loads present on the collected floral visitors [@marrero_exotic_2017]. 
 When the pollen count on an individual animal was estimated to be less than 2,000 grains, we identified every grain to the species level whenever possible and to pollen complexes when it was not. 
 When the pollen count was above 2,000 grains, we classified approx. 50% of pollen and total pollen counts were extrapolated [@bosch_plant-pollinator_2009]. 
 Finally, We also recorded morphological traits (*iv*) that relate to plant type (herb, shrub, climber), life cycle (annual, perennial), flower colouration, and whether the species is native in the study region. 
-Finally, 
 More details about the study sites, data collection, and laboratory protocols can be found in Marrero *et al.* (2014 and 2017).
 
 ### Data analysis
 
-We investigate the impact of the ecological factors on the pollination services usingf two metrics: the quantity and the quality of pollination. 
-Generally speaking, here we define the quatity of pollinaton as the amount of conspecific pollen and the quality of pollination as the amount of conspecific pollen *relative* to heterospecific pollen. 
-To construct these metrics we use two sets of linear mixed models (LMM) in which the response variables are the number of conspecifc and heterospecific pollen grains deposited per stigma in flowers open to animal mediated pollination. 
-In general, using LMMs in which pollen loads were log-transformed (Figure \@ref(S-fig:fig-deposition-gain-log-transformed-or-not)) offered better results than a GLMM with poisson (or quasipoisson) error structure. 
+We investigate the impact of the ecological factors on the pollination services using two metrics: the quantity and the quality of pollination. 
+Here we define the quality of pollination as the amount of conspecific pollen and the quality of pollination as the amount of conspecific pollen *relative* to heterospecific pollen. 
+To construct these metrics we use two sets of linear mixed models (LMM) in which the response variables are the number of conspecific and heterospecific pollen grains deposited per stigma in flowers open to animal-mediated pollination. 
+In general, using LMMs in which pollen loads were log-transformed (Figure \@ref(S-fig:fig-deposition-gain-log-transformed-or-not)) offered better results than a GLMM with Poisson (or quasipoisson) error structure. 
 Models were fitted using the R package `nlme 3.1-131` [@pinheiro_nlme_2018]. 
 
-Because the amount of deposited pollen can vary widely across species, and potentially also across communities, we evaluated two possible structures for the random effects: one that includes a random intercept for plant species, and one that also includes a random intercept for community. 
+Because the amount of deposited pollen can vary widely across species, and potentially also across communities, we evaluated two possible structures for the random effects: one that includes a random intercept for plant species, and one that treats species across different communities independently. 
 We selected the best random structure by comparing the median Akaike Information Criterion for small samples (AICc). 
 
-As predictors in the models we included the four ecological variables described above. 
-We calculated the number of shared pollinators for each plant species (*i*) by pooling data from the qualitative and quantitative pollination networks. 
+As predictors in the models, we included the four ecological variables described above. 
+Specifically, we calculated the number of shared pollinators for each plant species (*i*) by pooling data from the qualitative and quantitative pollination networks. 
 This variable is strongly correlated to the number of animal species a plant interacts with (the species degree). 
-To calculate the plants relative abbundance in their community (*ii*), we simply aggregated floral counts for each species. 
-We then calculated the mean visit effectiveness (*iii*); as explained before, we define thevisit effectiveness of pollinator species *i* for plant species *j* as \[e_{ij} = \frac{v_{ij}}{v_i} \frac{p_{ji}}{p_j}\] where *v~ij~* is the observed number of visits by *i* to *j*, *p~ji~* is the number of pollen grains from *j* attached to *i*, *v~i~* is the total number of visits performed by *i*, and *p~j~* is the total number of grains carried by *j*.
+To calculate the plants' relative abundance in their community (*ii*), we simply aggregated floral counts for each species. 
+We then calculated the mean visit effectiveness (*iii*). 
+As explained before, we define the effectiveness of a visit of pollinator species *i* to plant species *j* as \[e_{ij} = \frac{v_{ij}}{v_i} \frac{p_{ji}}{p_j}\] where *v~ij~* is the observed number of visits by *i* to *j*, *p~ji~* is the number of pollen grains from *j* attached to *i*, *v~i~* is the total number of visits performed by *i*, and *p~j~* is the total number of grains carried by *j*.
 Because both the number of interacting species (and therefore the number of shared pollinators), floral abundance, visitation, and pollen production roughly to followed a power-law distribution, we log-transformed these three predictors before including them in the model. 
 
 Finally, functional originality (*iv*) is defined as the distance of a species from the community trait average--the centroid of functional space of the community [@laliberte_distance-based_2010; @coux_linking_2016]. 
-As phenology has been shown to be a key mechanisms of niche differentiation among plants, we also included the plant abundance in each of the survey months (November to March) as an additional trait in our analysis. 
+As phenology has been shown to be a key mechanism of niche differentiation among plants, we also included the plant abundance in each of the survey months (November to March) as an additional trait in our analysis. 
 This approach allowed us to integrate the originality in phenological niche alongside the originality on other functional traits. 
-However, because floral counts across months are not independent, we asigned them a weight of 1/5 such that phenology has an equal weight as other traits. 
-All traits were scaled prior to calculating the centroid of the functional space and the species-specific functional coordinates were calculated using the R package `FD 1.0-12` [@laliberte_distance-based_2010; @laliberte_fd_2014]. 
-To facilitate comparison across variables, we rescaled all predictors to have a zero mean and unitary variance.
+However, because floral counts across months are not independent, we assigned them a weight of 1/5 such that phenology has an equal weight as other traits. 
+We scaled all traits prior to calculating the centroid of the functional space and calculated the species-specific functional coordinates using the R package `FD 1.0-12` [@laliberte_distance-based_2010; @laliberte_fd_2014]. 
+To facilitate comparison across the four explanatory variables in our models, we rescaled them all to have a zero mean and unitary variance.
 
-To estimate the coefficients and to perform model selection and the associated uncertainity, we used a combination of multi-model inference and bootstrap resampling with one hundred replicates. 
-First, we preformed model selection using the AICc and determined the likelihood of each candidate model (a particular combination of predicting variables) by calculating the median \(\Delta\)AICc within boostrap resamples. 
-As we wanted model coefficients from more likely candidante models to carry more weight in our results, we sampled the coefficients for our variables proportional to the likelyhood of its candidate model. 
-We "shrinked" the estimates coefficient of potentially unimportant variables by setting its estimate to 0 when the variable was not included in the model. 
+To estimate the coefficients and to perform model selection and the associated uncertainty, we used a combination of multi-model inference and bootstrap resampling with one hundred replicates. 
+First, we performed model selection using the AICc and determined the likelihood of each candidate model (a particular combination of predicting variables) by calculating the median \(\Delta\)AICc for each bootstrap sample. 
+As we wanted model coefficients from more likely candidate models to carry more weight in our results, we sampled the coefficients for our variables proportional to the likelihood of its candidate model. 
+We "shrank" the estimates coefficient of potentially unimportant variables by setting its estimate to 0 when the variable was not included in the model. 
 Finally, we used these distributions of the model coefficients to estimate their impact on the quantity and quality of pollination. 
 For the quantity of pollination, we simply calculated the mean value of a sample of the conspecific pollen loads. 
 For the quality of pollination, we calculated the mean difference between a sample of the distribution of the effects of conspecific pollen and a sample of those of heterospecific pollen gain.
-Again, here we used bootstrap resampling to estimate the uncertainity arround these means. 
+Again, here we used bootstrap resampling to estimate the uncertainty around these means. 
 
 ## Plant strategies
 
-Or last objective is to tease appart the strategies that plants might use to reduce competition and, importantly, how the community context influences these strategies. 
+Our last objective is to tease apart the strategies that plants might use to reduce competition and, importantly, how the community context influences these strategies. 
 If community context plays a relatively small role, we should expect plants to adopt similar strategies across different communities. 
-Alternatively, if community plays a large role, we should be able to observe differences in the strategy a plant species across communities. 
+Alternatively, if the community plays a large role, we should be able to observe differences in the strategy a plant species across communities. 
 We first use a principal component analysis (PCA) of the four ecological variables. 
 We define the species strategy in a community as its coordinates in PCA space. 
 For each species that was present in two or more communities, we then calculate (*i*) the median distance between the strategies that the species uses different communities, and (*ii*) the area of the convex hull defined by these points in the first two principal components. 
-We then compare these two metrics to those obtained with 99 Monte Carlo randomisations of plant strategies that replace the focal plant strategy by one of another species in its community.
+We then compare these two metrics to those obtained with 99 Monte Carlo randomizations of plant strategies that replace the focal plant strategy by one of another species in its community.
 
 # Results
 
