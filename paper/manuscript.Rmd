@@ -206,11 +206,11 @@ Finally, functional originality (*iv*) is defined as the distance of a species f
 As phenology has been shown to be a key mechanism of niche differentiation among plants, we also included the plant abundance in each of the survey months (November to March) as an additional trait in our analysis. 
 This approach allowed us to integrate the originality in phenological niche alongside the originality on other functional traits. 
 However, because floral counts across months are not independent, we assigned them a weight of 1/5 such that phenology has an equal weight as other traits. 
-We scaled all traits prior to calculating the centroid of the functional space and calculated the species-specific functional coordinates using the R package `FD 1.0-12` [@laliberte_distance-based_2010; @laliberte_fd_2014]. 
+We scaled all traits prior to calculating the centroid of the functional space and calculated the species-specific functional coordinates using the R package `FD 1.0-12` [@laliberte_fd_2014]. 
 To facilitate comparison across the four explanatory variables in our models, we rescaled them all to have a zero mean and unitary variance.
 
 To estimate the coefficients and to perform model selection and the associated uncertainty, we used a combination of multi-model inference and bootstrap resampling with one hundred replicates. 
-First, we performed model selection using the AICc and determined the likelihood of each candidate model (a particular combination of predicting variables) by calculating the median \(\Delta\)AICc for each bootstrap sample. 
+First, we performed model selection using the AICc and determined the likelihood of each candidate model (a particular combination of predicting variables) by calculating the median \(\Delta\)AICc (relative to the most likely model) for each bootstrap sample. 
 As we wanted model coefficients from more likely candidate models to carry more weight in our results, we sampled the coefficients for our variables proportional to the likelihood of its candidate model. 
 We "shrank" the estimates coefficient of potentially unimportant variables by setting its estimate to 0 when the variable was not included in the model. 
 Finally, we used these distributions of the model coefficients to estimate their impact on the quantity and quality of pollination. 
