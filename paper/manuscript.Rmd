@@ -71,14 +71,14 @@ Feel free to come back here after you've read the manuscript. Thanks!
 
 `r paste(drake::readd(abstract), collapse = "")`
 
-**Keywords:** X, Y, Z
+**Keywords:** X, Y, Z 
 
 \clearpage
 
 # Introduction
 
 Animal pollination systems play a disproportionally important role in food production and maintenance of global biodiversity [@bascompte_plant-animal_2007; @klein_importance_2007; @ollerton_how_2011]. 
-Alongside the direct mutualisms between plants and their pollinators, \R{ref-needed-possitive-loops} the support to biodiversity is substantially achieved as a result of inter-species facilitation—the positive feedback loops that exist between plants that share pollinators or pollinators that share plant. 
+Alongside the direct mutualisms between plants and their pollinators, \R{ref-needed-possitive-loops} the support to biodiversity can be achieved as a result of inter-species facilitation—the positive feedback loops that exist between plants that share pollinators or pollinators that share plant [@moeller_facilitative_2004; @ghazoul_floral_2006; @molina-montenegro_positive_2008]. 
 Facilitation is able to promote species coexistence because it offsets the effects of direct competition for resources [@stachowicz_mutualism_2001]. 
 Indeed, studies that are fundamental to our current knowledge of mutualism predict that the maximum number of coexisting species---an upper limit to biodiversity---is achieved when the number of mutualistic partners is maximised in a community [@bastolla_architecture_2009]. 
 And yet, not every pollinator species in natural communities interacts with every species of plant. 
@@ -98,7 +98,7 @@ Generally speaking, the higher the proportion of conspecific relative to heteros
 With few exceptions [@rathcke_interactions_1988; @lopezaraizamikel_impact_2007; @tur_evaluating_2016; @hegland_relative_2009; @aizen_reproductive_2010], most of what we know about the quantity and quality of pollination---and its relationship to competition vs. facilitation in pollination systems---is based mostly on studies of two plant species. 
 However, competitive interactions between species pairs do not occur in isolation. 
 
-Instead, co-flowering plants often occur in communities in which multiple intertwined factors operate simultaneously and lead to emergent phenomena not observed at smaller scales. 
+Instead, co-flowering plants often occur in communities in which multiple intertwined factors operate simultaneously and lead to emergent phenomena not observed at smaller scales [@flanagan_effects_2011]. 
 For instance, recent empirical evidence suggests that plants with flowering traits that are original relative to others in the community have generally fewer interaction partners [@coux_linking_2016]. 
 This evidence is aligned with the notion that a species that interacts with few species does so strongly with each of them; in contrast, a species that interacts with a large number of species does so comparatively weakly. 
 If evolutionary specialisation occurs by changing traits to focus on fewer but better partners [@caruso_competition_2000], we should expect a reduction of competition for pollination in species with original traits and an increase in species with a large number of interaction partners [@gibson_can_2012]. 
