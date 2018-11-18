@@ -124,7 +124,7 @@ On the contrary, if species role is flexible, we should expect plants to be able
 # Methods
 
 We collected data from eleven co-flowering plant communities and their pollinators distributed across three locations, each in a distinct region of the Argentinian Pampas. 
-These locations are distributed across a gradient of precipitation with a humid temperate climate in the eastward Flooding Pampas and drier as we move inland and westward towards the Pampean Grasslands.
+These locations are distributed across a precipitation gradient with a humid temperate climate in the eastward Flooding Pampas and becoming drier as one moves inland and westward towards the Pampean Grasslands.
 Annual mean temperatures range between 14.8 and 15.8 Celsius. 
 In each location, we sampled two restored and two agricultural fragments, except in the Flooding Pampas, where due to the lack of available sites, we were only able to sample one restored fragment.
 
@@ -148,10 +148,10 @@ This is particularly so for non-self-fertile species or those in which there is 
 
 In each of the studied communities, we quantified pollen deposition in a subset of plant species between December 2010 and February 2011. 
 This subset comprised of between three and nine common insect-pollinated (entomophilous) species that were flowering during the sampling period. 
-We choose plant species so that they cover a wide range on a specialization-generalization gradient as well as a wide range of abundances. 
-Briefly, in each of the selected plants, we removed all flowers except buds that were expected to go into inflorescence on the next day. 
+We choose plant species such that they cover a wide range on a specialization-generalization gradient as well as a wide range of abundances. 
+Briefly, in each of the selected plants, we removed all flowers leaving only buds that were expected to go into inflorescence on the next day. 
 Approximately a quarter of these buds were bagged to prevent animal pollination. 
-Two days after inflorescence, we counted the pollen grains in the flowers' pistils, classified them between conspecific and heterospecific pollen, and calculated the number of pollen grains per stigma in each flower. 
+Two days after inflorescence, we counted the pollen grains in the remaining flowers' pistils, classified them between conspecific and heterospecific pollen, and calculated the number of pollen grains per stigma in each flower. 
 More details about the study sites and data collection and laboratory protocols can be found in @marrero_agricultural_2016. 
 
 ### Data analysis
@@ -178,7 +178,7 @@ We visited the transects each month between November 2010 and March 2011.
 To obtain plant abundance (*ii*), we counted all units of floral attraction found during an independent sampling of the same transects used to construct the quantitative visitation networks. 
 To estimate visit effectiveness (*iii*), in addition to the visitation networks we need to construct pollen transfer networks. 
 To construct the transfer networks we examined the pollen loads present on the collected floral visitors [@marrero_exotic_2017]. 
-When the pollen count on an individual animal was estimated to be less than 2,000 grains, we identified every grain to the species level whenever possible and to pollen complexes when it was not. 
+When the pollen count on an individual animal was estimated to be less than 2,000 grains, we identified every grain to the species level whenever possible, and to pollen complexes when it was not. 
 When the pollen count was above 2,000 grains, we classified approx. 50% of pollen and total pollen counts were extrapolated [@bosch_plant-pollinator_2009]. 
 Finally, We also recorded morphological traits (*iv*) that relate to plant type (herb, shrub, climber), life cycle (annual, perennial), flower colouration, and whether the species is native in the study region. 
 More details about the study sites, data collection, and laboratory protocols can be found in Marrero *et al.* (2014 and 2017).
@@ -207,7 +207,7 @@ As phenology has been shown to be a key mechanism of niche differentiation among
 This approach allowed us to integrate the originality in phenological niche alongside the originality on other functional traits. 
 However, because floral counts across months are not independent, we assigned them a weight of 1/5 such that phenology has an equal weight as other traits. 
 We scaled all traits prior to calculating the centroid of the functional space and calculated the species-specific functional coordinates using the R package `FD 1.0-12` [@laliberte_fd_2014]. 
-To facilitate comparison across the four explanatory variables in our models, we rescaled them all to have a zero mean and unitary variance.
+Finally, to facilitate comparison across the four continuous explanatory variables in our models, we rescaled them all to have a zero mean and unitary variance.
 
 To estimate the coefficients and to perform model selection and the associated uncertainty, we used a combination of multi-model inference and bootstrap resampling with one hundred replicates. 
 First, we performed model selection using the AICc and determined the likelihood of each candidate model (a particular combination of predicting variables) by calculating the median \(\Delta\)AICc (relative to the most likely model) for each bootstrap sample. 
