@@ -157,6 +157,12 @@ pca_plan <- drake::drake_plan(
   permanova_site_distances = get_permanova(random_site_distances, "site_name")
 )
 
+facilitation_plan <- drake::drake_plan(
+  facilitation_models = model_facilitation(dep_frame), 
+  facilitation_random_effects = extract_random_effects(facilitation_models), 
+  fig_random_slopes = plot_random_slopes(facilitation_random_effects)
+)
+
 analyses_plan <- rbind(
   clean_data_plan, 
   traits_plan,
@@ -166,7 +172,8 @@ analyses_plan <- rbind(
   model_plans,
   aic_plan,
   basic_analyses_plan, 
-  pca_plan
+  pca_plan, 
+  facilitation_plan
 )
 
 # Paper -------------------------------------------------------------------
