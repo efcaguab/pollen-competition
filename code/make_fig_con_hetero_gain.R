@@ -114,6 +114,96 @@ get_pred_range <- function(tidied_fixed, x, var_trans = "log", scale = "global")
     range()
 }
 
+plot_bagged_vs_open_conspecific <- function(dep_frame){
+  require(ggplot2)
+  
+  axis_breaks <-  c(0, 10, 100, 1000, 10000)
+  linesize <- common_graphic_metrics()$size_errorbars
+  linecolor <- common_graphic_metrics()$color_errorbars
+  pal <- common_graphic_metrics()$pal_rb3
+  
+  con_df <- dep_frame %>% 
+    dplyr::filter(pollen_category == "conspecific") %>% 
+    tidyr::complete(site_name, plant_name, treatment) %>% 
+    dplyr::group_by(site_name, plant_name, treatment) %>%
+    dplyr::mutate(n_obs_treatment = n()) %>% 
+    dplyr::group_by(site_name, plant_name) %>%
+    dplyr::mutate(effect_category = wilcox_open_closed(pollen_density, treatment)) %>% 
+    dplyr::group_by(site_name, plant_name, treatment) %>% 
+    dplyr::summarise(mid = mean(pollen_density, na.rm = T),
+                     upper = mid + se(pollen_density), 
+                     lower = mid - se(pollen_density), 
+                     effect_category = effect_category[1]) %>%
+    dplyr::group_by() %>%
+    tidyr::gather(variable, value, mid:lower) %>% 
+    tidyr::unite(temp, treatment, variable, sep = "_") %>% 
+    tidyr::spread(temp, value) %>% 
+    dplyr::filter(!is.na(closed_mid), !is.na(open_mid)) 
+  
+  scatter_plot <- con_df %>%
+    ggplot(aes(x = closed_mid, y = open_mid)) +
+    geom_abline(slope = 1, intercept = 0, size = 0.25, linetype = 2) +
+    geom_smooth(method = "lm",  
+                size = 0.5, 
+                color = "black") +
+    geom_errorbar(aes(ymin = open_lower, ymax = open_upper),
+                  size = linesize,
+                  color = linecolor) +
+    geom_errorbarh(aes(xmin = closed_lower, xmax = closed_upper),
+                   size = linesize,
+                   color = linecolor) +
+    geom_point(aes(fill = effect_category), 
+               shape = 21, 
+               size = 1, 
+               colour = "grey30") +
+    geom_point(aes(x = 0, y = 0), alpha = 0) +
+    scale_x_continuous(trans = "log1p", breaks = axis_breaks, expand = c(0,0)) +
+    scale_y_continuous(trans = "log1p", breaks = axis_breaks, expand = c(0,0)) +
+    scale_fill_manual(values = pal, na.value = "white") +
+    pub_theme() +
+    theme(legend.position = "none") 
+          #axis.line = element_line(size = 0.25))
+  
+  bar_plot <- con_df %>%
+    dplyr::mutate(forcats::fct_relevel(effect_category, c("negative", "neutral", "positive")),
+      effect_category = forcats::fct_rev(effect_category), 
+      label_col = dplyr::if_else(effect_category == "neutral", "black", "white"), 
+      label = dplyr::case_when(
+        effect_category == "positive" ~ "+",
+        effect_category == "negative" ~ "-", 
+        TRUE ~ ""
+      ), 
+      fontface = dplyr::case_when(
+        label_col == "black" ~ "plain", 
+        TRUE ~ "bold"
+      )) %>% 
+    dplyr::mutate(label_height = 
+                    rank(dplyr::desc(as.numeric(effect_category)), 
+                         ties.method = "average"), 
+                  label_height = label_height / n()) %>%
+    plot_bar_proportion()
+  
+  list(scatter_plot, bar_plot)
+}
+
+wilcox_open_closed <- function(pollen_density, treatment){
+  l <- unique(treatment)
+  x <- pollen_density[treatment == l[2]]
+  y <- pollen_density[treatment == l[1]]
+  if (length(x) > 1 & length(y) > 1){
+    p <- dplyr::case_when(
+      wilcox.test(x, y, alternative = "greater")$p.value < 0.05 ~ "positive", 
+      wilcox.test(y, x, alternative = "greater")$p.value < 0.05 ~ "negative", 
+      TRUE ~ "neutral"
+    )
+  } else {
+    p <- "neutral"
+  }
+  p
+}
+
+se <- function(x) sqrt(var(x, na.rm = T)/length(x))
+
 make_fig_con_con <- function(model_formula_ranking, model_linear_fits_species){
   
   require(ggplot2)
