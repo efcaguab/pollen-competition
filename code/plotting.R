@@ -6,7 +6,12 @@ pub_theme <- function(){
           strip.text = element_text(hjust = 0),
           legend.title = element_text(hjust = 0.5), 
           legend.key.size = unit(3, "mm"), 
-          legend.margin = margin())
+          legend.margin = margin(), 
+          axis.ticks.x = element_line(colour = "grey30", size = 0.05),
+          axis.ticks.y = element_line(colour = "grey30", size = 0.25),
+          # panel.border = element_blank(),
+          # axis.line.y = element_line(),
+          panel.grid = element_blank())
 }
 
 remove_legend <- function(x){
@@ -14,6 +19,18 @@ remove_legend <- function(x){
   x + theme(legend.position = 'none')
 }
 
+common_graphic_metrics <- function(){
+  list(
+    pal_rb3 = RColorBrewer::brewer.pal(5, "RdBu") %>%
+      extract(c(1,3,5)),
+    size_errorbars =  0.25,
+    color_errorbars = "grey30"
+  )
+}
+
+cgm <- function(){
+  common_graphic_metrics()
+}
 
 #' Change frame contents so that it's ready for rendering
 #'
