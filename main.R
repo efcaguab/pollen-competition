@@ -193,6 +193,7 @@ figure_plan <- drake::drake_plan(
   fig_coefficient_averages = make_fig_coefficient_avarages(coefficient_averages, variable_importance), 
   fig_average_qual_quant = make_fig_average_quant_qual(coefficient_averages), 
   fig_correlation = make_fig_correlation(rep_1), 
+  fig_var_importance = plot_variable_importance(variable_importance), 
   fig_coef_avg = plot_coefficient_averages(coefficient_averages, variable_importance)
 )
 

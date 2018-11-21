@@ -290,15 +290,33 @@ Degree, had a negative, albeit relatively small, effect on both the quantity and
 The species relative abundance has a large positive effect to the quality of pollination accompanied by a relatively smaller negative impact on the quantity. 
 Finally, the plant's functional originality and its share in the pollen pool have a moderate positive impact on its quantity but also a negative impact on the quality. 
 
-```{r fig-average-qual-quant, fig.height=2, fig.width=3.25, fig.cap="Mean relative effect of ecological variables on the quantity and quality of pollination. Results are shown for values calculated with both the absolute gain in pollen density (abs.) and the gain relative to selfing (rel.). Bootstrap confidence intervals of the mean (at the 0.05 level) are shown in square brackets. "}
-drake::readd(fig_average_qual_quant)
+```{r fig-average-qual-quant, fig.height=1.5, fig.width=6.5, fig.cap="Mean relative effect of ecological variables on the quantity and quality of pollination. Results are shown for values calculated with both the absolute gain in pollen density (abs.) and the gain relative to selfing (rel.). Bootstrap confidence intervals of the mean (at the 0.05 level) are shown in square brackets. "}
+# height1 <- 1.25
+# height2 <- 1.65
+# pdf(width = 3.25 * 2, height = 1.5)
+# fig_coef_avg <- plot_coefficient_averages(coefficient_averages, variable_importance)
+width_imp <- 1
+mult <- 1.5
+# fig_var_importance <- plot_variable_importance(variable_importance)
+drake::loadd(fig_var_importance)
+drake::loadd(fig_coef_avg)
+cowplot::plot_grid(
+  fig_var_importance[[1]],
+  fig_var_importance[[2]],
+  fig_coef_avg[[1]],
+  fig_coef_avg[[2]],
+  ncol = 4, 
+  rel_widths = c(width_imp,width_imp, width_imp*mult, width_imp * mult * 1.45), 
+  align = "h"
+  )
+# dev.off()
 ```
 
 # Discussion 
 
 * We did find a trade-off between the number of partners a species interacts with and the mutualistic service. Interacting with more species alone is often accompanied by a decreases in both the quantity and quality of pollination. 
 * However, the effect and importance of this trade-off is comparatively small when considering other factors that describe the species niche and its ecological settings. 
-* We found that animal pollination only brings a small amount of extra conspecific pollen (compared selfing) if any. This relatively small difference is probably very important because, first, some plants simply aren't self-fertile, even if their pollen gets deposited on the stigma. Second, in some flowers there is temporary separation in the maturation of the sexes (dichogamy) that favours cross-pollination as, evolutionary, it has been shown to be a better strategy than cloning. 
+* We found that animal pollination only brings a small amount of extra conspecific pollen (compared selfing) if any. This relatively small difference is probably very important because, first, some plants simply aren't self-fertile, even if their own pollen gets deposited on the stigma. Second, in some flowers there is temporary separation in the maturation of the sexes (dichogamy) that favours cross-pollination as, evolutionary, it has been shown to be a better strategy than cloning. 
 * Overall it seems like density seems to be a dominant force behind pollen transfer. If you have many individuals of your species, you get fewer visits (dilution of the pollinators flying around), which is reflected in a smaller amount of deposited pollen. We show that abundant plants also tend to comprise a greater component of the pollen source pool and so the end result is that get more conspecific pollen per visit than heterospecific pollen. 
 * Our result of the comparatively weak effect of the mutualistic trade-off is important because it is fundamentally related to the way we understand and mathematically represent mutualistic systems. 
 Some of the most widely used theoretical models of pollination account for the negative effects of mutualism by adjusting the mutualistic benefit of an interaction so that it can be negatively affected by the number of mutualistic partners---the species degree. 
