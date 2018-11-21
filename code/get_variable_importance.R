@@ -36,13 +36,13 @@ plot_variable_importance <- function(variable_importance) {
   require(ggplot2)
   
   plot_importance <- function(x){
-    middle_space <- -0.35
+    middle_space <- -0.65
     x %>% ggplot(aes(x = term, y = value)) +
       # geom_segment(aes(xend = term, yend = 0)) +
       # geom_point(shape = 21, fill = cgm()$pal_rb3[2], size = 6) +
       
-      geom_col(fill = "grey70") +
-      geom_hline(yintercept = 0, linetype = 1, size = 0.25, colour = "grey30") +
+      geom_col(fill = "grey80") +
+      # geom_hline(yintercept = 0, linetype = 2, size = 0.25, colour = "grey30") +
       
       geom_point(aes(x = 1, y = middle_space), alpha = 0) +
       geom_text(aes(label = paste0(" ", format(round(value, digits = 2)), " "), 
@@ -52,13 +52,13 @@ plot_variable_importance <- function(variable_importance) {
                 # fontface = "bold",
                 size = 2.5, 
                 colour = "black") +
+      scale_x_discrete(expand = c(0,0)) +
       coord_flip() +
       pub_theme() +
       theme(axis.title.y = element_blank(), 
             legend.position = "none", 
             panel.border = element_blank(),
             axis.ticks = element_blank(),
-            axis.line.y = element_line(color = "red"), 
             axis.title.x = element_blank(), 
             axis.text = element_blank())
   }
@@ -80,7 +80,7 @@ plot_variable_importance <- function(variable_importance) {
                 function(x,y) {x + theme(plot.margin = y)})
   
   plots[[1]] <- plots[[1]] + labs(title = "(a) relative variable importance")
-  plots[[2]] <- plots[[2]] + scale_x_discrete(position = "top")
+  plots[[2]] <- plots[[2]] + scale_x_discrete(position = "top", expand = c(0,0))
   plots[[1]] <- plots[[1]] + scale_y_reverse(expand = c(0,0))
   plots[[2]] <- plots[[2]] + scale_y_continuous(expand = c(0,0))
   plots[[2]] <- plots[[2]] + theme(plot.subtitle = element_text(hjust = 1))
@@ -88,11 +88,12 @@ plot_variable_importance <- function(variable_importance) {
   
   # pdf(width = 3.25 , height = 1.25)
   # cowplot::plot_grid(
-    plotlist = plots, 
-    ncol = 2, 
-    align = "h"
-  )
+  #   plotlist = plots, 
+  #   ncol = 2, 
+  #   align = "h"
+  # )
   # dev.off()
+  plots
 }
 
 
