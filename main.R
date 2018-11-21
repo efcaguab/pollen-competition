@@ -160,7 +160,7 @@ pca_plan <- drake::drake_plan(
 facilitation_plan <- drake::drake_plan(
   facilitation_models = model_facilitation(dep_frame), 
   facilitation_random_effects = extract_random_effects(facilitation_models), 
-  fig_random_slopes = plot_random_slopes(facilitation_random_effects)
+  fig_random_slopes = plot_random_slopes(facilitation_random_effects, dep_frame)
 )
 
 analyses_plan <- rbind(

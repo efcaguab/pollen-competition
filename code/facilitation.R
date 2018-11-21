@@ -32,11 +32,18 @@ get_error_random_effects <- function(x) {
 }
 
 # plot the slopes of the random effects models
-plot_random_slopes <- function(facilitation_random_effects){
+plot_random_slopes <- function(facilitation_random_effects, dep_frame){
   pal <- common_graphic_metrics()$pal_rb3
+  
+  n_obs <- dep_frame %>%
+    dplyr::filter(treatment == "open") %>%
+    dplyr::group_by(plant_name) %>%
+    dplyr::summarise(n = dplyr::n_distinct(plant))
   
   require(ggplot2)
   facilitation_plot_df <- facilitation_random_effects %>%
+    dplyr::full_join(n_obs) %>%
+    dplyr::mutate(plant_name = paste0(plant_name, " (", n, ")")) %>%
     dplyr::mutate(plant_name = forcats::fct_reorder(plant_name, heterospecific), 
                   upper = heterospecific + error, 
                   lower = heterospecific - error, 
