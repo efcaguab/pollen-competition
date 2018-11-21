@@ -258,19 +258,61 @@ When looking at the relative amount of conspecific pollen gained, we observe tha
 We also observed a positive relationship between the gain in heterospecific pollen and both the relative and absolute gain of conspecific pollen (Figure \@ref(fig:fig-trade-off-predictions)). 
 The slope of the relationship is such that across plant species in their communities heterospecific pollen is gained slower than the absolute amount of conspecific pollen but faster than the amount of conspecific pollen relative to the potential selfing. 
 
-```{r fig-trade-off-predictions, fig.height= 3, fig.width = 6.5, fig.cap = "The interplay between the gain on heterospecific and conspecific pollen. Each dot indicates the predicted median gains for a species in its community (which correspons to the selected random effects in all of our models). The horizontal and vertical bars under each dot indicate the 0.05 bootstrap confidence intervals of the estimates. The solid lines indicate the overall relationship in each of the bootstrap replicates and were calculated by sampling the predictions from 100 conspecific/heterospecific model pairs and estimated the relationship by fitting an standardised major axis (SMA) to each pair (we used the R package smatr 3.4-3, Warton et al. 2012). The dashed line indicates the isoline at which heterospecific pollen is gained at the same rate than conspecific pollen."}
-# pdf(width = 6.5, height = 3.25)
-  cowplot::plot_grid(
-    drake::readd(fig_con_con),
-    drake::readd(fig_con_hetero_gain))
-  # dev.off()
+```{r fig-trade-off-predictions, fig.height= 4, fig.width = 6.5, fig.cap = "The interplay between the gain on heterospecific and conspecific pollen. Each dot indicates the predicted median gains for a species in its community (which correspons to the selected random effects in all of our models). The horizontal and vertical bars under each dot indicate the 0.05 bootstrap confidence intervals of the estimates. The solid lines indicate the overall relationship in each of the bootstrap replicates and were calculated by sampling the predictions from 100 conspecific/heterospecific model pairs and estimated the relationship by fitting an standardised major axis (SMA) to each pair (we used the R package smatr 3.4-3, Warton et al. 2012). The dashed line indicates the isoline at which heterospecific pollen is gained at the same rate than conspecific pollen."}
+
+# fig_random_slopes <- plot_random_slopes(facilitation_random_effects, dep_frame)
+# fig_con_con <- plot_bagged_vs_open_conspecific(dep_frame)
+# pdf(width = 6.5, height = 4)
+drake::loadd(fig_random_slopes)
+drake::loadd(fig_con_con)
+drake::loadd(fig_hetero_con)
+# fig_hetero_con <- make_fig_con_hetero_empirical(dep_frame)
+rw <- c(9,1.2, 6.5,1.2)
+
+left <- cowplot::plot_grid(
+  fig_con_con[[1]],
+  fig_con_con[[2]],
+  fig_hetero_con, 
+  ncol = 2, 
+  rel_widths = rw[c(3,4)], 
+  align = "h"
+)
+
+right <- cowplot::plot_grid(
+  fig_random_slopes[[1]],
+  fig_random_slopes[[2]], 
+  ncol = 2, 
+  align = "h", 
+  rel_widths = rw[1:2]
+)
+
+slopes_plot <- cowplot::plot_grid(
+  right,
+  left,
+  ncol = 2,
+  rel_widths = c(sum(rw[1:2]), sum(rw[3:4]))
+)
+slopes_plot
+# dev.off()
+
+# pdf(width = 3.25, height = 3)
+# plot_bagged_vs_open_conspecific(dep_frame)
+# dev.off()
+
+  # cowplot::plot_grid(
+  #   slopes_plot, 
+  #   drake::readd(fig_con_con),
+  #   drake::readd(fig_con_hetero_gain), 
+  #   ncol = 1, 
+  #   rel_heights = c(1/2, 1/2, 1/4))
+
 ```
 
 In addition, AIC scores of the candidate model sets indicated that the species' share in the pollen pool, the functional originality, and the species relative abundance were the most important variables determining the gain in both conspecific and heterospecific pollen (Figure \@ref(fig:fig-model-results-global)). 
 Note that relative abundance plays a more important role determining the gain in heterospecific pollen than the gain in both the absolute and relative amounts of conspecific pollen.
 Surprisingly, the species degree was comparatively less important for predicting pollen gain as it was only included in models with relatively large AICc values (Table \@ref(S-tab:table-aic-fixed-models)).
 
-```{r fig-model-results-global, fig.height = 2, fig.cap = "Distribution of effect estimates of models of conspecific (absolute and relative to the potential selfing) and heterospecific pollen density gain. Results are only shown for models that included explanatory variable. The median relative variable impotance of the four variables for each model set is shown next to each distribution. Variable importance was calculated as the sum of the median Akaike weights (Table \\ref{S-tab:table-aic-fixed-models}) of each candidate model set that includes the variable."}
+```{r fig-model-results-global, eval = F, fig.height = 2, fig.cap = "Distribution of effect estimates of models of conspecific (absolute and relative to the potential selfing) and heterospecific pollen density gain. Results are only shown for models that included explanatory variable. The median relative variable impotance of the four variables for each model set is shown next to each distribution. Variable importance was calculated as the sum of the median Akaike weights (Table \\ref{S-tab:table-aic-fixed-models}) of each candidate model set that includes the variable."}
 drake::readd(fig_coefficient_averages)
 ```
 
