@@ -285,23 +285,48 @@ make_fig_con_con <- function(model_formula_ranking, model_linear_fits_species){
           axis.title = element_text(size = 8, colour = "grey20"))
 }
 
-
-
-
 make_fig_con_hetero_empirical <- function(dep_frame){
-  View(dep_frame)
+  axis_breaks <-  cgm()$log1p_axis_breaks_10
   
   dep_frame %>%
     dplyr::select(site_name, plant, plant_name, treatment, pollen_category, pollen_density) %>%
-    dplyr::mutate(pollen_density = log(pollen_density + 1)) %>% 
+    # dplyr::mutate(pollen_density = log(pollen_density + 1)) %>% 
     tidyr::spread(pollen_category, pollen_density) %>% 
     dplyr::group_by(site_name, plant_name) %>% 
     dplyr::mutate(heterospecific = fill_heterospecific_closed(heterospecific, treatment)) %>% 
     dplyr::group_by(site_name, plant_name, treatment) %>%
-    dplyr::summarise_at(c("conspecific", "heterospecific"), median) %>%
-    ggplot(aes(x = heterospecific, y = conspecific, color = treatment)) +
-    geom_point() +
-    geom_smooth(method = "lm")
+    dplyr::summarise_at(c("conspecific", "heterospecific"), 
+                        dplyr::funs(mid, upper, lower)) %>% 
+    dplyr::filter(treatment == "open") %>%
+    ggplot(aes(x = heterospecific_mid, y = conspecific_mid)) +
+    geom_point(aes(x = 0, y = 0), alpha = 0) + 
+    geom_abline(slope = 1, intercept = 0, size = 0.25, linetype = 2) +
+    # geom_smooth(method = "lm", size = 0.5, colour = "black", fill = "grey90", alpha = 1) +
+    geom_errorbar(aes(ymin = conspecific_lower, ymax = conspecific_upper), size = cgm()$size_errorbars, color = cgm()$color_errorbars) +
+    geom_errorbarh(aes(xmin = heterospecific_lower, xmax = heterospecific_upper), size = cgm()$size_errorbars, color = cgm()$color_errorbars) +
+    geom_point(size = cgm()$point_size, 
+               shape = 21, 
+               color = cgm()$color_errorbars, 
+               fill = cgm()$pal_rb3[2]) +
+    scale_x_continuous(trans = "log1p", breaks = axis_breaks) +
+    scale_y_continuous(trans = "log1p", breaks = axis_breaks) +
+    labs(x = "heterospecific", 
+         y = "conspecific", 
+         title = "(c) hetero- vs. conspecific pollen", 
+         subtitle = "mean pollen grains per stigma") +
+    pub_theme()
+}
+
+mid <- function(x){
+  mean(x, na.rm  = TRUE)
+}
+
+upper <- function(x){
+  mid(x) + se(x)
+}
+
+lower <- function(x){
+  mid(x) - se(x)
 }
 
 fill_heterospecific_closed <- function(heterospecific, treatment){

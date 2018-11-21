@@ -181,6 +181,7 @@ analyses_plan <- rbind(
 figure_plan <- drake::drake_plan(
   fig_model_results_global = make_fig_model_results_global(tidied_fixed), 
   fig_con_hetero_gain = make_fig_con_hetero_gain(tidied_fixed, model_linear_fits, model_formula_ranking, model_linear_fits_species), 
+  fig_hetero_con = make_fig_con_hetero_empirical(dep_frame),
   fig_con_con = plot_bagged_vs_open_conspecific(dep_frame),
   fig_proportion_vs_variables = make_fig_proportion_vs_variables(trade_off_predictions),
   fig_pollen_density = make_fig_pollen_density(dep_frame), 
