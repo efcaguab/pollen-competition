@@ -15,7 +15,9 @@ pub_theme <- function(){
           axis.ticks.y = element_line(colour = "grey30", size = 0.25),
           # panel.border = element_blank(),
           # axis.line.y = element_line(),
-          panel.grid = element_blank())
+          panel.grid = element_blank(), 
+          panel.background = element_blank(), 
+          plot.background = element_blank())
 }
 
 remove_legend <- function(x){
