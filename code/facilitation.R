@@ -116,7 +116,9 @@ plot_random_slopes <- function(facilitation_random_effects, dep_frame){
                color = cgm()$color_errorbars) +
     scale_fill_manual(values = pal) +
     # scale_color_viridis_d(option = "D", end = 0.8) + 
-    labs(y = bquote("slope" ~ beta[i])) + 
+    labs(y = bquote("slope" ~ beta[i]), 
+         title = "(a) relationship hetero-conspecific pollen", 
+         subtitle = "slope of species-community random effects") + 
     coord_flip() +
     pub_theme() +
     theme(axis.title.y = element_blank(), 

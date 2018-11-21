@@ -160,6 +160,10 @@ plot_bagged_vs_open_conspecific <- function(dep_frame){
     scale_x_continuous(trans = "log1p", breaks = axis_breaks, expand = c(0,0)) +
     scale_y_continuous(trans = "log1p", breaks = axis_breaks, expand = c(0,0)) +
     scale_fill_manual(values = pal, na.value = "white") +
+    labs(x = "closed to animal pollination", 
+         y = "open to animal pollination", 
+         title = "(b) self- vs. animal-mediated pollination", 
+         subtitle = "mean pollen grains per stigma") +
     pub_theme() +
     theme(legend.position = "none") 
           #axis.line = element_line(size = 0.25))
