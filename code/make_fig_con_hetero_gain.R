@@ -143,9 +143,9 @@ plot_bagged_vs_open_conspecific <- function(dep_frame){
   scatter_plot <- con_df %>%
     ggplot(aes(x = closed_mid, y = open_mid)) +
     geom_abline(slope = 1, intercept = 0, size = 0.25, linetype = 2) +
-    geom_smooth(method = "lm",  
-                size = 0.5, 
-                color = "black") +
+    # geom_smooth(method = "lm",  
+    #             size = 0.5, 
+    #             color = "black") +
     geom_errorbar(aes(ymin = open_lower, ymax = open_upper),
                   size = linesize,
                   color = linecolor) +
