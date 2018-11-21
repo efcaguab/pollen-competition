@@ -49,7 +49,7 @@ plot_variable_importance <- function(variable_importance) {
                     hjust = text_align), 
                 size = 2) +
       geom_text(aes(label = term, y = middle_space), 
-                # fontface = "bold", 
+                # fontface = "bold",
                 size = 2.5, 
                 colour = "black") +
       coord_flip() +
@@ -67,8 +67,8 @@ plot_variable_importance <- function(variable_importance) {
     tidyr::gather("key", "value", `conspecific (absolute)`:heterospecific) %>%
     dplyr::filter(key %in% c("conspecific (absolute)", "heterospecific")) %>%
     dplyr::mutate(term = forcats::fct_reorder(term, value), 
-                  text_align = dplyr::if_else(key == "heterospecific", 
-                                              "right", "left")) %>%
+                  text_align = dplyr::if_else(value < 0.35, 
+                                              "outward", "inward")) %>%
     split(.$key) %>%
     purrr::map(plot_importance)
   
