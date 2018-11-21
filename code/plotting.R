@@ -58,9 +58,9 @@ humanize <- function(x, sites = NA, random_effects = NA, formula_long = FALSE, t
         grepl('org', term) ~ 'func. originality',
         grepl('abn', term) ~ 'abundance',
         grepl('rab', term) ~ 'abundance',
-        grepl('deg', term) ~ 'degree',
-        grepl('k', term) ~ 'degree',
-        grepl('poc', term) ~ 'share pollen',
+        grepl('deg', term) ~ 'shared pol.',
+        grepl('k', term) ~ 'shared pol.',
+        grepl('poc', term) ~ 'visit efficacy',
         TRUE ~ term
       ))
   }
