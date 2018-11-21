@@ -87,7 +87,7 @@ plot_variable_importance <- function(variable_importance) {
   plots[[1]] <- plots[[1]] + theme(plot.title = element_text(margin = margin(b = 5.5, unit = "pt")))
   
   # pdf(width = 3.25 , height = 1.25)
-  cowplot::plot_grid(
+  # cowplot::plot_grid(
     plotlist = plots, 
     ncol = 2, 
     align = "h"
