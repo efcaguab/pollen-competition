@@ -30,7 +30,9 @@ common_graphic_metrics <- function(){
     pal_rb3 = RColorBrewer::brewer.pal(5, "RdBu") %>%
       extract(c(1,3,5)),
     size_errorbars =  0.25,
-    color_errorbars = "grey30"
+    color_errorbars = "grey30", 
+    log1p_axis_breaks_10 = c(0, 10, 100, 1000, 10000), 
+    point_size = 1
   )
 }
 

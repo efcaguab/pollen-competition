@@ -117,7 +117,7 @@ get_pred_range <- function(tidied_fixed, x, var_trans = "log", scale = "global")
 plot_bagged_vs_open_conspecific <- function(dep_frame){
   require(ggplot2)
   
-  axis_breaks <-  c(0, 10, 100, 1000, 10000)
+  axis_breaks <-  cgm()$log1p_axis_breaks_10
   linesize <- common_graphic_metrics()$size_errorbars
   linecolor <- common_graphic_metrics()$color_errorbars
   pal <- common_graphic_metrics()$pal_rb3
