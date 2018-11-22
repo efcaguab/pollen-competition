@@ -297,6 +297,12 @@ plot_pca <- function(pcas, chosen_threshold){
     # dplyr::group_by() %>%
     dplyr::filter(n_sites > 1)
   
+  variances_data <- this_pca$eig %>%
+    as.data.frame() %>% 
+    tibble::rownames_to_column() %>%
+    dplyr::mutate(rowname = stringr::str_remove(rowname, "comp ")) %>%
+    dplyr::rename(dim = rowname) 
+  
   hulls <- this_pca_data %>%
     dplyr::group_by(plant_name) %>%
     dplyr::select_at(dplyr::vars(dplyr::contains("Dim"))) %>% 
@@ -330,8 +336,8 @@ plot_pca <- function(pcas, chosen_threshold){
     scale_fill_viridis_d() +
     # theme(legend.position = "none") +
     # coord_equal() +
-    labs(x = "first component", 
-         y = "second component", 
+    labs(x = paste0("1st component (", round(variances_data$`percentage of variance`[1]), "%)"), 
+         y = paste0("1nd component (", round(variances_data$`percentage of variance`[2]), "%)"), 
          title = "(b) plant strategies in PCA space", 
          subtitle = "convex hulls of species in two communities or more")
   
