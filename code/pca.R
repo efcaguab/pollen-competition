@@ -105,8 +105,8 @@ distance_between_points <- function(this_pca, col){
     split(.[col]) %>%
     purrr::map(dplyr::select_if, is.numeric) %>%
     purrr::map(dist) %>%
-    purrr::map_dfr(~ data.frame(median_dist = median(.), 
-                                mean_dist = mean(.)), .id = col)
+    purrr::map_dfr(~ data.frame(median_dist = median(., na.rm = TRUE), 
+                                mean_dist = mean(., na.rm = TRUE)), .id = col)
 }
 
 # get a data frame with the principal compoment coordinates of a FactoMiner PCA object
