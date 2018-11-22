@@ -59,11 +59,14 @@ humanize <- function(x, sites = NA, random_effects = NA, formula_long = FALSE, t
     x <- x %>%
       dplyr::mutate(term = dplyr::case_when(
         grepl('org', term) ~ 'func. originality',
+        grepl('originality', term) ~ 'func. originality',
         grepl('abn', term) ~ 'abundance',
+        grepl('abu', term) ~ 'abundance',
         grepl('rab', term) ~ 'abundance',
-        grepl('deg', term) ~ 'shared pol.',
-        grepl('k', term) ~ 'shared pol.',
+        grepl('deg', term) ~ '# shared pol.',
+        grepl('k', term) ~ '# shared pol.',
         grepl('poc', term) ~ 'visit efficacy',
+        grepl('pollen_cont', term) ~ 'visit efficacy',
         TRUE ~ term
       ))
   }
