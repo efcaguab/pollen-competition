@@ -268,7 +268,7 @@ plot_permanova_dist <- function(permanova_plant_distances, permanova_site_distan
           axis.ticks.y = element_blank(), 
           panel.border = element_blank(), 
           axis.line.x = element_line(size = 0.25)) +
-    labs(x = "p value", 
+    labs(x = expression(italic(p) - plain("value")), 
          title = "(c) flexibility of plant's strategies", 
          subtitle = "median distance between plant strategies vs. randomisations") +
     coord_cartesian(clip = "off") +
