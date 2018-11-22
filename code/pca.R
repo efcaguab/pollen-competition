@@ -210,31 +210,74 @@ get_permanova <- function(x, col){
 }
 
 plot_permanova_dist <- function(permanova_plant_distances, permanova_site_distances){
-  permanova_plant_distances %>%
+  require(ggplot2)
+  
+  perma_data <- permanova_plant_distances %>%
     dplyr::filter(na_threshold %in% c(0,1)) %>%
     dplyr::group_by(plant_name) %>%
     dplyr::mutate(mean_value = mean(value, na.rm = T)) %>%
     dplyr::group_by() %>% 
-    dplyr::filter(!is.na(mean_value)) %>%
-    dplyr::mutate(plant_name = forcats::fct_reorder(plant_name, mean_value)) %>% 
-    ggplot(aes(y = value, x = plant_name, colour = na_threshold)) +
-    geom_point(aes(shape = value < 0.05 | value > 0.95), position = position_dodge(width = 1)) +
-    facet_grid(~ metric) +
-    coord_flip() +
-    pub_theme()
+    dplyr::filter(!is.na(mean_value), 
+                  metric == "mean_dist", 
+                  na_threshold == 0, 
+                  !is.na(value)) %>% 
+    # dplyr::mutate(plant_name = paste0("  ", plant_name, "  ")) %>%
+    dplyr::mutate(plant_name = shorten_sp_name(plant_name)) %>%
+    dplyr::mutate(plant_name = forcats::fct_reorder(plant_name, value, .desc = F), 
+                  value_adj = p.adjust(value, method = "BH"))
   
-  permanova_site_distances %>%
-    dplyr::filter(na_threshold  %in% c(0,1)) %>%
-    dplyr::group_by(site_name) %>%
-    dplyr::mutate(mean_value = mean(value, na.rm = T)) %>%
-    dplyr::group_by() %>% 
-    dplyr::filter(!is.na(mean_value)) %>%
-    dplyr::mutate(site_name = forcats::fct_reorder(site_name, mean_value)) %>% 
-    ggplot(aes(y = value, x = site_name, colour = na_threshold)) +
-    geom_point(aes(shape = value < 0.05 | value > 0.95), position = position_dodge(width = 1)) +
-    facet_grid(~ metric) +
-    coord_flip() +
-    pub_theme()
+  nudge <- 0
+  perma_data %>% 
+    dplyr::mutate(x_label = dplyr::if_else(value < 0.05, 
+                                           max(value) + nudge, min(value) - nudge)) %>%
+    ggplot(aes(x = value, y = plant_name)) +
+    geom_tile(aes(width = Inf, height = 1, 
+                  alpha = as.numeric(plant_name) %% 2 == 0), 
+              fill = cgm()$fill_rows) +
+    geom_vline(xintercept = 0.05, linetype = 2, 
+               size = cgm()$size_references, 
+               color = cgm()$color_references) +
+    geom_segment(aes(xend = 0.05, yend = plant_name), size = 0.25, 
+                 color = "grey50") +
+    geom_point(shape = 21, 
+               size = 1, 
+               fill = cgm()$pal_rb3[2], 
+               color = cgm()$color_errorbar) +
+    geom_text(aes(label = plant_name, x = x_label), 
+              fontface = "italic", 
+              size = 2, 
+              hjust = "inward") +
+    geom_point(aes(y = 13.5, x = 0.05), alpha = 0) +
+    annotate(geom = "text", x = 0.05, y = 13, 
+             label = expression(" " %->% plain("more flexible") %->% ""), 
+             parse = F, 
+             hjust = "left", 
+             size = 2.25, 
+             colour = "grey20") +
+    geom_point(aes(y = -0.5, x = 0.05), alpha = 0) +
+    annotate(geom = "text", x = 0.05, y = 0, 
+             label = expression(" " %<-% plain("significantly smaller") %<-% ""), 
+             parse = F, 
+             hjust = "right", 
+             size = 2.25, 
+             colour = "grey20") +
+    pub_theme() +
+    theme(legend.position = "none", 
+          axis.title.y = element_blank(), 
+          axis.text.y = element_blank(), 
+          axis.ticks.y = element_blank(), 
+          panel.border = element_blank(), 
+          axis.line.x = element_line(size = 0.25)) +
+    labs(x = "p value", 
+         title = "(c) flexibility of plant's strategies", 
+         subtitle = "mean distance between plant strategies vs. randomisations") +
+    coord_cartesian(clip = "off") +
+    scale_x_continuous(expand = c(0,0.1), 
+                       breaks = c(0.01, 0.05, 0.5, 0.99), 
+                       trans = "log") +
+    scale_y_discrete(expand = c(0,0)) +
+    scale_alpha_manual(values = c(0,1))
+
 }
 
 plot_pca <- function(pcas, chosen_threshold){
