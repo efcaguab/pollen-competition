@@ -32,7 +32,10 @@ common_graphic_metrics <- function(){
     size_errorbars =  0.25,
     color_errorbars = "grey30", 
     log1p_axis_breaks_10 = c(0, 10, 100, 1000, 10000), 
-    point_size = 1
+    point_size = 1, 
+    color_references = "grey50", 
+    size_references = 0.25, 
+    fill_rows = "grey90"
   )
 }
 
