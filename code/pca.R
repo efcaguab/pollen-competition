@@ -283,8 +283,7 @@ plot_permanova_dist <- function(permanova_plant_distances, permanova_site_distan
 plot_pca <- function(pcas, chosen_threshold){
   
   require(ggplot2)
-  require(ggfortify)
-  
+
   this_pca <- pcas %>%
     purrr::keep(~ .$call$X$pca_type[1] == "across") %>%
     purrr::keep(~ .$call$X$threshold[1] == chosen_threshold) %>%
