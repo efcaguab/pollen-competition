@@ -218,7 +218,7 @@ plot_permanova_dist <- function(permanova_plant_distances, permanova_site_distan
     dplyr::mutate(mean_value = mean(value, na.rm = T)) %>%
     dplyr::group_by() %>% 
     dplyr::filter(!is.na(mean_value), 
-                  metric == "mean_dist", 
+                  metric == "median_dist", 
                   na_threshold == 0, 
                   !is.na(value)) %>% 
     # dplyr::mutate(plant_name = paste0("  ", plant_name, "  ")) %>%
@@ -270,7 +270,7 @@ plot_permanova_dist <- function(permanova_plant_distances, permanova_site_distan
           axis.line.x = element_line(size = 0.25)) +
     labs(x = "p value", 
          title = "(c) flexibility of plant's strategies", 
-         subtitle = "mean distance between plant strategies vs. randomisations") +
+         subtitle = "median distance between plant strategies vs. randomisations") +
     coord_cartesian(clip = "off") +
     scale_x_continuous(expand = c(0,0.1), 
                        breaks = c(0.01, 0.05, 0.5, 0.99), 
