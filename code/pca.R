@@ -237,49 +237,59 @@ plot_permanova_dist <- function(permanova_plant_distances, permanova_site_distan
     pub_theme()
 }
 
-
-
-make_fig_pca <- function(pc_analysis){
+plot_pca <- function(pcas, chosen_threshold){
   
   require(ggplot2)
   require(ggfortify)
   
-  pca_data <- fortify(pc_analysis$acp, data = pc_analysis$data)
-  pca_loadings <- pc_analysis$acp$rotation %>%
-    tibble::as_tibble(rownames = "var_name")
+  this_pca <- pcas %>%
+    purrr::keep(~ .$call$X$pca_type[1] == "across") %>%
+    purrr::keep(~ .$call$X$threshold[1] == chosen_threshold) %>%
+    extract2(1)
   
-  hulls <- pca_data %>%
+  this_pca_data <- this_pca$call$X %>%
+    dplyr::bind_cols(tibble::as_data_frame(this_pca$ind$coord)) %>%
     dplyr::group_by(plant_name) %>%
-    dplyr::select_at(dplyr::vars(dplyr::contains("PC"))) %>%
-    dplyr::do(.[grDevices::chull(.[, -1L]), ])
+    dplyr::mutate(n_sites = dplyr::n_distinct(site_name)) %>%
+    # dplyr::group_by() %>%
+    dplyr::filter(n_sites > 1)
   
-  pca_data %>%
-    dplyr::group_by() %>%
-    ggplot(aes(x = PC1, y = PC2)) +
-    # geom_point() +
-    geom_polygon(data = hulls, 
-                 aes(group = plant_name), 
-                 colour = "black",
-                 linetype = 2, 
-                 size = 0.25, 
-                 alpha = 0.1) +
-    geom_segment(data = pca_loadings, 
-                 aes(xend = 0, yend = 0), 
-                 color = "red")
+  hulls <- this_pca_data %>%
+    dplyr::group_by(plant_name) %>%
+    dplyr::select_at(dplyr::vars(dplyr::contains("Dim"))) %>% 
+    dplyr::do(.[grDevices::chull(.[, -1L]), ]) %>%
+    dplyr::filter(plant_name %in% unique(this_pca_data$plant_name))
   
-  panal %>%
-    autoplot(data = data, 
-             colour = "plant_name", 
-             # label.label = "plant_name",
-             label = F,
-             # label.repel= T,
-             loadings = T, 
-             loadings.label = T, 
-             frame = T, 
-             scale = F, 
-             frame.type = "convex") +
+  this_pca_data %>%
+    ggplot(aes(x = Dim.1, y = Dim.2)) +
+    geom_hline(yintercept = 0, 
+               linetype = 2, 
+               colour = cgm()$color_references,
+               size = cgm()$size_references) +
+    geom_vline(xintercept = 0, 
+               linetype = 2, 
+               colour = cgm()$color_references,
+               size = cgm()$size_references) +
+    geom_polygon(data = hulls,
+                 aes(group = plant_name),
+                 colour = cgm()$color_errorbars,
+                 fill = "grey70",
+                 size = cgm()$size_errorbars,
+                 alpha = 0.25) +
+    geom_point(data = hulls,
+      # aes( fill = plant_name), 
+               shape = 21, 
+               fill = cgm()$pal_rb3[2],
+               colour = cgm()$color_errorbars, 
+               size = 1) +
     pub_theme() +
-    theme(legend.position = "none")
+    scale_color_viridis_d() +
+    scale_fill_viridis_d() +
+    # theme(legend.position = "none") +
+    # coord_equal() +
+    labs(x = "first component", 
+         y = "second component", 
+         title = "(b) plant strategies in PCA space", 
+         subtitle = "convex hulls of species in two communities or more")
+  
 }
-
-
