@@ -9,7 +9,7 @@ get_pca_data <- function(plant_rel_abu, pollen_contribution, degree, org_frame, 
     dplyr::filter(scale == "community",
                   var_trans == "log") %>% 
     dplyr::select(site_name, plant_name, abu, pollen_cont, kn, originality)  %>% 
-    dplyr::mutate_at(dplyr::vars(abu, pollen_cont, kn), function(x) log(x))
+    dplyr::mutate_at(dplyr::vars(abu, kn), function(x) log(x))
   
   # scale variables across the whole study
   # this gives indication of the flexibility of a plant
