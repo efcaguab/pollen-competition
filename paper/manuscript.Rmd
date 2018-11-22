@@ -299,13 +299,29 @@ slopes_plot
 # plot_bagged_vs_open_conspecific(dep_frame)
 # dev.off()
 
-  # cowplot::plot_grid(
+## Plant strategies
   #   slopes_plot, 
   #   drake::readd(fig_con_con),
   #   drake::readd(fig_con_hetero_gain), 
   #   ncol = 1, 
   #   rel_heights = c(1/2, 1/2, 1/4))
 
+```{r, fig.width=3.25, fig.height=5.1}
+# fig_pca <- plot_pca(pcas, chosen_threshold = 0)
+# fig_distances <- plot_permanova_dist(permanova_plant_distances, permanova_site_distances)
+height1 <- 2.7
+height2 <- 2.4
+# pdf(width = 3.25, height = sum(height1, height2))
+drake::loadd(fig_pca)
+drake::loadd(fig_distances)
+cowplot::plot_grid(
+  fig_pca, 
+  fig_distances,
+  ncol = 1, 
+  rel_heights = c(height1, height2), 
+  align = "v"
+)
+# dev.off()
 ```
 
 In addition, AIC scores of the candidate model sets indicated that the species' share in the pollen pool, the functional originality, and the species relative abundance were the most important variables determining the gain in both conspecific and heterospecific pollen (Figure \@ref(fig:fig-model-results-global)). 

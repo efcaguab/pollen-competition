@@ -154,7 +154,10 @@ pca_plan <- drake::drake_plan(
   random_plant_distances = all_randomisations_plant_name(pcas, 99), 
   random_site_distances = all_randomisations_site_name(pcas, 99), 
   permanova_plant_distances = get_permanova(random_plant_distances, "plant_name"),
-  permanova_site_distances = get_permanova(random_site_distances, "site_name")
+  permanova_site_distances = get_permanova(random_site_distances, "site_name"),
+  fig_pca = plot_pca(pcas, chosen_threshold = 0), 
+  fig_distances = plot_permanova_dist(permanova_plant_distances, permanova_site_distances)
+  
 )
 
 facilitation_plan <- drake::drake_plan(
