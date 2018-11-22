@@ -300,25 +300,29 @@ slopes_plot
 # dev.off()
 
 ## Plant strategies
-  #   slopes_plot, 
-  #   drake::readd(fig_con_con),
-  #   drake::readd(fig_con_hetero_gain), 
-  #   ncol = 1, 
-  #   rel_heights = c(1/2, 1/2, 1/4))
 
-```{r, fig.width=3.25, fig.height=5.1}
-# fig_pca <- plot_pca(pcas, chosen_threshold = 0)
-# fig_distances <- plot_permanova_dist(permanova_plant_distances, permanova_site_distances)
+```{r strategy-fig-height}
+height0 <- 1.55
 height1 <- 2.7
 height2 <- 2.4
-# pdf(width = 3.25, height = sum(height1, height2))
+strategy_fig_height <- sum(height0, height1, height2)
+```
+
+
+```{r, fig.width=3.25, fig.height=strategy_fig_height, fig.cap="PCA results."}
+# fig_pca <- plot_pca(pcas, chosen_threshold = 0)
+# fig_distances <- plot_permanova_dist(permanova_plant_distances, permanova_site_distances)
+# fig_pca_contrib <- plot_pca_variances_and_contributions(pcas, chosen_threshold = 0)
+# pdf(width = 3.25, height = strategy_fig_height)
+drake::loadd(fig_pca_contrib)
 drake::loadd(fig_pca)
 drake::loadd(fig_distances)
 cowplot::plot_grid(
+  fig_pca_contrib,
   fig_pca, 
   fig_distances,
   ncol = 1, 
-  rel_heights = c(height1, height2), 
+  rel_heights = c(height0, height1, height2), 
   align = "v"
 )
 # dev.off()
