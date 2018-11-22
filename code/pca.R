@@ -336,3 +336,72 @@ plot_pca <- function(pcas, chosen_threshold){
          subtitle = "convex hulls of species in two communities or more")
   
 }
+
+plot_pca_variances_and_contributions <- function(pcas, chosen_threshold){
+  require(ggplot2)
+
+  this_pca <- pcas %>%
+    purrr::keep(~ .$call$X$pca_type[1] == "across") %>%
+    purrr::keep(~ .$call$X$threshold[1] == chosen_threshold) %>%
+    extract2(1)
+  
+  variances_data <- this_pca$eig %>%
+    as.data.frame() %>% 
+    tibble::rownames_to_column() %>%
+    dplyr::mutate(rowname = stringr::str_remove(rowname, "comp ")) %>%
+    dplyr::rename(dim = rowname) %>%
+    dplyr::mutate_if(is.numeric, function(x) x/100) %>%
+    dplyr::mutate(group = "components cumulative percentage of variance")
+  
+  contributions_data <- this_pca$var$contrib %>%
+    as.data.frame() %>% 
+    tibble::rownames_to_column() %>%
+    tidyr::gather(key = "dim", "contribution", dplyr::contains("Dim")) %>%
+    dplyr::mutate(dim = stringr::str_remove(dim, "Dim."), 
+                  contribution = contribution/100) %>%
+    dplyr::rename(term = rowname)
+  
+  contributions_data %>%
+    humanize() %>% 
+    dplyr::mutate(term = forcats::fct_relevel(term, "visit efficacy", "abundance", "func. originality")) %>%
+    ggplot(aes(x = as.numeric(dim), y = contribution)) +
+    geom_col(aes(fill = term), alpha = 0.75, 
+             position = position_stack(reverse = TRUE)) +
+    geom_line(data = variances_data, 
+              aes(y = `cumulative percentage of variance`, 
+                  linetype = group), 
+              size = 0.5, 
+              colour = cgm()$color_errorbars) +
+    geom_point(data = variances_data,
+               aes(y = `cumulative percentage of variance`, 
+                   shape = group), 
+               size = 1, 
+               # shape = 21, 
+               fill = cgm()$pal_rb3[2], 
+               colour = cgm()$color_errorbars) +
+    scale_x_continuous(breaks =1:4, trans = "reverse", labels = scales::ordinal(1:4)) +
+    scale_y_continuous(labels = scales::percent, expand = c(0,0)) +
+    scale_fill_brewer(palette = "Greys", direction = -1) +
+    scale_shape_manual(values = 21) +
+    scale_linetype_manual(values = 1) +
+    guides(fill = guide_legend(order = 2, title = ""), 
+           shape = guide_legend(order = 1, title = ""), 
+           linetype = guide_legend(order = 1, title = "")) +
+    pub_theme() +
+    coord_flip(clip = "off") +
+    labs(x = "component", 
+         title = "(a) component's variance and variable contributions", 
+         subtitle = "principal component analysis of ecological variables") +
+    theme(panel.border = element_blank(), 
+          axis.line.x = element_line(size = 0.25), 
+          legend.position = "top", 
+          axis.ticks.y = element_blank(), 
+          legend.box = "vertical", 
+          legend.spacing = unit(1, "pt"), 
+          plot.margin = margin(t = 5.5, r = 8, b = 5.5, l = 5.5, unit = "pt"), 
+          legend.text = element_text(margin = margin(r = 0, l = -1, unit = "pt")), 
+          legend.box.just = "right", 
+          legend.margin = margin(),
+          legend.box.margin = margin(b = -10))
+  
+}
