@@ -119,7 +119,7 @@ plot_bagged_vs_open_conspecific <- function(dep_frame){
   
   axis_breaks <-  cgm()$log1p_axis_breaks_10
   linesize <- common_graphic_metrics()$size_errorbars
-  linecolor <- common_graphic_metrics()$color_errorbars
+  linecolor <- cgm()$color_errorbars_light
   pal <- common_graphic_metrics()$pal_rb3
   
   con_df <- dep_frame %>% 
@@ -306,8 +306,11 @@ make_fig_con_hetero_empirical <- function(dep_frame){
     geom_point(aes(x = 0, y = 0), alpha = 0) + 
     geom_abline(slope = 1, intercept = 0, size = 0.25, linetype = 2) +
     # geom_smooth(method = "lm", size = 0.5, colour = "black", fill = "grey90", alpha = 1) +
-    geom_errorbar(aes(ymin = conspecific_lower, ymax = conspecific_upper), size = cgm()$size_errorbars, color = cgm()$color_errorbars) +
-    geom_errorbarh(aes(xmin = heterospecific_lower, xmax = heterospecific_upper), size = cgm()$size_errorbars, color = cgm()$color_errorbars) +
+    geom_errorbar(aes(ymin = conspecific_lower, ymax = conspecific_upper), 
+                  size = cgm()$size_errorbars, 
+                  color = cgm()$color_errorbars_light) +
+    geom_errorbarh(aes(xmin = heterospecific_lower, xmax = heterospecific_upper), 
+                   size = cgm()$size_errorbars, color = cgm()$color_errorbars_light) +
     geom_point(size = cgm()$point_size, 
                shape = 21, 
                color = cgm()$color_errorbars, 
