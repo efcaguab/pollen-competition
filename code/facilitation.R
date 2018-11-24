@@ -103,26 +103,28 @@ plot_random_slopes <- function(facilitation_random_effects, dep_frame){
                                            min(lower) - nudge_lower, 
                                            max(upper) + nudge_upper)) %>%
     ggplot() +
+    #this linerange is only to start with a discrete scale
     geom_linerange(aes(x = plant_name, 
                        group = art_site, 
                        ymin = lower, ymax = upper), 
                    position = position_dodge(width = 0.5), 
                    size = cgm()$size_errorbars, 
-                   color = cgm()$color_errorbars, 
+                   # color = color_errorbars_light,
                    alpha = 0) + 
-    geom_tile(data = shades, aes(x = x, alpha = alpha,y = 0),
-              width = 1, height = Inf, fill = "grey90") +
+    geom_tile(data = shades, 
+              aes(x = x, alpha = alpha == 0,y = 0),
+              width = 1, height = Inf, fill = cgm()$fill_rows) +
     geom_hline(aes(yintercept = 0), 
                linetype = 2, 
                size = 0.25, 
-               colour = "black") +
+               colour = cgm()$color_reference) +
     geom_linerange(aes(x = plant_name, 
                        group = art_site, 
                        y = heterospecific, 
                        ymin = lower, ymax = upper), 
                    position = position_dodge(width = 0.75), 
                    size = cgm()$size_errorbars, 
-                   color = cgm()$color_errorbars) + 
+                   color = cgm()$color_errorbars_light) +
     geom_point(aes(x = plant_name, y = heterospecific, group = art_site, 
                    fill = effect_category), size = 1, 
                position = position_dodge(0.75), 
