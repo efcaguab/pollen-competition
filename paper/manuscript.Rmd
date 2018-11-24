@@ -291,14 +291,15 @@ right <- cowplot::plot_grid(
   rel_widths = rw[1:2]
 )
 
-slopes_plot <- cowplot::plot_grid(
+cowplot::plot_grid(
   right,
   left,
   ncol = 2,
   rel_widths = c(sum(rw[1:2]), sum(rw[3:4]))
 )
-slopes_plot
+
 # dev.off()
+```
 
 # pdf(width = 3.25, height = 3)
 # plot_bagged_vs_open_conspecific(dep_frame)
