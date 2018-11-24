@@ -27,10 +27,10 @@ remove_legend <- function(x){
 
 common_graphic_metrics <- function(){
   list(
-    pal_rb3 = RColorBrewer::brewer.pal(5, "RdBu") %>%
-      extract(c(1,3,5)),
+    pal_rb3 = RColorBrewer::brewer.pal(4, "Greys")[c(3,1,2)],
     size_errorbars =  0.25,
     color_errorbars = "grey30", 
+    color_errorbars_light = "grey70", 
     log1p_axis_breaks_10 = c(0, 10, 100, 1000, 10000), 
     point_size = 1, 
     color_references = "grey50", 
