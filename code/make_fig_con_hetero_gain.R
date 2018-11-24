@@ -103,6 +103,40 @@ make_fig_con_hetero_gain <- function(tidied_fixed, model_linear_fits, model_form
   # dev.off()
 }
 
+
+# tinkering species level figures
+figures_per_species <- function(){
+  points_sp_summarised %>% 
+    dplyr::group_by(plant_name) %>% 
+    dplyr::mutate(n = dplyr::n_distinct(site_name)) %>%
+    dplyr::filter(n >= 3) %>%
+    ggplot(aes(x = heterospecific_median, 
+               y = conspecific_median, 
+               color = plant_name, 
+               linetype = rel, 
+               shape = rel)) +
+    geom_smooth(method = "lm", se = F) +
+    geom_point()
+  
+  points_sp_summarised_con %>%
+    dplyr::group_by(plant_name) %>% 
+    dplyr::filter(!is.na(heterospecific_median)) %>%
+    dplyr::mutate(n = dplyr::n_distinct(site_name)) %>%
+    dplyr::filter(n >= 3) %>%
+    dplyr::select(site_name, plant_name, heterospecific_median, conspecific_ctr_median, conspecific_abs_median) %>% 
+    tidyr::gather("type", "density", heterospecific_median, conspecific_ctr_median, conspecific_abs_median) %>%
+    ggplot(aes(x = interaction(site_name), 
+               y = density, 
+               fill = type, 
+               colour = type)) +
+    geom_point(stat = "identity", position = "dodge") +
+    geom_line(aes(group = type)) +
+    coord_flip() +
+    facet_wrap(~ plant_name, scales = "free_y")
+  
+}
+
+
 # function just to get the range of preditions
 get_pred_range <- function(tidied_fixed, x, var_trans = "log", scale = "global"){
   tidied_fixed %>% 
