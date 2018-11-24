@@ -262,12 +262,17 @@ The slope of the relationship is such that across plant species in their communi
 
 # fig_random_slopes <- plot_random_slopes(facilitation_random_effects, dep_frame)
 # fig_con_con <- plot_bagged_vs_open_conspecific(dep_frame)
+# fig_hetero_con <- make_fig_con_hetero_empirical(dep_frame)
 # pdf(width = 6.5, height = 4)
 drake::loadd(fig_random_slopes)
 drake::loadd(fig_con_con)
 drake::loadd(fig_hetero_con)
-# fig_hetero_con <- make_fig_con_hetero_empirical(dep_frame)
-rw <- c(9,1.2, 6.5,1.2)
+width_left <- 6.5*3/5
+bar_plot_width <- 0.325
+rw <- c(width_left - bar_plot_width,
+        bar_plot_width, 
+        6.5 - width_left - bar_plot_width,
+        bar_plot_width)
 
 left <- cowplot::plot_grid(
   fig_con_con[[1]],
