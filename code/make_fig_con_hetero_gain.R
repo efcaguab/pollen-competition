@@ -37,10 +37,10 @@ make_fig_con_hetero_gain <- function(tidied_fixed, model_linear_fits, model_form
   minor_breaks <- log(minor_labs + 1)
 
   points_sp_summarised %<>%
-    dplyr::filter(rel != "conspecific")
+    dplyr::filter(rel == "conspecific_abs")
   points_sp %<>%
-    dplyr::filter(con_type != "conspecific")
-
+    dplyr::filter(con_type == "conspecific_abs")
+  
   p <- dplyr::data_frame(x = get_pred_range(tidied_fixed, "heterospecific"),
                          y = get_pred_range(tidied_fixed, "conspecific")) %>%
     ggplot() +
@@ -61,13 +61,13 @@ make_fig_con_hetero_gain <- function(tidied_fixed, model_linear_fits, model_form
     geom_point(data = points_sp_summarised,
                aes(x = heterospecific_median,
                    y = conspecific_median,
-                   colour = rel),
+                   colour = interaction(rel, site_name)),
                alpha = 1, show.legend = T, shape = 21, size = 1) +
     geom_smooth(data = points_sp,
                 aes(x = heterospecific_abs,
                     y = conspecific,
-                    colour = con_type, 
-                    group = interaction(con_type, model)),
+                    colour = interaction(con_type, site_name), 
+                    group = interaction(con_type, model, site_name)),
                 size = 0.1, 
                 linetype = 1,
                 alpha = 0.25,
@@ -76,7 +76,7 @@ make_fig_con_hetero_gain <- function(tidied_fixed, model_linear_fits, model_form
     geom_smooth(data = points_sp,
                 aes(x = heterospecific_abs,
                     y = conspecific,
-                    colour = con_type),
+                    colour = interaction(con_type, site_name)),
                 size = 0.5, 
                 linetype = 1,
                 alpha = 1,
@@ -84,8 +84,8 @@ make_fig_con_hetero_gain <- function(tidied_fixed, model_linear_fits, model_form
                 method = "lm", se = F) +
     scale_x_continuous(breaks = major_breaks, labels = major_labs, minor_breaks = minor_breaks) +
     scale_y_continuous(breaks = major_breaks, labels = major_labs, minor_breaks = minor_breaks) +
-    scale_colour_manual(values = rev(RColorBrewer::brewer.pal(4, "OrRd")),
-                        labels = c("relative", "absolute", "control")) +
+        # scale_colour_manual(values = rev(RColorBrewer::brewer.pal(4, "OrRd")),
+                        # labels = c("relative", "absolute", "control")) +
     pub_theme() +
     labs(x = "heterospecific pollen density",
          y = "conspecific pollen density") +
