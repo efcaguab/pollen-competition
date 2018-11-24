@@ -89,12 +89,19 @@ plot_random_slopes <- function(facilitation_random_effects, dep_frame){
     sign(y)*10^C*(10^(abs(y))-1)
   }
   symlog_trans <- scales::trans_new("symlog", symlog, symloginv)
+  
+  nudge_lower <- 2
+  nudge_upper <- 10
   slope_plot <- facilitation_plot_df %>%
     dplyr::group_by(plant_name) %>%
     dplyr::arrange(plant_name, heterospecific) %>%
     dplyr::mutate(n_sites = dplyr::n_distinct(site_name), 
-                  art_site = 1:n_sites[1]) %>%
+                  art_site = 1:n_sites[1], 
+                  hete_mean = median(heterospecific)) %>%
     dplyr::group_by() %>%
+    dplyr::mutate(y_label = dplyr::if_else(hete_mean > 0, 
+                                           min(lower) - nudge_lower, 
+                                           max(upper) + nudge_upper)) %>%
     ggplot() +
     geom_linerange(aes(x = plant_name, 
                        group = art_site, 
@@ -121,21 +128,27 @@ plot_random_slopes <- function(facilitation_random_effects, dep_frame){
                position = position_dodge(0.75), 
                shape = 21, 
                color = cgm()$color_errorbars) +
+    geom_text(aes(label = plant_name, x = plant_name, 
+                  y = y_label), 
+              stat = "unique", 
+              size = 2, 
+              fontface = "italic", 
+              hjust = "inward") +
     scale_fill_manual(values = pal) +
     scale_y_continuous(trans = symlog_trans, 
                        breaks = c(-1, -0.25, 0, 0.25, 1, 3, 10), 
                        expand = c(0,0.05)) +
+    scale_x_discrete(expand = c(0,0)) +
     labs(y = bquote("slope" ~ beta[i]), 
          title = "(a) relationship hetero-conspecific pollen", 
          subtitle = "slope of species-community random effects") + 
     coord_flip() +
     pub_theme() +
     theme(axis.title.y = element_blank(), 
-          axis.text.y = element_text(face = "italic"), 
-          # panel.grid.major.y = element_line(size = 0.15, 
+          axis.text.y =element_blank(), 
                                             # colour = "grey80"), 
           legend.position = "none", 
-          axis.ticks.y = element_blank()) 
+          axis.ticks.y = element_blank(), 
           # axis.line.x = element_line(size = 0.25), )
   slope_plot
   list(slope_plot = slope_plot, 
