@@ -230,6 +230,8 @@ We then compare these two metrics to those obtained with 99 Monte Carlo randomiz
 
 # Results
 
+## Competition vs. facilitation
+
 ```{r differences-in-self-pollination}
 drake::loadd(significant_gain_global, significant_gain_site)
 
@@ -296,8 +298,8 @@ cowplot::plot_grid(
 # dev.off()
 ```
 
-# pdf(width = 3.25, height = 3)
-# plot_bagged_vs_open_conspecific(dep_frame)
+## Effect of ecological factors in the pollination service 
+
 ```{r fig-average-qual-quant, fig.height=1.29, fig.width=6.5, fig.cap="Mean relative effect of ecological variables on the quantity and quality of pollination. Results are shown for values calculated with both the absolute gain in pollen density (abs.) and the gain relative to selfing (rel.). Bootstrap confidence intervals of the mean (at the 0.05 level) are shown in square brackets."}
 # height1 <- 1.25
 # height2 <- 1.65
