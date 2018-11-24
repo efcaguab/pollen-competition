@@ -253,11 +253,6 @@ prop_consistency <- sum(consistency$consistent)/
   nrow(consistency)
 ```
 
-We found that, for both the model sets of conspecific and heterospecific pollen, the random structure that was best supported by the data was the one that included plant species nested in community as the grouping factors (Table \@ref(S-tab:table-aic-random-models)). 
-When looking at the relative amount of conspecific pollen gained, we observe that only `r round(prop_sig_global*100)`% of species in their communities observed a significant increase in conspecific pollen density when comparing open and bagged flowers (Table \@ref(S-tab:table-species-gain-global)).
-We also observed a positive relationship between the gain in heterospecific pollen and both the relative and absolute gain of conspecific pollen (Figure \@ref(fig:fig-trade-off-predictions)). 
-The slope of the relationship is such that across plant species in their communities heterospecific pollen is gained slower than the absolute amount of conspecific pollen but faster than the amount of conspecific pollen relative to the potential selfing. 
-
 ```{r fig-trade-off-predictions, fig.height= 4, fig.width = 6.5, fig.cap = "The interplay between the gain on heterospecific and conspecific pollen. Each dot indicates the predicted median gains for a species in its community (which correspons to the selected random effects in all of our models). The horizontal and vertical bars under each dot indicate the 0.05 bootstrap confidence intervals of the estimates. The solid lines indicate the overall relationship in each of the bootstrap replicates and were calculated by sampling the predictions from 100 conspecific/heterospecific model pairs and estimated the relationship by fitting an standardised major axis (SMA) to each pair (we used the R package smatr 3.4-3, Warton et al. 2012). The dashed line indicates the isoline at which heterospecific pollen is gained at the same rate than conspecific pollen."}
 
 # fig_random_slopes <- plot_random_slopes(facilitation_random_effects, dep_frame)
@@ -303,7 +298,29 @@ cowplot::plot_grid(
 
 # pdf(width = 3.25, height = 3)
 # plot_bagged_vs_open_conspecific(dep_frame)
+```{r fig-average-qual-quant, fig.height=1.29, fig.width=6.5, fig.cap="Mean relative effect of ecological variables on the quantity and quality of pollination. Results are shown for values calculated with both the absolute gain in pollen density (abs.) and the gain relative to selfing (rel.). Bootstrap confidence intervals of the mean (at the 0.05 level) are shown in square brackets."}
+# height1 <- 1.25
+# height2 <- 1.65
+# pdf(width = 3.25 * 2, height = 1.29)
+# fig_coef_avg <- plot_coefficient_averages(coefficient_averages, variable_importance)
+width_imp <- 6.5/3
+mult <- 2.125
+width_coef_1 <- (6.5 - width_imp) / (1 + mult)
+width_coef_2 <- 5.6 - width_imp - width_coef_1
+# fig_var_importance <- plot_variable_importance(variable_importance)
+drake::loadd(fig_var_importance)
+drake::loadd(fig_coef_avg)
+cowplot::plot_grid(
+  fig_var_importance[[1]],
+  fig_var_importance[[2]],
+  fig_coef_avg[[1]],
+  fig_coef_avg[[2]],
+  ncol = 4, 
+  rel_widths = c(width_imp/2, width_imp/2,width_coef_1, width_coef_2), 
+  align = "h"
+  )
 # dev.off()
+```
 
 ## Plant strategies
 
@@ -334,6 +351,14 @@ cowplot::plot_grid(
 # dev.off()
 ```
 
+
+We found that, for both the model sets of conspecific and heterospecific pollen, the random structure that was best supported by the data was the one that included plant species nested in community as the grouping factors (Table \@ref(S-tab:table-aic-random-models)). 
+When looking at the relative amount of conspecific pollen gained, we observe that only `r round(prop_sig_global*100)`% of species in their communities observed a significant increase in conspecific pollen density when comparing open and bagged flowers (Table \@ref(S-tab:table-species-gain-global)).
+We also observed a positive relationship between the gain in heterospecific pollen and both the relative and absolute gain of conspecific pollen (Figure \@ref(fig:fig-trade-off-predictions)). 
+The slope of the relationship is such that across plant species in their communities heterospecific pollen is gained slower than the absolute amount of conspecific pollen but faster than the amount of conspecific pollen relative to the potential selfing. 
+
+
+
 In addition, AIC scores of the candidate model sets indicated that the species' share in the pollen pool, the functional originality, and the species relative abundance were the most important variables determining the gain in both conspecific and heterospecific pollen (Figure \@ref(fig:fig-model-results-global)). 
 Note that relative abundance plays a more important role determining the gain in heterospecific pollen than the gain in both the absolute and relative amounts of conspecific pollen.
 Surprisingly, the species degree was comparatively less important for predicting pollen gain as it was only included in models with relatively large AICc values (Table \@ref(S-tab:table-aic-fixed-models)).
@@ -358,27 +383,7 @@ Degree, had a negative, albeit relatively small, effect on both the quantity and
 The species relative abundance has a large positive effect to the quality of pollination accompanied by a relatively smaller negative impact on the quantity. 
 Finally, the plant's functional originality and its share in the pollen pool have a moderate positive impact on its quantity but also a negative impact on the quality. 
 
-```{r fig-average-qual-quant, fig.height=1.5, fig.width=6.5, fig.cap="Mean relative effect of ecological variables on the quantity and quality of pollination. Results are shown for values calculated with both the absolute gain in pollen density (abs.) and the gain relative to selfing (rel.). Bootstrap confidence intervals of the mean (at the 0.05 level) are shown in square brackets. "}
-# height1 <- 1.25
-# height2 <- 1.65
-# pdf(width = 3.25 * 2, height = 1.5)
-# fig_coef_avg <- plot_coefficient_averages(coefficient_averages, variable_importance)
-width_imp <- 1
-mult <- 1.5
-# fig_var_importance <- plot_variable_importance(variable_importance)
-drake::loadd(fig_var_importance)
-drake::loadd(fig_coef_avg)
-cowplot::plot_grid(
-  fig_var_importance[[1]],
-  fig_var_importance[[2]],
-  fig_coef_avg[[1]],
-  fig_coef_avg[[2]],
-  ncol = 4, 
-  rel_widths = c(width_imp,width_imp, width_imp*mult, width_imp * mult * 1.45), 
-  align = "h"
-  )
-# dev.off()
-```
+
 
 # Discussion 
 
