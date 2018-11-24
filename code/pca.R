@@ -242,7 +242,7 @@ plot_permanova_dist <- function(permanova_plant_distances, permanova_site_distan
     geom_point(shape = 21, 
                size = 1, 
                fill = cgm()$pal_rb3[2], 
-               color = cgm()$color_errorbar) +
+               color = cgm()$color_errorbars) +
     geom_text(aes(label = plant_name, x = x_label), 
               fontface = "italic", 
               size = 2, 
