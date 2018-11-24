@@ -35,7 +35,7 @@ common_graphic_metrics <- function(){
     point_size = 1, 
     color_references = "grey50", 
     size_references = 0.25, 
-    fill_rows = "grey90"
+    fill_rows = "grey95"
   )
 }
 
