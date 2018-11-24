@@ -164,11 +164,12 @@ plot_random_slopes <- function(facilitation_random_effects, dep_frame){
     pub_theme() +
     theme(axis.title.y = element_blank(), 
           axis.text.y =element_blank(), 
-                                            # colour = "grey80"), 
           legend.position = "none", 
           axis.ticks.y = element_blank(), 
-          # axis.line.x = element_line(size = 0.25), )
+          panel.border = element_blank(), 
+          axis.line.x = element_line(size = 0.25))
   slope_plot
+  
   list(slope_plot = slope_plot, 
        count_plot = count_plot)
 }
