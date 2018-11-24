@@ -201,11 +201,13 @@ plot_bar_proportion <- function(x){
     scale_fill_manual(values = rev(pal)) +
     scale_color_manual(values = c("black", "white")) +
     scale_size_manual(values = c(2,2.5)) +
+    labs(y = "% species") + 
     pub_theme() +
     theme(legend.position = "none", 
-          axis.title = element_blank(), 
-          axis.text.x = element_blank(), 
-          axis.ticks.x = element_blank(), 
+          axis.title.x = element_blank(),
+          axis.title.y = element_text(size = 6),
+          axis.text = element_blank(), 
+          axis.ticks = element_blank(), 
           panel.border = element_blank(), 
           # axis.line.y = element_line(size = 0.25), 
           plot.margin = unit(c(1,1,1,0), "mm")) 
