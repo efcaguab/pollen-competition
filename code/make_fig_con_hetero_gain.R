@@ -157,8 +157,8 @@ plot_bagged_vs_open_conspecific <- function(dep_frame){
                size = 1, 
                colour = "grey30") +
     geom_point(aes(x = 0, y = 0), alpha = 0) +
-    scale_x_continuous(trans = "log1p", breaks = axis_breaks, expand = c(0,0)) +
-    scale_y_continuous(trans = "log1p", breaks = axis_breaks, expand = c(0,0)) +
+    scale_x_continuous(trans = "log1p", breaks = axis_breaks) +
+    scale_y_continuous(trans = "log1p", breaks = axis_breaks) +
     scale_fill_manual(values = pal, na.value = "white") +
     labs(x = "closed to animal pollination", 
          y = "open to animal pollination", 
