@@ -82,6 +82,13 @@ plot_random_slopes <- function(facilitation_random_effects, dep_frame){
     dplyr::mutate(x = 1:n(),
                   alpha = x %% 2)
     
+  symlog <- function(x, C = -1){
+    sign(x)*(log10(1+abs(x)/(10^C))) 
+  }
+  symloginv <- function(y, C = -1){
+    sign(y)*10^C*(10^(abs(y))-1)
+  }
+  symlog_trans <- scales::trans_new("symlog", symlog, symloginv)
   slope_plot <- facilitation_plot_df %>%
     dplyr::group_by(plant_name) %>%
     dplyr::arrange(plant_name, heterospecific) %>%
@@ -115,7 +122,9 @@ plot_random_slopes <- function(facilitation_random_effects, dep_frame){
                shape = 21, 
                color = cgm()$color_errorbars) +
     scale_fill_manual(values = pal) +
-    # scale_color_viridis_d(option = "D", end = 0.8) + 
+    scale_y_continuous(trans = symlog_trans, 
+                       breaks = c(-1, -0.25, 0, 0.25, 1, 3, 10), 
+                       expand = c(0,0.05)) +
     labs(y = bquote("slope" ~ beta[i]), 
          title = "(a) relationship hetero-conspecific pollen", 
          subtitle = "slope of species-community random effects") + 
