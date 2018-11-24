@@ -157,6 +157,7 @@ plot_random_slopes <- function(facilitation_random_effects, dep_frame){
                        breaks = c(-1, -0.25, 0, 0.25, 1, 3, 10), 
                        expand = c(0,0.05)) +
     scale_x_discrete(expand = c(0,0)) +
+    scale_alpha_manual(values = c(0,1)) +
     labs(y = bquote("slope" ~ beta[i]), 
          title = "(a) relationship hetero-conspecific pollen", 
          subtitle = "slope of species-community random effects") + 
