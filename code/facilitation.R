@@ -92,6 +92,8 @@ plot_random_slopes <- function(facilitation_random_effects, dep_frame){
   
   nudge_lower <- 2
   nudge_upper <- 10
+  
+  n_plants <- dplyr::n_distinct(facilitation_plot_df$plant_name)
   slope_plot <- facilitation_plot_df %>%
     dplyr::group_by(plant_name) %>%
     dplyr::arrange(plant_name, heterospecific) %>%
@@ -136,6 +138,20 @@ plot_random_slopes <- function(facilitation_random_effects, dep_frame){
               size = 2, 
               fontface = "italic", 
               hjust = "inward") +
+    geom_point(aes(y = 0, x = -0.5), alpha = 0) +
+    annotate(geom = "text", x = 0, y = 0, 
+             label = expression(" " %->% plain("facilitation predominates") %->% ""), 
+             hjust = "left", 
+             vjust = 0.5,
+             size = 2.25, 
+             colour = "grey20") +
+    geom_point(aes(y = 0, x = n_plants + 1.5), alpha = 0) +
+    annotate(geom = "text", x = n_plants + 1, y = 0, 
+             label = expression(" " %<-% plain("competition predominates") %<-% ""), 
+             hjust = "right", 
+             vjust = 0.5,
+             size = 2.25, 
+             colour = "grey20") +
     scale_fill_manual(values = pal) +
     scale_y_continuous(trans = symlog_trans, 
                        breaks = c(-1, -0.25, 0, 0.25, 1, 3, 10), 
