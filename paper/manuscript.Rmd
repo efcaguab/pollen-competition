@@ -232,28 +232,25 @@ We then compare these two metrics to those obtained with 99 Monte Carlo randomiz
 
 ## Competition vs. facilitation
 
-```{r differences-in-self-pollination}
-drake::loadd(significant_gain_global, significant_gain_site)
+```{r facilitation-stats, echo = F}
+drake::loadd(facilitation_plot_df)
+counts_facilitation_slope <- facilitation_plot_df %>%
+  dplyr::group_by(effect_category) %>%
+  dplyr::count() %>%
+  dplyr::group_by() %>%
+  dplyr::mutate(np = nn/sum(nn), 
+                np = round(np*100))
 
-sgg <- glance_table(significant_gain_global)
-prop_sig_global <- sum(sgg$p.value < 0.05) /
-  length(significant_gain_global)
-sgs <- glance_table(significant_gain_site)
-prop_sig_site <- sum(sgs$p.value < 0.05) /
-  length(significant_gain_site)
-
-consistency <- dplyr::inner_join(sgg, sgs, by = 'recipient') %>% 
-  dplyr::mutate_at(.vars = c('p.value.x', 'p.value.y'), 
-            .funs = function(x) x < 0.05) %>%
-  dplyr::mutate(consistent = p.value.x == p.value.y) %>%
-  dplyr::group_by(recipient) %>%
-  dplyr::summarise(p.value.x = mean(p.value.x), 
-            consistent = all(consistent),
-            n_sites = dplyr::n_distinct(site_name)) %>% 
-  dplyr::filter(n_sites > 1)
-prop_consistency <- sum(consistency$consistent)/
-  nrow(consistency)
+# equal number of negative and positive?
+equal_pos_neg <- counts_facilitation_slope$nn[1] == counts_facilitation_slope$nn[3]
 ```
+
+
+When examining the pollen deposited on stigmas of a species in a community we found that in a majority of cases either there was no significant relationship between heterospecific and conspecific pollen (Figure \@ref(fig:fig-trade-off-predictions)a). 
+Although the overall relationship between between heterospecific and conspecific pollen was positive (Supp info Table XX), the number of species in their communities with a positive relationship was equal to the number with a negative relationship (`r if(equal_pos_neg) {counts_facilitation_slope$nn[1]} else {stop("unequal")}`, `r counts_facilitation_slope$np[3]`%). 
+This large variation among species was accompained by moderate variation within species (for those sampled in multiple communities). 
+Indeed, *Cypella herbertii*, *Hirschfeldia incana*, and *Carduus acanthoides*, showed significantly positive relationships in some communities and negative in others. 
+Furthermore, although neither a positive or negative was dominant, we found that, in almost all cases, more conspecific than heterospecific pollen was deposited on stigmas (Figure \@ref(fig:fig-trade-off-predictions)b). 
 
 ```{r fig-trade-off-predictions, fig.height= 4, fig.width = 6.5, fig.cap = "The interplay between the gain on heterospecific and conspecific pollen. Each dot indicates the predicted median gains for a species in its community (which correspons to the selected random effects in all of our models). The horizontal and vertical bars under each dot indicate the 0.05 bootstrap confidence intervals of the estimates. The solid lines indicate the overall relationship in each of the bootstrap replicates and were calculated by sampling the predictions from 100 conspecific/heterospecific model pairs and estimated the relationship by fitting an standardised major axis (SMA) to each pair (we used the R package smatr 3.4-3, Warton et al. 2012). The dashed line indicates the isoline at which heterospecific pollen is gained at the same rate than conspecific pollen."}
 # fig_random_slopes <- plot_random_slopes(facilitation_random_effects, dep_frame)
@@ -291,8 +288,31 @@ cowplot::plot_grid(
   ncol = 2,
   rel_widths = c(sum(rw[1:2]), sum(rw[3:4]))
 )
-
 # dev.off()
+```
+
+
+```{r differences-in-self-pollination}
+drake::loadd(significant_gain_global, significant_gain_site)
+
+sgg <- glance_table(significant_gain_global)
+prop_sig_global <- sum(sgg$p.value < 0.05) /
+  length(significant_gain_global)
+sgs <- glance_table(significant_gain_site)
+prop_sig_site <- sum(sgs$p.value < 0.05) /
+  length(significant_gain_site)
+
+consistency <- dplyr::inner_join(sgg, sgs, by = 'recipient') %>% 
+  dplyr::mutate_at(.vars = c('p.value.x', 'p.value.y'), 
+            .funs = function(x) x < 0.05) %>%
+  dplyr::mutate(consistent = p.value.x == p.value.y) %>%
+  dplyr::group_by(recipient) %>%
+  dplyr::summarise(p.value.x = mean(p.value.x), 
+            consistent = all(consistent),
+            n_sites = dplyr::n_distinct(site_name)) %>% 
+  dplyr::filter(n_sites > 1)
+prop_consistency <- sum(consistency$consistent)/
+  nrow(consistency)
 ```
 
 ## Effect of ecological factors in the pollination service 
