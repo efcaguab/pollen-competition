@@ -89,8 +89,8 @@ plot_random_slopes <- function(facilitation_random_effects, dep_frame){
   }
   symlog_trans <- scales::trans_new("symlog", symlog, symloginv)
   
-  nudge_lower <- 2
-  nudge_upper <- 10
+  nudge_lower <- 1
+  nudge_upper <- 0
   
   n_plants <- dplyr::n_distinct(facilitation_plot_df$plant_name)
   slope_plot <- facilitation_plot_df %>%
