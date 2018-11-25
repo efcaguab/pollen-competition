@@ -13,19 +13,18 @@ model_facilitation <- function(dep_frame){
 # also gets the error using the conditional variance stored as an attribute in the model
 extract_random_effects <- function(facilitation_models){
   facilitation_models %>%
-    lme4::ranef(condVar = TRUE) %>%
-    extract2(1) %>% {
-      x <- . ; x %>% 
-        tibble::rownames_to_column() %>%
-        # call helper function
-        dplyr::mutate(error = get_error_random_effects(x)) 
-    }  %>%
+    coef() %>% 
+    extract2(1) %>% 
+    tibble::rownames_to_column() %>%
+    dplyr::mutate(error = get_error_random_effects(facilitation_models)) %>%
     tidyr::separate("rowname", into = c("plant_name", "site_name"), sep = ":", remove = F) 
 }
 
 # helpef function to extract the error from the model
 get_error_random_effects <- function(x) {
   x %>%
+    lme4::ranef(condVar = TRUE) %>%
+    extract2(1) %>%
     attr("postVar") %>%
     extract(2,2,) %>%
     sqrt() 
