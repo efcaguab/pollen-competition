@@ -164,7 +164,8 @@ facilitation_plan <- drake::drake_plan(
   facilitation_models = model_facilitation(dep_frame), 
   fig_pca_contrib = plot_pca_variances_and_contributions(pcas, chosen_threshold = 0),
   facilitation_random_effects = extract_random_effects(facilitation_models), 
-  fig_random_slopes = plot_random_slopes(facilitation_random_effects, dep_frame)
+  facilitation_plot_df = get_facilitation_plot_df(dep_frame, facilitation_random_effects),
+  fig_random_slopes = plot_random_slopes(facilitation_plot_df)
 )
 
 analyses_plan <- rbind(
