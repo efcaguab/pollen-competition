@@ -44,8 +44,8 @@ plot_random_slopes <- function(facilitation_random_effects, dep_frame){
     dplyr::full_join(n_obs) %>%
     dplyr::mutate(plant_name = paste0(plant_name, " (", n, ")")) %>%
     dplyr::mutate(plant_name = forcats::fct_reorder(plant_name, heterospecific, .desc = TRUE), 
-                  upper = heterospecific + error, 
-                  lower = heterospecific - error, 
+                  upper = heterospecific + 2 * error, 
+                  lower = heterospecific - 2 * error, 
                   effect_category = dplyr::case_when(
                     0 < lower ~ "positive", 
                     0 > upper ~ "negative", 
