@@ -196,7 +196,7 @@ plot_bagged_vs_open_conspecific <- function(dep_frame){
     scale_fill_manual(values = pal, na.value = "white") +
     labs(x = "closed to animal pollination", 
          y = "open to animal pollination", 
-         title = "(b) self- vs. animal-mediated pollination", 
+         title = "(c) self- vs. animal-mediated pollination", 
          subtitle = "mean pollen grains per stigma") +
     pub_theme() +
     theme(legend.position = "none") 
@@ -324,6 +324,7 @@ make_fig_con_con <- function(model_formula_ranking, model_linear_fits_species){
 }
 
 make_fig_con_hetero_empirical <- function(dep_frame){
+  require(ggplot2)
   axis_breaks <-  cgm()$log1p_axis_breaks_10
   
   dep_frame %>%
@@ -353,7 +354,7 @@ make_fig_con_hetero_empirical <- function(dep_frame){
     scale_y_continuous(trans = "log1p", breaks = axis_breaks) +
     labs(x = "heterospecific", 
          y = "conspecific", 
-         title = "(c) hetero- vs. conspecific pollen", 
+         title = "(b) hetero- vs. conspecific pollen", 
          subtitle = "mean pollen grains per stigma") +
     pub_theme()
 }
