@@ -36,7 +36,7 @@ plot_variable_importance <- function(variable_importance) {
   require(ggplot2)
   
   plot_importance <- function(x){
-    middle_space <- -0.65
+    middle_space <- -0.525
     x %>% ggplot(aes(x = term, y = value)) +
       # geom_segment(aes(xend = term, yend = 0)) +
       # geom_point(shape = 21, fill = cgm()$pal_rb3[2], size = 6) +
@@ -67,7 +67,7 @@ plot_variable_importance <- function(variable_importance) {
     tidyr::gather("key", "value", `conspecific (absolute)`:heterospecific) %>%
     dplyr::filter(key %in% c("conspecific (absolute)", "heterospecific")) %>%
     dplyr::mutate(term = forcats::fct_reorder(term, value), 
-                  text_align = dplyr::if_else(value < 0.35, 
+                  text_align = dplyr::if_else(value < 0.2, 
                                               "outward", "inward")) %>%
     split(.$key) %>%
     purrr::map(plot_importance)
