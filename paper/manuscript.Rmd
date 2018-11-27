@@ -232,7 +232,7 @@ We then compare these two metrics to those obtained with 99 Monte Carlo randomiz
 
 ## Competition vs. facilitation
 
-```{r facilitation-stats, echo = F}
+```{r facilitation-random-model-stats, echo = F}
 drake::loadd(facilitation_plot_df)
 
 # count number of species with positive and negative slopes
