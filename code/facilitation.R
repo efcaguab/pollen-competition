@@ -40,8 +40,8 @@ get_facilitation_plot_df <- function(dep_frame, facilitation_random_effects){
     dplyr::full_join(n_obs) %>%
     dplyr::mutate(plant_name = paste0(plant_name, " (", n, ")")) %>%
     dplyr::mutate(plant_name = forcats::fct_reorder(plant_name, heterospecific, .desc = TRUE), 
-                  upper = heterospecific + 2 * error, 
-                  lower = heterospecific - 2 * error, 
+                  upper = heterospecific + error, 
+                  lower = heterospecific - error, 
                   effect_category = dplyr::case_when(
                     0 < lower ~ "positive", 
                     0 > upper ~ "negative", 
