@@ -311,6 +311,9 @@ sp_con_con <- con_con_plot_df %>%
                 np = round_preserve_sum(np, 2)*100)
 ```
 
+We then compared the amount of conspecific pollen deposited on flowers open to animal-mediated pollinators and those that were closed. 
+We found that, generally most species had more conspecific pollen deposited in their stigmas when animal-mediated pollination took place, although for most species the difference was not significant at the 0.05 level (Mann-Withney U tests; Figure \@ref(fig:fig-trade-off-predictions)c). 
+Specifically, the difference weas non-signifcant for `r sp_con_con$np[sp_con_con$effect_category == "neutral"]`% of species in a community, `r sp_con_con$np[sp_con_con$effect_category == "positive"]`% had significantly more pollen when open, and the remaining `r sp_con_con$np[sp_con_con$effect_category == "negative"]`% had significantly less pollen when open. 
 
 ## Effect of ecological factors in the pollination service 
 
