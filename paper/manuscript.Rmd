@@ -254,8 +254,9 @@ sp_both_pos_neg <- facilitation_plot_df %>%
 equal_pos_neg <- counts_facilitation_slope$nn[1] == counts_facilitation_slope$nn[3]
 ```
 
-When examining the pollen deposited on stigmas of a species in a community we found that in a majority of cases either there was no significant relationship between heterospecific and conspecific pollen (Figure \@ref(fig:fig-trade-off-predictions)a). 
-Although the overall relationship between between heterospecific and conspecific pollen was positive (Supp info Table XX), the number of species in their communities with a positive relationship was equal to those with a negative relationship (`r if(equal_pos_neg) {counts_facilitation_slope$nn[1]} else {stop("unequal")}`, `r counts_facilitation_slope$np[3]`%). 
+We first examined the relationship between the heterospecific and conspecifi  pollen deposited on stigmas of a species in a community. 
+We found that in a majority of cases there was either no significant relationship between heterospecific and conspecific pollen or there was a negative relationship (Figure \@ref(fig:fig-trade-off-predictions)a). 
+Although the overall relationship between between heterospecific and conspecific pollen was positive (Supp info Table XX), the number of species in their communities with a positive relationship was slightly smaller to those with a negative relationship (`r counts_facilitation_slope$np[3]`% and `r counts_facilitation_slope$np[1]`% respectively). 
 This large variation among species was accompained by moderate variation within species (for those sampled in multiple communities). 
 Indeed, `r numbers2words(nrow(sp_both_pos_neg))` species  (*Cypella herbertii*, *Diplotaxis tenuifolia*, *Hirschfeldia incana*, and *Carduus acanthoides*) showed significantly positive relationships in some communities and negative in others. 
 Furthermore, although neither a positive or negative relationship was dominant, we found that, in almost all cases, more conspecific than heterospecific pollen was deposited on stigmas (Figure \@ref(fig:fig-trade-off-predictions)b). 
