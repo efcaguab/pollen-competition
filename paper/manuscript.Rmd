@@ -241,7 +241,7 @@ counts_facilitation_slope <- facilitation_plot_df %>%
   dplyr::count() %>%
   dplyr::group_by() %>%
   dplyr::mutate(np = nn/sum(nn), 
-                np = round(np*100))
+                np = round_preserve_sum(np, 2)*100)
 
 # species with both positive and negative relationships
 sp_both_pos_neg <- facilitation_plot_df %>%
