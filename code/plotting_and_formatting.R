@@ -162,3 +162,13 @@ numbers2words <- function(x){
   if (length(x) > 1) return(trim(sapply(x, helper)))
   helper(x)
 }
+
+# round numbers to preserve sum (good for percentages)
+round_preserve_sum <- function(x, digits = 0) {
+  up <- 10 ^ digits
+  x <- x * up
+  y <- floor(x)
+  indices <- tail(order(x-y), round(sum(x)) - sum(y))
+  y[indices] <- y[indices] + 1
+  y / up
+}
