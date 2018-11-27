@@ -148,15 +148,8 @@ get_pred_range <- function(tidied_fixed, x, var_trans = "log", scale = "global")
     range()
 }
 
-plot_bagged_vs_open_conspecific <- function(dep_frame){
-  require(ggplot2)
-  
-  axis_breaks <-  cgm()$log1p_axis_breaks_10
-  linesize <- common_graphic_metrics()$size_errorbars
-  linecolor <- cgm()$color_errorbars_light
-  pal <- common_graphic_metrics()$pal_rb3
-  
-  con_df <- dep_frame %>% 
+get_con_con_plot_df <- function(dep_frame){
+  dep_frame %>% 
     dplyr::filter(pollen_category == "conspecific") %>% 
     tidyr::complete(site_name, plant_name, treatment) %>% 
     dplyr::group_by(site_name, plant_name, treatment) %>%
@@ -173,6 +166,16 @@ plot_bagged_vs_open_conspecific <- function(dep_frame){
     tidyr::unite(temp, treatment, variable, sep = "_") %>% 
     tidyr::spread(temp, value) %>% 
     dplyr::filter(!is.na(closed_mid), !is.na(open_mid)) 
+  
+}
+
+plot_bagged_vs_open_conspecific <- function(con_df){
+  require(ggplot2)
+  
+  axis_breaks <-  cgm()$log1p_axis_breaks_10
+  linesize <- common_graphic_metrics()$size_errorbars
+  linecolor <- cgm()$color_errorbars_light
+  pal <- common_graphic_metrics()$pal_rb3
   
   scatter_plot <- con_df %>%
     ggplot(aes(x = closed_mid, y = open_mid)) +
