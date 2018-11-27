@@ -300,29 +300,17 @@ cowplot::plot_grid(
 # dev.off()
 ```
 
+```{r facilitation-conspecific-stats}
+drake::loadd(con_con_plot_df)
 
-```{r differences-in-self-pollination}
-drake::loadd(significant_gain_global, significant_gain_site)
-
-sgg <- glance_table(significant_gain_global)
-prop_sig_global <- sum(sgg$p.value < 0.05) /
-  length(significant_gain_global)
-sgs <- glance_table(significant_gain_site)
-prop_sig_site <- sum(sgs$p.value < 0.05) /
-  length(significant_gain_site)
-
-consistency <- dplyr::inner_join(sgg, sgs, by = 'recipient') %>% 
-  dplyr::mutate_at(.vars = c('p.value.x', 'p.value.y'), 
-            .funs = function(x) x < 0.05) %>%
-  dplyr::mutate(consistent = p.value.x == p.value.y) %>%
-  dplyr::group_by(recipient) %>%
-  dplyr::summarise(p.value.x = mean(p.value.x), 
-            consistent = all(consistent),
-            n_sites = dplyr::n_distinct(site_name)) %>% 
-  dplyr::filter(n_sites > 1)
-prop_consistency <- sum(consistency$consistent)/
-  nrow(consistency)
+sp_con_con <- con_con_plot_df %>%
+  dplyr::group_by(effect_category) %>%
+  dplyr::count() %>%
+  dplyr::group_by() %>%
+  dplyr::mutate(np = n/sum(n), 
+                np = round_preserve_sum(np, 2)*100)
 ```
+
 
 ## Effect of ecological factors in the pollination service 
 
