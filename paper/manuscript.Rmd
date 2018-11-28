@@ -317,27 +317,50 @@ Specifically, the difference weas non-signifcant for `r sp_con_con$np[sp_con_con
 
 ## Effect of ecological factors in the pollination service 
 
-```{r fig-average-qual-quant, fig.height=1.29, fig.width=6.5, fig.cap="Mean relative effect of ecological variables on the quantity and quality of pollination. Results are shown for values calculated with both the absolute gain in pollen density (abs.) and the gain relative to selfing (rel.). Bootstrap confidence intervals of the mean (at the 0.05 level) are shown in square brackets."}
-# height1 <- 1.25
-# height2 <- 1.65
-# pdf(width = 3.25 * 2, height = 1.29)
+By examining the AICc scores of a set of linear mixed effect models, we found that the visit efficay and the plants abbundance were the most important ecological variables predicting the amount of conspecific and heterospecific pollen deposited in the plant stigmas (Figure \@ref(fig:fig-average-qual-quant)a). 
+The plants functional originality had an intermediate importance, while, surprisingly, the number of shared pollinators was comparatively less unimportant as it was only included in models with relatively large AICc values. 
+
+```{r fig-average-qual-quant, fig.height= 2.29, fig.width=6.5, fig.cap="Mean relative effect of ecological variables on the quantity and quality of pollination. Results are shown for values calculated with both the absolute gain in pollen density (abs.) and the gain relative to selfing (rel.). Bootstrap confidence intervals of the mean (at the 0.05 level) are shown in square brackets."}
+height1 <- 1
+height2 <- 1.29
+# pdf(width = 3.25 * 2, height = sum(c(height1, height2)))
 # fig_coef_avg <- plot_coefficient_averages(coefficient_averages, variable_importance)
-width_imp <- 6.5/3
-mult <- 2.125
+width_imp <- 6.5/5*2
+mult <- 2.355 # for 2/3 is 2.125, for 3/5 is 2.355
 width_coef_1 <- (6.5 - width_imp) / (1 + mult)
 width_coef_2 <- 5.6 - width_imp - width_coef_1
 # fig_var_importance <- plot_variable_importance(variable_importance)
 drake::loadd(fig_var_importance)
 drake::loadd(fig_coef_avg)
-cowplot::plot_grid(
+drake::loadd(fig_coefficient_averages)
+
+left_top <- cowplot::plot_grid(
   fig_var_importance[[1]],
   fig_var_importance[[2]],
+  ncol = 2, 
+  align = "h"
+)
+
+left_bottom <- cowplot::plot_grid(
   fig_coef_avg[[1]],
   fig_coef_avg[[2]],
-  ncol = 4, 
-  rel_widths = c(width_imp/2, width_imp/2,width_coef_1, width_coef_2), 
+  rel_widths = c(width_coef_1, width_coef_2), 
   align = "h"
-  )
+)
+
+left <- cowplot::plot_grid(
+  left_top, 
+  left_bottom, 
+  ncol = 1, 
+  rel_heights = c(height1, height2)
+)
+
+cowplot::plot_grid(
+  left,
+  fig_coefficient_averages, 
+  ncol = 2,
+  rel_widths = c(sum(c(width_coef_1, width_coef_2)), width_imp)
+)
 # dev.off()
 ```
 

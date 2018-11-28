@@ -145,7 +145,7 @@ plot_coefficient_averages <- function(coefficient_averages, variable_importance)
             plot.margin = margin(t = 5.5, r = 0, b = 5.5, l = 5.5, unit = "pt"),
             plot.title = element_text(margin = margin(b = 5.5, unit = "pt")),
             axis.line.x = element_line(size = 0.25)) +
-      labs(title = "(b) mean effect on pollination service")
+      labs(title = "(c) mean effect on pollination service")
     plots[[2]] <- plots[[2]] + theme(plot.subtitle = element_text(hjust = 1),
                                      axis.line.x = element_line(size = 0.25), 
                                      axis.text.y = element_text(size = 6.5, colour = "black"))
