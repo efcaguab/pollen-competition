@@ -137,7 +137,7 @@ plot_coefficient_averages <- function(coefficient_averages, variable_importance)
    
     plots <- purrr::map(c("quantity", "quality"), 
                         ~ plot_metric_qual_quan(qua_qua_data, .)) %>%
-      purrr::map2(c("quantity (conspecific)", "quality (conspecific / heterospecific)"), 
+      purrr::map2(c("quantity (conspecific)", "quality (consp. / heterosp.)"), 
                   function(x,y) {x + labs(subtitle = y)}) 
     
     plots[[1]] <- plots[[1]] +
