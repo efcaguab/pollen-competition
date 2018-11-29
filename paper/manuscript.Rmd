@@ -317,6 +317,24 @@ Specifically, the difference weas non-signifcant for `r sp_con_con$np[sp_con_con
 
 ## Effect of ecological factors in the pollination service 
 
+```{r model-fit-statistics}
+drake::loadd(model_formula_ranking, glanced_fixed)
+
+r2_values <- model_formula_ranking$by_model_set %>%
+  dplyr::filter(grepl("abs", pollen_category)) %>% 
+  dplyr::group_by(pollen_category) %>%
+  dplyr::filter(delta_AIC_median == min(delta_AIC_median)) %>%
+  dplyr::select(fixed_formula, pollen_category, scale) %>%
+  dplyr::left_join(glanced_fixed) %>% 
+  dplyr::select(r2m, r2c) %>%
+  dplyr::summarise_all(dplyr::funs(min, median, mean, max)) %>%
+  dplyr::mutate_if(is.numeric, round, digits = 2)
+```
+
+Our models of pollen deposition had relatively high explanatory power. 
+The conditional coefficient of determination R^2^~(c)~ [@nakagawa_general_2013] for the most parsimonious models (those with the lowest AICc) ranged between `r r2_values$r2c_min[r2_values$pollen_category == "conspecific_abs"]` and `r r2_values$r2c_max[r2_values$pollen_category == "conspecific_abs"]` (mean `r r2_values$r2c_mean[r2_values$pollen_category == "conspecific_abs"]`) for the models of conspecific pollen and between `r r2_values$r2c_min[r2_values$pollen_category == "heterospecific_abs"]` and `r r2_values$r2c_max[r2_values$pollen_category == "heterospecific_abs"]` (mean `r r2_values$r2c_mean[r2_values$pollen_category == "heterospecific_abs"]`) for the models of heterospecific pollen. 
+A large portion of the explanatory power came from the random effects, in particular for the conspecific pollen models. 
+Indeed, the marginal coefficient of determination R^2^~(m)~, which describes the proportion of variance explained for the fixed variables alone, ranged between `r r2_values$r2m_min[r2_values$pollen_category == "conspecific_abs"]` and `r r2_values$r2m_max[r2_values$pollen_category == "conspecific_abs"]` (mean `r r2_values$r2m_mean[r2_values$pollen_category == "conspecific_abs"]`) for the conspecific models and between `r r2_values$r2m_min[r2_values$pollen_category == "heterospecific_abs"]` and `r r2_values$r2m_max[r2_values$pollen_category == "heterospecific_abs"]` (mean `r r2_values$r2m_mean[r2_values$pollen_category == "heterospecific_abs"]`) for the heterospecific models.
 By examining the AICc scores of a set of linear mixed effect models, we found that the visit efficay and the plants abbundance were the most important ecological variables predicting the amount of conspecific and heterospecific pollen deposited in the plant stigmas (Figure \@ref(fig:fig-average-qual-quant)a). 
 The plants functional originality had an intermediate importance, while, surprisingly, the number of shared pollinators was comparatively less unimportant as it was only included in models with relatively large AICc values. 
 
