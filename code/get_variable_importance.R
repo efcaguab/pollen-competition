@@ -67,8 +67,10 @@ plot_variable_importance <- function(variable_importance) {
     tidyr::gather("key", "value", `conspecific (absolute)`:heterospecific) %>%
     dplyr::filter(key %in% c("conspecific (absolute)", "heterospecific")) %>%
     dplyr::mutate(term = forcats::fct_reorder(term, value), 
-                  text_align = dplyr::if_else(value < 0.2, 
-                                              "outward", "inward")) %>%
+                  # text_align = dplyr::if_else(value < 0.1, 
+                                              # "outward", "inward")) %>%
+                  text_align = dplyr::if_else(key == "heterospecific", 
+                                              "right", "left")) %>%
     split(.$key) %>%
     purrr::map(plot_importance)
   
