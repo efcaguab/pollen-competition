@@ -248,11 +248,13 @@ counts_facilitation_slope <- facilitation_plot_df %>%
                 np = round_preserve_sum(np, 2)*100)
 
 # species with both positive and negative relationships
-sp_both_pos_neg <- facilitation_plot_df %>%
+get_sp_with_both_pos_neg <- . %>%
   dplyr::filter(effect_category != "neutral") %>%
   dplyr::group_by(plant_name) %>%
   dplyr::summarise(both = dplyr::n_distinct(effect_category) > 1) %>%
   dplyr::filter(both)
+sp_both_pos_neg <- facilitation_plot_df %>%
+  get_sp_with_both_pos_neg()
 
 # equal number of negative and positive?
 equal_pos_neg <- counts_facilitation_slope$nn[1] == counts_facilitation_slope$nn[3]
@@ -313,11 +315,15 @@ sp_con_con <- con_con_plot_df %>%
   dplyr::group_by() %>%
   dplyr::mutate(np = n/sum(n), 
                 np = round_preserve_sum(np, 2)*100)
+# species with contrasting behaviours
+sp_con_both_pos_neg <- con_con_plot_df %>%
+  get_sp_with_both_pos_neg()
 ```
 
 We then compared the amount of conspecific pollen deposited on flowers open to animal-mediated pollinators and those that were closed. 
 We found that generally, most species had more conspecific pollen deposited in their stigmas when animal-mediated pollination took place, although for most species the difference was not significant at the 0.05 level (Mann-Withney U tests; Figure \@ref(fig:fig-trade-off-predictions)c). 
 Specifically, the difference weas non-signifcant for `r sp_con_con$np[sp_con_con$effect_category == "neutral"]`% of species in a community, `r sp_con_con$np[sp_con_con$effect_category == "positive"]`% had significantly more pollen when open, and the remaining `r sp_con_con$np[sp_con_con$effect_category == "negative"]`% had significantly less pollen when open. 
+Variation within species was slightly smaller and only `r numbers2words(nrow(sp_con_both_pos_neg))` species (*H. incana* and *C. acanthoides*) had both significantly positive and negative differences. 
 
 ## Effect of ecological factors in the pollination service 
 
