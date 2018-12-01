@@ -114,9 +114,12 @@ make_fig_coefficient_avarages <- function(coefficient_averages, variable_importa
                   pollen_category = forcats::fct_rev(pollen_category)) %>%
     ggplot() +
     geom_vline(xintercept = 0, linetype = 2, size = 0.25, color = "grey30") +
-    geom_density_ridges(alpha = 0.8, 
-                        panel_scaling = T, 
-                        scale = 3, 
+    geom_density_ridges(aes(x = estimate,
+                            y = pollen_category,
+                            colour = pollen_category), 
+                        alpha = 0.8, 
+                        panel_scaling = F, 
+                        scale = 4, 
                         quantile_lines = F, 
                         quantiles = 2, 
                         fill = "white",
@@ -142,7 +145,7 @@ make_fig_coefficient_avarages <- function(coefficient_averages, variable_importa
               stat = "unique", show.legend = F, 
               size = 2.5) +
   # geom_hline(yintercept = 0.5, colour = "red") +
-    facet_grid(pollen_category ~ ., scales = "free") +
+    scale_color_manual(values = RColorBrewer::brewer.pal(4, "Greys")[c(4,3)]) +
     # scale_color_manual(values = rev(RColorBrewer::brewer.pal(4, "OrRd"))) +
     # scale_fill_manual(values = rev(RColorBrewer::brewer.pal(4, "OrRd"))) +
     scale_size_continuous(range = c(2.2, 2.65)) +
