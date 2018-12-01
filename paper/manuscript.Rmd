@@ -36,7 +36,7 @@ knitr::opts_chunk$set(echo = FALSE, message = FALSE,
 drake::loadd(msc_wordcount, abs_wordcount)
 ```
 
-**Manuscript length:** `r format(msc_wordcount$n_char_tot_stri, big.mark = ",")` characters; approx. `r format(round(msc_wordcount$n_words_stri/10)*10-90, big.mark = ",")` words (includes draft info, excludes front-matter, abstract, awknoledgements, references, and figure/table legends); `r msc_wordcount$reading_time_stri` reading time.
+**Manuscript length:** `r format(msc_wordcount$n_char_tot_stri, big.mark = ",")` characters, approx. `r format(round(msc_wordcount$n_words_stri/10)*10-340, big.mark = ",")` words (includes draft info, excludes front-matter, abstract, awknoledgements, references, and figure/table legends); `r msc_wordcount$reading_time_stri` reading time.
 
 **Abstract length:** `r abs_wordcount$n_words_stri` words.
 
@@ -50,9 +50,9 @@ drake::loadd(msc_wordcount, abs_wordcount)
 * Traits: (*a*) to keep signature of phenology, absolute flower counts (log-transformed) are used instead of relative abundances. Also, now (*b*) columns in the trait matrix for phenology are scaled so that it doesn't count 5 times as much as other traits.
 * The absolute/relative/gain terminology was confusing. Now  I'm modelling open and bagged pollen counts directly, using the bagged as a sort of control.
 * Introduced visit efficacy instead of the share in the pollen pool as a predictor in the model. Turns out to be a better predictor and also incorporates quantitative visitation data which was missing from the previous models. 
-* Now I use a PCA of the explanatory variables to understand different plant strategies and give a deeper teratment to the facilitation/competition question. 
+* Now I use a PCA of the explanatory variables to understand different plant strategies and give a deeper treatment to the facilitation/competition question. 
 
-## To do
+## Todo
 
 * Spell-check everything & check that reference list is correct.
 * Choose journal (the manuscript is written for an interdisciplinary journal). 
@@ -63,7 +63,7 @@ Feel free to come back here after you've read the manuscript. Thanks!
 
 * Do you know of a reasonable reference for the claims in \lr{ref-needed-possitive-loops} and \lr{ref2}?
 * I got feedback that "denote" in \lr{denote} might be overly formal? 
-* Hugo. Some journals require publication of data alongside with the paper. Is it OK to consider those? Or you preffer to keep data private?
+* Hugo. Some journals require publication of data alongside with the paper. Is it OK to consider those? Or you prefer to keep data private?
 
 \clearpage
 
