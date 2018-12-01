@@ -397,6 +397,21 @@ cowplot::plot_grid(
 
 ## Flexibility of plant strategies
 
+```{r pca-stats}
+drake::loadd(pcas)
+chosen_threshold <- 0
+this_pca <- pcas %>%
+    purrr::keep(~ .$call$X$pca_type[1] == "across") %>%
+    purrr::keep(~ .$call$X$threshold[1] == chosen_threshold) %>%
+    extract2(1)
+```
+
+We used a PCA of the analysed species to investigate whether species conserve the strategy they use to minimise competition for pollination. 
+The first two components explained `r round(this_pca$eig[2, 3])`% of the total variance (Figure \@ref(fig:fig-pca)a). 
+The first component was dominated by changes on the visit efficacy and the relative abundance while the second component was dominated by the number of shared pollinators and the plant's functional originality. 
+When we plot species that were sampled in more than one community  (Figure \@ref(fig:fig-pca)b), we observe that the plant's strategies do not seem to be clustered per species. 
+Indeed, when we measure the median distance between the plants coordinates in PCA space we found that this distance was significantly smaller than that of randomisations for only one of the analysed species (Figure \@ref(fig:fig-pca)c). 
+
 ```{r strategy-fig-height}
 height0 <- 1.55
 height1 <- 2.7
