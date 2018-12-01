@@ -49,21 +49,25 @@ drake::loadd(msc_wordcount, abs_wordcount)
 * Now using AICc instead of AIC to evaluate models (no change in results)
 * Traits: (*a*) to keep signature of phenology, absolute flower counts (log-transformed) are used instead of relative abundances. Also, now (*b*) columns in the trait matrix for phenology are scaled so that it doesn't count 5 times as much as other traits.
 * The absolute/relative/gain terminology was confusing. Now  I'm modelling open and bagged pollen counts directly, using the bagged as a sort of control.
-* Introduced visit efficacy instead of the share in the pollen pool as a predictor in the model. Turns out to be a better predictor and also incorporates quantitative visitation data which was missing from the previous models. 
+* Introduced visit effectiveness instead of the share in the pollen pool as a predictor in the model. Turns out to be a better predictor and also incorporates quantitative visitation data which was missing from the previous models. 
 * Now I use a PCA of the explanatory variables to understand different plant strategies and give a deeper treatment to the facilitation/competition question. 
 
 ## Todo
 
+* Polish discussion. 
 * Spell-check everything & check that reference list is correct.
-* Choose journal (the manuscript is written for an interdisciplinary journal). 
 
 ## Questions
 
 Feel free to come back here after you've read the manuscript. Thanks!
 
+* Journal?
 * Do you know of a reasonable reference for the claims in \lr{ref-needed-possitive-loops} and \lr{ref2}?
 * I got feedback that "denote" in \lr{denote} might be overly formal? 
 * Hugo. Some journals require publication of data alongside with the paper. Is it OK to consider those? Or you prefer to keep data private?
+* In Figure \@ref(fig:fig-trade-off-predictions)a, I determine if the slope is significantly positive or negative by checking whether the standard errors cross 0. Should it be 2 times SE? Should all other error bars in Figure \@ref(fig:fig-trade-off-predictions) be 2 times SE?
+* What do you think about the quantity/quality discourse now? I'm still unconvinced. Maybe I should just go for relationship conspecific/heterospecific instead of quality? That would mean that Figure \@ref(fig:fig-average-qual-quant)c would just need the right panel. Cause the left is just almost the same as Figure \@ref(fig:fig-average-qual-quant)b, except that it includes models in which the variable was not present and hence "shrinks" the model averaged estimate.  
+* Unsure of whether in Figure \@ref(fig:fig-pca)a, it would be better to display the contribution of each component to total variance instead of the cummulative contribution.
 
 \clearpage
 

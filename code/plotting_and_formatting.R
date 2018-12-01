@@ -56,19 +56,36 @@ humanize <- function(x, sites = NA, random_effects = NA, formula_long = FALSE, t
     x <- dplyr::inner_join(x, sites, by = 'site_name')
   }
   if ('term' %in% names(x)) {
-    x <- x %>%
-      dplyr::mutate(term = dplyr::case_when(
-        grepl('org', term) ~ 'func. originality',
-        grepl('originality', term) ~ 'func. originality',
-        grepl('abn', term) ~ 'abundance',
-        grepl('abu', term) ~ 'abundance',
-        grepl('rab', term) ~ 'abundance',
-        grepl('deg', term) ~ '# shared pol.',
-        grepl('k', term) ~ '# shared pol.',
-        grepl('poc', term) ~ 'visit efficacy',
-        grepl('pollen_cont', term) ~ 'visit efficacy',
-        TRUE ~ term
-      ))
+    if (term_long) {
+      x <- x %>%
+        dplyr::mutate(term = dplyr::case_when(
+          grepl('org', term) ~ 'func. originality',
+          grepl('originality', term) ~ 'func. originality',
+          grepl('abn', term) ~ 'abundance',
+          grepl('abu', term) ~ 'abundance',
+          grepl('rab', term) ~ 'abundance',
+          grepl('deg', term) ~ '# shared pol.',
+          grepl('k', term) ~ '# shared pol.',
+          grepl('poc', term) ~ 'visit effectiveness',
+          grepl('pollen_cont', term) ~ 'visit effectiveness',
+          TRUE ~ term
+        ))
+    } else {
+      x <- x %>%
+        dplyr::mutate(term = dplyr::case_when(
+          grepl('org', term) ~ 'func. originality',
+          grepl('originality', term) ~ 'func. originality',
+          grepl('abn', term) ~ 'abundance',
+          grepl('abu', term) ~ 'abundance',
+          grepl('rab', term) ~ 'abundance',
+          grepl('deg', term) ~ '# shared pol.',
+          grepl('k', term) ~ '# shared pol.',
+          grepl('poc', term) ~ 'visit effectiv.',
+          grepl('pollen_cont', term) ~ 'visit effectiv.',
+          TRUE ~ term
+        ))
+    }
+    
   }
   if ('fixed_formula' %in% names(x)) {
     if (formula_long == TRUE) {

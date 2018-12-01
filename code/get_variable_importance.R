@@ -36,7 +36,7 @@ plot_variable_importance <- function(variable_importance) {
   require(ggplot2)
   
   plot_importance <- function(x){
-    middle_space <- -0.33  # for 1/3 is -0.525
+    middle_space <- -0.4  # for 1/3 is -0.525
     x %>% ggplot(aes(x = term, y = value)) +
       # geom_segment(aes(xend = term, yend = 0)) +
       # geom_point(shape = 21, fill = cgm()$pal_rb3[2], size = 6) +
