@@ -356,7 +356,7 @@ plot_pca_variances_and_contributions <- function(pcas, chosen_threshold){
     dplyr::mutate(rowname = stringr::str_remove(rowname, "comp ")) %>%
     dplyr::rename(dim = rowname) %>%
     dplyr::mutate_if(is.numeric, function(x) x/100) %>%
-    dplyr::mutate(group = "components cumulative percentage of variance")
+    dplyr::mutate(group = "components' cumulative percentage of variance")
   
   contributions_data <- this_pca$var$contrib %>%
     as.data.frame() %>% 
@@ -395,7 +395,7 @@ plot_pca_variances_and_contributions <- function(pcas, chosen_threshold){
     pub_theme() +
     coord_flip(clip = "off") +
     labs(x = "component", 
-         title = "(a) component's variance and variable contributions", 
+         title = "(a) components' variance and variable contributions", 
          subtitle = "principal component analysis of ecological variables") +
     theme(panel.border = element_blank(), 
           axis.line.x = element_line(size = 0.25), 
