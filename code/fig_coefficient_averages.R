@@ -39,25 +39,7 @@ make_fig_coefficient_avarages <- function(coefficient_averages, variable_importa
   
   dist <- dplyr::bind_rows(dist, borders_rows)
   
-  # to get the x aesthetic for the importance labels
-  min_values <- dist %>%
-    dplyr::group_by(pollen_category) %>%
-    dplyr::summarise(x = max(estimate)) %>%
-    dplyr::mutate(title = "relative var.\nimportance") 
-  
-  imp <- variable_importance %>%
-    tidyr::gather(key = "pollen_category", value = "importance", -term) %>%
-    dplyr::mutate(term = forcats::fct_relevel(term, c("abundance", "func. originality", "degree"), after = 2), 
-                  # pollen_category = dplyr::if_else(pollen_category == "conspecific", 
-                                                   # "conspecific pollen  ", 
-                                                   # "heterospecific pollen"), 
-                  importance = round(importance, 2), 
-                  label = sprintf("%.2f", importance)) %>%
-    dplyr::inner_join(min_values, by = "pollen_category") %>%
-    dplyr::filter(pollen_category != "heterospecific_abs")
-  
   dist %<>% 
-    dplyr::inner_join(imp) %>%
     dplyr::group_by() %>%
     dplyr::mutate(pollen_category = dplyr::if_else(pollen_category == "conspecific (absolute)", 
                                                    "conspecific", 
@@ -144,7 +126,7 @@ make_fig_coefficient_avarages <- function(coefficient_averages, variable_importa
               fontface = "plain",
               stat = "unique", show.legend = F, 
               size = 2.5) +
-  # geom_hline(yintercept = 0.5, colour = "red") +
+    facet_grid(term_n ~ .) +
     scale_color_manual(values = RColorBrewer::brewer.pal(4, "Greys")[c(4,3)]) +
     # scale_color_manual(values = rev(RColorBrewer::brewer.pal(4, "OrRd"))) +
     # scale_fill_manual(values = rev(RColorBrewer::brewer.pal(4, "OrRd"))) +
