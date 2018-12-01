@@ -41,7 +41,7 @@ plot_variable_importance <- function(variable_importance) {
       # geom_segment(aes(xend = term, yend = 0)) +
       # geom_point(shape = 21, fill = cgm()$pal_rb3[2], size = 6) +
       
-      geom_col(fill = "grey80") +
+      geom_col(fill = "grey90") +
       # geom_hline(yintercept = 0, linetype = 2, size = 0.25, colour = "grey30") +
       
       geom_point(aes(x = 1, y = middle_space), alpha = 0) +
