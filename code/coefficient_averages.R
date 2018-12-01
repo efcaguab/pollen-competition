@@ -61,10 +61,10 @@ plot_coefficient_averages <- function(coefficient_averages, variable_importance)
       line_offset <- 0.25
       x %>%
         dplyr::rowwise() %>%
-        dplyr::mutate(label_y = dplyr::if_else(abs(estimate_mid) < 0.2, 
+        dplyr::mutate(label_y = dplyr::if_else(abs(estimate_mid) < 0.25, 
                                                abs_larger(mean_estimate_quantile_025, mean_estimate_quantile_975),
                                                abs_smaller(mean_estimate_quantile_025, mean_estimate_quantile_975)),
-                      label_hjust = dplyr::if_else(abs(estimate_mid) > 0.2,
+                      label_hjust = dplyr::if_else(abs(estimate_mid) > 0.25,
                       "inward",
                       "outward")) %>%
         # dplyr::filter(metric == this_metric) %>%
