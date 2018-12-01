@@ -172,3 +172,9 @@ round_preserve_sum <- function(x, digits = 0) {
   y[indices] <- y[indices] + 1
   y / up
 }
+
+abb_col <- function(x){
+  x %>% 
+    stringr::str_replace("conspecific", "consp.") %>%
+    stringr::str_replace("heterospecific", "hetsp.")
+}
