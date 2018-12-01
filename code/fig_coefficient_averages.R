@@ -128,15 +128,11 @@ make_fig_coefficient_avarages <- function(coefficient_averages, variable_importa
               size = 2.5) +
     facet_grid(term_n ~ .) +
     scale_color_manual(values = RColorBrewer::brewer.pal(4, "Greys")[c(4,3)]) +
-    # scale_color_manual(values = rev(RColorBrewer::brewer.pal(4, "OrRd"))) +
-    # scale_fill_manual(values = rev(RColorBrewer::brewer.pal(4, "OrRd"))) +
-    scale_size_continuous(range = c(2.2, 2.65)) +
-    # scale_alpha_continuous(range = c(0.7, 0.7)) +
-    scale_x_continuous(expand = c(0,0), 
+      scale_x_continuous(expand = c(0,0), 
                        breaks = seq(-2,2, by = 0.4)) +
-    # scale_y_discrete(expand = c(0,0)) +
+    # scale_y_discrete(expand = c(1,0)) +
     # scale_discrete_manual("vline_color", values = c_scale()) +
-    coord_cartesian(clip = "off") +
+    coord_cartesian(clip = "off", ylim = c(-0.5,2.25)) +
     pub_theme() +
     theme(legend.position = "none",
           # legend.direction = "horizontal",
@@ -149,13 +145,16 @@ make_fig_coefficient_avarages <- function(coefficient_averages, variable_importa
           # axis.text.y = element_text(size = 7, vjust = 0, colour = "black"),
           axis.text.y = element_blank(),
           axis.title.y = element_blank(),
+          plot.subtitle = element_text(margin = margin(b = 15)),
           # axis.title.x = element_text(size = 8, colour = "grey20"),
-          strip.text = element_text(size = 7, face = "plain", hjust = 0)) +
+          strip.text = element_blank(
+            #size = 7, face = "plain", hjust = 1, margin = margin(t = - 5)
+            )) +
     labs(title = "(b) distribution of effects",
-         subtitle = "based on 100 bootstrap repllicates",
-         colour = "", fill = "", x = "estimated effect on pollen density gain", y = "")
+    subtitle = "based on 100 bootstrap repllicates",
+    colour = "", fill = "", x = "estimated effect on pollen density gain", y = "")
 
-  # pdf(width = 6.5, height = 2)
+  # pdf(width = 6.5/5*2, height = 2.29)
   p
   # dev.off()
 }
