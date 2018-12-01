@@ -70,7 +70,7 @@ plot_coefficient_averages <- function(coefficient_averages, variable_importance)
         # dplyr::filter(metric == this_metric) %>%
         ggplot(aes(y = estimate_mid, x = term, group = metric)) +
         geom_tile(aes(height = Inf, width = 1, alpha = as.numeric(term) %% 2 == 0), 
-                  fill = "grey90") +
+                  fill = cgm()$fill_rows) +
         geom_hline(yintercept = 0, linetype = 2, size = 0.25, colour = "gray30") +
         geom_text(aes(#label = "..",
           label = paste0(" ", format(round(estimate_mid, 2)), " "),
