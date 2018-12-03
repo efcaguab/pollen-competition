@@ -116,16 +116,15 @@ In this case, a potential reduction in the quantity of pollination (the amount o
 <!-- To complicate things more, autonomous self-pollination can also influence a plant sensitivity to competition for pollination because it can ensure reproduction even in the absence of outcross pollen [@kalisz_benefits_2003].  -->
 <!-- Altogether, multiple, potentially correlated, factors may act simultaneously.  -->
 The effect and relative importance that the factors of ecological differentiation in the plants' communities play on the pollination service has not yet been empirically evaluated in natural communities. 
-Both describing the structure of the interactions and the pollen flows that occur within it. 
 
-Here, we explore competition for pollination at the community scale using comprehensive empirical data from eleven plant-pollinator communities in the Argentinian Pampas. 
-First, we ask the extent to which the outcome of animal-mediated pollination is facilitation or competition. 
+Here, we investigate competition for pollination at the community scale using comprehensive empirical data from eleven plant-pollinator communities in the Argentinian Pampas. 
+First, we need to understand the extent to which the outcome of animal-mediated pollination is facilitation or competition. 
 If facilitation is the primary outcome we would expect (*i*) an overall positive relationship between the amount of conspecific pollen deposited in stigmas and the heterospecific pollen [@tur_evaluating_2016] and (*ii*) a larger amount of conspecific pollen deposited in stigmas when flowers are open to animal pollinators than that due to self-pollination. 
-Second, we investigate the relative contribution that four ecological factors, that together, describe the role of the plant species and the ecological context, have on competition for pollination. 
+Second, we investigate the relative contribution that four ecological factors, that together describe the strategies of ecological differentiation, have on competition for pollination. 
 We hypothesize that competition for pollination at the community level should increase as the number of shared pollination partners a plant has increases.
 However, other factors like the plant's functional originality, its relative abundance, and the visit effectiveness, should have the potential to compensate this increase in competition by improving either the quality or the quality of pollination. 
-Third, and finally, we explore how community influences the way plants use these factors to minimise competition. 
-Although some plant species might be widespread across multiple locations, competition for pollinators occurs at the community level and are hence is likely to be defined by the ecological context. 
+Third, and finally, we explore how community context influences the way plants use these factors to minimise competition. 
+\R{third-hypothesis}Although some plant species might be widespread across multiple locations, competition for pollinators occurs at the community level and are hence is likely to be defined by the local context. 
 If plant species adopt comparable roles across different communities, we should expect plant strategies to be more similar within species than across species in the study. 
 On the contrary, if species role is flexible, we should expect plants to be able to adopt different strategies in each community such that competition is minimised depending on the context. 
 
