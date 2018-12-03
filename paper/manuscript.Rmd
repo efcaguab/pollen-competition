@@ -83,8 +83,8 @@ Feel free to come back here after you've read the manuscript. Thanks!
 
 Animal pollination systems play a disproportionally important role in food production and maintenance of global biodiversity [@bascompte_plant-animal_2007; @klein_importance_2007; @ollerton_how_2011]. 
 Alongside the direct mutualisms between plants and their pollinators, \R{ref-needed-possitive-loops} the support to biodiversity can be achieved as a result of inter-species facilitation—the positive feedback loops that exist between plants that share pollinators or pollinators that share plant [@moeller_facilitative_2004; @ghazoul_floral_2006; @molina-montenegro_positive_2008]. 
-Facilitation is able to promote species coexistence because it offsets the effects of direct competition for resources [@stachowicz_mutualism_2001]. 
-Indeed, studies that are fundamental to our current knowledge of mutualism predict that the maximum number of coexisting species---an upper limit to biodiversity---is achieved when the number of mutualistic partners is maximised in a community [@bastolla_architecture_2009]. 
+In sum, inter-species facilitation is able to promote species coexistence because it is able to offset the effects of direct competition for resources [@stachowicz_mutualism_2001]. 
+What is more, studies that are fundamental to our current knowledge of mutualism predict that the maximum number of coexisting species---effectively an upper limit to biodiversity---is achieved when the number of shared mutualistic partners is maximised in a community [@bastolla_architecture_2009]. 
 And yet, not every pollinator species in natural communities interacts with every species of plant. 
 
 One explanation is that sharing a mutualistic partner also has costs [@waser_interspecific_1978]. 
