@@ -455,6 +455,10 @@ cowplot::plot_grid(
 
 # Discussion 
 
+We found that the community context plays a central role at determining competition for pollination and in turn the quantity and quality of pollination. 
+Although the factors that previous studies with a small number of species are identify as important, are still relevant at the community level, we identify some phenomena that may not be observable in systems with two or three species. 
+Specifically, XX
+
 * We did find a trade-off between the number of partners a species interacts with and the mutualistic service. Interacting with more species alone is often accompanied by a decreases in both the quantity and quality of pollination. 
 * However, the effect and importance of this trade-off is comparatively small when considering other factors that describe the species niche and its ecological settings. 
 * We found that animal pollination only brings a small amount of extra conspecific pollen (compared selfing) if any. This relatively small difference is probably very important because, first, some plants simply aren't self-fertile, even if their own pollen gets deposited on the stigma. Second, in some flowers there is temporary separation in the maturation of the sexes (dichogamy) that favours cross-pollination as, evolutionary, it has been shown to be a better strategy than cloning. 
