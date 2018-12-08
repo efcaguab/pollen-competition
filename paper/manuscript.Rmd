@@ -468,14 +468,13 @@ These trade-offs were most evident precisely in the strategies that most strongl
 We found that the strategies that increased the relative dominance of the species (in terms of pollen and visits, or abundance) also tended to be the most important predictors of pollen deposition. 
 Adopting a strategy of high visitation increasses the rates of conspecific pollen deposition at the expense of a reduction in the quality of pollination even when the visitors carry a high proportion of conspecific pollen. 
 Similarly, adopting a strategy of high abundance reduces the amount of heterospecific pollen deposited but at the expense of a noticeable reduction in the amount of conspecific pollen. 
-
 Our results corroborate the importance that previous studies have attributed to the role that visitation and abundance play at determining competition for pollination [@feldman_when_2004; @munoz_presence_2008; @morales_interspecific_2008]. 
 The fact that they also involve a trade-off between the quantity and quality of pollination might explain the often contrasting results that these studies, based on two or three species systems obtained. 
-Simultaneously, because visitation, pollen production and abundance are correlated, these trade-offs also suggest that to minimise competition for pollination plants must reach a fine balance between these factors to increasse conspecific pollen and reduce heterospecific pollen deposition. 
-The relative wide range of in our model coefficients might be explained by the wide variation of the extent to which plant species are affected by pollen deposition. 
-While some species experience a large reduction on seed set due to heterospecific pollen deposition, some others are relatively insensitive to heterospecific pollen but are greatly affected by low levels of conspecific pollen deposition [@campbell_mechanism_1985]. 
-* We did find a trade-off between the number of partners a species interacts with and the mutualistic service. Interacting with more species alone is often accompanied by a decreases in both the quantity and quality of pollination. 
-Two other strategies involved a much smaller trade-off than the abundance or visit efficacy. 
+
+Simultaneously, because visitation, pollen production and abundance are correlated, the trade-offs also suggest that to minimise competition for pollination plants must reach a fine balance between increassing conspecific pollen and reduce heterospecific pollen deposition. 
+The relative wide range of coefficients in our models might be explained by the large variation of the extent to which plant species are affected by pollen deposition. 
+While some plant species experience a large reduction on seed set due to heterospecific pollen deposition, some others are relatively insensitive to heterospecific pollen but are greatly affected by low levels of conspecific pollen deposition [@campbell_mechanism_1985]. 
+
 The two other strategies we analysed involved a smaller trade-off than the abundance or visit efficacy. 
 Specifically, having high functional originality relative to other species in the community or sharing few pollinators was found to be benetitial to both the quantity and quality of pollination.
 Interestingly, these two strategies also had lower explanatory power in the models of pollen deposition. 
