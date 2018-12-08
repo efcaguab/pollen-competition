@@ -455,9 +455,10 @@ cowplot::plot_grid(
 
 # Discussion 
 
-We found that the community context plays a central role at determining competition for pollination and in turn the quantity and quality of pollination. 
-Although the factors that previous studies with a small number of species are identify as important, are still relevant at the community level, we identify some phenomena that may not be observable in systems with two or three species. 
-Specifically, XX
+Our results suggest that the community context plays a central role at determining competition for pollination. 
+First, we found that the costs of pollinator sharing are pervasive. In particular, we found that a significant proportion of species undergoes overall neutral or competitive effects from animal mediated pollination. 
+Second, we found that plants are able to minimise the intensity of this competition using multiple strategies, however, conspecific and heterospecific pollen deposition are tightly coupled and threfore these strategies are likely to involve a trade-off between the quantity and quality of pollination. 
+Third, we found that these strategies are strongly shaped by the community context, this is, the same plant species can adopt dramatically different strategies depending on the comminity it belongs to. 
 
 * We did find a trade-off between the number of partners a species interacts with and the mutualistic service. Interacting with more species alone is often accompanied by a decreases in both the quantity and quality of pollination. 
 * However, the effect and importance of this trade-off is comparatively small when considering other factors that describe the species niche and its ecological settings. 
