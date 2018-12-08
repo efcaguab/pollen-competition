@@ -480,6 +480,10 @@ Specifically, having high functional originality relative to other species in th
 Interestingly, these two strategies also had lower explanatory power in the models of pollen deposition. 
 This is not to say that these variables are actually unimportant to pollen deposition, rather it suggest that the processes that underlay them might be more complex than what our metrics are able to capture. 
 Especially in what relates to conspecific pollen deposition, which was harder to model than heterospecific pollen. 
+\R{strategies}Regardless of the specific factors involved it is clear, however, that the community context has a very important effect on the way plant species respond to competition for pollination. 
+First, in the models of pollen deposition, the random structure that allowed plants of the same species to have different intercepts across communities was much better supported by the data than the structure that fixed the intercept for a plant species irrespective of the community. 
+Second, in a large majority of cases, the strategies that a species uses across communities are not more similar to each other than what would be expected at random. 
+Lit? Context?
 On the one hand these two variables are more tighly related to the understanding of competition at the community scale than metrics of dominance. 
 On the other, having distinct traits, for example trough phenology differentiation, has a positive impact on the pollination service only to the extent to which previous floral communities have promoted high pollinator densities [@ye_competition_2014]. 
 In addition, some plants have been shown possess mechanisms that prevent heterospecific pollen deposition even when shared visitors carry pollen loads from diverse species. 
