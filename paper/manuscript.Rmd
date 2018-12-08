@@ -476,10 +476,15 @@ The relative wide range of in our model coefficients might be explained by the w
 While some species experience a large reduction on seed set due to heterospecific pollen deposition, some others are relatively insensitive to heterospecific pollen but are greatly affected by low levels of conspecific pollen deposition [@campbell_mechanism_1985]. 
 * We did find a trade-off between the number of partners a species interacts with and the mutualistic service. Interacting with more species alone is often accompanied by a decreases in both the quantity and quality of pollination. 
 Two other strategies involved a much smaller trade-off than the abundance or visit efficacy. 
-Specifically, having high functional originality relative to other species in the community or sharing few pollinators is benetitial to both the quantity and quality of pollination.
+The two other strategies we analysed involved a smaller trade-off than the abundance or visit efficacy. 
+Specifically, having high functional originality relative to other species in the community or sharing few pollinators was found to be benetitial to both the quantity and quality of pollination.
 Interestingly, these two strategies also had lower explanatory power in the models of pollen deposition. 
-This is not to say that these variables are actually unimportant to pollen deposition, rather it suggest that the processes that underlay them might be more complex than what our metrics are able to capture. 
-Especially in what relates to conspecific pollen deposition, which was harder to model than heterospecific pollen. 
+This does not necessarily implies that these variables are unimportant to pollen deposition. 
+Instead, it is also possible that the processes that underlay these strategies might be more complex than what our metrics are able to capture. 
+Particularly so for conspecific pollen deposition, which was harder to predict than heterospecific pollen. 
+For instance, having distinct traits, for example through phenology differentiation, might have a positive impact on the pollination service only to the extent to which previous floral communities have promoted high pollinator densities (ref). 
+In addition, some plants have been shown possess mechanisms that prevent heterospecific pollen deposition even when shared visitors carry pollen loads from diverse species. 
+Alternatively, other factors that we were unable to meassure, like pollinator behaviour and densities [@ye_competition_2014; @flanagan_effects_2011; @melissas_2019?] or the spatial context [@cariveau_spatially_2009], can also shape the way sharing pollinators affect the pollination service. 
 \R{strategies}Regardless of the specific factors involved it is clear, however, that the community context has a very important effect on the way plant species respond to competition for pollination. 
 First, in the models of pollen deposition, the random structure that allowed plants of the same species to have different intercepts across communities was much better supported by the data than the structure that fixed the intercept for a plant species irrespective of the community. 
 Second, in a large majority of cases, the strategies that a species uses across communities are not more similar to each other than what would be expected at random. 
