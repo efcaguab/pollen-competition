@@ -36,7 +36,7 @@ knitr::opts_chunk$set(echo = FALSE, message = FALSE,
 drake::loadd(msc_wordcount, abs_wordcount)
 ```
 
-**Manuscript length:** `r format(msc_wordcount$n_char_tot_stri, big.mark = ",")` characters, approx. `r format(round(msc_wordcount$n_words_stri/10)*10-340, big.mark = ",")` words (includes draft info, excludes front-matter, abstract, awknoledgements, references, and figure/table legends); `r msc_wordcount$reading_time_stri` reading time.
+**Manuscript length:** `r format(msc_wordcount$n_char_tot_stri, big.mark = ",")` characters, approx. `r format(round(msc_wordcount$n_words_stri/10)*10, big.mark = ",")` words (excludes front-matter, abstract, awknoledgements, references, and figure/table legends); `r msc_wordcount$reading_time_stri` min. reading time.
 
 **Abstract length:** `r abs_wordcount$n_words_stri` words.
 
