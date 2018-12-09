@@ -1,9 +1,6 @@
-In the context of animal-mediated pollination, sharing pollinators between plant species creates a balancing act between two ecological opposites: mutualism and competition. 
-Sharing pollinators can be beneficial because it allows plant species to harness positive feedback loops between populations. 
-It can also be detrimental to co-flowering plants because pollen can be lost to foreign flowers and stigma surface can be occupied by foreign pollen.
-However, these detrimental effects of sharing pollinators are poorly understood at the community level because, at this scale, many other factors play a role in shaping species interactions. 
-Specifically, here we quantify the potential negative impact that the number of interacting species can play on the pollination service while accounting for the structure of the interactions, the pollen flows that occur within it, and the traits of the species that integrate the community. 
-We found that there is indeed a trade-off between the number of interacting partners and both the quantity and quality of pollination received by different flowering plants. 
-However, the trade-off's role on pollination service is relatively small when compared to other ecological factors. 
-In particular, competition for pollinators is more strongly shaped by density effects caused by the species abundance and the amount of pollen the plant produces, as well as its functional originality. 
-While sharing pollinators can be detrimental for plant fitness, when scaling up to empirical communities, we show that plants can compensate for these detrimental effects using other ecological mechanisms.
+*TBC once journal has been defined. But probably it will be something along the lines of the last paragraph of the discussion which goes:* 
+Here we show that competition for pollination is pervasive in ecological communities and that its effect on plant species strongly influenced by the community context. 
+Our results suggest that at the community level, the strategies that plants adopt to minimise competition require reaching a fine balancing act between the quantity and quality of pollination. 
+In particular, strategies that promote dominance of the species in its community (in terms of abundance, visitation and participation in the pollen pool) had the largest impacts on pollen deposition but also the largest trade-offs between increasing deposition of conspecific pollen and reducing that of heterospecific pollen. 
+Contrastingly, strategies that increase niche differentiation (functional originality and specialization) were positive to both the quantity and quality of pollination, but its effect was comparatively small compared to strategies of dominance.
+Remarkably, the particular strategy a plant uses is strongly shaped by its context and hence can be dramatically different in each of the communities it is part of. 
