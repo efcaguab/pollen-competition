@@ -56,12 +56,14 @@ drake::loadd(msc_wordcount, abs_wordcount)
 
 * Polish discussion. 
 * Spell-check everything & check that reference list is correct.
+* I think its not supper clear in the manuscript what is meant by a plant strategy. Need to re-check in the next iteration. 
 
 ## Questions
 
 Feel free to come back here after you've read the manuscript. Thanks!
 
 * Journal?
+* I think the story is still a bit disperse. Will appreciate feedback on identifying the most important/exciting findings to tie the others around it. So far the central topic is scaling up of competition to the community level. 
 * Do you know of a reasonable reference for the claims in \lr{ref-needed-possitive-loops} and \lr{ref2}?
 * Hugo. Some journals require publication of data alongside with the paper. Is it OK to consider those? Or you prefer to keep data private?
 * In Figure \@ref(fig:fig-trade-off-predictions)a, I determine if the slope is significantly positive or negative by checking whether the standard errors cross 0. Should it be 2 times SE? Should all other error bars in Figure \@ref(fig:fig-trade-off-predictions) be 2 times SE?
