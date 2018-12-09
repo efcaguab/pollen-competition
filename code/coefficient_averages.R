@@ -59,7 +59,8 @@ plot_coefficient_averages <- function(coefficient_averages, variable_importance)
       abs_larger <-  function(x,y) {if (abs(x) < abs(y)) return(y) ; x}
       
       line_offset <- 0.25
-      x %>%
+      p <- x %>%
+        dplyr::filter(metric == this_metric) %>%
         dplyr::rowwise() %>%
         dplyr::mutate(label_y = dplyr::if_else(abs(estimate_mid) < 0.25, 
                                                abs_larger(mean_estimate_quantile_025, mean_estimate_quantile_975),
@@ -103,8 +104,8 @@ plot_coefficient_averages <- function(coefficient_averages, variable_importance)
                   # size = 2) +
         pub_theme() +
         labs(y = "effect size") +
-        coord_flip(clip = "off") +
         scale_x_discrete(expand = c(0,0)) +
+        coord_flip(clip = "off") +
         theme(legend.position = "none", 
               axis.title.y = element_blank(), 
               axis.ticks.y = element_blank(),
@@ -112,6 +113,11 @@ plot_coefficient_averages <- function(coefficient_averages, variable_importance)
               panel.border = element_blank(), 
               axis.line.x = element_line(size = 0.25)) +
         scale_alpha_manual(values = c(0,1))
+      
+      if (this_metric == "quality") {
+        p <- p + scale_y_continuous(limits = c(-0.24, 0.35))
+      }
+      p
     }
     
     dodge_width <- 0
