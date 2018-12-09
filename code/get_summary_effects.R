@@ -13,7 +13,7 @@ get_summary_effects <- function(tidied_fixed){
     dplyr::mutate(quantity = conspecific_abs, 
                   quality = conspecific_abs - heterospecific_abs) %>% 
     dplyr::group_by(scale, fixed_formula, term) %>%
-    dplyr::summarise_at(dplyr::vars(quantity, quality), dplyr::funs(freq_t, parametric_t, median))
+    dplyr::summarise_at(dplyr::vars(quantity, quality), dplyr::funs(parametric_t, median))
 }
 
 # see if the quantiles of a vector cross zero in a parametric way
