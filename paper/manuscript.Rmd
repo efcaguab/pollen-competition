@@ -484,47 +484,15 @@ Particularly so for conspecific pollen deposition, which was harder to predict t
 For instance, having distinct traits, for example through phenology differentiation, might have a positive impact on the pollination service only to the extent to which previous floral communities have promoted high pollinator densities (ref). 
 In addition, some plants have been shown possess mechanisms that prevent heterospecific pollen deposition even when shared visitors carry pollen loads from diverse species. 
 Alternatively, other factors that we were unable to meassure, like pollinator behaviour and densities [@ye_competition_2014; @flanagan_effects_2011; @melissas_2019?] or the spatial context [@cariveau_spatially_2009], can also shape the way sharing pollinators affect the pollination service. 
+
 \R{strategies}Regardless of the specific factors involved it is clear, however, that the community context has a very important effect on the way plant species respond to competition for pollination. 
 First, in the models of pollen deposition, the random structure that allowed plants of the same species to have different intercepts across communities was much better supported by the data than the structure that fixed the intercept for a plant species irrespective of the community. 
 Second, in a large majority of cases, the strategies that a species uses across communities are not more similar to each other than what would be expected at random. 
 Lit? Context?
-On the one hand these two variables are more tighly related to the understanding of competition at the community scale than metrics of dominance. 
-On the other, having distinct traits, for example trough phenology differentiation, has a positive impact on the pollination service only to the extent to which previous floral communities have promoted high pollinator densities [@ye_competition_2014]. 
-In addition, some plants have been shown possess mechanisms that prevent heterospecific pollen deposition even when shared visitors carry pollen loads from diverse species. 
-Similarly, other factors, not meassured in our study, like pollinator behaviour and densities [@ye_competition_2014; ref to Melissa's paper?] or the spatial context [@cariveau_spatially_2009] can also shape the way sharing pollinators affects the pollination service. 
 
-* We found that animal pollination only brings a small amount of extra conspecific pollen (compared selfing) if any. This relatively small difference is probably very important because, first, some plants simply aren't self-fertile, even if their own pollen gets deposited on the stigma. Second, in some flowers there is temporary separation in the maturation of the sexes (dichogamy) that favours cross-pollination as, evolutionary, it has been shown to be a better strategy than cloning. 
-* Overall it seems like density seems to be a dominant force behind pollen transfer. If you have many individuals of your species, you get fewer visits (dilution of the pollinators flying around), which is reflected in a smaller amount of deposited pollen. We show that abundant plants also tend to comprise a greater component of the pollen source pool and so the end result is that get more conspecific pollen per visit than heterospecific pollen. 
-* Our result of the comparatively weak effect of the mutualistic trade-off is important because it is fundamentally related to the way we understand and mathematically represent mutualistic systems. 
-Some of the most widely used theoretical models of pollination account for the negative effects of mutualism by adjusting the mutualistic benefit of an interaction so that it can be negatively affected by the number of mutualistic partners---the species degree. 
-This approach, considerably simplifies the mathematical treatment of competition for pollinators. 
-However we show that care must be taken because the negative effects of the mutualistic trade-off in both the quantity and quality of pollination can be offset by density mechanisms. Species with large degrees also tend be abundant and prolific pollen producers. 
+## Conclusion
 
-Interspecific pollen transfer is the most important factor underpining competition for pollinators [@campbell_mechanism_1985]
 
-Traits are determined by competition for pollination -- Caruso 2000
-
-, all while accounting for the traits of the species that integrate the community.  extent to which plants employ  relative contribution and the interplay of each factor requires
-First, that plants might use different strategies to reduce competition for pollination. 
-Second that the effect of coorelated factors in the quality and quantity of pollination [like generalism, its relative abundance, and visitation frequency; @sargent_role_2006] might balance each other. 
-
-Interspecific pollen transfer was responsible for reduction in set set for one species but loss of conspecific pollen was responsible for another -- Campbell and Motten 1985
-
-Plant species vary greatly on the extent to which each of these two mechanisms can affect fertilisation [@campbell_mechanism_1985], a large plant 
-
-Competition can also be mediated by pollinator density, not just plant density [@ye_competition_2014]
-
-Check @flanagan_effects_2011 for discussion on the effects when one thinks about communities. 
-
-Traits can have a role only with High abundances, where being dominant can be bad for other plants in communities. Abbundance is important in small species number systems [@munoz_presence_2008]
-
-Plants have mechanishms that prevent heterospecific pollen deposition. @bartomeus_high_2008 show that even when a plant dominates the pollen transfer network opther species might not receive lots of heterospecific pollen [@bartomeus_high_2008; @flanagan_increased_2010]
-
-Pollen limitation is inversely related to abundance, but high abundance is also related to mate limitation [@moeller_facilitative_2004]
-
-Competition also depends on the spatial extent [@cariveau_spatially_2009]
-
-Facilitation is still controversial? [@feldman_when_2004]
 
 # Acknowledgements
 
