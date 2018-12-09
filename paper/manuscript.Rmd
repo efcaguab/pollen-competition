@@ -174,9 +174,9 @@ The slope and intercept of this relationship were allowed to differ between plan
 Models were fitted using the function `lmer` from the R package `lme4 1.1-19` [@bates_fitting_2015]. 
 To compare the conspecific pollen deposited with and without animal-mediated pollination, we performed a Mann-Withney U test of the number of conspecific pollen grains per stigma between un-bagged and bagged flowers for each of the studied species in a community. 
 
-## Effect of ecological factors in the pollination service 
+## Effect of plant strategies in the pollination service 
 
-Our second objective is to investigate the relative contribution that different factors that describe the plants' role and its ecological context have on the pollination service. 
+Our second objective is to investigate the relative contribution that different factors that describe the plants' strategies to minimise competition have on the pollination service. 
 Specifically, we investigate the effect of (*i*) the number of shared pollinators, (*ii*) the plants relative abundance, (*iii*) the mean visit effectiveness---a metric that combines the share of pollen that a plant species is able to place on each of their floral visitors and the number of visits it receives from them (see Data Analysis section below for more details), and (*iv*) the plants functional originality.
 Here, we define visit effectiveness of the pollinator species *i* to plant species *j* as the proportion between the visits of *i* to *j* and all visits of *i*, multiplied by the proportion between the number of pollen grains of *j* attached to individuals of *i* and all pollen attached to individuals of *i*.
 
@@ -197,7 +197,7 @@ More details about the study sites, data collection, and laboratory protocols ca
 
 ### Data analysis
 
-We investigate the impact of the ecological factors on the pollination services using two metrics: the quantity and the quality of pollination. 
+We investigate the impact of the ecological strategies on the pollination services using two metrics: the quantity and the quality of pollination. 
 Here we define the quality of pollination as the amount of conspecific pollen and the quality of pollination as the amount of conspecific pollen *relative* to heterospecific pollen. 
 To construct these metrics we use two sets of linear mixed models (LMM) in which the response variables are the number of conspecific and heterospecific pollen grains deposited per stigma in flowers open to animal-mediated pollination. 
 In general, using LMMs in which pollen loads were log-transformed (Figure \@ref(S-fig:fig-deposition-gain-log-transformed-or-not)) offered better results than a GLMM with Poisson (or quasipoisson) error structure. 
@@ -332,7 +332,7 @@ Here again, we found large differences between plants.
 Specifically, the difference was non-signifcant for `r sp_con_con$np[sp_con_con$effect_category == "neutral"]`% of plants, `r sp_con_con$np[sp_con_con$effect_category == "positive"]`% had significantly more pollen when open, and the remaining `r sp_con_con$np[sp_con_con$effect_category == "negative"]`% had significantly less pollen when open ($\alpha = 0.05$, Mann-Withney U tests; Figure \@ref(fig:fig-trade-off-predictions)c). 
 Variation within species was slightly smaller and only `r numbers2words(nrow(sp_con_both_pos_neg))` species (*H. incana* and *C. acanthoides*) had both significantly positive and negative differences. 
 
-## Effect of ecological factors in the pollination service 
+## Effect of ecological strategies in the pollination service 
 
 ```{r model-fit-statistics}
 drake::loadd(model_formula_ranking, glanced_fixed)
@@ -349,6 +349,7 @@ r2_values <- model_formula_ranking$by_model_set %>%
 ```
 
 We then examined the role that four ecological variables (number of shared pollinators, abundance, mean visit effectiveness, and functional originality) play on pollen deposition and, by extension, in the quantity and quality of pollination. 
+These variables define the strategies that plants use to minimise competition for pollination. 
 We found that the linear mixed models of pollen deposition used had high explanatory power. 
 The conditional coefficient of determination R^2^~(c)~ of the most parsimonious models (those with the lowest AICc) ranged between `r r2_values$r2c_min[r2_values$pollen_category == "conspecific_abs"]` and `r r2_values$r2c_max[r2_values$pollen_category == "conspecific_abs"]` (mean of `r r2_values$r2c_mean[r2_values$pollen_category == "conspecific_abs"]`) for the bootstrap replicates of the conspecific pollen models and between `r r2_values$r2c_min[r2_values$pollen_category == "heterospecific_abs"]` and `r r2_values$r2c_max[r2_values$pollen_category == "heterospecific_abs"]` (mean `r r2_values$r2c_mean[r2_values$pollen_category == "heterospecific_abs"]`) for the models of heterospecific pollen [@nakagawa_general_2013]. 
 A large portion of this explanatory power came from the random effects, particularly for models of conspecific pollen. 
@@ -361,18 +362,18 @@ This structure was best for both the models of conspecific and heterospecific po
 Out of the four variables we explored, we found that the plants' mean visit effectiveness and its abundance were the most important ecological variables predicting pollen deposition in plant stigmas (Figure \@ref(fig:fig-average-qual-quant)a). 
 Surprisingly, the number of shared pollinators was comparatively unimportant, particularly for models of heterospecific pollen deposition, as it was only included in models with relatively large AICc values. 
 
-We found that the relationship between each of the ecological factors and pollen deposition was similar for both conspecific and heterospecific pollen. 
-This is, factors that were associated with an increase (or a decrease) in conspecific pollen, were also associated with an increase (or a decrease) in heterospecific pollen deposition. 
+We found that the relationship between each of the strategies and pollen deposition was similar for both conspecific and heterospecific pollen. 
+This is, strategies that were associated with an increase (or a decrease) in conspecific pollen, were also associated with an increase (or a decrease) in heterospecific pollen deposition. 
 Specifically, the plants' mean visit effectiveness had a positive effect on pollen deposition (Figure \@ref(fig:fig-average-qual-quant)b). 
 The positive association with conspecific pollen indicates a positive effect on the quantity of pollination. 
 However, the mean of the coefficients that relates visit effectiveness to heterospecific pollen deposition is slightly larger than that of conspecific pollen. 
 This suggest a negative, albeit marginal, relationship of visit effectiveness and our definition of the quality of the pollination service (Figure \@ref(fig:fig-average-qual-quant)c). 
 Contrastingly, the plants' relative abundance had a negative effect in pollen deposition (and consequently the quantity of pollination), but the difference between the coefficients in the models of conspecific and heterospecific pollen indicates a considerable positive impact on the quality of pollination. 
 The third most important variable, functional originality, had a positive, although comparatively smaller, association with both the quantity and quality of pollination. 
-Finally, the number of shared pollinators had a negative association with the quantity and quality of pollination, but these impacts were small when compared to all other ecological factors. 
+Finally, the number of shared pollinators had a negative association with the quantity and quality of pollination, but these impacts were small when compared to the other variables. 
 Although relative abundance, the number of shared pollinators, and the visit effectiveness were positively correlated (Figure \@ref(S-fig:fig-correlation)), the effect that each of them had on conspecific pollen was relatively similar among models that included all or just some of these three explanatory variables (Figure \@ref(S-fig:fig-model-results)). 
 
-```{r fig-average-qual-quant, fig.height= 2.29, fig.width=6.5, fig.cap="**Effect of ecological factors in the pollination service**. (a) The plant's visit effectiveness and relative abundance are the most important variables determining the deposition of conspecific and heterospecific pollen. Meanwhile, the number of shared pollinators was relatively unimportant. The graph shows the relative variable importance calculated as the sum of the Akaike weights of the candidate models that included the variable. (b) The association of ecological variables on heterospecific pollen tended to be aligned with its association on conspecific pollen. Visit effectiveness and functional originality had a positive association with pollen deposition, while abundance and the number of shared pollinators had a negative association. The plot shows the distribution of the effects (across 99 bootstrap replicates) of the four ecological variables for conspecific (top panel) and heterospecific pollen (bottom panel). Results are only shown for models that included explanatory variable. (c) The end result of these associations is that only the plants' functional originality has a positive impact on both the quantity and quality of pollination. The plot shows the model averaged mean effect (± SE) of the four analysed ecological variables in the quantity and quality of pollination."}
+```{r fig-average-qual-quant, fig.height= 2.29, fig.width=6.5, fig.cap="**Effect of strategies to minimise competition in the pollination service**. (a) The plant's visit effectiveness and relative abundance are the most important variables determining the deposition of conspecific and heterospecific pollen. Meanwhile, the number of shared pollinators was relatively unimportant. The graph shows the relative variable importance calculated as the sum of the Akaike weights of the candidate models that included the variable. (b) The association of ecological variables on heterospecific pollen tended to be aligned with its association on conspecific pollen. Visit effectiveness and functional originality had a positive association with pollen deposition, while abundance and the number of shared pollinators had a negative association. The plot shows the distribution of the effects (across 99 bootstrap replicates) of the four ecological variables for conspecific (top panel) and heterospecific pollen (bottom panel). Results are only shown for models that included explanatory variable. (c) The end result of these associations is that only the plants' functional originality has a positive impact on both the quantity and quality of pollination. The plot shows the model averaged mean effect (± SE) of the four analysed ecological variables in the quantity and quality of pollination."}
 height1 <- 1
 height2 <- 1.29
 # pdf(width = 3.25 * 2, height = sum(c(height1, height2)))
