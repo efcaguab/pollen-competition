@@ -460,7 +460,7 @@ First, we found that the costs of pollinator sharing are pervasive. In particula
 Second, we found that plants are able to minimise the intensity of this competition using multiple strategies, however, conspecific and heterospecific pollen deposition are tightly coupled and threfore these strategies are likely to involve a trade-off between the quantity and quality of pollination. 
 Third, we found that these strategies are strongly shaped by the community context, this is, the same plant species can adopt dramatically different strategies depending on the comminity it belongs to. 
 
-\R{disc-facil-comp}Both of the tests used to identify the effect of animal-mediated pollination suggested the same outcome: that overall facilitation is only experienced by a minority of species in a community. 
+\R{disc-facil-comp}Both of the tests we used to identify the effect of animal-mediated pollination suggested the same outcome: that overall facilitation is only experienced by a minority of species in a community. 
 Althouh a recent study already suggested a wide range of outcomes in multi-species context [@tur_evaluating_2016], the factors determining why some species experience more competition than others were not understood. 
 Here we show that prevalence of neutral and competitive effects of animal-mediated pollination can be, at least partially, explained by the trade-offs that minimising competition involves.  
 
@@ -471,7 +471,7 @@ Similarly, adopting a strategy of high abundance reduces the amount of heterospe
 Our results corroborate the importance that previous studies have attributed to the role that visitation and abundance play at determining competition for pollination [@feldman_when_2004; @munoz_presence_2008; @morales_interspecific_2008]. 
 The fact that they also involve a trade-off between the quantity and quality of pollination might explain the often contrasting results that these studies, based on two or three species systems obtained. 
 
-Simultaneously, because visitation, pollen production and abundance are correlated, the trade-offs also suggest that to minimise competition for pollination plants must reach a fine balance between increassing conspecific pollen and reduce heterospecific pollen deposition. 
+Simultaneously, because visitation, pollen production and abundance are correlated [@sargent_role_2006], the trade-offs also suggest that to minimise competition for pollination plants must reach a fine balance between increassing conspecific pollen and reduce heterospecific pollen deposition. 
 The relative wide range of coefficients in our models might be explained by the large variation of the extent to which plant species are affected by pollen deposition. 
 While some plant species experience a large reduction on seed set due to heterospecific pollen deposition, some others are relatively insensitive to heterospecific pollen but are greatly affected by low levels of conspecific pollen deposition [@campbell_mechanism_1985]. 
 
@@ -479,7 +479,7 @@ The two other strategies we analysed involved a smaller trade-off than the abund
 Specifically, having high functional originality relative to other species in the community or sharing few pollinators was found to be benetitial to both the quantity and quality of pollination.
 Interestingly, these two strategies also had lower explanatory power in the models of pollen deposition. 
 This does not necessarily implies that these variables are unimportant to pollen deposition. 
-Instead, it is also possible that the processes that underlay these strategies might be more complex than what our metrics are able to capture. 
+Instead, it is possible that the processes that underlay these strategies might be more complex than what our metrics are able to capture. 
 Particularly so for conspecific pollen deposition, which was harder to predict than heterospecific pollen. 
 For instance, having distinct traits, for example through phenology differentiation, might have a positive impact on the pollination service only to the extent to which previous floral communities have promoted high pollinator densities (ref). 
 In addition, some plants have been shown possess mechanisms that prevent heterospecific pollen deposition even when shared visitors carry pollen loads from diverse species. 
