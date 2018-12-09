@@ -68,6 +68,9 @@ Feel free to come back here after you've read the manuscript. Thanks!
 * What do you think about the quantity/quality discourse now? I'm still unconvinced. Maybe I should just go for relationship conspecific/heterospecific instead of quality? That would mean that Figure \@ref(fig:fig-average-qual-quant)c would just need the right panel. Cause the left is just almost the same as Figure \@ref(fig:fig-average-qual-quant)b, except that it includes models in which the variable was not present and hence "shrinks" the model averaged estimate.  
 * Unsure of whether in Figure \@ref(fig:fig-pca)a, it would be better to display the contribution of each component to total variance instead of the cummulative contribution.
 * I'm not very happy with the way the third hypothesis is described in the intro (\lr{third-hypothesis}). I would appreciate ideas to rephrase it clearly
+* Does the paragraph in \lr{disc-facil-comp} needs more meat? Any suggestions?
+* My background in the topic is limited, would be grateful if you could point me out to key papers that could be used to put some context to the finding of the "flexibility" of plants strategies (paragraph in \lr{strategies})
+* Part of the discussion before revolved about the fact that degree is commonly used in theoretical models of mutualism to adjust the mutualistic benefit of generalist species. I've removed it because I think the discussion is already a bit long and didn't fit that nicely in the story. You think it should be included? 
 
 \clearpage
 
