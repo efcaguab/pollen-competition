@@ -4,8 +4,11 @@ count_words <- function(filename = "", lines_to_ignore = NULL, remove_md_heading
   if (!is.null(lines_to_ignore)) {
     text_lines <- text_lines[-lines_to_ignore]
   }
-  if (remove_md_headings){
-    text_lines <- text_lines[-which(grepl("^#", lines))]
+  if (remove_md_headings) {
+    heading_lines <- which(grepl("^#", text_lines))
+    if (length(heading_lines) > 0) {
+      text_lines <- text_lines[-heading_lines]
+    }
   }
   text_to_count <- paste(text_lines, 
                          collapse = " ")
