@@ -229,6 +229,7 @@ get_model_correlations <- function(...){
     x %>%
       purrr::map(~ broom::augment(.)) %>%
       purrr::map(~ dplyr::select(., pollen_category, scale, var_trans, site_name, plant_name, fixed_formula, .fitted)) %>% 
+      purrr::map(~ dplyr::mutate(., .fitted = round(.fitted, 8))) %>%
       purrr::map_df(~ dplyr::distinct(.)) %>%  
       tidyr::spread(pollen_category, .fitted) %>% 
       # ggplot(aes(x = conspecific, y = heterospecific, colour = interaction(scale, var_trans))) +
@@ -273,6 +274,7 @@ remove_failed_models <- function(models){
 expand_model_predictions <- function(x){
   x %>% purrr::map(~ broom::augment(.)) %>% 
     purrr::map(~ dplyr::select(., pollen_category, scale, var_trans, site_name, plant_name, fixed_formula, .fitted)) %>%  
+    purrr::map(~ dplyr::mutate(., .fitted = round(.fitted, 8))) %>%
     purrr::map_df(~ dplyr::distinct(.)) %>%  
     tidyr::spread(pollen_category, .fitted)
 }

@@ -52,6 +52,7 @@ impute_na_values_pca <- function(x, na_threshold = 0){
   
   if (na_threshold != 0) {
     ncp <- data_numeric %>%
+      as.matrix() %>%
       missMDA::estim_ncpPCA() %>%
       extract2("ncp")
     

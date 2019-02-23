@@ -5,9 +5,13 @@ pkgconfig::set_config("drake::strings_in_dots" = "literals")
 
 library(magrittr)
 library(foreach)
+library(drake)
 
 # load functions
 f <- lapply(list.files("code", full.names = T), source)
+
+n_replicates <- 9
+transformation <- function(x) log(x + 1)
 
 # Clean data --------------------------------------------------------------
 
@@ -73,9 +77,6 @@ basic_analyses_plan <- drake::drake_plan(
 )
 
 # Bootstrap models --------------------------------------------------------
-
-n_replicates <- 99
-transformation <- function(x) log(x + 1)
 
 boot_replicates <- drake::drake_plan(
   rep = data_replicate(
