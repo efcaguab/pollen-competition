@@ -1,7 +1,8 @@
 # Includes R 3.5.0, src build tools, rstudio, tidyverse & devtools and tex and publishing-related pacakages. R 3.5.0 was released on April 23
 FROM rocker/tidyverse:3.5.0
+# Installing texlive though apt-get cause I was having trouble using TinyTex
 RUN apt-get update \
-  && apt-get -y --no-install-recommends install texlive-full
+  && apt-get -y --no-install-recommends install texlive-latex-base
 # R dependences are installed from MRAN repo snapshotted on 2018-06-01, one day before 3.5.1 and a month before they did something weird to MuMIN
 RUN R -e "install.packages('drake', repos = c(CRAN = 'https://mran.revolutionanalytics.com/snapshot/2018-06-01'))"
 RUN R -e "install.packages('foreach', repos = c(CRAN = 'https://mran.revolutionanalytics.com/snapshot/2018-06-01'))"
@@ -17,8 +18,7 @@ RUN R -e "install.packages('bookdown', repos = c(CRAN = 'https://mran.revolution
 RUN R -e "install.packages('ggplot2', repos = c(CRAN = 'https://mran.revolutionanalytics.com/snapshot/2018-08-01'))"
 RUN R -e "install.packages('cowplot', repos = c(CRAN = 'https://mran.revolutionanalytics.com/snapshot/2018-08-01'))"
 RUN R -e "install.packages('ggridges', repos = c(CRAN = 'https://mran.revolutionanalytics.com/snapshot/2018-08-01'))"
-# Updating tinytex 
-#RUN R -e "install.packages('tinytex', repos = c(CRAN = 'https://mran.revolutionanalytics.com/snapshot/2019-02-01'))"
-#RUN R -e "tinytex::install_tinytex(force = TRUE)"
-#RUN R -e "tinytex::tlmgr_install('collection-latexextra')"
-#RUN echo "PATH=${PATH}" >> /usr/local/lib/R/etc/Renviron
+# Install extra latex packages, should be able to install extra packages in runtime if necessary
+RUN apt-get -y install xzdec
+RUN runuser -l rstudio -c "cd ~ && mkdir texmf && tlmgr init-usertree && tlmgr update --self"
+RUN runuser -l rstudio -c "tlmgr install lm ec booktabs titling multirow xcolor wrapfig float tabu varwidth threeparttable threeparttablex environ trimspaces ulem makecell setspace lineno"
