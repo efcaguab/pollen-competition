@@ -33,26 +33,26 @@ format_data_plan <- drake::drake_plan(
   plant_rel_abu = calculate_relative_abundance(abu_frame, dep_frame),
   # plant_pheno_overlap = calculate_phenology_overlap(abu_frame, dep_frame),
   vis_frame = extract_vis_frame(armonised_data),
-  degree = get_degree(vis_frame, dep_frame), 
+  degree = get_degree(vis_frame, dep_frame),
   shar_pol = get_shared_pol(vis_frame),
-  tra_frame = extract_tra_frame(armonised_data), 
+  tra_frame = extract_tra_frame(armonised_data),
   pollen_dominance = get_pollen_dominance(tra_frame, vis_frame),
   pollen_contribution = get_pollen_contribution(tra_frame)
 )
 
 traits_plan <- drake::drake_plan(
-  plant_traits = read_plant_traits(drake::file_in('data/raw/plant_traits.csv')), 
-  trait_matrices = make_trait_matrices(plant_traits, abu_frame, TRUE, TRUE), 
-  species_coords = get_species_coords(trait_matrices, weighted = TRUE), 
-  unq_frame = get_species_uniqueness(species_coords), 
+  plant_traits = read_plant_traits(drake::file_in('data/raw/plant_traits.csv')),
+  trait_matrices = make_trait_matrices(plant_traits, abu_frame, TRUE, TRUE),
+  species_coords = get_species_coords(trait_matrices, weighted = TRUE),
+  unq_frame = get_species_uniqueness(species_coords),
   org_frame = get_species_originality(species_coords, abu_frame)
 )
 
 imputation_plan <- drake::drake_plan(
-  imputed_degree_legacy = impute_degree(degree), 
-  imputed_degree = impute_shared(shar_pol), 
-  imputed_abundance = impute_abundace(plant_rel_abu), 
-  imputed_originality = impute_originality(org_frame), 
+  imputed_degree_legacy = impute_degree(degree),
+  imputed_degree = impute_shared(shar_pol),
+  imputed_abundance = impute_abundace(plant_rel_abu),
+  imputed_originality = impute_originality(org_frame),
   imputed_pollen = impute_pollen_dominance(pollen_dominance),
   imputed_pollen_legacy = impute_pollen_contrib(pollen_contribution)
 )
@@ -65,14 +65,14 @@ imputation_plan <- drake::drake_plan(
 basic_analyses_plan <- drake::drake_plan(
   consp_self = model_conspecific_self(dep_frame),
   significant_gain_global = mann_withney_part_df(
-    dplyr::filter(dep_frame, pollen_category == 'conspecific'), 
-    by = 'recipient', 
-    var = 'treatment', 
+    dplyr::filter(dep_frame, pollen_category == 'conspecific'),
+    by = 'recipient',
+    var = 'treatment',
     conf.int = T),
   significant_gain_site = mann_withney_part_df(
-    dplyr::filter(dep_frame, pollen_category == 'conspecific'), 
-    by = c('recipient', 'site_name'), 
-    var = 'treatment', 
+    dplyr::filter(dep_frame, pollen_category == 'conspecific'),
+    by = c('recipient', 'site_name'),
+    var = 'treatment',
     conf.int = T)
 )
 
@@ -80,20 +80,20 @@ basic_analyses_plan <- drake::drake_plan(
 
 boot_replicates <- drake::drake_plan(
   rep = data_replicate(
-    dep_frame, 
+    dep_frame,
     imputed_abundance,
     imputed_pollen,
-    imputed_degree, 
+    imputed_degree,
     imputed_originality,
-    sites, 
-    transformation, 
+    sites,
+    transformation,
     N)) %>%
-  drake::evaluate_plan(rules = list(N = 1:n_replicates)) 
+  drake::evaluate_plan(rules = list(N = 1:n_replicates))
 
 random_models <- drake::drake_plan(
   random_mod = run_random_models(rep_N, random_effects)
 ) %>%
-  drake::evaluate_plan(rules = list(N = 1:n_replicates)) 
+  drake::evaluate_plan(rules = list(N = 1:n_replicates))
 glanced_random_models <- random_models %>%
   drake::gather_plan(., gather = "glance_random_models", target = "glanced_random")
 random_summaries <- drake::drake_plan(
@@ -102,7 +102,7 @@ random_summaries <- drake::drake_plan(
 
 fixed_models <- drake::drake_plan(
   fixed_mod = run_model(rep_N, best_random)) %>%
-  drake::evaluate_plan(rules = list(N = 1:n_replicates)) 
+  drake::evaluate_plan(rules = list(N = 1:n_replicates))
 glanced_fixed_models <- fixed_models %>%
     drake::gather_plan(., gather = "glance_fixed_models", target = "glanced_fixed")
 tidied_fixed_models <- fixed_models %>%
@@ -124,83 +124,83 @@ het_con_linear_fit_sp <- fixed_models %>%
 best_model_formula <- "pollen_gain ~  abn + poc + deg + org"
 
 fixed_summaries <- drake::drake_plan(
-  wilcox_glo_com = global_vs_community(glanced_fixed, model_formula = best_model_formula), 
-  summary_effects = get_summary_effects(tidied_fixed), 
-  coefficient_averages = get_coefficient_averages(tidied_fixed, model_formula_ranking, N = 99), 
+  wilcox_glo_com = global_vs_community(glanced_fixed, model_formula = best_model_formula),
+  summary_effects = get_summary_effects(tidied_fixed),
+  coefficient_averages = get_coefficient_averages(tidied_fixed, model_formula_ranking, N = 99),
   variable_importance = get_variable_importance(model_formula_ranking)
 )
 
 predictions <- drake::drake_plan(
   trade_off_predictions = trade_off_pred(
-    tidied_fixed, 
-    wilcox_glo_com, 
-    list(imputed_abundance, imputed_pollen, imputed_degree, imputed_originality), 
-    chosen_criteria = "r2c", 
+    tidied_fixed,
+    wilcox_glo_com,
+    list(imputed_abundance, imputed_pollen, imputed_degree, imputed_originality),
+    chosen_criteria = "r2c",
     model_formula = best_model_formula)
 )
 
 model_plans <- rbind(
-  random_models, glanced_random_models, 
-  random_summaries, 
-  fixed_models, glanced_fixed_models, tidied_fixed_models, 
+  random_models, glanced_random_models,
+  random_summaries,
+  fixed_models, glanced_fixed_models, tidied_fixed_models,
   model_corr,
   het_con_linear_fit, het_con_linear_fit_sp,
-  fixed_summaries, 
+  fixed_summaries,
   predictions
 )
 
 pca_plan <- drake::drake_plan(
   pca_data = get_pca_data(plant_rel_abu, pollen_contribution, degree, org_frame, sites),
-  pcas = get_pca(pca_data, imputation_variants = 0:2), 
-  random_plant_distances = all_randomisations_plant_name(pcas, 99), 
-  random_site_distances = all_randomisations_site_name(pcas, 99), 
+  pcas = get_pca(pca_data, imputation_variants = 0:2),
+  random_plant_distances = all_randomisations_plant_name(pcas, 99),
+  random_site_distances = all_randomisations_site_name(pcas, 99),
   permanova_plant_distances = get_permanova(random_plant_distances, "plant_name"),
   permanova_site_distances = get_permanova(random_site_distances, "site_name"),
-  fig_pca = plot_pca(pcas, chosen_threshold = 0), 
+  fig_pca = plot_pca(pcas, chosen_threshold = 0),
   fig_distances = plot_permanova_dist(permanova_plant_distances, permanova_site_distances)
-  
+
 )
 
 facilitation_plan <- drake::drake_plan(
-  facilitation_models = model_facilitation(dep_frame), 
+  facilitation_models = model_facilitation(dep_frame),
   fig_pca_contrib = plot_pca_variances_and_contributions(pcas, chosen_threshold = 0),
-  facilitation_random_effects = extract_random_effects(facilitation_models), 
+  facilitation_random_effects = extract_random_effects(facilitation_models),
   facilitation_plot_df = get_facilitation_plot_df(dep_frame, facilitation_random_effects),
   fig_random_slopes = plot_random_slopes(facilitation_plot_df)
 )
 
 analyses_plan <- rbind(
-  clean_data_plan, 
+  clean_data_plan,
   traits_plan,
   format_data_plan,
   imputation_plan,
   boot_replicates,
   model_plans,
   aic_plan,
-  basic_analyses_plan, 
-  pca_plan, 
+  basic_analyses_plan,
+  pca_plan,
   facilitation_plan
 )
 
 # Paper -------------------------------------------------------------------
 
 figure_plan <- drake::drake_plan(
-  fig_model_results_global = make_fig_model_results_global(tidied_fixed), 
-  fig_con_hetero_gain = make_fig_con_hetero_gain(tidied_fixed, model_linear_fits, model_formula_ranking, model_linear_fits_species), 
+  fig_model_results_global = make_fig_model_results_global(tidied_fixed),
+  fig_con_hetero_gain = make_fig_con_hetero_gain(tidied_fixed, model_linear_fits, model_formula_ranking, model_linear_fits_species),
   fig_hetero_con = make_fig_con_hetero_empirical(dep_frame),
   con_con_plot_df = get_con_con_plot_df(dep_frame),
   fig_con_con = plot_bagged_vs_open_conspecific(con_con_plot_df),
   fig_proportion_vs_variables = make_fig_proportion_vs_variables(trade_off_predictions),
-  fig_pollen_density = make_fig_pollen_density(dep_frame), 
-  fig_pollen_density_diff = make_fig_pollen_density_diff(rep_1), 
-  fig_abundance = make_fig_abundance(plant_rel_abu, sites), 
-  fig_all_model_results = make_fig_all_model_results(tidied_fixed, sites, model_formula_ranking), 
+  fig_pollen_density = make_fig_pollen_density(dep_frame),
+  fig_pollen_density_diff = make_fig_pollen_density_diff(rep_1),
+  fig_abundance = make_fig_abundance(plant_rel_abu, sites),
+  fig_all_model_results = make_fig_all_model_results(tidied_fixed, sites, model_formula_ranking),
   fig_community_global_scatter = make_fig_community_global_scatter(plant_rel_abu, org_frame, degree, sites, pollen_contribution),
-  fig_effect_quant_qual = make_fig_effect_quant_qual(summary_effects, model_formula_ranking), 
-  fig_coefficient_averages = make_fig_coefficient_avarages(coefficient_averages, variable_importance), 
-  fig_average_qual_quant = make_fig_average_quant_qual(coefficient_averages), 
-  fig_correlation = make_fig_correlation(rep_1), 
-  fig_var_importance = plot_variable_importance(variable_importance), 
+  fig_effect_quant_qual = make_fig_effect_quant_qual(summary_effects, model_formula_ranking),
+  fig_coefficient_averages = make_fig_coefficient_avarages(coefficient_averages, variable_importance),
+  fig_average_qual_quant = make_fig_average_quant_qual(coefficient_averages),
+  fig_correlation = make_fig_correlation(rep_1),
+  fig_var_importance = plot_variable_importance(variable_importance),
   fig_coef_avg = plot_coefficient_averages(coefficient_averages, variable_importance)
 )
 
@@ -214,7 +214,7 @@ reporting_plan <- drake::drake_plan(
   )
 
 paper_plan <- rbind(
-  figure_plan, 
+  figure_plan,
   reporting_plan
 )
 
