@@ -1,6 +1,5 @@
 # Prepare workspace -------------------------------------------------------
 
-# if(!packrat:::isPackratModeOn()) packrat::on()
 pkgconfig::set_config("drake::strings_in_dots" = "literals")
 
 library(magrittr)
@@ -16,18 +15,18 @@ transformation <- function(x) log(x + 1)
 # Clean data --------------------------------------------------------------
 
 # plan to clean data
-clean_data_plan <- drake::drake_plan(
-  sites = site_data(drake::file_in('./data/raw/marrero-estigmatic_pollen.csv'), drake::file_in('./data/raw/site_names.csv')),
-  deposition = clean_deposition(drake::file_in('./data/raw/marrero-estigmatic_pollen.csv'), sites),
-  visitation_quant = clean_visitation_quant(drake::file_in('./data/raw/marrero-quantitative_visits.csv'), sites),
-  visitation_qual = clean_visitation_qual(drake::file_in('./data/raw/marrero-qualitative_visits.csv'), sites),
-  transfer = clean_transfer(drake::file_in('./data/raw/marrero-pollen_transfer.csv'), sites),
-  abundance = clean_abundance(drake::file_in('./data/raw/marrero-abundance.csv'), sites),
-  random_effects = readr::read_csv(drake::file_in("./data/raw/random_effects.csv")),
+clean_data_plan <- drake_plan(
+  sites = site_data(file_in('./data/raw/marrero-estigmatic_pollen.csv'), file_in('./data/raw/site_names.csv')),
+  deposition = clean_deposition(file_in('./data/raw/marrero-estigmatic_pollen.csv'), sites),
+  visitation_quant = clean_visitation_quant(file_in('./data/raw/marrero-quantitative_visits.csv'), sites),
+  visitation_qual = clean_visitation_qual(file_in('./data/raw/marrero-qualitative_visits.csv'), sites),
+  transfer = clean_transfer(file_in('./data/raw/marrero-pollen_transfer.csv'), sites),
+  abundance = clean_abundance(file_in('./data/raw/marrero-abundance.csv'), sites),
+  random_effects = readr::read_csv(file_in("./data/raw/random_effects.csv")),
   armonised_data = armonise_species_names(deposition, visitation_quant, visitation_qual, transfer, abundance)
 )
 
-format_data_plan <- drake::drake_plan(
+format_data_plan <- drake_plan(
   dep_frame = extract_dep_frame(armonised_data),
   abu_frame = extract_abu_frame(armonised_data),
   plant_rel_abu = calculate_relative_abundance(abu_frame, dep_frame),
@@ -40,15 +39,15 @@ format_data_plan <- drake::drake_plan(
   pollen_contribution = get_pollen_contribution(tra_frame)
 )
 
-traits_plan <- drake::drake_plan(
-  plant_traits = read_plant_traits(drake::file_in('data/raw/plant_traits.csv')),
+traits_plan <- drake_plan(
+  plant_traits = read_plant_traits(file_in('data/raw/plant_traits.csv')),
   trait_matrices = make_trait_matrices(plant_traits, abu_frame, TRUE, TRUE),
   species_coords = get_species_coords(trait_matrices, weighted = TRUE),
   unq_frame = get_species_uniqueness(species_coords),
   org_frame = get_species_originality(species_coords, abu_frame)
 )
 
-imputation_plan <- drake::drake_plan(
+imputation_plan <- drake_plan(
   imputed_degree_legacy = impute_degree(degree),
   imputed_degree = impute_shared(shar_pol),
   imputed_abundance = impute_abundace(plant_rel_abu),
@@ -62,7 +61,7 @@ imputation_plan <- drake::drake_plan(
 # TODO: Check that the missing plants with deposition are fine
 # TODO: Impute the community values with a fit from the global values?
 
-basic_analyses_plan <- drake::drake_plan(
+basic_analyses_plan <- drake_plan(
   consp_self = model_conspecific_self(dep_frame),
   significant_gain_global = mann_withney_part_df(
     dplyr::filter(dep_frame, pollen_category == 'conspecific'),
@@ -78,7 +77,7 @@ basic_analyses_plan <- drake::drake_plan(
 
 # Bootstrap models --------------------------------------------------------
 
-boot_replicates <- drake::drake_plan(
+boot_replicates <- drake_plan(
   rep = data_replicate(
     dep_frame,
     imputed_abundance,
@@ -88,49 +87,49 @@ boot_replicates <- drake::drake_plan(
     sites,
     transformation,
     N)) %>%
-  drake::evaluate_plan(rules = list(N = 1:n_replicates))
+  evaluate_plan(rules = list(N = 1:n_replicates))
 
-random_models <- drake::drake_plan(
+random_models <- drake_plan(
   random_mod = run_random_models(rep_N, random_effects)
 ) %>%
-  drake::evaluate_plan(rules = list(N = 1:n_replicates))
+  evaluate_plan(rules = list(N = 1:n_replicates))
 glanced_random_models <- random_models %>%
-  drake::gather_plan(., gather = "glance_random_models", target = "glanced_random")
-random_summaries <- drake::drake_plan(
+  gather_plan(., gather = "glance_random_models", target = "glanced_random")
+random_summaries <- drake_plan(
   best_random = best_random_effect(glanced_random, random_effects)
 )
 
-fixed_models <- drake::drake_plan(
+fixed_models <- drake_plan(
   fixed_mod = run_model(rep_N, best_random)) %>%
-  drake::evaluate_plan(rules = list(N = 1:n_replicates))
+  evaluate_plan(rules = list(N = 1:n_replicates))
 glanced_fixed_models <- fixed_models %>%
-    drake::gather_plan(., gather = "glance_fixed_models", target = "glanced_fixed")
+    gather_plan(., gather = "glance_fixed_models", target = "glanced_fixed")
 tidied_fixed_models <- fixed_models %>%
-  drake::gather_plan(., gather = "tidy_fixed_models", target = "tidied_fixed")
+  gather_plan(., gather = "tidy_fixed_models", target = "tidied_fixed")
 
-aic_plan <- drake::drake_plan(
+aic_plan <- drake_plan(
   model_formula_ranking = get_best_fixed_model_formula(glanced_fixed)
 )
 
 model_corr <- fixed_models %>%
-  drake::gather_plan(., gather = "get_model_correlations", target = "model_correlations")
+  gather_plan(., gather = "get_model_correlations", target = "model_correlations")
 
 het_con_linear_fit <- fixed_models %>%
-  drake::gather_plan(., gather = "get_model_linear_fits", target = "model_linear_fits")
+  gather_plan(., gather = "get_model_linear_fits", target = "model_linear_fits")
 
 het_con_linear_fit_sp <- fixed_models %>%
-  drake::gather_plan(., gather = "get_model_linear_fits_species", target = "model_linear_fits_species")
+  gather_plan(., gather = "get_model_linear_fits_species", target = "model_linear_fits_species")
 
 best_model_formula <- "pollen_gain ~  abn + poc + deg + org"
 
-fixed_summaries <- drake::drake_plan(
+fixed_summaries <- drake_plan(
   wilcox_glo_com = global_vs_community(glanced_fixed, model_formula = best_model_formula),
   summary_effects = get_summary_effects(tidied_fixed),
   coefficient_averages = get_coefficient_averages(tidied_fixed, model_formula_ranking, N = 99),
   variable_importance = get_variable_importance(model_formula_ranking)
 )
 
-predictions <- drake::drake_plan(
+predictions <- drake_plan(
   trade_off_predictions = trade_off_pred(
     tidied_fixed,
     wilcox_glo_com,
@@ -149,7 +148,7 @@ model_plans <- rbind(
   predictions
 )
 
-pca_plan <- drake::drake_plan(
+pca_plan <- drake_plan(
   pca_data = get_pca_data(plant_rel_abu, pollen_contribution, degree, org_frame, sites),
   pcas = get_pca(pca_data, imputation_variants = 0:2),
   random_plant_distances = all_randomisations_plant_name(pcas, 99),
@@ -161,7 +160,7 @@ pca_plan <- drake::drake_plan(
 
 )
 
-facilitation_plan <- drake::drake_plan(
+facilitation_plan <- drake_plan(
   facilitation_models = model_facilitation(dep_frame),
   fig_pca_contrib = plot_pca_variances_and_contributions(pcas, chosen_threshold = 0),
   facilitation_random_effects = extract_random_effects(facilitation_models),
@@ -184,7 +183,7 @@ analyses_plan <- rbind(
 
 # Paper -------------------------------------------------------------------
 
-figure_plan <- drake::drake_plan(
+figure_plan <- drake_plan(
   fig_model_results_global = make_fig_model_results_global(tidied_fixed),
   fig_con_hetero_gain = make_fig_con_hetero_gain(tidied_fixed, model_linear_fits, model_formula_ranking, model_linear_fits_species),
   fig_hetero_con = make_fig_con_hetero_empirical(dep_frame),
@@ -204,13 +203,13 @@ figure_plan <- drake::drake_plan(
   fig_coef_avg = plot_coefficient_averages(coefficient_averages, variable_importance)
 )
 
-reporting_plan <- drake::drake_plan(
-  abstract = readLines(drake::file_in("./paper/abstract.md")),
-  acknowledgements = readLines(drake::file_in("./paper/acknowledgements.md")),
-  abs_wordcount = count_words(drake::file_in("paper/abstract.md")),
-  msc_wordcount = count_words(drake::file_in('paper/manuscript.Rmd'), lines_to_ignore = 1:89),
-  render_pdf(drake::knitr_in('paper/supp-info.Rmd'), drake::file_out('paper/supp-info.pdf'), clean_md = FALSE),
-  render_pdf(drake::knitr_in('paper/manuscript.Rmd'), drake::file_out('paper/manuscript.pdf'), clean_md = FALSE)
+reporting_plan <- drake_plan(
+  abstract = readLines(file_in("./paper/abstract.md")),
+  acknowledgements = readLines(file_in("./paper/acknowledgements.md")),
+  abs_wordcount = count_words(file_in("paper/abstract.md")),
+  msc_wordcount = count_words(file_in('paper/manuscript.Rmd'), lines_to_ignore = 1:89),
+  render_pdf(knitr_in('paper/supp-info.Rmd'), file_out('paper/supp-info.pdf'), clean_md = FALSE),
+  render_pdf(knitr_in('paper/manuscript.Rmd'), file_out('paper/manuscript.pdf'), clean_md = FALSE)
   )
 
 paper_plan <- rbind(
@@ -226,9 +225,9 @@ project_plan <- rbind(
   paper_plan
   )
 
-project_config <- drake::drake_config(project_plan)
-# drake::vis_drake_graph(project_config, targets_only = T)
+project_config <- drake_config(project_plan)
+# vis_drake_graph(project_config, targets_only = T)
 
 # execute plan
-# drake::make(project_plan, parallelism = "parLapply", jobs = 3)
-drake::make(project_plan)
+# make(project_plan, parallelism = "parLapply", jobs = 3)
+make(project_plan)
