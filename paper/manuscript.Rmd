@@ -238,7 +238,7 @@ Alternatively, if the community plays a large role, we should be able to observe
 We first use a principal component analysis (PCA) of the four ecological variables. 
 We define the species strategy in a community as its coordinates in PCA space. 
 For each species that was present in two or more communities, we then calculate (*i*) the median distance between the strategies that the species uses different communities, and (*ii*) the area of the convex hull defined by these points in the first two principal components. 
-We then compare these two metrics to those obtained with 99 Monte Carlo randomizations in which we replace the strategy of the focal plant species by one of another species in the dataset.
+We then compare these two metrics to those obtained with 99 Monte Carlo randomizations in which we replace the strategy of the focal plant species by one of another species in the dataset. 
 
 # Results
 
