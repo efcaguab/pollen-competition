@@ -8,5 +8,5 @@ abc_figures:
 
 release:
 	docker save pollen-competition > docker-image.tar \
-	&& zip -sd manuscript-files paper/*.pdf paper/*.tex /paper*.aux;
+	&& zip -sd manuscript-files paper/*.pdf paper/*.tex /paper/*.aux /paper/*.docx;
 	zip -r -sd -b paper manuscript-files . -i *_files/*
