@@ -417,10 +417,27 @@ tinkering <- function(glanced_fixed, tidied_fixed, include_random = FALSE) {
   loadd(glanced_fixed)
   loadd(tidied_fixed)
 
-  a <- dplyr::inner_join(glanced_fixed, tidied_fixed) %>%
+  model_weights <- glanced_fixed %>%
+    dplyr::group_by(model, pollen_category, scale, var_trans) %>%
+    dplyr::mutate(delta_AIC = AICc - min(AICc),
+                  model_likelihood = get_likelyhoods(delta_AIC),
+                  model_weight = get_weights(model_likelihood)) %>%
+    dplyr::group_by(fixed_formula, add = TRUE) %>%
+    dplyr::select(model_weight) %>%
+    dplyr::ungroup()
+
+
+  a <- dplyr::inner_join(tidied_fixed, model_weights,
+                         by = c("model", "pollen_category", "scale",
+                                "var_trans", "fixed_formula")) %>%
     # Using the regex code \.\b so that in cases like Plant sp..MA_SC_R_1 the
     # string gets splited in the dot that is next to the second word boundary
-    tidyr::separate(col = level, into = c("plant_name", "site_name"), sep = "\\.\\b") %>%
-    dplyr::group_by(model, pollen_category, scale, var_trans) %>%
-    dplyr::distinct(model, pollen_category, scale, var_trans, fixed_formula, estimate, AIC)
+    tidyr::separate(col = level,
+                    into = c("plant_name", "site_name"),
+                    sep = "\\.\\b") %>%
+    dplyr::group_by(model, pollen_category, scale, var_trans, term) %>%
+    dplyr::group_by(site_name, plant_name, add = TRUE) %>%
+    dplyr::summarise(estimate = weighted.mean(x = estimate,
+                                              w = model_weight),
+                     n_formulas = dplyr::n_distinct(fixed_formula))
 }
