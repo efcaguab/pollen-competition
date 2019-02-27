@@ -1,4 +1,4 @@
-render_pdf <- function(rmd_file, output_file, clean_md = FALSE, clean_tex = FALSE, quiet = TRUE){
+render_pdf <- function(rmd_file, output_file, clean_md = FALSE, clean_tex = FALSE, quiet = TRUE, params = NULL){
 
   output_tex <- paste0(tools::file_path_sans_ext(rmd_file), ".tex")
   try({
@@ -7,7 +7,8 @@ render_pdf <- function(rmd_file, output_file, clean_md = FALSE, clean_tex = FALS
                       output_dir = dirname(rmd_file),
                       intermediates_dir = dirname(rmd_file),
                       clean = clean_md,
-                      quiet = quiet)
+                      quiet = quiet,
+                      params = params)
   })
 
   compile_pdf(output_tex,
@@ -15,6 +16,7 @@ render_pdf <- function(rmd_file, output_file, clean_md = FALSE, clean_tex = FALS
               clean = clean_tex)
 }
 
+# Use tinytext to compile the file
 compile_pdf <- function(file_in, file_out, clean) {
 
   tinytex.output_dir <- getOption("tinytex.output_dir")
