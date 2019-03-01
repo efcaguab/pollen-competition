@@ -65,6 +65,8 @@ drake::loadd(msc_wordcount, abs_wordcount)
 
 Feel free to come back here after you've read the manuscript. Thanks!
 
+* Minor point: DBS thinks that normally one would use the technical word and then put the definition in parenthesis. In a previous revision I got from JMT that it's better to lead with the concept and then add the jargon last. Examples: *"...due to a temporary separation in the maturation of sexes (dichogamy)"*, *"...common insect-pollinated (entomophilous) species"*.
+
 * Journal? --- *Hugo says PNAS, Proceedings B and Science. No answer from other coauthors*
 * I think the story is still a bit disperse. Will appreciate feedback on identifying the most important/exciting findings to tie the others around it. So far the central topic is scaling up of competition to the community level. --- *No particular feedback received*
 * Do you know of a reasonable reference for the claims in \lr{ref-needed-possitive-loops} and \lr{ref2}? --- *No particicular feedback received*
@@ -153,22 +155,22 @@ This negative relationship could arise, for example, when another, more dominant
 In contrast, a positive relationship is what would be observed when facilitation is the dominant outcome. 
 For example, when the abundance of shared pollinators is positively influenced by floral resources, these positive effects ripple through the mutualistic network in a chain of positive feedback loops [@liao_presence_2011]. 
 
-The second line of evidence caN be obtained by examining the difference between the amount of conspecific pollen deposited in flower stigmas *with* and *without* animal-mediated pollination. 
+The second line of evidence can be obtained by examining the difference between the amount of conspecific pollen deposited in flower stigmas *with* and *without* animal-mediated pollination. 
 Self-pollination can be favourable to plant reproduction when competition for pollination is strong because it provides insurance against poor pollination service [@kalisz_benefits_2003]. 
 If competition for pollination is sufficiently strong, then the amount of conspecific pollen deposited in flower stigmas when animal pollination is prevented could be higher than when floral visits are allowed. 
-In contrast, the opposite pattern may indicate that plants benefit from animal-mediated pollination---even a small difference between outcross and self-pollen may be important to plant fitness. 
-<!-- FDO: Asked coauthors for a reference for the previous statement and no-one provided feedback, so removing it -->
-This is particularly so for species that are not self-fertile or those in which self-fertilization is rarely effective due to a temporary separation in the maturation of the sexes (dichogamy). 
+In contrast, the opposite pattern may indicate that plants benefit from having pollen delivered directly to the stigma by animals. 
+We do not specifically test the effect of pollen viability or the extent to which self-pollen vs. pollen from a conspecific may differ in their value for fertilization which can be important factors (TODO: ref needed). 
+However, it is reasonable to expect that the difference between outcross and self-pollen may be generally relevant and particularly so for species that are not self-fertile or those in which self-fertilization is rarely effective due to a temporary separation in the maturation of the sexes (dichogamy) (TODO: ref needed). 
 
 ### Data collection
 
 In each of the studied communities, we quantified pollen deposition in a subset of plant species between December 2010 and February 2011. 
-This subset comprised of between three and nine common insect-pollinated (entomophilous) species that were flowering during the sampling period (see Figure \@ref(fig:fig-trade-off-predictions)a). 
+This subset comprised between three and nine common insect-pollinated (entomophilous) plant species that were flowering during the sampling period (see Figure \@ref(fig:fig-trade-off-predictions)a). 
 We chose plant species such that they cover a wide range on a specialization-generalization gradient as well as a wide range of abundances. 
 Briefly, in each of the selected plants, we removed all flowers leaving only buds that were expected to go into florescence on the next day. 
 Approximately a quarter of these buds were bagged to prevent animal pollination. 
 Two days after inflorescence, we counted the pollen grains in the remaining flowers' pistils, classified them between conspecific and heterospecific pollen, and calculated the number of pollen grains per stigma in each flower. 
-More details about the study sites and data collection and laboratory protocols can be found in @marrero_agricultural_2016. 
+More details about the study sites, data collection, and laboratory protocols can be found in @marrero_agricultural_2016. 
 
 ### Data analysis
 
