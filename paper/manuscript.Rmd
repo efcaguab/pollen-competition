@@ -48,7 +48,10 @@ drake::loadd(msc_wordcount, abs_wordcount)
 
 ## Changes
 
-* Now using docker to manage project dependencies. Image is now available on dockerhub efcaguab/pollen-competition
+* Now using `docker` to manage project dependencies. Image is now available on dockerhub efcaguab/pollen-competition
+* Removing *quantity* and *quality* of pollination in favour of the plain metrics of *conspecific* and *heterospecific* pollen deposition. 
+* Rewording the plant strategies idea as it was confussing. Now The combination of ecological variables (number shared pol., abundance, visitation patterns, and traits) define a species *realised niche* (this was previoulsy called the plant strategy). Plants that can have very different realised niches across different communities have a *flexible strategy* (this was previously called strategy as well).
+* Format taylored for submission to Ecology Letters
 
 ## Todo
 
@@ -115,18 +118,26 @@ Abundant plant species might experience a dilution of available pollinators [@fe
 In this case, a potential reduction the absolute amount of conspecific pollen received could be compensated by an increase amount relative to heterospecific pollen. 
 <!-- To complicate things more, autonomous self-pollination can also influence a plant sensitivity to competition for pollination because it can ensure reproduction even in the absence of outcross pollen [@kalisz_benefits_2003].  -->
 <!-- Altogether, multiple, potentially correlated, factors may act simultaneously.  -->
-All these factors (generalim, traits, abundance, visitation) The relative importance of these factors, which together define a sort of competition niche, has not yet been empirically evaluated in natural plantcommunities. 
+ <!-- factors (number of shared pollinators, traits, abundance, visitation patterns) -->
+Altogether, it is clear that some ecological factors can influence pollen deposition. 
+<!-- We can think on , hence, together may carry enough information to roughly define the species *realised niche* in the context of competition for pollination.  -->
+However, the intertwined nature of these factors makes it hard to determine wether they favour or hinder the pollination service at the community level. 
+Moreover, their relative importance has not yet been empirically evaluated in natural plant communities. 
 
-Here, we investigate competition for pollination at the community scale using comprehensive empirical data from eleven plant-pollinator communities in the Argentinian Pampas. 
-First, we need to understand the extent to which the outcome of animal-mediated pollination is facilitation or competition. 
-If facilitation is the primary outcome we would expect (*i*) an overall positive relationship between the amount of conspecific pollen deposited in stigmas and the heterospecific pollen [@tur_evaluating_2016] and (*ii*) a larger amount of conspecific pollen deposited in stigmas when flowers are open to animal pollinators than that due to self-pollination. 
-Second, we investigate the relative contribution that four ecological factors, that together describe the strategies of ecological differentiation, have on competition for pollination. 
-We hypothesize that competition for pollination at the community level should increase as the number of shared pollination partners a plant has increases.
-However, other factors like the plant's functional originality, its relative abundance, and the visit effectiveness, should have the potential to compensate this increase in competition by improving either the quality or the quality of pollination. 
-Third, and finally, we explore how community context influences the way plants use these factors to minimise competition. 
-\R{third-hypothesis}Although some plant species might be widespread across multiple locations, competition for pollinators occurs at the community level and are hence is likely to be defined by the local context. 
-If plant species adopt comparable roles across different communities, we should expect plant strategies to be more similar within species than across species in the study. 
-On the contrary, if species role is flexible, we should expect plants to be able to adopt different strategies in each community such that competition is minimised depending on the context. 
+Here, we investigate competition for pollination at the community scale using empirical data from eleven plant-pollinator communities in the Argentinian Pampas. 
+**First**, we estimate the extent to which the net outcome of plants sharing polinators is facilitation or competition. 
+If facilitation is the primary outcome, we could expect two tings. 
+On the one hand, we could expect an overall positive relationship between the amount of conspecific pollen deposited in stigmas and the amount of heterospecific pollen [@tur_evaluating_2016]. 
+The higher the deposition of conspecific pollen relative to heterospecific, the larger the slope of that relationship.
+On the other, we could also expect a larger amount of conspecific pollen deposited in stigmas when flowers are open to animal pollinators than is deposited due to self-pollination. 
+**Second**, we investigate the relative contribution that four ecological factors have on competition for pollination. 
+These factors, in the specific context of pollination, may carry enough information to roughly define a species *realised niche* in their community. 
+Sepecifically, we hypothesize that competition (measured as absolute and relative conspecific pollen deposition) should increase for plants that share many pollination partners.
+However, we also hypothesize that other factors like the plant's functional originality, its relative abundance, and the visit effectiveness should have the potential to compensate for this increase in competition by improving either the quality or the quality of pollination. 
+**Third**, we examine how community context influences the way plants use these factors to minimise competition. 
+Although some plant species might be widespread across multiple locations, competition for pollinators occurs at the community level and hence we predict niche to be influenced by the local context. 
+If plant strategy is not flexible across communities, we could expect niches to be more similar within species than across species in the study. 
+On the contrary, if a species' strategy is flexible, we should expect plants to be able to occupy different niches in each community such that competition could be minimised regardless of the context. 
 
 # Methods
 
