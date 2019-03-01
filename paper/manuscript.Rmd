@@ -52,6 +52,7 @@ drake::loadd(msc_wordcount, abs_wordcount)
 * Removing *quantity* and *quality* of pollination in favour of the plain metrics of *conspecific* and *heterospecific* pollen deposition. 
 * Rewording the plant strategies idea as it was confussing. Now The combination of ecological variables (number shared pol., abundance, visitation patterns, and traits) define a species *realised niche* (this was previoulsy called the plant strategy). Plants that can have very different realised niches across different communities have a *flexible strategy* (this was previously called strategy as well).
 * Format taylored for submission to Ecology Letters
+* Sticking to past tense throughout the methods
 
 ## Todo
 
@@ -116,11 +117,7 @@ If evolutionary specialisation occurs by changing traits to focus on fewer but b
 Alternatively, it might also be the case that density (for example in terms of flower or pollen counts) is the dominant force driving pollen transfer [@seifan_outcome_2014]. 
 Abundant plant species might experience a dilution of available pollinators [@feinsinger_effects_1987] but might also receive more effective visits by capitalising on a larger share of both visits and pollinator "real state". 
 In this case, a potential reduction the absolute amount of conspecific pollen received could be compensated by an increase amount relative to heterospecific pollen. 
-<!-- To complicate things more, autonomous self-pollination can also influence a plant sensitivity to competition for pollination because it can ensure reproduction even in the absence of outcross pollen [@kalisz_benefits_2003].  -->
-<!-- Altogether, multiple, potentially correlated, factors may act simultaneously.  -->
- <!-- factors (number of shared pollinators, traits, abundance, visitation patterns) -->
 Altogether, it is clear that some ecological factors can influence pollen deposition. 
-<!-- We can think on , hence, together may carry enough information to roughly define the species *realised niche* in the context of competition for pollination.  -->
 However, the intertwined nature of these factors makes it hard to determine wether they favour or hinder the pollination service at the community level. 
 Moreover, their relative importance has not yet been empirically evaluated in natural plant communities. 
 
@@ -130,34 +127,34 @@ If facilitation is the primary outcome, we could expect two tings.
 On the one hand, we could expect an overall positive relationship between the amount of conspecific pollen deposited in stigmas and the amount of heterospecific pollen [@tur_evaluating_2016]. 
 The higher the deposition of conspecific pollen relative to heterospecific, the larger the slope of that relationship.
 On the other, we could also expect a larger amount of conspecific pollen deposited in stigmas when flowers are open to animal pollinators than is deposited due to self-pollination. 
-**Second**, we investigate the relative contribution that four ecological factors have on competition for pollination. 
+**Second**, we investigate the relative contribution that four ecological factors have on the pollination service. 
 These factors, in the specific context of pollination, may carry enough information to roughly define a species *realised niche* in their community. 
 Sepecifically, we hypothesize that competition (measured as absolute and relative conspecific pollen deposition) should increase for plants that share many pollination partners.
-However, we also hypothesize that other factors like the plant's functional originality, its relative abundance, and the visit effectiveness should have the potential to compensate for this increase in competition by improving either the quality or the quality of pollination. 
+However, we also hypothesize that other factors like the plant's functional originality, its relative abundance, and the visit effectiveness should have the potential to compensate for this increase in competition. 
 **Third**, we examine how community context influences the way plants use these factors to minimise competition. 
 Although some plant species might be widespread across multiple locations, competition for pollinators occurs at the community level and hence we predict niche to be influenced by the local context. 
-If plant strategy is not flexible across communities, we could expect niches to be more similar within species than across species in the study. 
+If plant strategy is not flexible across communities (TODO: ref needed), we could expect niches to be more similar within species than across species in the study. 
 On the contrary, if a species' strategy is flexible, we should expect plants to be able to occupy different niches in each community such that competition could be minimised regardless of the context. 
 
 # Methods
 
-We collected data from eleven co-flowering plant communities and their pollinators in three locations, each in a distinct region of the Argentinian Pampas. 
-These locations are distributed across a precipitation gradient with a humid temperate climate in the eastern Flooding Pampas and becoming drier as one moves inland and westward towards the Pampean Grasslands.
-Annual mean temperatures range between 14.8 and $44.9^\circ$C. 
-In each location, we sampled two restored and two agricultural fragments, except in the Flooding Pampas, where due to the lack of available sites, we were only able to sample one restored fragment.
+We collected data from eleven co-flowering plant communities and their pollinators in three locations in the Argentinian Pampas. 
+These locations are distributed across a precipitation gradient with a humid temperate climate in the eastern Flooding Pampas and becoming drier as one moves inland and westward towards the Pampean Grasslands. 
+This precipitation gradient generatesd a natural gradient of network architecture which allowed us to examine the generality of our findings. 
+In each location, we sampled two restored and two agricultural fragments, except in the Flooding Pampas, where we were only able to sample one restored fragment due to the lack of available sites.
 
 ## Competition vs. facilitation
 
-Our first objective is to identify whether, at the community level, the net outcome of animal-mediated pollination is facilitation or competition. 
-The first line of evidence can be found in the relationship between heterospecific and conspecific pollen deposited in plant stigmas [@tur_evaluating_2016]. 
-This is so because heterospecific pollen can be seen as a cost that plants must pay for receiving conspecific pollen from shared pollinators. 
+Our first objective was to identify whether the outcome of plants sharing polinators, at the community level, is facilitation or competition. 
+The first line of evidence can be found via the relationship between heterospecific and conspecific pollen deposited in plant stigmas [@tur_evaluating_2016]. 
+This is because heterospecific pollen can be seen as an unavoidable cost that plants must pay for receiving conspecific pollen from shared pollinators. 
 A negative relationship (when shared pollinators increase heterospecific pollen loads and decrease conspecific loads) may indicate that competition for pollination is strong. 
-This negative relationship could arise, for example, when another, more dominant species, monopolizes a limited number of pollinators [@mitchell_new_2009], when heterospecific pollen deposited in the stigma interferes with deposition of conspecific pollen [@runquist_pollinator-mediated_2012], or when conspecific pollen is lost to heterospecific stigmas [@mitchell_new_2009; @muchhala_interspecific_2012]. 
-In contrast, a positive relationship is what should be observed if facilitation is the dominant outcome. 
-For example, when the abundance of shared pollinators is positively influenced by floral resources and these positive effects ripple through the mutualistic network in a chain of positive feedback loops [@liao_presence_2011]. 
+This negative relationship could arise, for example, when another, more dominant species, monopolizes a limited number of pollinators [@mitchell_new_2009; lopezaraizamikel_impact_2007], when heterospecific pollen deposited in the stigma interferes with deposition of conspecific pollen [@runquist_pollinator-mediated_2012], or when conspecific pollen is lost to heterospecific stigmas [@mitchell_new_2009; @muchhala_interspecific_2012]. 
+In contrast, a positive relationship is what would be observed when facilitation is the dominant outcome. 
+For example, when the abundance of shared pollinators is positively influenced by floral resources, these positive effects ripple through the mutualistic network in a chain of positive feedback loops [@liao_presence_2011]. 
 
-The second line of evidence could be obtained by examining the difference between the amount conspecific pollen deposited in flower stigmas *with* and *without* animal-mediated pollination. 
-Self-pollination can be favourable to plant reproduction when competition for pollination is strong because it provides insurance against a poor pollination service [@kalisz_benefits_2003]. 
+The second line of evidence caN be obtained by examining the difference between the amount of conspecific pollen deposited in flower stigmas *with* and *without* animal-mediated pollination. 
+Self-pollination can be favourable to plant reproduction when competition for pollination is strong because it provides insurance against poor pollination service [@kalisz_benefits_2003]. 
 If competition for pollination is sufficiently strong, then the amount of conspecific pollen deposited in flower stigmas when animal pollination is prevented could be higher than when floral visits are allowed. 
 In contrast, the opposite pattern may indicate that plants benefit from animal-mediated pollination---even a small difference between outcross and self-pollen may be important to plant fitness. 
 <!-- FDO: Asked coauthors for a reference for the previous statement and no-one provided feedback, so removing it -->
