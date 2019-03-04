@@ -1,35 +1,35 @@
 make_fig_con_hetero_gain <- function(tidied_fixed, model_linear_fits, model_formula_ranking, model_linear_fits_species) {
   require(ggplot2)
-  
+
   model_weights <- model_formula_ranking$aggregated %>%
     # dplyr::filter(scale == "community") %>%
     # dplyr::group_by(pollen_category) %>%
-    dplyr::mutate(likelyhood = get_likelyhoods(delta_AIC_median), 
+    dplyr::mutate(likelyhood = get_likelyhoods(delta_AIC_median),
                   weight = get_weights(likelyhood)) %>%
     dplyr::select(fixed_formula, weight)
-  
+
   points_sp <- model_linear_fits_species %>%
     dplyr::filter(var_trans == "log",
-                  scale == "community") %>% 
-  #   tidyr::spread(data = ., key = sma_parameter, value = value) %>% 
-    dplyr::inner_join(model_weights, by = "fixed_formula") %>% 
+                  scale == "community") %>%
+  #   tidyr::spread(data = ., key = sma_parameter, value = value) %>%
+    dplyr::inner_join(model_weights, by = "fixed_formula") %>%
     dplyr::group_by(site_name, plant_name, scale, model) %>%
     dplyr::sample_n(size = 1, weight = weight) %>%
     dplyr::group_by() %>%
-    tidyr::gather("con_type", "conspecific", dplyr::contains("conspecific")) 
-  
+    tidyr::gather("con_type", "conspecific", dplyr::contains("conspecific"))
+
   exp_minus_one <- function(x){
     exp(x)-1
   }
-  
+
   points_sp_summarised <- points_sp %>%
     dplyr::group_by(plant_name, site_name, con_type) %>%
-    dplyr::summarise_at(dplyr::vars(dplyr::contains("specific")), 
+    dplyr::summarise_at(dplyr::vars(dplyr::contains("specific")),
                         dplyr::funs(median, quantile_05,quantile_95), na.rm = T) %>%
     dplyr::mutate_if(is.numeric, I) %>%
     dplyr::group_by() %>%
-    dplyr::rename(rel = "con_type") 
-  
+    dplyr::rename(rel = "con_type")
+
   pa <- RColorBrewer::brewer.pal(4, "OrRd")
   major_labs <- c(0,10,100, 1000, 10000)
   minor_labs <- c(0, 5, 10, 50, 100, 500, 1000, 10000)
@@ -40,7 +40,7 @@ make_fig_con_hetero_gain <- function(tidied_fixed, model_linear_fits, model_form
     dplyr::filter(rel == "conspecific_abs")
   points_sp %<>%
     dplyr::filter(con_type == "conspecific_abs")
-  
+
   p <- dplyr::data_frame(x = get_pred_range(tidied_fixed, "heterospecific"),
                          y = get_pred_range(tidied_fixed, "conspecific")) %>%
     ggplot() +
@@ -66,9 +66,9 @@ make_fig_con_hetero_gain <- function(tidied_fixed, model_linear_fits, model_form
     geom_smooth(data = points_sp,
                 aes(x = heterospecific_abs,
                     y = conspecific,
-                    colour = interaction(con_type, site_name), 
+                    colour = interaction(con_type, site_name),
                     group = interaction(con_type, model, site_name)),
-                size = 0.1, 
+                size = 0.1,
                 linetype = 1,
                 alpha = 0.25,
                 show.legend = T,
@@ -77,7 +77,7 @@ make_fig_con_hetero_gain <- function(tidied_fixed, model_linear_fits, model_form
                 aes(x = heterospecific_abs,
                     y = conspecific,
                     colour = interaction(con_type, site_name)),
-                size = 0.5, 
+                size = 0.5,
                 linetype = 1,
                 alpha = 1,
                 show.legend = T,
@@ -106,82 +106,82 @@ make_fig_con_hetero_gain <- function(tidied_fixed, model_linear_fits, model_form
 
 # tinkering species level figures
 figures_per_species <- function(){
-  points_sp_summarised %>% 
-    dplyr::group_by(plant_name) %>% 
+  points_sp_summarised %>%
+    dplyr::group_by(plant_name) %>%
     dplyr::mutate(n = dplyr::n_distinct(site_name)) %>%
     dplyr::filter(n >= 3) %>%
-    ggplot(aes(x = heterospecific_median, 
-               y = conspecific_median, 
-               color = plant_name, 
-               linetype = rel, 
+    ggplot(aes(x = heterospecific_median,
+               y = conspecific_median,
+               color = plant_name,
+               linetype = rel,
                shape = rel)) +
     geom_smooth(method = "lm", se = F) +
     geom_point()
-  
+
   points_sp_summarised_con %>%
-    dplyr::group_by(plant_name) %>% 
+    dplyr::group_by(plant_name) %>%
     dplyr::filter(!is.na(heterospecific_median)) %>%
     dplyr::mutate(n = dplyr::n_distinct(site_name)) %>%
     dplyr::filter(n >= 3) %>%
-    dplyr::select(site_name, plant_name, heterospecific_median, conspecific_ctr_median, conspecific_abs_median) %>% 
+    dplyr::select(site_name, plant_name, heterospecific_median, conspecific_ctr_median, conspecific_abs_median) %>%
     tidyr::gather("type", "density", heterospecific_median, conspecific_ctr_median, conspecific_abs_median) %>%
-    ggplot(aes(x = interaction(site_name), 
-               y = density, 
-               fill = type, 
+    ggplot(aes(x = interaction(site_name),
+               y = density,
+               fill = type,
                colour = type)) +
     geom_point(stat = "identity", position = "dodge") +
     geom_line(aes(group = type)) +
     coord_flip() +
     facet_wrap(~ plant_name, scales = "free_y")
-  
+
 }
 
 
 # function just to get the range of preditions
 get_pred_range <- function(tidied_fixed, x, var_trans = "log", scale = "global"){
-  tidied_fixed %>% 
+  tidied_fixed %>%
     dplyr::filter(
       pollen_category == x,
-      var_trans == var_trans, 
-      scale == scale) %$% 
-    estimate %>% 
+      var_trans == var_trans,
+      scale == scale) %$%
+    estimate %>%
     range()
 }
 
 get_con_con_plot_df <- function(dep_frame){
-  dep_frame %>% 
-    dplyr::filter(pollen_category == "conspecific") %>% 
-    tidyr::complete(site_name, plant_name, treatment) %>% 
+  a <- dep_frame %>%
+    dplyr::filter(pollen_category == "conspecific") %>%
+    tidyr::complete(site_name, plant_name, treatment) %>%
     dplyr::group_by(site_name, plant_name, treatment) %>%
-    dplyr::mutate(n_obs_treatment = n()) %>% 
+    dplyr::mutate(n_obs_treatment = n()) %>%
     dplyr::group_by(site_name, plant_name) %>%
-    dplyr::mutate(effect_category = wilcox_open_closed(pollen_density, treatment)) %>% 
-    dplyr::group_by(site_name, plant_name, treatment) %>% 
+    dplyr::mutate(effect_category = wilcox_open_closed(pollen_density, treatment)) %>%
+    dplyr::group_by(site_name, plant_name, treatment) %>%
     dplyr::summarise(mid = mean(pollen_density, na.rm = T),
-                     upper = mid + se(pollen_density), 
-                     lower = mid - se(pollen_density), 
+                     upper = mid + se(pollen_density),
+                     lower = mid - se(pollen_density),
                      effect_category = effect_category[1]) %>%
     dplyr::group_by() %>%
-    tidyr::gather(variable, value, mid:lower) %>% 
-    tidyr::unite(temp, treatment, variable, sep = "_") %>% 
-    tidyr::spread(temp, value) %>% 
-    dplyr::filter(!is.na(closed_mid), !is.na(open_mid)) 
-  
+    tidyr::gather(variable, value, mid:lower) %>%
+    tidyr::unite(temp, treatment, variable, sep = "_") %>%
+    tidyr::spread(temp, value) %>%
+    dplyr::filter(!is.na(closed_mid), !is.na(open_mid))
+
 }
 
 plot_bagged_vs_open_conspecific <- function(con_df){
   require(ggplot2)
-  
+
   axis_breaks <-  cgm()$log1p_axis_breaks_10
   linesize <- common_graphic_metrics()$size_errorbars
   linecolor <- cgm()$color_errorbars_light
   pal <- common_graphic_metrics()$pal_rb3
-  
+
   scatter_plot <- con_df %>%
     ggplot(aes(x = closed_mid, y = open_mid)) +
     geom_abline(slope = 1, intercept = 0, size = 0.25, linetype = 2) +
-    # geom_smooth(method = "lm",  
-    #             size = 0.5, 
+    # geom_smooth(method = "lm",
+    #             size = 0.5,
     #             color = "black") +
     geom_errorbar(aes(ymin = open_lower, ymax = open_upper),
                   size = linesize,
@@ -189,42 +189,58 @@ plot_bagged_vs_open_conspecific <- function(con_df){
     geom_errorbarh(aes(xmin = closed_lower, xmax = closed_upper),
                    size = linesize,
                    color = linecolor) +
-    geom_point(aes(fill = effect_category), 
-               shape = 21, 
-               size = 1, 
+    geom_point(aes(fill = effect_category),
+               shape = 21,
+               size = 1,
                colour = "grey30") +
     geom_point(aes(x = 0, y = 0), alpha = 0) +
     scale_x_continuous(trans = "log1p", breaks = axis_breaks) +
     scale_y_continuous(trans = "log1p", breaks = axis_breaks) +
     scale_fill_manual(values = pal, na.value = "white") +
-    labs(x = "closed to animal pollination", 
-         y = "open to animal pollination", 
-         title = "(c) self- vs. animal-mediated pollination", 
+    labs(x = "closed to animal pollination",
+         y = "open to animal pollination",
+         title = "(c) self- vs. animal-mediated pollination",
          subtitle = "mean pollen grains per stigma") +
     pub_theme() +
-    theme(legend.position = "none") 
+    theme(legend.position = "none")
           #axis.line = element_line(size = 0.25))
-  
+
   bar_plot <- con_df %>%
     dplyr::mutate(forcats::fct_relevel(effect_category, c("negative", "neutral", "positive")),
-      effect_category = forcats::fct_rev(effect_category), 
-      label_col = dplyr::if_else(effect_category == "neutral", "black", "white"), 
+      effect_category = forcats::fct_rev(effect_category),
+      label_col = dplyr::if_else(effect_category == "neutral", "black", "white"),
       label = dplyr::case_when(
         effect_category == "positive" ~ "+",
-        effect_category == "negative" ~ "-", 
+        effect_category == "negative" ~ "-",
         TRUE ~ ""
-      ), 
+      ),
       fontface = dplyr::case_when(
-        label_col == "black" ~ "plain", 
+        label_col == "black" ~ "plain",
         TRUE ~ "bold"
-      )) %>% 
-    dplyr::mutate(label_height = 
-                    rank(dplyr::desc(as.numeric(effect_category)), 
-                         ties.method = "average"), 
+      )) %>%
+    dplyr::mutate(label_height =
+                    rank(dplyr::desc(as.numeric(effect_category)),
+                         ties.method = "average"),
                   label_height = label_height / n()) %>%
     plot_bar_proportion()
-  
+
   list(scatter_plot, bar_plot)
+}
+
+models_open_bagged <- function(df){
+  b <- a %>%
+    dplyr::mutate(pollen_density = round(pollen_density))
+
+  m <- lme4::glmer(pollen_density ~ treatment + (treatment | plant_name : site_name),
+                   data = b,
+                   family = "poisson")
+
+  m %>%
+    coef() %>%
+    extract2(1) %>%
+    tibble::rownames_to_column() %>%
+    dplyr::mutate(error = get_error_random_effects(m)) %>%
+    tidyr::separate("rowname", into = c("plant_name", "site_name"), sep = ":", remove = F)
 }
 
 wilcox_open_closed <- function(pollen_density, treatment){
@@ -233,8 +249,8 @@ wilcox_open_closed <- function(pollen_density, treatment){
   y <- pollen_density[treatment == l[1]]
   if (length(x) > 1 & length(y) > 1){
     p <- dplyr::case_when(
-      wilcox.test(x, y, alternative = "greater")$p.value < 0.05 ~ "positive", 
-      wilcox.test(y, x, alternative = "greater")$p.value < 0.05 ~ "negative", 
+      wilcox.test(x, y, alternative = "greater")$p.value < 0.05 ~ "positive",
+      wilcox.test(y, x, alternative = "greater")$p.value < 0.05 ~ "negative",
       TRUE ~ "neutral"
     )
   } else {
@@ -246,42 +262,42 @@ wilcox_open_closed <- function(pollen_density, treatment){
 se <- function(x) sqrt(var(x, na.rm = T)/length(x))
 
 make_fig_con_con <- function(model_formula_ranking, model_linear_fits_species){
-  
+
   require(ggplot2)
-  
+
   major_labs <- c(0,10,100, 1000, 10000)
   minor_labs <- c(0, 5, 10, 50, 100, 500, 1000, 10000)
   major_breaks <- log(major_labs + 1)
   minor_breaks <- log(minor_labs + 1)
-  
+
   model_weights <- model_formula_ranking$aggregated %>%
     # dplyr::filter(scale == "community") %>%
     # dplyr::group_by(pollen_category) %>%
-    dplyr::mutate(likelyhood = get_likelyhoods(delta_AIC_median), 
+    dplyr::mutate(likelyhood = get_likelyhoods(delta_AIC_median),
                   weight = get_weights(likelyhood)) %>%
     dplyr::select(fixed_formula, weight)
-  
+
   points_sp <- model_linear_fits_species %>%
     dplyr::filter(var_trans == "log",
-                  scale == "community") %>% 
-    #   tidyr::spread(data = ., key = sma_parameter, value = value) %>% 
-    dplyr::inner_join(model_weights, by = "fixed_formula") %>% 
+                  scale == "community") %>%
+    #   tidyr::spread(data = ., key = sma_parameter, value = value) %>%
+    dplyr::inner_join(model_weights, by = "fixed_formula") %>%
     dplyr::group_by(site_name, plant_name, scale, model) %>%
     dplyr::sample_n(size = 1, weight = weight) %>%
     dplyr::group_by() %>%
-    tidyr::gather("con_type", "conspecific", dplyr::contains("conspecific")) 
-  
+    tidyr::gather("con_type", "conspecific", dplyr::contains("conspecific"))
+
   points_sp_con <- points_sp %>%
     tidyr::spread(con_type, conspecific)
-  
+
   points_sp_summarised_con <- points_sp_con  %>%
     dplyr::group_by(plant_name, site_name) %>%
-    dplyr::summarise_at(dplyr::vars(dplyr::contains("specific")), 
+    dplyr::summarise_at(dplyr::vars(dplyr::contains("specific")),
                         dplyr::funs(median, quantile_05,quantile_95), na.rm = T) %>%
     dplyr::mutate_if(is.numeric, I)
-  
+
   # conspecific abs vs control
-  points_sp_con  %>% 
+  points_sp_con  %>%
     ggplot() +
     geom_abline(slope = 1, intercept = 0, size = 0.25, linetype = 2) +
     geom_errorbar(data = points_sp_summarised_con,
@@ -299,18 +315,18 @@ make_fig_con_con <- function(model_formula_ranking, model_linear_fits_species){
                aes(x = conspecific_ctr_median,
                    y = conspecific_abs_median),
                alpha = 1, show.legend = T, shape = 21, size = 1) +
-    geom_smooth(aes(x = conspecific_ctr, 
-                    y = conspecific_abs, 
+    geom_smooth(aes(x = conspecific_ctr,
+                    y = conspecific_abs,
                     group = model),
                 method = "lm", se = F,
-                size = 0.1, 
-                alpha = 0.25, 
+                size = 0.1,
+                alpha = 0.25,
                 colour = "black") +
-    geom_smooth(aes(x = conspecific_ctr, 
+    geom_smooth(aes(x = conspecific_ctr,
                     y = conspecific_abs),
                 method = "lm", se = F,
-                size = 0.5, 
-                alpha = 1, 
+                size = 0.5,
+                alpha = 1,
                 colour = "black") +
     scale_x_continuous(breaks = major_breaks, labels = major_labs, minor_breaks = minor_breaks) +
     scale_y_continuous(breaks = major_breaks, labels = major_labs, minor_breaks = minor_breaks) +
@@ -329,35 +345,35 @@ make_fig_con_con <- function(model_formula_ranking, model_linear_fits_species){
 make_fig_con_hetero_empirical <- function(dep_frame){
   require(ggplot2)
   axis_breaks <-  cgm()$log1p_axis_breaks_10
-  
+
   dep_frame %>%
     dplyr::select(site_name, plant, plant_name, treatment, pollen_category, pollen_density) %>%
-    # dplyr::mutate(pollen_density = log(pollen_density + 1)) %>% 
-    tidyr::spread(pollen_category, pollen_density) %>% 
-    dplyr::group_by(site_name, plant_name) %>% 
-    dplyr::mutate(heterospecific = fill_heterospecific_closed(heterospecific, treatment)) %>% 
+    # dplyr::mutate(pollen_density = log(pollen_density + 1)) %>%
+    tidyr::spread(pollen_category, pollen_density) %>%
+    dplyr::group_by(site_name, plant_name) %>%
+    dplyr::mutate(heterospecific = fill_heterospecific_closed(heterospecific, treatment)) %>%
     dplyr::group_by(site_name, plant_name, treatment) %>%
-    dplyr::summarise_at(c("conspecific", "heterospecific"), 
-                        dplyr::funs(mid, upper, lower)) %>% 
+    dplyr::summarise_at(c("conspecific", "heterospecific"),
+                        dplyr::funs(mid, upper, lower)) %>%
     dplyr::filter(treatment == "open") %>%
     ggplot(aes(x = heterospecific_mid, y = conspecific_mid)) +
-    geom_point(aes(x = 0, y = 0), alpha = 0) + 
+    geom_point(aes(x = 0, y = 0), alpha = 0) +
     geom_abline(slope = 1, intercept = 0, size = 0.25, linetype = 2) +
     # geom_smooth(method = "lm", size = 0.5, colour = "black", fill = "grey90", alpha = 1) +
-    geom_errorbar(aes(ymin = conspecific_lower, ymax = conspecific_upper), 
-                  size = cgm()$size_errorbars, 
+    geom_errorbar(aes(ymin = conspecific_lower, ymax = conspecific_upper),
+                  size = cgm()$size_errorbars,
                   color = cgm()$color_errorbars_light) +
-    geom_errorbarh(aes(xmin = heterospecific_lower, xmax = heterospecific_upper), 
+    geom_errorbarh(aes(xmin = heterospecific_lower, xmax = heterospecific_upper),
                    size = cgm()$size_errorbars, color = cgm()$color_errorbars_light) +
-    geom_point(size = cgm()$point_size, 
-               shape = 21, 
-               color = cgm()$color_errorbars, 
+    geom_point(size = cgm()$point_size,
+               shape = 21,
+               color = cgm()$color_errorbars,
                fill = cgm()$pal_rb3[2]) +
     scale_x_continuous(trans = "log1p", breaks = axis_breaks) +
     scale_y_continuous(trans = "log1p", breaks = axis_breaks) +
-    labs(x = "heterospecific", 
-         y = "conspecific", 
-         title = "(b) hetero- vs. conspecific pollen", 
+    labs(x = "heterospecific",
+         y = "conspecific",
+         title = "(b) hetero- vs. conspecific pollen",
          subtitle = "mean pollen grains per stigma") +
     pub_theme()
 }
@@ -381,13 +397,13 @@ fill_heterospecific_closed <- function(heterospecific, treatment){
     if (sum("open" == treatment) == 1) {
       heterospecific[treatment == "closed"] <- heterospecific[treatment == "open"]
     } else{
-      heterospecific[treatment == "closed"] <- 
-        sample(x = heterospecific[treatment == "open"], 
+      heterospecific[treatment == "closed"] <-
+        sample(x = heterospecific[treatment == "open"],
                size = length(heterospecific[treatment == "closed"]),
                replace = T)
     }
   } else {
     heterospecific[treatment == "closed"] <- NA
   }
- heterospecific 
+ heterospecific
 }

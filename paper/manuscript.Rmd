@@ -174,10 +174,10 @@ More details about the study sites, data collection, and laboratory protocols ca
 
 ### Data analysis
 
-To evaluate the relationship between heterospecific and conspecific pollen, we used a generalised linear mixed model (GLMM) with a Poisson error distribution in each of our communities [@tur_evaluating_2016]. 
-In these models, the number conspecific pollen grains per stigma was the response variable and the number of heterospecific grains the predictor. 
+To evaluate the relationship between heterospecific and conspecific pollen, we used a generalised linear mixed model (GLMM) with a Poisson error distribution [@tur_evaluating_2016]. 
+In this model, the number conspecific pollen grains per stigma was the response variable and the number of heterospecific grains the predictor (the number of stigmas sampled from the flower was added as an offset term). 
 The slope and intercept of this relationship were allowed to differ between plant species, which were modelled as a random effect. 
-Models were fitted using the function `lmer` from the R package `lme4 1.1-19` [@bates_fitting_2015]. 
+Models were fitted using the function `glmer` from the R package `lme4 1.1-19` [@bates_fitting_2015]. 
 To compare the conspecific pollen deposited with and without animal-mediated pollination, we performed a Mann-Withney U test of the number of conspecific pollen grains per stigma between un-bagged and bagged flowers for each of the studied species in a community. 
 
 ## Effect of plant strategies in the pollination service 
@@ -306,7 +306,7 @@ left <- cowplot::plot_grid(
 right <- cowplot::plot_grid(
   fig_random_slopes[[1]],
   fig_random_slopes[[2]], 
-  ncol = 2, 
+  # ncol = 2, 
   align = "h", 
   rel_widths = rw[1:2]
 )
