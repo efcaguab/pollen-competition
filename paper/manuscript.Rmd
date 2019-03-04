@@ -200,43 +200,42 @@ To estimate visit effectiveness we need to construct pollen transfer networks in
 To construct the transfer networks, we examined the pollen loads present on the floral visitors collected [@marrero_exotic_2017]. 
 When the pollen count on an individual animal was estimated to be less than 2,000 grains, we identified every grain to the species level when possible and to pollen complexes when it was not. 
 When the pollen count was above 2,000 grains, we classified approx. 50% of pollen and total pollen counts were extrapolated [@bosch_plant-pollinator_2009]. 
-Finally, we also recorded morphological traits that relate to plant type (herb, shrub, climber), life cycle (annual, perennial), flower colouration, and whether the species is native in the study region. 
-
+Finally, we also recorded morphological traits that relate to plant type (herb, shrub, climber), life cycle (annual, perennial), flower colouration, phenology, and whether the species is native in the study region. 
+We used those traits because they were the only ones available... (TODO: Add a better justification for the traits used)
 More details about the study sites, data collection, and laboratory protocols can be found in Marrero *et al.* (2014 and 2017).
 
 ### Data analysis
 
-We investigated the impact of the ecological strategies on the pollination services using two metrics: the quantity and the quality of pollination. 
-Here we define the quality of pollination as the amount of conspecific pollen and the quality of pollination as the amount of conspecific pollen *relative* to heterospecific pollen. 
-To construct these metrics we use two sets of linear mixed models (LMM) in which the response variables are the number of conspecific and heterospecific pollen grains deposited per stigma in flowers open to animal-mediated pollination. 
-In general, using LMMs in which pollen loads were log-transformed (Figure \@ref(S-fig:fig-deposition-gain-log-transformed-or-not)) offered better results than a GLMM with Poisson (or quasipoisson) error structure. 
+We investigated the impact of the ecological factors on pollination services.
+Generally speaking, the more conspecific pollen deposited in stigmas, both absolutely and relative to heterospecific pollen, the better the pollination service. 
+Specifically, we used two sets of linear mixed models (LMM) in which the response variables are the number of conspecific and heterospecific pollen grains deposited per stigma in flowers open to animal-mediated pollination. 
+In general, using LMMs in which pollen loads were log-transformed (Figure \@ref(S-fig:fig-deposition-gain-log-transformed-or-not)) offered better fit than a GLMM with Poisson (or quasipoisson) error structure. 
 Models were fitted using the R package `nlme 3.1-131` [@pinheiro_nlme_2018]. 
 
-Because the amount of deposited pollen can vary widely across species, and potentially also across communities, we evaluated two possible structures for the random effects: one that includes a random intercept for plant species, and one that treats species across different communities independently. 
+Because the amount of deposited pollen can vary widely across species, and potentially also across communities, we evaluated two possible structures for the random effects: one that includes a random intercept for plant species, and one that treats measures from species across different communities as independent. 
 We selected the best random structure by comparing the median Akaike Information Criterion for small samples (AICc). 
 
 As predictors in the models, we included the four ecological variables described above. 
-Specifically, we calculated the number of shared pollinators for each plant species (*i*) by pooling data from the qualitative and quantitative pollination networks. 
-This variable is strongly correlated to the number of animal species a plant interacts with (the species degree). 
-To calculate the plants' relative abundance in their community (*ii*), we simply aggregated floral counts for each species. 
-We then calculated the mean visit effectiveness (*iii*). 
-As explained before, we define the effectiveness of a visit by pollinator species *i* to plant species *j* as \[e_{ij} = \frac{v_{ij}}{v_i} \frac{p_{ji}}{p_j}\] where *v~ij~* is the observed number of visits by *i* to *j*, *p~ji~* is the number of pollen grains from *j* attached to *i*, *v~i~* is the total number of visits performed by *i*, and *p~j~* is the total number of grains carried by *j*.
-Because the number of interacting species (and therefore the number of shared pollinators), floral abundance, visitation, and pollen production roughly followed a power-law distribution, we log-transformed these three predictors before including them in the model. 
+Specifically, we calculated the number of shared pollinators for each plant species by pooling data from the qualitative and quantitative pollination networks. 
+<!-- This variable is strongly correlated to the number of animal species a plant interacts with (the species degree).  -->
+To calculate the plants' relative abundance in their community, we simply aggregated floral counts for each species. 
+We then calculated the mean visit effectiveness. 
+We define the effectiveness of a visit by pollinator species *i* to plant species *j* as \[e_{ij} = \frac{v_{ij}}{v_i} \frac{p_{ji}}{p_j}\] where *v~ij~* is the observed number of visits by *i* to *j*, *p~ji~* is the number of pollen grains from *j* attached to *i*, *v~i~* is the total number of visits performed by *i*, and *p~j~* is the total number of grains carried by *j*.
+Because the number of shared pollinators, floral abundance, visitation, and pollen production roughly followed a power-law distribution, we log-transformed these three predictors before including them in the model. 
 
-Finally, functional originality (*iv*) is defined as the distance of a species from the community trait average--the centroid of functional space of the community [@laliberte_distance-based_2010; @coux_linking_2016]. 
-As phenology has been shown to be a key mechanism of niche differentiation among plants, we also included the plant abundance in each of the survey months (November to March) as an additional trait in our analysis. 
-This approach allowed us to integrate the originality in phenological niche alongside the originality on other functional traits. 
-However, because floral counts across months are not independent, we assigned them a weight of 1/5 such that phenology has an equal weight as other traits. 
+Finally, functional originality is defined as the distance of a species from the community trait average--the centroid of functional space of the community [@laliberte_distance-based_2010; @coux_linking_2016]. 
+<!-- As phenology has been shown to be a key mechanism of niche differentiation among plants, we also  -->
+To include phenology we treated plant abundance in each of the survey months (November to March) as a "trait" in our analysis. 
+<!-- This approach allowed us to integrate the originality in phenological niche alongside the originality on other functional traits.  -->
+Then we assigned the abundances a weight of 1/5 compared to other functional traits, this accounted for the non-independence of floral counts across months and effectively weights phenology equally to other traits. 
 We scaled all traits prior to calculating the centroid of the functional space and calculated the species-specific functional coordinates using the R package `FD 1.0-12` [@laliberte_fd_2014]. 
 Finally, to facilitate comparison across the four continuous explanatory variables in our models, we rescaled them all to have a zero mean and unitary variance.
 
-To estimate the coefficients and to perform model selection and the associated uncertainty, we used a combination of multi-model inference and bootstrap resampling with one hundred replicates. 
+To estimate the coefficients and to perform model selection and quantify the associated uncertainty, we used a combination of multi-model inference and bootstrap resampling with one hundred replicates. 
 First, we performed model selection using the AICc and determined the likelihood of each candidate model (a particular combination of predicting variables) by calculating the median \(\Delta\)AICc (relative to the most likely model) for each bootstrap sample. 
 As we wanted model coefficients from more likely candidate models to carry more weight in our results, we sampled the coefficients for our variables proportional to the likelihood of its candidate model. 
-We "shrank" the estimates coefficient of potentially unimportant variables by setting its estimate to 0 when the variable was not included in the model. 
-Finally, we used these distributions of the model coefficients to estimate their impact on the quantity and quality of pollination. 
-For the quantity of pollination, we simply calculated the mean value of a sample of the conspecific pollen loads. 
-For the quality of pollination, we calculated the mean difference between a sample of the distribution of the effects of conspecific pollen and a sample of those of heterospecific pollen gain.
+We "shrank" the estimated coefficient of potentially unimportant variables by setting their estimate to 0 when the variable was not included in the model. 
+Finally, we used these distributions of the model coefficients to estimate their mean impact on the pollination service (in terms of absoulte and relative conspecific pollen deposition). 
 Again, here we used bootstrap resampling to estimate the uncertainty around these means. 
 
 ## Flexibility of plant strategies
