@@ -121,7 +121,7 @@ If evolutionary specialisation occurs by changing traits to focus on fewer but b
 Alternatively, it might also be the case that density (for example in terms of flower or pollen counts) is the dominant force driving pollen transfer [@seifan_outcome_2014]. 
 Abundant plant species might experience a dilution of available pollinators [@feinsinger_effects_1987] but might also receive more effective visits by capitalising on a larger share of both visits and pollinator "real state". 
 In this case, a potential reduction the absolute amount of conspecific pollen received could be compensated by an increase amount relative to heterospecific pollen. 
-Altogether, it is clear that some ecological factors can influence pollen deposition. 
+Altogether, it is clear that some ecological factors can influence pollen deposition and that these factors, in the specific context of pollination, could be used to roughly define a species *realised niche* in their community. 
 However, the intertwined nature of these factors makes it hard to determine wether they favour or hinder the pollination service at the community level. 
 Moreover, their relative importance has not yet been empirically evaluated in natural plant communities. 
 
@@ -132,7 +132,6 @@ On the one hand, we could expect an overall positive relationship between the am
 The higher the deposition of conspecific pollen relative to heterospecific, the larger the slope of that relationship.
 On the other, we could also expect a larger amount of conspecific pollen deposited in stigmas when flowers are open to animal pollinators than is deposited due to self-pollination. 
 **Second**, we investigate the relative contribution that four ecological factors have on the pollination service. 
-These factors, in the specific context of pollination, may carry enough information to roughly define a species *realised niche* in their community. 
 Sepecifically, we hypothesize that competition (measured as absolute and relative conspecific pollen deposition) should increase for plants that share many pollination partners.
 However, we also hypothesize that other factors like the plant's functional originality, its relative abundance, and the visit effectiveness should have the potential to compensate for this increase in competition. 
 **Third**, we examine how community context influences the way plants use these factors to minimise competition. 
