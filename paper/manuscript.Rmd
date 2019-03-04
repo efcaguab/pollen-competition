@@ -148,7 +148,7 @@ In each location, we sampled two restored and two agricultural fragments, except
 
 ## Competition vs. facilitation
 
-Our first objective was to identify whether the outcome of plants sharing polinators, at the community level, is facilitation or competition. 
+Our first objective was to identify whether the outcome of plants sharing polinators at the community level is facilitation or competition. 
 The first line of evidence can be found via the relationship between heterospecific and conspecific pollen deposited in plant stigmas [@tur_evaluating_2016]. 
 This is because heterospecific pollen can be seen as an unavoidable cost that plants must pay for receiving conspecific pollen from shared pollinators. 
 A negative relationship (when shared pollinators increase heterospecific pollen loads and decrease conspecific loads) may indicate that competition for pollination is strong. 
@@ -160,7 +160,7 @@ The second line of evidence can be obtained by examining the difference between 
 Self-pollination can be favourable to plant reproduction when competition for pollination is strong because it provides insurance against poor pollination service [@kalisz_benefits_2003]. 
 If competition for pollination is sufficiently strong, then the amount of conspecific pollen deposited in flower stigmas when animal pollination is prevented could be higher than when floral visits are allowed. 
 In contrast, the opposite pattern may indicate that plants benefit from having pollen delivered directly to the stigma by animals. 
-We do not specifically test the effect of pollen viability or the extent to which self-pollen vs. pollen from a conspecific may differ in their value for fertilization which can be important factors (TODO: ref needed). 
+We did not specifically test the effect of pollen viability or the extent to which self-pollen vs. pollen from a conspecific may differ in their value for fertilization which can be important factors (TODO: ref needed). 
 However, it is reasonable to expect that the difference between outcross and self-pollen may be generally relevant and particularly so for species that are not self-fertile or those in which self-fertilization is rarely effective due to a temporary separation in the maturation of the sexes (dichogamy) (TODO: ref needed). 
 
 ### Data collection
@@ -182,30 +182,31 @@ Models were fitted using the function `glmer` from the R package `lme4 1.1-19` [
 To compare the conspecific pollen deposited with and without animal-mediated pollination, we followed the same approach as above. 
 In this case, however, the predictor was the treatment (wether the flower was bagged or unbagged) instead of the number of heterospecific grains. 
 
-## Effect of plant strategies in the pollination service 
+## Ecological constraints the pollination service 
 
-Our second objective is to investigate the relative contribution that different factors that describe the plants' strategies to minimise competition have on the pollination service. 
-Specifically, we investigate the effect of (*i*) the number of shared pollinators, (*ii*) the plants relative abundance, (*iii*) the mean visit effectiveness---a metric that combines the share of pollen that a plant species is able to place on each of their floral visitors and the number of visits it receives from them (see Data Analysis section below for more details), and (*iv*) the plants functional originality.
-Here, we define visit effectiveness of the pollinator species *i* to plant species *j* as the proportion between the visits of *i* to *j* and all visits of *i*, multiplied by the proportion between the number of pollen grains of *j* attached to individuals of *i* and all pollen attached to individuals of *i*.
+Our second objective was to investigate the relative contribution of different factors that describe the plant competition for pollination niche to the pollination service. 
+Specifically, we investigated the effect of (*i*) a plant's number of shared pollinator species, (*ii*) a plants abundance relative to the rest of the community, (*iii*) the mean visit effectiveness---a metric that combines the share of pollen that a plant species is able to place on each of their floral visitors and the number of visits it receives from them (see *Data Analysis* section below for more details), and (*iv*) the plants functional originality (add ref). 
+<!-- Here, we define visit effectiveness of the pollinator species *i* to plant species *j* as the proportion between the visits of *i* to *j* and all visits of *i*, multiplied by the proportion between the number of pollen grains of *j* attached to individuals of *i* and all pollen attached to individuals of *i*. -->
 
 ### Data collection
 
-To obtain the number of shared pollinators for each species (*i*), we collected data to construct qualitative and quantitative pollination networks. 
+To obtain the number of shared pollinators for each species, we collected data to construct qualitative and quantitative pollination networks. 
 Qualitative networks were constructed based on two-hour observations of floral visits in each fragment. 
-Quantitative networks were constructed using two 50 m randomly located transects in each transect. 
+Quantitative networks were constructed using two 50 m randomly located transects in each fragment. 
 We counted and collected all floral visitors found in a 2 m wide strip while walking at a pace of 10 m per minute [@marrero_effect_2014; @memmott_structure_1999]. 
 We visited the transects each month between November 2010 and March 2011. 
-To obtain plant abundance (*ii*), we counted all units of floral attraction found during an independent sampling of the same transects used to construct the quantitative visitation networks. 
-To estimate visit effectiveness (*iii*), in addition to the visitation networks we need to construct pollen transfer networks. 
-To construct the transfer networks we examined the pollen loads present on the collected floral visitors [@marrero_exotic_2017]. 
-When the pollen count on an individual animal was estimated to be less than 2,000 grains, we identified every grain to the species level whenever possible, and to pollen complexes when it was not. 
+To obtain plant abundance, we counted all units of floral attraction found during an independent sampling of the transects used to construct the quantitative visitation networks. 
+To estimate visit effectiveness we need to construct pollen transfer networks in addition to the visitation networks. 
+To construct the transfer networks, we examined the pollen loads present on the floral visitors collected [@marrero_exotic_2017]. 
+When the pollen count on an individual animal was estimated to be less than 2,000 grains, we identified every grain to the species level when possible and to pollen complexes when it was not. 
 When the pollen count was above 2,000 grains, we classified approx. 50% of pollen and total pollen counts were extrapolated [@bosch_plant-pollinator_2009]. 
-Finally, We also recorded morphological traits (*iv*) that relate to plant type (herb, shrub, climber), life cycle (annual, perennial), flower colouration, and whether the species is native in the study region. 
+Finally, we also recorded morphological traits that relate to plant type (herb, shrub, climber), life cycle (annual, perennial), flower colouration, and whether the species is native in the study region. 
+
 More details about the study sites, data collection, and laboratory protocols can be found in Marrero *et al.* (2014 and 2017).
 
 ### Data analysis
 
-We investigate the impact of the ecological strategies on the pollination services using two metrics: the quantity and the quality of pollination. 
+We investigated the impact of the ecological strategies on the pollination services using two metrics: the quantity and the quality of pollination. 
 Here we define the quality of pollination as the amount of conspecific pollen and the quality of pollination as the amount of conspecific pollen *relative* to heterospecific pollen. 
 To construct these metrics we use two sets of linear mixed models (LMM) in which the response variables are the number of conspecific and heterospecific pollen grains deposited per stigma in flowers open to animal-mediated pollination. 
 In general, using LMMs in which pollen loads were log-transformed (Figure \@ref(S-fig:fig-deposition-gain-log-transformed-or-not)) offered better results than a GLMM with Poisson (or quasipoisson) error structure. 
