@@ -135,7 +135,7 @@ On the other, we could also expect a larger amount of conspecific pollen deposit
 Sepecifically, we hypothesize that competition (measured as absolute and relative conspecific pollen deposition) should increase for plants that share many pollination partners.
 However, we also hypothesize that other factors like the plant's functional originality, its relative abundance, and the visit effectiveness should have the potential to compensate for this increase in competition. 
 **Third**, we examine how community context influences the way plants use these factors to minimise competition. 
-Although some plant species might be widespread across multiple locations, competition for pollinators occurs at the community level and hence we predict niche to be influenced by the local context. 
+Although some plant species might be widespread across multiple locations, competition for pollinators occurs at the community level and hence we predict the competition for pollination niche to be influenced by the local context. 
 If plant strategy is not flexible across communities (TODO: ref needed), we could expect niches to be more similar within species than across species in the study. 
 On the contrary, if a species' strategy is flexible, we should expect plants to be able to occupy different niches in each community such that competition could be minimised regardless of the context. 
 
@@ -240,13 +240,14 @@ Again, here we used bootstrap resampling to estimate the uncertainty around thes
 
 ## Flexibility of plant strategies
 
-Our last objective is to tease apart the strategies that plants might use to reduce competition and, importantly, how the community context influences these strategies. 
-If community context plays a relatively small role, we should expect plants to adopt similar strategies across different communities. 
-Alternatively, if the community plays a large role, we should be able to observe differences in the strategy a plant species across communities. 
-We first use a principal component analysis (PCA) of the four ecological variables. 
-We define the species strategy in a community as its coordinates in PCA space. 
-For each species that was present in two or more communities, we then calculate (*i*) the median distance between the strategies that the species uses different communities, and (*ii*) the area of the convex hull defined by these points in the first two principal components. 
-We then compare these two metrics to those obtained with 99 Monte Carlo randomizations in which we replace the strategy of the focal plant species by one of another species in the dataset. 
+Our last objective was to tease apart the plant strategies that might reduce competition and, importantly, how the community context influences these strategies. 
+If community context plays a relatively small role or the species strategy is inflexible we would expect plants of the same species to fill similar competition for pollination niches across different communities. 
+Alternatively, if the community plays a large role and plants sttrategies are flexible, we should be able to observe differences in the niche a plant species occupies across communities. 
+First, we used a principal component analysis (PCA) of the four ecological variables. 
+We scaled variables across the whole study to ensure that the PCA space does not change acording to the species present in each community. 
+We define a species' niche in a community as its coordinates in PCA space. 
+For each species that was present in two or more communities, we then calculated (*i*) the median distance between the strategies that the species uses in different communities and (*ii*) the area of the convex hull defined by these points in the first two principal components (only for species present in three or more communities). 
+We then compared the magnitude of these two metrics to those obtained with 99 Monte Carlo randomizations in which we replaced the strategy of the focal plant species by that of another randomly selected species in the dataset. 
 
 # Results
 

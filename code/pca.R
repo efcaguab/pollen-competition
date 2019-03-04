@@ -210,7 +210,8 @@ get_permanova <- function(x, col){
     dplyr::group_by()
 }
 
-plot_permanova_dist <- function(permanova_plant_distances, permanova_site_distances){
+plot_permanova_dist <- function(permanova_plant_distances,
+                                permanova_site_distances){
   require(ggplot2)
 
   perma_data <- permanova_plant_distances %>%
@@ -281,6 +282,7 @@ plot_permanova_dist <- function(permanova_plant_distances, permanova_site_distan
 
 }
 
+# Plot the PCA, scaled globally (across communities)
 plot_pca <- function(pcas, chosen_threshold){
 
   require(ggplot2)
