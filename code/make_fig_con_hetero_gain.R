@@ -149,23 +149,28 @@ get_pred_range <- function(tidied_fixed, x, var_trans = "log", scale = "global")
 }
 
 get_con_con_plot_df <- function(dep_frame){
-  a <- dep_frame %>%
+  # Check wether the difference in conspecific pollen between bagged and
+  # unbagged flowers is significant
+  significancy <- dep_frame %>%
+    dplyr::filter(pollen_category == "conspecific") %>%
+    models_open_bagged()
+
+  dep_frame %>%
     dplyr::filter(pollen_category == "conspecific") %>%
     tidyr::complete(site_name, plant_name, treatment) %>%
     dplyr::group_by(site_name, plant_name, treatment) %>%
     dplyr::mutate(n_obs_treatment = n()) %>%
     dplyr::group_by(site_name, plant_name) %>%
-    dplyr::mutate(effect_category = wilcox_open_closed(pollen_density, treatment)) %>%
     dplyr::group_by(site_name, plant_name, treatment) %>%
     dplyr::summarise(mid = mean(pollen_density, na.rm = T),
                      upper = mid + se(pollen_density),
-                     lower = mid - se(pollen_density),
-                     effect_category = effect_category[1]) %>%
+                     lower = mid - se(pollen_density)) %>%
     dplyr::group_by() %>%
     tidyr::gather(variable, value, mid:lower) %>%
     tidyr::unite(temp, treatment, variable, sep = "_") %>%
     tidyr::spread(temp, value) %>%
-    dplyr::filter(!is.na(closed_mid), !is.na(open_mid))
+    dplyr::filter(!is.na(closed_mid), !is.na(open_mid)) %>%
+    dplyr::full_join(significancy)
 
 }
 
@@ -227,12 +232,18 @@ plot_bagged_vs_open_conspecific <- function(con_df){
   list(scatter_plot, bar_plot)
 }
 
-models_open_bagged <- function(df){
-  b <- a %>%
-    dplyr::mutate(pollen_density = round(pollen_density))
 
-  m <- lme4::glmer(pollen_density ~ treatment + (treatment | plant_name : site_name),
-                   data = b,
+# Check wether the difference in conspecific pollen between bagged and
+# unbagged flowers is significant
+models_open_bagged <- function(df){
+
+  # Using a GLMM with the number of grains as a predictor and the treatment
+  # (bagged/unbagged) as the predictor. Allow a random itercept and slope for
+  # each species nested in the community
+  m <- lme4::glmer(n_grains ~
+                     treatment + (treatment | plant_name : site_name),
+                   data = df,
+                   offset = log(n_stigma),
                    family = "poisson")
 
   m %>%
@@ -240,7 +251,16 @@ models_open_bagged <- function(df){
     extract2(1) %>%
     tibble::rownames_to_column() %>%
     dplyr::mutate(error = get_error_random_effects(m)) %>%
-    tidyr::separate("rowname", into = c("plant_name", "site_name"), sep = ":", remove = F)
+    tidyr::separate("rowname", into = c("plant_name", "site_name"),
+                    sep = ":", remove = F) %>%
+    dplyr::mutate(closed =  `(Intercept)`,
+                  open = closed + treatmentopen,
+                  effect_category = dplyr::case_when(
+                    open - 2 * error > closed ~ "positive",
+                    closed - 2 * error > open ~ "negative",
+                    TRUE ~ "neutral"
+                  ))
+
 }
 
 wilcox_open_closed <- function(pollen_density, treatment){
