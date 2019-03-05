@@ -151,27 +151,19 @@ get_pred_range <- function(tidied_fixed, x, var_trans = "log", scale = "global")
 get_con_con_plot_df <- function(dep_frame){
   # Check wether the difference in conspecific pollen between bagged and
   # unbagged flowers is significant
-  significancy <- dep_frame %>%
-    dplyr::filter(pollen_category == "conspecific") %>%
-    models_open_bagged()
-
   dep_frame %>%
     dplyr::filter(pollen_category == "conspecific") %>%
-    tidyr::complete(site_name, plant_name, treatment) %>%
-    dplyr::group_by(site_name, plant_name, treatment) %>%
-    dplyr::mutate(n_obs_treatment = n()) %>%
-    dplyr::group_by(site_name, plant_name) %>%
-    dplyr::group_by(site_name, plant_name, treatment) %>%
-    dplyr::summarise(mid = mean(pollen_density, na.rm = T),
-                     upper = mid + se(pollen_density),
-                     lower = mid - se(pollen_density)) %>%
-    dplyr::group_by() %>%
-    tidyr::gather(variable, value, mid:lower) %>%
-    tidyr::unite(temp, treatment, variable, sep = "_") %>%
-    tidyr::spread(temp, value) %>%
-    dplyr::filter(!is.na(closed_mid), !is.na(open_mid)) %>%
-    dplyr::full_join(significancy)
-
+    models_open_bagged() %>%
+    dplyr::mutate(open_mid = open,
+                  open_lower = open - error,
+                  open_upper = open + error,
+                  closed_mid = closed,
+                  closed_lower = closed - error,
+                  closed_upper = closed + error) %>%
+    dplyr::mutate_at(.vars = dplyr::vars(tidyselect::contains("mid"),
+                                         tidyselect::contains("upper"),
+                                         tidyselect::contains("lower")),
+                     exp)
 }
 
 plot_bagged_vs_open_conspecific <- function(con_df){
@@ -205,7 +197,7 @@ plot_bagged_vs_open_conspecific <- function(con_df){
     labs(x = "closed to animal pollination",
          y = "open to animal pollination",
          title = "(c) self- vs. animal-mediated pollination",
-         subtitle = "mean pollen grains per stigma") +
+         subtitle = "conspecific pollen grains") +
     pub_theme() +
     theme(legend.position = "none")
           #axis.line = element_line(size = 0.25))
