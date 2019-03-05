@@ -73,16 +73,19 @@ drake::loadd(facilitation_models)
 broom::tidy(facilitation_models, conf.int = F) %>%
   dplyr::select(-p.value, -group) %>%
   dplyr::mutate(term = dplyr::case_when(
+    # term == "(Intercept)" ~ "Intercept",
     term == "sd_(Intercept).plant_name:site_name" ~ "S.D. random intercept", 
     term == "sd_heterospecific.plant_name:site_name" ~ "S.D. random slope", 
     TRUE ~ term
   )) %>%
   dplyr::filter(term != "cor_(Intercept).heterospecific.plant_name:site_name") %>%
-  knitr::kable(caption = "Summary of the model of the relationship of heterospecific and conspecific pollen", 
-               digits = 3, 
-               booktabs = T) %>%
+  knitr::kable(caption = "Summary of the model used to analyse the relationship of heterospecific and conspecific pollen", 
+               digits = 3,
+               booktabs = T,
+               col.names = c("predictor", "estimate" ,"S.E.", "z-value")) %>%
   kableExtra::kable_styling(font_size = 8) %>%
-  kableExtra::group_rows(index = c("fixed component" = 2, "random component (plant species:community)" = 2)) 
+  kableExtra::group_rows(index = c("fixed component" = 2, 
+                                   "random component (species:community)" = 2)) 
 ```
 
 ```{r table-facilitation-models-random, results='asis'}
@@ -97,21 +100,50 @@ tbl_frame <- facilitation_random_effects %>%
                                   sep = ' - ')) %>%
   dplyr::select(plant_name, site_name, heterospecific, error)
 
-# linesep <- tbl_frame %>%
-#   dplyr::mutate(same_species = plant_name == dplyr::lead(plant_name), 
-#                 same_species = dplyr::if_else(is.na(same_species), TRUE, same_species),
-#                 separator = dplyr::if_else(same_species, "", "\\addlinespace")) %$%
-#   separator
-
 tbl_frame %>%
   knitr::kable("latex", 
                digits = 4, 
                col.names = c("species name", "community", "slope", "S.E."), 
-               caption = "asd", 
+               caption = "Slope of the relationship of heterospecific and conspecific pollen for each species in their community (fixed effect + conditional effect). Community names are constructed by location - agricultural/restored - fragment number.", 
                booktabs = T, 
                linesep = "") %>%
   kableExtra::kable_styling(font_size = 8) %>%
   kableExtra::column_spec(1, italic = T)
+```
+
+```{r table-open-bagged-models-general, results = "asis"}
+drake::loadd(open_bagged_model)
+
+broom::tidy(open_bagged_model, conf.int = F) %>%
+  dplyr::select(-p.value, -group) %>%
+  dplyr::mutate(term = dplyr::case_when(
+    # term == "(Intercept)" ~ "Intercept (bagged flower)",
+    term == "treatmentopen" ~ "treatment (unbagged flower)",
+    term == "sd_(Intercept).plant_name:site_name" ~ "S.D. random intercept", 
+    term == "sd_treatmentopen.plant_name:site_name" ~ "S.D. random slope", 
+    TRUE ~ term
+  )) %>%
+  dplyr::filter(term != "cor_(Intercept).treatmentopen.plant_name:site_name") %>%
+  knitr::kable(caption = "Summary of the model used to analyse the relationship of heterospecific and conspecific pollen", 
+               digits = 3,
+               booktabs = T,
+               col.names = c("predictor", "estimate" ,"S.E.", "z-value")) %>%
+  kableExtra::kable_styling(font_size = 8) %>%
+  kableExtra::group_rows(index = c("fixed component" = 2, 
+                                   "random component (species:community)" = 2)) 
+```
+
+```{r table-open-bagged-models-random, results='asis'}
+drake::loadd(con_con_plot_df)
+
+coef_open_bagged %>%
+ dplyr::inner_join(sites, by = "site_name") %>%
+  dplyr::mutate(site_name = paste(locality_name, 
+                                  land_use, 
+                                  fragment, 
+                                  sep = ' - ')) %>%
+  dplyr::mutate()
+  dplyr::select(plant_name, site_name, heterospecific, error)
 ```
 
 

@@ -55,6 +55,7 @@ drake::loadd(msc_wordcount, abs_wordcount)
 * Sticking to past tense throughout the methods.
 * GLMM to fit slope of heterospecific-conspecific pollen relationship tests all communities at once (it was a model per community). Response variable is the number of grains (it was number of grains per stigma) and the (log) number of stigmas in the flowers has been included as an offset term.
 * Using a similar approach to compare conspecific pollen deposited in open and bagged flowers (I used a series of Mann-Withney U tests before)
+* Added model results tables in the Supplementary Information
 
 ## Todo
 
@@ -288,10 +289,10 @@ equal_pos_neg <- counts_facilitation_slope$nn[1] == counts_facilitation_slope$nn
 ```
 
 We first examined the degree of facilitation/competition in natural communities. Specifically, we examined the slope of the relationship between the heterospecific and conspecific pollen deposited on stigmas of each species in a community. 
-We found that overall neither facilitation nor competition dominates. 
-Indeed, we found that the proportion of species that experienced a significantly positive or neggative relationship between heterospecific and conspecific pollen than neggative was very similar (`r counts_facilitation_slope$np[3]`% and `r counts_facilitation_slope$np[1]`%, respectively; Figure \@ref(fig:fig-trade-off-predictions)a). 
+We found that overall neither facilitation nor competition dominates (Table \@ref(S-tab:table-facilitation-models-general)). 
+Indeed, we found that the proportion of species that experienced a significantly positive or neggative relationship between heterospecific and conspecific pollen than neggative was very similar (`r counts_facilitation_slope$np[3]`% and `r counts_facilitation_slope$np[1]`%, respectively; Figure \@ref(fig:fig-trade-off-predictions)a; Table \@ref(S-tab:table-facilitation-models-random)). 
 Most of the variation between plants in a facilitation-competition gradient was driven by differences *between* species; however, we also observed some important differences *within* species. 
-For instance, `r numbers2words(nrow(sp_both_pos_neg))` of the species sampled across multiple communities (`r sp_both_pos_neg_names`) showed evidence that facilitation (positive relationships) predominated in some communities while competition (negative relationships) predominated in others. 
+For instance, `r numbers2words(nrow(sp_both_pos_neg))` of the species sampled across multiple communities (`r sp_both_pos_neg_names`) showed evidence that, the same species, can experience facilitation (positive relationships) in some communities and competition (negative relationships) in others. 
 Interestingly, although there was a wide variation in the slope of the relationship between heterospecific and conspecific pollen almost all plants had more conspecific than heterospecific pollen deposited on their stigmas (Figure \@ref(fig:fig-trade-off-predictions)b). 
 
 ```{r fig-trade-off-predictions, fig.height= 4, fig.width = 6.5, fig.cap = "**Competition vs. facilitation at the community level**. (a) Some species experience more competition for pollination than others. Points indicate the estimated slopes for the relationship between the amount of heterospecific and conspecific pollen deposited per stigma across species in their communities. Significantly negative slopes (dark grey) indicate that plants experience competition for animal-mediated pollination, while significantly positive slopes (light grey) indicate that facilitation is the predominant outcome. The number of plants analysed for each species is shown within brackets next to the species name. (b) Despite the variety of slopes, overall plants had more conspecific than heterospecific pollen deposited in their stigmas. (c) Generally, plants also had more pollen deposited in their stigmas when they were open to animal-mediated pollination than when they were closed. In all plots, error bars correspond to $\\pm$ the standard error (SE)."}
