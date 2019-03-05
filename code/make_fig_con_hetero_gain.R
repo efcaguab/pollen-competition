@@ -148,12 +148,45 @@ get_pred_range <- function(tidied_fixed, x, var_trans = "log", scale = "global")
     range()
 }
 
-get_con_con_plot_df <- function(dep_frame){
+model_open_bagged <- function(dep_frame){
+  df <- dep_frame %>%
+    dplyr::filter(pollen_category == "conspecific")
+
+  # Using a GLMM with the number of grains as a predictor and the treatment
+  # (bagged/unbagged) as the predictor. Allow a random itercept and slope for
+  # each species nested in the community
+  lme4::glmer(n_grains ~
+                treatment + (treatment | plant_name : site_name),
+              data = df,
+              offset = log(n_stigma),
+              family = "poisson")
+}
+
+# Check wether the difference in conspecific pollen between bagged and
+# unbagged flowers is significant
+get_coef_open_bagged <- function(open_baged_model){
+
+  open_baged_model %>%
+    coef() %>%
+    extract2(1) %>%
+    tibble::rownames_to_column() %>%
+    dplyr::mutate(error = get_error_random_effects(open_baged_model)) %>%
+    tidyr::separate("rowname", into = c("plant_name", "site_name"),
+                    sep = ":", remove = F) %>%
+    dplyr::mutate(closed =  `(Intercept)`,
+                  open = closed + treatmentopen,
+                  effect_category = dplyr::case_when(
+                    open - 2 * error > closed ~ "positive",
+                    closed - 2 * error > open ~ "negative",
+                    TRUE ~ "neutral"
+                  ))
+
+}
+
+get_con_con_plot_df <- function(coef_open_bagged){
   # Check wether the difference in conspecific pollen between bagged and
   # unbagged flowers is significant
-  dep_frame %>%
-    dplyr::filter(pollen_category == "conspecific") %>%
-    models_open_bagged() %>%
+  coef_open_bagged %>%
     dplyr::mutate(open_mid = open,
                   open_lower = open - error,
                   open_upper = open + error,
@@ -222,37 +255,6 @@ plot_bagged_vs_open_conspecific <- function(con_df){
     plot_bar_proportion()
 
   list(scatter_plot, bar_plot)
-}
-
-
-# Check wether the difference in conspecific pollen between bagged and
-# unbagged flowers is significant
-models_open_bagged <- function(df){
-
-  # Using a GLMM with the number of grains as a predictor and the treatment
-  # (bagged/unbagged) as the predictor. Allow a random itercept and slope for
-  # each species nested in the community
-  m <- lme4::glmer(n_grains ~
-                     treatment + (treatment | plant_name : site_name),
-                   data = df,
-                   offset = log(n_stigma),
-                   family = "poisson")
-
-  m %>%
-    coef() %>%
-    extract2(1) %>%
-    tibble::rownames_to_column() %>%
-    dplyr::mutate(error = get_error_random_effects(m)) %>%
-    tidyr::separate("rowname", into = c("plant_name", "site_name"),
-                    sep = ":", remove = F) %>%
-    dplyr::mutate(closed =  `(Intercept)`,
-                  open = closed + treatmentopen,
-                  effect_category = dplyr::case_when(
-                    open - 2 * error > closed ~ "positive",
-                    closed - 2 * error > open ~ "negative",
-                    TRUE ~ "neutral"
-                  ))
-
 }
 
 wilcox_open_closed <- function(pollen_density, treatment){
