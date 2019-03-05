@@ -1,16 +1,16 @@
 # model facilitation in Tur style using deposition data
 # uses lme4 and has a random slope and intercept for every plant-site combination
 model_facilitation <- function(dep_frame){
-  dep_frame %>%
+  d <- dep_frame %>%
     dplyr::filter(treatment == "open") %>%
     dplyr::select(plant, plant_name, site_name, n_grains, n_stigma, pollen_category) %>%
-    tidyr::spread(key = "pollen_category", value = "n_grains") %>%
+    tidyr::spread(key = "pollen_category", value = "n_grains")
     # dplyr::mutate(conspecific = ceiling(conspecific)) %>%
-    lme4::glmer(conspecific ~
+   lme4::glmer(conspecific ~
                   heterospecific + (heterospecific | plant_name : site_name),
                 family = "poisson",
                 offset = log(n_stigma),
-                data = .)
+                data = d)
 }
 
 # extract the random effects from facilitation models
