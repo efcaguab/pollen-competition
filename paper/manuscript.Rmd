@@ -270,18 +270,29 @@ get_sp_with_both_pos_neg <- . %>%
   dplyr::group_by(plant_name) %>%
   dplyr::summarise(both = dplyr::n_distinct(effect_category) > 1) %>%
   dplyr::filter(both)
+
+# Get list of species with both positive and negative slopes
 sp_both_pos_neg <- facilitation_plot_df %>%
-  get_sp_with_both_pos_neg()
+  get_sp_with_both_pos_neg() %>%
+  dplyr::mutate(plant_name = as.character(plant_name)) %>%
+  dplyr::arrange(plant_name) %>%
+  dplyr::mutate(plant_name = stringr::str_extract(plant_name,
+                                                  "[A-Z]\\w+\\s[a-z]\\w+"), 
+                plant_label = paste0("*", plant_name, "*")) 
+# Human readable list of species with both positive and negative slopes
+sp_both_pos_neg_names <- sp_both_pos_neg %$%
+  glue::collapse(plant_label, sep = ", ", last = ", and ")
 
 # equal number of negative and positive?
 equal_pos_neg <- counts_facilitation_slope$nn[1] == counts_facilitation_slope$nn[3]
 ```
 
-We first examined the relationship between the heterospecific and conspecific pollen deposited on stigmas of a species in a community. 
-We found that the overall slope of the relationship was positive (Table SXX), but a large proportion of plants experienced a negative or no significant relationship between heterospecific and conspecific pollen (`r counts_facilitation_slope$np[1]`% and `r counts_facilitation_slope$np[2]`% respectively; Figure \@ref(fig:fig-trade-off-predictions)a). 
-Most of the variation between plants in a facilitation-competition gradient was driven by differences *between* species, however, we also observed some important differences *within* species. 
-For instance, `r numbers2words(nrow(sp_both_pos_neg))` of species sampled in multiple communities (*Cypella herbertii*, *Diplotaxis tenuifolia*, *Hirschfeldia incana*, and *Carduus acanthoides*) showed evidence that facilitation (positive relationships) predominates in some communities while competition (negative relationships) predominates in others. 
-Furthermore, although there was a wide variation in the slope of the relationship between heterospecific and conspecific pollen, plants, in almost all cases, had more conspecific than heterospecific pollen deposited on their stigmas (Figure \@ref(fig:fig-trade-off-predictions)b). 
+We first examined the degree of facilitation/competition in natural communities. Specifically, we examined the slope of the relationship between the heterospecific and conspecific pollen deposited on stigmas of each species in a community. 
+We found that overall neither facilitation nor competition dominates. 
+Indeed, we found that the proportion of species that experienced a significantly positive or neggative relationship between heterospecific and conspecific pollen than neggative was very similar (`r counts_facilitation_slope$np[3]`% and `r counts_facilitation_slope$np[1]`%, respectively; Figure \@ref(fig:fig-trade-off-predictions)a). 
+Most of the variation between plants in a facilitation-competition gradient was driven by differences *between* species; however, we also observed some important differences *within* species. 
+For instance, `r numbers2words(nrow(sp_both_pos_neg))` of the species sampled across multiple communities (`r sp_both_pos_neg_names`) showed evidence that facilitation (positive relationships) predominated in some communities while competition (negative relationships) predominated in others. 
+Interestingly, although there was a wide variation in the slope of the relationship between heterospecific and conspecific pollen almost all plants had more conspecific than heterospecific pollen deposited on their stigmas (Figure \@ref(fig:fig-trade-off-predictions)b). 
 
 ```{r fig-trade-off-predictions, fig.height= 4, fig.width = 6.5, fig.cap = "**Competition vs. facilitation at the community level**. (a) Some species experience more competition for pollination than others. Points indicate the estimated slopes for the relationship between the amount of heterospecific and conspecific pollen deposited per stigma across species in their communities. Significantly negative slopes (dark grey) indicate that plants experience competition for animal-mediated pollination, while significantly positive slopes (light grey) indicate that facilitation is the predominant outcome. The number of plants analysed for each species is shown within brackets next to the species name. (b) Despite the variety of slopes, overall plants had more conspecific than heterospecific pollen deposited in their stigmas. (c) Generally, plants also had more pollen deposited in their stigmas when they were open to animal-mediated pollination than when they were closed. In all plots, error bars correspond to $\\pm$ the standard error (SE)."}
 # fig_random_slopes <- plot_random_slopes(facilitation_plot_df)
@@ -333,13 +344,16 @@ sp_con_con <- con_con_plot_df %>%
                 np = round_preserve_sum(np, 2)*100)
 # species with contrasting behaviours
 sp_con_both_pos_neg <- con_con_plot_df %>%
-  get_sp_with_both_pos_neg()
+  get_sp_with_both_pos_neg() %>%
+  dplyr::arrange(plant_name) %>%
+  dplyr::mutate(plant_label = dplyr::if_else(plant_name %in% sp_both_pos_neg$plant_name, shorten_sp_name(plant_name), plant_name),
+                plant_label = paste0("*", plant_label, "*"))
 ```
 
-Second, we compared the amount of conspecific pollen deposited on flowers that were open to animal-mediated pollinators with those that were closed. 
-Here again, we found large differences between plants. 
-Specifically, the difference was non-signifcant for `r sp_con_con$np[sp_con_con$effect_category == "neutral"]`% of plants, `r sp_con_con$np[sp_con_con$effect_category == "positive"]`% had significantly more pollen when open, and the remaining `r sp_con_con$np[sp_con_con$effect_category == "negative"]`% had significantly less pollen when open ($\alpha = 0.05$, Mann-Withney U tests; Figure \@ref(fig:fig-trade-off-predictions)c). 
-Variation within species was slightly smaller and only `r numbers2words(nrow(sp_con_both_pos_neg))` species (*H. incana* and *C. acanthoides*) had both significantly positive and negative differences. 
+Second, we compared the amount of conspecific pollen deposited on flowers that were open to animal-mediated pollinators with that of those that were closed. 
+Here, we again found large differences between plants but with a clear tendency to find more pollen in open flowers. 
+Specifically, `r sp_con_con$np[sp_con_con$effect_category == "positive"]`% of plants had significantly more pollen when open and `r sp_con_con$np[sp_con_con$effect_category == "negative"]`% had significantly less pollen when open (the difference was non-signifcant for the remainding `r sp_con_con$np[sp_con_con$effect_category == "neutral"]`%; Figure \@ref(fig:fig-trade-off-predictions)c). 
+Variation within species was slightly smaller and only `r numbers2words(nrow(sp_con_both_pos_neg))` species (`r glue::collapse(sp_con_both_pos_neg$plant_label, sep = ", ", last = ", and ")`) had both significantly positive and negative differences. 
 
 ## Effect of ecological strategies in the pollination service 
 
