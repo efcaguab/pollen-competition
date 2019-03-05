@@ -13,6 +13,8 @@ output:
     toc: false
 header-includes:
   - \usepackage{booktabs}
+editor_options: 
+  chunk_output_type: console
 ---
 
 \renewcommand\thefigure{S\arabic{figure}}    
@@ -27,7 +29,8 @@ knitr::opts_chunk$set(echo = FALSE, message = FALSE,
 options(xtable.comment = FALSE, 
         xtable.caption.placement = 'bottom',
         xtable.size = 'small',
-        booktabs = TRUE)
+        booktabs = TRUE, 
+        knitr.kable.NA = "-")
 ```
 
 ```{r fig-deposition-log-transformed-or-not, fig.height = 2, fig.cap = "Distribution of stigmatic pollen density plotted in (A) a linear scale, and (B) a logarithmic scale (zero values not shown).", eval=F}
@@ -63,6 +66,54 @@ cowplot::plot_grid(
   fig_abundance[[1]],
   rel_widths = c(0.42, 0.58), labels = LETTERS[1:2], label_size = 8)
 ```
+
+```{r table-facilitation-models-general, results='asis'}
+drake::loadd(facilitation_models)
+
+broom::tidy(facilitation_models, conf.int = F) %>%
+  dplyr::select(-p.value, -group) %>%
+  dplyr::mutate(term = dplyr::case_when(
+    term == "sd_(Intercept).plant_name:site_name" ~ "S.D. random intercept", 
+    term == "sd_heterospecific.plant_name:site_name" ~ "S.D. random slope", 
+    TRUE ~ term
+  )) %>%
+  dplyr::filter(term != "cor_(Intercept).heterospecific.plant_name:site_name") %>%
+  knitr::kable(caption = "Summary of the model of the relationship of heterospecific and conspecific pollen", 
+               digits = 3, 
+               booktabs = T) %>%
+  kableExtra::kable_styling(font_size = 8) %>%
+  kableExtra::group_rows(index = c("fixed component" = 2, "random component (plant species:community)" = 2)) 
+```
+
+```{r table-facilitation-models-random, results='asis'}
+drake::loadd(facilitation_random_effects)
+drake::loadd(sites)
+
+tbl_frame <- facilitation_random_effects %>%
+ dplyr::inner_join(sites, by = "site_name") %>%
+  dplyr::mutate(site_name = paste(locality_name, 
+                                  land_use, 
+                                  fragment, 
+                                  sep = ' - ')) %>%
+  dplyr::select(plant_name, site_name, heterospecific, error)
+
+# linesep <- tbl_frame %>%
+#   dplyr::mutate(same_species = plant_name == dplyr::lead(plant_name), 
+#                 same_species = dplyr::if_else(is.na(same_species), TRUE, same_species),
+#                 separator = dplyr::if_else(same_species, "", "\\addlinespace")) %$%
+#   separator
+
+tbl_frame %>%
+  knitr::kable("latex", 
+               digits = 4, 
+               col.names = c("species name", "community", "slope", "S.E."), 
+               caption = "asd", 
+               booktabs = T, 
+               linesep = "") %>%
+  kableExtra::kable_styling(font_size = 8) %>%
+  kableExtra::column_spec(1, italic = T)
+```
+
 
 ```{r table-aic-random-models, results= 'asis', eval=T}
 drake::loadd(glanced_random, random_effects)
