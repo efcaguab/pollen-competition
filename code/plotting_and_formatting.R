@@ -1,6 +1,6 @@
 pub_theme <- function(){
   theme_bw() +
-    theme(text = element_text(size = 8), 
+    theme(text = element_text(size = 8),
           title = element_text(size = 8),
           axis.title = element_text(size = 7),
           plot.title = element_text(size = 7, face = "bold", margin = margin(b = 0)),
@@ -8,15 +8,15 @@ pub_theme <- function(){
           plot.tag = element_text(size = 7),
           strip.background = element_blank(),
           strip.text = element_text(hjust = 0),
-          legend.title = element_text(hjust = 0.5), 
-          legend.key.size = unit(3, "mm"), 
-          legend.margin = margin(), 
+          legend.title = element_text(hjust = 0.5),
+          legend.key.size = unit(3, "mm"),
+          legend.margin = margin(),
           axis.ticks.x = element_line(colour = "grey30", size = 0.05),
           axis.ticks.y = element_line(colour = "grey30", size = 0.25),
           # panel.border = element_blank(),
           # axis.line.y = element_line(),
-          panel.grid = element_blank(), 
-          panel.background = element_blank(), 
+          panel.grid = element_blank(),
+          panel.background = element_blank(),
           plot.background = element_blank())
 }
 
@@ -29,12 +29,12 @@ common_graphic_metrics <- function(){
   list(
     pal_rb3 = RColorBrewer::brewer.pal(4, "Greys")[c(3,1,2)],
     size_errorbars =  0.25,
-    color_errorbars = "grey30", 
-    color_errorbars_light = "grey70", 
-    log1p_axis_breaks_10 = c(0, 10, 100, 1000, 10000), 
-    point_size = 1, 
-    color_references = "grey50", 
-    size_references = 0.25, 
+    color_errorbars = "grey30",
+    color_errorbars_light = "grey70",
+    log1p_axis_breaks_10 = c(0, 10, 100, 1000, 10000),
+    point_size = 1,
+    color_references = "grey50",
+    size_references = 0.25,
     fill_rows = "grey95"
   )
 }
@@ -46,11 +46,11 @@ cgm <- function(){
 #' Change frame contents so that it's ready for rendering
 #'
 #' @param x a data frame -- usually tidy frame
-#' @param sites 
+#' @param sites
 #' @param formula_long Should the formula terms be converted to long names?
 #'
 #' @return
-#' 
+#'
 humanize <- function(x, sites = NA, random_effects = NA, formula_long = FALSE, term_long = TRUE){
   if ('site_name' %in% names(x) & !is.na(sites)) {
     x <- dplyr::inner_join(x, sites, by = 'site_name')
@@ -85,7 +85,7 @@ humanize <- function(x, sites = NA, random_effects = NA, formula_long = FALSE, t
           TRUE ~ term
         ))
     }
-    
+
   }
   if ('fixed_formula' %in% names(x)) {
     if (formula_long == TRUE) {
@@ -122,7 +122,7 @@ humanize <- function(x, sites = NA, random_effects = NA, formula_long = FALSE, t
   x
 }
 
-# colour scale values 
+# colour scale values
 c_scale <- function() {
   c("#d7301f", "#fdcc8a", "#fc8d59", "#fef0d9")
 }
@@ -130,11 +130,11 @@ c_scale <- function() {
 
 # numbers to words
 numbers2words <- function(x){
-  ## Function by John Fox found here: 
+  ## Function by John Fox found here:
   ## http://tolstoy.newcastle.edu.au/R/help/05/04/2715.html
   ## Tweaks by AJH to add commas and "and"
   helper <- function(x){
-    
+
     digits <- rev(strsplit(as.character(x), "")[[1]])
     nDigits <- length(digits)
     if (nDigits == 1) as.vector(ones[digits])
@@ -142,7 +142,7 @@ numbers2words <- function(x){
       if (x <= 19) as.vector(teens[digits[1]])
     else trim(paste(tens[digits[2]],
                     Recall(as.numeric(digits[1]))))
-    else if (nDigits == 3) trim(paste(ones[digits[3]], "hundred and", 
+    else if (nDigits == 3) trim(paste(ones[digits[3]], "hundred and",
                                       Recall(makeNumber(digits[2:1]))))
     else {
       nSuffix <- ((nDigits + 2) %/% 3) - 1
@@ -160,22 +160,22 @@ numbers2words <- function(x){
     text=gsub(" and$","",text)
     #Clear any trailing comma
     gsub("\ *,$","",text)
-  }  
-  makeNumber <- function(...) as.numeric(paste(..., collapse=""))     
+  }
+  makeNumber <- function(...) as.numeric(paste(..., collapse=""))
   #Disable scientific notation
-  opts <- options(scipen=100) 
-  on.exit(options(opts)) 
+  opts <- options(scipen=100)
+  on.exit(options(opts))
   ones <- c("", "one", "two", "three", "four", "five", "six", "seven",
-            "eight", "nine") 
-  names(ones) <- 0:9 
+            "eight", "nine")
+  names(ones) <- 0:9
   teens <- c("ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen",
              "sixteen", " seventeen", "eighteen", "nineteen")
-  names(teens) <- 0:9 
+  names(teens) <- 0:9
   tens <- c("twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty",
-            "ninety") 
-  names(tens) <- 2:9 
+            "ninety")
+  names(tens) <- 2:9
   x <- round(x)
-  suffixes <- c("thousand", "million", "billion", "trillion")     
+  suffixes <- c("thousand", "million", "billion", "trillion")
   if (length(x) > 1) return(trim(sapply(x, helper)))
   helper(x)
 }
@@ -191,7 +191,7 @@ round_preserve_sum <- function(x, digits = 0) {
 }
 
 abb_col <- function(x){
-  x %>% 
+  x %>%
     stringr::str_replace("conspecific", "consp.") %>%
     stringr::str_replace("heterospecific", "hetsp.")
 }
