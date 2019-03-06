@@ -17,6 +17,7 @@ editor_options:
   chunk_output_type: console
 ---
 
+<!-- To add an S before each figure and table -->
 \renewcommand\thefigure{S\arabic{figure}}    
 \setcounter{figure}{0}   
 
@@ -79,7 +80,8 @@ broom::tidy(facilitation_models, conf.int = F) %>%
     TRUE ~ term
   )) %>%
   dplyr::filter(term != "cor_(Intercept).heterospecific.plant_name:site_name") %>%
-  knitr::kable(caption = "Summary of the model used to analyse the relationship between heterospecific and conspecific pollen", 
+  knitr::kable("latex", 
+               caption = "Summary of the model used to analyse the relationship between heterospecific and conspecific pollen", 
                digits = 3,
                booktabs = T,
                col.names = c("predictor", "estimate" ,"S.E.", "z-value")) %>%
@@ -124,7 +126,8 @@ broom::tidy(open_bagged_model, conf.int = F) %>%
     TRUE ~ term
   )) %>%
   dplyr::filter(term != "cor_(Intercept).treatmentopen.plant_name:site_name") %>%
-  knitr::kable(caption = "Summary of the model used to analyse the relationship between conspecific pollen deposited in bagged and unbagged flowers (open to animal pollination).", 
+  knitr::kable("latex", 
+               caption = "Summary of the model used to analyse the relationship between conspecific pollen deposited in bagged and unbagged flowers (open to animal pollination).", 
                digits = 3,
                booktabs = T,
                col.names = c("predictor", "estimate" ,"S.E.", "z-value")) %>%
@@ -212,13 +215,15 @@ glance_table(significant_gain_global) %>%
   dplyr::rename(`p value` = p.value,
          `difference` = estimate,
          `plant species` = recipient) %>%
-  knitr::kable(
+  knitr::kable("latex", 
     caption = "Results of testing the alternative hypothesis that the conspecific pollen density in open flowers is greater than the density in bagged flowers. Tests were performed at the species level (across communities).", 
     escape = FALSE, 
     booktabs = TRUE, 
     linesep = c("")) %>%
   kableExtra::kable_styling(font_size = 8)
 ```
+
+
 
 ```{r table-aic-fixed-models, results= 'asis', eval=T}
 drake::loadd(model_formula_ranking)
@@ -238,7 +243,8 @@ model_formula_ranking$by_model_set %>%
   dplyr::select(pollen_category, fixed_formula, delta_AIC) %>%
   dplyr::rename(`pollen type` = pollen_category, 
                 `fixed structure` = fixed_formula) %>%
-  knitr::kable(caption = paste('Comparison of the different fixed structures we considered. The table shows median delta AIC values of', dplyr::n_distinct(glanced_random$model), "bootsrap resamples of the data. The 5th and 95th percentile are shown inside square brackets."),
+  knitr::kable("latex", 
+               caption = paste('Comparison of the different fixed structures we considered. The table shows median delta AIC values of', dplyr::n_distinct(glanced_random$model), "bootsrap resamples of the data. The 5th and 95th percentile are shown inside square brackets."),
                booktabs = TRUE) %>%
   kableExtra::kable_styling(font_size = 8) %>%
   kableExtra::column_spec(column = 1, bold=T) %>%
@@ -275,7 +281,7 @@ seps <-dplyr::if_else(table_frame$`plant species` ==
   na.omit()
 
 table_frame %>%
-  knitr::kable(
+  knitr::kable("latex", 
     caption = "Results of testing the alternative hypothesis that the conspecific pollen density in open flowers is greater than the density in bagged flowers. Tests were performed at the community level. Only species present in more than one community are shown.", 
     escape = FALSE, 
     booktabs = TRUE, 
@@ -288,7 +294,7 @@ table_frame %>%
 drake::loadd(consp_self)
 consp_self %>%
   anova(test = "Chisq")  %>%
-  knitr::kable(
+  knitr::kable("latex", 
     caption = 'Analysis of variance of conspecific pollen density in bagged flowers (self pollination rate).  Density were modelled using a quasipoisson distribution. The model suggests that self-pollination rates are species dependent but not across.',
     booktabs = TRUE) %>%
   kableExtra::kable_styling(font_size = 8)
