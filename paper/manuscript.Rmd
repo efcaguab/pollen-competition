@@ -381,7 +381,7 @@ The marginal coefficient of determination R^2^~(m)~, which describes the proport
 
 We tested two structures for the random effects. 
 As determined by AICc, the random structure best supported by the data was the one that fit an intercept for each species in each community (as opposed to a common intercept for each species irrespective of the community they belong to). 
-This structure was best for both the models of conspecific and heterospecific pollen (Table SXX).  
+This structure was best for both the models of conspecific and heterospecific pollen (Table \@ref(S-tab:table-aic-random-models)).  
 
 Out of the four variables we explored, we found that the plants' mean visit effectiveness and its abundance were the most important ecological variables predicting pollen deposition in plant stigmas (Figure \@ref(fig:fig-average-qual-quant)a). 
 Surprisingly, the number of shared pollinators was comparatively unimportant, particularly for models of heterospecific pollen deposition, as it was only included in models with relatively large AICc values. 

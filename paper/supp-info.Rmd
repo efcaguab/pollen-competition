@@ -157,7 +157,7 @@ con_con_plot_df %>%
   kableExtra::add_header_above(c(" " = 2, "bagged" = 2, "unbagged" = 2))
 ```
 
-```{r table-aic-random-models, results= 'asis', eval=T}
+```{r table-aic-random-models, results= 'asis'}
 drake::loadd(glanced_random, random_effects)
 
 summ <- glanced_random %>%
@@ -176,24 +176,34 @@ summ <- glanced_random %>%
                         scale = unique(.$scale),
                         random_effect = unique(.$random_effect))) %>% 
   dplyr::mutate_if(is.numeric, round, digits = 1) %>% 
-  dplyr::mutate(delta_AIC = paste0(AIC_50, " [", AIC_05, ", ", AIC_95, "]"), 
-         delta_AIC = dplyr::if_else(grepl("NA", delta_AIC), "---", delta_AIC)) %>%
+  dplyr::mutate(delta_AIC = AIC_50, 
+                delta_AIC_CI = paste0("[", AIC_05, ", ", AIC_95, "]")) %>%
   dplyr::group_by() %>%
   humanize(random_effects = random_effects) %>%
-  dplyr::arrange(pollen_category, random_name, scale) %>%
-  dplyr::rename(`pollen type` = pollen_category, 
+  dplyr::filter(pollen_category %in% c("conspecific (absolute)", "heterospecific")) %>%
+  dplyr::mutate(
+    pollen_category = dplyr::if_else(
+      pollen_category == "conspecific (absolute)", 
+      "conspecific pollen", "heterospecific pollen"), 
+    random_name = knitr:::escape_latex(random_name)) %>%
+  dplyr::arrange(pollen_category, delta_AIC) %>%
+  dplyr::rename(`pollen type` = pollen_category,
          `random structure` = random_name) 
 
 summ %>%
-  dplyr::select(`pollen type`, `random structure`, delta_AIC) %>%
-  knitr::kable(caption = paste('Comparison of the different random structures we considered. The table shows median delta AIC values of', dplyr::n_distinct(glanced_random$model), "bootsrap resamples of the data. The 5th and 95th percentile are shown inside square brackets. Communities are defined by individual fragments but ignore the hierarchical arrangement of sampling sites."),
-               booktabs = TRUE) %>%
+  dplyr::select(`random structure`, delta_AIC, delta_AIC_CI) %>%
+  kableExtra::kable("latex", 
+               caption = paste('Comparison of the two random structures we considered for the models of conspecific and heterospecific pollen deposition. The table shows median $\\Delta$AIC values of', dplyr::n_distinct(glanced_random$model), "bootsrap resamples of the data. The 5th and 95th percentile are shown inside square brackets. Communities are defined by individual fragments but ignore the hierarchical arrangement of sampling sites."),
+               col.names = c("random structure", "median", "C.I."),
+               booktabs = TRUE, 
+               escape = F) %>%
   kableExtra::kable_styling(font_size = 8) %>%
-  kableExtra::column_spec(column = 1, bold=T) %>%
-  kableExtra::collapse_rows(columns = 1, latex_hline = "major", valign = "middle")
+  kableExtra::group_rows(index = c("conspecific pollen" = 2, 
+                                   "heterospecific pollen" = 2)) %>%
+  kableExtra::add_header_above(c(" " = 1, "$\\\\Delta$AIC" = 2), escape = F)
 ```
 
-```{r table-species-gain-global, results = 'asis', eval=T}
+```{r table-species-gain-global, results = 'asis', eval=F}
 drake::loadd(significant_gain_global, significant_gain_site, sites)
 
 glance_table(significant_gain_global) %>%
