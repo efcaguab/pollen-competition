@@ -79,7 +79,7 @@ broom::tidy(facilitation_models, conf.int = F) %>%
     TRUE ~ term
   )) %>%
   dplyr::filter(term != "cor_(Intercept).heterospecific.plant_name:site_name") %>%
-  knitr::kable(caption = "Summary of the model used to analyse the relationship of heterospecific and conspecific pollen", 
+  knitr::kable(caption = "Summary of the model used to analyse the relationship between heterospecific and conspecific pollen", 
                digits = 3,
                booktabs = T,
                col.names = c("predictor", "estimate" ,"S.E.", "z-value")) %>%
@@ -104,7 +104,7 @@ tbl_frame %>%
   knitr::kable("latex", 
                digits = 4, 
                col.names = c("species name", "community", "slope", "S.E."), 
-               caption = "Slope of the relationship of heterospecific and conspecific pollen for each species in their community (fixed effect + conditional effect). Community names are constructed by location - agricultural/restored - fragment number.", 
+               caption = "Slope of the relationship between heterospecific and conspecific pollen for each species in their community (fixed effect + conditional effect). Community names are constructed by location - agricultural/restored - fragment number.", 
                booktabs = T, 
                linesep = "") %>%
   kableExtra::kable_styling(font_size = 8) %>%
@@ -124,7 +124,7 @@ broom::tidy(open_bagged_model, conf.int = F) %>%
     TRUE ~ term
   )) %>%
   dplyr::filter(term != "cor_(Intercept).treatmentopen.plant_name:site_name") %>%
-  knitr::kable(caption = "Summary of the model used to analyse the relationship of heterospecific and conspecific pollen", 
+  knitr::kable(caption = "Summary of the model used to analyse the relationship between conspecific pollen deposited in bagged and unbagged flowers (open to animal pollination).", 
                digits = 3,
                booktabs = T,
                col.names = c("predictor", "estimate" ,"S.E.", "z-value")) %>%
@@ -136,16 +136,26 @@ broom::tidy(open_bagged_model, conf.int = F) %>%
 ```{r table-open-bagged-models-random, results='asis'}
 drake::loadd(con_con_plot_df)
 
-coef_open_bagged %>%
+con_con_plot_df %>%
  dplyr::inner_join(sites, by = "site_name") %>%
   dplyr::mutate(site_name = paste(locality_name, 
                                   land_use, 
                                   fragment, 
                                   sep = ' - ')) %>%
-  dplyr::mutate()
-  dplyr::select(plant_name, site_name, heterospecific, error)
+  dplyr::mutate_if(is.numeric, round, digits = 0) %>%
+  dplyr::mutate(open_ci = paste0("[", open_lower, ", ", open_upper, "]"), 
+                closed_ci = paste0("[", closed_lower, ", ", closed_upper, "]")) %>%
+  dplyr::select(plant_name, site_name, closed_mid, closed_ci, open_mid, open_ci) %>%
+  knitr::kable("latex", 
+               col.names = c("species name", "community", "mean", "C.I.", "mean", "C.I."), 
+               caption = "Amount of conspecific pollen deposited  in bagged and unbagged flowers (open to animal pollination) for each species in their community. Community names are constructed by location - agricultural/restored - fragment number.", 
+               booktabs = T, 
+               linesep = "", 
+               align = "llrlrl") %>%
+  kableExtra::kable_styling(font_size = 8) %>%
+  kableExtra::column_spec(1, italic = T) %>%
+  kableExtra::add_header_above(c(" " = 2, "bagged" = 2, "unbagged" = 2))
 ```
-
 
 ```{r table-aic-random-models, results= 'asis', eval=T}
 drake::loadd(glanced_random, random_effects)

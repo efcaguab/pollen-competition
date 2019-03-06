@@ -352,8 +352,8 @@ sp_con_both_pos_neg <- con_con_plot_df %>%
 ```
 
 Second, we compared the amount of conspecific pollen deposited on flowers that were open to animal-mediated pollinators with that of those that were closed. 
-Here, we again found large differences between plants but with a clear tendency to find more pollen in open flowers. 
-Specifically, `r sp_con_con$np[sp_con_con$effect_category == "positive"]`% of plants had significantly more pollen when open and `r sp_con_con$np[sp_con_con$effect_category == "negative"]`% had significantly less pollen when open (the difference was non-signifcant for the remainding `r sp_con_con$np[sp_con_con$effect_category == "neutral"]`%; Figure \@ref(fig:fig-trade-off-predictions)c). 
+Here, we again found large differences between plants but with a clear tendency to find more pollen in open flowers (Table \@ref(S-tab:table-open-bagged-models-general)). 
+Specifically, `r sp_con_con$np[sp_con_con$effect_category == "positive"]`% of plants had significantly more pollen when open and `r sp_con_con$np[sp_con_con$effect_category == "negative"]`% had significantly less pollen when open (the difference was non-signifcant for the remainding `r sp_con_con$np[sp_con_con$effect_category == "neutral"]`%; Figure \@ref(fig:fig-trade-off-predictions)c; Table \@ref(S-tab:table-open-bagged-models-random)). 
 Variation within species was slightly smaller and only `r numbers2words(nrow(sp_con_both_pos_neg))` species (`r glue::collapse(sp_con_both_pos_neg$plant_label, sep = ", ", last = ", and ")`) had both significantly positive and negative differences. 
 
 ## Ecological constraints in the pollination service 
