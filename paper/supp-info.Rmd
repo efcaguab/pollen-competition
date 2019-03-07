@@ -13,6 +13,19 @@ output:
     toc: false
 header-includes:
   - \usepackage{booktabs}
+  - \usepackage{longtable}
+  - \usepackage{array}
+  - \usepackage{multirow}
+  - \usepackage{wrapfig}
+  - \usepackage{float}
+  - \usepackage{colortbl}
+  - \usepackage{pdflscape}
+  - \usepackage{tabu}
+  - \usepackage{threeparttable}
+  - \usepackage{threeparttablex}
+  - \usepackage[normalem]{ulem}
+  - \usepackage{makecell}
+  - \usepackage{xcolor}
 editor_options: 
   chunk_output_type: console
 ---
@@ -100,6 +113,8 @@ tbl_frame <- facilitation_random_effects %>%
                                   land_use, 
                                   fragment, 
                                   sep = ' - ')) %>%
+  dplyr::mutate_if(is.character, knitr:::escape_latex) %>%
+  dplyr::mutate(plant_name = paste0("\\textit{", plant_name, "}")) %>%
   dplyr::select(plant_name, site_name, heterospecific, error)
 
 tbl_frame %>%
@@ -108,9 +123,9 @@ tbl_frame %>%
                col.names = c("species name", "community", "slope", "S.E."), 
                caption = "Slope of the relationship between heterospecific and conspecific pollen for each species in their community (fixed effect + conditional effect). Community names are constructed by location - agricultural/restored - fragment number.", 
                booktabs = T, 
-               linesep = "") %>%
-  kableExtra::kable_styling(font_size = 8) %>%
-  kableExtra::column_spec(1, italic = T)
+               linesep = "", 
+               escape = F) %>%
+  kableExtra::kable_styling(font_size = 8) 
 ```
 
 ```{r table-open-bagged-models-general, results = "asis"}
@@ -148,15 +163,17 @@ con_con_plot_df %>%
   dplyr::mutate_if(is.numeric, round, digits = 0) %>%
   dplyr::mutate(open_ci = paste0("[", open_lower, ", ", open_upper, "]"), 
                 closed_ci = paste0("[", closed_lower, ", ", closed_upper, "]")) %>%
+  dplyr::mutate_if(is.character, knitr:::escape_latex) %>%
+  dplyr::mutate(plant_name = paste0("\\textit{", plant_name, "}")) %>%
   dplyr::select(plant_name, site_name, closed_mid, closed_ci, open_mid, open_ci) %>%
   knitr::kable("latex", 
                col.names = c("species name", "community", "mean", "C.I.", "mean", "C.I."), 
                caption = "Amount of conspecific pollen deposited  in bagged and unbagged flowers (open to animal pollination) for each species in their community. Community names are constructed by location - agricultural/restored - fragment number.", 
-               booktabs = T, 
+               booktabs = TRUE, 
                linesep = "", 
-               align = "llrlrl") %>%
+               align = "llrlrl", 
+               escape = FALSE) %>%
   kableExtra::kable_styling(font_size = 8) %>%
-  kableExtra::column_spec(1, italic = T) %>%
   kableExtra::add_header_above(c(" " = 2, "bagged" = 2, "unbagged" = 2))
 ```
 
@@ -223,32 +240,36 @@ glance_table(significant_gain_global) %>%
   kableExtra::kable_styling(font_size = 8)
 ```
 
-
-
 ```{r table-aic-fixed-models, results= 'asis', eval=T}
 drake::loadd(model_formula_ranking)
 
 model_formula_ranking$by_model_set %>% 
   dplyr::filter(scale == "community") %>%
-  dplyr::mutate(delta_AIC = paste0(round(delta_AIC, 1), 
-                                  " [", 
-                                  round(delta_AIC_quantile_05, 1),
-                                  " ,", 
-                                  round(delta_AIC_quantile_95, 1),
-                                  "]")) %>% 
+  dplyr::mutate_if(is.numeric, round, digits = 1) %>%
+  dplyr::mutate(delta_AIC_CI = paste0(" [", delta_AIC_quantile_05,
+                                      " ,", 
+                                      delta_AIC_quantile_95,
+                                      "]")) %>% 
   dplyr::group_by() %>%
-  humanize(formula_long = TRUE) %>% 
+  humanize(formula_long = TRUE) %>%
+  dplyr::filter(pollen_category %in% c("conspecific (absolute)", "heterospecific")) %>%
+  dplyr::mutate(
+    pollen_category = dplyr::if_else(
+      pollen_category == "conspecific (absolute)", 
+      "conspecific pollen", "heterospecific pollen")) %>% 
   dplyr::mutate(fixed_formula = paste("~", fixed_formula)) %>%
   dplyr::arrange(pollen_category, delta_AIC_rank) %>%
-  dplyr::select(pollen_category, fixed_formula, delta_AIC) %>%
-  dplyr::rename(`pollen type` = pollen_category, 
-                `fixed structure` = fixed_formula) %>%
+  dplyr::select(fixed_formula, delta_AIC, delta_AIC_CI) %>%
+  dplyr::rename(`fixed structure` = fixed_formula) %>% 
   knitr::kable("latex", 
-               caption = paste('Comparison of the different fixed structures we considered. The table shows median delta AIC values of', dplyr::n_distinct(glanced_random$model), "bootsrap resamples of the data. The 5th and 95th percentile are shown inside square brackets."),
+               col.names = c("fixed structure", "median", "C.I."),
+               caption = paste('Comparison of the different fixed structures we consideredfor the models of conspecific and heterospecific pollen deposition. The table shows median $\\Delta$AIC values of', dplyr::n_distinct(glanced_random$model), "bootsrap resamples of the data. The 5th and 95th percentile are shown inside square brackets."),
                booktabs = TRUE) %>%
   kableExtra::kable_styling(font_size = 8) %>%
-  kableExtra::column_spec(column = 1, bold=T) %>%
-  kableExtra::collapse_rows(columns = 1, latex_hline = "major", valign = "middle")
+  kableExtra::group_rows(index = c("conspecific pollen" = 15, 
+                                   "heterospecific pollen" = 15)) %>%
+  # kableExtra::collapse_rows(columns = 1, latex_hline = "major", valign = "middle") %>%
+  kableExtra::add_header_above(c(" " = 1, "$\\\\Delta$AIC" = 2), escape = F)
 ```
  
 ```{r fig-correlation, fig.height = 4.5, fig.cap = "Corelation between the explanatory variables included in the statistical models.", eval=T}
