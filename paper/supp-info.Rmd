@@ -223,23 +223,6 @@ summ %>%
   kableExtra::add_header_above(c(" " = 1, "$\\\\Delta$AIC" = 2), escape = F)
 ```
 
-```{r table-species-gain-global, results = 'asis', eval=F}
-drake::loadd(significant_gain_global, significant_gain_site, sites)
-
-glance_table(significant_gain_global) %>%
-  dplyr::select(recipient, estimate, statistic, p.value) %>%
-  dplyr::mutate(recipient = paste0('{\\emph{ ', recipient, '}}')) %>%
-  dplyr::rename(`p value` = p.value,
-         `difference` = estimate,
-         `plant species` = recipient) %>%
-  knitr::kable("latex", 
-    caption = "Results of testing the alternative hypothesis that the conspecific pollen density in open flowers is greater than the density in bagged flowers. Tests were performed at the species level (across communities).", 
-    escape = FALSE, 
-    booktabs = TRUE, 
-    linesep = c("")) %>%
-  kableExtra::kable_styling(font_size = 8)
-```
-
 ```{r table-aic-fixed-models, results= 'asis', eval=T}
 drake::loadd(model_formula_ranking)
 
