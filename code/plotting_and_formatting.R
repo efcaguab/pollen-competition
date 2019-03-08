@@ -29,7 +29,7 @@ common_graphic_metrics <- function(){
   list(
     pal_rb3 = RColorBrewer::brewer.pal(4, "Greys")[c(3,1,2)],
     pal_el_green = colorRampPalette(c("#d9e6cb", "#9fc17c", "#0d1108"), bias = 1, space = "rgb",
-                                    interpolate = "linear", alpha = FALSE)(20),
+                                    interpolate = "linear", alpha = FALSE)(9),
     size_errorbars =  0.25,
     color_errorbars = "grey30",
     color_errorbars_light = "grey70",
