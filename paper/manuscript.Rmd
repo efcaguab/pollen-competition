@@ -297,8 +297,8 @@ Interestingly, although there was a wide variation in the slope of the relations
 
 ```{r fig-trade-off-predictions, fig.height= 4, fig.width = 6.5, fig.cap = "**Competition vs. facilitation at the community level**. (a) Some species experience more competition for pollination than others. Points indicate the estimated slopes for the relationship between the amount of heterospecific and conspecific pollen deposited per stigma across species in their communities. Significantly negative slopes (dark grey) indicate that plants experience competition for animal-mediated pollination, while significantly positive slopes (light grey) indicate that facilitation is the predominant outcome. The number of plants analysed for each species is shown within brackets next to the species name. (b) Despite the variety of slopes, overall plants had more conspecific than heterospecific pollen deposited in their stigmas. (c) Generally, plants also had more pollen deposited in their stigmas when they were open to animal-mediated pollination than when they were closed. In all plots, error bars correspond to $\\pm$ the standard error (SE)."}
 # fig_random_slopes <- plot_random_slopes(facilitation_plot_df)
-# fig_con_con <- plot_bagged_vs_open_conspecific(dep_frame)
 # fig_hetero_con <- make_fig_con_hetero_empirical(dep_frame)
+# fig_con_con = plot_bagged_vs_open_conspecific(drake::readd(con_con_plot_df))
 # pdf(width = 6.5, height = 4)
 drake::loadd(fig_random_slopes)
 drake::loadd(fig_con_con)
