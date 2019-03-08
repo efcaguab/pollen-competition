@@ -43,7 +43,7 @@ get_facilitation_plot_df <- function(dep_frame, facilitation_random_effects){
   facilitation_random_effects %>%
     dplyr::full_join(n_obs) %>%
     dplyr::mutate(plant_name = paste0(plant_name, " (", n, ")")) %>%
-    dplyr::mutate(plant_name = forcats::fct_reorder(plant_name, heterospecific, .desc = TRUE),
+    dplyr::mutate(plant_name = forcats::fct_reorder(plant_name, heterospecific, .desc = F),
                   upper = heterospecific + error,
                   lower = heterospecific - error,
                   effect_category = dplyr::case_when(
@@ -58,7 +58,8 @@ get_facilitation_plot_df <- function(dep_frame, facilitation_random_effects){
 
 # plot the slopes of the random effects models
 plot_random_slopes <- function(facilitation_plot_df){
-  pal <- common_graphic_metrics()$pal_rb3
+  pal <- common_graphic_metrics()$pal_el_green[c(8,1,5)]
+  shape_col <- common_graphic_metrics()$pal_el_green[9]
 
   require(ggplot2)
 
@@ -79,7 +80,7 @@ plot_random_slopes <- function(facilitation_plot_df){
                     rank(dplyr::desc(as.numeric(effect_category)),
                          ties.method = "average"),
                   label_height = label_height / n()) %>%
-    plot_bar_proportion()
+    plot_bar_proportion(pal)
 
   shades <- facilitation_plot_df %$%
     unique(plant_name) %>%
@@ -137,7 +138,7 @@ plot_random_slopes <- function(facilitation_plot_df){
                    fill = effect_category), size = 1,
                position = position_dodge(0.75),
                shape = 21,
-               color = cgm()$color_errorbars) +
+               color = shape_col) +
     geom_text(aes(label = plant_name, x = plant_name,
                   y = y_label),
               stat = "unique",
@@ -145,14 +146,14 @@ plot_random_slopes <- function(facilitation_plot_df){
               fontface = "italic",
               hjust = "inward") +
     geom_point(aes(y = 0, x = -0.5), alpha = 0) +
-    annotate(geom = "text", x = 0, y = 0,
+    annotate(geom = "text", x = n_plants + 1, y = 0,
              label = expression(" " %->% plain("facilitation predominates") %->% ""),
              hjust = "left",
              vjust = 0.5,
              size = 2.25,
              colour = "grey20") +
     geom_point(aes(y = 0, x = n_plants + 1.5), alpha = 0) +
-    annotate(geom = "text", x = n_plants + 1, y = 0,
+    annotate(geom = "text", x = 0, y = 0,
              label = expression(" " %<-% plain("competition predominates") %<-% ""),
              hjust = "right",
              vjust = 0.5,
@@ -185,8 +186,7 @@ get_label_height <- function(x){
   as.numeric(x)
 }
 
-plot_bar_proportion <- function(x){
-  pal <- common_graphic_metrics()$pal_rb3
+plot_bar_proportion <- function(x, pal){
   x  %>%
     ggplot(aes(x = "effect_category",
                fill = effect_category)) +

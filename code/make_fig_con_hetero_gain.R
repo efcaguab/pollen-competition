@@ -205,7 +205,8 @@ plot_bagged_vs_open_conspecific <- function(con_df){
   axis_breaks <-  cgm()$log1p_axis_breaks_10
   linesize <- common_graphic_metrics()$size_errorbars
   linecolor <- cgm()$color_errorbars_light
-  pal <- common_graphic_metrics()$pal_rb3
+  pal <-common_graphic_metrics()$pal_el_green[c(8,1,5)]
+  shape_col <- common_graphic_metrics()$pal_el_green[9]
 
   scatter_plot <- con_df %>%
     ggplot(aes(x = closed_mid, y = open_mid)) +
@@ -222,8 +223,8 @@ plot_bagged_vs_open_conspecific <- function(con_df){
     geom_point(aes(fill = effect_category),
                shape = 21,
                size = 1,
-               colour = "grey30") +
-    geom_point(aes(x = 0, y = 0), alpha = 0) +
+               colour = shape_col) +
+    geom_point(aes(x = 0, y = 0), alpha = 0, colour = shape_col) +
     scale_x_continuous(trans = "log1p", breaks = axis_breaks) +
     scale_y_continuous(trans = "log1p", breaks = axis_breaks) +
     scale_fill_manual(values = pal, na.value = "white") +
@@ -252,7 +253,7 @@ plot_bagged_vs_open_conspecific <- function(con_df){
                     rank(dplyr::desc(as.numeric(effect_category)),
                          ties.method = "average"),
                   label_height = label_height / n()) %>%
-    plot_bar_proportion()
+    plot_bar_proportion(pal)
 
   list(scatter_plot, bar_plot)
 }
