@@ -31,8 +31,9 @@
 
  pl %>%
    ggplot(aes(x = x_values, y = y_values)) +
-   geom_point(shape = 21, size = 1) +
-   geom_smooth(method = "lm", colour = "black", size = 0.5, se = FALSE) +
+   geom_point(shape = 21, size = 1, colour = cgm()$pal_el_green[8]) +
+   geom_smooth(method = "lm", colour = "black", size = 0.5, se = FALSE,
+               colour = cgm()$pal_el_green[9]) +
    geom_text(data = cors, aes(label = cor), x = -1.5, y = 2.5, size = 2.5) +
    facet_grid(x ~ y) +
    pub_theme() +

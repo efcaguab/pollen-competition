@@ -17,7 +17,7 @@ make_fig_all_model_results <- function(tidied_fixed, sites, model_formula_rankin
     fixed_formula %>%
     unique()
 
-  col_pal <- cgm()$pal_el_green[c(13,7)]
+  col_pal <- cgm()$pal_el_green[c(8,6)]
 
   tidied_fixed %>%
     dplyr::filter(term != "(Intercept)" ,
@@ -41,7 +41,7 @@ make_fig_all_model_results <- function(tidied_fixed, sites, model_formula_rankin
                  # alpha = 0.15,
                  position = position_identity(),
                  trim = F,
-                 size = 0.75) +
+                 size = 0.5) +
     pub_theme() +
     facet_grid(fixed_formula ~ term, scales = "free_x", space = "free_x") +
     scale_color_manual(values = col_pal) +
