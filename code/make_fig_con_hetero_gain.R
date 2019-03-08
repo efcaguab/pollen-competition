@@ -359,7 +359,7 @@ make_fig_con_con <- function(model_formula_ranking, model_linear_fits_species){
 make_fig_con_hetero_empirical <- function(dep_frame){
   require(ggplot2)
   axis_breaks <-  cgm()$log1p_axis_breaks_10
-
+  shape_col <- common_graphic_metrics()$pal_el_green[9]
   dep_frame %>%
     dplyr::select(site_name, plant, plant_name, treatment, pollen_category, pollen_density) %>%
     # dplyr::mutate(pollen_density = log(pollen_density + 1)) %>%
@@ -381,8 +381,8 @@ make_fig_con_hetero_empirical <- function(dep_frame){
                    size = cgm()$size_errorbars, color = cgm()$color_errorbars_light) +
     geom_point(size = cgm()$point_size,
                shape = 21,
-               color = cgm()$color_errorbars,
-               fill = cgm()$pal_rb3[2]) +
+               color = shape_col,
+               fill = "white") +
     scale_x_continuous(trans = "log1p", breaks = axis_breaks) +
     scale_y_continuous(trans = "log1p", breaks = axis_breaks) +
     labs(x = "heterospecific",
