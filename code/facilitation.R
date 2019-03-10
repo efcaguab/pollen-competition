@@ -58,7 +58,7 @@ get_facilitation_plot_df <- function(dep_frame, facilitation_random_effects){
 
 # plot the slopes of the random effects models
 plot_random_slopes <- function(facilitation_plot_df){
-  pal <- common_graphic_metrics()$pal_el_green[c(8,1,5)]
+  pal <- common_graphic_metrics()$pal_el_green[c(8,5, 1)]
   shape_col <- common_graphic_metrics()$pal_el_green[9]
 
   require(ggplot2)
@@ -195,7 +195,7 @@ plot_bar_proportion <- function(x, pal){
              position = "fill") +
     geom_text(aes(label = label,
                   y = label_height,
-                  colour = label_col,
+                  colour = label,
                   size = label_col,
                   fontface = fontface),
               stat = "unique",
@@ -205,7 +205,7 @@ plot_bar_proportion <- function(x, pal){
                        expand = c(0,0),
                        labels = scales::percent) +
     scale_fill_manual(values = rev(pal)) +
-    scale_color_manual(values = c("black", "white")) +
+    scale_color_manual(values = c("black", "white", pal[1])) +
     scale_size_manual(values = c(2,2.5)) +
     labs(y = "% species") +
     pub_theme() +

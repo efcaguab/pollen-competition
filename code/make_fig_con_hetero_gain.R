@@ -205,7 +205,7 @@ plot_bagged_vs_open_conspecific <- function(con_df){
   axis_breaks <-  cgm()$log1p_axis_breaks_10
   linesize <- common_graphic_metrics()$size_errorbars
   linecolor <- cgm()$color_errorbars_light
-  pal <-common_graphic_metrics()$pal_el_green[c(8,1,5)]
+  pal <-common_graphic_metrics()$pal_el_green[c(8,5,1)]
   shape_col <- common_graphic_metrics()$pal_el_green[9]
 
   scatter_plot <- con_df %>%
