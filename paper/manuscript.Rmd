@@ -386,38 +386,42 @@ This structure was best for both the models of conspecific and heterospecific po
 Of the four variables we considered, we found that a plant's mean visit effectiveness and abundance were the most important ecological variables predicting pollen deposition in plant stigmas (Figure \@ref(fig:fig-average-qual-quant)a). 
 Surprisingly, the number of shared pollinators was comparatively unimportant, particularly for models of heterospecific pollen deposition, as it was only ever included in models with relatively large AICc values (\@ref(S-tab:table-aic-fixed-models)). 
 
-```{r fig-average-qual-quant, fig.height= 2.29*2, fig.width=6.5/3*2, fig.cap="**Effect of strategies to minimise competition in the pollination service**. (a) The plant's visit effectiveness and relative abundance are the most important variables determining the deposition of conspecific and heterospecific pollen. Meanwhile, the number of shared pollinators was relatively unimportant. The graph shows the relative variable importance calculated as the sum of the Akaike weights of the candidate models that included the variable. (b) The association of ecological variables on heterospecific pollen tended to be aligned with its association on conspecific pollen. Visit effectiveness and functional originality had a positive association with pollen deposition, while abundance and the number of shared pollinators had a negative association. The plot shows the distribution of the effects (across 99 bootstrap replicates) of the four ecological variables for conspecific (top panel) and heterospecific pollen (bottom panel). Results are only shown for models that included explanatory variable. (c) The end result of these associations is that only the plants' functional originality has a positive impact on both the quantity and quality of pollination. The plot shows the model averaged mean effect ($\\pm$ SE) of the four analysed ecological variables in the quantity and quality of pollination."}
+```{r fig-average-qual-quant, fig.height= 2.29*2, fig.width=6.5/2, fig.cap="**Effect of strategies to minimise competition in the pollination service**. (a) The plant's visit effectiveness and relative abundance are the most important variables determining the deposition of conspecific and heterospecific pollen. Meanwhile, the number of shared pollinators was relatively unimportant. The graph shows the relative variable importance calculated as the sum of the Akaike weights of the candidate models that included the variable. (b) The association of ecological variables on heterospecific pollen tended to be aligned with its association on conspecific pollen. Visit effectiveness and functional originality had a positive association with pollen deposition, while abundance and the number of shared pollinators had a negative association. The plot shows the distribution of the effects (across 99 bootstrap replicates) of the four ecological variables for conspecific (top panel) and heterospecific pollen (bottom panel). Results are only shown for models that included explanatory variable. (c) The end result of these associations is that only the plants' functional originality has a positive impact on both the quantity and quality of pollination. The plot shows the model averaged mean effect ($\\pm$ SE) of the four analysed ecological variables in the quantity and quality of pollination."}
 height1 <- 1
 height2 <- 1.29
-# pdf(width = 3.25 * 2 / 3 * 2, height = sum(c(height1, height2))*2)
+# pdf(width = 3.25 , height = sum(c(height1, height2))*2)
 # fig_coef_avg <- plot_coefficient_averages(coefficient_averages, variable_importance)
-width_imp <- 6.5/5*2
-mult <- 2.455 # for 2/3 is xx, for 3/5 is 2.355
-width_coef_1 <- (6.5 - width_imp) / (1 + mult)
-width_coef_2 <- 5.6 - width_imp - width_coef_1
+# width_imps <- 6.5/5*2
+# mult <- 2.455 # for 2/3 is xx, for 3/5 is 2.355
+# width_coef_1 <- (6.5 - width_imp) / (1 + mult)
+# width_coef_2 <- 5.6 - width_imp - width_coef_1
 # fig_var_importance <- plot_variable_importance(variable_importance)
 drake::loadd(fig_var_importance)
 drake::loadd(fig_coef_avg)
 drake::loadd(fig_coefficient_averages)
 
-left_top <- cowplot::plot_grid(
+var_impo <- cowplot::plot_grid(
   fig_var_importance[[1]],
+  fig_var_importance[[3]],
   fig_var_importance[[2]],
-  ncol = 2, 
+  ncol = 3,
+  rel_widths = c(1,0.75,1),
   align = "h"
 )
 
-left_bottom <- cowplot::plot_grid(
+bottom <- cowplot::plot_grid(
   fig_coef_avg[[1]],
+  fig_coef_avg[[3]],
   fig_coef_avg[[2]],
-  rel_widths = c(width_coef_1, width_coef_2), 
+  rel_widths = c(1,0.75,1), 
+  ncol = 3,
   align = "h"
 )
 
 cowplot::plot_grid(
-  left_top, 
+  var_impo, 
   fig_coefficient_averages,
-  left_bottom, 
+  bottom, 
   ncol = 1, 
   rel_heights = c(height1, height1 + height2, height2)
 )
