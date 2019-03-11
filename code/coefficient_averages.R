@@ -96,8 +96,8 @@ plot_coefficient_averages <- function(coefficient_averages, variable_importance)
                       width = 0,
                       position = position_dodge(width = dodge_width)) +
         geom_point(aes(x = term, alpha = metric == this_metric),
-                   colour = cgm()$color_errorbars, shape = 21,
-                   fill = cgm()$pal_rb3[2],
+                   colour = cgm()$pal_el_green[9], shape = 21,
+                   fill = "white",
                    size = 1,
                    position = position_dodge(width = dodge_width)) +
         # geom_text(data = annotations, aes(x = x, y = y, label = label, hjust = hjust),
@@ -143,7 +143,7 @@ plot_coefficient_averages <- function(coefficient_averages, variable_importance)
 
     plots <- purrr::map(c("quantity", "quality"),
                         ~ plot_metric_qual_quan(qua_qua_data, .)) %>%
-      purrr::map2(c("quantity (conspecific)", "quality (consp. / heterosp.)"),
+      purrr::map2(c("conspecific", "conspecific / heterospecific)"),
                   function(x,y) {x + labs(subtitle = y)})
 
     plots[[1]] <- plots[[1]] +
