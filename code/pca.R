@@ -240,11 +240,11 @@ plot_permanova_dist <- function(permanova_plant_distances,
                size = cgm()$size_references,
                color = cgm()$color_references) +
     geom_segment(aes(xend = 0.05, yend = plant_name), size = 0.25,
-                 color = "grey50") +
+                 color = cgm()$pal_el_green[9]) +
     geom_point(shape = 21,
                size = 1,
-               fill = cgm()$pal_rb3[2],
-               color = cgm()$color_errorbars) +
+               fill = "white",
+               color = cgm()$pal_el_green[9]) +
     geom_text(aes(label = plant_name, x = x_label),
               fontface = "italic",
               size = 2,
@@ -324,19 +324,17 @@ plot_pca <- function(pcas, chosen_threshold){
     geom_polygon(data = hulls,
                  aes(group = plant_name),
                  colour = cgm()$color_errorbars,
-                 fill = "grey70",
+                 fill = cgm()$pal_el_green[1],
                  size = cgm()$size_errorbars,
                  alpha = 0.25) +
     geom_point(data = hulls,
       # aes( fill = plant_name),
                shape = 21,
-               fill = cgm()$pal_rb3[2],
-               colour = cgm()$color_errorbars,
+               colour = cgm()$pal_el_green[9],
                size = 1) +
     pub_theme() +
-    scale_color_viridis_d() +
-    scale_fill_viridis_d() +
-    # theme(legend.position = "none") +
+    scale_fill_manual(values = c("white", cgm()$pal_el_green[1])) +
+    theme(legend.position = "none") +
     # coord_equal() +
     labs(x = paste0("1st component (", round(variances_data$`percentage of variance`[1]), "%)"),
          y = paste0("1nd component (", round(variances_data$`percentage of variance`[2]), "%)"),
@@ -379,17 +377,17 @@ plot_pca_variances_and_contributions <- function(pcas, chosen_threshold){
               aes(y = `cumulative percentage of variance`,
                   linetype = group),
               size = 0.5,
-              colour = cgm()$color_errorbars) +
+              colour = cgm()$pal_el_green[c(9)]) +
     geom_point(data = variances_data,
                aes(y = `cumulative percentage of variance`,
                    shape = group),
                size = 1,
                # shape = 21,
                fill = cgm()$pal_rb3[2],
-               colour = cgm()$color_errorbars) +
+               colour = cgm()$pal_el_green[c(9)]) +
     scale_x_continuous(breaks =1:4, trans = "reverse", labels = scales::ordinal(1:4)) +
     scale_y_continuous(labels = scales::percent, expand = c(0,0)) +
-    scale_fill_brewer(palette = "Greys", direction = -1) +
+    scale_fill_manual(values = cgm()$pal_el_green[c(8,6,4,2)]) +
     scale_shape_manual(values = 21) +
     scale_linetype_manual(values = 1) +
     guides(fill = guide_legend(order = 2, title = ""),
