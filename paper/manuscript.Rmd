@@ -388,7 +388,7 @@ Surprisingly, the number of shared pollinators was comparatively unimportant, pa
 
 ```{r fig-average-qual-quant, fig.height= 2.29*2, fig.width=6.5/2, fig.cap="**Effect of strategies to minimise competition in the pollination service**. (a) The plant's visit effectiveness and relative abundance are the most important variables determining the deposition of conspecific and heterospecific pollen. Meanwhile, the number of shared pollinators was relatively unimportant. The graph shows the relative variable importance calculated as the sum of the Akaike weights of the candidate models that included the variable. (b) The association of ecological variables on heterospecific pollen tended to be aligned with its association on conspecific pollen. Visit effectiveness and functional originality had a positive association with pollen deposition, while abundance and the number of shared pollinators had a negative association. The plot shows the distribution of the effects (across 99 bootstrap replicates) of the four ecological variables for conspecific (top panel) and heterospecific pollen (bottom panel). Results are only shown for models that included explanatory variable. (c) The end result of these associations is that only the plants' functional originality has a positive impact on both the quantity and quality of pollination. The plot shows the model averaged mean effect ($\\pm$ SE) of the four analysed ecological variables in the quantity and quality of pollination."}
 height1 <- 1
-height2 <- 1.29
+height2 <- 1.18
 # pdf(width = 3.25 , height = sum(c(height1, height2))*2)
 # fig_coef_avg <- plot_coefficient_averages(coefficient_averages, variable_importance)
 # width_imps <- 6.5/5*2
