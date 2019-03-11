@@ -258,7 +258,7 @@ plot_permanova_dist <- function(permanova_plant_distances,
              colour = "grey20") +
     geom_point(aes(y = -0.5, x = 0.05), alpha = 0) +
     annotate(geom = "text", x = 0.05, y = 0,
-             label = expression(" " %<-% plain("significantly smaller") %<-% ""),
+             label = expression(" " %<-% plain("less flexible") %<-% ""),
              parse = F,
              hjust = "right",
              size = 2.25,
