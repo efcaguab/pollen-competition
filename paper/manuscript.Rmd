@@ -56,7 +56,10 @@ drake::loadd(msc_wordcount, abs_wordcount)
 * Sticking to past tense throughout the methods.
 * GLMM to fit slope of heterospecific-conspecific pollen relationship tests all communities at once (it was a model per community). Response variable is the number of grains (it was number of grains per stigma) and the (log) number of stigmas in the flowers has been included as an offset term.
 * Using a similar approach to compare conspecific pollen deposited in open and bagged flowers (I used a series of Mann-Withney U tests before)
-* Added model results tables in the Supplementary Information
+* Added facilitation model results tables in the Supplementary Information
+* Made Figure 2 (model of enviornmental factors) one-column
+* Applied a green palette to all figures. Improves legibility when looking at it in a screen an performance when printed in greyscale is maintained
+* Show niche points for all species and not only those in two communities or more
 
 ## Todo
 
