@@ -295,9 +295,7 @@ plot_pca <- function(pcas, chosen_threshold){
   this_pca_data <- this_pca$call$X %>%
     dplyr::bind_cols(tibble::as_data_frame(this_pca$ind$coord)) %>%
     dplyr::group_by(plant_name) %>%
-    dplyr::mutate(n_sites = dplyr::n_distinct(site_name)) %>%
-    # dplyr::group_by() %>%
-    dplyr::filter(n_sites > 1)
+    dplyr::mutate(n_sites = dplyr::n_distinct(site_name))
 
   variances_data <- this_pca$eig %>%
     as.data.frame() %>%
@@ -306,10 +304,18 @@ plot_pca <- function(pcas, chosen_threshold){
     dplyr::rename(dim = rowname)
 
   hulls <- this_pca_data %>%
+    # hulls on;y for plants in more than one site
+    dplyr::filter(n_sites > 1) %>%
     dplyr::group_by(plant_name) %>%
     dplyr::select_at(dplyr::vars(dplyr::contains("Dim"))) %>%
     dplyr::do(.[grDevices::chull(.[, -1L]), ]) %>%
     dplyr::filter(plant_name %in% unique(this_pca_data$plant_name))
+
+  # plot only points that are in a hull or belong to single community
+  hulls_and_single_points <- hulls %>%
+    dplyr::mutate(hull_point = T) %>%
+    dplyr::full_join(this_pca_data) %>%
+    dplyr::filter(!is.na(hull_point) | n_sites == 1)
 
   this_pca_data %>%
     ggplot(aes(x = Dim.1, y = Dim.2)) +
@@ -327,8 +333,8 @@ plot_pca <- function(pcas, chosen_threshold){
                  fill = cgm()$pal_el_green[1],
                  size = cgm()$size_errorbars,
                  alpha = 0.25) +
-    geom_point(data = hulls,
-      # aes( fill = plant_name),
+    geom_point(data = hulls_and_single_points,
+               aes(fill = n_sites > 1),
                shape = 21,
                colour = cgm()$pal_el_green[9],
                size = 1) +
