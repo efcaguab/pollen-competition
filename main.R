@@ -9,7 +9,7 @@ library(drake)
 # load functions
 f <- lapply(list.files("code", full.names = T), source)
 
-n_replicates <- 9
+n_replicates <- 99
 transformation <- function(x) log(x + 1)
 
 # Clean data --------------------------------------------------------------
