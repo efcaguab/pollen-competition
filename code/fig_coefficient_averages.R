@@ -156,7 +156,7 @@ make_fig_coefficient_avarages <- function(coefficient_averages, variable_importa
             )) +
     labs(title = "(b) distribution of effects",
     subtitle = "based on 100 bootstrap repllicates",
-    colour = "", fill = "", x = "estimated effect on pollen density gain", y = "")
+    colour = "", fill = "", x = "estimated effect on (log) pollen deposition", y = "")
 
   # pdf(width = 6.5/5*2, height = 2.29)
   p
