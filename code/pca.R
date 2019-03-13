@@ -272,7 +272,7 @@ plot_permanova_dist <- function(permanova_plant_distances,
           axis.line.x = element_line(size = 0.25)) +
     labs(x = expression(italic(p) - plain("value")),
          title = "(c) flexibility of plant's strategies",
-         subtitle = "median distance between plant strategies vs. randomisations") +
+         subtitle = "median distance between plant niches vs. randomisations") +
     coord_cartesian(clip = "off") +
     scale_x_continuous(expand = c(0,0.1),
                        breaks = c(0.01, 0.05, 0.5, 0.99),
@@ -344,8 +344,8 @@ plot_pca <- function(pcas, chosen_threshold){
     # coord_equal() +
     labs(x = paste0("1st component (", round(variances_data$`percentage of variance`[1]), "%)"),
          y = paste0("1nd component (", round(variances_data$`percentage of variance`[2]), "%)"),
-         title = "(b) plant strategies in PCA space",
-         subtitle = "convex hulls of species in two communities or more")
+         title = "(b) plant realised niches in PCA space",
+         subtitle = "convex hulls of species niches across communities")
 
 }
 
