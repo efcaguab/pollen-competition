@@ -177,6 +177,23 @@ con_con_plot_df %>%
   kableExtra::add_header_above(c(" " = 2, "bagged" = 2, "unbagged" = 2))
 ```
 
+```{r table-R2, results="asis"}
+drake::loadd(r2_values)
+
+r2_values %>%
+  dplyr::select(r2c_mean, r2c_min, r2c_max, r2m_mean, r2m_min, r2m_max) %>%
+  knitr::kable("latex", 
+               col.names = c(rep(c("mean", "min", "max"), times = 2)), 
+               caption = "Coefficient of determination $R^2$ of the most parsimonious pollen deposition models (those with the lowest AICc). The marginal coefficient of determination describes the proportion of variance explained by just the fixed effects.", 
+               booktabs = TRUE) %>%
+  kableExtra::kable_styling(font_size = 8) %>%
+  kableExtra::add_header_above(c("conditional $R^2_{(c)}$" = 3,
+                                 "marginal $R^2_{(m)}$" = 3), 
+                               escape = FALSE) %>%
+  kableExtra::group_rows(index = c("conspecific pollen" = 1, 
+                                   "heterospecific pollen" = 1))
+```
+
 ```{r table-aic-random-models, results= 'asis'}
 drake::loadd(glanced_random, random_effects)
 

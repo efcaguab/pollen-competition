@@ -365,14 +365,9 @@ Variation within species was slightly smaller and only `r numbers2words(nrow(sp_
 drake::loadd(r2_values)
 ```
 
-We then examined the potential roles played by four ecological variables (number of shared pollinators, abundance, mean visit effectiveness, and functional originality) play in pollen deposition and, by extension, in the quantity and quality of pollination. 
-Together these variables can describe the niche that plants might occupy in the context of competition for pollination. 
-We found that our linear mixed models of pollen deposition had high explanatory power. 
-The conditional coefficient of determination R^2^~(c)~ of the most parsimonious models (those with the lowest AICc) ranged between `r r2_values$r2c_min[r2_values$pollen_category == "conspecific_abs"]` and `r r2_values$r2c_max[r2_values$pollen_category == "conspecific_abs"]` (mean of `r r2_values$r2c_mean[r2_values$pollen_category == "conspecific_abs"]`) for the bootstrap replicates of the conspecific pollen models and between `r r2_values$r2c_min[r2_values$pollen_category == "heterospecific_abs"]` and `r r2_values$r2c_max[r2_values$pollen_category == "heterospecific_abs"]` (mean `r r2_values$r2c_mean[r2_values$pollen_category == "heterospecific_abs"]`) for the models of heterospecific pollen [@nakagawa_general_2013]. 
-A large portion of this explanatory power came from the random effects, particularly for models of conspecific pollen. 
-The marginal coefficient of determination R^2^~(m)~, which describes the proportion of variance explained by just the fixed effects, ranged between `r r2_values$r2m_min[r2_values$pollen_category == "conspecific_abs"]` and `r r2_values$r2m_max[r2_values$pollen_category == "conspecific_abs"]` (mean `r r2_values$r2m_mean[r2_values$pollen_category == "conspecific_abs"]`) for the conspecific models and between `r r2_values$r2m_min[r2_values$pollen_category == "heterospecific_abs"]` and `r r2_values$r2m_max[r2_values$pollen_category == "heterospecific_abs"]` (mean `r r2_values$r2m_mean[r2_values$pollen_category == "heterospecific_abs"]`) for the heterospecific models. 
-
-We tested two structures for the random effects. 
+We then examined the potential roles played by four ecological variables (number of shared pollinators, abundance, mean visit effectiveness, and functional originality) play in pollen deposition. 
+<!-- Together these variables can describe the niche that plants might occupy in the context of competition for pollination.  -->
+We found that our models of pollen deposition had high explanatory power (the coefficient of determination R^2^ ranged between `r min(r2_values$r2c_min)` and `r max(r2_values$r2c_max)`) although a large portion of the explanatory power came from the random effects (Table \@ref(S-tab:table-R2)).
 As determined by AICc, the random structure best supported by the data was the one that fit an intercept for each species in each community (as opposed to a common intercept for each species irrespective of the community they belong to). 
 This structure was best for both the models of conspecific and heterospecific pollen (Table \@ref(S-tab:table-aic-random-models)).  
 
