@@ -2,7 +2,7 @@ make_fig_coefficient_avarages <- function(coefficient_averages, variable_importa
   require(ggplot2)
   require(ggridges)
 
-  pal <- common_graphic_metrics()$pal_el_green[c(8,6)]
+  pal <- common_graphic_metrics()$pal_el_green[c(6,8)]
 
   dist <- coefficient_averages %>%
     dplyr::filter(scale == "community",
