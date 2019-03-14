@@ -445,12 +445,6 @@ median_distances <- permanova_plant_distances %>%
   value
 ```
 
-We used a PCA of the analysed species to investigate whether plant's niche of competition for pollination are similar across communities or whether they are flexible, and therefore a reflection of the community context. 
-The first two PCA components explained `r round(this_pca$eig[2, 3])`% of the total variance (Figure \@ref(fig:fig-pca)a). 
-The first component was dominated by changes in visit effectiveness and relative abundance while the second component was dominated by the number of shared pollinators and the plant's functional originality. 
-When we locate the species that were sampled in more than one community in the first two PCA components (Figure \@ref(fig:fig-pca)b), we observe that the niches of any given species do not tend to be close to each other. 
-Indeed, when we measured the median distance between the plants coordinates, we found that it was only significantly smaller than that of randomisations for only `r numbers2words(sum(median_distances < 0.05))` of the `r numbers2words(length(median_distances))` analysed species (Figure \@ref(fig:fig-pca)c). 
-
 ```{r fig-pca, fig.width=3.25, fig.height=6.65, fig.cap="**The flexibility of plant strategies**. (a) The two first components explain a large proportion of the total variance. (b) When plants that were sampled in more than one community are plotted with these two components, we observe that points, which represent the strategy (the particular combination of ecological variables) of a species in a community do not seem to be grouped by plant species. (c) This was confirmed using Monte Carlo randomizations of the median distance between strategies of a plant species. Only one of the examined species had strategies that were more tightly connected than what would be expected at random."}
 height0 <- 1.55
 height1 <- 2.7
@@ -474,6 +468,12 @@ cowplot::plot_grid(
 # dev.off()
 ```
 
+We used a PCA of the analysed species to investigate whether plant's niche of competition for pollination are similar across communities or whether they are flexible, and therefore a reflection of the community context. 
+The first two PCA components explained `r round(this_pca$eig[2, 3])`% of the total variance (Figure \@ref(fig:fig-pca)a). 
+The first component was dominated by changes in visit effectiveness and relative abundance while the second component was dominated by the number of shared pollinators and the plant's functional originality. 
+When we locate the species that were sampled in more than one community in the first two PCA components (Figure \@ref(fig:fig-pca)b), we observe that the niches of any given species do not tend to be close to each other. 
+Indeed, when we measured the median distance between the plants coordinates, we found that it was only significantly smaller than that of randomisations for only `r numbers2words(sum(median_distances < 0.05))` of the `r numbers2words(length(median_distances))` analysed species (Figure \@ref(fig:fig-pca)c). 
+
 # Discussion 
 
 All else being equal, our results suggest that community context plays a central role in determining net cost or benefit of sharing pollinators.
@@ -486,22 +486,45 @@ Both of the tests we used to identify the effect of animal-mediated pollination 
 A recent study also suggested a wide range of outcomes in a multi-species context [@tur_evaluating_2016]. 
 However, the factors explaining why some species experience more competition than others were not understood. 
 Here we show that the prevalence of neutral and competitive effects of animal-mediated pollination can be at least partially explained by the trade-offs that minimising competition can involve.  
+
 These trade-offs were most evident in precisely the factors that most strongly modulate pollen deposition. 
 Specifically, we found that the factors related to the relative dominance of the species (in terms of pollen and visits, or abundance) also tended to be the most important predictors of pollen deposition. 
-At the same time, receiving high visitation increases the absolute levels of conspecific pollen deposition but increasses heterospeicific deposition to a greater extent even when the visitors are likely carry a high proportion of conspecific pollen. 
+At the same time, receiving high visitation increases the absolute levels of conspecific pollen deposition but increasses heterospeicific deposition to a greater extent---even when the visitors are likely carry a high proportion of conspecific pollen. 
 Similarly, being abundant reduces the amount of heterospecific pollen deposited but at the expense of a noticeable reduction in the amount of conspecific pollen. 
-Multiple studies recognise the importance of visitation and abundance to competition for pollination, however, some suggest a positive effect on the pollination service while some others a negative one [@feldman_when_2004; @munoz_presence_2008; @morales_interspecific_2008]. 
-Our results corroborate the importance of these two factors, and show that the contrsating results obtained by earlier studies could be explained by the trade-offs involved.
+Multiple studies recognise the importance of visitation and abundance to competition for pollination [@feldman_when_2004; @munoz_presence_2008; @morales_interspecific_2008]. 
+Our results strongly corroborate the importance of these two factors but also suggest that [because visitation, pollen production and abundance are correlated; @sargent_role_2006], plants must reach a fine balance between increasing conspecific pollen and reduce heterospecific pollen deposition to minimise competition for pollination.
 
-Simultaneously, because visitation, pollen production and abundance are correlated [@sargent_role_2006], the trade-offs also suggest that plants must reach a fine balance between increasing conspecific pollen and reduce heterospecific pollen deposition to minimise competition for pollination. 
+Further evidence of the complexity involved in achieving a balance between costs and benefits can be found when we examine the other two factors analysed in our models. 
+For instance, the networks we studied represent only a snapshot of the community dynamics. 
+While we show that being a specialist and sharing no pollinators might be preferable in the short term, over long periods of time there could be a risk associated to a plant having no pollinators. 
+Hence, is likely that plants need to compensate this risk for the costs of sharing pollinators. 
+One possible evolutionary strategt is having original traits as it’s commonly thought that species that are further from others in trait space suffer reduced competition. 
+Yet, there are two possible caveats to this strategy that highlight the interrelatedness of the ecological factors. 
+First, in a mutualism context, it is also possible that this could come at the cost of being less ‘apparent’ to pollinators. 
+Second, the usuallly negative, relationship between trait originality and generalism has been shown to be dependent on abundance [@coux_linking_2016], with generalist being able to have original traits when they are abundant enough to proviude a valuable reward to make it worth to pollinators. 
+Overall, competition for pollination niche a plant species occupies seems to be dictated by the trade-offs between 
+
+The two other factors we analysed, did not exhibit a pollination trade-off: functional originallity was generally benefitial, while sharing pollinators was generally detrimental to pollen deposition.
+Somewhat surprisingly, these two factors had considerably lower explanatory power in the models of pollen deposition when compared to visits and abundance. 
+This does not necessarily imply that these variables are unimportant to competition for pollination. 
+Instead, it is possible that the processes that underlay these strategies might be more complex than what our study was able to capture. 
+
+
+Yet again, the interelatedness of the ecological factors and the fine balance between conspecific and heterospecific pollen is highlighted as @coux_linking_2016 showed that plants can be generalists *and* have original traits only when they are abundant 
+
+This apparency problem could be overcome if you’re abundant and provide a valuable enough reward to make it worth pollinators while to develop a search image for you.
+
+
+
+
 The relatively broad distribution of coefficients in our models might be explained by the large variation of the extent to which plant species are affected by pollen deposition. 
 Indeed, some plant species experience a large reduction in seed set due to heterospecific pollen deposition, while others are relatively insensitive to heterospecific pollen but greatly affected by low levels of conspecific pollen deposition [@campbell_mechanism_1985]. 
 
-The two other strategies we analysed involved a smaller trade-off than the abundance or visit efficacy. 
-Specifically, having high functional originality relative to other species in the community or sharing few pollinators was found to be beneficial to both the quantity and quality of pollination.
-Interestingly, these two strategies also had lower explanatory power in the models of pollen deposition. 
-This does not necessarily imply that these variables are unimportant to pollen deposition. 
-Instead, it is possible that the processes that underlay these strategies might be more complex than what our metrics are able to capture. 
+<!-- The two other factors we analysed, functional originality and the number of involved a smaller trade-off than the abundance or visit efficacy.  -->
+<!-- Specifically, having high functional originality relative to other species in the community or sharing few pollinators was found to be beneficial to both the quantity and quality of pollination. -->
+<!-- Interestingly, these two strategies also had lower explanatory power in the models of pollen deposition.  -->
+<!-- This does not necessarily imply that these variables are unimportant to pollen deposition.  -->
+<!-- Instead, it is possible that the processes that underlay these strategies might be more complex than what our metrics are able to capture.  -->
 Particularly so for conspecific pollen deposition, which was harder to predict than heterospecific pollen. 
 For instance, having distinct traits, for example through phenology differentiation, might have a positive impact on the pollination service only to the extent to which previous floral communities have promoted high pollinator densities (ref). 
 In addition, some plants have been shown possess mechanisms that prevent heterospecific pollen deposition even when shared visitors carry pollen loads from diverse species. 
