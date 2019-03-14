@@ -13,9 +13,21 @@ make_fig_all_model_results <- function(tidied_fixed, sites, model_formula_rankin
                   best_set = dplyr::if_else(is.na(best_set), TRUE, best_set)) %>%
     dplyr::filter(best_set)
 
-  best_model_formulas <- model_formula_ranking$by_model_set %$%
+  best_model_formulas <- model_formula_ranking$by_model_set %>%
+    dplyr::ungroup() %>%
+    dplyr::filter(pollen_category %in% c("conspecific_abs", "heterospecific_abs"),
+                  delta_AIC_median < 4) %>%
+    dplyr::mutate(fixed_formula = forcats::fct_reorder(fixed_formula,
+                                                       delta_AIC_median,
+                                                       .desc = T)) %>%
+    dplyr::arrange(dplyr::desc(fixed_formula)) %$%
     fixed_formula %>%
     unique()
+
+  best_model_formula_short <-
+    tibble::data_frame(fixed_formula = best_model_formulas) %>%
+    humanize() %$%
+    fixed_formula
 
   col_pal <- cgm()$pal_el_green[c(8,6)]
 
@@ -28,6 +40,8 @@ make_fig_all_model_results <- function(tidied_fixed, sites, model_formula_rankin
     dplyr::summarise(estimate = dplyr::first(estimate)) %>%
     dplyr::group_by() %>%
     humanize() %>%
+    dplyr::mutate(fixed_formula = forcats::fct_relevel(fixed_formula,
+                                                       best_model_formula_short)) %>%
     dplyr::filter(pollen_category %in% c("conspecific (absolute)",
                                          "heterospecific")) %>%
     dplyr::mutate(pollen_category =
