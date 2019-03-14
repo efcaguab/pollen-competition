@@ -272,14 +272,13 @@ model_formula_ranking$by_model_set %>%
   kableExtra::add_header_above(c(" " = 1, "$\\\\Delta$AIC" = 2), escape = F)
 ```
  
-```{r fig-correlation, fig.height = 4.5, fig.cap = "Corelation between the explanatory variables included in the statistical models.", eval=T}
+```{r fig-correlation, fig.height = 5, fig.cap = "Corelation between the explanatory variables included in the statistical models.", eval=T}
 drake::readd(fig_correlation)
 ```
  
 ```{r fig-model-results, fig.height = 5, fig.cap = "Distribution of effect estimates for models of conspecific and heterospecific pollen density gain. Model formulas have been abbreviated: *a* for abundance, *k* for the number of shared polinators, *p* for the visit effectiveness, and *t* for trait originality. Only candidate formulas with a $\Delta AICc < 4$ for either conspecific or heterospecific pollen are shown. Models candidates are arranged in decreassing order of support.", eval=T}
 drake::readd(fig_all_model_results)
 ```
-
 
 ```{r table-species-gain-site, results = 'asis', eval=F}
 drake::loadd(significant_gain_global, significant_gain_site, sites)
