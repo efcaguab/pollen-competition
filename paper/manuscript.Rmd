@@ -362,17 +362,7 @@ Variation within species was slightly smaller and only `r numbers2words(nrow(sp_
 ## Ecological constraints in the pollination service 
 
 ```{r model-fit-statistics}
-drake::loadd(model_formula_ranking, glanced_fixed)
-
-r2_values <- model_formula_ranking$by_model_set %>%
-  dplyr::filter(grepl("abs", pollen_category)) %>% 
-  dplyr::group_by(pollen_category) %>%
-  dplyr::filter(delta_AIC_median == min(delta_AIC_median)) %>%
-  dplyr::select(fixed_formula, pollen_category, scale) %>%
-  dplyr::left_join(glanced_fixed) %>% 
-  dplyr::select(r2m, r2c) %>%
-  dplyr::summarise_all(dplyr::funs(min, median, mean, max)) %>%
-  dplyr::mutate_if(is.numeric, round, digits = 2)
+drake::loadd(r2_values)
 ```
 
 We then examined the potential roles played by four ecological variables (number of shared pollinators, abundance, mean visit effectiveness, and functional originality) play in pollen deposition and, by extension, in the quantity and quality of pollination. 
