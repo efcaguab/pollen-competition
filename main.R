@@ -210,7 +210,7 @@ reporting_plan <- drake_plan(
   abstract = readLines(file_in("./paper/abstract.md")),
   acknowledgements = readLines(file_in("./paper/acknowledgements.md")),
   abs_wordcount = count_words(file_in("paper/abstract.md")),
-  msc_wordcount = count_words(file_in('paper/manuscript.Rmd'), lines_to_ignore = 1:89),
+  msc_wordcount = count_words(file_in('paper/manuscript.Rmd'), lines_to_ignore = 1:100),
   render_pdf(knitr_in('paper/supp-info.Rmd'), file_out('paper/supp-info.pdf'), clean_md = FALSE),
   render_pdf(knitr_in('paper/manuscript.Rmd'), file_out('paper/manuscript.pdf'), clean_md = FALSE)
   )
