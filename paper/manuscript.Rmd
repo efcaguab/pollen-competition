@@ -1,6 +1,6 @@
 ---
 title: "The pollination trade-off"
-author: "Fernando Cagua^1^, Hugo J. Marrero^2^, Jason M. Tylianakis^1^, Daniel B. Stouffer^1^"
+author: "E. Fernando Cagua^1^, Hugo J. Marrero^2^, Jason M. Tylianakis^1^, Daniel B. Stouffer^1^"
 bibliography: phd-bibliography/pollen-competition.bib
 csl: ecology-letters.csl
 output:
