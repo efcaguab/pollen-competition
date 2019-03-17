@@ -3,7 +3,7 @@ title: "The pollination trade-off"
 author: "E. Fernando Cagua^1^, Hugo J. Marrero^2^, Jason M. Tylianakis^1^, Daniel B. Stouffer^1^"
 bibliography: phd-bibliography/pollen-competition.bib
 csl: ecology-letters.csl
-output:
+output: #word_document
   bookdown::pdf_document2:
     # base_format: rticles::peerj_article
     keep_tex: yes
@@ -31,7 +31,12 @@ header-includes:
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE, message = FALSE, 
-                      warning = FALSE)
+                      warning = FALSE, dpi = 300)
+# library(magrittr)
+# library(foreach)
+# library(drake)
+# # load functions
+# f <- lapply(list.files("../code", full.names = T), source)
 ```
 
 ```{r draft-details}
