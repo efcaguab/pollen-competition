@@ -1,0 +1,67 @@
+---
+title: "The pollination trade-off"
+subtitle: "Draft information"
+author: "Fernando Cagua, Hugo Marrero, Jason Tylianakis, Daniel Stouffer"
+bibliography: phd-bibliography/pollen-competition.bib
+csl: ecology-letters.csl
+output:
+  bookdown::pdf_document2:
+    # base_format: rticles::peerj_article
+    keep_tex: yes
+    number_sections: false
+toc: false
+header-includes:
+  - \usepackage{booktabs}
+  - \usepackage{setspace}
+  - \usepackage{lineno}
+  - \usepackage{xr}
+  - \usepackage[utf8]{inputenc}
+  - \newcommand{\R}[1]{\label{#1}\linelabel{#1}}
+  - \newcommand{\lr}[1]{page~\pageref{#1}, line~\lineref{#1}}
+---
+
+\onehalfspacing
+
+## Changes
+
+* Now using `docker` to manage project dependencies. Image is now available on dockerhub efcaguab/pollen-competition.
+* Removing *quantity* and *quality* of pollination in favour of the plain metrics of *conspecific* and *heterospecific* pollen deposition. 
+* Rewording the plant strategies idea as it was confussing. Now the combination of ecological variables (number shared pol., abundance, visitation patterns, and traits) define a species *realised niche* (this was previoulsy called the plant strategy). Plants that can have very different realised niches across different communities have a *flexible strategy* (this was previously called strategy as well).
+* Manuscript formatted for submission to Ecology Letters.
+* Sticking to past tense throughout the methods.
+* GLMM to fit slope of heterospecific-conspecific pollen relationship tests all communities at once (it was a model per community). Response variable is the number of grains (it was number of grains per stigma) and the (log) number of stigmas in the flowers has been included as an offset term.
+* Using a similar approach to compare conspecific pollen deposited in open and bagged flowers (I used a series of Mann-Withney U tests before)
+* Added facilitation model results tables in the Supplementary Information
+* Made Figure 2 (model of enviornmental factors) one-column
+* Applied a green palette to all figures. Improves legibility when looking at it in a screen an performance when printed in greyscale is maintained
+* Show niche points for all species and not only those in two communities or more
+* Added the following elements to the disussion: 
+    * That our networks are a snapshot
+    * How the degree-trait originality relationship can be shaped by abundance
+    * How strategy could be a result of a specie's historical communities
+    * How attracting pollinators using flowering plants might work
+
+## Todo
+
+* Polish discussion, will appreciate input here. 
+* Polish supp. info.
+* Spell-check everything & check that reference list is correct.
+* I think its not supper clear in the manuscript what is meant by a plant strategy. Need to re-check in the next iteration. 
+
+## Questions
+
+Feel free to come back here after you've read the manuscript. Thanks!
+
+* Minor point: DBS thinks that normally one would use the technical word and then put the definition in parenthesis. In a previous revision I got from JMT that it's better to lead with the concept and then add the jargon last. Examples: *"...due to a temporary separation in the maturation of sexes (dichogamy)"*, *"...common insect-pollinated (entomophilous) species"*.
+
+* Journal? --- *Hugo says PNAS, Proceedings B and Science. No answer from other coauthors*
+* I think the story is still a bit disperse. Will appreciate feedback on identifying the most important/exciting findings to tie the others around it. So far the central topic is scaling up of competition to the community level. --- *No particular feedback received*
+* Do you know of a reasonable reference for the claims in \lr{ref-needed-possitive-loops} and \lr{ref2}? --- *No particicular feedback received*
+* Hugo. Some journals require publication of data alongside with the paper. Is it OK to consider those? Or you prefer to keep data private? --- *It is OK*
+* In Figure \@ref(fig:fig-trade-off-predictions)a, I determine if the slope is significantly positive or negative by checking whether the standard errors cross 0. Should it be 2 times SE? Should all other error bars in Figure \@ref(fig:fig-trade-off-predictions) be 2 times SE? --- *No particular feedback received*
+* What do you think about the quantity/quality discourse now? I'm still unconvinced. Maybe I should just go for relationship conspecific/heterospecific instead of quality? That would mean that Figure \@ref(fig:fig-average-qual-quant)c would just need the right panel. Cause the left is just almost the same as Figure \@ref(fig:fig-average-qual-quant)b, except that it includes models in which the variable was not present and hence "shrinks" the model averaged estimate. --- *Daniel advocates for getting rid of quantity/quality and go for conspecific/conspecific proportion*
+* Unsure of whether in Figure \@ref(fig:fig-pca)a, it would be better to display the contribution of each component to total variance instead of the cummulative contribution. --- *Add info to left of the figure*
+* I'm not very happy with the way the third hypothesis is described in the intro (\lr{third-hypothesis}). I would appreciate ideas to rephrase it clearly
+* Does the paragraph in \lr{disc-facil-comp} needs more meat? Any suggestions?
+* My background in the topic is limited, would be grateful if you could point me out to key papers that could be used to put some context to the finding of the "flexibility" of plants strategies (paragraph in \lr{strategies}) --- *DBS argues that I say that strategies minimise competition but I never show that, only show that strategies change. Need to think about that*
+* Part of the discussion before revolved about the fact that degree is commonly used in theoretical models of mutualism to adjust the mutualistic benefit of generalist species. I've removed it because I think the discussion is already a bit long and didn't fit that nicely in the story. You think it should be included? --- *DBS says is OK to leave it out*
