@@ -52,3 +52,7 @@ paper/supp-info\.pdf
 paper/supp-info_files/
 # Temporary Docx files
 *~$*.docx
+
+paper/draft-info\.pdf
+
+draft\.pdf
