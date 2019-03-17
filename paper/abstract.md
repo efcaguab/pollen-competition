@@ -1,6 +1,1 @@
-*TBC once journal has been defined. But probably it will be something along the lines of the last paragraph of the discussion which goes:* 
-Here we show that competition for pollination is pervasive in ecological communities and that its effect on plant species strongly influenced by the community context. 
-Our results suggest that at the community level, the strategies that plants adopt to minimise competition require reaching a fine balancing act between the quantity and quality of pollination. 
-In particular, strategies that promote dominance of the species in its community (in terms of abundance, visitation and participation in the pollen pool) had the largest impacts on pollen deposition but also the largest trade-offs between increasing deposition of conspecific pollen and reducing that of heterospecific pollen. 
-Contrastingly, strategies that increase niche differentiation (functional originality and specialization) were positive to both the quantity and quality of pollination, but its effect was comparatively small compared to strategies of dominance.
-Remarkably, the particular strategy a plant uses is strongly shaped by its context and hence can be dramatically different in each of the communities it is part of. 
+*TBC. But probably it will be something along the lines of the last paragraph of the discussion which goes:* 
