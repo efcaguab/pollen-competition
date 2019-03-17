@@ -87,7 +87,7 @@ tbl_frame %>%
   knitr::kable("latex", 
                digits = 4, 
                col.names = c("species name", "community", "slope", "S.E."), 
-               caption = "Slope of the relationship between heterospecific and conspecific pollen for each species in their community (fixed effect + conditional effect). Community names are constructed by location - agricultural/restored - fragment number.", 
+               caption = "The slope of the relationship between heterospecific and conspecific pollen for each species in their community (fixed effect + conditional effect). Community names are constructed by location - agricultural/restored - fragment number.", 
                booktabs = T, 
                linesep = "", 
                escape = F) %>%
@@ -134,7 +134,7 @@ con_con_plot_df %>%
   dplyr::select(plant_name, site_name, closed_mid, closed_ci, open_mid, open_ci) %>%
   knitr::kable("latex", 
                col.names = c("species name", "community", "mean", "C.I.", "mean", "C.I."), 
-               caption = "Amount of conspecific pollen deposited  in bagged and unbagged flowers (open to animal pollination) for each species in their community. Community names are constructed by location - agricultural/restored - fragment number.", 
+               caption = "Amount of conspecific pollen deposited in bagged and unbagged flowers (open to animal pollination) for each species in their community. Community names are constructed by location - agricultural/restored - fragment number.", 
                booktabs = TRUE, 
                linesep = "", 
                align = "llrlrl", 
@@ -150,7 +150,7 @@ r2_values %>%
   dplyr::select(r2c_mean, r2c_min, r2c_max, r2m_mean, r2m_min, r2m_max) %>%
   knitr::kable("latex", 
                col.names = c(rep(c("mean", "min", "max"), times = 2)), 
-               caption = "Coefficient of determination $R^2$ of the most parsimonious pollen deposition models (those with the lowest AICc). The marginal coefficient of determination describes the proportion of variance explained by just the fixed effects.", 
+               caption = "The coefficient of determination $R^2$ of the most parsimonious pollen deposition models (those with the lowest AICc). The marginal coefficient of determination describes the proportion of variance explained by just the fixed effects.", 
                booktabs = TRUE) %>%
   kableExtra::kable_styling(font_size = 8) %>%
   kableExtra::add_header_above(c("conditional $R^2_{(c)}$" = 3,
@@ -196,7 +196,7 @@ summ <- glanced_random %>%
 summ %>%
   dplyr::select(`random structure`, delta_AIC, delta_AIC_CI) %>%
   kableExtra::kable("latex", 
-               caption = paste('Comparison of the two random structures we considered for the models of conspecific and heterospecific pollen deposition. The table shows median $\\Delta$AIC values of', dplyr::n_distinct(glanced_random$model), "bootsrap resamples of the data. The 5th and 95th percentile are shown inside square brackets. Communities are defined by individual fragments but ignore the hierarchical arrangement of sampling sites."),
+               caption = paste('Comparison of the two random structures we considered for the models of conspecific and heterospecific pollen deposition. The table shows median $\\Delta$AIC values of', dplyr::n_distinct(glanced_random$model), "bootstrap resamples of the data. The 5th and 95th percentile are shown inside square brackets. Communities are defined by individual fragments but ignore the hierarchical arrangement of sampling sites."),
                col.names = c("random structure", "median", "C.I."),
                booktabs = TRUE, 
                escape = F) %>%
@@ -229,7 +229,7 @@ model_formula_ranking$by_model_set %>%
   dplyr::rename(`fixed structure` = fixed_formula) %>% 
   knitr::kable("latex", 
                col.names = c("fixed structure", "median", "C.I."),
-               caption = paste('Comparison of the different fixed structures we consideredfor the models of conspecific and heterospecific pollen deposition. The table shows median $\\Delta$AIC values of', dplyr::n_distinct(glanced_random$model), "bootsrap resamples of the data. The 5th and 95th percentile are shown inside square brackets."),
+               caption = paste('Comparison of the different fixed structures we considered for the models of conspecific and heterospecific pollen deposition. The table shows median $\\Delta$AIC values of', dplyr::n_distinct(glanced_random$model), "bootstrap resamples of the data. The 5th and 95th percentile are shown inside square brackets."),
                booktabs = TRUE) %>%
   kableExtra::kable_styling(font_size = 8) %>%
   kableExtra::group_rows(index = c("conspecific pollen" = 15, 
@@ -238,14 +238,14 @@ model_formula_ranking$by_model_set %>%
   kableExtra::add_header_above(c(" " = 1, "$\\\\Delta$AIC" = 2), escape = F)
 ```
  
-```{r fig-correlation, fig.height = 5, fig.cap = "Corelation between the explanatory variables included in the statistical models.", eval=T}
+```{r fig-correlation, fig.height = 5, fig.cap = "Correlation between the explanatory variables included in the statistical models.", eval=T}
 drake::readd(fig_correlation)
 ```
  
-```{r fig-model-results, fig.height = 5, fig.cap = "Distribution of effect estimates for models of conspecific and heterospecific pollen density gain. Model formulas have been abbreviated: *a* for abundance, *k* for the number of shared polinators, *p* for the visit effectiveness, and *t* for trait originality. Only candidate formulas with a $\\Delta AICc < 4$ for either conspecific or heterospecific pollen are shown. Models candidates are arranged in decreassing order of support.", eval=T}
+```{r fig-model-results, fig.height = 5, fig.cap = "Distribution of effect estimates for models of conspecific and heterospecific pollen density gain. Model formulas have been abbreviated: *a* for abundance, *k* for the number of shared pollinators, *p* for the visit effectiveness, and *t* for trait originality. Only candidate formulas with a $\\Delta AICc < 4$ for either conspecific or heterospecific pollen are shown. Models candidates are arranged in decreasing order of support.", eval=T}
 drake::readd(fig_all_model_results)
 ```
 
-```{r fig-global-community-correlations, fig.height = 2, fig.cap = "Relationship between the model's independent variables calculated at the community level and at the study-wide level.", eval=F}
+```{r fig-global-community-correlations, fig.height = 2, fig.cap = "The relationship between the model's independent variables calculated at the community level and at the study-wide level.", eval=F}
 drake::readd(fig_community_global_scatter)
 ```
