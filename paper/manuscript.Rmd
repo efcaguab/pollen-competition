@@ -471,14 +471,14 @@ This is so because the outcome might depend not only on the particular niche eac
 However, our results also suggest that introduced species are more likely to be benefitial if they have differing traits to local plants. 
 <!-- cite melissa's paper if available before publication -->
 
-## Conclusion
-
-Here we show that competition for pollination is pervasive in ecological communities and that its effect on plant species strongly influenced by the community context. 
-Our results suggest that at the community level, the strategies that plants adopt to minimise competition require reaching a fine balancing act between the quantity and quality of pollination. 
-In particular, strategies that promote dominance of the species in its community (in terms of abundance, visitation and participation in the pollen pool) had the largest impacts on pollen deposition but also the largest trade-offs between increasing deposition of conspecific pollen and reducing that of heterospecific pollen. 
-Contrastingly, strategies that increase niche differentiation (functional originality and specialization) were positive to both the quantity and quality of pollination, but its effect was comparatively small compared to strategies of dominance.
-Remarkably, the particular strategy a plant uses is strongly shaped by its context and hence can be dramatically different in each of the communities it is part of. 
-[Wider application? Catchy closing line ideas?]
+Overall, our results suggest that pollination communities might not necessarily be the paradigmatic mutualistic communities we often believe. 
+Instead, we confirm that plant competition is pervasive in pollination communities and that potential strategies to minimise competition are likely involve strong trade-offs in the pollination service either in the short or the long term. 
+As expected, not sharing pollinators and being functionally unique reduces competition for pollination by increassing conspecific pollen deposition (both in absolute numbers and relative to heterospecific pollen). 
+However, this increasse is surprisingly small when compared to the effect of relative abundance and visitation. 
+Interestingly, these two factors also involve the largest trade-offs between increasing deposition of conspecific pollen and reducing that of heterospecific pollen. 
+Despite large intra-species differences among species our results provide solid evidence of the role that competition for pollination plays in natural communities. 
+Species coexistence is not solely determined by direct and indirect mutualistic relationships, but also strongly shaped by the multiple intewined ecological factors that shape competition for pollination at the community level. 
+Achieving a better understanding how biodiversity is supported by pollination communities will require seeing them as both mutualistic and competitive comminities. 
 
 # Acknowledgements
 
