@@ -47,40 +47,6 @@ options(xtable.comment = FALSE,
         knitr.kable.NA = "-")
 ```
 
-```{r fig-deposition-log-transformed-or-not, fig.height = 2, fig.cap = "Distribution of stigmatic pollen density plotted in (A) a linear scale, and (B) a logarithmic scale (zero values not shown).", eval=F}
-drake::loadd(fig_pollen_density)
-
-leg <- cowplot::get_legend(fig_pollen_density[[1]])
-cowplot::plot_grid(
-  remove_legend(fig_pollen_density[[1]]),
-  remove_legend(fig_pollen_density[[2]]), 
-  labels = LETTERS[1:2], 
-  label_size = 8) %>%
-  cowplot::plot_grid(leg, ., rel_heights = c(0.1, 0.9), ncol = 1)
-```
-
-```{r fig-deposition-gain-log-transformed-or-not, fig.height = 1.8, fig.cap = "Distribution of the stigmatic pollen density for one of the bootstrap replicates used in the model sets. When (A) using directly the gain in pollen density and (B) when pollen density is log transormed (for the relative amount of conspecific pollen, density was log-transformed prior to calculating the gain).", eval=F}
-drake::loadd(fig_pollen_density_diff)
-
-leg <- cowplot::get_legend(fig_pollen_density_diff[[1]])
-cowplot::plot_grid(
-  remove_legend(fig_pollen_density_diff[[1]]), 
-  remove_legend(fig_pollen_density_diff[[2]]), 
-  labels = LETTERS[1:2], 
-  label_size = 8,
-  ncol = 2) %>%
-  cowplot::plot_grid(leg, ., rel_heights = c(0.1, 0.9), ncol = 1)
-```
-
-```{r fig-abundance-logtransformed-or-not, fig.height = 1.65, fig.cap = "Distribution of plant abundance as (A) raw counts of floral units across communities, and (B) after applying a data transformation in which the counts have been log transformed and scaled to have a mean of zero and a standard deviation of one.", eval = F}
-drake::loadd(fig_abundance)
-
-cowplot::plot_grid(
-  fig_abundance[[2]], 
-  fig_abundance[[1]],
-  rel_widths = c(0.42, 0.58), labels = LETTERS[1:2], label_size = 8)
-```
-
 ```{r table-facilitation-models-general, results='asis'}
 drake::loadd(facilitation_models)
 
@@ -280,56 +246,6 @@ drake::readd(fig_correlation)
 drake::readd(fig_all_model_results)
 ```
 
-```{r table-species-gain-site, results = 'asis', eval=F}
-drake::loadd(significant_gain_global, significant_gain_site, sites)
-table_frame <- glance_table(significant_gain_site) %>%
- dplyr::inner_join(sites, by = "site_name") %>%
-  dplyr::group_by(recipient) %>%
-  dplyr::mutate(n_sites = dplyr::n_distinct(site_name)) %>%
-  dplyr::filter(n_sites > 1) %>%
-  dplyr::group_by() %>%
-  dplyr::mutate(site_name = paste(locality_name, land_use, fragment, sep = ' - '),
-         recipient = paste0('{\\emph{ ', recipient, '}}')) %>%
-  dplyr::select(recipient, site_name, estimate, statistic, p.value) %>%
-  dplyr::rename(`p value` = p.value,
-         `difference` = estimate,
-         `plant species` = recipient, 
-         `community` = site_name)
-
-seps <-dplyr::if_else(table_frame$`plant species` == 
-  dplyr::lag(table_frame$`plant species`), "", "\\addlinespace") %>%
-  na.omit()
-
-table_frame %>%
-  knitr::kable("latex", 
-    caption = "Results of testing the alternative hypothesis that the conspecific pollen density in open flowers is greater than the density in bagged flowers. Tests were performed at the community level. Only species present in more than one community are shown.", 
-    escape = FALSE, 
-    booktabs = TRUE, 
-    linesep = seps, 
-    digits = 3) %>%
-  kableExtra::kable_styling(font_size = 8)
-```
-
-```{r table-variation-across-sites, eval=FALSE, results='asis', eval=F}
-drake::loadd(consp_self)
-consp_self %>%
-  anova(test = "Chisq")  %>%
-  knitr::kable("latex", 
-    caption = 'Analysis of variance of conspecific pollen density in bagged flowers (self pollination rate).  Density were modelled using a quasipoisson distribution. The model suggests that self-pollination rates are species dependent but not across.',
-    booktabs = TRUE) %>%
-  kableExtra::kable_styling(font_size = 8)
-```
-
 ```{r fig-global-community-correlations, fig.height = 2, fig.cap = "Relationship between the model's independent variables calculated at the community level and at the study-wide level.", eval=F}
 drake::readd(fig_community_global_scatter)
-```
-
-```{r fig_effect_quant_qual, fig.height=3.5, fig.cap="asd", eval=F}
-drake::loadd(fig_effect_quant_qual)
-
-cowplot::plot_grid(
- fig_effect_quant_qual[[1]], 
- fig_effect_quant_qual[[2]],
-  labels = LETTERS[1:2], 
-  label_size = 8, ncol = 2)
 ```
