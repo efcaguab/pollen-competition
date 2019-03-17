@@ -23,3 +23,4 @@ RUN R -e "install.packages('ggridges', repos = c(CRAN = 'https://mran.revolution
 # RUN apt-get -y install xzdec
 # RUN runuser -l rstudio -c "cd ~ && mkdir texmf && tlmgr init-usertree && tlmgr update --self"
 # RUN runuser -l rstudio -c "tlmgr install lm ec booktabs titling multirow xcolor wrapfig float tabu varwidth threeparttable threeparttablex environ trimspaces ulem makecell setspace lineno"
+RUN apt-get -y --no-install-recommends install pdftk
