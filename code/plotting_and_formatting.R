@@ -20,6 +20,20 @@ pub_theme <- function(){
           plot.background = element_blank())
 }
 
+width <- function(type, unit=NULL){
+  # Ecology letters has a paper width of 200 mm
+  widths <- dplyr::case_when(
+    type == "single" ~ 3.57,
+    TRUE ~ 7.49
+  )
+  if(is.null(unit)) return(widths)
+  else if (unit=="in") {
+    widths %>%
+      as.character() %>%
+      paste0("in")
+  }
+}
+
 remove_legend <- function(x){
   require(ggplot2)
   x + theme(legend.position = 'none')

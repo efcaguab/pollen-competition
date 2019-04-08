@@ -35,6 +35,7 @@ header-includes:
 * Made Figure 2 (model of enviornmental factors) one-column
 * Applied a green palette to all figures. Improves legibility when looking at it in a screen an performance when printed in greyscale is maintained
 * Show niche points for all species and not only those in two communities or more
+* Figures edited to match one and two column sizes at Ecology Letters
 * Added the following elements to the disussion: 
     * That our networks are a snapshot
     * How the degree-trait originality relationship can be shaped by abundance

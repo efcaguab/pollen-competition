@@ -18,6 +18,7 @@ header-includes:
   - \newcommand{\R}[1]{\label{#1}\linelabel{#1}}
   - \newcommand{\lr}[1]{page~\pageref{#1}, line~\lineref{#1}}
   - \externaldocument[S-]{supp-info}
+  - \usepackage[export]{adjustbox}
 ---
 
 \linenumbers
@@ -260,7 +261,7 @@ Most of the variation between plants in a facilitation-competition gradient was 
 For instance, `r numbers2words(nrow(sp_both_pos_neg))` of the species sampled across multiple communities (`r sp_both_pos_neg_names`) showed evidence that the same species, can experience facilitation (positive relationships) in some communities and competition (negative relationships) in others. 
 Interestingly, although there was a wide variation in the slope of the relationship between heterospecific and conspecific pollen almost all plants had more conspecific than heterospecific pollen deposited on their stigmas (Figure \@ref(fig:fig-trade-off-predictions)b). 
 
-```{r fig-trade-off-predictions, fig.height= 4, fig.width = 6.5, fig.cap = "**Competition vs. facilitation at the community level**. (a) Some species experience more competition for pollination than others. Points indicate the estimated slopes for the relationship between the amount of heterospecific and conspecific pollen deposited per stigma across species in their communities. Significantly negative slopes (darkest shade) indicate that plants experience competition for animal-mediated pollination, while significantly positive slopes (lightest shade) indicate that facilitation is the predominant outcome. The number of plants analysed for each species is shown within brackets next to the species name. (b) Despite the variety of slopes, overall plants had more conspecific than heterospecific pollen deposited in their stigmas. (c) Generally, plants also had more pollen deposited in their stigmas when they were open to animal-mediated pollination than when they were closed. In all plots, error bars correspond to $\\pm$ the standard error (SE)."}
+```{r fig-trade-off-predictions, fig.height= 4, out.height="4in", fig.width = 7.49, out.width="7.49in", out.extra="center", fig.cap = "Competition vs. facilitation at the community level. (a) Some species experience more competition for pollination than others. Points indicate the estimated slopes for the relationship between the amount of heterospecific and conspecific pollen deposited per stigma across species in their communities. Statistically significant negative slopes (darkest shade) indicate that plants experience competition for animal-mediated pollination, while significantly positive slopes (lightest shade) indicate that facilitation is the predominant outcome. The number of plants analysed for each species is shown within brackets next to the species name. (b) Despite the variety of slopes, overall plants had more conspecific than heterospecific pollen deposited in their stigmas. (c) Generally, plants also had more pollen deposited in their stigmas when they were open to animal-mediated pollination than when they were closed. In all plots, error bars correspond to $\\pm$ the standard error (SE)."}
 # fig_random_slopes <- plot_random_slopes(facilitation_plot_df)
 # fig_hetero_con <- make_fig_con_hetero_empirical(dep_frame)
 # fig_con_con = plot_bagged_vs_open_conspecific(drake::readd(con_con_plot_df))
@@ -269,7 +270,7 @@ drake::loadd(fig_random_slopes)
 drake::loadd(fig_con_con)
 drake::loadd(fig_hetero_con)
 width_left <- 6.5*3/5
-bar_plot_width <- 0.325
+bar_plot_width <- 0.29
 rw <- c(width_left - bar_plot_width,
         bar_plot_width, 
         6.5 - width_left - bar_plot_width,
@@ -349,7 +350,7 @@ Overall, collinearity did not influence our findings qualitatively.
 Although relative abundance, the number of shared pollinators, and the visit effectiveness were all positively correlated (Figure \@ref(S-fig:fig-correlation)), the effect each had on conspecific pollen was similar among models that included all or just some of these three explanatory variables (Figure \@ref(S-fig:fig-model-results)). 
 One exception was visit-effectiveness, which exhibits a positive association with the relative amount of conspecific pollen under some variable combinations (all with relatively low AICc support).
 
-```{r fig-average-qual-quant, fig.height= 2.28*2, fig.width=6.5/2, fig.cap="**Effect of strategies to minimise competition in the pollination service**. (a) The plant's visit effectiveness and relative abundance are the most important variables determining the deposition of conspecific and heterospecific pollen. Meanwhile, the number of shared pollinators was relatively unimportant. The graph shows the relative variable importance calculated as the sum of the Akaike weights of the candidate models that included the variable. (b) The association between ecological variables and heterospecific pollen tended to align with their association with conspecific pollen. Visit effectiveness and functional originality had a positive association with pollen deposition, while abundance and the number of shared pollinators had a negative association. The plot shows the distribution of the effects (across 99 bootstrap replicates) of the four ecological variables for conspecific and heterospecific pollen. (c) The end result of these associations is that only the plants' functional originality has a positive impact on both the absolute and relative amount of conspecific pollen deposition (relative to heterospecific pollen). The plot shows the model averaged mean effect ($\\pm$ SE)."}
+```{r fig-average-qual-quant, fig.height= 2.28*2, fig.width=width('single'), out.height="4.56in", out.width="3.57in", out.extra="center", fig.cap="Effect of strategies to minimise competition in the pollination service. (a) The plant's visit effectiveness and relative abundance are the most important variables determining the deposition of conspecific and heterospecific pollen. Meanwhile, the number of shared pollinators was relatively unimportant. The graph shows the relative variable importance calculated as the sum of the Akaike weights of the candidate models that included the variable. (b) The association between ecological variables and heterospecific pollen tended to align with their association with conspecific pollen. Visit effectiveness and functional originality had a positive association with pollen deposition, while abundance and the number of shared pollinators had a negative association. The plot shows the distribution of the effects (across 99 bootstrap replicates) of the four ecological variables for conspecific and heterospecific pollen. (c) The end result of these associations is that only the plants' functional originality has a positive impact on both the absolute and relative amount of conspecific pollen deposition (relative to heterospecific pollen). The plot shows the model averaged mean effect ($\\pm$ SE)."}
 height1 <- 1
 height2 <- 1.28
 # pdf(width = 3.25 , height = sum(c(height1, height2))*2)
@@ -407,7 +408,7 @@ median_distances <- permanova_plant_distances %>%
   value
 ```
 
-```{r fig-pca, fig.width=3.25, fig.height=6.65, fig.cap="**The flexibility of plant strategies**. (a) The two first components explain a large proportion of the total variance. (b) When plants that were sampled in more than one community are plotted with these two components, we observe that points, which represent the strategy (the particular combination of ecological variables) of a species in a community do not seem to be grouped by plant species. (c) This was confirmed using Monte Carlo randomizations of the median distance between strategies of a plant species. Only one of the examined species had strategies that were more tightly connected than what would be expected at random."}
+```{r fig-pca, fig.width=3.57, fig.height=6.65, out.width="3.57in", out.height="6.65in",  out.extra="center", fig.cap="**The flexibility of plant strategies**. (a) The two first components explain a large proportion of the total variance. (b) When plants that were sampled in more than one community are plotted with these two components, we observe that points, which represent the strategy (the particular combination of ecological variables) of a species in a community do not seem to be grouped by plant species. (c) This was confirmed using Monte Carlo randomizations of the median distance between strategies of a plant species. Only one of the examined species had strategies that were more tightly connected than what would be expected at random."}
 height0 <- 1.55
 height1 <- 2.7
 height2 <- 2.4
