@@ -9,6 +9,11 @@ output: #word_document
     keep_tex: yes
     number_sections: false
 toc: false
+fontsize: 11pt
+classoption: a4paper
+geometry: 
+  - textwidth=33em
+  - textheight=48\baselineskip
 header-includes:
   - \usepackage{booktabs}
   - \usepackage{setspace}
