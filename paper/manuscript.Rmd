@@ -1,6 +1,10 @@
 ---
 title: "The pollination trade-off"
-author: "E. Fernando Cagua^1^, Hugo J. Marrero^2^, Jason M. Tylianakis^1^, Daniel B. Stouffer^1^"
+author: 
+  - "E. Fernando Cagua^1^ ([efc29@uclive.ac.nz](mailto:efc29@uclive.ac.nz))"
+  - "Hugo J. Marrero^2^ ([hugomarrero@gmail.com](hugomarrero@gmail.com))"
+  - "Jason M. Tylianakis^1^ ([jason.tylianakis@canterbury.ac.nz](jason.tylianakis@canterbury.ac.nz))"
+  - "Daniel B. Stouffer^1^ ([daniel.stouffer@canterbury.ac.nz](daniel.stouffer@canterbury.ac.nz))"
 bibliography: phd-bibliography/pollen-competition.bib
 csl: ecology-letters.csl
 output: #word_document
@@ -33,9 +37,11 @@ header-includes:
 
 ^2^ Centro de Recursos Naturales Renovables de las Zonas Semiáridas, CONICET, Camino de la Carrindanga Km. 7, 8000 Bahía Blanca, Argentina
 
+<!-- ^a^ [efc29@uclive.ac.nz](mailto:efc29@uclive.ac.nz); ^b^ [hugomarrero@gmail.com](hugomarrero@gmail.com); ^c^ [jason.tylianakis@canterbury.ac.nz](jason.tylianakis@canterbury.ac.nz); ^d^ [daniel.stouffer@canterbury.ac.nz](daniel.stouffer@canterbury.ac.nz) -->
+
 **Running title:** The pollination trade off
 
-**Keywords:** X,Y,Z
+**Keywords:** X,Y,Z (up to 10)
 
 **Type of article:** Letter
 
@@ -45,9 +51,7 @@ header-includes:
 
 **Number of references:** `r readd(n_references)`
 
-**Author for correspondence:** E. Fernando Cagua (efc29@uclive.ac.nz) - +64 20 4026 8153
-
-**Authors' email addresses:** Hugo J. Marrrero (hugomarrero@gmail.com); Jason M. Tylianakis (jason.tylianakis@canterbury.ac.nz); Daniel B. Stouffer (daniel.stouffer@canterbury.ac.nz)
+**Author for correspondence:** E. Fernando Cagua (+64 20 4026 8153)
 
 **Data acessibility:** Data supporting the results will be accesible in an appropiate data repository after publication. The data DOI will be included here.
 
