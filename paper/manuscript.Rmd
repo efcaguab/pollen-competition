@@ -32,6 +32,13 @@ header-includes:
 
 \linenumbers
 \doublespacing
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, 
+                      warning = FALSE, dpi = 300)
+
+loadd(abs_cordcount, msc_wordcount, n_displays, n_references)
+```
  
 ^1^ Centre for Integrative Ecology, School of Biological Sciences, University of Canterbury, Private Bag 4800, Christchurch 8041, New Zealand
 
@@ -41,26 +48,21 @@ header-includes:
 
 **Running title:** The pollination trade off
 
-**Keywords:** X,Y,Z (up to 10)
+**Keywords:** X,Y,Z (up to 10).
 
-**Type of article:** Letter
+**Type of article:** Letter.
 
-**Number of words:** `r readd(abs_wordcount)$n_words_stri` in the abstract; `r format(round(readd(msc_wordcount)$n_words_stri/10)*10, big.mark = ",")` in the main text.
+**Number of words:** `r abs_wordcount$n_words_stri` in the abstract; `r format(round(msc_wordcount$n_words_stri), big.mark = ",")` in the main text.
 
-**Number of displays:** `r readd(n_displays)$figures` figures; `r readd(n_displays)$tables` tables; `r readd(n_displays)$text_boxes` text boxes.
+**Number of displays:** `r n_displays$figures` figures; `r n_displays$tables` tables; `r n_displays$text_boxes` text boxes.
 
-**Number of references:** `r readd(n_references)`
+**Number of references:** `r n_references`
 
-**Author for correspondence:** E. Fernando Cagua (+64 20 4026 8153)
+**Author for correspondence:** E. Fernando Cagua (+64 20 4026 8153).
 
 **Data acessibility:** Data supporting the results will be accesible in an appropiate data repository after publication. The data DOI will be included here.
 
 **Author contributions:** EFC wrote the manuscript and performed all analyses with input from all authors; HJM collected the data; all authors contributed to the study design. 
-
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE, message = FALSE, 
-                      warning = FALSE, dpi = 300)
-```
 
 \clearpage
 
