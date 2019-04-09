@@ -36,6 +36,8 @@ header-includes:
 **Author for correspondence:** E. Fernando Cagua (efc29@uclive.ac.nz) - Centre for Integrative Ecology, School of Biological Sciences, University of Canterbury, Private Bag 4800, Christchurch 8140, New Zealand
 
 
+**Number of displays:** `r readd(n_displays)$figures` figures; `r readd(n_displays)$tables` tables; `r readd(n_displays)$text_boxes` text boxes.
+
 **Number of references:** `r readd(n_references)`
 
 ```{r setup, include=FALSE}

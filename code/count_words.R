@@ -10,7 +10,7 @@ count_words <- function(filename = "", lines_to_ignore = NULL, remove_md_heading
       text_lines <- text_lines[-heading_lines]
     }
   }
-  text_to_count <- paste(text_lines, 
+  text_to_count <- paste(text_lines,
                          collapse = " ")
   get_text_stats(text_to_count)
 }
@@ -22,7 +22,7 @@ get_text_stats <- function(text){
   n_words_stri <- unname(stringi::stri_stats_latex(text)[4])
   wpm <- 200
   reading_time_stri <- ceiling(n_words_stri/wpm)
-  return(list(n_char_tot_stri = n_char_tot, n_words_stri = n_words_stri, 
+  return(list(n_char_tot_stri = n_char_tot, n_words_stri = n_words_stri,
               reading_time_stri = reading_time_stri))
 }
 
@@ -69,4 +69,16 @@ get_citations <- function(filename, lines_to_ignore = NULL, refs_to_exclude = NU
 count_references <- function(filename, ...){
   citations <- get_citations(filename, ...)
   dplyr::n_distinct(citations)
+}
+
+count_displays <- function(filename, lines_to_ignore = NULL){
+  text_lines <- readLines(filename)
+  if (!is.null(lines_to_ignore)) {
+    text_lines <- text_lines[-lines_to_ignore]
+  }
+
+  c(figures = "fig", tables = "tab", text_boxes = "box") %>%
+    purrr::map(~paste0("```\\{.+", ., "-.+\\}")) %>%
+    purrr::map(~stringr::str_detect(text_lines, pattern = .)) %>%
+    purrr::map(sum)
 }

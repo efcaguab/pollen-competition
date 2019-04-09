@@ -212,6 +212,7 @@ reporting_plan <- drake_plan(
   abs_wordcount = count_words(file_in("paper/abstract.md")),
   msc_wordcount = count_words(file_in('paper/manuscript.Rmd'), lines_to_ignore = 1:56),
   n_references = count_references(file_in('paper/manuscript.Rmd'), lines_to_ignore = 1:59, refs_to_exclude = "@ref"),
+  n_displays = count_displays(file_in('paper/manuscript.Rmd'), lines_to_ignore = 1:56),
   render_pdf(knitr_in('paper/supp-info.Rmd'), file_out('paper/supp-info.pdf'), clean_md = FALSE),
   render_pdf(file_in('paper/draft-info.Rmd'), file_out('paper/draft-info.pdf'), clean_md = FALSE),
   render_pdf(knitr_in('paper/manuscript.Rmd'), file_out('paper/manuscript.pdf'), clean_md = FALSE)
