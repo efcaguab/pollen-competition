@@ -44,3 +44,29 @@ prep_text <- function(text) {
       return(text)
     }
 }
+
+
+get_citations <- function(filename, lines_to_ignore = NULL, refs_to_exclude = NULL, refs_to_include = NULL){
+  text_lines <- readLines(filename)
+  if (!is.null(lines_to_ignore)) {
+    text_lines <- text_lines[-lines_to_ignore]
+  }
+
+  citations <- text_lines %>%
+    stringr::str_extract("@\\w+") %>%
+    na.omit()
+
+  if (!is.null(refs_to_exclude)) {
+    citations <- citations[!citations %in% refs_to_exclude]
+  }
+  if(!is.null(refs_to_include)) {
+    citations <- union(citations, refs_to_include)
+  }
+
+  citations
+}
+
+count_references <- function(filename, ...){
+  citations <- get_citations(filename, ...)
+  dplyr::n_distinct(citations)
+}
