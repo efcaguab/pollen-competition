@@ -133,16 +133,12 @@ Our first objective was to identify whether the outcome of plants sharing pollin
 The first line of evidence can be found via the relationship between heterospecific and conspecific pollen deposited in plant stigmas [@tur_evaluating_2016]. 
 This is because heterospecific pollen can be seen as an unavoidable cost that plants must pay for receiving conspecific pollen from shared pollinators. 
 A negative relationship (when shared pollinators increase heterospecific pollen loads and decrease conspecific loads) may indicate that competition for pollination is strong. 
-This negative relationship could arise, for example, when another, more dominant species, monopolizes a limited number of pollinators [@mitchell_new_2009; @lopezaraizamikel_impact_2007], when heterospecific pollen deposited in the stigma interferes with deposition of conspecific pollen [@runquist_pollinator-mediated_2012], or when conspecific pollen is lost to heterospecific stigmas [@mitchell_new_2009; @muchhala_interspecific_2012]. 
 In contrast, a positive relationship is what would be observed when facilitation is the dominant outcome. 
-For example, when the abundance of shared pollinators is positively influenced by floral resources, these positive effects ripple through the mutualistic network in a chain of positive feedback loops [@liao_presence_2011]. 
 
 The second line of evidence can be obtained by examining the difference between the amount of conspecific pollen deposited in flower stigmas *with* and *without* animal-mediated pollination. 
 Self-pollination can be favourable to plant reproduction when competition for pollination is strong because it provides insurance against poor pollination service [@kalisz_benefits_2003]. 
 If competition for pollination is sufficiently strong, then the amount of conspecific pollen deposited in flower stigmas when animal pollination is prevented could be higher than when floral visits are allowed. 
 In contrast, the opposite pattern may indicate that plants benefit from having pollen delivered directly to the stigma by animals. 
-We did not specifically test the effect of pollen viability or the extent to which self-pollen vs. pollen from a conspecific may differ in their value for fertilization which can be important factors (TODO: ref needed). 
-However, it is reasonable to expect that the difference between outcross and self-pollen may be generally relevant and particularly so for species that are not self-fertile or those in which self-fertilization is rarely effective due to a temporary separation in the maturation of the sexes (dichogamy) (TODO: ref needed). 
 
 ### Data collection
 
@@ -460,7 +456,13 @@ Second, we found that multiple ecological factors can modulate the intensity of 
 Third, we found that the way these factors influence competition is strongly shaped by the community context, this is, if collectively these factors are used to define a niche of competition for pollination, the same plant species can occupy dramatically different niches depending on the community it belongs to. 
 
 Both of the tests we used to identify the effect of animal-mediated pollination suggested the same outcome: that net facilitation is only experienced by a fraction of species in a community. 
-A recent study also suggested a wide range of outcomes in a multi-species context [@tur_evaluating_2016]. 
+Instead, we observed a negative relationships between conspecific and heterospecific in a considerable proportion of the analysed species. 
+This relationship could arise, for example, when another, more dominant species, monopolizes a limited number of pollinators [@mitchell_new_2009; @lopezaraizamikel_impact_2007], when heterospecific pollen deposited in the stigma phisically interferes with deposition of conspecific pollen [@runquist_pollinator-mediated_2012], or when conspecific pollen is lost to heterospecific stigmas [@mitchell_new_2009; @muchhala_interspecific_2012]. 
+Similarly, not all species had more pollen deposited when open to animal pollination compared to when they were closed. 
+Although it can be important, we were unable to test the effect of pollen viability or the extent to which self- vs. outcross-pollen may differ in their value for fertilization (TODO: ref needed). 
+However, it is reasonable to expect that the difference between these two may be generally relevant. 
+Particularly so for species that are not self-fertile or those in which self-fertilization is rarely effective due to a temporary separation in the maturation of the sexes (dichogamy) (TODO: ref needed). 
+These findings agree with a recent study showing a wide range of outcomes in a multi-species context [@tur_evaluating_2016]. 
 However, the factors explaining why some species experience more competition than others were not understood. 
 Here we show that the prevalence of neutral and competitive effects of animal-mediated pollination can be at least partially explained by the trade-offs that minimising competition can involve.  
 
