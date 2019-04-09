@@ -41,6 +41,7 @@ publication/supp_info_files/
 manuscript.tex
 supp-info.tex
 draft-info.tex
+paper/cover-letter.pdf
 *.synctex.gz
 *.toc
 \.drake/
