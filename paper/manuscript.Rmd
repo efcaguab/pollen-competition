@@ -33,7 +33,7 @@ header-includes:
 
 ^2^ Centro de Recursos Naturales Renovables de las Zonas Semiáridas, CONICET, Camino de la Carrindanga Km. 7, 8000 Bahía Blanca, Argentina
 
-**Author for correspondence:** E. Fernando Cagua (efc29@uclive.ac.nz) - Centre for Integrative Ecology, School of Biological Sciences, University of Canterbury, Private Bag 4800, Christchurch 8140, New Zealand
+**Running title:** The pollination trade off
 
 
 **Number of displays:** `r readd(n_displays)$figures` figures; `r readd(n_displays)$tables` tables; `r readd(n_displays)$text_boxes` text boxes.
