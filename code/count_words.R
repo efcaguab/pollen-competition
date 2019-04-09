@@ -82,3 +82,10 @@ count_displays <- function(filename, lines_to_ignore = NULL){
     purrr::map(~stringr::str_detect(text_lines, pattern = .)) %>%
     purrr::map(sum)
 }
+
+# Get the number at which a regex pattern is found
+get_line_number <- function(filename, string){
+  text_lines <- readLines(filename)
+  stringr::str_detect(text_lines, "# Introduction") %>%
+    which()
+}
