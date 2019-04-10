@@ -34,8 +34,9 @@ header-includes:
 * Added facilitation model results tables in the Supplementary Information
 * Made Figure 2 (model of enviornmental factors) one-column
 * Applied a green palette to all figures. Improves legibility when looking at it in a screen an performance when printed in greyscale is maintained
+* Moved some of the justification on the criteria used to identify facilitation/competition to the discussion.
 * Show niche points for all species and not only those in two communities or more
-* Figures edited to match one and two column sizes at Ecology Letters
+* Figures edited to match one and two column sizes at Ecology Letters. Implemented all format requirements for EL.
 * Added the following elements to the disussion: 
     * That our networks are a snapshot
     * How the degree-trait originality relationship can be shaped by abundance
@@ -48,7 +49,10 @@ header-includes:
 * Polish supp. info.
 * Spell-check everything & check that reference list is correct.
 
-## Questions
+## Specific requests
+
+* Help suggesting a justification for the traits used. 
+* Help identifying sections to trim to achieve the word limit. 
 
 Feel free to come back here after you've read the manuscript. Thanks!
 
