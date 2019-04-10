@@ -89,3 +89,8 @@ get_line_number <- function(filename, string){
   stringr::str_detect(text_lines, "# Introduction") %>%
     which()
 }
+
+# get the title of a document from its yaml header
+get_yaml_title <- function(filename){
+  rmarkdown::yaml_front_matter(filename)$title
+}
