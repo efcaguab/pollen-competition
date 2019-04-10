@@ -38,7 +38,11 @@ publication/supp_info_files/
 *.aux
 *.log
 *.out
-*.tex
+manuscript.tex
+supp-info.tex
+draft-info.tex
+paper/cover-letter.pdf
+*.synctex.gz
 *.toc
 \.drake/
 .drake_abc/

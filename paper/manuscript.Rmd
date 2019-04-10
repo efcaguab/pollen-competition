@@ -37,7 +37,7 @@ header-includes:
 knitr::opts_chunk$set(echo = FALSE, message = FALSE, 
                       warning = FALSE, dpi = 300)
 
-loadd(abs_cordcount, msc_wordcount, n_displays, n_references)
+loadd(abs_wordcount, msc_wordcount, n_displays, n_references)
 ```
  
 ^1^ Centre for Integrative Ecology, School of Biological Sciences, University of Canterbury, Private Bag 4800, Christchurch 8041, New Zealand
