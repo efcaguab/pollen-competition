@@ -209,7 +209,7 @@ Finally, functional originality is defined as the distance of a species from the
 <!-- As phenology has been shown to be a key mechanism of niche differentiation among plants, we also  -->
 To include phenology, we treated plant abundance in each of the survey months (November to March) as a "trait" in our analysis. 
 <!-- This approach allowed us to integrate the originality in phenological niche alongside the originality on other functional traits.  -->
-To account for the non-independence of floral counts and weight all traits equally, we assigned the abundances a weight of 1/5 compared to other functional traits. 
+To account for the non-independence of floral counts and weight all traits equally, we assigned the abundances a weight of 1/5 (one for each month) compared to other functional traits. 
 We scaled all traits prior to calculating the centroid of the functional space and calculated the species-specific functional coordinates using the R package `FD 1.0-12` [@laliberte_fd_2014]. 
 Finally, to facilitate comparison across the four continuous explanatory variables in our models, we rescaled them all to have a zero mean and unitary variance.
 
@@ -271,7 +271,7 @@ equal_pos_neg <- counts_facilitation_slope$nn[1] == counts_facilitation_slope$nn
 
 We first examined the degree of facilitation/competition in natural communities. Specifically, we examined the slope of the relationship between the heterospecific and conspecific pollen deposited on stigmas of each species in a community. 
 We found that overall neither facilitation nor competition dominates (Table \@ref(S-tab:table-facilitation-models-general)). 
-Indeed, we found that the proportion of species that experienced a statistically significant positive or neggative relationship between heterospecific and conspecific pollen than neggative was very similar (`r counts_facilitation_slope$np[3]`% and `r counts_facilitation_slope$np[1]`%, respectively; Figure \@ref(fig:fig-trade-off-predictions)a; Table \@ref(S-tab:table-facilitation-models-random)). 
+Indeed, we found that the proportion of species that experienced a statistically significant positive or negative relationship between heterospecific and conspecific pollen than negative was very similar (`r counts_facilitation_slope$np[3]`% and `r counts_facilitation_slope$np[1]`%, respectively; Figure \@ref(fig:fig-trade-off-predictions)a; Table \@ref(S-tab:table-facilitation-models-random)). 
 Most of the variation between plants in a facilitation-competition gradient was driven by differences *between* species; however, we also observed some important differences *within* species. 
 For instance, `r numbers2words(nrow(sp_both_pos_neg))` of the species sampled across multiple communities (`r sp_both_pos_neg_names`) showed evidence that the same species, can experience facilitation (positive relationships) in some communities and competition (negative relationships) in others. 
 Interestingly, although there was a wide variation in the slope of the relationship between heterospecific and conspecific pollen almost all plants had more conspecific than heterospecific pollen deposited on their stigmas (Figure \@ref(fig:fig-trade-off-predictions)b). 
@@ -343,7 +343,7 @@ Variation within species was slightly smaller and only `r numbers2words(nrow(sp_
 drake::loadd(r2_values)
 ```
 
-We then examined the potential roles played by four ecological variables (number of shared pollinators, abundance, mean visit effectiveness, and functional originality) play in pollen deposition. 
+We then examined the potential roles played by four ecological variables (number of shared pollinators, plant abundance, mean visit effectiveness, and functional originality) play in pollen deposition. 
 <!-- Together these variables can describe the niche that plants might occupy in the context of competition for pollination.  -->
 We found that our models of pollen deposition had high explanatory power (the coefficient of determination R^2^ ranged between `r min(r2_values$r2c_min)` and `r max(r2_values$r2c_max)`) although a large portion of the explanatory power came from the random effects (Table \@ref(S-tab:table-R2)).
 As determined by AICc, the random structure best supported by the data was the one that fit an intercept for each species in each community (as opposed to a common intercept for each species irrespective of the community they belong to). 
@@ -482,15 +482,15 @@ Further evidence of the intricacies of balancing costs and benefits can be found
 We show that being a specialist and sharing no pollinators might be preferable in the short term (as it is generally detrimental to pollen deposition). 
 However, over long periods of time, there could be a risk associated with a specialist plant having no pollinators. 
 Hence, is likely that to ensure long term survival, plants also need to balance this risk with the costs of sharing pollinators. 
-One possible solution is to share pollinators *and* have original traits---as we show that trait originality is generally beneficial to pollen deposition and it’s commonly thought that species that are further from others in trait space suffer reduced competition. 
+One possible solution is to share pollinators *and* have original traits---as we show that trait originality is generally beneficial to pollen deposition and it’s commonly thought that species that are further from others in trait space benefit from reduced competition. 
 Yet again, there are two possible caveats to this strategy that highlight the interrelatedness of the ecological factors. 
 First, in a mutualism context, it is also possible that trait originality could come at the cost of being less ‘apparent’ to pollinators. 
 Second, the usually negative, relationship between originality and generalism has been shown depend on the plant's abundance [@coux_linking_2016], with generalist species being able to also have original traits only when they are abundant enough to provide a valuable reward to make it worth to pollinators. 
 
 How precisely plants balance the costs and benefits in the short and the long term likely depends on the species sensitivity to different risks but also, as we show here, on the community it belongs to. 
 For instance, a plant species that experience a large reduction in seed set due to heterospecific pollen deposition might be better off by sharing few pollinators, while sharing pollinators makes more sense for those mainly affected by low levels of conspecific pollen deposition [@campbell_mechanism_1985].
-Nevertheless, the diversity of the facilitation/competition outcomes across communities we observed and the relevance of random effects in our models suggests that the community context has a very important effect on the way plant species respond to competition for pollination beyond species identity. 
-Perhaps overgeneralising, some plant families (Asteraceae for example) are often generalists in their communities, others (Orchidaceae) are known to be more commonly specialised. 
+Nevertheless, the observed diversity of the facilitation/competition outcomes across communities and the relevance of random effects in our models suggests that the community context has a very important effect on the way plant species respond to competition for pollination beyond species identity. 
+Although there are exceptions, some plant families (Asteraceae for example) are often generalists in their communities while others (Orchidaceae) are known to be more commonly specialised. 
 While it is possible, from an evolutionary perspective, that selection for a particular strategy might say something about the community in which a species has typically inhabited during its evolutionary history, we show that most plant species are still flexible enough to adopt markedly different niches in different communities. 
 From a more applied perspective, flowering plants are sometimes introduced to attract pollinators on other nearby plants. 
 Our results highlight the difficulties involved in predicting whether the introduced plant species will facilitate or compete with neighbours. 
@@ -505,7 +505,7 @@ However, this increase is surprisingly small when compared to the effect of rela
 Interestingly, these two factors also involve the largest trade-offs between increasing deposition of conspecific pollen and reducing that of heterospecific pollen. 
 Despite large intra-species differences among species our results provide solid evidence of the role that competition for pollination plays in natural communities. 
 Species coexistence is not solely determined by direct and indirect mutualistic relationships, but also strongly shaped by the multiple intertwined ecological factors that shape competition for pollination at the community level. 
-Achieving a better understanding of how biodiversity is supported by pollination communities will require seeing them as both mutualistic and competitive communities. 
+Achieving a better understanding of how plant biodiversity is supported by pollination communities will require seeing them as both mutualistic and competitive communities. 
 
 # Acknowledgements
 
