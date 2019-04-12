@@ -2,6 +2,8 @@
 % Letter class
 \documentclass[a4paper, 11pt]{letter}
 \usepackage{hyperref}
+\usepackage[backend=bibtex,style=verbose,doi=false,isbn=false,url=false]{biblatex}
+\addbibresource{phd-bibliography/pollen-competition.bib}
 % Name of sender
 \name{Fernando Cagua}
 % Signature of sender
@@ -21,7 +23,7 @@
 \begin{letter}
 {
     Prof. Tim Coulson,\\
-    Editor-in-chief,\\
+    Editorial Office,\\
     Ecology Letters
 }
 % Opening statement
@@ -34,13 +36,14 @@ drake::loadd(msc_title)
 
 We are submitting the manuscript entitled ``\Sexpr{msc_title}'' to be considered for publication in \emph{Ecology Letters}.
 
+In this manuscript we show that
+
 The covering letter to the Editorial Office should succinctly describe why the enclosed work is novel, exciting and of general interest in ecology.
 
 Additionally, the covering letter should include a clear statement of exactly how the present manuscript is outstandingly novel relative to recent work by the author or coauthors cited in the present submission.
 
-At the time of submission, PDFs of any recent manuscripts or book chapters by the author or coauthors and cited in the present submission must be uploaded as supporting files. This includes all cited manuscripts by the author or coauthors published this year, last year, in press or submitted. These files are made accessible to referees with the understanding that "in press" and "submitted" manuscripts represent privileged communications which may not be cited or used in any way other than for reference while reviewing the current manuscript. If there is a particular reason why a file should not be made available to reviewers, please point this out and provide an explanation in the cover letter.
+Lastly, please note that the data used in this manuscript has been previously published\autocite{marrero_effect_2014,marrero_agricultural_2016,marrero_exotic_2017} by one of the co-authors, however the enclosed work represents a novel contribution for all involved and no related work published, in press, or submitted during this or last year has been cited.
 
-This manuscript has not been published, is not under consideration for publication elsewhere.
 Thank you for your consideration.
 
 % Closing statement
