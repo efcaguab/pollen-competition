@@ -343,7 +343,7 @@ plot_pca <- function(pcas, chosen_threshold){
     theme(legend.position = "none") +
     # coord_equal() +
     labs(x = paste0("1st component (", round(variances_data$`percentage of variance`[1]), "%)"),
-         y = paste0("1nd component (", round(variances_data$`percentage of variance`[2]), "%)"),
+         y = paste0("2nd component (", round(variances_data$`percentage of variance`[2]), "%)"),
          title = "(b) plant realised niches in PCA space",
          subtitle = "convex hulls of species niches across communities")
 
