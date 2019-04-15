@@ -42,7 +42,8 @@ The covering letter to the Editorial Office should succinctly describe why the e
 
 Additionally, the covering letter should include a clear statement of exactly how the present manuscript is outstandingly novel relative to recent work by the author or coauthors cited in the present submission.
 
-Lastly, please note that the data used in this manuscript has been previously published\autocite{marrero_effect_2014,marrero_agricultural_2016,marrero_exotic_2017} by one of the co-authors, however the enclosed work represents a novel contribution for all involved and no related work published, in press, or submitted during this or last year has been cited.
+Lastly, please note that the data used in this manuscript has been previously published\autocite{marrero_effect_2014,marrero_agricultural_2016,marrero_exotic_2017} by one of the co-authors.
+However the enclosed work represents a novel contribution for all involved and no related work published, in press, or submitted during this or last year has been cited.
 
 Thank you for your consideration.
 
