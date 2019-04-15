@@ -1,5 +1,5 @@
 ---
-title: "The pollination trade-off"
+title: "Community context determines competition/facilitation trade-offs in pollination systems"
 author: 
   - "E. Fernando Cagua^1^ ([efc29@uclive.ac.nz](mailto:efc29@uclive.ac.nz))"
   - "Hugo J. Marrero^2^ ([hugomarrero@gmail.com](hugomarrero@gmail.com))"
