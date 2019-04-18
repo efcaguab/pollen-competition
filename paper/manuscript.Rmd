@@ -480,15 +480,23 @@ On the other, being abundant reduces the amount of heterospecific pollen deposit
 Our results corroborate the importance that two-species studies have ascribed to visitation and abundance [@feldman_when_2004; @munoz_presence_2008; @morales_interspecific_2008]. 
 But importantly, they also suggest that [because visitation, pollen production and abundance are usually correlated; @sargent_role_2006] balancing the pros and cons of sharing pollinators at the community level is not trivial and might even be partially responsible for the diversity of plant-pollinator communities [@benadi_frequency_2018].
 
+The strong contribution of the random effects in our models suggest that the effects of pollen deposition can vary greatly among species. 
+For instance, for some plant species even low amounts of heterospecific pollen deposition can have a large impact on fitness while other species might be instead limited by the amount of conspecific pollen deposited by animal pollination [@campbell_mechanism_1985; @arceo-gomez_interactive_2019]. 
+Similarly, plant species can also differ on the extent to which self- vs. outcross-pollen differ in their value for fertilization. 
+For species that are not self-fertile or those in which self-fertilization is rarely effective due to a temporary separation in the maturation of the sexes (dichogamy), even 
+Wether some patterns indicate facilitation or competition might 
 
-How precisely plants balance the costs and benefits in the short and the long term likely depends on the species sensitivity to different risks but also, as we show here, on the community it belongs to. 
+Beyond species identity, however we show that the way plants balance the costs and benefits of sharing pollinators, beyond species identity, is strongly determined by the community it belongs to.
+
+Different species balance the costs and benefits differently as the effects of conspecific and 
+Here we also show that  
+Na
 <!-- The mechanisms through which sharing pollinators may induce net competition are relatively well understood.  -->
 <!-- It can occurr for example, when a more dominant species, monopolizes a limited number of pollinators [@mitchell_new_2009; @lopezaraizamikel_impact_2007], when heterospecific pollen deposited in the stigma phisically interferes with deposition of conspecific pollen [@runquist_pollinator-mediated_2012], or when conspecific pollen is lost to heterospecific stigmas [@mitchell_new_2009; @muchhala_interspecific_2012].  -->
 <!-- Similarly, not all species had more pollen deposited when open to animal pollination compared to when they were closed.  -->
 <!-- Although it can be important, we were unable to test the effect of pollen viability or the extent to which self- vs. outcross-pollen may differ in their value for fertilization (TODO: ref needed).  -->
 <!-- However, it is reasonable to expect that the difference between these two may be generally relevant.  -->
 <!-- Particularly so for species that are not self-fertile or those in which self-fertilization is rarely effective due to a temporary separation in the maturation of the sexes (dichogamy) (TODO: ref needed).  -->
-For instance, a plant species that experience a large reduction in seed set due to heterospecific pollen deposition might be better off by sharing few pollinators, while sharing pollinators makes more sense for those mainly affected by low levels of conspecific pollen deposition [@campbell_mechanism_1985].
 Nevertheless, the observed diversity of the facilitation/competition outcomes across communities and the relevance of random effects in our models suggests that the community context has a very important effect on the way plant species respond to competition for pollination beyond species identity. 
 Although there are exceptions, some plant families (Asteraceae for example) are often generalists in their communities while others (Orchidaceae) are known to be more commonly specialised. 
 While it is possible, from an evolutionary perspective, that selection for a particular strategy might say something about the community in which a species has typically inhabited during its evolutionary history, we show that most plant species are still flexible enough to adopt markedly different niches in different communities. 
