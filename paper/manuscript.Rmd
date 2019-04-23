@@ -14,7 +14,7 @@ output: #word_document
     number_sections: false
 toc: false
 fontsize: 11pt
-classoption: a4paper
+# classoption: a4paper
 geometry: 
   - textwidth=33em
   - textheight=48\baselineskip
@@ -184,7 +184,7 @@ To construct the transfer networks, we examined the pollen loads present on the 
 When the pollen count on an individual animal was estimated to be less than 2,000 grains, we identified every grain to the species level when possible and to pollen complexes when it was not. 
 When the pollen count was above 2,000 grains, we classified approx. 50% of pollen and total pollen counts were extrapolated [@bosch_plant-pollinator_2009]. 
 Finally, we also recorded morphological traits that relate to plant type (herb, shrub, climber), life cycle (annual, perennial), flower colouration, phenology, and whether the species is native in the study region. 
-We used those traits because they were the only ones available. <!--.. (TODO: Add a better justification for the traits used)-->
+<!-- We used those traits because they were the only ones available. <!--.. (TODO: Add a better justification for the traits used)--> -->
 More details can be found in Marrero *et al.* (2014 and 2017).
 
 ### Data analysis
