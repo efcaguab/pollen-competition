@@ -46,7 +46,7 @@ loadd(abs_wordcount, msc_wordcount, n_displays, n_references)
 
 <!-- ^a^ [efc29@uclive.ac.nz](mailto:efc29@uclive.ac.nz); ^b^ [hugomarrero@gmail.com](hugomarrero@gmail.com); ^c^ [jason.tylianakis@canterbury.ac.nz](jason.tylianakis@canterbury.ac.nz); ^d^ [daniel.stouffer@canterbury.ac.nz](daniel.stouffer@canterbury.ac.nz) -->
 
-**Running title:** The pollination trade off
+**Running title:** The pollination trade-off
 
 **Keywords:** X,Y,Z (up to 10).
 
@@ -60,7 +60,7 @@ loadd(abs_wordcount, msc_wordcount, n_displays, n_references)
 
 **Author for correspondence:** E. Fernando Cagua (+64 20 4026 8153).
 
-**Data acessibility:** Data supporting the results will be accesible in an appropiate data repository after publication. The data DOI will be included here.
+**Data accessibility:** Data supporting the results will be accessible in an appropriate data repository after publication. The data DOI will be included here.
 
 **Author contributions:** EFC wrote the manuscript and performed all analyses with input from all authors; HJM collected the data; all authors contributed to the study design. 
 
@@ -166,7 +166,7 @@ In this case, however, the predictor was the treatment (whether the flower was b
 ## Ecological constraints the pollination service 
 
 Our second objective was to investigate the relative contribution of different factors---that describe the plant competition for pollination niche---to the pollination service. 
-Generally speaking, in the context of competition for pollination we expect that a factor that increasse on the amount of conspecific pollen deposited in stigmas (both in absolute terms and relative to heterospecific pollen) also has a positive effect on the pollination service. 
+Generally speaking, in the context of competition for pollination, we expect that a factor that increases the amount of conspecific pollen deposited in stigmas (both in absolute terms and relative to heterospecific pollen) also has a positive effect on the pollination service. 
 Specifically, we investigated the effect of (*i*) a plant's number of shared pollinator species, (*ii*) a plants abundance relative to the rest of the community, (*iii*) the mean visit effectiveness---a metric that combines the share of pollen that a plant species is able to place on each of their floral visitors and the number of visits it receives from them, and (*iv*) the plants functional originality [@laliberte_distance-based_2010]. 
 See *Data Analysis* section below for more details on these four variables. 
 <!-- Here, we define visit effectiveness of the pollinator species *i* to plant species *j* as the proportion between the visits of *i* to *j* and all visits of *i*, multiplied by the proportion between the number of pollen grains of *j* attached to individuals of *i* and all pollen attached to individuals of *i*. -->
@@ -189,12 +189,12 @@ More details can be found in Marrero *et al.* (2014 and 2017).
 
 ### Data analysis
 
-To investigate the impact of ecological factors on pollination service we used two sets of linear mixed models (LMM) with boothstrap resampling.
+To investigate the impact of ecological factors on pollination service we used two sets of linear mixed models (LMM) with bootstrap resampling.
 The response variables for these model sets were the number of conspecific and heterospecific pollen grains deposited per stigma in flowers open to animal-mediated pollination. 
 We used LMMs in which pollen loads were log-transformed (Figure \@ref(S-fig:fig-deposition-gain-log-transformed-or-not)) because these models offered a better fit than a GLMM with Poisson (or quasipoisson) error structure. 
 Models were fitted using the R package `nlme 3.1-131` [@pinheiro_nlme_2018]. 
 
-Because the amount of deposited pollen can vary widely across species, and potentially also across communities, we evaluated two possible structures for the random effects: one that includes a random intercept for plant species, and one that treats measures from species across different communities as independent. 
+Because the amount of deposited pollen can vary widely across species, and potentially also across communities, we evaluated two possible structures for the random effects: one that includes a random intercept for plant species, and one that treats measures from species across different communities independently. 
 We selected the best random structure by comparing the median Akaike Information Criterion for small samples (AICc). 
 
 As predictors in the models, we included the four ecological variables described above. 
@@ -334,7 +334,7 @@ sp_con_both_pos_neg <- con_con_plot_df %>%
 
 Second, we compared the amount of conspecific pollen deposited on flowers that were open to animal-mediated pollinators with that of those that were closed. 
 Here, we again found large differences between plants but with a clear tendency to find more pollen in open flowers (Table \@ref(S-tab:table-open-bagged-models-general)). 
-Specifically, `r sp_con_con$np[sp_con_con$effect_category == "positive"]`% of plants had more pollen when open and `r sp_con_con$np[sp_con_con$effect_category == "negative"]`% had less pollen when open (the difference was statistically non-signifcant for the remainding `r sp_con_con$np[sp_con_con$effect_category == "neutral"]`%; Figure \@ref(fig:fig-trade-off-predictions)c; Table \@ref(S-tab:table-open-bagged-models-random)). 
+Specifically, `r sp_con_con$np[sp_con_con$effect_category == "positive"]`% of plants had more pollen when open and `r sp_con_con$np[sp_con_con$effect_category == "negative"]`% had less pollen when open (the difference was statistically non-significant for the remaining `r sp_con_con$np[sp_con_con$effect_category == "neutral"]`%; Figure \@ref(fig:fig-trade-off-predictions)c; Table \@ref(S-tab:table-open-bagged-models-random)). 
 Variation within species was slightly smaller and only `r numbers2words(nrow(sp_con_both_pos_neg))` species (`r glue::collapse(sp_con_both_pos_neg$plant_label, sep = ", ", last = ", and ")`) had both positive and negative differences. 
 
 ## Ecological constraints in the pollination service 
@@ -455,11 +455,11 @@ Indeed, when we measured the median distance between the plants coordinates, we 
 # Discussion 
 
 Our results suggest that community context plays a central role in determining net cost or benefit of sharing pollinators.
-First, we found that pollinatior sharing can lead to both overall facilitative and competitive effects to plant species in a community. 
+First, we found that pollinator sharing can lead to both overall facilitative and competitive effects to plant species in a community. 
 Second, we found that multiple ecological factors can modulate the intensity of competition; however, conspecific and heterospecific pollen deposition are tightly coupled and therefore there is a clear trade-off between the quantity and purity of pollination [@thomson_effects_2019]. 
 Third, we found that the way these factors influence competition is strongly shaped by the community context, this is, if collectively these factors are used to define a niche of competition for pollination, the same plant species can occupy dramatically different niches depending on the community it belongs to. 
 
-Both of the criteria we used to identify the effect of animal-mediated pollination suggested the same outcome: that neither facilitation or competition are dominant in pollination communities.
+Both of the criteria we used to identify the effect of animal-mediated pollination suggested the same outcome: that neither facilitation nor competition are dominant in pollination communities.
 A previous study showed that in diverse pollination communities, sharing pollinators does not necessarily translate to net competition [@tur_evaluating_2016]. 
 The overall extent of facilitation/competition of pollination communities can depend on factors like the adversity of the environment [@tur_evaluating_2016; @callaway_positive_2002] or how disturbances affect pollinator populations [@stavert_exotic_2017]
 However, why some species experience more competition than others was not understood. 
@@ -472,7 +472,7 @@ One possible solution is to share pollinators *and* have original traits---as we
 Yet, there are two possible caveats to this strategy that highlight the interrelatedness of the ecological factors. 
 First, in a mutualism context, it is also possible that trait originality could come at the cost of being less ‘apparent’ to pollinators [@reverte_pollinators_2016]. 
 Second, the negative, relationship between originality and generalism  [@carvalheiro_potential_2014] has been shown depend on the plant's abundance [@coux_linking_2016], with generalist species being able to also have original traits only when they are abundant enough to provide a valuable reward to make it worth to pollinators. 
-Visit effectiveness (high pollen and visits) and abundance, which were the most important predictors of pollen deposition, involved an even more explicit trade-off between gaining  conspecific pollen and avoiding heterospecific pollen. 
+Visit effectiveness (high pollen and visits) and abundance, which were the most important predictors of pollen deposition, involved an even more explicit trade-off between gaining conspecific pollen and avoiding heterospecific pollen. 
 On the one hand, receiving high visitation increases conspecific pollen deposition but increases heterospecific pollen to a greater extent---even when the visitors are likely to carry a high proportion of conspecific pollen [@fang_paradoxical_2016]. 
 On the other, being abundant reduces the amount of heterospecific pollen deposited but this comes at the expense of a noticeable reduction in the amount of conspecific pollen. 
 Our results corroborate the importance that two-species studies have ascribed to visitation and abundance [@feldman_when_2004; @munoz_presence_2008; @morales_interspecific_2008]. 
@@ -488,10 +488,10 @@ Specifically, most plant species appear to be flexible enough to adopt markedly 
 Although there are many exceptions, some plant families (Asteraceae for example) are often generalists in their communities while others (Orchidaceae) are known to be more commonly specialised [@johnson_generalization_2000]. 
 From an evolutionary perspective, our results suggest that that selection for a particular strategy might say something about the community in which a species has typically inhabited during its evolutionary history. 
 Furthermore, from a more applied perspective, flowering plants are sometimes introduced to attract pollinators on other nearby plants. 
-On the one hand, our results suggest that introduced plants that increasse the relative originality of natives (e.g. through distinct phenology) might have positive effects [@gibson_can_2012]. 
+On the one hand, our results suggest that introduced plants that increase the relative originality of natives (e.g. through distinct phenology) might have positive effects [@gibson_can_2012]. 
 On the other, because different niches can lead to different outcomes across communities, our results also highlight the difficulties involved in predicting whether the introduced plant species will facilitate or compete with neighbours [@bartomeus_contrasting_2008]. 
-Other factors that we were unable to measure (e.g. pollinator behaviour and densities or the spatial context) have also be shown to play a role in the outcome of animal-mediated pollination [@ye_competition_2014; @flanagan_effects_2011; @cariveau_spatially_2009; @thomson_effects_2019].
-Nevertheless our results indicate that the strategies plant might use to minimise competition for pollination must be relative to other species in the community, rather than an absolute property of the species. 
+Other factors that we were unable to measure (e.g. pollinator behaviour and densities or the spatial context) have also been shown to play a role in the outcome of animal-mediated pollination [@ye_competition_2014; @flanagan_effects_2011; @cariveau_spatially_2009; @thomson_effects_2019].
+Nevertheless, our results indicate that the strategies plant might use to minimise competition for pollination must be relative to other species in the community, rather than an absolute property of the species. 
 
 Overall, pollination communities might not necessarily be the paradigmatic mutualistic communities we often believe. 
 Instead, we confirm that plant competition is pervasive in pollination communities. 
@@ -501,7 +501,7 @@ The potential strategies to minimise competition are likely to involve strong tr
 <!-- Interestingly, these two factors also involve the largest trade-offs between increasing deposition of conspecific pollen and reducing that of heterospecific pollen.  -->
 Most remarkably, despite large differences on the quantity and purity of conspecific pollen deposition among species, our results provide solid evidence that competition for pollination is inherently a community process and the same species can occupy different niches in different communities. 
 <!-- Overall, species coexistence is not solely determined by direct and indirect mutualistic relationships, but also strongly shaped by the multiple intertwined ecological factors that shape competition for pollination at the community level.  -->
-Many of the widely used theoretical models of plant-pollinator communities do not account for the negative effects of sharing pollinators [but see @rohr_structural_2014 and similars]. 
+Many of the widely used theoretical models of plant-pollinator communities do not account for the negative effects of sharing pollinators [but see @rohr_structural_2014 and similar]. 
 However, achieving a better understanding of species coexistence and how plant biodiversity is supported by pollination communities will require seeing them as both mutualistic and competitive communities [@johnson_coexistence_2019]. 
 
 # Acknowledgements
