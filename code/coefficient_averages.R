@@ -143,7 +143,7 @@ plot_coefficient_averages <- function(coefficient_averages, variable_importance)
 
     plots <- purrr::map(c("quantity", "quality"),
                         ~ plot_metric_qual_quan(qua_qua_data, .)) %>%
-      purrr::map2(c("absolute deposition\n(conspecific)", "relative deposition\n(consp. / heterosp.)"),
+      purrr::map2(c("quantity\n(conspecific)", "purity\n(consp. / heterosp.)"),
                   function(x,y) {x + labs(subtitle = y)})
 
     plots[[1]] <- plots[[1]] +
