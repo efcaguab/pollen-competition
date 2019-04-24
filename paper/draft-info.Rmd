@@ -18,14 +18,24 @@ header-includes:
   - \usepackage[utf8]{inputenc}
   - \newcommand{\R}[1]{\label{#1}\linelabel{#1}}
   - \newcommand{\lr}[1]{page~\pageref{#1}, line~\lineref{#1}}
+  - \externaldocument[M-]{manuscript}
+
 ---
 
 \onehalfspacing
 
+## Specific requests to coauthors
+
+* Suggest a justification for the traits used if needed (see \lr{M-justification-traits}). 
+* Identify sections/sentences to trim to achieve the word limit.
+* Suggest a reference for sentence in \lr{M-ref-interaction-strength} if needed.
+* Suggest a reference for sentence in \lr{M-ref-plant-flexibility} if needed. 
+* Suggest alternative, more-appropiate, sub-headings if needed. 
+
 ## Changes
 
 * Now using `docker` to manage project dependencies. Image is now available on dockerhub efcaguab/pollen-competition.
-* Removing *quantity* and *quality* of pollination in favour of the plain metrics of *conspecific* and *heterospecific* pollen deposition. 
+* Removing *quantity* and *quality* of pollination in favour of *quantity* and *purity* or plain metrics of *conspecific* and *heterospecific* pollen deposition. 
 * Rewording the plant strategies idea as it was confussing. Now the combination of ecological variables (number shared pol., abundance, visitation patterns, and traits) define a species *realised niche* (this was previoulsy called the plant strategy). Plants that can have very different realised niches across different communities have a *flexible strategy* (this was previously called strategy as well).
 * Manuscript formatted for submission to Ecology Letters.
 * Sticking to past tense throughout the methods.
@@ -45,14 +55,7 @@ header-includes:
 
 ## Todo
 
-* Polish discussion, will appreciate input here. Hugo, feel free to make edits to the text. Large and small. will really appreciate specific input here. 
-* Polish supp. info.
 * Spell-check everything & check that reference list is correct.
-
-## Specific requests
-
-* Help suggesting a justification for the traits used. 
-* Help identifying sections to trim to achieve the word limit. 
 
 Feel free to come back here after you've read the manuscript. Thanks!
 
