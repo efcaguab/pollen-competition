@@ -24,3 +24,8 @@ RUN R -e "install.packages('ggridges', repos = c(CRAN = 'https://mran.revolution
 # RUN runuser -l rstudio -c "cd ~ && mkdir texmf && tlmgr init-usertree && tlmgr update --self"
 # RUN runuser -l rstudio -c "tlmgr install lm ec booktabs titling multirow xcolor wrapfig float tabu varwidth threeparttable threeparttablex environ trimspaces ulem makecell setspace lineno"
 RUN apt-get -y --no-install-recommends install pdftk
+## Install latest version of ggforce. Date is different as the plots require features just made available in April 2019. Its a bit tricky because it requires a newer Rcpp
+RUN apt-get -y --no-install-recommends install libudunits2-dev libgdal-dev libv8-dev
+RUN R -e "install.packages('ggforce', repos = c(CRAN = 'https://mran.revolutionanalytics.com/snapshot/2019-04-24'))"
+RUN R -e "install.packages('Rcpp', repos = c(CRAN = 'https://mran.revolutionanalytics.com/snapshot/2019-04-24'))"
+RUN R -e "install.packages('concaveman', repos = c(CRAN = 'https://mran.revolutionanalytics.com/snapshot/2019-04-24'))"

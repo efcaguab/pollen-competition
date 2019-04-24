@@ -286,6 +286,7 @@ plot_permanova_dist <- function(permanova_plant_distances,
 plot_pca <- function(pcas, chosen_threshold){
 
   require(ggplot2)
+  require(ggforce)
 
   this_pca <- pcas %>%
     purrr::keep(~ .$call$X$pca_type[1] == "across") %>%
@@ -338,6 +339,32 @@ plot_pca <- function(pcas, chosen_threshold){
                shape = 21,
                colour = cgm()$pal_el_green[9],
                size = 1) +
+    geom_mark_hull(data = hulls, aes(group = plant_name,
+                                     label = shorten_sp_name(as.character(plant_name)),
+                                     filter = plant_name %in% c("Verbena intermedia",
+                                                                "Sphaeralcea crispa",
+                                                                # "Mentha pulegium",
+                                     "Nothoscordum euosimum",
+                                                                # "Thelesperma megapotamicum",
+                                                                "Hirschfeldia incana")
+                                     ),
+                   color = NA,
+                   expand = unit(0.1, "mm"),
+                   radius = unit(0, "mm"),
+                   label.fontsize = 6,
+                   label.fontface = "italic",
+                   label.colour = cgm()$color_errorbars,
+                   label.fill = NA,
+                   label.margin = margin(2,1,2,1,"pt"),
+                   label.buffer = unit(2, "mm"),
+                   con.size = 0.25,
+                   con.linetype = 1,
+                   con.colour = cgm()$color_errorbars_light,
+                   con.type = "straight",
+                   # con.arrow = arrow(type = "closed",
+                                     # length = unit(5, "pt"),
+                                     # angle = 7),
+                   con.cap = unit(0.1, "mm")) +
     pub_theme() +
     scale_fill_manual(values = c("white", cgm()$pal_el_green[1])) +
     theme(legend.position = "none") +
