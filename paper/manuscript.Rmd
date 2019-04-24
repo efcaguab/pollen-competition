@@ -212,7 +212,7 @@ To account for the non-independence of floral counts and weight all traits equal
 We scaled all traits prior to calculating the centroid of the functional space and calculated the species-specific functional coordinates using the R package `FD 1.0-12` [@laliberte_fd_2014]. 
 Finally, to facilitate comparison across the four continuous explanatory variables in our models, we rescaled them all to have a zero mean and unitary variance.
 
-To estimate the coefficients, perform model selection, and quantify the associated uncertainty, we used a combination of multi-model inference and bootstrap resampling with one hundred replicates. 
+To estimate the coefficients, perform model selection, and quantify the associated uncertainty, we used a combination of multi-model inference and bootstrap resampling with 99 replicates. 
 First, we performed model selection using the AICc and determined the likelihood of each candidate model (a particular combination of predicting variables) by calculating the median \(\Delta\)AICc (relative to the most likely model) for each bootstrap sample. 
 As we wanted model coefficients from more likely candidate models to carry more weight in our results, we sampled the coefficients for our variables proportional to the likelihood of its candidate model. 
 <!-- We "shrank" the estimated coefficient of potentially unimportant variables by setting their estimate to 0 when the variable was not included in the model.  -->
