@@ -397,7 +397,7 @@ make_fig_con_hetero_empirical <- function(dep_frame){
                color = shape_col,
                fill = "white") +
     scale_x_continuous(trans = "log1p", breaks = axis_breaks) +
-    scale_y_continuous(trans = "log1p", breaks = axis_breaks) +
+    scale_y_continuous(trans = "log1p", breaks = axis_breaks, labels = function(x) paste0(" ", x)) +
     labs(x = "heterospecific",
          y = "conspecific",
          title = "(b) hetero- vs. conspecific pollen",
