@@ -228,27 +228,27 @@ plot_bagged_vs_open_conspecific <- function(con_df){
     scale_x_continuous(trans = "log1p", breaks = axis_breaks) +
     scale_y_continuous(trans = "log1p", breaks = axis_breaks) +
     scale_fill_manual(values = pal, na.value = "white") +
-    labs(x = "closed to animal pollination",
-         y = "open to animal pollination",
-         title = "(c) self- vs. animal-mediated pollination",
-         subtitle = "conspecific pollen grains") +
+    labs(x = "grains in bagged flowers",
+         y =  "grains in open flowers",
+         title = "(c) competition vs. facilitation - criterion #2",
+         subtitle = "self- vs. animal-mediated pollination") +
     pub_theme() +
     theme(legend.position = "none")
-          #axis.line = element_line(size = 0.25))
+  #axis.line = element_line(size = 0.25))
 
   bar_plot <- con_df %>%
     dplyr::mutate(forcats::fct_relevel(effect_category, c("negative", "neutral", "positive")),
-      effect_category = forcats::fct_rev(effect_category),
-      label_col = dplyr::if_else(effect_category == "neutral", "black", "white"),
-      label = dplyr::case_when(
-        effect_category == "positive" ~ "+",
-        effect_category == "negative" ~ "-",
-        TRUE ~ ""
-      ),
-      fontface = dplyr::case_when(
-        label_col == "black" ~ "plain",
-        TRUE ~ "bold"
-      )) %>%
+                  effect_category = forcats::fct_rev(effect_category),
+                  label_col = dplyr::if_else(effect_category == "neutral", "black", "white"),
+                  label = dplyr::case_when(
+                    effect_category == "positive" ~ "+",
+                    effect_category == "negative" ~ "-",
+                    TRUE ~ ""
+                  ),
+                  fontface = dplyr::case_when(
+                    label_col == "black" ~ "plain",
+                    TRUE ~ "bold"
+                  )) %>%
     dplyr::mutate(label_height =
                     rank(dplyr::desc(as.numeric(effect_category)),
                          ties.method = "average"),
@@ -420,5 +420,5 @@ fill_heterospecific_closed <- function(heterospecific, treatment){
   } else {
     heterospecific[treatment == "closed"] <- NA
   }
- heterospecific
+  heterospecific
 }

@@ -165,9 +165,9 @@ plot_random_slopes <- function(facilitation_plot_df){
                        expand = c(0,0.05)) +
     scale_x_discrete(expand = c(0,0)) +
     scale_alpha_manual(values = c(0,1)) +
-    labs(y = bquote("slope" ~ beta[i]),
-         title = "(a) relationship hetero-conspecific pollen",
-         subtitle = "slope of species-community random effects") +
+    labs(y = bquote("slope of species-community random effects" ~ beta[i]),
+         title = "(a) competition vs. facilitation - criterion #1",
+         subtitle = "relationship hetero-conspecific pollen") +
     coord_flip() +
     pub_theme() +
     theme(axis.title.y = element_blank(),
