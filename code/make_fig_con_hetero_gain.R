@@ -225,6 +225,18 @@ plot_bagged_vs_open_conspecific <- function(con_df){
                size = 1,
                colour = shape_col) +
     geom_point(aes(x = 0, y = 0), alpha = 0, colour = shape_col) +
+    annotate(geom = "text", x = 0, y = Inf,
+             label = "facilitation predominates",
+             hjust = 0,
+             vjust = 1.5,
+             size = 2.25,
+             colour = "grey20") +
+    annotate(geom = "text", x = Inf, y = 0,
+             label = "competition predominates",
+             hjust = 1.1,
+             vjust = 0,
+             size = 2.25,
+             colour = "grey20") +
     scale_x_continuous(trans = "log1p", breaks = axis_breaks) +
     scale_y_continuous(trans = "log1p", breaks = axis_breaks) +
     scale_fill_manual(values = pal, na.value = "white") +
