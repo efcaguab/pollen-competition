@@ -356,7 +356,7 @@ That is, strategies that were associated with an increase in conspecific pollen 
 Specifically, the plants' mean visit effectiveness had a positive effect on pollen deposition (Figure \@ref(fig:fig-average-qual-quant)b). 
 However, the effect size was slightly larger for heterospecific than for conspecific pollen. 
 This indicates that, although there is a positive association between visit effectiveness and the quantity pollen deposition, there is a negative relationship with its purity (Figure \@ref(fig:fig-average-qual-quant)c). 
-In contrast, a plants' relative abundance had a negative effect on the pollen deposition quantity, but the mean difference between the coefficients in the models indicates a positive association with the the purity (Figure \@ref(fig:fig-average-qual-quant)c). 
+In contrast, a plants' relative abundance had a negative effect on the pollen deposition quantity, but the mean difference between the coefficients in the models indicates a positive association with the purity (Figure \@ref(fig:fig-average-qual-quant)c). 
 The third most important variable, functional originality, had a positive, although comparatively smaller, association with both the quantity and purity. 
 Finally, the number of shared pollinators had a negative and neutral association with conspecific and heterospecific pollen, but these impacts were small when compared to the other variables. 
 
