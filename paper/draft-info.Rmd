@@ -55,9 +55,10 @@ header-includes:
 * Moved some of the justification on the criteria used to identify facilitation/competition to the discussion.
 * Show niche points for all species and not only those in two communities or more
 * Figures edited to match one and two column sizes at Ecology Letters. Implemented all format requirements for EL.
-* Added the following elements to the discussion: 
+* Rewrote the discussion and added the following elements: 
     * That our networks are a snapshot
     * How the degree-trait originality relationship can be shaped by the abundance
     * How strategy could be a result of a species historical communities
     * How attracting pollinators using flowering plants might work
-* Reorganised the topics in the discussion
+* Wrote abstract & keyworkds
+* Wrote cover letter

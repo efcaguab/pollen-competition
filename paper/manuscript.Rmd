@@ -48,7 +48,7 @@ loadd(abs_wordcount, msc_wordcount, n_displays, n_references)
 
 **Running title:** The pollination trade-off
 
-**Keywords:** X,Y,Z (up to 10).
+**Keywords:** Competition, facilitation, interspecific pollen transfer, conspecific, pollen deposition, multi-species, plant-pollinator interaction, pollination trade-off, pollination costs, networks (up to 10).
 
 **Type of article:** Letter.
 
