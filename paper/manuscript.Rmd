@@ -190,7 +190,7 @@ More details can be found in Marrero *et al.* (2014 and 2017).
 
 To investigate the impact of ecological factors on pollination service we used two sets of linear mixed models (LMM) with bootstrap resampling.
 The response variables for these model sets were the number of conspecific and heterospecific pollen grains deposited per stigma in flowers open to animal-mediated pollination. 
-We used LMMs in which pollen loads were log-transformed (Figure \@ref(S-fig:fig-deposition-gain-log-transformed-or-not)) because these models offered a better fit than a GLMM with Poisson (or quasipoisson) error structure. 
+We used LMMs in which pollen loads were log-transformed because these models offered a better fit than a GLMM with Poisson (or quasipoisson) error structure. 
 Models were fitted using the R package `nlme 3.1-131` [@pinheiro_nlme_2018]. 
 
 Because the amount of deposited pollen can vary widely across species, and potentially also across communities, we evaluated two possible structures for the random effects: one that includes a random intercept for plant species, and one that treats measures from species across different communities independently. 
