@@ -423,7 +423,7 @@ median_distances <- permanova_plant_distances %>%
   value
 ```
 
-```{r fig-pca, fig.width=3.57, fig.height=6.65, out.width="3.57in", out.height="6.65in",  out.extra="center", fig.cap="**The flexibility of plant strategies**. (a) The two first components explain a large proportion of the total variance. (b) When plants that were sampled in more than one community are plotted with these two components, we observe that points, which represent the strategy (the particular combination of ecological variables) of a species in a community do not seem to be grouped by plant species. (c) This was confirmed using Monte Carlo randomizations of the median distance between strategies of a plant species. Only one of the examined species had strategies that were more tightly connected than what would be expected at random."}
+```{r fig-pca, fig.width=3.57, fig.height=6.65, out.width="3.57in", out.height="6.65in",  out.extra="center", fig.cap="The flexibility of plant strategies. (a) The two first components explain a large proportion of the total variance. (b) When plants that were sampled in more than one community are plotted with these two components, we observe that points, which represent the strategy (the particular combination of ecological variables) of a species in a community do not seem to be grouped by plant species. (c) This was confirmed using Monte Carlo randomizations of the median distance between strategies of a plant species. Only one of the examined species had strategies that were more tightly connected than what would be expected at random."}
 height0 <- 1.55
 height1 <- 2.7
 height2 <- 2.4
