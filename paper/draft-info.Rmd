@@ -26,11 +26,12 @@ header-includes:
 
 ## Specific requests to coauthors
 
-* Suggest a justification for the traits used if needed (see \lr{M-justification-traits}). 
+* Suggest a justification for the traits used if needed (see \lr{M-justification-traits}).
 * Identify sections/sentences to trim to achieve the word limit.
 * Suggest a reference for sentence in \lr{M-ref-interaction-strength} if needed.
 * Suggest a reference for sentence in \lr{M-ref-plant-flexibility} if needed. 
 * Suggest alternative, more-appropiate, sub-headings if needed. 
+* Check statement in \lr{M-theoretical-models}
 
 ## Changes
 
@@ -42,8 +43,10 @@ header-includes:
 * GLMM to fit slope of heterospecific-conspecific pollen relationship tests all communities at once (it was a model per community). Response variable is the number of grains (it was number of grains per stigma) and the (log) number of stigmas in the flowers has been included as an offset term.
 * Using a similar approach to compare conspecific pollen deposited in open and bagged flowers (I used a series of Mann-Withney U tests before)
 * Added facilitation model results tables in the Supplementary Information
-* Made Figure 2 (model of enviornmental factors) one-column
 * Applied a green palette to all figures. Improves legibility when looking at it in a screen an performance when printed in greyscale is maintained
+* Updated the headings in Figure 1 to make it clearer that we're looking at two distinct criteria
+* Made Figure 2 (model of enviornmental factors) one-column
+* Labelled some of the polygons in Fig 3c to make it easier to understand
 * Moved some of the justification on the criteria used to identify facilitation/competition to the discussion.
 * Show niche points for all species and not only those in two communities or more
 * Figures edited to match one and two column sizes at Ecology Letters. Implemented all format requirements for EL.
@@ -52,10 +55,4 @@ header-includes:
     * How the degree-trait originality relationship can be shaped by abundance
     * How strategy could be a result of a specie's historical communities
     * How attracting pollinators using flowering plants might work
-
-## Todo
-
-* Spell-check everything & check that reference list is correct.
-
-Feel free to come back here after you've read the manuscript. Thanks!
-
+* Reorganised the topics in the discussion
