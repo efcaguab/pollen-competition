@@ -76,7 +76,7 @@ loadd(abs_wordcount, msc_wordcount, n_displays, n_references)
 
 Animal pollination systems play a disproportionally important role in food production and maintenance of global biodiversity [@bascompte_plant-animal_2007; @klein_importance_2007; @ollerton_how_2011]. 
 <!-- FDO: Asked coauthors for a reference for the following statement but no-one provided. Therefore removing -->
-Alongside the direct mutualisms between plants and their pollinators, biodiversity can be supported as a result of the inter-species "facilitation"—the indirect positive feedback loops that exist between plant species that share pollinators or pollinators that share plants [@moeller_facilitative_2004; @ghazoul_floral_2006; @molina-montenegro_positive_2008]. 
+Alongside the direct mutualisms between plants and their pollinators, biodiversity can be supported as a result of the inter-species "facilitation"—the indirect positive feedback loops that exist between plant species that share pollinators or pollinators that share plants [@moeller_facilitative_2004; @ghazoul_floral_2006; @molina-montenegro_positive_2008; @liao_presence_2011]. 
 This inter-species facilitation is able to promote species coexistence by offsetting the effects of direct resource competition [@stachowicz_mutualism_2001]. 
 Indeed, studies at the core of our current theoretical knowledge of mutualisms predict that the maximum number of coexisting species is achieved when the number of shared mutualistic partners is maximised in a community [@bastolla_architecture_2009]. 
 
