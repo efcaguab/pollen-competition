@@ -37,22 +37,22 @@ header-includes:
 
 * Now using `docker` to manage project dependencies. Image is now available on dockerhub efcaguab/pollen-competition.
 * Removing *quantity* and *quality* of pollination in favour of *quantity* and *purity* or plain metrics of *conspecific* and *heterospecific* pollen deposition. 
-* Rewording the plant strategies idea as it was confussing. Now the combination of ecological variables (number shared pol., abundance, visitation patterns, and traits) define a species *realised niche* (this was previoulsy called the plant strategy). Plants that can have very different realised niches across different communities have a *flexible strategy* (this was previously called strategy as well).
+* Rewording the plant strategies idea as it was confusing. Now the combination of ecological variables (number shared pol., abundance, visitation patterns, and traits) define a species *realised niche* (this was previously called the plant strategy). Plants that can have very different realised niches across different communities have a *flexible strategy* (this was previously called strategy as well).
 * Manuscript formatted for submission to Ecology Letters.
 * Sticking to past tense throughout the methods.
-* GLMM to fit slope of heterospecific-conspecific pollen relationship tests all communities at once (it was a model per community). Response variable is the number of grains (it was number of grains per stigma) and the (log) number of stigmas in the flowers has been included as an offset term.
+* GLMM to fit the slope of heterospecific-conspecific pollen relationship tests all communities at once (it was a model per community). The response variable is the number of grains (it was the number of grains per stigma) and the (log) number of stigmas in the flowers has been included as an offset term.
 * Using a similar approach to compare conspecific pollen deposited in open and bagged flowers (I used a series of Mann-Withney U tests before)
 * Added facilitation model results tables in the Supplementary Information
-* Applied a green palette to all figures. Improves legibility when looking at it in a screen an performance when printed in greyscale is maintained
+* Applied a green palette to all figures. Improves legibility when looking at it in a screen and the performance when printed in greyscale is maintained
 * Updated the headings in Figure 1 to make it clearer that we're looking at two distinct criteria
-* Made Figure 2 (model of enviornmental factors) one-column
+* Made Figure 2 (model of environmental factors) one-column
 * Labelled some of the polygons in Fig 3c to make it easier to understand
 * Moved some of the justification on the criteria used to identify facilitation/competition to the discussion.
 * Show niche points for all species and not only those in two communities or more
 * Figures edited to match one and two column sizes at Ecology Letters. Implemented all format requirements for EL.
-* Added the following elements to the disussion: 
+* Added the following elements to the discussion: 
     * That our networks are a snapshot
-    * How the degree-trait originality relationship can be shaped by abundance
-    * How strategy could be a result of a specie's historical communities
+    * How the degree-trait originality relationship can be shaped by the abundance
+    * How strategy could be a result of a species historical communities
     * How attracting pollinators using flowering plants might work
 * Reorganised the topics in the discussion
