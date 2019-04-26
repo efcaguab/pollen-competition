@@ -1,7 +1,8 @@
 ---
-title: "The pollination trade-off"
-subtitle: "Draft information"
-author: "Fernando Cagua, Hugo Marrero, Jason Tylianakis, Daniel Stouffer"
+title: "Draft information"
+subtitle: "version: draft-4.0"
+date: "2019-04-26"
+# author: "Fernando Cagua, Hugo Marrero, Jason Tylianakis, Daniel Stouffer"
 bibliography: phd-bibliography/pollen-competition.bib
 csl: ecology-letters.csl
 output:
@@ -10,7 +11,10 @@ output:
     keep_tex: yes
     number_sections: false
 toc: false
-classoption: twocolumn
+geometry: 
+  - textwidth=33em
+  - textheight=48\baselineskip
+# classoption: twocolumn
 header-includes:
   - \usepackage{booktabs}
   - \usepackage{setspace}
@@ -25,7 +29,7 @@ header-includes:
 
 \onehalfspacing
 
-## Specific requests to coauthors
+## Requests to coauthors
 
 * Suggest a justification for the traits used if needed (see \lr{M-justification-traits}).
 * Identify sections/sentences to trim to achieve the word limit.
@@ -34,7 +38,7 @@ header-includes:
 * Suggest alternative, more-appropiate, sub-headings if needed. 
 * Check statement in \lr{M-theoretical-models}
 
-## Changes
+## Changes since last draft
 
 * Now using `docker` to manage project dependencies. Image is now available on dockerhub efcaguab/pollen-competition.
 * Removing *quantity* and *quality* of pollination in favour of *quantity* and *purity* or plain metrics of *conspecific* and *heterospecific* pollen deposition. 
