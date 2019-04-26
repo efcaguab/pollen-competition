@@ -4,6 +4,8 @@
 \usepackage{hyperref}
 \usepackage[backend=bibtex,style=verbose,doi=false,isbn=false,url=false]{biblatex}
 \addbibresource{phd-bibliography/pollen-competition.bib}
+\usepackage{geometry}
+\geometry{textwidth=43em, textheight=52\baselineskip}
 % Name of sender
 \name{Fernando Cagua}
 % Signature of sender
@@ -36,14 +38,20 @@ drake::loadd(msc_title)
 
 We are submitting the manuscript entitled ``\Sexpr{msc_title}'' to be considered for publication in \emph{Ecology Letters}.
 
-In this manuscript we show that
+In this manuscript, we show that the realised competition for pollination niche (which can also be viewed as a plant species strategy to minimise competition for pollination) is strongly determined by the community it belongs to.
+Furthermore, we show that in pollination there is no free lunch and plants need to balance multiple trade-offs when minimising competition for pollination.
+On the one hand, factors that increase the quantity of pollen deposited by animals may also decrease its purity (and vice-versa).
+On the other, factors that increase both the quantity and purity do so only mildly and potentially only in the short-term.
 
-The covering letter to the Editorial Office should succinctly describe why the enclosed work is novel, exciting and of general interest in ecology.
+Very few studies have previously investigated how competition for pollination affects the pollination service at the community level using \emph{empirical data}.
+We do so and go one step beyond by collecting not only pollen-deposition data but also plant abundance, visitation, pollen transfer, phenology and traits.
+This allowed us to investigate the relationship between pollination service and multiple ecological factors, and for the first time, quantify the competition for pollination realised niche of plant populations.
 
-Additionally, the covering letter should include a clear statement of exactly how the present manuscript is outstandingly novel relative to recent work by the author or coauthors cited in the present submission.
+Most studies of pollination communities focus on the mutualistic aspects of plant-pollination communities.
+Ours provides evidence that animal-mediated pollination is actually a fluid dance between competition and pollination, and as such call for a shift in the way we think about pollination in community ecology.
 
 Lastly, please note that the data used in this manuscript has been previously published\autocite{marrero_effect_2014,marrero_agricultural_2016,marrero_exotic_2017} by one of the co-authors.
-However the enclosed work represents a novel contribution for all involved and no related work published, in press, or submitted during this or last year has been cited.
+However, the enclosed work represents a novel contribution for all involved and no related work published, in press, or submitted during this or last year has been cited.
 
 Thank you for your consideration.
 
