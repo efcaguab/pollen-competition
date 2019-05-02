@@ -1,7 +1,8 @@
 ---
 title: "The pollination trade-off"
+# DBS: The title above needs editing to match the final version in the paper
 subtitle: "Supplementary information"
-author: "Fernando Cagua, Hugo Marrero, Jason Tylianakis, Daniel Stouffer"
+author: "E. Fernando Cagua, Hugo J. Marrero, Jason M. Tylianakis, Daniel B. Stouffer"
 # bibliography: references.bib
 csl: ecology-letters.csl
 documentclass: book
@@ -213,7 +214,7 @@ model_formula_ranking$by_model_set %>%
   dplyr::filter(scale == "community") %>%
   dplyr::mutate_if(is.numeric, round, digits = 1) %>%
   dplyr::mutate(delta_AIC_CI = paste0(" [", delta_AIC_quantile_05,
-                                      " ,", 
+                                      ", ", 
                                       delta_AIC_quantile_95,
                                       "]")) %>% 
   dplyr::group_by() %>%
