@@ -99,7 +99,7 @@ For instance, recent empirical evidence suggests that plants with flowering trai
 This evidence is aligned with the notion that a species that interacts with few species does so strongly with each of them whereas a species that interacts with a large number of species does so comparatively weakly [@thebault_does_2008; @bascompte_asymmetric_2006; @vazquez_species_2007].
 If evolutionary specialisation occurs by changing traits to focus on fewer but better partners [@caruso_competition_2000], we should expect a reduction of competition for pollinators in species with "original" traits and an increase of competition in species with a large number of interaction partners [@gibson_can_2012; @carvalheiro_potential_2014]. 
 Alternatively, it might also be the case that abundance (for example in terms of flower or pollen counts) is the dominant force driving pollen transfer [@seifan_outcome_2014]. 
-Abundant plant species might experience a dilution of available pollinators [@feinsinger_effects_1987; @feldman_when_2004] but might also receive more effective visits by capitalising on a larger share of both visits and the pollen carried by pollinators. 
+Abundant plant species might experience a dilution of available pollinators [@feinsinger_effects_1987; @feldman_when_2004] but might also receive more effective visits by capitalising on a larger share of both visits and the pollen carried by pollinators<!-- cite Savert et al. 2019 here once it has a doi-->. 
 In this case, a potential reduction in the absolute amount of conspecific pollen received could be compensated by an increase in the amount of conspecific pollen relative to heterospecific pollen.
 Altogether, it is clear that some ecological factors can influence pollen deposition. 
 However, the intertwined nature of these factors makes it hard to determine exactly how they can minimise competition, or equivalently maximise facilitation, at the community level. 
@@ -111,16 +111,14 @@ If facilitation is the primary outcome, we could expect two things.
 On the one hand, we could expect an overall positive relationship between the amount of conspecific pollen deposited in stigmas and the amount of heterospecific pollen [@tur_evaluating_2016]. 
 The higher the deposition of conspecific pollen relative to heterospecific, the larger the slope of this relationship.
 On the other hand, we could expect a larger amount of conspecific pollen deposited on stigmas when flowers are open to animal pollinators than what is deposited due to self-pollination. 
-Second, we investigate the relative contribution that four ecological factors have to the pollination service. 
-Specifically, we hypothesize that competition, measured as the quantity of conspecific pollen deposition and its purity (amount relative to heterospecific pollen), should increase for plants that share many pollination partners.
-<!-- DBS: Should we interchange amount and quantity so loosely like in the start of the sentence above? Also, it seems weird to call quantity of conspecific pollen a proxy for competition since it should be the inverse... -->
+Second, we investigate the relative contribution that four ecological factors have on the pollination service. 
+Specifically, we hypothesize that cospecific pollen deposition (both its quantity and its purity relative to heterospecific pollen) should decreasse for plants that share many pollination partners
 However, we also hypothesize that other factors like the plant's functional originality, its relative abundance, and the visit effectiveness should have the potential to compensate for this increase in competition. 
-Third and finally, we examine how much the community context influences the way plants exploit these factors to minimise competition. 
-Although some plant species might be widespread across multiple locations, competition for pollinators occurs at the community level and hence we predict the competition for pollination niche to be influenced by the local context.
-<!-- DBS: I find the phrase "competition for pollination niche" to be very clunky. Can we do better? -->
+Third and finally, we examine how much the community context influences the way plants exploit these factors to minimise competition/maximise facilitation. 
+We use these four ecological factors as a proxy of the realised pollination niche of a plant species in their comunity.
+Although some plant species might be widespread across multiple locations, competition for pollinators occurs at the community level and hence we predict the pollination niche to be influenced by the local context.
 If plant strategy is not flexible across the communities in our study\R{ref-plant-flexibility}, we could expect niches to be more similar within species than across species. 
-On the contrary, if a species' strategy is flexible, we should expect plants to be able to occupy different niches in each community such that competition could ultimately be minimised regardless of the context. 
-<!-- DBS: Why do we always say could and not would? -->
+On the contrary, if a species' strategy is flexible, we should expect plants to be able to occupy different niches in each community such that intraspecific competition could ultimately be minimised regardless of the context. 
 
 # Methods
 
