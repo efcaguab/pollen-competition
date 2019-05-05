@@ -1,5 +1,5 @@
 ---
-title: "Community context determines competition/facilitation trade-offs in pollination systems"
+title: "Community context determines competition vs. facilitation trade-offs in pollination systems"
 author: 
   - "E. Fernando Cagua^1^ ([efc29@uclive.ac.nz](mailto:efc29@uclive.ac.nz))"
   - "Hugo J. Marrero^2^ ([hugomarrero@gmail.com](hugomarrero@gmail.com))"
@@ -168,7 +168,7 @@ In this case, however, the predictor variable was the treatment (whether the flo
 
 ## Factors affecting quantity and purity of pollination service 
 
-Our second objective was to investigate the relative contribution of different factors---that describe the plants' competition for pollination niches---to the pollination service. 
+Our second objective was to investigate the relative contribution of different mechanisms of pollinator mediated competition. 
 Generally speaking,
 <!-- in the context of competition for pollination, -->
 we expect that any factor that increases the amount of conspecific pollen deposited in stigmas, both in quantity and purity relative to heterospecific pollen, also has a positive effect on the pollination service.
