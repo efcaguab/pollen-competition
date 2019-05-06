@@ -41,4 +41,7 @@ header-includes:
 ## Changes since last draft
 
 * Added .git and .drake to .dockerignore to speed up build
+* As suggested by Jason I refer to the factors on the main models as mechanisms of pollinator mediated competition. 
+* Many minor changes to the text
+* Replaced instances of "plant abundance" to the more specific term "floral abundance" (Jamie suggested some people working in the field might be finicky with terminology). 
 
