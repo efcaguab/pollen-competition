@@ -299,16 +299,15 @@ rw <- c(width_left - bar_plot_width,
         bar_plot_width)
 left <- cowplot::plot_grid(
   fig_hetero_con,
-  NULL,
   fig_con_con[[1]],
-  fig_con_con[[2]],
-  ncol = 2, 
+  # fig_con_con[[2]],
+  ncol = 1, 
   rel_widths = rw[c(3,4)], 
-  align = "h"
+  align = "hv"
 )
 right <- cowplot::plot_grid(
   fig_random_slopes[[1]],
-  fig_random_slopes[[2]], 
+  # fig_random_slopes[[2]],
   # ncol = 2, 
   align = "h", 
   rel_widths = rw[1:2]
