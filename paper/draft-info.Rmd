@@ -31,12 +31,8 @@ header-includes:
 
 ## Requests to coauthors
 
-* Suggest a justification for the traits used if needed (see \lr{M-justification-traits}).
-* Identify sections/sentences to trim to achieve the word limit.
-* Suggest a reference for sentence in \lr{M-ref-interaction-strength} if needed.
-* Suggest a reference for sentence in \lr{M-ref-plant-flexibility} if needed. 
-* Suggest alternative, more-appropiate, sub-headings if needed. 
-* Check statement in \lr{M-theoretical-models}
+* Specify grant numbers in the Awknoledgements and make sure the ones stated there now are correct. 
+* Aprove (or not for submission)
 
 ## Changes since last draft
 
@@ -44,4 +40,7 @@ header-includes:
 * As suggested by Jason I refer to the factors on the main models as mechanisms of pollinator mediated competition. 
 * Many minor changes to the text
 * Replaced instances of "plant abundance" to the more specific term "floral abundance" (Jamie suggested some people working in the field might be finicky with terminology). 
+* Some extra refs added
+* Moved the sentences about variable collinearity to the supp. info. to save a bit of space in the main text
+* Removed criteria #2...
 
