@@ -170,10 +170,7 @@ Generally speaking,
 we expect that any factor that increases the amount of conspecific pollen deposited in stigmas, both in quantity and purity relative to heterospecific pollen, also has a positive effect on the pollination service.
 <!-- DBS: There is no use to calling it something succinct like purity if we always have to say "purity relative to heterospecific pollen"...  -->
 <!-- FDO: Only mention purity relative to heterospecific pollen cause it's first time it gets mentioned in the methodsa  -->
-Specifically, we investigated the effect of (*i*) a plant's number of shared pollinator species, (*ii*) a plant's abundance relative to the rest of the community, (*iii*) the mean visit effectiveness---a metric that combines
-the share of pollen that a plant species is able to place on each of their floral visitors
-<!-- DBS: The line above is very confusing and took me about five reads before I understood what you wanted to say. We need to revise it. -->
-and the number of visits it receives from them, and (*iv*) the plant's functional originality [@laliberte_distance-based_2010]. 
+Specifically, we investigated the effect of (*i*) a plant's number of shared pollinator species, (*ii*) a plant's abundance relative to the rest of the community, (*iii*) the mean visit effectiveness---a metric that combines the amount and type of pollen carried by floral visitors and the number of visits it receives from them, and (*iv*) the plant's functional originality [@laliberte_distance-based_2010]. 
 See *Data Analysis* section below for more details on these four variables. 
 <!-- Here, we define visit effectiveness of the pollinator species *i* to plant species *j* as the proportion between the visits of *i* to *j* and all visits of *i*, multiplied by the proportion between the number of pollen grains of *j* attached to individuals of *i* and all pollen attached to individuals of *i*. -->
 
@@ -452,8 +449,7 @@ cowplot::plot_grid(
 
 We used a PCA of the analysed species to investigate whether plants' realised pollination niche is similar across communities or whether they are flexible and therefore a reflection of the community context. 
 The first two PCA components explained `r round(this_pca$eig[2, 3])`% of the total variance (Figure \@ref(fig:fig-pca)a). 
-The first component was dominated by changes in visit effectiveness and relative abundance while the second component was dominated by the number of shared pollinators and the plant's functional originality. 
-<!-- DBS: Why "changes" in visit effectiveness? -->
+The first component was dominated by visit effectiveness and relative abundance while the second component was dominated by the number of shared pollinators and the plant's functional originality. 
 When we locate the species that were sampled in more than one community in the first two PCA components (Figure \@ref(fig:fig-pca)b), we observe that the niches of any given species do not tend to be close to each other. 
 Indeed, when we measured the median distance between the plants' coordinates, we found that it was only significantly smaller than that of randomisations for only `r numbers2words(sum(median_distances < 0.05))` of the `r numbers2words(length(median_distances))` species analysed (Figure \@ref(fig:fig-pca)c). 
 <!-- DBS: Are we consistent with UK vs US spellings? Does Ecology Letters prefer UK spelling? -->
