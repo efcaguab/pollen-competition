@@ -113,7 +113,7 @@ The higher the deposition of conspecific pollen relative to heterospecific, the 
 On the other hand, we could expect a larger amount of conspecific pollen deposited on stigmas when flowers are open to animal pollinators than what is deposited due to self-pollination. 
 Second, we investigate the relative contribution that four ecological factors have on the pollination service. 
 Specifically, we hypothesize that cospecific pollen deposition (both its quantity and its purity relative to heterospecific pollen) should decreasse for plants that share many pollination partners
-However, we also hypothesize that other factors like the plant's functional originality, its relative abundance, and the visit effectiveness should have the potential to compensate for this increase in competition. 
+However, we also hypothesize that other factors like the plant's functional originality, its relative floral abundance, and the visit effectiveness should have the potential to compensate for this increase in competition. 
 Third and finally, we examine how much the community context influences the way plants exploit these factors to minimise competition/maximise facilitation. 
 We use these four ecological factors as a proxy of the realised pollination niche of a plant species in their comunity.
 Although some plant species might be widespread across multiple locations, competition for pollinators occurs at the community level and hence we predict the pollination niche to be influenced by the local context.
