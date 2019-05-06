@@ -279,7 +279,6 @@ equal_pos_neg <- counts_facilitation_slope$nn[1] == counts_facilitation_slope$nn
 We first examined the degree of facilitation/competition in natural communities. Specifically, we examined the slope of the relationship between the quantities of heterospecific and conspecific pollen deposited on stigmas of each species in a community. 
 Overall, we found that neither net facilitation nor net competition dominates (Table \@ref(S-tab:table-facilitation-models-general)). 
 Indeed, we found that the proportions of species that experienced a statistically significant positive or negative relationship between heterospecific and conspecific pollen were very similar (`r counts_facilitation_slope$np[3]`% and `r counts_facilitation_slope$np[1]`%, respectively; Figure \@ref(fig:fig-trade-off-predictions)a; Table \@ref(S-tab:table-facilitation-models-random)). 
-<!-- DBS: Fer, please check my edit above to make sure it's correct. -->
 Most of the variation between plants in a facilitation-competition gradient was driven by differences *between* species; however, we also observed some important differences *within* species. 
 For instance, `r numbers2words(nrow(sp_both_pos_neg))` of the species sampled across multiple communities (`r sp_both_pos_neg_names`) showed evidence that the same species, can experience facilitation (positive relationships) in some communities and competition (negative relationships) in others. 
 Interestingly, although there was wide variation in the slope of the relationship between heterospecific and conspecific pollen, almost all plants had more conspecific than heterospecific pollen deposited on their stigmas (Figure \@ref(fig:fig-trade-off-predictions)b). 
@@ -351,13 +350,13 @@ Variation within species was slightly smaller and only `r numbers2words(nrow(sp_
 drake::loadd(r2_values)
 ```
 
-We then examined the potential roles played by four ecological variables (number of shared pollinators, plant abundance, mean visit effectiveness, and functional originality) play in pollen deposition. 
+We then examined the potential roles played by four ecological variables (number of shared pollinators, abundance, mean visit effectiveness, and functional originality). 
 <!-- Together these variables can describe the niche that plants might occupy in the context of competition for pollination.  -->
 We found that our models of pollen deposition had high explanatory power (the coefficient of determination R^2^ ranged between `r min(r2_values$r2c_min)` and `r max(r2_values$r2c_max)`) although a large portion of the explanatory power came from the random effects (Table \@ref(S-tab:table-R2)).
-As determined by AICc, the random structure best supported by the data was the one that fit an intercept for each species in each community (as opposed to a common intercept for each species irrespective of the community they belong to). 
+As determined by AICc, the random structure best supported by the data was the one that fit an intercept for each species in each community (as opposed to a common intercept for each species irrespective of the community to which they belong). 
 This structure was best for both the models of conspecific and heterospecific pollen (Table \@ref(S-tab:table-aic-random-models)).  
 
-Of the four variables we considered, we found that a plant's mean visit effectiveness and realtive abundance were the most important ecological variables predicting pollen deposition in plant stigmas (Figure \@ref(fig:fig-average-qual-quant)a). 
+Of the four variables we considered, we found that a plant's mean visit effectiveness and realtive floral abundance were the most important ecological variables predicting pollen deposition in plant stigmas (Figure \@ref(fig:fig-average-qual-quant)a). 
 Surprisingly, the number of shared pollinators was comparatively unimportant, particularly for models of heterospecific pollen deposition, as it was only ever included in models with relatively large AICc values (Table \@ref(S-tab:table-aic-fixed-models)). 
 <!-- DBS: Two-sentence paragraphs are universally frowned upon. -->
 
@@ -365,8 +364,8 @@ We found that the relationship between each of the ecological factors and pollen
 That is, strategies that were associated with an increase in conspecific pollen were also associated with an increase in heterospecific pollen deposition. 
 Specifically, the plants' mean visit effectiveness had a positive effect on pollen deposition (Figure \@ref(fig:fig-average-qual-quant)b). 
 However, the effect size was slightly larger for heterospecific than for conspecific pollen. 
-This indicates that, although there is a positive association between visit effectiveness and the quantity pollen deposition, there is a negative relationship with its purity (Figure \@ref(fig:fig-average-qual-quant)c). 
-In contrast, a plants' relative abundance had a negative effect on the pollen deposition quantity, but the mean difference between the coefficients in the models indicates a positive association with the purity (Figure \@ref(fig:fig-average-qual-quant)c). 
+This indicates that, although there is a positive association between visit effectiveness and the quantity of pollen deposition, there is a negative relationship with its purity (Figure \@ref(fig:fig-average-qual-quant)c). 
+In contrast, a plants' relative floral abundance negatively affect deposition quantity, but the mean difference between the coefficients in the models indicates a positive association with purity (Figure \@ref(fig:fig-average-qual-quant)c). 
 The third most important variable, functional originality, had a positive, although comparatively smaller, association with both the quantity and purity. 
 Finally, the number of shared pollinators had negative and neutral associations with conspecific and heterospecific pollen, respectively, but these impacts were small when compared to the other variables. 
 
@@ -376,7 +375,7 @@ One exception was visit-effectiveness, which exhibits a positive association wit
 Nevertheless, these differences were observed only in model specifications with relatively low AICc support.
 <!-- DBS: I think we can cut this. It's low hanging fruit for a reviewer to ask, we know the answer is unimportant, and hence can save some space by cutting it (for now). -->
 
-```{r fig-average-qual-quant, fig.height= 2.28*2, fig.width=width('single'), out.height="4.56in", out.width="3.57in", out.extra="center", fig.cap="Effect of strategies to minimise competition in the pollination service. (a) The plant's visit effectiveness and relative abundance are the most important variables determining the deposition of conspecific and heterospecific pollen. Meanwhile, the number of shared pollinators was generally less important. The graph shows the relative variable importance calculated as the sum of the Akaike weights of the candidate models that included the variable. (b) The association between ecological variables and heterospecific pollen tended to align with their association with conspecific pollen. Visit effectiveness and functional originality had a positive association with pollen deposition, while abundance and the number of shared pollinators had a negative association. The plot shows the distribution of the effects (across 99 bootstrap replicates) of the four ecological variables for conspecific and heterospecific pollen. (c) The end result of these associations is that only the plants' functional originality has a positive impact on both the quantity and purity of conspecific pollen deposition (relative to heterospecific pollen). The plot shows the model averaged mean effect ($\\pm$ SE of 99 bootstrap replicates)."}
+```{r fig-average-qual-quant, fig.height= 2.28*2, fig.width=width('single'), out.height="4.56in", out.width="3.57in", out.extra="center", fig.cap="Effect of strategies to minimise competition in the pollination service. (a) The plant's visit effectiveness and relative floral abundance are the most important variables determining the deposition of conspecific and heterospecific pollen. Meanwhile, the number of shared pollinators was generally less important. The graph shows the relative variable importance calculated as the sum of the Akaike weights of the candidate models that included the variable. (b) The association between ecological variables and heterospecific pollen tended to align with their association with conspecific pollen. Visit effectiveness and functional originality had a positive association with pollen deposition, while floral abundance and the number of shared pollinators had a negative association. The plot shows the distribution of the effects (across 99 bootstrap replicates) of the four ecological variables for conspecific and heterospecific pollen. (c) The end result of these associations is that only the plants' functional originality has a positive impact on both the quantity and purity of conspecific pollen deposition (relative to heterospecific pollen). The plot shows the model averaged mean effect ($\\pm$ SE of 99 bootstrap replicates)."}
 height1 <- 1
 height2 <- 1.28
 # pdf(width = 3.57 , height = sum(c(height1, height2))*2)
@@ -434,7 +433,7 @@ median_distances <- permanova_plant_distances %>%
   value
 ```
 
-```{r fig-pca, fig.width=3.57, fig.height=6.65, out.width="3.57in", out.height="6.65in",  out.extra="center", fig.cap="The flexibility of plant strategies. (a) The two first components explain a large proportion of the total variance. (b) When plants that were sampled in more than one community are plotted in terms of these two components, we observe that their points—which represent the strategy (the particular combination of ecological variables) of that species in its community—do not seem to be grouped by plant species. (c) This was confirmed using Monte Carlo randomizations of the median distance between strategies of a plant species. Only one of the examined species had strategies that were closer together than would be expected at random."}
+```{r fig-pca, fig.width=3.57, fig.height=6.65, out.width="3.57in", out.height="6.65in",  out.extra="center", fig.cap="The flexibility of plant strategies. (a) The two first components explain a large proportion of the total variance. (b) When plants that were sampled in more than one community are plotted in terms of these two components, we observe that their points—which represent the strategy (the particular combination of ecological variables) of that species in its community—do not seem to be grouped by plant species. (c) This was confirmed using Monte Carlo randomizations of the median distance between strategies of a plant species. Only two of the examined species had strategies that were less flexible than would be expected at random."}
 height0 <- 1.55
 height1 <- 2.7
 height2 <- 2.4
@@ -457,12 +456,12 @@ cowplot::plot_grid(
 # dev.off()
 ```
 
-We used a PCA of the analysed species to investigate whether plants' realised niches of competition for pollination is similar across communities or whether they are flexible and therefore a reflection of the community context. 
+We used a PCA of the analysed species to investigate whether plants' realised pollination niche is similar across communities or whether they are flexible and therefore a reflection of the community context. 
 The first two PCA components explained `r round(this_pca$eig[2, 3])`% of the total variance (Figure \@ref(fig:fig-pca)a). 
 The first component was dominated by changes in visit effectiveness and relative abundance while the second component was dominated by the number of shared pollinators and the plant's functional originality. 
 <!-- DBS: Why "changes" in visit effectiveness? -->
 When we locate the species that were sampled in more than one community in the first two PCA components (Figure \@ref(fig:fig-pca)b), we observe that the niches of any given species do not tend to be close to each other. 
-Indeed, when we measured the median distance between the plants coordinates, we found that it was only significantly smaller than that of randomisations for only `r numbers2words(sum(median_distances < 0.05))` of the `r numbers2words(length(median_distances))` species analysed (Figure \@ref(fig:fig-pca)c). 
+Indeed, when we measured the median distance between the plants' coordinates, we found that it was only significantly smaller than that of randomisations for only `r numbers2words(sum(median_distances < 0.05))` of the `r numbers2words(length(median_distances))` species analysed (Figure \@ref(fig:fig-pca)c). 
 <!-- DBS: Are we consistent with UK vs US spellings? Does Ecology Letters prefer UK spelling? -->
 
 # Discussion 
