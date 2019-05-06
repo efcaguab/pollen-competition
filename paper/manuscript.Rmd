@@ -110,7 +110,7 @@ First, we estimate the extent to which the net outcome of plants sharing pollina
 If facilitation is the primary outcome, we could expect two things. 
 On the one hand, we could expect an overall positive relationship between the amount of conspecific pollen deposited in stigmas and the amount of heterospecific pollen [@tur_evaluating_2016]. 
 The higher the deposition of conspecific pollen relative to heterospecific, the larger the slope of this relationship.
-On the other hand, we could expect a larger amount of conspecific pollen deposited on stigmas when flowers are open to animal pollinators than what is deposited due to self-pollination. 
+On the other, we could expect a larger amount of conspecific pollen deposited on stigmas when flowers are open to animal pollinators than what is deposited due to self-pollination. 
 Second, we investigate the relative contribution that four ecological factors have on the pollination service. 
 Specifically, we hypothesize that cospecific pollen deposition (both its quantity and its purity relative to heterospecific pollen) should decreasse for plants that share many pollination partners
 However, we also hypothesize that other factors like the plant's functional originality, its relative floral abundance, and the visit effectiveness should have the potential to compensate for this increase in competition. 
