@@ -469,7 +469,8 @@ Our results suggest that community context plays a central role in determining t
 <!-- DBS: In the intro, it's about net outcome. Here, it's about net cost or benefit. Which is it? -->
 First, we found that pollinator sharing can lead to both net facilitative and net competitive effects to plant species in a community. 
 Second, we found that multiple ecological factors can modulate the intensity of competition; however, conspecific and heterospecific pollen deposition are tightly coupled and this creates a clear trade-off between the quantity and purity of pollination [@thomson_effects_2019]. 
-Third, we found that the way these factors influence competition is strongly shaped by the community context. That is, if these factors collectively define a species' niche of competition for pollination,
+Third, we found that the way these factors influence competition is strongly shaped by the community context. 
+That is, if these factors collectively define a species' pollination niche,
 <!-- DBS: Yet another way to phrase this concept... -->
 the same plant species can occupy dramatically different niches depending on the community to which it belongs. 
 
@@ -477,30 +478,31 @@ Both of the criteria we used to identify the effect of animal-mediated pollinati
 A previous study showed that, in diverse pollination communities, sharing pollinators does not necessarily translate to net competition [@tur_evaluating_2016]. 
 The overall extent of facilitation/competition of pollination communities can depend on factors like the adversity of the environment [@tur_evaluating_2016; @callaway_positive_2002] or how disturbances affect pollinator populations [@stavert_exotic_2017]. 
 However, why some species experience more competition than others was not understood. 
-Here we show that the coexistence of facilitative and competitive effects of animal-mediated pollination can be at least partially explained by the trade-offs plants have to face when simultaneously maximising the deposition of conspecific pollen and minimising that of heterospecific pollen in both the short and the long term.   
+Although we were unable to measure the fitness outcomes, here we show that the coexistence of facilitative and competitive effects of animal-mediated pollination can be at least partially explained by trade-offs in the pollination sercice--both the short and the long term. 
+These trade-offs arise when plants simultaneously maximise the deposition of conspecific pollen and minimise that of heterospecific pollen. 
 
-In the short term, being a specialist and sharing no pollinators might reduce competition [@muchhala_competition_2010] and hence be preferable, as we show that sharing pollinators reduces both the quantity and purity of the conspecific pollen deposited. 
+In the short term, being a specialist and sharing no pollinators might reduce competition [@muchhala_competition_2010] and hence be preferable, not only due to costs to male fitness [@muchhala_interspecific_2012; @morales_interspecific_2008], but also because, as we show here, sharing pollinators reduces both the quantity and purity of the conspecific pollen deposited. 
 However, over long periods of time, there could be a risk associated with a specialist plant not having pollinators [@ricketts_tropical_2004]. 
-To ensure long-term survival, it is thus likely that plants also need to balance this risk with the costs of sharing pollinators. 
+To ensure long-term survival, it is thus likely that plants also need to balance this risk with the costs of sharing pollinators [@aizen_specialization_2012]. 
 One possible solution is to share pollinators *and* have original traits---as we show that trait originality is generally beneficial to pollen deposition and it is commonly thought that species that are further from others in trait space benefit from reduced competition. 
 Yet, there are two possible caveats to this strategy that highlight the interrelatedness of the ecological factors. 
 First, in a mutualism context, it is also possible that trait originality could come at the cost of being less ‘apparent’ to pollinators [@reverte_pollinators_2016]. 
 Second, the negative relationship between originality and generalism  [@carvalheiro_potential_2014] also depends on plant abundance [@coux_linking_2016], with generalist species being able to also have original traits only when they are abundant enough to provide a valuable reward to make visiting worthwhile to pollinators. 
 
 Visit effectiveness (high pollen and visits) and floral abundance, which were the most important predictors of pollen deposition here, introduced an even more explicit trade-off between gaining conspecific pollen and avoiding heterospecific pollen. 
-On the one hand, receiving high visitation increases conspecific pollen deposition but increases heterospecific pollen deposition to a greater extent---even when the visitors are likely to carry a high proportion of conspecific pollen [@fang_paradoxical_2016]. 
-On the other hand, being abundant reduces the amount of heterospecific pollen deposited but this comes at the expense of a noticeable reduction in the amount of conspecific pollen. 
+Receiving high visitation increases conspecific pollen deposition but increases heterospecific pollen deposition to a greater extent---even when the visitors are likely to carry a high proportion of conspecific pollen [@fang_paradoxical_2016]. 
+Contrastingly, being abundant reduces the amount of conspecific pollen deposited and simultaneously reduces heterospecific pollen at a faster rate. 
 Our results corroborate the importance that two-species studies have ascribed to visitation and abundance [@feldman_when_2004; @munoz_presence_2008; @morales_interspecific_2008], 
 but they also suggest that [because visitation, pollen production and abundance are usually correlated; @sargent_role_2006] balancing the pros and cons of sharing pollinators at the community level is not trivial and might even be partially responsible for the diversity of plant-pollinator communities [@benadi_frequency_2018].
 
 We observed, as expected, that the effects of pollen deposition can vary widely among species. 
-For instance, while the fitness of some plant species can be hurt even by low amounts of heterospecific pollen, for others species, fitness can instead be limited by the amount of conspecific pollen [@campbell_mechanism_1985; @arceo-gomez_interactive_2019]. 
-Alternatively, plant species can also differ substantially on the extent to which self- vs. outcross-pollen differ in their value for fertilization. 
+For instance, while the fitness of some plant species can be hurt even by low amounts of heterospecific pollen, for others, fitness can instead be limited by the amount of conspecific pollen [@campbell_mechanism_1985; @arceo-gomez_interactive_2019]. 
+Alternatively, plant species can also differ substantially in the extent to which self- vs. outcross-pollen differ in their value for fertilization. 
 The difference can be particularly relevant for species that are not self-fertile or those in which self-fertilization is rarely effective due to a temporary separation in the maturation of the sexes (dichogamy). 
 
-Importantly, we show here that the balances between costs and benefits are determined not only by species identity but also on the community plants belong to. 
+Importantly, we show here that the balances between costs and benefits are determined not only by species identity but also by the community to which plants belong. 
 Specifically, most plant species appear to be flexible enough to adopt markedly different niches in different communities. 
-Although there are many exceptions, some plant families (Asteraceae for example) are often generalists in their communities while others (Orchidaceae) are known to be more commonly specialised [@johnson_generalization_2000]. 
+<!-- Although there are many exceptions, some plant families (Asteraceae for example) are often generalists in their communities while others (Orchidaceae) are known to be more commonly specialised [@johnson_generalization_2000].  -->
 <!-- DBS: I'd cut the sentence above. -->
 From an evolutionary perspective, our results suggest that that selection for a particular strategy might say something about the community in which a species has typically inhabited during its evolutionary history. 
 Furthermore, from a more applied perspective, flowering plants are sometimes introduced to attract pollinators on other nearby plants. 
@@ -508,7 +510,7 @@ Furthermore, from a more applied perspective, flowering plants are sometimes int
 On the one hand, our results suggest that introduced plants that increase the relative originality of natives (e.g. through distinct phenology) might have positive effects [@gibson_can_2012]. 
 On the other, because different niches can lead to different outcomes across communities, our results also highlight the difficulties involved in predicting whether the introduced plant species will facilitate or compete with neighbours [@bartomeus_contrasting_2008]. 
 Other factors that we were unable to measure (e.g. pollinator behaviour and densities or the spatial context) have also been shown to play a role in the outcome of animal-mediated pollination [@ye_competition_2014; @flanagan_effects_2011; @cariveau_spatially_2009; @thomson_effects_2019].
-Nevertheless, our results indicate that the strategies plant might use to successfully minimise competition for pollination must be determined relative to other species in the community, rather than an absolute property of the species itself. 
+Nevertheless, our results indicate that the strategies that plant might use to successfully minimise competition for pollination must be determined relative to other species in the community, rather than an absolute property of the species itself. 
 
 Overall, pollination communities might not necessarily be the paradigmatic mutualistic communities we often believe. 
 Instead, we confirm that plant competition is pervasive in pollination communities. 
