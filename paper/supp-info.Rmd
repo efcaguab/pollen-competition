@@ -95,7 +95,7 @@ tbl_frame %>%
   kableExtra::kable_styling(font_size = 8) 
 ```
 
-```{r fig-conspecififc-heterospecific, fig.height=4, fig.cap="Despite the variation in these slopes, plants overall had more conspecific than heterospecific pollen deposited in their stigmas."}
+```{r fig-conspecific-heterospecific, fig.height=4, fig.cap="Despite the variation in these slopes, plants overall had more conspecific than heterospecific pollen deposited in their stigmas."}
 # fig_hetero_con <- make_fig_con_hetero_empirical(dep_frame)
 drake::loadd(fig_hetero_con)
 fig_hetero_con 

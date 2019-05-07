@@ -87,7 +87,7 @@ However, it is less clear how exactly this ecological differentiation may, in tu
 There are two main mechanisms through which competition for pollinators can affect plant fertilization [@morales_interspecific_2008]. 
 The first is by changes in intraspecific pollen transfer.
 This happens, for example, when plants with more attractive flowers might reduce the number of visits to those less of attractive neighbouring plants, and hence reduce the amount of *conspecific pollen* deposited by animals [@yang_pollinator_2011]. 
-The second is via intrerspecific pollen transfer and occurs when plants share pollination partners. 
+The second is via interspecific pollen transfer and occurs when plants share pollination partners. 
 In that case, even receiving a visit might not necessarily translate into fertilization [@campbell_mechanism_1985] because a focal plant might receive *heterospecific pollen* or because pollen from the focal plant might be lost to different species. 
 Generally speaking, provided pollen is viable and compatible [@ramsey_pollen_2000; @de_jong_plant_1992; @dafni_pollen_2000], the higher the quantity of conspecific pollen and its purity (relative to heterospecific pollen), the better the pollination service received by the focal plant.
 By definition, these two mechanisms of competition occur at the community scale. 
@@ -101,18 +101,18 @@ Alternatively, it might also be the case that abundance (for example in terms of
 Abundant plant species might experience a dilution of available pollinators [@feinsinger_effects_1987; @feldman_when_2004] but might also receive more effective visits by capitalising on a larger share of both visits and the pollen carried by pollinators<!-- cite Savert et al. 2019 here once it has a doi-->. 
 In this case, a potential reduction in the absolute amount of conspecific pollen received could be compensated by an increase in the amount of conspecific pollen relative to heterospecific pollen.
 Altogether, it is clear that these ecological factors can indeed shape pollen deposition at the community level. 
-However, their relative importance and how exactly they can minimise competition for pollination—or equivalently, maximise facilitation—in plant populations (acrosss species and communities) has not been determined. 
+However, their relative importance and how exactly they can minimise competition for pollination—or equivalently, maximise facilitation—in plant populations (across species and communities) has not been determined. 
 
-Here, we investigate the balance between competition for pollination abd facilitation at the community scale using empirical data from eleven plant-pollinator communities in the Argentinian Pampas. 
+Here, we investigate the balance between competition for pollination and facilitation at the community scale using empirical data from eleven plant-pollinator communities in the Argentinian Pampas. 
 First, we estimate the extent to which the net outcome of plants sharing pollinators is facilitation or competition. 
 If facilitation is the primary outcome, we could expect an overall positive relationship between the amount of conspecific pollen deposited in stigmas and the amount of heterospecific pollen [@tur_evaluating_2016]. 
 The higher the deposition of conspecific pollen relative to heterospecific, the larger the slope of this relationship.
 <!-- On the other, we could expect a larger amount of conspecific pollen deposited on stigmas when flowers are open to animal pollinators than what is deposited due to self-pollination.  -->
 Second, we investigate the relative contribution that four ecological factors have to the pollination service. 
-Specifically, we hypothesize that the quantity and purity of cospecific pollen deposition should decreasse for plants that share many pollination partners
+Specifically, we hypothesize that the quantity and purity of conspecific pollen deposition should decrease for plants that share many pollination partners
 However, we also hypothesize that other factors like the plant's functional originality, its relative floral abundance, and the visit effectiveness should have the potential to compensate for this increase in competition. 
-Third and finally, we examine how much the community context influences the way plants exploit these factors to minimise competition/maximise facilitation. 
-We use these four ecological factors as a proxy of the realised pollination niche of a plant species in their comunity.
+Third and finally, we examine how much the community context influences the way plants use these factors to minimise competition/maximise facilitation. 
+We use these four ecological factors as a proxy of the realised pollination niche of a plant species in their community.
 Although some plant species might be widespread across multiple locations, competition for pollinators occurs at the community level and hence we predict that pollination niche will be influenced by the local context.
 If plant strategy is not flexible across the communities in our study\R{ref-plant-flexibility}, we could expect niches to be more similar within species than across species. 
 On the contrary, if a species' strategy is flexible, we should expect plants to be able to occupy different niches in each community such that intraspecific competition could ultimately be minimised regardless of the context. 
@@ -162,11 +162,11 @@ A positive slope for a plant population indicates facilitation while a negative 
 
 ## Factors affecting quantity and purity of pollination service 
 
-Our second objective was to investigate the relative contribution that different eological factors have on the mechanisms of pollinator-mediated competition. 
+Our second objective was to investigate the relative contribution that different ecological factors have on the mechanisms of pollinator-mediated competition. 
 Generally speaking,
 we expect that any factor that increases the amount of conspecific pollen deposited in stigmas, both in quantity and purity relative to heterospecific pollen, also has a positive effect on the pollination service.
 <!-- DBS: There is no use to calling it something succinct like purity if we always have to say "purity relative to heterospecific pollen"...  -->
-<!-- FDO: Only mention purity relative to heterospecific pollen cause it's first time it gets mentioned in the methodsa  -->
+<!-- FDO: Only mention purity relative to heterospecific pollen cause it's first time it gets mentioned in the methods  -->
 Specifically, we investigated the effect of (*i*) a plant's number of shared pollinator species, (*ii*) a plant's abundance relative to the rest of the community, (*iii*) the mean visit effectiveness---a metric that combines the amount and type of pollen carried by floral visitors and the number of visits it receives from them, and (*iv*) the plant's functional originality [@laliberte_distance-based_2010]. 
 See *Data Analysis* section below for more details on these four factors. 
 <!-- Here, we define visit effectiveness of the pollinator species *i* to plant species *j* as the proportion between the visits of *i* to *j* and all visits of *i*, multiplied by the proportion between the number of pollen grains of *j* attached to individuals of *i* and all pollen attached to individuals of *i*. -->
@@ -203,7 +203,7 @@ Specifically, we calculated the number of shared pollinators for each plant spec
 <!-- This variable is strongly correlated to the number of animal species a plant interacts with (the species degree).  -->
 To calculate the plants' relative floral abundance in their community, we aggregated floral counts for each species. 
 We then calculated the mean visit effectiveness of pollinator species *i* to plant species *j* as \[e_{ij} = \frac{v_{ij}}{v_i} \frac{p_{ji}}{p_j}\], where *v~ij~* is the observed number of visits by *i* to *j*, *p~ji~* is the number of pollen grains from *j* attached to *i*, *v~i~* is the total number of visits performed by *i*, and *p~j~* is the total number of grains carried by *j*.
-We log-transformed the number of shared pollinators, floral abundance, and visit effecvtiveness before including them in the model. 
+We log-transformed the number of shared pollinators, floral abundance, and visit effectiveness before including them in the model. 
 
 Finally, functional originality is defined as the distance of a species from the community trait average--the centroid of functional space of the community [@laliberte_distance-based_2010; @coux_linking_2016]. 
 <!-- As phenology has been shown to be a key mechanism of niche differentiation among plants, we also  -->
@@ -211,7 +211,7 @@ To include phenological variation, we treated floral abundance in each of the su
 <!-- This approach allowed us to integrate the originality in phenological niche alongside the originality on other functional traits.  -->
 To account for the non-independence of floral counts and weight all traits equally, we assigned a weight of 1/5 to these abundances (one for each month). 
 We scaled all traits prior to calculating the centroid of the functional space and calculated the species-specific functional coordinates using the R package `FD 1.0-12` [@laliberte_fd_2014]. 
-Finally, we scaled all foyr factors to have a zero mean and unitary variance.
+Finally, we scaled all four factors to have a zero mean and unitary variance.
  
 To estimate the coefficients, perform model selection, and quantify the associated uncertainty, we used a combination of multi-model inference and bootstrap resampling with 99 replicates. 
 First, we performed model selection using the AICc and determined the likelihood of each candidate model (a particular combination of predictors) by calculating the median \(\Delta\)AICc (relative to the most likely model) for each bootstrap sample. 
@@ -277,7 +277,7 @@ Overall, we found that neither net facilitation nor net competition dominates (T
 Indeed, we found that the proportions of species that experienced a statistically significant positive or negative relationship between heterospecific and conspecific pollen were very similar (`r counts_facilitation_slope$np[3]`% and `r counts_facilitation_slope$np[1]`%, respectively; Figure \@ref(fig:fig-trade-off-predictions)a; Table \@ref(S-tab:table-facilitation-models-random)). 
 Most of the variation between plants in a facilitation-competition gradient was driven by differences *between* species; however, we also observed some important differences *within* species. 
 For instance, `r numbers2words(nrow(sp_both_pos_neg))` of the species sampled across multiple communities (`r sp_both_pos_neg_names`) showed evidence that the same species, can experience facilitation (positive relationships) in some communities and competition (negative relationships) in others. 
-Interestingly, although there was wide variation in the slope of the relationship between heterospecific and conspecific pollen, almost all plants had more conspecific than heterospecific pollen deposited on their stigmas (Figure \@ref(S-fig:fig-conspecififc-heterospecific)). 
+Interestingly, although there was wide variation in the slope of the relationship between heterospecific and conspecific pollen, almost all plants had more conspecific than heterospecific pollen deposited on their stigmas (Figure \@ref(S-fig:fig-conspecific-heterospecific)). 
 
 ```{r fig-trade-off-predictions, fig.height= 4, out.height="4in", fig.width = 3.57, out.width="3.57in", out.extra="center", fig.cap = "Competition vs. facilitation at the community level. Points indicate the estimated slopes for the relationship between the amount of heterospecific and conspecific pollen deposited per stigma across species in each of their communities. Statistically significant negative slopes (darkest shade) indicate that plants experience net competition for animal-mediated pollination, while significantly positive slopes (lightest shade) indicate that net facilitation is the predominant outcome. The number of plants analysed for each species is shown within brackets next to the species name. Error bars correspond to $\\pm$ the standard error (SE)."}
 # fig_random_slopes <- plot_random_slopes(facilitation_plot_df)
@@ -321,7 +321,7 @@ We found that our models of pollen deposition had high explanatory power (the co
 As determined by AICc, the random structure best supported by the data was the one that fit an intercept for each species in each community (as opposed to a common intercept for each species irrespective of the community to which they belong). 
 This structure was best for both the models of conspecific and heterospecific pollen (Table \@ref(S-tab:table-aic-random-models)).  
 
-Of the four factors we considered, we found that a plant's mean visit effectiveness and realtive floral abundance were the most important at predicting pollen deposition in plant stigmas (Figure \@ref(fig:fig-average-qual-quant)a). 
+Of the four factors we considered, we found that a plant's mean visit effectiveness and relative floral abundance were the most important at predicting pollen deposition in plant stigmas (Figure \@ref(fig:fig-average-qual-quant)a). 
 Surprisingly, the number of shared pollinators was comparatively unimportant, particularly for models of heterospecific pollen deposition, as it was only ever included in models with relatively large AICc values (Table \@ref(S-tab:table-aic-fixed-models)). 
 <!-- DBS: Two-sentence paragraphs are universally frowned upon. -->
 
@@ -333,7 +333,7 @@ This indicates that, although there is a positive association between visit effe
 In contrast, a plants' relative floral abundance negatively affected its deposition quantity, but the mean difference between the coefficients in the models indicates a positive association with purity (Figure \@ref(fig:fig-average-qual-quant)c). 
 The third most important factor, functional originality, had a positive, although comparatively smaller, association with both the quantity and purity. 
 Finally, the number of shared pollinators had negative and neutral associations with conspecific and heterospecific pollen, respectively, but these impacts were small when compared to the other factors. 
-Athough the ecological factors were positively correlated (Figure \@ref(S-fig:fig-correlation)), the collinearity between predictors did not qualitatively affect our findings (Figure \@ref(S-fig:fig-model-results)).
+Although the ecological factors were positively correlated (Figure \@ref(S-fig:fig-correlation)), the collinearity between predictors did not qualitatively affect our findings (Figure \@ref(S-fig:fig-model-results)).
 
 ```{r fig-average-qual-quant, fig.height= 2.28*2, fig.width=width('single'), out.height="4.56in", out.width="3.57in", out.extra="center", fig.cap="Effect of strategies to minimise competition in the pollination service. (a) The plant's visit effectiveness and relative floral abundance are the most important factors determining the deposition of conspecific and heterospecific pollen. Meanwhile, the number of shared pollinators was generally less important. The graph shows the relative importance calculated as the sum of the Akaike weights of the candidate models that included the selected factor. (b) The association between ecological factors and heterospecific pollen tended to align with their association with conspecific pollen. Visit effectiveness and functional originality had a positive association with pollen deposition, while floral abundance and the number of shared pollinators had a negative association. The plot shows the distribution of the effects (across 99 bootstrap replicates) of the four ecological factors for conspecific and heterospecific pollen. (c) The end result of these associations is that only the plants' functional originality has a positive impact on both the quantity and purity of conspecific pollen deposition (relative to heterospecific pollen). The plot shows the model averaged mean effect ($\\pm$ SE of 99 bootstrap replicates)."}
 height1 <- 1
@@ -438,7 +438,7 @@ The criterion we used to identify the effect of animal-mediated pollination sugg
 A previous study showed that, in diverse pollination communities, sharing pollinators does not necessarily translate to net competition [@tur_evaluating_2016]. 
 The overall extent of facilitation/competition of pollination communities can depend on factors like the adversity of the environment [@tur_evaluating_2016; @callaway_positive_2002] or how disturbances affect pollinator populations [@stavert_exotic_2017]. 
 However, why some species experience more competition than others was not understood. 
-Although we were unable to measure the fitness outcomes, here we show that the coexistence of facilitative and competitive effects of animal-mediated pollination can be at least partially explained by trade-offs in the pollination sercice--both the short and the long term. 
+Although we were unable to measure the fitness outcomes, here we show that the coexistence of facilitative and competitive effects of animal-mediated pollination can be at least partially explained by trade-offs in the pollination service--both the short and the long term. 
 These trade-offs arise when plants simultaneously maximise the deposition of conspecific pollen and minimise that of heterospecific pollen. 
 
 In the short term, being a specialist and sharing no pollinators might reduce competition [@muchhala_competition_2010] and hence be preferable, not only due to costs to male fitness [@muchhala_interspecific_2012; @morales_interspecific_2008], but also because, as we show here, sharing pollinators reduces both the quantity and purity of the conspecific pollen deposited. 
