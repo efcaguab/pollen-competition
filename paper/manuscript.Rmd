@@ -105,10 +105,9 @@ However, their relative importance and how exactly they can minimise competition
 
 Here, we investigate the balance between competition for pollination abd facilitation at the community scale using empirical data from eleven plant-pollinator communities in the Argentinian Pampas. 
 First, we estimate the extent to which the net outcome of plants sharing pollinators is facilitation or competition. 
-If facilitation is the primary outcome, we could expect two things. 
-On the one hand, we could expect an overall positive relationship between the amount of conspecific pollen deposited in stigmas and the amount of heterospecific pollen [@tur_evaluating_2016]. 
+If facilitation is the primary outcome, we could expect an overall positive relationship between the amount of conspecific pollen deposited in stigmas and the amount of heterospecific pollen [@tur_evaluating_2016]. 
 The higher the deposition of conspecific pollen relative to heterospecific, the larger the slope of this relationship.
-On the other, we could expect a larger amount of conspecific pollen deposited on stigmas when flowers are open to animal pollinators than what is deposited due to self-pollination. 
+<!-- On the other, we could expect a larger amount of conspecific pollen deposited on stigmas when flowers are open to animal pollinators than what is deposited due to self-pollination.  -->
 Second, we investigate the relative contribution that four ecological factors have on the pollination service. 
 Specifically, we hypothesize that cospecific pollen deposition (both its quantity and its purity relative to heterospecific pollen) should decreasse for plants that share many pollination partners
 However, we also hypothesize that other factors like the plant's functional originality, its relative floral abundance, and the visit effectiveness should have the potential to compensate for this increase in competition. 
@@ -129,16 +128,16 @@ In each location, we sampled two restored and two agricultural fragments, except
 ## Competition vs. facilitation
 
 Our first objective was to identify whether the net outcome of plants sharing pollinators at the community level is facilitation or competition. 
-We use two complementary lines of evidence.  
-The first can be found via the relationship between heterospecific and conspecific pollen deposited in plant stigmas [@tur_evaluating_2016]. 
+<!-- We use two complementary lines of evidence.   -->
+To do that  we examine <!-- first can be found via --> the relationship between heterospecific and conspecific pollen deposited in plant stigmas [@tur_evaluating_2016]. 
 This is because heterospecific pollen can be seen as an unavoidable cost that plants must pay for receiving conspecific pollen from shared pollinators. 
 A negative relationship (when shared pollinators increase heterospecific pollen loads and decrease conspecific loads) may indicate that competition for pollination is strong.
 In contrast, a positive relationship is what would be observed when facilitation is the dominant outcome. 
 
-The second line of evidence can be obtained by examining the difference between the amount of conspecific pollen deposited in flower stigmas *with* and *without* animal-mediated pollination. 
-Self-pollination can be favourable to plant reproduction when competition for pollination is strong because it provides insurance against poor pollination service [@kalisz_benefits_2003]. 
-If competition <!-- for pollination-->is sufficiently strong, then the amount of conspecific pollen deposited in flower stigmas when animal pollination is prevented should be higher than when animal pollination is allowed.
-In contrast, the opposite pattern may indicate that plants benefit from having pollen delivered directly to the stigma by animals. 
+<!-- The second line of evidence can be obtained by examining the difference between the amount of conspecific pollen deposited in flower stigmas *with* and *without* animal-mediated pollination.  -->
+<!-- Self-pollination can be favourable to plant reproduction when competition for pollination is strong because it provides insurance against poor pollination service [@kalisz_benefits_2003].  -->
+<!-- If competition for pollination is sufficiently strong, then the amount of conspecific pollen deposited in flower stigmas when animal pollination is prevented should be higher than when animal pollination is allowed. -->
+<!-- In contrast, the opposite pattern may indicate that plants benefit from having pollen delivered directly to the stigma by animals.  -->
 
 ### Data collection
 
@@ -146,7 +145,7 @@ In each of the studied communities, we quantified pollen deposition in a subset 
 This subset comprised between three and nine common insect-pollinated (entomophilous) plant species that were flowering during the sampling period (see Figure \@ref(fig:fig-trade-off-predictions)a). 
 Based on data from previous years [@marrero_effect_2014], we chose plant species such that they cover a wide range on a specialization-generalization gradient as well as a wide range of abundances. 
 In each of the selected plants, we removed all flowers leaving only buds that were expected to go into florescence on the next day. 
-Approximately a quarter of these buds were bagged to prevent animal pollination. 
+<!-- Approximately a quarter of these buds were bagged to prevent animal pollination.  -->
 Two days after inflorescence, we collected all remaining flowers and counted the number of conspecific and heterospecific pollen grains in their pistils. 
 More details can be found in @marrero_agricultural_2016. 
 
@@ -158,8 +157,8 @@ The slope and intercept of this relationship were allowed to differ between popu
 Models were fitted using the function `glmer` from the R package `lme4 1.1-19` [@bates_fitting_2015]. 
 A positive slope for a plant population indicates facilitation while a negative slope competition [@tur_evaluating_2016]. 
 
-To compare the conspecific pollen deposited with and without animal-mediated pollination, we followed the same approach as above. 
-In this case, however, the predictor variable was the treatment (whether the flower was bagged or unbagged) instead of the number of heterospecific grains. 
+<!-- To compare the conspecific pollen deposited with and without animal-mediated pollination, we followed the same approach as above.  -->
+<!-- In this case, however, the predictor variable was the treatment (whether the flower was bagged or unbagged) instead of the number of heterospecific grains.  -->
 
 ## Factors affecting quantity and purity of pollination service 
 
@@ -271,48 +270,19 @@ sp_both_pos_neg_names <- sp_both_pos_neg %$%
 equal_pos_neg <- counts_facilitation_slope$nn[1] == counts_facilitation_slope$nn[3]
 ```
 
-We first examined the degree of facilitation/competition in natural communities. Specifically, we examined the slope of the relationship between the quantities of heterospecific and conspecific pollen deposited on stigmas of each species in a community. 
+We first examined the degree of facilitation/competition in natural communities. 
+Specifically, we examined the slope of the relationship between the quantities of heterospecific and conspecific pollen deposited on stigmas of each species in a community. 
 Overall, we found that neither net facilitation nor net competition dominates (Table \@ref(S-tab:table-facilitation-models-general)). 
 Indeed, we found that the proportions of species that experienced a statistically significant positive or negative relationship between heterospecific and conspecific pollen were very similar (`r counts_facilitation_slope$np[3]`% and `r counts_facilitation_slope$np[1]`%, respectively; Figure \@ref(fig:fig-trade-off-predictions)a; Table \@ref(S-tab:table-facilitation-models-random)). 
 Most of the variation between plants in a facilitation-competition gradient was driven by differences *between* species; however, we also observed some important differences *within* species. 
 For instance, `r numbers2words(nrow(sp_both_pos_neg))` of the species sampled across multiple communities (`r sp_both_pos_neg_names`) showed evidence that the same species, can experience facilitation (positive relationships) in some communities and competition (negative relationships) in others. 
-Interestingly, although there was wide variation in the slope of the relationship between heterospecific and conspecific pollen, almost all plants had more conspecific than heterospecific pollen deposited on their stigmas (Figure \@ref(fig:fig-trade-off-predictions)b). 
+Interestingly, although there was wide variation in the slope of the relationship between heterospecific and conspecific pollen, almost all plants had more conspecific than heterospecific pollen deposited on their stigmas (Figure \@ref(S-fig:fig-conspecififc-heterospecific)). 
 
-```{r fig-trade-off-predictions, fig.height= 4, out.height="4in", fig.width = 7.49, out.width="7.49in", out.extra="center", fig.cap = "Competition vs. facilitation at the community level. (a) Points indicate the estimated slopes for the relationship between the amount of heterospecific and conspecific pollen deposited per stigma across species in each of their communities. Statistically significant negative slopes (darkest shade) indicate that plants experience net competition for animal-mediated pollination, while significantly positive slopes (lightest shade) indicate that net facilitation is the predominant outcome. The number of plants analysed for each species is shown within brackets next to the species name. (b) Despite the variation in these slopes, plants overall had more conspecific than heterospecific pollen deposited in their stigmas. (c) We plot the amount of conspecific pollen deposited in plants' stigmas when they were open to animal-mediated pollination and the same when they were closed. Statistically significant negative differences (darkest shade) indicates competition while positive differences (lightest shade) indicates facilitation. In all panels, error bars correspond to $\\pm$ the standard error (SE)."}
+```{r fig-trade-off-predictions, fig.height= 4, out.height="4in", fig.width = 3.57, out.width="3.57in", out.extra="center", fig.cap = "Competition vs. facilitation at the community level. Points indicate the estimated slopes for the relationship between the amount of heterospecific and conspecific pollen deposited per stigma across species in each of their communities. Statistically significant negative slopes (darkest shade) indicate that plants experience net competition for animal-mediated pollination, while significantly positive slopes (lightest shade) indicate that net facilitation is the predominant outcome. The number of plants analysed for each species is shown within brackets next to the species name. Error bars correspond to $\\pm$ the standard error (SE)."}
 # fig_random_slopes <- plot_random_slopes(facilitation_plot_df)
-# fig_hetero_con <- make_fig_con_hetero_empirical(dep_frame)
-# fig_con_con = plot_bagged_vs_open_conspecific(drake::readd(con_con_plot_df))
-# pdf(width = 7.49, height = 4)
+# pdf(width = 3.57, height = 4)
 drake::loadd(fig_random_slopes)
-drake::loadd(fig_con_con)
-drake::loadd(fig_hetero_con)
-width_left <- 6.5*3/5
-bar_plot_width <- 0.29
-rw <- c(width_left - bar_plot_width,
-        bar_plot_width, 
-        6.5 - width_left - bar_plot_width,
-        bar_plot_width)
-left <- cowplot::plot_grid(
-  fig_hetero_con,
-  fig_con_con[[1]],
-  # fig_con_con[[2]],
-  ncol = 1, 
-  rel_widths = rw[c(3,4)], 
-  align = "hv"
-)
-right <- cowplot::plot_grid(
-  fig_random_slopes[[1]],
-  # fig_random_slopes[[2]],
-  # ncol = 2, 
-  align = "h", 
-  rel_widths = rw[1:2]
-)
-cowplot::plot_grid(
-  right,
-  left,
-  ncol = 2,
-  rel_widths = c(sum(rw[1:2]), sum(rw[3:4]))
-)
+  fig_random_slopes[[1]]
 # dev.off()
 ```
 
@@ -333,10 +303,10 @@ sp_con_both_pos_neg <- con_con_plot_df %>%
                 plant_label = paste0("*", plant_label, "*"))
 ```
 
-Second, we compared the amount of conspecific pollen deposited on flowers that were open to animal-mediated pollinators with that of those that were closed. 
-Here, we again found large differences between plants but with a clear tendency to find more pollen in open flowers (Table \@ref(S-tab:table-open-bagged-models-general)). 
-Specifically, `r sp_con_con$np[sp_con_con$effect_category == "positive"]`% of plants had more pollen when open and `r sp_con_con$np[sp_con_con$effect_category == "negative"]`% had less pollen when open (the difference was statistically non-significant for the remaining `r sp_con_con$np[sp_con_con$effect_category == "neutral"]`%; Figure \@ref(fig:fig-trade-off-predictions)c; Table \@ref(S-tab:table-open-bagged-models-random)). 
-Variation within species was slightly smaller and only `r numbers2words(nrow(sp_con_both_pos_neg))` species (`r glue::collapse(sp_con_both_pos_neg$plant_label, sep = ", ", last = ", and ")`) had both positive and negative differences. 
+<!-- Second, we compared the amount of conspecific pollen deposited on flowers that were open to animal-mediated pollinators with that of those that were closed.  -->
+<!-- Here, we again found large differences between plants but with a clear tendency to find more pollen in open flowers (Table \@ref(S-tab:table-open-bagged-models-general)).  -->
+<!-- Specifically, `r sp_con_con$np[sp_con_con$effect_category == "positive"]`% of plants had more pollen when open and `r sp_con_con$np[sp_con_con$effect_category == "negative"]`% had less pollen when open (the difference was statistically non-significant for the remaining `r sp_con_con$np[sp_con_con$effect_category == "neutral"]`%; Figure \@ref(fig:fig-trade-off-predictions)c; Table \@ref(S-tab:table-open-bagged-models-random)).  -->
+<!-- Variation within species was slightly smaller and only `r numbers2words(nrow(sp_con_both_pos_neg))` species (`r glue::collapse(sp_con_both_pos_neg$plant_label, sep = ", ", last = ", and ")`) had both positive and negative differences.  -->
 
 ## Factors affecting quantity and purity of pollination service
 
@@ -463,7 +433,7 @@ That is, if these factors collectively define a species' pollination niche,
 <!-- DBS: Yet another way to phrase this concept... -->
 the same plant species can occupy dramatically different niches depending on the community to which it belongs. 
 
-Both of the criteria we used to identify the effect of animal-mediated pollination suggested the same outcome: that neither facilitation nor competition are dominant in pollination communities.
+The criterion we used to identify the effect of animal-mediated pollination suggested that neither facilitation nor competition are dominant in pollination communities.
 A previous study showed that, in diverse pollination communities, sharing pollinators does not necessarily translate to net competition [@tur_evaluating_2016]. 
 The overall extent of facilitation/competition of pollination communities can depend on factors like the adversity of the environment [@tur_evaluating_2016; @callaway_positive_2002] or how disturbances affect pollinator populations [@stavert_exotic_2017]. 
 However, why some species experience more competition than others was not understood. 
