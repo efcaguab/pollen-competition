@@ -402,7 +402,8 @@ make_fig_con_hetero_empirical <- function(dep_frame){
          y = "conspecific",
          title = "hetero- vs. conspecific pollen",
          subtitle = "mean pollen grains per stigma") +
-    pub_theme()
+    pub_theme() +
+    coord_fixed()
 }
 
 mid <- function(x){
