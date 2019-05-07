@@ -18,7 +18,7 @@
     University of Canterbury, \\
     New Zealand
 }
-\date{April 15, 2019}
+\date{May 7, 2019}
 %-----------------------------------------------------------------------------%
 \begin{document}
 % Name and address of receiver
@@ -38,30 +38,34 @@ drake::loadd(msc_title)
 
 We are submitting the manuscript entitled ``\Sexpr{msc_title}'' to be considered for publication in \emph{Ecology Letters}.
 
-In this manuscript, we show that the realised competition for pollination niche (which can also be viewed as a plant species strategy to minimise competition for pollination) is strongly determined by the community it belongs to.
-% DBS: The sentence above just reaffirms my belief that "competition for pollination niche" is NOT the wording we want to use.
+In this manuscript, we show that the realised pollination niche (which can also be viewed as a plant species' strategy to minimise competition for pollination) is strongly determined by the community to which it belongs.
 Furthermore, we show that even in pollination there is no such thing as a free lunch, and plants need to balance multiple trade-offs when minimising competition for pollination.
 On the one hand, factors that increase the quantity of pollen deposited by animals may also decrease its purity (and vice-versa).
 On the other, factors that increase both the quantity and purity do so only mildly and potentially only in the short-term.
 % DBS: one hand and the other, again...
 % DBS: The use of short-term here is very ambiguous.
 
-Very few studies have previously investigated how competition for pollination affects the pollination service using empirical data \emph{at the community level}.
-When they have, XXX and YYY.
-Here, we take this approach a critical step beyond by not only collecting pollen-deposition data but also visitation, pollen transfer, and plant abundance, phenology and traits.
-These extra pieces of information allowed us to interrogate the relationship between pollination service and multiple ecological factors, and, for the first time, quantify the competition for pollination realised niche of plant populations.
-% DBS: And again, it just can't roll off anyone's tongue.
+Very few studies have previously investigated how competition for pollination affects the pollination service using \emph{empirical data at the community level}.
+When they have they have focused on pollen deposition alone and failed to incorporate other metrics that might influence the pollination service in natural communities.
+Here, we take a step beyond by not only collecting pollen-deposition data but also visitation, pollen transfer, plant abundance, phenology, and traits.
+These extra pieces of information allowed us to investigate the relationship between pollination service and multiple ecological factors, and, for the first time, quantify the pollination niche of plant populations.
 
-Within the literature, studies of pollination almost always focus on the inherently mutualistic aspects of plant-pollinator communities. In contrast,
-ours provides compelling evidence that animal-mediated pollination is really a fluid dance between competition and facilitation. This calls for a critical shift in the way we think about pollination in community ecology, as well as XXX.
+Within the literature, studies of pollination almost always focus on the inherently mutualistic aspects of plant-pollinator communities.
+In contrast, ours provides compelling evidence that animal-mediated pollination is really a fluid dance between competition and facilitation.
+This calls for a shift in the way we think about pollination in community ecology, especially from a theoretical perspective.
 
-Lastly, please note that the data used in this manuscript has been previously published\autocite{marrero_effect_2014,marrero_agricultural_2016,marrero_exotic_2017} by one of the co-authors.
+Lastly, please note that the data used in this manuscript have been previously published\autocite{marrero_effect_2014,marrero_agricultural_2016,marrero_exotic_2017} by one of the co-authors.
 However, the enclosed work represents a novel contribution for all involved, and no related work published, in press, or submitted during this or last year has been cited.
 
 Thank you for your consideration.
+\vfill
 
+\hfill
+Fernando Cagua
+
+\medskip
 % Closing statement
-\closing{Regards,}
+% \closing{ }
 \end{letter}
 \end{document}
 %-----------------------------------------------------------------------------%
