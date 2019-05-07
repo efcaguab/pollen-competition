@@ -1,5 +1,5 @@
 ---
-title: "Community context determines competition/facilitation trade-offs in pollination systems"
+title: "Community context determines competition vs. facilitation trade-offs in pollination systems"
 author: 
   - "E. Fernando Cagua^1^ ([efc29@uclive.ac.nz](mailto:efc29@uclive.ac.nz))"
   - "Hugo J. Marrero^2^ ([hugomarrero@gmail.com](hugomarrero@gmail.com))"
@@ -44,7 +44,8 @@ loadd(abs_wordcount, msc_wordcount, n_displays, n_references, keywords)
 
 ^2^ Centro de Recursos Naturales Renovables de las Zonas Semiáridas, CONICET, Camino de la Carrindanga Km. 7, 8000 Bahía Blanca, Argentina
 
-<!-- ^a^ [efc29@uclive.ac.nz](mailto:efc29@uclive.ac.nz); ^b^ [hugomarrero@gmail.com](hugomarrero@gmail.com); ^c^ [jason.tylianakis@canterbury.ac.nz](jason.tylianakis@canterbury.ac.nz); ^d^ [daniel.stouffer@canterbury.ac.nz](daniel.stouffer@canterbury.ac.nz) -->
+**Running title:** 
+Competition for pollination vs. facilitation
 
 **Keywords:** `r keywords`
 
@@ -58,7 +59,7 @@ loadd(abs_wordcount, msc_wordcount, n_displays, n_references, keywords)
 
 **Author for correspondence:** E. Fernando Cagua (+64 20 4026 8153).
 
-**Data accessibility:** Data supporting the results will be accessible in an appropriate data repository after publication. The data DOI will be included here.
+**Data accessibility:** Data supporting the results will be accessible in an appropriate data repository after publication. The DOI will be included here.
 
 **Author contributions:** EFC wrote the manuscript and performed all analyses with input from all authors; HJM collected the data; all authors contributed to the study design. 
 
