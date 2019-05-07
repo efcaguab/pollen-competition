@@ -109,7 +109,7 @@ If facilitation is the primary outcome, we could expect an overall positive rela
 The higher the deposition of conspecific pollen relative to heterospecific, the larger the slope of this relationship.
 <!-- On the other, we could expect a larger amount of conspecific pollen deposited on stigmas when flowers are open to animal pollinators than what is deposited due to self-pollination.  -->
 Second, we investigate the relative contribution that four ecological factors have on the pollination service. 
-Specifically, we hypothesize that cospecific pollen deposition (both its quantity and its purity relative to heterospecific pollen) should decreasse for plants that share many pollination partners
+Specifically, we hypothesize that the quantity and purity of cospecific pollen deposition should decreasse for plants that share many pollination partners
 However, we also hypothesize that other factors like the plant's functional originality, its relative floral abundance, and the visit effectiveness should have the potential to compensate for this increase in competition. 
 Third and finally, we examine how much the community context influences the way plants exploit these factors to minimise competition/maximise facilitation. 
 We use these four ecological factors as a proxy of the realised pollination niche of a plant species in their comunity.
@@ -162,13 +162,13 @@ A positive slope for a plant population indicates facilitation while a negative 
 
 ## Factors affecting quantity and purity of pollination service 
 
-Our second objective was to investigate the relative contribution of different mechanisms of pollinator-mediated competition to the pollination service. 
+Our second objective was to investigate the relative contribution that different eological factors have on the mechanisms of pollinator-mediated competition. 
 Generally speaking,
 we expect that any factor that increases the amount of conspecific pollen deposited in stigmas, both in quantity and purity relative to heterospecific pollen, also has a positive effect on the pollination service.
 <!-- DBS: There is no use to calling it something succinct like purity if we always have to say "purity relative to heterospecific pollen"...  -->
 <!-- FDO: Only mention purity relative to heterospecific pollen cause it's first time it gets mentioned in the methodsa  -->
 Specifically, we investigated the effect of (*i*) a plant's number of shared pollinator species, (*ii*) a plant's abundance relative to the rest of the community, (*iii*) the mean visit effectiveness---a metric that combines the amount and type of pollen carried by floral visitors and the number of visits it receives from them, and (*iv*) the plant's functional originality [@laliberte_distance-based_2010]. 
-See *Data Analysis* section below for more details on these four variables. 
+See *Data Analysis* section below for more details on these four factors. 
 <!-- Here, we define visit effectiveness of the pollinator species *i* to plant species *j* as the proportion between the visits of *i* to *j* and all visits of *i*, multiplied by the proportion between the number of pollen grains of *j* attached to individuals of *i* and all pollen attached to individuals of *i*. -->
 
 ### Data collection
@@ -198,7 +198,7 @@ Models were fitted using the R package `nlme 3.1-131` [@pinheiro_nlme_2018].
 Because the amount of deposited pollen can vary widely across species, and potentially also across communities, we evaluated two possible structures for the random effects: one that includes a random intercept for plant species, and one that treats measures from species across different communities independently. 
 We selected the best random structure by comparing the median Akaike Information Criterion for small samples (AICc). 
 
-As fixed predictors in the models, we included the four ecological variables described above. 
+As fixed predictors in the models, we included the four ecological factors described above. 
 Specifically, we calculated the number of shared pollinators for each plant species by pooling data from the qualitative and quantitative pollination networks. 
 <!-- This variable is strongly correlated to the number of animal species a plant interacts with (the species degree).  -->
 To calculate the plants' relative floral abundance in their community, we aggregated floral counts for each species. 
@@ -210,11 +210,12 @@ Finally, functional originality is defined as the distance of a species from the
 To include phenological variation, we treated floral abundance in each of the survey months (November to March) as a "trait" in our analysis. 
 <!-- This approach allowed us to integrate the originality in phenological niche alongside the originality on other functional traits.  -->
 To account for the non-independence of floral counts and weight all traits equally, we gave a weight of 1/5 to the abundances (one for each month). 
-Finally, we scaled all variables to have a zero mean and unitary variance and calculated the centroid of the functional space and the species-specific functional coordinates using the R package `FD 1.0-12` [@laliberte_fd_2014]. 
+We scaled all traits prior to calculating the centroid of the functional space and calculated the species-specific functional coordinates using the R package `FD 1.0-12` [@laliberte_fd_2014]. 
+Finally, we scaled all foyr factors to have a zero mean and unitary variance.
  
 To estimate the coefficients, perform model selection, and quantify the associated uncertainty, we used a combination of multi-model inference and bootstrap resampling with 99 replicates. 
-First, we performed model selection using the AICc and determined the likelihood of each candidate model (a particular combination of predicting variables) by calculating the median \(\Delta\)AICc (relative to the most likely model) for each bootstrap sample. 
-As we wanted model coefficients from more likely candidate models to carry more weight in our results, we sampled the coefficients for our variables proportionally to the likelihood of their candidate model. 
+First, we performed model selection using the AICc and determined the likelihood of each candidate model (a particular combination of predictors) by calculating the median \(\Delta\)AICc (relative to the most likely model) for each bootstrap sample. 
+As we wanted model coefficients from more likely candidate models to carry more weight in our results, we sampled the coefficients for our factors proportionally to the likelihood of their candidate model. 
 <!-- We "shrank" the estimated coefficient of potentially unimportant variables by setting their estimate to 0 when the variable was not included in the model.  -->
 Finally, we used these distributions of the model coefficients to estimate their mean impact on the pollination service (in terms of quantity and purity of conspecific pollen deposition). 
 <!-- Again, here we used bootstrap resampling to estimate the uncertainty around these means.  -->
@@ -226,8 +227,8 @@ Our last objective was to tease apart the plant strategies that might reduce com
 <!-- DBS: Thinking out loud here, but are the strategies for reducing competition or for increasing facilitation/mutualism?  -->
 If community context plays a relatively small role or the species strategy is inflexible, we would expect plants of the same species to fill similar pollination niches across different communities. 
 Alternatively, if the community plays a large role and/or plant strategies are flexible, we should be able to observe differences in the realised niche a plant species occupies across communities. 
-To test this, we first used a principal component analysis (PCA) of the four ecological variables (number of shared pollinators, floral abundance, visit effectiveness, and trait originality). 
-We scaled variables across the whole study to ensure that the PCA space does not change according to the species present in each community. 
+To test this, we first used a principal component analysis (PCA) of the four ecological factors (number of shared pollinators, floral abundance, visit effectiveness, and trait originality). 
+We scaled factors across the whole study to ensure that the PCA space does not change according to the species present in each community. 
 We define a species' niche in a community as its coordinates in PCA space. 
 For each species that was present in two or more communities, we then calculated (*i*) the median distance between the strategies that the species uses in different communities and (*ii*) the area of the convex hull defined by these points in the first two principal components (only for species present in three or more communities). 
 We then compared the magnitude of these two metrics to those obtained with 99 Monte Carlo randomizations in which we replaced the strategy of the focal plant species by that of another randomly selected species in the dataset. 
@@ -314,13 +315,13 @@ sp_con_both_pos_neg <- con_con_plot_df %>%
 drake::loadd(r2_values)
 ```
 
-We then examined the potential roles played by four ecological variables (number of shared pollinators, abundance, mean visit effectiveness, and functional originality). 
+We then examined the potential roles played by four ecological factors (number of shared pollinators, abundance, mean visit effectiveness, and functional originality). 
 <!-- Together these variables can describe the niche that plants might occupy in the context of competition for pollination.  -->
 We found that our models of pollen deposition had high explanatory power (the coefficient of determination R^2^ ranged between `r min(r2_values$r2c_min)` and `r max(r2_values$r2c_max)`) although a large portion of the explanatory power came from the random effects (Table \@ref(S-tab:table-R2)).
 As determined by AICc, the random structure best supported by the data was the one that fit an intercept for each species in each community (as opposed to a common intercept for each species irrespective of the community to which they belong). 
 This structure was best for both the models of conspecific and heterospecific pollen (Table \@ref(S-tab:table-aic-random-models)).  
 
-Of the four variables we considered, we found that a plant's mean visit effectiveness and realtive floral abundance were the most important ecological variables predicting pollen deposition in plant stigmas (Figure \@ref(fig:fig-average-qual-quant)a). 
+Of the four factors we considered, we found that a plant's mean visit effectiveness and realtive floral abundance were the most important at predicting pollen deposition in plant stigmas (Figure \@ref(fig:fig-average-qual-quant)a). 
 Surprisingly, the number of shared pollinators was comparatively unimportant, particularly for models of heterospecific pollen deposition, as it was only ever included in models with relatively large AICc values (Table \@ref(S-tab:table-aic-fixed-models)). 
 <!-- DBS: Two-sentence paragraphs are universally frowned upon. -->
 
@@ -330,11 +331,11 @@ Specifically, the plants' mean visit effectiveness had a positive effect on poll
 However, the effect size was slightly larger for heterospecific than for conspecific pollen. 
 This indicates that, although there is a positive association between visit effectiveness and the quantity of pollen deposition, there is a negative relationship with its purity (Figure \@ref(fig:fig-average-qual-quant)c). 
 In contrast, a plants' relative floral abundance negatively affect deposition quantity, but the mean difference between the coefficients in the models indicates a positive association with purity (Figure \@ref(fig:fig-average-qual-quant)c). 
-The third most important variable, functional originality, had a positive, although comparatively smaller, association with both the quantity and purity. 
-Finally, the number of shared pollinators had negative and neutral associations with conspecific and heterospecific pollen, respectively, but these impacts were small when compared to the other variables. 
-Athough the explanatory variables were positively correlated (Figure \@ref(S-fig:fig-correlation)), the collinearity between predictors did not qualitatively affect our findings (Figure \@ref(S-fig:fig-model-results)).
+The third most important factor, functional originality, had a positive, although comparatively smaller, association with both the quantity and purity. 
+Finally, the number of shared pollinators had negative and neutral associations with conspecific and heterospecific pollen, respectively, but these impacts were small when compared to the other factors. 
+Athough the ecological factors were positively correlated (Figure \@ref(S-fig:fig-correlation)), the collinearity between predictors did not qualitatively affect our findings (Figure \@ref(S-fig:fig-model-results)).
 
-```{r fig-average-qual-quant, fig.height= 2.28*2, fig.width=width('single'), out.height="4.56in", out.width="3.57in", out.extra="center", fig.cap="Effect of strategies to minimise competition in the pollination service. (a) The plant's visit effectiveness and relative floral abundance are the most important variables determining the deposition of conspecific and heterospecific pollen. Meanwhile, the number of shared pollinators was generally less important. The graph shows the relative variable importance calculated as the sum of the Akaike weights of the candidate models that included the variable. (b) The association between ecological variables and heterospecific pollen tended to align with their association with conspecific pollen. Visit effectiveness and functional originality had a positive association with pollen deposition, while floral abundance and the number of shared pollinators had a negative association. The plot shows the distribution of the effects (across 99 bootstrap replicates) of the four ecological variables for conspecific and heterospecific pollen. (c) The end result of these associations is that only the plants' functional originality has a positive impact on both the quantity and purity of conspecific pollen deposition (relative to heterospecific pollen). The plot shows the model averaged mean effect ($\\pm$ SE of 99 bootstrap replicates)."}
+```{r fig-average-qual-quant, fig.height= 2.28*2, fig.width=width('single'), out.height="4.56in", out.width="3.57in", out.extra="center", fig.cap="Effect of strategies to minimise competition in the pollination service. (a) The plant's visit effectiveness and relative floral abundance are the most important factors determining the deposition of conspecific and heterospecific pollen. Meanwhile, the number of shared pollinators was generally less important. The graph shows the relative importance calculated as the sum of the Akaike weights of the candidate models that included the selected factor. (b) The association between ecological factors and heterospecific pollen tended to align with their association with conspecific pollen. Visit effectiveness and functional originality had a positive association with pollen deposition, while floral abundance and the number of shared pollinators had a negative association. The plot shows the distribution of the effects (across 99 bootstrap replicates) of the four ecological factors for conspecific and heterospecific pollen. (c) The end result of these associations is that only the plants' functional originality has a positive impact on both the quantity and purity of conspecific pollen deposition (relative to heterospecific pollen). The plot shows the model averaged mean effect ($\\pm$ SE of 99 bootstrap replicates)."}
 height1 <- 1
 height2 <- 1.28
 # pdf(width = 3.57 , height = sum(c(height1, height2))*2)
@@ -392,7 +393,7 @@ median_distances <- permanova_plant_distances %>%
   value
 ```
 
-```{r fig-pca, fig.width=3.57, fig.height=6.65, out.width="3.57in", out.height="6.65in",  out.extra="center", fig.cap="The flexibility of plant strategies. (a) The two first components explain a large proportion of the total variance. (b) When plants that were sampled in more than one community are plotted in terms of these two components, we observe that their points—which represent the strategy (the particular combination of ecological variables) of that species in its community—do not seem to be grouped by plant species. (c) This was confirmed using Monte Carlo randomizations of the median distance between strategies of a plant species. Only two of the examined species had strategies that were less flexible than would be expected at random."}
+```{r fig-pca, fig.width=3.57, fig.height=6.65, out.width="3.57in", out.height="6.65in",  out.extra="center", fig.cap="The flexibility of plant strategies. (a) The two first components explain a large proportion of the total variance. (b) When plants that were sampled in more than one community are plotted in terms of these two components, we observe that their points—which represent the strategy (the particular combination of ecological factors) of that species in its community—do not seem to be grouped by plant species. (c) This was confirmed using Monte Carlo randomizations of the median distance between strategies of a plant species. Only two of the examined species had strategies that were less flexible than would be expected at random."}
 height0 <- 1.55
 height1 <- 2.7
 height2 <- 2.4
@@ -469,7 +470,7 @@ Furthermore, from a more applied perspective, flowering plants are sometimes int
 On the one hand, our results suggest that introduced plants that increase the relative originality of natives (e.g. through distinct phenology) might have positive effects [@gibson_can_2012]. 
 On the other, because different niches can lead to different outcomes across communities, our results also highlight the difficulties involved in predicting whether the introduced plant species will facilitate or compete with neighbours [@bartomeus_contrasting_2008]. 
 Other factors that we were unable to measure (e.g. pollinator behaviour and densities or the spatial context) have also been shown to play a role in the outcome of animal-mediated pollination [@ye_competition_2014; @flanagan_effects_2011; @cariveau_spatially_2009; @thomson_effects_2019].
-Nevertheless, our results indicate that the strategies that plant might use to successfully minimise competition for pollination must be determined relative to other species in the community, rather than an absolute property of the species itself. 
+Nevertheless, our results indicate that the strategies that plant might use to successfully minimise competition for pollination (or maximise facilitation) must be determined relative to other species in the community, rather than an absolute property of the species itself. 
 
 Overall, pollination communities might not necessarily be the paradigmatic mutualistic communities we often believe. 
 Instead, we confirm that plant competition is pervasive in pollination communities. 
