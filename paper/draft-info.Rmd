@@ -32,7 +32,8 @@ header-includes:
 ## Requests to coauthors
 
 * Specify grant numbers in the Acknowledgements and make sure the ones stated there now are correct. 
-* Approve (or not) for submission
+* Suggestions to bring the abstract down to 150 words.
+* Approve (or not) for submission.
 
 ## Changes since the last draft
 
