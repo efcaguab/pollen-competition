@@ -208,6 +208,7 @@ figure_plan <- drake_plan(
 
 reporting_plan <- drake_plan(
   abstract = readLines(file_in("./paper/abstract.md")),
+  keywords = process_keywords(file_in("./paper/keywords.md")),
   acknowledgements = readLines(file_in("./paper/acknowledgements.md")),
   intro_line_number = get_line_number(file_in("paper/manuscript.Rmd"), "# Introduction"),
   abs_wordcount = count_words(file_in("paper/abstract.md")),
