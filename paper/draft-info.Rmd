@@ -36,11 +36,12 @@ header-includes:
 
 ## Changes since last draft
 
+* Removed the criterion to distinguish between competition and facilitation that was based on the difference between conspecific pollen in open and bagged flowers as it didn't add much to the story (said the same as the previously published criteron based on 
+the relationship between conspecific and heterospecific pollen) and was based on some assumptions that are easy to question.
 * Added .git and .drake to .dockerignore to speed up build
-* As suggested by Jason I refer to the factors on the main models as mechanisms of pollinator mediated competition. 
+* I refer to the variables on the main models factors and use that term consistently throughout the paper. Previously I was using factor, variable, and sometimes mechanism interchangeably
 * Many minor changes to the text
 * Replaced instances of "plant abundance" to the more specific term "floral abundance" (Jamie suggested some people working in the field might be finicky with terminology). 
 * Some extra refs added
 * Moved the sentences about variable collinearity to the supp. info. to save a bit of space in the main text
-* Removed criteria #2...
 
