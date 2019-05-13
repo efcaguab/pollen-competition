@@ -46,11 +46,11 @@ On the other, factors that increase both the quantity and purity do so only mild
 % DBS: The use of short-term here is very ambiguous.
 
 Very few studies have previously investigated how competition for pollination affects the pollination service using \emph{empirical data at the community level}.
-When they have they have focused on pollen deposition alone and failed to incorporate other metrics that might influence the pollination service in natural communities.
+When they have, they have focused on pollen deposition alone and failed to incorporate other metrics that might influence the pollination service in natural communities.
 Here, we take a step beyond by not only collecting pollen-deposition data but also visitation, pollen transfer, plant abundance, phenology, and traits.
 These extra pieces of information allowed us to investigate the relationship between pollination service and multiple ecological factors, and, for the first time, quantify the pollination niche of plant populations.
 
-Within the literature, studies of pollination almost always focus on the inherently mutualistic aspects of plant-pollinator communities.
+Within the literature, studies of pollination communities almost always focus on the inherently mutualistic aspects of plant-pollinator interactions.
 In contrast, ours provides compelling evidence that animal-mediated pollination is really a fluid dance between competition and facilitation.
 This calls for a shift in the way we think about pollination in community ecology, especially from a theoretical perspective.
 
