@@ -3,7 +3,7 @@ title: "Draft information"
 subtitle: "version: draft-6.0"
 date: "2019-05-15"
 # author: "Fernando Cagua, Hugo Marrero, Jason Tylianakis, Daniel Stouffer"
-bibliography: phd-bibliography/pollen-competition.bib
+bibliography: bibliography.bib
 csl: ecology-letters.csl
 output:
   bookdown::pdf_document2:
