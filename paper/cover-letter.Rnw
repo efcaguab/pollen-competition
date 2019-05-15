@@ -3,7 +3,7 @@
 \documentclass[11pt]{letter}
 \usepackage{hyperref}
 \usepackage[backend=bibtex,style=verbose,doi=false,isbn=false,url=false]{biblatex}
-\addbibresource{phd-bibliography/pollen-competition.bib}
+\addbibresource{bibliography.bib}
 \usepackage{geometry}
 \geometry{textwidth=43em, textheight=52\baselineskip}
 % Name of sender
