@@ -29,13 +29,9 @@ header-includes:
 
 \onehalfspacing
 
-## Requests to coauthors
-
-* Specify grant numbers in the Acknowledgements and make sure the ones stated there now are correct. 
-* Suggestions to bring the abstract down to 150 words.
-* Approve (or not) for submission.
-
 ## Changes since the last draft
 
-* Fixed typos and minor wording mistakes
+* Shortened abstract to required length
+* Updated grant numbers in acknowledgements 
+* References are stored in its own repository (efcaguab/phd-references). Previously, references were accessed by pulling them as a submodule. This created problems when working from different computres. References are now just downloaded from the remote file in the github. 
 
