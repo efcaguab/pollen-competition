@@ -1,7 +1,7 @@
 ---
 title: "Draft information"
-subtitle: "version: draft-6.0"
-date: "2019-05-15"
+subtitle: "version: draft-6.1"
+date: "2019-05-23"
 # author: "Fernando Cagua, Hugo Marrero, Jason Tylianakis, Daniel Stouffer"
 bibliography: bibliography.bib
 csl: ecology-letters.csl
@@ -31,7 +31,6 @@ header-includes:
 
 ## Changes since the last draft
 
-* Shortened abstract to required length
-* Updated grant numbers in acknowledgements 
-* References are stored in its own repository (efcaguab/phd-references). Previously, references were accessed by pulling them as a submodule. This created problems when working from different computres. References are now just downloaded from the remote file in the github. 
-
+* Moved figures at the end of the manuscript
+* Refer to Figures as "Fig." in the main text
+* Minor correction to Figure 2 caption
