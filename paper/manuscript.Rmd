@@ -33,7 +33,6 @@ header-includes:
 
 \linenumbers
 \doublespacing
-<!-- Such that legends at the end have double spacing -->
 \AtBeginDelayedFloats{%
       \renewcommand{\baselinestretch}{2}}
 
