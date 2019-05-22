@@ -145,7 +145,7 @@ In contrast, a positive relationship is what would be observed when facilitation
 ### Data collection
 
 In each of the studied communities, we quantified pollen deposition in a subset of plant species between December 2010 and February 2011. 
-This subset comprised between three and nine common insect-pollinated (entomophilous) plant species that were flowering during the sampling period (see Figure \@ref(fig:fig-trade-off-predictions)a). 
+This subset comprised between three and nine common insect-pollinated (entomophilous) plant species that were flowering during the sampling period (see Fig. \@ref(fig:fig-trade-off-predictions)a). 
 Based on data from previous years [@marrero_effect_2014], we chose plant species such that they cover a wide range on a specialization-generalization gradient as well as a wide range of abundances. 
 In each of the selected plants, we removed all flowers leaving only buds that were expected to go into florescence on the next day. 
 <!-- Approximately a quarter of these buds were bagged to prevent animal pollination.  -->
@@ -277,10 +277,10 @@ equal_pos_neg <- counts_facilitation_slope$nn[1] == counts_facilitation_slope$nn
 We first examined the degree of facilitation/competition in natural communities. 
 Specifically, we examined the slope of the relationship between the quantities of heterospecific and conspecific pollen deposited on stigmas of each species in a community. 
 Overall, we found that neither net facilitation nor net competition dominates (Table \@ref(S-tab:table-facilitation-models-general)). 
-Indeed, we found that the proportions of species that experienced a statistically significant positive or negative relationship between heterospecific and conspecific pollen were very similar (`r counts_facilitation_slope$np[3]`% and `r counts_facilitation_slope$np[1]`%, respectively; Figure \@ref(fig:fig-trade-off-predictions); Table \@ref(S-tab:table-facilitation-models-random)). 
+Indeed, we found that the proportions of species that experienced a statistically significant positive or negative relationship between heterospecific and conspecific pollen were very similar (`r counts_facilitation_slope$np[3]`% and `r counts_facilitation_slope$np[1]`%, respectively; Fig. \@ref(fig:fig-trade-off-predictions); Table \@ref(S-tab:table-facilitation-models-random)). 
 Most of the variation between plants in a facilitation-competition gradient was driven by differences *between* species; however, we also observed some important differences *within* species. 
 For instance, `r numbers2words(nrow(sp_both_pos_neg))` of the species sampled across multiple communities (`r sp_both_pos_neg_names`) showed evidence that the same species, can experience facilitation (positive relationships) in some communities and competition (negative relationships) in others. 
-Interestingly, although there was wide variation in the slope of the relationship between heterospecific and conspecific pollen, almost all plants had more conspecific than heterospecific pollen deposited on their stigmas (Figure \@ref(S-fig:fig-conspecific-heterospecific)). 
+Interestingly, although there was wide variation in the slope of the relationship between heterospecific and conspecific pollen, almost all plants had more conspecific than heterospecific pollen deposited on their stigmas (Fig. \@ref(S-fig:fig-conspecific-heterospecific)). 
 
 ```{r fig-trade-off-predictions, fig.height= 4, out.height="4in", fig.width = 3.57, out.width="3.57in", out.extra="center", fig.cap = "Competition vs. facilitation at the community level. Points indicate the estimated slopes for the relationship between the amount of heterospecific and conspecific pollen deposited per stigma across species in each of their communities. Statistically significant negative slopes (darkest shade) indicate that plants experience net competition for animal-mediated pollination, while significantly positive slopes (lightest shade) indicate that net facilitation is the predominant outcome. The number of plants analysed for each species is shown within brackets next to the species name. Error bars correspond to $\\pm$ the standard error (SE)."}
 # fig_random_slopes <- plot_random_slopes(facilitation_plot_df)
@@ -309,7 +309,7 @@ sp_con_both_pos_neg <- con_con_plot_df %>%
 
 <!-- Second, we compared the amount of conspecific pollen deposited on flowers that were open to animal-mediated pollinators with that of those that were closed.  -->
 <!-- Here, we again found large differences between plants but with a clear tendency to find more pollen in open flowers (Table \@ref(S-tab:table-open-bagged-models-general)).  -->
-<!-- Specifically, `r sp_con_con$np[sp_con_con$effect_category == "positive"]`% of plants had more pollen when open and `r sp_con_con$np[sp_con_con$effect_category == "negative"]`% had less pollen when open (the difference was statistically non-significant for the remaining `r sp_con_con$np[sp_con_con$effect_category == "neutral"]`%; Figure \@ref(fig:fig-trade-off-predictions)c; Table \@ref(S-tab:table-open-bagged-models-random)).  -->
+<!-- Specifically, `r sp_con_con$np[sp_con_con$effect_category == "positive"]`% of plants had more pollen when open and `r sp_con_con$np[sp_con_con$effect_category == "negative"]`% had less pollen when open (the difference was statistically non-significant for the remaining `r sp_con_con$np[sp_con_con$effect_category == "neutral"]`%; Fig. \@ref(fig:fig-trade-off-predictions)c; Table \@ref(S-tab:table-open-bagged-models-random)).  -->
 <!-- Variation within species was slightly smaller and only `r numbers2words(nrow(sp_con_both_pos_neg))` species (`r glue::collapse(sp_con_both_pos_neg$plant_label, sep = ", ", last = ", and ")`) had both positive and negative differences.  -->
 
 ## Factors affecting quantity and purity of pollination service
@@ -324,19 +324,19 @@ We found that our models of pollen deposition had high explanatory power (the co
 As determined by AICc, the random structure best supported by the data was the one that fit an intercept for each species in each community (as opposed to a common intercept for each species irrespective of the community to which they belong). 
 This structure was best for both the models of conspecific and heterospecific pollen (Table \@ref(S-tab:table-aic-random-models)).  
 
-Of the four factors we considered, we found that a plant's mean visit effectiveness and relative floral abundance were the most important at predicting pollen deposition in plant stigmas (Figure \@ref(fig:fig-average-qual-quant)a). 
+Of the four factors we considered, we found that a plant's mean visit effectiveness and relative floral abundance were the most important at predicting pollen deposition in plant stigmas (Fig. \@ref(fig:fig-average-qual-quant)a). 
 Surprisingly, the number of shared pollinators was comparatively unimportant, particularly for models of heterospecific pollen deposition, as it was only ever included in models with relatively large AICc values (Table \@ref(S-tab:table-aic-fixed-models)). 
 <!-- DBS: Two-sentence paragraphs are universally frowned upon. -->
 
 We found that the relationship between each of the ecological factors and pollen deposition was similar for both conspecific and heterospecific pollen. 
 That is, strategies that were associated with an increase in conspecific pollen were also associated with an increase in heterospecific pollen deposition. 
-Specifically, the plants' mean visit effectiveness had a positive effect on pollen deposition (Figure \@ref(fig:fig-average-qual-quant)b). 
+Specifically, the plants' mean visit effectiveness had a positive effect on pollen deposition (Fig. \@ref(fig:fig-average-qual-quant)b). 
 However, the effect size was slightly larger for heterospecific than for conspecific pollen. 
-This indicates that, although there is a positive association between visit effectiveness and the quantity of pollen deposition, there is a negative relationship with its purity (Figure \@ref(fig:fig-average-qual-quant)c). 
-In contrast, a plants' relative floral abundance negatively affected its deposition quantity, but the mean difference between the coefficients in the models indicates a positive association with purity (Figure \@ref(fig:fig-average-qual-quant)c). 
+This indicates that, although there is a positive association between visit effectiveness and the quantity of pollen deposition, there is a negative relationship with its purity (Fig. \@ref(fig:fig-average-qual-quant)c). 
+In contrast, a plants' relative floral abundance negatively affected its deposition quantity, but the mean difference between the coefficients in the models indicates a positive association with purity (Fig. \@ref(fig:fig-average-qual-quant)c). 
 The third most important factor, functional originality, had a positive, although comparatively smaller, association with both the quantity and purity. 
 Finally, the number of shared pollinators had negative and neutral associations with conspecific and heterospecific pollen, respectively, but these impacts were small when compared to the other factors. 
-Although the ecological factors were positively correlated (Figure \@ref(S-fig:fig-correlation)), the collinearity between predictors did not qualitatively affect our findings (Figure \@ref(S-fig:fig-model-results)).
+Although the ecological factors were positively correlated (Fig. \@ref(S-fig:fig-correlation)), the collinearity between predictors did not qualitatively affect our findings (Fig. \@ref(S-fig:fig-model-results)).
 
 ```{r fig-average-qual-quant, fig.height= 2.28*2, fig.width=width('single'), out.height="4.56in", out.width="3.57in", out.extra="center", fig.cap="Effect of ecological factors on the pollination service. (a) The plant's visit effectiveness and relative floral abundance are the most important factors determining the deposition of conspecific and heterospecific pollen. Meanwhile, the number of shared pollinators was generally less important. The graph shows the relative importance calculated as the sum of the Akaike weights of the candidate models that included the selected factor. (b) The association between ecological factors and heterospecific pollen tended to align with their association with conspecific pollen. Visit effectiveness and functional originality had a positive association with pollen deposition, while floral abundance and the number of shared pollinators had a negative association. The plot shows the distribution of the effects (across 99 bootstrap replicates) of the four ecological factors for conspecific and heterospecific pollen. (c) The end result of these associations is that only the plants' functional originality has a positive impact on both the quantity and purity of conspecific pollen deposition (relative to heterospecific pollen). The plot shows the model averaged mean effect ($\\pm$ SE of 99 bootstrap replicates)."}
 height1 <- 1
@@ -420,10 +420,10 @@ cowplot::plot_grid(
 ```
 
 We used a PCA of the analysed species to investigate whether plants' realised pollination niche is similar across communities or whether they are flexible and therefore a reflection of the community context. 
-The first two PCA components explained `r round(this_pca$eig[2, 3])`% of the total variance (Figure \@ref(fig:fig-pca)a). 
+The first two PCA components explained `r round(this_pca$eig[2, 3])`% of the total variance (Fig. \@ref(fig:fig-pca)a). 
 The first component was dominated by visit effectiveness and relative abundance while the second component was dominated by the number of shared pollinators and the plant's functional originality. 
-When we locate the species that were sampled in more than one community in the first two PCA components (Figure \@ref(fig:fig-pca)b), we observe that the niches of any given species do not tend to be close to each other. 
-Indeed, when we measured the median distance between the plants' coordinates, we found that it was only significantly smaller than that of randomisations for only `r numbers2words(sum(median_distances < 0.05))` of the `r numbers2words(length(median_distances))` species analysed (Figure \@ref(fig:fig-pca)c). 
+When we locate the species that were sampled in more than one community in the first two PCA components (Fig. \@ref(fig:fig-pca)b), we observe that the niches of any given species do not tend to be close to each other. 
+Indeed, when we measured the median distance between the plants' coordinates, we found that it was only significantly smaller than that of randomisations for only `r numbers2words(sum(median_distances < 0.05))` of the `r numbers2words(length(median_distances))` species analysed (Fig. \@ref(fig:fig-pca)c). 
 <!-- DBS: Are we consistent with UK vs US spellings? Does Ecology Letters prefer UK spelling? -->
 
 # Discussion 
