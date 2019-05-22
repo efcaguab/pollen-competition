@@ -400,9 +400,10 @@ make_fig_con_hetero_empirical <- function(dep_frame){
     scale_y_continuous(trans = "log1p", breaks = axis_breaks, labels = function(x) paste0(" ", x)) +
     labs(x = "heterospecific",
          y = "conspecific",
-         title = "(b) hetero- vs. conspecific pollen",
+         title = "hetero- vs. conspecific pollen",
          subtitle = "mean pollen grains per stigma") +
-    pub_theme()
+    pub_theme() +
+    coord_fixed()
 }
 
 mid <- function(x){

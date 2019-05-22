@@ -1,9 +1,9 @@
 ---
 title: "Draft information"
-subtitle: "version: draft-4.0"
-date: "2019-04-26"
+subtitle: "version: draft-6.0"
+date: "2019-05-15"
 # author: "Fernando Cagua, Hugo Marrero, Jason Tylianakis, Daniel Stouffer"
-bibliography: phd-bibliography/pollen-competition.bib
+bibliography: bibliography.bib
 csl: ecology-letters.csl
 output:
   bookdown::pdf_document2:
@@ -29,16 +29,9 @@ header-includes:
 
 \onehalfspacing
 
-## Requests to coauthors
+## Changes since the last draft
 
-* Suggest a justification for the traits used if needed (see \lr{M-justification-traits}).
-* Identify sections/sentences to trim to achieve the word limit.
-* Suggest a reference for sentence in \lr{M-ref-interaction-strength} if needed.
-* Suggest a reference for sentence in \lr{M-ref-plant-flexibility} if needed. 
-* Suggest alternative, more-appropiate, sub-headings if needed. 
-* Check statement in \lr{M-theoretical-models}
-
-## Changes since last draft
-
-* Added .git and .drake to .dockerignore to speed up build
+* Shortened abstract to required length
+* Updated grant numbers in acknowledgements 
+* References are stored in its own repository (efcaguab/phd-references). Previously, references were accessed by pulling them as a submodule. This created problems when working from different computres. References are now just downloaded from the remote file in the github. 
 

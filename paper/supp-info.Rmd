@@ -1,6 +1,5 @@
 ---
-title: "The pollination trade-off"
-# DBS: The title above needs editing to match the final version in the paper
+title: "Community context determines competition vs. facilitation trade-offs in pollination systems"
 subtitle: "Supplementary information"
 author: "E. Fernando Cagua, Hugo J. Marrero, Jason M. Tylianakis, Daniel B. Stouffer"
 # bibliography: references.bib
@@ -95,7 +94,14 @@ tbl_frame %>%
   kableExtra::kable_styling(font_size = 8) 
 ```
 
-```{r table-open-bagged-models-general, results = "asis"}
+```{r fig-conspecific-heterospecific, fig.height=4, fig.cap="Despite the variation in these slopes, plants overall had more conspecific than heterospecific pollen deposited in their stigmas."}
+# fig_hetero_con <- make_fig_con_hetero_empirical(dep_frame)
+drake::loadd(fig_hetero_con)
+fig_hetero_con 
+```
+
+
+```{r table-open-bagged-models-general, results = "asis", eval = FALSE}
 drake::loadd(open_bagged_model)
 
 broom::tidy(open_bagged_model, conf.int = F) %>%
@@ -118,7 +124,7 @@ broom::tidy(open_bagged_model, conf.int = F) %>%
                                    "random component (species:community)" = 2)) 
 ```
 
-```{r table-open-bagged-models-random, results='asis'}
+```{r table-open-bagged-models-random, results='asis', eval = FALSE}
 drake::loadd(con_con_plot_df)
 
 con_con_plot_df %>%
@@ -243,7 +249,7 @@ model_formula_ranking$by_model_set %>%
 drake::readd(fig_correlation)
 ```
  
-```{r fig-model-results, fig.height = 5, fig.cap = "Distribution of effect estimates for models of conspecific and heterospecific pollen density gain. Model formulas have been abbreviated: *a* for abundance, *k* for the number of shared pollinators, *p* for the visit effectiveness, and *t* for trait originality. Only candidate formulas with a $\\Delta AICc < 4$ for either conspecific or heterospecific pollen are shown. Models candidates are arranged in decreasing order of support.", eval=T}
+```{r fig-model-results, fig.height = 5, fig.cap = "Distribution of effect estimates for models of conspecific and heterospecific pollen density gain. Model formulas have been abbreviated: *a* for abundance, *k* for the number of shared pollinators, *p* for the visit effectiveness, and *t* for trait originality. Only candidate formulas with a $\\Delta AICc < 4$ for either conspecific or heterospecific pollen are shown. Models candidates are arranged in decreasing order of support. Although relative abundance, the number of shared pollinators, and the visit effectiveness were all positively correlated, the effect each had on conspecific pollen was similar among models that included all or just some of these three explanatory variables. One exception was visit-effectiveness, which exhibits a positive association with the relative amount of conspecific pollen under some variable combinations. Nevertheless, these differences were observed only in model specifications with relatively low AICc support.", eval=T}
 drake::readd(fig_all_model_results)
 ```
 

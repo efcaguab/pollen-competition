@@ -146,14 +146,14 @@ plot_random_slopes <- function(facilitation_plot_df){
               fontface = "italic",
               hjust = "inward") +
     geom_point(aes(y = 0, x = -0.5), alpha = 0) +
-    annotate(geom = "text", x = n_plants + 1, y = 0,
+    annotate(geom = "text", x = c(n_plants + 1), y = 0,
              label = expression(" " %->% plain("facilitation predominates") %->% ""),
              hjust = "left",
              vjust = 0.5,
              size = 2.25,
              colour = "grey20") +
     geom_point(aes(y = 0, x = n_plants + 1.5), alpha = 0) +
-    annotate(geom = "text", x = 0, y = 0,
+    annotate(geom = "text", x = c(0), y = 0,
              label = expression(" " %<-% plain("competition predominates") %<-% ""),
              hjust = "right",
              vjust = 0.5,
@@ -166,7 +166,7 @@ plot_random_slopes <- function(facilitation_plot_df){
     scale_x_discrete(expand = c(0,0)) +
     scale_alpha_manual(values = c(0,1)) +
     labs(y = bquote("slope of species-community random effects" ~ beta[i]),
-         title = "(a) competition vs. facilitation - criterion #1",
+         title = "competition vs. facilitation",
          subtitle = "relationship hetero-conspecific pollen") +
     coord_flip() +
     pub_theme() +
