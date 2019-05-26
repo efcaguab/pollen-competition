@@ -7,7 +7,7 @@ abc_figures:
 	Rscript ./presentations/abc2018/make_figures.R
 
 release:
-	zip -sd manuscript-files paper/*.pdf paper/*.tex /paper/*.aux /paper/*.docx;
+	zip -sd manuscript-files paper/*.pdf paper/*.tex paper/bibliography.bib /paper/*.aux /paper/*.docx;
 	zip -r -sd -b paper manuscript-files . -i *_files/*
 
 one_pdf: run_main stich_pdf_draft

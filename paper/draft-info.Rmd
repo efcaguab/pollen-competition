@@ -1,9 +1,9 @@
 ---
 title: "Draft information"
-subtitle: "version: draft-6.0"
-date: "2019-05-XX"
+subtitle: "version: draft-6.1"
+date: "2019-05-23"
 # author: "Fernando Cagua, Hugo Marrero, Jason Tylianakis, Daniel Stouffer"
-bibliography: phd-bibliography/pollen-competition.bib
+bibliography: bibliography.bib
 csl: ecology-letters.csl
 output:
   bookdown::pdf_document2:
@@ -29,13 +29,8 @@ header-includes:
 
 \onehalfspacing
 
-## Requests to coauthors
-
-* Specify grant numbers in the Acknowledgements and make sure the ones stated there now are correct. 
-* Suggestions to bring the abstract down to 150 words.
-* Approve (or not) for submission.
-
 ## Changes since the last draft
 
-* Fixed typos and minor wording mistakes
-
+* Moved figures at the end of the manuscript
+* Refer to Figures as "Fig." in the main text
+* Minor correction to Figure 2 caption

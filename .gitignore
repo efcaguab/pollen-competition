@@ -38,6 +38,8 @@ publication/supp_info_files/
 *.aux
 *.log
 *.out
+*.lof
+*.fff
 manuscript.tex
 supp-info.tex
 draft-info.tex

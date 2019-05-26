@@ -12,6 +12,13 @@ f <- lapply(list.files("code", full.names = T), source)
 n_replicates <- 99
 transformation <- function(x) log(x + 1)
 
+# Configuration -----------------------------------------------------------
+
+configuration_plan <- drake_plan(
+  config = yaml::read_yaml(file_in("config.yaml")),
+  bib_retrieved = config$bibliography_retrieved
+)
+
 # Clean data --------------------------------------------------------------
 
 # plan to clean data
@@ -207,6 +214,9 @@ figure_plan <- drake_plan(
 )
 
 reporting_plan <- drake_plan(
+  references = get_bibliography(
+    "https://raw.githubusercontent.com/efcaguab/phd-bibliography/master/pollen-competition.bib",
+    file_out("paper/bibliography.bib"), bib_retrieved),
   abstract = readLines(file_in("./paper/abstract.md")),
   keywords = process_keywords(file_in("./paper/keywords.md")),
   acknowledgements = readLines(file_in("./paper/acknowledgements.md")),
@@ -231,6 +241,7 @@ paper_plan <- rbind(
 
 # set up plan
 project_plan <- rbind(
+  configuration_plan,
   analyses_plan,
   paper_plan
   )

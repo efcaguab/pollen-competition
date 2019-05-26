@@ -33,3 +33,11 @@ compile_pdf <- function(file_in, file_out, clean) {
                    pdf_file = file_out,
                    clean = clean)
 }
+
+# download bibliography from a remote file
+get_bibliography <- function(filename_in, filename_out, bib_retrieved){
+  message("Retrieving bibliography - ", bib_retrieved)
+  readLines(filename_in) %>%
+    writeLines(filename_out)
+
+}

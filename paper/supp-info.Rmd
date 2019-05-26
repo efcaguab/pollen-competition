@@ -1,6 +1,5 @@
 ---
-title: "The pollination trade-off"
-# DBS: The title above needs editing to match the final version in the paper
+title: "Community context determines competition vs. facilitation trade-offs in pollination systems"
 subtitle: "Supplementary information"
 author: "E. Fernando Cagua, Hugo J. Marrero, Jason M. Tylianakis, Daniel B. Stouffer"
 # bibliography: references.bib
