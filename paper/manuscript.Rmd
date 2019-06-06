@@ -143,7 +143,7 @@ In contrast, a positive relationship is what would be observed when facilitation
 ### Data collection
 
 In each of the studied communities, we quantified pollen deposition in a subset of plant species between December 2010 and February 2011. 
-This subset comprised between three and nine common insect-pollinated (entomophilous) plant species that were flowering during the sampling period (see Fig. \@ref(fig:fig-trade-off-predictions)a). 
+This subset comprised between three and nine common insect-pollinated (entomophilous) plant species that were flowering during the sampling period. 
 Based on data from previous years [@marrero_effect_2014], we chose plant species such that they cover a wide range on a specialization-generalization gradient as well as a wide range of abundances. 
 In each of the selected plants, we removed all flowers leaving only buds that were expected to go into florescence on the next day. 
 <!-- Approximately a quarter of these buds were bagged to prevent animal pollination.  -->
