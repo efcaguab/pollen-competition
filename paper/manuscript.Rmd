@@ -326,16 +326,6 @@ Of the four factors we considered, we found that a plant's mean visit effectiven
 Surprisingly, the number of shared pollinators was comparatively unimportant, particularly for models of heterospecific pollen deposition, as it was only ever included in models with relatively large AICc values (Table \@ref(S-tab:table-aic-fixed-models)). 
 <!-- DBS: Two-sentence paragraphs are universally frowned upon. -->
 
-We found that the relationship between each of the ecological factors and pollen deposition was similar for both conspecific and heterospecific pollen. 
-That is, strategies that were associated with an increase in conspecific pollen were also associated with an increase in heterospecific pollen deposition. 
-Specifically, the plants' mean visit effectiveness had a positive effect on pollen deposition (Fig. \@ref(fig:fig-average-qual-quant)b). 
-However, the effect size was slightly larger for heterospecific than for conspecific pollen. 
-This indicates that, although there is a positive association between visit effectiveness and the quantity of pollen deposition, there is a negative relationship with its purity (Fig. \@ref(fig:fig-average-qual-quant)c). 
-In contrast, a plants' relative floral abundance negatively affected its deposition quantity, but the mean difference between the coefficients in the models indicates a positive association with purity (Fig. \@ref(fig:fig-average-qual-quant)c). 
-The third most important factor, functional originality, had a positive, although comparatively smaller, association with both the quantity and purity. 
-Finally, the number of shared pollinators had negative and neutral associations with conspecific and heterospecific pollen, respectively, but these impacts were small when compared to the other factors. 
-Although the ecological factors were positively correlated (Fig. \@ref(S-fig:fig-correlation)), the collinearity between predictors did not qualitatively affect our findings (Fig. \@ref(S-fig:fig-model-results)).
-
 ```{r fig-average-qual-quant, fig.height= 2.28*2, fig.width=width('single'), out.height="4.56in", out.width="3.57in", out.extra="center", fig.cap="Effect of ecological factors on the pollination service. (a) The plant's visit effectiveness and relative floral abundance are the most important factors determining the deposition of conspecific and heterospecific pollen. Meanwhile, the number of shared pollinators was generally less important. The graph shows the relative importance calculated as the sum of the Akaike weights of the candidate models that included the selected factor. (b) The association between ecological factors and heterospecific pollen tended to align with their association with conspecific pollen. Visit effectiveness and functional originality had a positive association with pollen deposition, while floral abundance and the number of shared pollinators had a negative association. The plot shows the distribution of the effects (across 99 bootstrap replicates) of the four ecological factors for conspecific and heterospecific pollen. (c) The end result of these associations is that only the plants' functional originality has a positive impact on both the quantity and purity of conspecific pollen deposition (relative to heterospecific pollen). The plot shows the model averaged mean effect ($\\pm$ SE of 99 bootstrap replicates)."}
 height1 <- 1
 height2 <- 1.28
@@ -379,6 +369,16 @@ cowplot::plot_grid(
 # dev.off()
 ```
 
+We found that the relationship between each of the ecological factors and pollen deposition was similar for both conspecific and heterospecific pollen. 
+That is, strategies that were associated with an increase in conspecific pollen were also associated with an increase in heterospecific pollen deposition. 
+Specifically, the plants' mean visit effectiveness had a positive effect on pollen deposition (Fig. \@ref(fig:fig-average-qual-quant)b). 
+However, the effect size was slightly larger for heterospecific than for conspecific pollen. 
+This indicates that, although there is a positive association between visit effectiveness and the quantity of pollen deposition, there is a negative relationship with its purity (Fig. \@ref(fig:fig-average-qual-quant)c). 
+In contrast, a plants' relative floral abundance negatively affected its deposition quantity, but the mean difference between the coefficients in the models indicates a positive association with purity (Fig. \@ref(fig:fig-average-qual-quant)c). 
+The third most important factor, functional originality, had a positive, although comparatively smaller, association with both the quantity and purity. 
+Finally, the number of shared pollinators had negative and neutral associations with conspecific and heterospecific pollen, respectively, but these impacts were small when compared to the other factors. 
+Although the ecological factors were positively correlated (Fig. \@ref(S-fig:fig-correlation)), the collinearity between predictors did not qualitatively affect our findings (Fig. \@ref(S-fig:fig-model-results)).
+
 ## Flexibility of plant strategies
 
 ```{r pca-stats}
@@ -393,6 +393,12 @@ median_distances <- permanova_plant_distances %>%
   dplyr::filter(na_threshold == 0, metric == "median_dist", !is.na(value)) %$%
   value
 ```
+We used a PCA of the analysed species to investigate whether plants' realised pollination niche is similar across communities or whether they are flexible and therefore a reflection of the community context. 
+The first two PCA components explained `r round(this_pca$eig[2, 3])`% of the total variance (Fig. \@ref(fig:fig-pca)a). 
+The first component was dominated by visit effectiveness and relative abundance while the second component was dominated by the number of shared pollinators and the plant's functional originality. 
+When we locate the species that were sampled in more than one community in the first two PCA components (Fig. \@ref(fig:fig-pca)b), we observe that the niches of any given species do not tend to be close to each other. 
+Indeed, when we measured the median distance between the plants' coordinates, we found that it was only significantly smaller than that of randomisations for only `r numbers2words(sum(median_distances < 0.05))` of the `r numbers2words(length(median_distances))` species analysed (Fig. \@ref(fig:fig-pca)c). 
+<!-- DBS: Are we consistent with UK vs US spellings? Does Ecology Letters prefer UK spelling? -->
 
 ```{r fig-pca, fig.width=3.57, fig.height=6.65, out.width="3.57in", out.height="6.65in",  out.extra="center", fig.cap="The flexibility of plant strategies. (a) The two first components explain a large proportion of the total variance. (b) When plants that were sampled in more than one community are plotted in terms of these two components, we observe that their points, which represent the strategy (the particular combination of ecological factors) of that species in its community, do not seem to be grouped by plant species. (c) This was confirmed using Monte Carlo randomizations of the median distance between strategies of a plant species. Only two of the examined species had strategies that were less flexible than would be expected at random."}
 height0 <- 1.55
@@ -416,13 +422,6 @@ cowplot::plot_grid(
 )
 # dev.off()
 ```
-
-We used a PCA of the analysed species to investigate whether plants' realised pollination niche is similar across communities or whether they are flexible and therefore a reflection of the community context. 
-The first two PCA components explained `r round(this_pca$eig[2, 3])`% of the total variance (Fig. \@ref(fig:fig-pca)a). 
-The first component was dominated by visit effectiveness and relative abundance while the second component was dominated by the number of shared pollinators and the plant's functional originality. 
-When we locate the species that were sampled in more than one community in the first two PCA components (Fig. \@ref(fig:fig-pca)b), we observe that the niches of any given species do not tend to be close to each other. 
-Indeed, when we measured the median distance between the plants' coordinates, we found that it was only significantly smaller than that of randomisations for only `r numbers2words(sum(median_distances < 0.05))` of the `r numbers2words(length(median_distances))` species analysed (Fig. \@ref(fig:fig-pca)c). 
-<!-- DBS: Are we consistent with UK vs US spellings? Does Ecology Letters prefer UK spelling? -->
 
 # Discussion 
 
