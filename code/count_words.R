@@ -46,7 +46,7 @@ prep_text <- function(text) {
 }
 
 
-get_citations <- function(filename, lines_to_ignore = NULL, refs_to_exclude = NULL, refs_to_include = NULL){
+get_citations <- function(filename, lines_to_ignore = NULL, refs_to_exclude = NULL, refs_to_include = NULL, ignore_md_comments = TRUE){
   text_lines <- readLines(filename)
   if (!is.null(lines_to_ignore)) {
     text_lines <- text_lines[-lines_to_ignore]
@@ -59,11 +59,12 @@ get_citations <- function(filename, lines_to_ignore = NULL, refs_to_exclude = NU
   }
 
   citations <- text_lines %>%
-    stringr::str_extract("@\\w+") %>%
-    na.omit()
+    stringr::str_extract_all("(@\\S*['-_])([a-zA-Z'0-9]+)") %>%
+    purrr::keep(~length(.) > 0) %>%
+    unlist()
 
   if (!is.null(refs_to_exclude)) {
-    citations <- citations[!citations %in% refs_to_exclude]
+    citations <- citations[!grepl("@ref", citations)]
   }
   if(!is.null(refs_to_include)) {
     citations <- union(citations, refs_to_include)
