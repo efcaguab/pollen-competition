@@ -82,8 +82,8 @@ humanize <- function(x, sites = NA, random_effects = NA, formula_long = FALSE, t
           grepl('rab', term) ~ 'abundance',
           grepl('deg', term) ~ '# shared pol.',
           grepl('k', term) ~ '# shared pol.',
-          grepl('poc', term) ~ 'visit effectiveness',
-          grepl('pollen_cont', term) ~ 'visit effectiveness',
+          grepl('poc', term) ~ 'visit potential',
+          grepl('pollen_cont', term) ~ 'visit potential',
           TRUE ~ term
         ))
     } else {
@@ -96,8 +96,8 @@ humanize <- function(x, sites = NA, random_effects = NA, formula_long = FALSE, t
           grepl('rab', term) ~ 'abundance',
           grepl('deg', term) ~ '# shared pol.',
           grepl('k', term) ~ '# shared pol.',
-          grepl('poc', term) ~ 'visit effectiv.',
-          grepl('pollen_cont', term) ~ 'visit effectiv.',
+          grepl('poc', term) ~ 'visit potential',
+          grepl('pollen_cont', term) ~ 'visit potential',
           TRUE ~ term
         ))
     }
@@ -109,15 +109,15 @@ humanize <- function(x, sites = NA, random_effects = NA, formula_long = FALSE, t
         dplyr::mutate(
           fixed_formula = stringr::str_replace(fixed_formula, "pollen_gain ~", ""),
           fixed_formula = stringr::str_replace(fixed_formula, "abn", "abundance"),
-          fixed_formula = stringr::str_replace(fixed_formula, "poc", "share pollen"),
+          fixed_formula = stringr::str_replace(fixed_formula, "poc", "visit potential"),
           fixed_formula = stringr::str_replace(fixed_formula, "org", "func. originality"),
-          fixed_formula = stringr::str_replace(fixed_formula, "deg", "degree"))
+          fixed_formula = stringr::str_replace(fixed_formula, "deg", "# shared pol."))
     } else {
       x <- x %>%
         dplyr::mutate(
           fixed_formula = stringr::str_replace(fixed_formula, "pollen_gain ~", ""),
           fixed_formula = stringr::str_replace(fixed_formula, "abn", "a"),
-          fixed_formula = stringr::str_replace(fixed_formula, "poc", "p"),
+          fixed_formula = stringr::str_replace(fixed_formula, "poc", "o"),
           fixed_formula = stringr::str_replace(fixed_formula, "org", "t"),
           fixed_formula = stringr::str_replace(fixed_formula, "deg", "k"))
     }

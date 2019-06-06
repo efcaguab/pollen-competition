@@ -111,7 +111,7 @@ The higher the deposition of conspecific pollen relative to heterospecific, the 
 <!-- On the other, we could expect a larger amount of conspecific pollen deposited on stigmas when flowers are open to animal pollinators than what is deposited due to self-pollination.  -->
 Second, we investigate the relative contribution that four ecological factors have to the pollination service. 
 Specifically, we hypothesize that the quantity and purity of conspecific pollen deposition should decrease for plants that share many pollination partners. 
-However, we also hypothesize that other factors like the plant's functional originality, its relative floral abundance, and the visit effectiveness should have the potential to compensate for this increase in competition. 
+However, we also hypothesize that other factors like the plant's functional originality, its relative floral abundance, and the visit potential should have the potential to compensate for this increase in competition. 
 Third and finally, we examine how much the community context influences the way plants use these factors to minimise competition/maximise facilitation. 
 We use these four ecological factors as a proxy of the realised pollination niche of a plant species in their community.
 Although some plant species might be widespread across multiple locations, competition for pollinators occurs at the community level and hence we predict that pollination niche will be influenced by the local context.
@@ -168,7 +168,7 @@ Generally speaking,
 we expect that any factor that increases the amount of conspecific pollen deposited in stigmas, both in quantity and purity relative to heterospecific pollen, also has a positive effect on the pollination service.
 <!-- DBS: There is no use to calling it something succinct like purity if we always have to say "purity relative to heterospecific pollen"...  -->
 <!-- FDO: Only mention purity relative to heterospecific pollen cause it's first time it gets mentioned in the methods  -->
-Specifically, we investigated the effect of (*i*) a plant's number of shared pollinator species, (*ii*) a plant's abundance relative to the rest of the community, (*iii*) the mean visit effectiveness---a metric that combines the amount and type of pollen carried by floral visitors and the number of visits it receives from them, and (*iv*) the plant's functional originality [@laliberte_distance-based_2010]. 
+Specifically, we investigated the effect of (*i*) a plant's number of shared pollinator species, (*ii*) a plant's abundance relative to the rest of the community, (*iii*) the mean visit potential---a metric that combines the amount and type of pollen carried by floral visitors and the number of visits it receives from them, and (*iv*) the plant's functional originality [@laliberte_distance-based_2010]. 
 See *Data Analysis* section below for more details on these four factors. 
 <!-- Here, we define visit effectiveness of the pollinator species *i* to plant species *j* as the proportion between the visits of *i* to *j* and all visits of *i*, multiplied by the proportion between the number of pollen grains of *j* attached to individuals of *i* and all pollen attached to individuals of *i*. -->
 
@@ -180,7 +180,7 @@ Quantitative networks were constructed using two 50 m randomly located transects
 We counted and collected all floral visitors found in a 2 m wide strip while walking at a pace of 10 m per minute [@marrero_effect_2014; @memmott_structure_1999]. 
 We visited the transects each month between November 2010 and March 2011. 
 To obtain floral abundance, we counted all units of floral attraction found during an independent sampling of the same transects used to construct the quantitative visitation networks. 
-To estimate visit effectiveness, we need to construct pollen transfer networks in addition to the visitation networks. 
+To estimate visit potential, we need to construct pollen transfer networks in addition to the visitation networks. 
 To do this, we examined the pollen loads present on the floral visitors collected [@marrero_exotic_2017]. 
 When the pollen count on an individual animal was estimated to be less than 2,000 grains, we identified every grain to the species level when possible and to pollen complexes when it was not. 
 When the pollen count was above 2,000 grains, we classified approximately 50% of pollen and total pollen counts were extrapolated [@bosch_plant-pollinator_2009]. 
@@ -203,8 +203,8 @@ As fixed predictors in the models, we included the four ecological factors descr
 Specifically, we calculated the number of shared pollinators for each plant species by pooling data from the qualitative and quantitative pollination networks. 
 <!-- This variable is strongly correlated to the number of animal species a plant interacts with (the species degree).  -->
 To calculate the plants' relative floral abundance in their community, we aggregated floral counts for each species. 
-We then calculated the mean visit effectiveness of pollinator species *i* to plant species *j* as \[e_{ij} = \frac{v_{ij}}{v_i} \frac{p_{ji}}{p_j}\], where *v~ij~* is the observed number of visits by *i* to *j*, *p~ji~* is the number of pollen grains from *j* attached to *i*, *v~i~* is the total number of visits performed by *i*, and *p~j~* is the total number of grains carried by *j*.
-We log-transformed the number of shared pollinators, floral abundance, and visit effectiveness before including them in the model. 
+We then calculated the mean visit potential of pollinator species *i* to plant species *j* as \[o_{ij} = \frac{v_{ij}}{v_i} \frac{p_{ji}}{p_j}\], where *v~ij~* is the observed number of visits by *i* to *j*, *p~ji~* is the number of pollen grains from *j* attached to *i*, *v~i~* is the total number of visits performed by *i*, and *p~j~* is the total number of grains carried by *j*.
+We log-transformed the number of shared pollinators, floral abundance, and visit potential before including them in the model. 
 
 Finally, functional originality is defined as the distance of a species from the community trait average--the centroid of functional space of the community [@laliberte_distance-based_2010; @coux_linking_2016]. 
 <!-- As phenology has been shown to be a key mechanism of niche differentiation among plants, we also  -->
@@ -228,7 +228,7 @@ Our last objective was to tease apart the plant strategies that might reduce com
 <!-- DBS: Thinking out loud here, but are the strategies for reducing competition or for increasing facilitation/mutualism?  -->
 If community context plays a relatively small role or the species strategy is inflexible, we would expect plants of the same species to fill similar pollination niches across different communities. 
 Alternatively, if the community plays a large role and/or plant strategies are flexible, we should be able to observe differences in the realised niche a plant species occupies across communities. 
-To test this, we first used a principal component analysis (PCA) of the four ecological factors (number of shared pollinators, floral abundance, visit effectiveness, and trait originality). 
+To test this, we first used a principal component analysis (PCA) of the four ecological factors (number of shared pollinators, floral abundance, visit potential, and trait originality). 
 We scaled factors across the whole study to ensure that the PCA space does not change according to the species present in each community. 
 We define a species' niche in a community as its coordinates in PCA space. 
 For each species that was present in two or more communities, we then calculated (*i*) the median distance between the strategies that the species uses in different communities and (*ii*) the area of the convex hull defined by these points in the first two principal components (only for species present in three or more communities). 
@@ -316,17 +316,17 @@ sp_con_both_pos_neg <- con_con_plot_df %>%
 drake::loadd(r2_values)
 ```
 
-We then examined the potential roles played in pollen deposition by four ecological factors (number of shared pollinators, abundance, mean visit effectiveness, and functional originality). 
+We then examined the potential roles played in pollen deposition by four ecological factors (number of shared pollinators, abundance, mean visit potential, and functional originality). 
 <!-- Together these variables can describe the niche that plants might occupy in the context of competition for pollination.  -->
 We found that our models of pollen deposition had high explanatory power (the coefficient of determination R^2^ ranged between `r min(r2_values$r2c_min)` and `r max(r2_values$r2c_max)`) although a large portion of the explanatory power came from the random effects (Table \@ref(S-tab:table-R2)).
 As determined by AICc, the random structure best supported by the data was the one that fit an intercept for each species in each community (as opposed to a common intercept for each species irrespective of the community to which they belong). 
 This structure was best for both the models of conspecific and heterospecific pollen (Table \@ref(S-tab:table-aic-random-models)).  
 
-Of the four factors we considered, we found that a plant's mean visit effectiveness and relative floral abundance were the most important at predicting pollen deposition in plant stigmas (Fig. \@ref(fig:fig-average-qual-quant)a). 
+Of the four factors we considered, we found that a plant's mean visit potential and relative floral abundance were the most important at predicting pollen deposition in plant stigmas (Fig. \@ref(fig:fig-average-qual-quant)a). 
 Surprisingly, the number of shared pollinators was comparatively unimportant, particularly for models of heterospecific pollen deposition, as it was only ever included in models with relatively large AICc values (Table \@ref(S-tab:table-aic-fixed-models)). 
 <!-- DBS: Two-sentence paragraphs are universally frowned upon. -->
 
-```{r fig-average-qual-quant, fig.height= 2.28*2, fig.width=width('single'), out.height="4.56in", out.width="3.57in", out.extra="center", fig.cap="Effect of ecological factors on the pollination service. (a) The plant's visit effectiveness and relative floral abundance are the most important factors determining the deposition of conspecific and heterospecific pollen. Meanwhile, the number of shared pollinators was generally less important. The graph shows the relative importance calculated as the sum of the Akaike weights of the candidate models that included the selected factor. (b) The association between ecological factors and heterospecific pollen tended to align with their association with conspecific pollen. Visit effectiveness and functional originality had a positive association with pollen deposition, while floral abundance and the number of shared pollinators had a negative association. The plot shows the distribution of the effects (across 99 bootstrap replicates) of the four ecological factors for conspecific and heterospecific pollen. (c) The end result of these associations is that only the plants' functional originality has a positive impact on both the quantity and purity of conspecific pollen deposition (relative to heterospecific pollen). The plot shows the model averaged mean effect ($\\pm$ SE of 99 bootstrap replicates)."}
+```{r fig-average-qual-quant, fig.height= 2.28*2, fig.width=width('single'), out.height="4.56in", out.width="3.57in", out.extra="center", fig.cap="Effect of ecological factors on the pollination service. (a) The plant's visit potential and relative floral abundance are the most important factors determining the deposition of conspecific and heterospecific pollen. Meanwhile, the number of shared pollinators was generally less important. The graph shows the relative importance calculated as the sum of the Akaike weights of the candidate models that included the selected factor. (b) The association between ecological factors and heterospecific pollen tended to align with their association with conspecific pollen. Visit potential and functional originality had a positive association with pollen deposition, while floral abundance and the number of shared pollinators had a negative association. The plot shows the distribution of the effects (across 99 bootstrap replicates) of the four ecological factors for conspecific and heterospecific pollen. (c) The end result of these associations is that only the plants' functional originality has a positive impact on both the quantity and purity of conspecific pollen deposition (relative to heterospecific pollen). The plot shows the model averaged mean effect ($\\pm$ SE of 99 bootstrap replicates)."}
 height1 <- 1
 height2 <- 1.28
 # pdf(width = 3.57 , height = sum(c(height1, height2))*2)
@@ -371,9 +371,9 @@ cowplot::plot_grid(
 
 We found that the relationship between each of the ecological factors and pollen deposition was similar for both conspecific and heterospecific pollen. 
 That is, strategies that were associated with an increase in conspecific pollen were also associated with an increase in heterospecific pollen deposition. 
-Specifically, the plants' mean visit effectiveness had a positive effect on pollen deposition (Fig. \@ref(fig:fig-average-qual-quant)b). 
+Specifically, the plants' mean visit potential had a positive effect on pollen deposition (Fig. \@ref(fig:fig-average-qual-quant)b). 
 However, the effect size was slightly larger for heterospecific than for conspecific pollen. 
-This indicates that, although there is a positive association between visit effectiveness and the quantity of pollen deposition, there is a negative relationship with its purity (Fig. \@ref(fig:fig-average-qual-quant)c). 
+This indicates that, although there is a positive association between visit potential and the quantity of pollen deposition, there is a negative relationship with its purity (Fig. \@ref(fig:fig-average-qual-quant)c). 
 In contrast, a plants' relative floral abundance negatively affected its deposition quantity, but the mean difference between the coefficients in the models indicates a positive association with purity (Fig. \@ref(fig:fig-average-qual-quant)c). 
 The third most important factor, functional originality, had a positive, although comparatively smaller, association with both the quantity and purity. 
 Finally, the number of shared pollinators had negative and neutral associations with conspecific and heterospecific pollen, respectively, but these impacts were small when compared to the other factors. 
@@ -395,7 +395,7 @@ median_distances <- permanova_plant_distances %>%
 ```
 We used a PCA of the analysed species to investigate whether plants' realised pollination niche is similar across communities or whether they are flexible and therefore a reflection of the community context. 
 The first two PCA components explained `r round(this_pca$eig[2, 3])`% of the total variance (Fig. \@ref(fig:fig-pca)a). 
-The first component was dominated by visit effectiveness and relative abundance while the second component was dominated by the number of shared pollinators and the plant's functional originality. 
+The first component was dominated by visit potential and relative abundance while the second component was dominated by the number of shared pollinators and the plant's functional originality. 
 When we locate the species that were sampled in more than one community in the first two PCA components (Fig. \@ref(fig:fig-pca)b), we observe that the niches of any given species do not tend to be close to each other. 
 Indeed, when we measured the median distance between the plants' coordinates, we found that it was only significantly smaller than that of randomisations for only `r numbers2words(sum(median_distances < 0.05))` of the `r numbers2words(length(median_distances))` species analysed (Fig. \@ref(fig:fig-pca)c). 
 <!-- DBS: Are we consistent with UK vs US spellings? Does Ecology Letters prefer UK spelling? -->
@@ -449,7 +449,7 @@ Yet, there are two possible caveats to this strategy that highlight the interrel
 First, in a mutualism context, it is also possible that trait originality could come at the cost of being less ‘apparent’ to pollinators [@reverte_pollinators_2016]. 
 Second, the negative relationship between originality and generalism  [@carvalheiro_potential_2014] has been shown to depend on plant abundance [@coux_linking_2016], with generalist species being able to also have original traits only when they are abundant enough to provide a valuable reward to make visiting worthwhile to pollinators. 
 
-Visit effectiveness (high pollen and visits) and floral abundance, which were the most important predictors of pollen deposition here, introduced an even more explicit trade-off between gaining conspecific pollen and avoiding heterospecific pollen. 
+Visit potential (high pollen and visits) and floral abundance, which were the most important predictors of pollen deposition here, introduced an even more explicit trade-off between gaining conspecific pollen and avoiding heterospecific pollen. 
 Receiving high visitation increases conspecific pollen deposition but increases heterospecific pollen deposition to a greater extent---even when the visitors are likely to carry a high proportion of conspecific pollen [@fang_paradoxical_2016]. 
 Contrastingly, being abundant reduces the amount of conspecific pollen deposited and simultaneously reduces heterospecific pollen at a faster rate. 
 Our results corroborate the importance that two-species studies have ascribed to visitation and abundance [@feldman_when_2004; @munoz_presence_2008; @morales_interspecific_2008], 

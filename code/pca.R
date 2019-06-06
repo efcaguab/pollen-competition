@@ -402,7 +402,7 @@ plot_pca_variances_and_contributions <- function(pcas, chosen_threshold){
 
   contributions_data %>%
     humanize(term_long = F) %>%
-    dplyr::mutate(term = forcats::fct_relevel(term, "visit effectiv.", "abundance", "func. originality")) %>%
+    dplyr::mutate(term = forcats::fct_relevel(term, "visit potential", "abundance", "func. originality")) %>%
     ggplot(aes(x = as.numeric(dim), y = contribution)) +
     geom_col(aes(fill = term), alpha = 0.75,
              position = position_stack(reverse = TRUE)) +
