@@ -52,6 +52,12 @@ get_citations <- function(filename, lines_to_ignore = NULL, refs_to_exclude = NU
     text_lines <- text_lines[-lines_to_ignore]
   }
 
+  # remove comments
+  if(ignore_md_comments){
+    text_lines %<>%
+      stringr::str_replace("<!--.+-->", "")
+  }
+
   citations <- text_lines %>%
     stringr::str_extract("@\\w+") %>%
     na.omit()
