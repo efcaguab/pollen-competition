@@ -3,7 +3,7 @@ title: "Community context determines competition vs. facilitation trade-offs in 
 subtitle: "Supplementary information"
 author: "E. Fernando Cagua, Hugo J. Marrero, Jason M. Tylianakis, Daniel B. Stouffer"
 # bibliography: references.bib
-csl: ecology-letters.csl
+csl: plos-biology.csl
 documentclass: book
 nocite: | 
   @Xu2003, @Nakagawa2013

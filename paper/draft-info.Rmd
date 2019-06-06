@@ -4,7 +4,7 @@ subtitle: "version: draft-6.1"
 date: "2019-05-23"
 # author: "Fernando Cagua, Hugo Marrero, Jason Tylianakis, Daniel Stouffer"
 bibliography: bibliography.bib
-csl: ecology-letters.csl
+csl: plos-biology.csl
 output:
   bookdown::pdf_document2:
     # base_format: rticles::peerj_article
