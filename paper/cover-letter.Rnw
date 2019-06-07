@@ -5,7 +5,7 @@
 \usepackage[backend=bibtex,style=verbose,doi=false,isbn=false,url=false]{biblatex}
 \addbibresource{bibliography.bib}
 \usepackage{geometry}
-\geometry{textwidth=43em, textheight=52\baselineskip}
+\geometry{textwidth=43em, textheight=55\baselineskip}
 % Name of sender
 \name{Fernando Cagua}
 % Signature of sender
@@ -36,7 +36,14 @@
 drake::loadd(msc_title)
 @
 
-We are submitting the manuscript entitled ``\Sexpr{msc_title}'' to be considered for publication in \emph{Ecology Letters}.
+We are submitting the manuscript entitled ``\Sexpr{msc_title}'' to be considered for publication in \emph{Plos Biology}.
+The main goal of this study, to explore the balance between competition and facilitation in plants belonging to the same community.
+
+Although the idea that plants can compete for pollinators or facilitate each other has been on the table for a long time, a definitive answer has not been reached yet.
+Very few studies have previously investigated how competition for pollination affects the pollination service using \emph{empirical data at the community level}.
+When they have, they have focused on pollen deposition alone and failed to incorporate other metrics that might influence the pollination service in natural communities.
+Here, we take a step beyond by not only collecting pollen-deposition data but also visitation, pollen transfer, plant abundance, phenology, and traits.
+These extra pieces of information allowed us to investigate the relationship between pollination service and multiple ecological factors, and, for the first time, quantify the pollination niche of plant populations.
 
 In this manuscript, we show that the realised pollination niche (which can also be viewed as a plant species' strategy to minimise competition for pollination) is strongly determined by the community to which it belongs.
 Furthermore, we show that even in pollination there is no such thing as a free lunch, and plants need to balance multiple trade-offs when minimising competition for pollination.
@@ -44,11 +51,6 @@ On the one hand, factors that increase the quantity of pollen deposited by anima
 On the other, factors that increase both the quantity and purity do so only mildly and potentially only in the short-term.
 % DBS: one hand and the other, again...
 % DBS: The use of short-term here is very ambiguous.
-
-Very few studies have previously investigated how competition for pollination affects the pollination service using \emph{empirical data at the community level}.
-When they have, they have focused on pollen deposition alone and failed to incorporate other metrics that might influence the pollination service in natural communities.
-Here, we take a step beyond by not only collecting pollen-deposition data but also visitation, pollen transfer, plant abundance, phenology, and traits.
-These extra pieces of information allowed us to investigate the relationship between pollination service and multiple ecological factors, and, for the first time, quantify the pollination niche of plant populations.
 
 Within the literature, studies of pollination communities almost always focus on the inherently mutualistic aspects of plant-pollinator interactions.
 In contrast, ours provides compelling evidence that animal-mediated pollination is really a fluid dance between competition and facilitation.
