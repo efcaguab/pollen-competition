@@ -90,10 +90,13 @@ The first is by changes in intraspecific pollen transfer.
 This happens, for example, when plants with more attractive flowers might reduce the number of visits to those less of attractive neighbouring plants, and hence reduce the amount of *conspecific pollen* deposited by animals [@yang_pollinator_2011]. 
 The second is via interspecific pollen transfer and occurs when plants share pollination partners. 
 In that case, even receiving a visit might not necessarily translate into fertilization [@campbell_mechanism_1985] because a focal plant might receive *heterospecific pollen* or because pollen from the focal plant might be lost to different species. 
-Generally speaking, provided pollen is viable and compatible [@ramsey_pollen_2000; @de_jong_plant_1992; @dafni_pollen_2000], the higher the quantity of conspecific pollen and its purity (relative to heterospecific pollen), the better the pollination service received by the focal plant.
-By definition, these two mechanisms of competition occur at the community scale. 
-However, with few exceptions [@tur_evaluating_2016; @aizen_reproductive_2010], most of what we know about them and their relationship with key ecological factors is based on studies with two plant species. 
+\R{start-deposition-facil-competition}Naturally, the precise effects on plant fitness of conspecific and heterospecific pollen deposition depend on the species involved (and are unknown for many plant species). 
+However, there is substantial evidence supporting the link between pollen deposition and seed production; in particular for the detrimental effect of heterospecific pollen deposition on plant fitness [@ashman_toward_2013; @arceo-gomez_invasion_2016]. 
+All together, provided pollen is viable and compatible [@ramsey_pollen_2000; @de_jong_plant_1992; @dafni_pollen_2000], the higher the quantity of conspecific pollen and its purity (relative to heterospecific pollen), the better the pollination service received by the focal plant. 
+As such, measuring conspecific and heterospecific pollen deposition provides a good indication of the potential levels of facilitation and competition a plant population might experience. 
 
+By definition, these two mechanisms of competition, intra and interspecific pollen transfer, occur at the community scale.
+However, with few exceptions [@tur_evaluating_2016; @aizen_reproductive_2010], most of what we know about them and their relationship with key ecological factors is based on studies with two plant species\R{end-deposition-facil-competition}. 
 That is partly so because, at the community scale, the factors that determine the patterns of pollen deposition are tightly intertwined, operate simultaneously, and may lead to emergent phenomena not observed at smaller scales [@flanagan_effects_2011].
 For instance, recent empirical evidence suggests that plants with flowering traits that are "original" relative to others in the community generally have fewer interaction partners [@coux_linking_2016]. 
 This evidence is aligned with the notion that a species that interacts with few species does so strongly with each of them whereas a species that interacts with a large number of species does so comparatively weakly [@thebault_does_2008; @bascompte_asymmetric_2006; @vazquez_species_2007].
