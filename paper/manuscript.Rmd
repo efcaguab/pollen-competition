@@ -45,24 +45,25 @@ loadd(abs_wordcount, msc_wordcount, n_displays, n_references, keywords)
 
 ^2^ Centro de Recursos Naturales Renovables de las Zonas Semiáridas, CONICET, Camino de la Carrindanga Km. 7, 8000 Bahía Blanca, Argentina
 
-**Running title:** 
-Competition for pollination vs. facilitation
+**Short title:** Competition for pollination vs. facilitation
 
-**Keywords:** `r keywords`
+<!-- **Keywords:** `r keywords` -->
 
-**Type of article:** Letter.
+**Type of article:** Primary research article
 
 **Number of words:** `r abs_wordcount$n_words_stri` in abstract; `r format(round(msc_wordcount$n_words_stri), big.mark = ",")` in main text.
 
 **Number of displays:** `r n_displays$figures` figures; `r n_displays$tables` tables; `r n_displays$text_boxes` text boxes.
 
-**Number of references:** `r n_references`
+<!-- **Number of references:** `r n_references` -->
 
 **Author for correspondence:** E. Fernando Cagua (+64 20 4026 8153).
 
 **Data accessibility:** Data supporting the results will be accessible in an appropriate data repository after publication.
 
-**Author contributions:** EFC wrote the manuscript and performed all analyses with input from all authors; HJM collected the data; all authors contributed to the study design. 
+<!-- **Author contributions:** EFC wrote the manuscript and performed all analyses with input from all authors; HJM collected the data; all authors contributed to the study design.  -->
+
+**Competing interests:** The authors have declared that no competing interests exist.
 
 \clearpage
 
