@@ -1,10 +1,10 @@
 ---
 title: "Draft information"
-subtitle: "version: draft-6.1"
-date: "2019-05-23"
+subtitle: "version: draft-7.0"
+date: "2019-06-07"
 # author: "Fernando Cagua, Hugo Marrero, Jason Tylianakis, Daniel Stouffer"
-bibliography: bibliography.bib
-csl: plos-biology.csl
+# bibliography: bibliography.bib
+# csl: plos-biology.csl
 output:
   bookdown::pdf_document2:
     # base_format: rticles::peerj_article
@@ -25,13 +25,20 @@ header-includes:
   - \newcommand{\R}[1]{\label{#1}\linelabel{#1}}
   - \newcommand{\lr}[1]{page~\pageref{#1}, line~\lineref{#1}}
   - \externaldocument[M-]{manuscript}
-
 ---
 
 \onehalfspacing
 
+## Requests to coauthors
+
+* Check text between \lr{M-start-deposition-facil-competition} and \lr{M-end-deposition-facil-competition} where there were changes.
+* Check the cover letter. I made small changes based on assessment from EL editor and swapped the order of a couple paragraphs. 
+* __Jason__: Could you please double check your grant numbers? They look different to Daniel's. 
+
 ## Changes since the last draft
 
-* Moved figures at the end of the manuscript
-* Refer to Figures as "Fig." in the main text
-* Minor correction to Figure 2 caption
+* Renamed visit effectiveness as visit potential throughout to reduce confusion with previous uses of the term.
+* Corrected a mistake on the names used for the model terms in Table S5. It used to say "degree" where it should have been "# shared pollinators".
+* Corrected caption of Fig S3 which used "trait originality" instead of "functional originality" which is the term we use in the paper
+* Paper has been formatted with minimum requirements for initial submission at Plos Biology.
+* Added some sentences in the intro to strengthten the link between competition/facilitation and conspecific/heterospecific pollen. 
