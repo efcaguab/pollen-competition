@@ -11,6 +11,7 @@ output:
     keep_tex: yes
     number_sections: false
 toc: false
+classoption: a4paper
 geometry: 
   - textwidth=33em
   - textheight=48\baselineskip
