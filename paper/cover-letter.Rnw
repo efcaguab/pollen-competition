@@ -5,7 +5,7 @@
 \usepackage[backend=bibtex,style=verbose,doi=false,isbn=false,url=false]{biblatex}
 \addbibresource{bibliography.bib}
 \usepackage{geometry}
-\geometry{textwidth=43em, textheight=55\baselineskip}
+\geometry{textwidth=33em, textheight=45\baselineskip}
 % Name of sender
 \name{Fernando Cagua}
 % Signature of sender
@@ -18,18 +18,18 @@
     University of Canterbury, \\
     New Zealand
 }
-\date{May 15, 2019}
+\date{June 11, 2019}
 %-----------------------------------------------------------------------------%
 \begin{document}
 % Name and address of receiver
 \begin{letter}
 {
-    Prof.\ Tim Coulson,\\
+    Dr. Emma Ganley, \\
     Editorial Office,\\
-    Ecology Letters
+    Plos Biology
 }
 % Opening statement
-\opening{Dear Professor Coulson,}
+\opening{Dear Doctor Ganley,}
 % Letter body
 
 <<my-label, eval=TRUE, echo=FALSE>>=
@@ -40,32 +40,34 @@ We are submitting the manuscript entitled ``\Sexpr{msc_title}'' to be considered
 The main goal of this study, to explore the balance between competition and facilitation in plants belonging to the same community.
 
 Although the idea that plants can compete for pollinators or facilitate each other has been on the table for a long time, a definitive answer has not been reached yet.
-Very few studies have previously investigated how competition for pollination affects the pollination service using \emph{empirical data at the community level}.
-When they have, they have focused on pollen deposition alone and failed to incorporate other metrics that might influence the pollination service in natural communities.
-Here, we take a step beyond by not only collecting pollen-deposition data but also visitation, pollen transfer, plant abundance, phenology, and traits.
-These extra pieces of information allowed us to investigate the relationship between pollination service and multiple ecological factors, and, for the first time, quantify the pollination niche of plant populations.
+Many of the key theoretical papers on mutualistic communities\autocite{bascompte_asymmetric_2006, bastolla_architecture_2009, rohr_structural_2014} almost always focus on the inherently beneficial aspects of plant-pollinator interactions.
+Empirical work has often mirrored this focus, though a few community-level studies have explored the extent to which plants who share pollinators compete vs. facilitate each other\autocite{tur_evaluating_2016, aizen_reproductive_2010}.
+Importantly, these studies only measured the deposition of pollen, whereas plants can modulate competition by partitioning their pollination niche in many ways, such as through flowering time, attractiveness, or how they attach pollen to pollinators.
+We, therefore, quantified, for the first time, the true pollination niche of plants, by incorporating measures of visitation, pollen transfer, floral abundance, phenology, and traits.
 
 In this manuscript, we show that the realised pollination niche (which can also be viewed as a plant species' strategy to minimise competition for pollination) is strongly determined by the community to which it belongs.
 Furthermore, we show that even in pollination there is no such thing as a free lunch, and plants need to balance multiple trade-offs when minimising competition for pollination.
 On the one hand, factors that increase the quantity of pollen deposited by animals may also decrease its purity (and vice-versa).
 On the other, factors that increase both the quantity and purity do so only mildly and potentially only in the short-term.
-% DBS: one hand and the other, again...
-% DBS: The use of short-term here is very ambiguous.
 
-Within the literature, studies of pollination communities almost always focus on the inherently mutualistic aspects of plant-pollinator interactions.
-In contrast, ours provides compelling evidence that animal-mediated pollination is really a fluid dance between competition and facilitation.
-This calls for a shift in the way we think about pollination in community ecology, especially from a theoretical perspective.
+This work provides fundamental understanding of plant reproductive biology, while also calling for a shift in the way we think about pollination in community ecology, especially from a theoretical perspective.
+In contrast to the predominant literature, our study provides compelling evidence that animal-mediated pollination is really a fluid dance between competition and facilitation.
+Thus, we believe that this manuscript will be interesting to the broad readership of PLoS Biology.
 
 Lastly, please note that the data used in this manuscript have been previously published\autocite{marrero_effect_2014,marrero_agricultural_2016,marrero_exotic_2017} by one of the co-authors.
-However, the enclosed work represents a novel contribution for all involved, and no related work published, in press, or submitted during this or last year has been cited.
+However, the enclosed work represents a novel contribution from all involved.
+
 
 Thank you for your consideration.
-\vfill
+\bigskip
 
 \hfill
-Fernando Cagua
+Fernando Cagua,
+Hugo Marrero,
+Jason Tylianakis \&
+Daniel Stouffer
 
-\medskip
+\vfill
 % Closing statement
 % \closing{ }
 \end{letter}
