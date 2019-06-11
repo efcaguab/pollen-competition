@@ -13,7 +13,7 @@ release:
 one_pdf: run_main stich_pdf_draft
 
 stich_pdf_manuscript:
-	pdftk paper/manuscript.pdf paper/supp-info.pdf cat output draft.pdf
+	pdftk paper/manuscript.pdf paper/supp-info.pdf cat output manuscript_and_supp-info.pdf
 
 stich_pdf_draft:
 	pdftk paper/draft-info.pdf paper/cover-letter.pdf paper/manuscript.pdf paper/supp-info.pdf cat output draft.pdf
