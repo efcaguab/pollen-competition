@@ -5,7 +5,8 @@
 \usepackage[backend=bibtex,style=verbose,doi=false,isbn=false,url=false]{biblatex}
 \addbibresource{bibliography.bib}
 \usepackage{geometry}
-\geometry{textwidth=33em, textheight=45\baselineskip}
+\usepackage{setspace}
+\geometry{textwidth=30em, textheight=45\baselineskip}
 % Name of sender
 \name{Fernando Cagua}
 % Signature of sender
@@ -31,7 +32,7 @@
 % Opening statement
 \opening{Dear Doctor Ganley,}
 % Letter body
-
+\onehalfspacing
 <<my-label, eval=TRUE, echo=FALSE>>=
 drake::loadd(msc_title)
 @
@@ -41,7 +42,7 @@ The main goal of this study, to explore the balance between competition and faci
 
 Although the idea that plants can compete for pollinators or facilitate each other has been on the table for a long time, a definitive answer has not been reached yet.
 Many of the key theoretical papers on mutualistic communities\autocite{bascompte_asymmetric_2006, bastolla_architecture_2009, rohr_structural_2014} almost always focus on the inherently beneficial aspects of plant-pollinator interactions.
-Empirical work has often mirrored this focus, though a few community-level studies have explored the extent to which plants who share pollinators compete vs. facilitate each other\autocite{tur_evaluating_2016, aizen_reproductive_2010}.
+Empirical work has often mirrored this focus, though a few community-level studies\autocite{tur_evaluating_2016, aizen_reproductive_2010} have explored the extent to which plants who share pollinators compete or facilitate each other.
 Importantly, these studies only measured the deposition of pollen, whereas plants can modulate competition by partitioning their pollination niche in many ways, such as through flowering time, attractiveness, or how they attach pollen to pollinators.
 We, therefore, quantified, for the first time, the true pollination niche of plants, by incorporating measures of visitation, pollen transfer, floral abundance, phenology, and traits.
 
@@ -50,7 +51,7 @@ Furthermore, we show that even in pollination there is no such thing as a free l
 On the one hand, factors that increase the quantity of pollen deposited by animals may also decrease its purity (and vice-versa).
 On the other, factors that increase both the quantity and purity do so only mildly and potentially only in the short-term.
 
-This work provides fundamental understanding of plant reproductive biology, while also calling for a shift in the way we think about pollination in community ecology, especially from a theoretical perspective.
+This work provides fundamental understanding of plant reproductive biology, while also \emph{calling for a shift in the way we think about pollination in community ecology}, especially from a theoretical perspective.
 In contrast to the predominant literature, our study provides compelling evidence that animal-mediated pollination is really a fluid dance between competition and facilitation.
 Thus, we believe that this manuscript will be interesting to the broad readership of PLoS Biology.
 
