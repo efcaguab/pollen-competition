@@ -6,7 +6,7 @@ author:
   - "Jason M. Tylianakis^1^ ([jason.tylianakis@canterbury.ac.nz](jason.tylianakis@canterbury.ac.nz))"
   - "Daniel B. Stouffer^1^ ([daniel.stouffer@canterbury.ac.nz](daniel.stouffer@canterbury.ac.nz))"
 bibliography: bibliography.bib
-csl: plos-biology.csl
+csl: nature.csl
 output: #word_document
   bookdown::pdf_document2:
     # base_format: rticles::peerj_article
@@ -65,7 +65,7 @@ loadd(abs_wordcount, msc_wordcount, n_displays, n_references, keywords)
 
 **Competing interests:** The authors have declared that no competing interests exist.
 
-The authors do not wish to opt-in to post the submission as a preprint on bioRxiv
+<!-- The authors do not wish to opt-in to post the submission as a preprint on bioRxiv -->
 
 \clearpage
 

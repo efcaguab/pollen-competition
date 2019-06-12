@@ -19,25 +19,24 @@
     University of Canterbury, \\
     New Zealand
 }
-\date{June 11, 2019}
+\date{June 13, 2019}
 %-----------------------------------------------------------------------------%
 \begin{document}
 % Name and address of receiver
 \begin{letter}
 {
-    Dr. Emma Ganley, \\
     Editorial Office,\\
-    Plos Biology
+    Nature Ecology and Evolution
 }
 % Opening statement
-\opening{Dear Doctor Ganley,}
+\opening{Dear Editorial Team,}
 % Letter body
 \onehalfspacing
 <<my-label, eval=TRUE, echo=FALSE>>=
 drake::loadd(msc_title)
 @
 
-We are submitting the manuscript entitled ``\Sexpr{msc_title}'' to be considered for publication in \emph{Plos Biology}.
+We are submitting the manuscript entitled ``\Sexpr{msc_title}'' to be considered for publication in \emph{Nature Ecology and Evolution}.
 The main goal of this study, to explore the balance between competition and facilitation in plants belonging to the same community.
 
 Although the idea that plants can compete for pollinators or facilitate each other has been on the table for a long time, a definitive answer has not been reached yet.

@@ -1,7 +1,7 @@
 ---
 title: "Draft information"
-subtitle: "version: draft-7.1"
-date: "2019-06-11"
+subtitle: "version: draft-7.2"
+date: "2019-06-13"
 # author: "Fernando Cagua, Hugo Marrero, Jason Tylianakis, Daniel Stouffer"
 # bibliography: bibliography.bib
 # csl: plos-biology.csl
@@ -31,5 +31,4 @@ header-includes:
 
 ## Changes since the last draft
 
-* Changed cover letter. Now the significance of results is clearer and the non-incremental aspects of the study are emphasized. Checked that it conforms to the journal guidelines. 
-* Adjusted one of Jason's grant numbers.
+* Adjusted cover letter to submit to Nature Ecology and Evolution
