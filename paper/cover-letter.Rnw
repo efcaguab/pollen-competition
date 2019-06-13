@@ -19,14 +19,14 @@
     University of Canterbury, \\
     New Zealand
 }
-\date{June 13, 2019}
+\date{June 14, 2019}
 %-----------------------------------------------------------------------------%
 \begin{document}
 % Name and address of receiver
 \begin{letter}
 {
     Editorial Office,\\
-    Nature Ecology and Evolution
+    Nature Ecology \& Evolution
 }
 % Opening statement
 \opening{Dear Editorial Team,}
@@ -52,7 +52,7 @@ On the other, factors that increase both the quantity and purity do so only mild
 
 This work provides fundamental understanding of plant reproductive biology, while also \emph{calling for a shift in the way we think about pollination in community ecology}, especially from a theoretical perspective.
 In contrast to the predominant literature, our study provides compelling evidence that animal-mediated pollination is really a fluid dance between competition and facilitation.
-Thus, we believe that this manuscript will be interesting to the broad readership of Nature Ecology and Evolution.
+Thus, we believe that this manuscript will be interesting to the broad readership of Nature Ecology \& Evolution.
 
 Lastly, please note that the data used in this manuscript have been previously published\autocite{marrero_effect_2014,marrero_agricultural_2016,marrero_exotic_2017} by one of the co-authors.
 However, the enclosed work represents a novel contribution from all involved.

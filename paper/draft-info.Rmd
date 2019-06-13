@@ -1,10 +1,10 @@
 ---
 title: "Draft information"
 subtitle: "version: draft-7.2"
-date: "2019-06-13"
+date: "2019-06-14"
 # author: "Fernando Cagua, Hugo Marrero, Jason Tylianakis, Daniel Stouffer"
 # bibliography: bibliography.bib
-# csl: plos-biology.csl
+# csl: nature.csl
 output:
   bookdown::pdf_document2:
     # base_format: rticles::peerj_article
