@@ -49,7 +49,7 @@ loadd(abs_wordcount, msc_wordcount, n_displays, n_references, keywords, referenc
 
 <!-- **Keywords:** `r keywords` -->
 
-<!-- **Type of article:** Primary research article -->
+**Content type:** Article.
 
 **Number of words:** `r abs_wordcount$n_words_stri` in abstract; `r format(round(msc_wordcount$n_words_stri), big.mark = ",")` in main text (including Methods section).
 
