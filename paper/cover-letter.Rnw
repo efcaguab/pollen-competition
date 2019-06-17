@@ -16,6 +16,7 @@
 {
     Fernando Cagua\\
     \href{mailto:efc29@uclive.ac.nz}{efc29@uclive.ac.nz} \\
+    +64 20 402 68153 \\
     University of Canterbury, \\
     New Zealand
 }
