@@ -1,7 +1,7 @@
 ---
 title: "Draft information"
-subtitle: "version: draft-7.2"
-date: "2019-06-14"
+subtitle: "version: draft-7.3"
+date: "2019-06-23"
 # author: "Fernando Cagua, Hugo Marrero, Jason Tylianakis, Daniel Stouffer"
 # bibliography: bibliography.bib
 # csl: nature.csl
@@ -31,4 +31,4 @@ header-includes:
 
 ## Changes since the last draft
 
-* Adjusted cover letter to submit to Nature Ecology and Evolution
+* Adjusted cover letter to submit to Nature Communications

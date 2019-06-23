@@ -20,14 +20,14 @@
     University of Canterbury, \\
     New Zealand
 }
-\date{June 14, 2019}
+\date{June 23, 2019}
 %-----------------------------------------------------------------------------%
 \begin{document}
 % Name and address of receiver
 \begin{letter}
 {
     Editorial Office,\\
-    Nature Ecology \& Evolution
+    Nature Communications
 }
 % Opening statement
 \opening{Dear Editorial Team,}
@@ -37,7 +37,8 @@
 drake::loadd(msc_title)
 @
 
-We are submitting the manuscript entitled ``\Sexpr{msc_title}'' to be considered for publication in \emph{Nature Ecology \& Evolution}.
+We are submitting the manuscript entitled ``\Sexpr{msc_title}'' to be considered for publication in \emph{Nature Communications}.
+We previously submitted this manuscript to Nature Ecology \& Evolution and Dr Abel Barral suggested Nature Communications as a more appropriate venue for the publication of our results.
 The main goal of this study is to explore the balance between competition and facilitation in plants belonging to the same community.
 The manuscript text is currently organised in the IMRaD structure, but, for future versions, we are more than happy to reformat it and adjust its length to comply with the journal requirements.
 
@@ -54,7 +55,8 @@ On the other, factors that increase both the quantity and purity do so only mild
 
 This work provides fundamental understanding of plant reproductive biology, while also \emph{calling for a shift in the way we think about pollination in community ecology}, especially from a theoretical perspective.
 In contrast to the predominant literature, our study provides compelling evidence that animal-mediated pollination is really a fluid dance between competition and facilitation.
-Thus, we believe that this manuscript will be interesting to the broad readership of Nature Ecology \& Evolution.
+Some lessons might also be applicable to other complex systems where facilitation and competition might be at odds and global socio-economic networks of countries and companies.
+Thus, we believe that this manuscript will be interesting to the broad readership of Nature Communications.
 
 Lastly, please note that the data used in this manuscript have been previously published\autocite{marrero_effect_2014,marrero_agricultural_2016,marrero_exotic_2017} by one of the co-authors.
 However, the enclosed work represents a novel contribution from all involved.
