@@ -214,6 +214,8 @@ figure_plan <- drake_plan(
 )
 
 reporting_plan <- drake_plan(
+  graphical_abstract_small = export_graphical_abstract(fig_distances, file_out("paper/graphical-abstract-small.png"), 150),
+  graphical_abstract_big = export_graphical_abstract(fig_distances, file_out("paper/graphical-abstract-big.png"), 300),
   references = get_bibliography(
     "https://raw.githubusercontent.com/efcaguab/phd-bibliography/master/pollen-competition.bib",
     file_out("paper/bibliography.bib"), bib_retrieved),
