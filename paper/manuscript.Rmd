@@ -191,8 +191,6 @@ To do this, we examined the pollen loads present on the floral visitors collecte
 When the pollen count on an individual animal was estimated to be less than 2,000 grains, we identified every grain to the species level when possible and to pollen complexes when it was not. 
 When the pollen count was above 2,000 grains, we classified approximately 50% of pollen and total pollen counts were extrapolated [@bosch_plant-pollinator_2009]. 
 Finally, we also recorded morphological traits that relate to plant type (herb, shrub, climber), life cycle (annual, perennial), flower colouration, phenology, and whether the species is native in the study region\R{justification-traits}. 
-<!-- We used those traits because they were the only ones available. <!--.. (TODO: Add a better justification for the traits used)--> 
-<!-- DBS: I bet we can get away with submitting without justifying the traits. -->
 More details can be found in Marrero *et al.* (2014 and 2017).
 
 ### Data analysis

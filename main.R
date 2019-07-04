@@ -65,9 +65,6 @@ imputation_plan <- drake_plan(
 
 # Basic analyses ----------------------------------------------------------
 
-# TODO: Check that the missing plants with deposition are fine
-# TODO: Impute the community values with a fit from the global values?
-
 basic_analyses_plan <- drake_plan(
   consp_self = model_conspecific_self(dep_frame),
   significant_gain_global = mann_withney_part_df(
