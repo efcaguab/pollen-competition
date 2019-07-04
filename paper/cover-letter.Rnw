@@ -38,7 +38,7 @@ drake::loadd(msc_title)
 @
 
 We are submitting the manuscript entitled ``\Sexpr{msc_title}'' to be considered for publication in \emph{Proceedings B}.
-The main goal of this study is to explore the balance between competition and facilitation in plants belonging to the same community.
+The main goal of this study is to explore the balance between competition and facilitation in plants belonging to the same pollination community.
 
 Although the idea that plants can compete for pollinators or facilitate each other has been on the table for a long time, a definitive answer has not been reached yet.
 Many of the key theoretical papers on mutualistic communities\autocite{bascompte_asymmetric_2006, bastolla_architecture_2009, rohr_structural_2014} almost always focus on the inherently beneficial aspects of plant-pollinator interactions.
