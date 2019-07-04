@@ -32,3 +32,4 @@ header-includes:
 ## Changes since the last draft
 
 * Adjusted cover letter and minimum format requirements to submit to Proceedings B
+* Improved README so that the code can be shared if needed
