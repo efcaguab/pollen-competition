@@ -6,7 +6,7 @@
 \addbibresource{bibliography.bib}
 \usepackage{geometry}
 \usepackage{setspace}
-\geometry{textwidth=32em, textheight=47\baselineskip}
+\geometry{textwidth=30em, textheight=47\baselineskip}
 % Name of sender
 \name{Fernando Cagua}
 % Signature of sender
