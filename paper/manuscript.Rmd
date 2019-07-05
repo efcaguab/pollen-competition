@@ -57,7 +57,7 @@ loadd(abs_wordcount, msc_wordcount, n_displays, n_references, keywords, referenc
 
 **Author for correspondence:** E. Fernando Cagua (+64 20 4026 8153).
 
-<!-- **Data accessibility:** Data supporting the results will be accessible in an appropriate data repository after publication. -->
+<!-- **Data accessibility:** All data and code necessary to reproduce the results has been included in the Electronic Supplementary Materials and will be publicly available in appropriate databases upon acceptance.. -->
 
 <!-- **Author contributions:** EFC wrote the manuscript and performed all analyses with input from all authors; HJM collected the data; all authors contributed to the study design.  -->
 
