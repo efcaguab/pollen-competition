@@ -45,7 +45,7 @@ loadd(abs_wordcount, msc_wordcount, n_displays, n_references, keywords, referenc
 
 ^2^ Centro de Recursos Naturales Renovables de las Zonas Semiáridas, CONICET, Camino de la Carrindanga Km. 7, 8000 Bahía Blanca, Argentina
 
-<!-- **Short title:** Competition for pollination vs. facilitation -->
+<!-- **Short title:** Competition/facilitation in pollination -->
 
 **Content type:** Research article.
 
