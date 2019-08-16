@@ -52,6 +52,8 @@ The reviewer asks for more info about study sites. He remarks on why we didn't t
 
 The reviewer asks for more information about the study plans, abundances, etc. 
 
+**Way forward:** Just add that info in the supporting information
+
 ## Model specification
 
 The reviewer suggests modelling ratio conspecific and heterospecific directly. Not sure about this, though. 
@@ -62,4 +64,8 @@ The reviewer suggests modelling ratio conspecific and heterospecific directly. N
 
 The reviewer suggests many of claims in the discussion are unsubstantiated. 
 
-**Way forward:** Just more nuance in the discussion. I think the reviewer had a pretty negative approach by then and was being a bit nitpicky. 
+**Way forward:** Just more nuance in the discussion and be more explicit about study limitations. I think the reviewer had a pretty negative mindset towards the paper by then and was being a bit nitpicky. 
+
+## Other issues
+
+We can address most other issues can be easily addressed with some wording changes to improve clarity. 
