@@ -78,42 +78,42 @@ loadd(abs_wordcount, msc_wordcount, n_displays, n_references, keywords, referenc
 # Introduction
 
 Animal pollination plays a disproportionally important role in food production and maintenance of global biodiversity [@bascompte_plant-animal_2007; @klein_importance_2007; @ollerton_how_2011]. 
-At a pairwise level, pollination is underpinned by a delicate balance between the mutualistic relationship between plants and pollinators. 
+At a pairwise level, the mutually beneficial relationship between plants and pollinators underpins pollination. 
 At a community level, sometimes involving hundreds of species, both plant and pollinator species are connected in a myriad of indirect connections when pollination partners are shared. 
-These indirect connections can dramatically alter the quality of the pollination service that plants receive because they determine how conspecific and heterospecific pollen is transferend across the community. 
-However, due to the large number of factors that operate at the community level, we do not understand how sharing pollinators affects the pollination service beyond systems with more than a handful of species. 
+These indirect connections can dramatically alter the quality of the pollination service that plants receive because they determine how conspecific and heterospecific pollen is transferred across the community. 
+However, due to the large number of factors that operate at the community level, we do not understand how sharing pollinators affect the pollination service beyond systems with more than a handful of species. 
 Here we investigate how pollinator sharing affects pollen transfer *in natural communities* and how it compares to other factors known to play a role in community dynamics like abundance, traits, and visitation patterns.
 
-There are two main mechanisms through which sharing pollinators can affect plant fertilization [@morales_interspecific_2008]. 
+There are two main mechanisms through which sharing pollinators can affect plant fertilisation [@morales_interspecific_2008]. 
 The first is by changes in intraspecific pollen transfer.
-This happens, for example, when plants with more attractive flowers might reduce the number of visits to those less of attractive neighbouring plants, and hence reduce the amount of *conspecific pollen* deposited by animals [@yang_pollinator_2011]. 
+Interspecific pollen transfer happens, for example, when plants with more attractive flowers might reduce the number of visits to those less of attractive neighbouring plants, and hence reduce the amount of *conspecific pollen* deposited by animals [@yang_pollinator_2011]. 
 The second is via interspecific pollen transfer. 
-In that case, even receiving a visit might not necessarily translate into fertilization [@campbell_mechanism_1985] because a focal plant might receive *heterospecific pollen* or because pollen from the focal plant might be lost to different species. 
+In that case, even receiving a visit might not necessarily translate into fertilisation [@campbell_mechanism_1985] because a focal plant might receive *heterospecific pollen* or because pollen from the focal plant might be lost to different species. 
 Naturally, the precise effects on female or male plant fitness of conspecific and heterospecific pollen deposition depend on the species involved (and are unknown for many plant species). 
-However, even for species well adapted to pollinator sharing, receiving foreign pollen on stigmas or loosing pollen to foreign stigmas, is neutral at best. 
+However, even for species well adapted to pollinator sharing, receiving foreign pollen on stigmas or losing pollen to foreign stigmas, is neutral at best. 
 Indeed, there is substantial evidence supporting the idea that heterospecific pollen deposition can be detrimental to seed production and plant fitness [@ashman_toward_2013; @arceo-gomez_invasion_2016].
 
 All together, provided pollen is viable and compatible [@ramsey_pollen_2000; @de_jong_plant_1992; @dafni_pollen_2000], the higher the quantity of conspecific pollen and its purity (relative to heterospecific pollen), the better the pollination service received by the focal plant. 
 As such, measuring conspecific and heterospecific pollen deposition provides a good indication of the potential levels of facilitation and competition a plant population might experience. 
 
-By definition, intra and interspecific pollen transfer, occur at the community scale.
-However, with few exceptions [@tur_evaluating_2016; @aizen_reproductive_2010], most of what we know about them and their relationship with key ecological factors is based on studies with two plant species. 
+By definition, intra- and interspecific pollen transfer, occur at the community scale.
+However, with few exceptions [@tur_evaluating_2016; @aizen_reproductive_2010], most of what we know about pollen transfer and its relationship with key ecological factors are based on studies with two plant species. 
 That is partly so because, at the community scale, the factors that determine the patterns of pollen deposition are tightly intertwined, operate simultaneously, and may lead to emergent phenomena not observed at smaller scales [@flanagan_effects_2011].
 For instance, recent empirical evidence suggests that plants with flowering traits that are "original" relative to others in the community generally have fewer interaction partners [@coux_linking_2016]. 
 
-This evidence is aligned with the notion that a species that interacts with few species does so strongly with each of them whereas a species that interacts with a large number of species does so comparatively weakly [@thebault_does_2008; @bascompte_asymmetric_2006; @vazquez_species_2007].
+This evidence aligns with the notion that a species that interacts with few species does so strongly with each of them whereas a species that interacts with a large number of species does so comparatively weakly [@thebault_does_2008; @bascompte_asymmetric_2006; @vazquez_species_2007].
 If evolutionary specialisation occurs by changing traits to focus on fewer but better partners [@caruso_competition_2000], we should expect a reduction of competition for pollinators in species with "original" traits and an increase of competition in species with a large number of interaction partners [@gibson_can_2012; @carvalheiro_potential_2014]. 
-Alternatively, it might also be the case that abundance (for example in terms of flower or pollen counts) is the dominant force driving pollen transfer [@seifan_outcome_2014]. 
+Alternatively, it might also be the case that abundance (for example, in terms of flower or pollen counts) is the dominant force driving pollen transfer [@seifan_outcome_2014]. 
 Abundant plant species might experience a dilution of available pollinators [@feinsinger_effects_1987; @feldman_when_2004] but might also receive more effective visits by capitalising on a larger share of both visits and the pollen carried by pollinators [@stavert_plant_2019].
 In this case, a potential reduction in the absolute amount of conspecific pollen received could be compensated by an increase in the amount of conspecific pollen relative to heterospecific pollen.
 Altogether, it is clear that these ecological factors can indeed shape pollen deposition at the community level. 
-However, their relative importance and **the trade-offs** that exist between them has not been determined. 
+However, we still do not understand their relative importance and **the trade-offs** that might exist between them. 
 
 Here, we investigate pollen transfer dynamics at the community scale using empirical data from eleven plant-pollinator communities in the Argentinian Pampas. 
 First, we investigate the relative contribution that four ecological factors have to the pollination service. 
-Specifically, we hypothesize that there are trade offs on how these factors affect quantity and purity of conspecific pollen deposition. 
-While quantity and putity should decrease for plants that share many pollination partners, other factors like the plant's functional originality, its relative floral abundance, and its visitation patterns should have the potential to compensate for this decreasse
-Second, once we understand how these factors operate across species, we examine wether species show similar patterns in these four factors across the different communities where they are present. 
+Specifically, we hypothesise that there are trade-offs on how these factors affect the quantity and purity of conspecific pollen deposition. 
+While quantity and purity should decrease for plants that share many pollination partners, other factors like the plant's functional originality, its relative floral abundance, and its visitation patterns should have the potential to compensate for this decrease
+Second, once we understand how these factors operate across species, we examine whether species show similar patterns in these four factors across the different communities where they are present. 
 Because these factors may affect the pollination service in contrasting ways, and a species role is relative to other species in the community, we predict that species present in multiple communities should be flexible enough to compete for pollinators under different community contexts. 
 
 <!-- Alongside the direct benefits of mutualisms between plants and their pollinators, biodiversity can be supported as a result of inter-species "facilitation"—the indirect positive feedback loops that exist between plant species that share pollinators or pollinators that share plants [@moeller_facilitative_2004; @ghazoul_floral_2006; @molina-montenegro_positive_2008; @liao_presence_2011].  -->
