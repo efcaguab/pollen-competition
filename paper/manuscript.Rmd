@@ -78,6 +78,12 @@ loadd(abs_wordcount, msc_wordcount, n_displays, n_references, keywords, referenc
 # Introduction
 
 Animal pollination plays a disproportionally important role in food production and maintenance of global biodiversity [@bascompte_plant-animal_2007; @klein_importance_2007; @ollerton_how_2011]. 
+At a pairwise level, pollination is underpinned by a delicate balance between the mutualistic relationship between plants and pollinators. 
+At a community level, sometimes involving hundreds of species, both plant and pollinator species are connected in a myriad of indirect connections when pollination partners are shared. 
+These indirect connections can dramatically alter the quality of the pollination service that plants receive because they determine how conspecific and heterospecific pollen is transferend across the community. 
+However, due to the large number of factors that operate at the community level, we do not understand how sharing pollinators affects the pollination service beyond systems with more than a handful of species. 
+Here we investigate how pollinator sharing affects pollen transfer *in natural communities* and how it compares to other factors known to play a role in community dynamics like abundance, traits, and visitation patterns.
+
 Alongside the direct benefits of mutualisms between plants and their pollinators, biodiversity can be supported as a result of inter-species "facilitation"—the indirect positive feedback loops that exist between plant species that share pollinators or pollinators that share plants [@moeller_facilitative_2004; @ghazoul_floral_2006; @molina-montenegro_positive_2008; @liao_presence_2011]. 
 This inter-species facilitation is able to promote species coexistence by offsetting the effects of direct resource competition [@stachowicz_mutualism_2001]. 
 Indeed, studies at the core of our current theoretical knowledge of mutualisms predict that the maximum number of coexisting species is achieved when the number of shared mutualistic partners is maximised in a community [@bastolla_architecture_2009]. 
