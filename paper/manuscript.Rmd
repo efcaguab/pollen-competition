@@ -84,6 +84,15 @@ These indirect connections can dramatically alter the quality of the pollination
 However, due to the large number of factors that operate at the community level, we do not understand how sharing pollinators affects the pollination service beyond systems with more than a handful of species. 
 Here we investigate how pollinator sharing affects pollen transfer *in natural communities* and how it compares to other factors known to play a role in community dynamics like abundance, traits, and visitation patterns.
 
+There are two main mechanisms through which sharing pollinators can affect plant fertilization [@morales_interspecific_2008]. 
+The first is by changes in intraspecific pollen transfer.
+This happens, for example, when plants with more attractive flowers might reduce the number of visits to those less of attractive neighbouring plants, and hence reduce the amount of *conspecific pollen* deposited by animals [@yang_pollinator_2011]. 
+The second is via interspecific pollen transfer. 
+In that case, even receiving a visit might not necessarily translate into fertilization [@campbell_mechanism_1985] because a focal plant might receive *heterospecific pollen* or because pollen from the focal plant might be lost to different species. 
+Naturally, the precise effects on female or male plant fitness of conspecific and heterospecific pollen deposition depend on the species involved (and are unknown for many plant species). 
+However, even for species well adapted to pollinator sharing, receiving foreign pollen on stigmas or loosing pollen to foreign stigmas, is neutral at best. 
+Indeed, there is substantial evidence supporting the idea that heterospecific pollen deposition can be detrimental to seed production and plant fitness [@ashman_toward_2013; @arceo-gomez_invasion_2016].
+
 Alongside the direct benefits of mutualisms between plants and their pollinators, biodiversity can be supported as a result of inter-species "facilitation"—the indirect positive feedback loops that exist between plant species that share pollinators or pollinators that share plants [@moeller_facilitative_2004; @ghazoul_floral_2006; @molina-montenegro_positive_2008; @liao_presence_2011]. 
 This inter-species facilitation is able to promote species coexistence by offsetting the effects of direct resource competition [@stachowicz_mutualism_2001]. 
 Indeed, studies at the core of our current theoretical knowledge of mutualisms predict that the maximum number of coexisting species is achieved when the number of shared mutualistic partners is maximised in a community [@bastolla_architecture_2009]. 
@@ -94,13 +103,7 @@ It has been clear for a long time that when competition for pollination is stron
 In fact, it can be sufficient to drive ecological differentiation [for example by driving the evolution of both traits and reproductive strategies; @mitchell_new_2009; @caruso_competition_2000]. 
 However, it is less clear how exactly this ecological differentiation may, in turn, favour (or hinder) the pollination service.
 
-There are two main mechanisms through which competition for pollinators can affect plant fertilization [@morales_interspecific_2008]. 
-The first is by changes in intraspecific pollen transfer.
-This happens, for example, when plants with more attractive flowers might reduce the number of visits to those less of attractive neighbouring plants, and hence reduce the amount of *conspecific pollen* deposited by animals [@yang_pollinator_2011]. 
-The second is via interspecific pollen transfer and occurs when plants share pollination partners. 
-In that case, even receiving a visit might not necessarily translate into fertilization [@campbell_mechanism_1985] because a focal plant might receive *heterospecific pollen* or because pollen from the focal plant might be lost to different species. 
-\R{start-deposition-facil-competition}Naturally, the precise effects on plant fitness of conspecific and heterospecific pollen deposition depend on the species involved (and are unknown for many plant species). 
-However, there is substantial evidence supporting the link between pollen deposition and seed production; in particular for the detrimental effect of heterospecific pollen deposition on plant fitness [@ashman_toward_2013; @arceo-gomez_invasion_2016]. 
+
 All together, provided pollen is viable and compatible [@ramsey_pollen_2000; @de_jong_plant_1992; @dafni_pollen_2000], the higher the quantity of conspecific pollen and its purity (relative to heterospecific pollen), the better the pollination service received by the focal plant. 
 As such, measuring conspecific and heterospecific pollen deposition provides a good indication of the potential levels of facilitation and competition a plant population might experience. 
 
