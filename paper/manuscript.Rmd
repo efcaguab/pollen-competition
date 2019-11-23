@@ -110,11 +110,11 @@ In this case, a potential reduction in the absolute amount of conspecific pollen
 Altogether, it is clear that these ecological factors can indeed shape pollen deposition at the community level. 
 However, we still do not understand their relative importance and **the trade-offs** that might exist between them. 
 
-Here, we investigate pollen transfer dynamics at the community scale using empirical data from eleven plant-pollinator communities in the Argentinian Pampas. 
+Here, we investigate pollen deposition dynamics at the community scale using empirical data from eleven plant-pollinator communities in the Argentinian Pampas. 
 First, we investigate the relative contribution that four ecological factors have to the pollination service. 
 Specifically, we hypothesise that there are trade-offs on how these factors affect the quantity and purity of conspecific pollen deposition. 
 While quantity and purity should decrease for plants that share many pollination partners, other factors like the plant's functional originality, its relative floral abundance, and its visitation patterns should have the potential to compensate for this decrease
-Second, once we understand how these factors operate across species, we examine whether species show similar patterns in these four factors across the different communities where they are present. 
+Second, we examine how these four factors that might affect pollen deposition can change across communities where species are present. 
 Because these factors may affect the pollination service in contrasting ways, and a species role is relative to other species in the community, we predict that species present in multiple communities should be flexible enough to compete for pollinators under different community contexts. 
 
 # Methods
@@ -124,7 +124,7 @@ In each location, we sampled two restored and two agricultural fragments, except
 
 ## Factors affecting quantity and purity of pollination service 
 
-Our first objective was to investigate the relative contribution that different ecological factors have on pollen transfer. 
+Our first objective was to investigate the relative contribution that different ecological factors have on pollen deposition. 
 Generally speaking, we expect that any factor that increases the amount of conspecific pollen deposited in stigmas, both in quantity and purity relative to heterospecific pollen, also has a positive effect on the pollination service.
 Specifically, we investigated the effect of (*i*) a plant's number of shared pollinator species, (*ii*) a plant's abundance relative to the rest of the community, (*iii*) the mean visit potential---a metric that combines the amount and type of pollen carried by floral visitors and the number of visits it receives from them, and (*iv*) the plant's functional originality [@laliberte_distance-based_2010]. 
 See *Data Analysis* section below for more details on these four factors. 
@@ -148,7 +148,7 @@ To estimate visit potential, we need to construct pollen transfer networks in ad
 To do this, we examined the pollen loads present on the floral visitors collected [@marrero_exotic_2017]. 
 When the pollen count on an individual animal was estimated to be less than 2,000 grains, we identified every grain to the species level when possible and to pollen complexes when it was not. 
 When the pollen count was above 2,000 grains, we classified approximately 50% of pollen and total pollen counts were extrapolated [@bosch_plant-pollinator_2009]. 
-Finally, we also recorded morphological traits that relate to plant type (herb, shrub, climber), life cycle (annual, perennial), flower colouration, phenology, and whether the species is native in the study region\R{justification-traits}. 
+Finally, we also recorded morphological traits that relate to plant type (herb, shrub, climber), life cycle (annual, perennial), flower colouration, phenology, and whether the species is native in the study region. 
 More details can be found in Marrero *et al.* (2014 and 2017).
 
 ### Data analysis
@@ -180,9 +180,9 @@ Finally, we used these distributions of the model coefficients to estimate their
 
 ## Flexibility of plant strategies
 
-Our second objective was to tease apart the plant strategies that might reduce competition and, importantly, how the community context influences these strategies.
-If community context plays a relatively small role or the species strategy is inflexible, we would expect plants of the same species to fill similar pollination niches across different communities. 
-Alternatively, if the community plays a large role and/or plant strategies are flexible, we should be able to observe differences in the realised niche a plant species occupies across communities. 
+Our second objective was to tease apart whether and how these factors that might affect pollen deposition might change across communities species are present.
+If community context plays a relatively small role, or alternatively, species are inflexible in regards of these factors, we would expect plants of the same species to fill similar pollination niches across different communities. 
+Alternatively, if the community plays a large role and plant species are flexible, we should be able to observe differences in the realised niche a plant species occupies across communities. 
 To test this, we first used a principal component analysis (PCA) of the four ecological factors (number of shared pollinators, floral abundance, visit potential, and trait originality). 
 We scaled factors across the whole study to ensure that the PCA space does not change according to the species present in each community. 
 We define a species' niche in a community as its coordinates in PCA space. 
