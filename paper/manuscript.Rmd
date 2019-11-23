@@ -80,7 +80,8 @@ loadd(abs_wordcount, msc_wordcount, n_displays, n_references, keywords, referenc
 Animal pollination plays a disproportionally important role in food production and maintenance of global biodiversity [@bascompte_plant-animal_2007; @klein_importance_2007; @ollerton_how_2011]. 
 At a pairwise level, the mutually beneficial relationship between plants and pollinators underpins pollination. 
 At a community level, sometimes involving hundreds of species, both plant and pollinator species are connected in a myriad of indirect connections when pollination partners are shared. 
-These indirect connections can dramatically alter the quality of the pollination service that plants receive because they determine how conspecific and heterospecific pollen is transferred across the community. 
+These indirect connections can dramatically alter the quality of the pollination service that plants receive because they determine how conspecific and heterospecific pollen is transferred across the community [@morales_interspecific_2008]. 
+Generally speaking, there is a trade-off between the benefits gained from maximising the number of partners and the costs of sharing them with other plant species [@waser_interspecific_1978].
 However, due to the large number of factors that operate at the community level, we do not understand how sharing pollinators affect the pollination service beyond systems with more than a handful of species. 
 Here we investigate how pollinator sharing affects pollen transfer *in natural communities* and how it compares to other factors known to play a role in community dynamics like abundance, traits, and visitation patterns.
 
