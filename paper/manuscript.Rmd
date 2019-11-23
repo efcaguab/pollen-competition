@@ -117,19 +117,6 @@ While quantity and purity should decrease for plants that share many pollination
 Second, once we understand how these factors operate across species, we examine whether species show similar patterns in these four factors across the different communities where they are present. 
 Because these factors may affect the pollination service in contrasting ways, and a species role is relative to other species in the community, we predict that species present in multiple communities should be flexible enough to compete for pollinators under different community contexts. 
 
-<!-- Alongside the direct benefits of mutualisms between plants and their pollinators, biodiversity can be supported as a result of inter-species "facilitation"—the indirect positive feedback loops that exist between plant species that share pollinators or pollinators that share plants [@moeller_facilitative_2004; @ghazoul_floral_2006; @molina-montenegro_positive_2008; @liao_presence_2011].  -->
-<!-- This inter-species facilitation is able to promote species coexistence by offsetting the effects of direct resource competition [@stachowicz_mutualism_2001].  -->
-<!-- Indeed, studies at the core of our current theoretical knowledge of mutualisms predict that the maximum number of coexisting species is achieved when the number of shared mutualistic partners is maximised in a community [@bastolla_architecture_2009].  -->
-
-<!-- However, in natural communities, plants rarely share all available pollinators.  -->
-<!-- One explanation is that plants are effectively competing for mutualistic partners because there is a trade-off between the benefits gained from maximising the number of partners and the costs of sharing them with other plant species [@waser_interspecific_1978].  -->
-<!-- It has been clear for a long time that when competition for pollination is strong enough, these costs can make pollination detrimental to plants' fitness [shown both experimentally and theoretically; @robertson_philosophy_1895; @lewis_experimental_1961; @levin_competition_1970].  -->
-<!-- In fact, it can be sufficient to drive ecological differentiation [for example by driving the evolution of both traits and reproductive strategies; @mitchell_new_2009; @caruso_competition_2000].  -->
-<!-- However, it is less clear how exactly this ecological differentiation may, in turn, favour (or hinder) the pollination service. -->
-
-
-
-
 # Methods
 
 We collected data from eleven co-flowering plant communities and their pollinators in three locations in the Argentinian Pampas. 
