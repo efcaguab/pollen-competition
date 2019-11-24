@@ -49,19 +49,19 @@ loadd(abs_wordcount, msc_wordcount, n_displays, n_references, keywords, referenc
 
 **Content type:** Research article.
 
-**Number of words:** `r abs_wordcount$n_words_stri` in abstract; `r format(round(msc_wordcount$n_words_stri), big.mark = ",")` in main text (including Methods section).
+**Number of words:** `r abs_wordcount$n_words_stri` in abstract; `r format(round(msc_wordcount$n_words_stri), big.mark = ",")` in main text.
 
-<!-- **Number of displays:** `r n_displays$figures` figures; `r n_displays$tables` tables; `r n_displays$text_boxes` text boxes. -->
+**Number of displays:** `r n_displays$figures` figures; `r n_displays$tables` tables; `r n_displays$text_boxes` text boxes.
 
-<!-- **Number of references:** `r n_references` -->
+**Number of references:** `r n_references`
 
 **Author for correspondence:** E. Fernando Cagua (+64 20 4026 8153).
 
-<!-- **Data accessibility:** All data and code necessary to reproduce the results has been included in the Electronic Supplementary Materials and will be publicly available in appropriate databases upon acceptance.. -->
+**Data accessibility:** All data and code necessary to reproduce the results has been included in the Electronic Supplementary Materials and will be publicly available in appropriate databases upon acceptance.
 
-<!-- **Author contributions:** EFC wrote the manuscript and performed all analyses with input from all authors; HJM collected the data; all authors contributed to the study design.  -->
+**Author contributions:** EFC wrote the manuscript and performed all analyses with input from all authors; HJM collected the data; all authors contributed to the study design.
 
-<!-- **Competing interests:** The authors have declared that no competing interests exist. -->
+**Competing interests:** The authors have declared that no competing interests exist.
 
 <!-- The authors do not wish to opt-in to post the submission as a preprint on bioRxiv -->
 
