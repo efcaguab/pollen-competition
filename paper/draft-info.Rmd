@@ -1,7 +1,7 @@
 ---
 title: "Draft information"
-subtitle: "version: draft-7.4"
-date: "2019-07-05"
+subtitle: "version: draft-8.0"
+date: "2019-11-24"
 # author: "Fernando Cagua, Hugo Marrero, Jason Tylianakis, Daniel Stouffer"
 # bibliography: bibliography.bib
 # csl: nature.csl
@@ -29,7 +29,15 @@ header-includes:
 
 \onehalfspacing
 
+## Requests to co-authors
+
+* Title suggestions/feedback?
+* Feedback primarly on abstract, introduction and discussion prior to submission. 
+
 ## Changes since the last draft
 
-* Adjusted cover letter and minimum format requirements to submit to Proceedings B
-* Improved README so that the code can be shared if needed
+* Adjusted langage away from competition for pollination towards pollination service and pollen deposition across the paper.
+* Removed the section where we calculated competition/facilitation in ecological communities
+* Other minor adjustments to address comments by reviews received when submitted to Proceedings B
+* Rewrote abstract
+* Updated title
