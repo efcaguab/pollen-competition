@@ -338,20 +338,21 @@ On the other, because different niches can lead to different outcomes across com
 Other factors that we were unable to measure (e.g. pollinator behaviour and densities or the spatial context) have also been shown to play a role in the outcome of animal-mediated pollination [@ye_competition_2014; @flanagan_effects_2011; @cariveau_spatially_2009; @thomson_effects_2019].
 Nevertheless, our results indicate that the strategies a plant might use to successfully minimise competition for pollination (or maximise facilitation) must be determined relative to other species in the community, rather than an absolute property of the species itself. 
 
-Overall, pollination communities might not necessarily be the paradigmatic mutualistic communities we often believe. 
-Instead, we confirm that plant competition is pervasive in pollination communities. 
-The potential strategies to minimise competition are likely to involve strong trade-offs in the pollination service both in the short and long-term. 
+Overall, using empirical data on pollen deposition, we show that at the community level sharing pollinators has a smaller effect on pollen deposition than what we expected based on experimental studies with a handful species.
+Other factors that underpin community dynamics (abundance, traits, visitation) also influence patterns of pollination quantity and purity. 
+The interrelatedness of these factors and the flexibility of species to position themselves within these factors means that their contributions to the quality of the pollination service should not and cannot be understood in isolation. 
+All factors we analysed involve substantial trade-offs in pollen deposition in the short and likely also in the longer term. 
+These trade-offs emphasise the competitive nature of pollination. 
+However, many of the widely used theoretical models of plant-pollinator communities do not account for the adverse effects of sharing pollinators [but see @rohr_structural_2014 and similar]. 
+We propose that achieving a better understanding of species coexistence and how pollination support plant biodiversity will require seeing them as both mutualistic and competitive communities [@johnson_coexistence_2019]. 
+
+<!-- theprotagonist pollen deposition is  widely held that competition for pollination is pervasive in pollination communities.  -->
+<!-- The potential strategies to minimise competition are likely to involve strong trade-offs in the pollination service both in the short and long-term.  -->
 <!-- Specifically, although not sharing pollinators and being functionally unique reduces competition for pollination by increasing the quantity and purity of conspecific pollen deposition.  --> 
 <!-- Remarkably, this increase is surprisingly small when compared to the effect of relative abundance and visitation.  -->
 <!-- Interestingly, these two factors also involve the largest trade-offs between increasing deposition of conspecific pollen and reducing that of heterospecific pollen.  -->
-Most remarkably, despite large differences in the quantity and purity of conspecific pollen deposition among species, our results provide solid evidence that competition for pollination is inherently a community process and the same species can occupy different niches in different communities. 
+<!-- Most remarkably, despite large differences in the quantity and purity of conspecific pollen deposition among species, our results provide solid evidence that competition for pollination is inherently a community process and the same species can occupy different niches in different communities.  -->
 <!-- Overall, species coexistence is not solely determined by direct and indirect mutualistic relationships, but also strongly shaped by the multiple intertwined ecological factors that shape competition for pollination at the community level.  -->
-Many of the widely used theoretical models of plant-pollinator communities do not account for the negative effects of sharing pollinators [but see @rohr_structural_2014 and similar]\R{theoretical-models}. 
-However, achieving a better understanding of species coexistence and how plant biodiversity is supported by pollination communities will require seeing them as both mutualistic and competitive communities [@johnson_coexistence_2019]. 
-
-<!-- DBS: If we're really looking for a paragraph to cut, we can cut this last one in its entirety. -->
-
-<!-- ESC: hi fernando. i'm edine. i'm here with my papa. have a nice day!!!!!! -->
 
 # Acknowledgements
 
