@@ -27,7 +27,7 @@
 \begin{letter}
 {
     Editorial Office,\\
-    Proceedings of the Royal Society B
+    Ecology
 }
 % Opening statement
 \opening{Dear Editorial Team,}
@@ -37,7 +37,7 @@
 drake::loadd(msc_title)
 @
 
-We are submitting the manuscript entitled ``\Sexpr{msc_title}'' to be considered for publication in \emph{Proceedings B}.
+We are submitting the manuscript entitled ``\Sexpr{msc_title}'' to be considered for publication in \emph{Ecology}.
 The main goal of this study is to explore the balance between competition and facilitation in plants belonging to the same pollination community.
 
 Although the idea that plants can compete for pollinators or facilitate each other has been on the table for a long time, a definitive answer has not been reached yet.

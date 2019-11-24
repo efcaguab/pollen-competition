@@ -41,3 +41,7 @@ header-includes:
 * Other minor adjustments to address comments by reviews received when submitted to Proceedings B
 * Rewrote abstract
 * Updated title
+
+## To-do
+
+* Update supplementary information

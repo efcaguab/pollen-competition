@@ -5,7 +5,7 @@ author: "E. Fernando Cagua, Hugo J. Marrero, Jason M. Tylianakis, Daniel B. Stou
 # bibliography: references.bib
 csl: nature.csl
 documentclass: book
-classoption: a4paper
+# classoption: a4paper
 nocite: | 
   @Xu2003, @Nakagawa2013
 output: 

@@ -6,18 +6,18 @@ author:
   - "Jason M. Tylianakis^1^ ([jason.tylianakis@canterbury.ac.nz](jason.tylianakis@canterbury.ac.nz))"
   - "Daniel B. Stouffer^1^ ([daniel.stouffer@canterbury.ac.nz](daniel.stouffer@canterbury.ac.nz))"
 bibliography: bibliography.bib
-csl: proceedings-of-the-royal-society-b.csl
+csl: ecology.csl
 output: #word_document
   bookdown::pdf_document2:
     # base_format: rticles::peerj_article
     keep_tex: yes
     number_sections: false
 toc: false
-fontsize: 11pt
-classoption: a4paper
-geometry: 
-  - textwidth=33em
-  - textheight=48\baselineskip
+fontsize: 12pt
+# classoption: a4paper
+# geometry: 
+  # - textwidth=33em
+  # - textheight=48\baselineskip
 header-includes:
   - \usepackage{booktabs}
   - \usepackage{setspace}
@@ -28,7 +28,7 @@ header-includes:
   - \newcommand{\lr}[1]{page~\pageref{#1}, line~\lineref{#1}}
   - \externaldocument[S-]{supp-info}
   - \usepackage[export]{adjustbox}
-  # - \usepackage[nomarkers]{endfloat}
+  - \usepackage{endfloat}
 ---
 
 \linenumbers
@@ -47,7 +47,7 @@ loadd(abs_wordcount, msc_wordcount, n_displays, n_references, keywords, referenc
 
 <!-- **Short title:** Competition/facilitation in pollination -->
 
-<!-- **Content type:** Research article. -->
+**Content type:** Research article.
 
 **Number of words:** `r abs_wordcount$n_words_stri` in abstract; `r format(round(msc_wordcount$n_words_stri), big.mark = ",")` in main text.
 
@@ -57,7 +57,7 @@ loadd(abs_wordcount, msc_wordcount, n_displays, n_references, keywords, referenc
 
 **Author for correspondence:** E. Fernando Cagua (+64 20 4026 8153).
 
-<!-- **Data accessibility:** All data and code necessary to reproduce the results has been included in the Electronic Supplementary Materials and will be publicly available in appropriate databases upon acceptance. -->
+**Data accessibility:** All data and code necessary to reproduce the results has been included in the Electronic Supplementary Materials and will be publicly available in appropriate databases upon acceptance.
 
 **Author contributions:** EFC wrote the manuscript and performed all analyses with input from all authors; HJM collected the data; all authors contributed to the study design.
 
