@@ -47,7 +47,7 @@ loadd(abs_wordcount, msc_wordcount, n_displays, n_references, keywords, referenc
 
 <!-- **Short title:** Competition/facilitation in pollination -->
 
-**Content type:** Research article.
+<!-- **Content type:** Research article. -->
 
 **Number of words:** `r abs_wordcount$n_words_stri` in abstract; `r format(round(msc_wordcount$n_words_stri), big.mark = ",")` in main text.
 
@@ -57,11 +57,11 @@ loadd(abs_wordcount, msc_wordcount, n_displays, n_references, keywords, referenc
 
 **Author for correspondence:** E. Fernando Cagua (+64 20 4026 8153).
 
-**Data accessibility:** All data and code necessary to reproduce the results has been included in the Electronic Supplementary Materials and will be publicly available in appropriate databases upon acceptance.
+<!-- **Data accessibility:** All data and code necessary to reproduce the results has been included in the Electronic Supplementary Materials and will be publicly available in appropriate databases upon acceptance. -->
 
 **Author contributions:** EFC wrote the manuscript and performed all analyses with input from all authors; HJM collected the data; all authors contributed to the study design.
 
-**Competing interests:** The authors have declared that no competing interests exist.
+<!-- **Competing interests:** The authors have declared that no competing interests exist. -->
 
 <!-- The authors do not wish to opt-in to post the submission as a preprint on bioRxiv -->
 
@@ -78,7 +78,7 @@ loadd(abs_wordcount, msc_wordcount, n_displays, n_references, keywords, referenc
 # Introduction
 
 Animal pollination plays a disproportionally important role in food production and maintenance of global biodiversity [@bascompte_plant-animal_2007; @klein_importance_2007; @ollerton_how_2011]. 
-At a pairwise level, the mutually beneficial relationship between plants and pollinators underpins pollination. 
+At a pairwise level, the mutually beneficial relationship between plants and pollinators underpins the pollination service. 
 At a community level, sometimes involving hundreds of species, both plant and pollinator species are connected in a myriad of indirect connections when pollination partners are shared. 
 These indirect connections can dramatically alter the quality of the pollination service that plants receive because they determine how conspecific and heterospecific pollen is transferred across the community [@morales_interspecific_2008]. 
 Generally speaking, there is a trade-off between the benefits gained from maximising the number of partners and the costs of sharing them with other plant species [@waser_interspecific_1978].
