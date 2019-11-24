@@ -170,7 +170,7 @@ We log-transformed the number of shared pollinators, floral abundance, and visit
 Finally, functional originality is defined as the distance of a species from the community trait average--the centroid of functional space of the community [@laliberte_distance-based_2010; @coux_linking_2016]. 
 To include phenological variation, we treated floral abundance in each of the survey months (November to March) as a "trait" in our analysis. 
 To account for the non-independence of floral counts and weight all traits equally, we assigned a weight of 1/5 to these abundances (one for each month). 
-We scaled all traits prior to calculating the centroid of the functional space and calculated the species-specific functional coordinates using the R package `FD 1.0-12` [@laliberte_fd_2014]. 
+We scaled all traits before calculating the centroid of the functional space and calculated the species-specific functional coordinates using the R package `FD 1.0-12` [@laliberte_fd_2014]. 
 Finally, we scaled all four factors to have a zero mean and unitary variance.
  
 To estimate the coefficients, perform model selection, and quantify the associated uncertainty, we used a combination of multi-model inference and bootstrap resampling with 99 replicates. 
