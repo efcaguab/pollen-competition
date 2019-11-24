@@ -181,8 +181,8 @@ Finally, we used these distributions of the model coefficients to estimate their
 ## Flexibility of plant strategies
 
 Our second objective was to tease apart whether and how these factors that might affect pollen deposition might change across communities species are present.
-If community context plays a relatively small role, or alternatively, species are inflexible in regards of these factors, we would expect plants of the same species to fill similar pollination niches across different communities. 
-Alternatively, if the community plays a large role and plant species are flexible, we should be able to observe differences in the realised niche a plant species occupies across communities. 
+If community context plays a relatively small role, or species are inflexible in regards to these factors, we would expect plants of the same species to fill similar pollination niches across different communities. 
+Alternatively, if the community plays a significant role and plant species are flexible, we should be able to observe differences in the realised niche a plant species occupies across communities. 
 To test this, we first used a principal component analysis (PCA) of the four ecological factors (number of shared pollinators, floral abundance, visit potential, and trait originality). 
 We scaled factors across the whole study to ensure that the PCA space does not change according to the species present in each community. 
 We define a species' niche in a community as its coordinates in PCA space. 
@@ -252,7 +252,7 @@ We found that the relationship between each of the ecological factors and pollen
 That is, strategies that were associated with an increase in conspecific pollen were also associated with an increase in heterospecific pollen deposition. 
 Specifically, the plants' mean visit potential had a positive effect on pollen deposition (Fig. \@ref(fig:fig-average-qual-quant)b). 
 However, the effect size was slightly larger for heterospecific than for conspecific pollen. 
-This indicates that, although there is a positive association between visit potential and the quantity of pollen deposition, there is a negative relationship with its purity (Fig. \@ref(fig:fig-average-qual-quant)c). 
+This larger effect indicates that, although there is a positive association between visit potential and the quantity of pollen deposition, there is a negative relationship with its purity (Fig. \@ref(fig:fig-average-qual-quant)c). 
 In contrast, a plants' relative floral abundance negatively affected its deposition quantity, but the mean difference between the coefficients in the models indicates a positive association with purity (Fig. \@ref(fig:fig-average-qual-quant)c). 
 The third most important factor, functional originality, had a positive, although comparatively smaller, association with both the quantity and purity. 
 Finally, the number of shared pollinators had negative and neutral associations with conspecific and heterospecific pollen, respectively, but these impacts were small when compared to the other factors. 
@@ -331,11 +331,8 @@ The difference can be particularly relevant for species that are not self-fertil
 
 Importantly, we show here that the balances between costs and benefits are determined not only by species identity but also by the community to which plants belong. 
 Specifically, most plant species appear to be flexible enough to adopt markedly different niches in different communities. 
-<!-- Although there are many exceptions, some plant families (Asteraceae for example) are often generalists in their communities while others (Orchidaceae) are known to be more commonly specialised [@johnson_generalization_2000].  -->
-<!-- DBS: I'd cut the sentence above. -->
 From an evolutionary perspective, our results suggest that selection for a particular strategy might say something about the community in which a species has typically inhabited during its evolutionary history. 
 Furthermore, from a more applied perspective, flowering plants are sometimes introduced to attract pollinators on other nearby plants. 
-<!-- DBS: Below, we do the 'on the one hand', 'on the other (hand)' dance for the third or fourth time. We should change some of them to spice things up. -->
 On the one hand, our results suggest that introduced plants that increase the relative originality of natives (e.g. through distinct phenology) might have positive effects [@gibson_can_2012]. 
 On the other, because different niches can lead to different outcomes across communities, our results also highlight the difficulties involved in predicting whether the introduced plant species will facilitate or compete with neighbours [@bartomeus_contrasting_2008]. 
 Other factors that we were unable to measure (e.g. pollinator behaviour and densities or the spatial context) have also been shown to play a role in the outcome of animal-mediated pollination [@ye_competition_2014; @flanagan_effects_2011; @cariveau_spatially_2009; @thomson_effects_2019].
