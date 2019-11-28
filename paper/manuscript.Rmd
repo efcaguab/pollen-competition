@@ -162,31 +162,32 @@ Because the amount of deposited pollen can vary widely across species, and poten
 We selected the best random structure by comparing the median Akaike Information Criterion for small samples (AICc). 
 
 As fixed predictors in the models, we included the four ecological factors described above. 
-Specifically, we calculated the number of shared pollinators for each plant species by pooling data from the qualitative and quantitative pollination networks. 
+Specifically, we calculated the number of shared pollinator species for each plant species by pooling data from the qualitative and quantitative pollination networks. 
 To calculate the plants' relative floral abundance in their community, we aggregated floral counts for each species. 
-We then calculated the mean visit potential of pollinator species *i* to plant species *j* as \[o_{ij} = \frac{v_{ij}}{v_i} \frac{p_{ji}}{p_j}\], where *v~ij~* is the observed number of visits by *i* to *j*, *p~ji~* is the number of pollen grains from *j* attached to *i*, *v~i~* is the total number of visits performed by *i*, and *p~j~* is the total number of grains carried by *j*.
+We then calculated the mean visit potential of pollinator species *i* to plant species *j* as \[o_{ij} = \frac{v_{ij}}{v_i} \frac{p_{ji}}{p_j},\] where *v~ij~* is the observed number of visits by *i* to *j*, *p~ji~* is the number of pollen grains from *j* attached to *i*, *v~i~* is the total number of visits performed by *i*, and *p~j~* is the total number of grains carried by *j*.
 We log-transformed the number of shared pollinators, floral abundance, and visit potential before including them in the model. 
 
 Finally, functional originality is defined as the distance of a species from the community trait average--the centroid of functional space of the community [@laliberte_distance-based_2010; @coux_linking_2016]. 
-To include phenological variation, we treated floral abundance in each of the survey months (November to March) as a "trait" in our analysis. 
+To include phenological variation, we treated floral abundance in each of the survey months (November to March) as a "trait" in this analysis. 
 To account for the non-independence of floral counts and weight all traits equally, we assigned a weight of 1/5 to these abundances (one for each month). 
 We scaled all traits before calculating the centroid of the functional space and calculated the species-specific functional coordinates using the R package `FD 1.0-12` [@laliberte_fd_2014]. 
-Finally, we scaled all four factors to have a zero mean and unitary variance.
+Finally, we scaled all four factors to have a zero mean and unit variance.
  
 To estimate the coefficients, perform model selection, and quantify the associated uncertainty, we used a combination of multi-model inference and bootstrap resampling with 99 replicates. 
-First, we performed model selection using the AICc and determined the likelihood of each candidate model (a particular combination of predictors) by calculating the median \(\Delta\)AICc (relative to the most likely model) for each bootstrap sample. 
+Using bootstrap replicates allow us to better understand the uncertainties associated with our estimations. 
+First, we performed model selection using AICc and determined the likelihood of each candidate model (a particular combination of predictors) by calculating the median \(\Delta\)AICc (relative to the most likely model) for each bootstrap sample. 
 As we wanted model coefficients from more likely candidate models to carry more weight in our results, we sampled the coefficients for our factors proportionally to the likelihood of their candidate model. 
 Finally, we used these distributions of the model coefficients to estimate their mean impact on the pollination service (in terms of quantity and purity of conspecific pollen deposition). 
 
 ## Flexibility of plant strategies
 
 Our second objective was to tease apart whether and how these factors that might affect pollen deposition might change across communities species are present.
-If community context plays a relatively small role, or species are inflexible in regards to these factors, we would expect plants of the same species to fill similar pollination niches across different communities. 
-Alternatively, if the community plays a significant role and plant species are flexible, we should be able to observe differences in the realised niche a plant species occupies across communities. 
+If community context plays a relatively small role, or species are inflexible in regards to these factors, we would expect plants of the same species to fill similar "pollination niches" across different communities. 
+Alternatively, if the community plays a significant role and plant species are flexible, we should be able to observe differences in the pollination niche a plant species occupies across communities. 
 To test this, we first used a principal component analysis (PCA) of the four ecological factors (number of shared pollinators, floral abundance, visit potential, and trait originality). 
 We scaled factors across the whole study to ensure that the PCA space does not change according to the species present in each community. 
-We define a species' niche in a community as its coordinates in PCA space. 
-For each species that was present in two or more communities, we then calculated (*i*) the median distance between the strategies that the species uses in different communities and (*ii*) the area of the convex hull defined by these points in the first two principal components (only for species present in three or more communities). 
+We define a species' pollination niche in a community as its coordinates in PCA space. 
+For each species that was present in two or more communities, we then calculated (*i*) the median distance between the points that correspond to the niches species occupies in different communities and (*ii*) the area of the convex hull defined by these points in the first two principal components (only for species present in three or more communities). 
 We then compared the magnitude of these two metrics to those obtained with 99 Monte Carlo randomizations in which we replaced the strategy of the focal plant species by that of another randomly selected species in the dataset. 
 
 # Results
