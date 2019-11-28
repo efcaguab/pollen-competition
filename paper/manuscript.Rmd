@@ -1,5 +1,5 @@
 ---
-title: "The trade-offs of pollinator sharing: pollination service is determined by the community context"
+title: "The trade-offs of sharing pollinators: pollination service is determined by the community context"
 author: 
   - "E. Fernando Cagua^1^ ([efc29@uclive.ac.nz](mailto:efc29@uclive.ac.nz))"
   - "Hugo J. Marrero^2^ ([hugomarrero@gmail.com](hugomarrero@gmail.com))"
