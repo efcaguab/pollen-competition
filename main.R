@@ -236,13 +236,36 @@ paper_plan <- rbind(
   reporting_plan
 )
 
+# Export for thesis -------------------------------------------------------
+
+dir.create("data/processed/plot_data", showWarnings = FALSE, recursive = TRUE)
+
+export_figure_data_plan <- drake::drake_plan(
+  saveRDS(object = variable_importance,
+          file = drake::file_out("data/processed/plot_data/variable_importance.rds"),
+          ascii = TRUE, compress = FALSE),
+  saveRDS(object = coefficient_averages,
+          file = drake::file_out("data/processed/plot_data/coefficient_averages.rds"),
+          ascii = TRUE, compress = FALSE),
+  saveRDS(object = pcas,
+          file = drake::file_out("data/processed/plot_data/pcas.rds"),
+          ascii = TRUE, compress = FALSE),
+  saveRDS(object = permanova_plant_distances,
+          file = drake::file_out("data/processed/plot_data/permanova_plant_distances.rds"),
+          ascii = TRUE, compress = FALSE),
+  saveRDS(object = permanova_site_distances,
+          file = drake::file_out("data/processed/plot_data/permanova_site_distances.rds"),
+          ascii = TRUE, compress = FALSE)
+)
+
 # Make all ----------------------------------------------------------------
 
 # set up plan
 project_plan <- rbind(
   configuration_plan,
   analyses_plan,
-  paper_plan
+  paper_plan,
+  export_figure_data_plan
   )
 
 project_config <- drake_config(project_plan)
