@@ -76,3 +76,5 @@ paper/cover-letter-concordance\.tex
 paper/cover-letter\.bbl
 
 paper/cover-letter\.run\.xml
+
+data/processed/plot_data/
