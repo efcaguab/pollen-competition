@@ -1,5 +1,5 @@
 ---
-title: "Community context determines competition vs. facilitation trade-offs in pollination systems"
+title: "The trade-offs of sharing pollinators: pollination service is determined by the community context"
 subtitle: "Supplementary information"
 author: "E. Fernando Cagua, Hugo J. Marrero, Jason M. Tylianakis, Daniel B. Stouffer"
 # bibliography: references.bib
