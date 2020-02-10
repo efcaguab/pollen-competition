@@ -192,7 +192,7 @@ To test this, we first used a principal component analysis (PCA) of the four eco
 We scaled factors across the whole study to ensure that the PCA space does not change according to the species present in each community. 
 We define a species' strategy in a community as its coordinates in PCA space. 
 For each species that was present in two or more communities, we then calculated (*i*) the median distance between the points that correspond to the strategy a species uses in different communities and (*ii*) the area of the convex hull defined by these points in the first two principal components (only for species present in three or more communities). 
-We then compared the magnitude of these two metrics to those obtained with 99 Monte Carlo randomizations in which we replaced the strategy of the focal plant species by that of another randomly selected species in the dataset. 
+Using a one-tailed Monte Carlo test, we then tested wether the magnitude of these two metrics was smaller to those obtained with 99 randomizations in which we replaced the strategy of the focal plant species by that of another randomly selected species in the dataset. 
 
 # Results
 
