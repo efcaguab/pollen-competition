@@ -202,7 +202,7 @@ Using a one-tailed Monte Carlo test, we then tested wether the magnitude of thes
 drake::loadd(r2_values)
 ```
 
-We first examined the potential roles played in pollen deposition by four ecological factors (number of shared pollinators, abundance, mean visit potential, and functional originality). 
+We examined the potential roles played in pollen deposition by four ecological factors (number of shared pollinators, abundance, mean visit potential, and functional originality). 
 We found that our models of pollen deposition had high explanatory power (the coefficient of determination R^2^ ranged between `r min(r2_values$r2c_min)` and `r max(r2_values$r2c_max)`) although a large portion of the explanatory power came from the random effects (Table \@ref(S-tab:table-R2)).
 As determined by AICc, the random structure best supported by the data was the one that fit a separate intercept for each species in each community (as opposed to a common intercept for each species irrespective of the community to which they belong). 
 This structure was best for both the models of conspecific and heterospecific pollen (Table \@ref(S-tab:table-aic-random-models)).  
