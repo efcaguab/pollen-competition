@@ -332,15 +332,16 @@ Our results corroborate the importance that two-species studies have ascribed to
 but they also suggest that [because visitation, pollen production and abundance are usually correlated; @sargent_role_2006] balancing the pros and cons of sharing pollinators at the community level is not trivial. 
 The fact that no species can easily outcompete others for pollination might be partially responsible for the diversity of plant-pollinator communities [@benadi_frequency_2018].
 
-We observed, as expected, that the effects of pollen deposition can vary widely among species. 
-For instance, the fitness of some plant species can be hurt even by low amounts of heterospecific pollen, while the fitness of others can instead be limited by the amount of conspecific pollen [@campbell_mechanism_1985; @arceo-gomez_interactive_2019]. 
-Alternatively, plant species can also differ substantially in the extent to which self- vs. outcross-pollen differ in their value for fertilization. 
-The difference can be particularly relevant for species that are not self-fertile or those in which self-fertilization is rarely effective due to a temporary separation in the maturation of the sexes (dichogamy). 
+<!-- We observed, as expected, that the effects of pollen deposition can vary widely among species.  -->
+<!-- For instance, the fitness of some plant species can be hurt even by low amounts of heterospecific pollen, while the fitness of others can instead be limited by the amount of conspecific pollen [@campbell_mechanism_1985; @arceo-gomez_interactive_2019].  -->
+<!-- Alternatively, plant species can also differ substantially in the extent to which self- vs. outcross-pollen differ in their value for fertilization.  -->
+<!-- The difference can be particularly relevant for species that are not self-fertile or those in which self-fertilization is rarely effective due to a temporary separation in the maturation of the sexes (dichogamy).  -->
+<!-- Despite the stark differences among plants sensitivity to pollen deposition, we still detected  -->
 
 Importantly, we show here that the balances between costs and benefits are determined not only by species identity but also by the community to which plants belong. 
 Specifically, most plant species appear to be flexible enough to adopt markedly different "strategies" in different communities. 
 From an evolutionary perspective, our results suggest that selection for a particular strategy might say something about the community in which a species has typically inhabited during its evolutionary history. 
-Furthermore, from a more applied perspective, flowering plants are sometimes introduced to attract pollinators on other nearby plants. 
+<!-- Furthermore, from a more applied perspective, flowering plants are sometimes introduced to attract pollinators on other nearby plants.  -->
 On the one hand, our results suggest that plants that increase the relative originality of natives (e.g. through distinct phenology) might have positive effects [@gibson_can_2012]. 
 On the other, because different strategies can lead to different outcomes across communities, our results also highlight the difficulties involved in predicting whether the introduced plant species will facilitate or compete with neighbours [@bartomeus_contrasting_2008]. 
 Other factors that we were unable to measure (e.g. pollinator behaviour and densities or the spatial context) have also been shown to play a role in the outcome of animal-mediated pollination [@ye_competition_2014; @flanagan_effects_2011; @cariveau_spatially_2009; @thomson_effects_2019].
