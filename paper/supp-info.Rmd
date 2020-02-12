@@ -12,6 +12,7 @@ output:
   bookdown::pdf_document2: 
     keep_tex: yes
     toc: false
+fontsize: 12pt
 header-includes:
   - \usepackage{booktabs}
   - \usepackage{longtable}

@@ -14,10 +14,9 @@ output: #word_document
     number_sections: false
 toc: false
 fontsize: 12pt
-classoption: a4paper
-# geometry: 
-  # - textwidth=33em
-  # - textheight=48\baselineskip
+geometry:
+  - textwidth=6.5in
+  - textheight=9in
 header-includes:
   - \usepackage{booktabs}
   - \usepackage{setspace}
@@ -31,6 +30,7 @@ header-includes:
   # - \usepackage{endfloat}
   - \usepackage{caption}
   # - \captionsetup{labelsep=none,textformat=empty}
+  - \usepackage{ragged2e}
 editor_options: 
   chunk_output_type: console
 ---
@@ -49,9 +49,9 @@ loadd(abs_wordcount, msc_wordcount, n_displays, n_references, keywords, referenc
 
 ^2^ Centro de Recursos Naturales Renovables de las Zonas Semiáridas, CONICET, Camino de la Carrindanga Km. 7, 8000 Bahía Blanca, Argentina
 
-<!-- **Short title:** Competition/facilitation in pollination -->
+**Running head:** Competition/facilitation in pollination
 
-<!-- **Content type:** Research article. -->
+<!-- **Article type:** Report. -->
 
 <!-- **Number of words:** `r abs_wordcount$n_words_stri` in abstract; `r format(round(msc_wordcount$n_words_stri), big.mark = ",")` in main text. -->
 
@@ -63,7 +63,7 @@ loadd(abs_wordcount, msc_wordcount, n_displays, n_references, keywords, referenc
 
 <!-- **Data accessibility:** All data and code necessary to reproduce the results has been included in the Electronic Supplementary Materials and will be publicly available in appropriate databases upon acceptance. -->
 
-**Author contributions:** EFC wrote the manuscript and performed all analyses with input from all authors; HJM collected the data; all authors contributed to the study design.
+<!-- **Author contributions:** EFC wrote the manuscript and performed all analyses with input from all authors; HJM collected the data; all authors contributed to the study design. -->
 
 <!-- **Competing interests:** The authors have declared that no competing interests exist. -->
 
@@ -76,8 +76,6 @@ loadd(abs_wordcount, msc_wordcount, n_displays, n_references, keywords, referenc
 `r paste(drake::readd(abstract), collapse = "")`
 
 **Keywords:** `r keywords`
-
-\clearpage
 
 # Introduction
 
