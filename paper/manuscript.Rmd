@@ -70,6 +70,7 @@ loadd(abs_wordcount, msc_wordcount, n_displays, n_references, keywords, referenc
 <!-- The authors do not wish to opt-in to post the submission as a preprint on bioRxiv -->
 
 \clearpage
+\RaggedRight
 
 # Abstract
 
