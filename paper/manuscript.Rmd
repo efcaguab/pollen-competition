@@ -27,9 +27,9 @@ header-includes:
   - \newcommand{\lr}[1]{page~\pageref{#1}, line~\lineref{#1}}
   - \externaldocument[S-]{supp-info}
   - \usepackage[export]{adjustbox}
-  # - \usepackage{endfloat}
+  - \usepackage[nomarkers]{endfloat}
   - \usepackage{caption}
-  # - \captionsetup{labelsep=none,textformat=empty}
+  - \captionsetup{labelsep=none,textformat=empty}
   - \usepackage{ragged2e}
 editor_options: 
   chunk_output_type: console
