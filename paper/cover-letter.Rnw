@@ -1,6 +1,6 @@
 %-----------------------------------------------------------------------------%
 % Letter class
-\documentclass[11pt, a4paper]{letter}
+\documentclass[12pt]{letter}
 \usepackage{hyperref}
 \usepackage[backend=bibtex,style=verbose,doi=false,isbn=false,url=false]{biblatex}
 \addbibresource{bibliography.bib}
