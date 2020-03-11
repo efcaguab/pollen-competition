@@ -51,7 +51,8 @@ By studying all of these ecological factors together, we have two main results.
 First, at the community level, there is no such thing as a free lunch, and plants need to balance multiple trade-offs when optimising pollen deposition.
 On the one hand, factors that increase the quantity of pollen deposited by animals may also decrease its purity (and vice-versa).
 On the other hand, factors that increase both the quantity and purity of pollen deposition may be beneficial in the short-term but risky in the long term.
-Second, we show that the strategies plant species use to optimise pollen deposition, are likely to be flexible and depend on the community context.
+Second, we show that the strategies plant species use to optimise pollen deposition, are likely to be flexible.
+This emphasises the importance of the community context for pollen deposition, in particular, and competition for pollination, in general.
 
 Our work provides fundamental understanding of plant reproductive biology, while also \emph{calling for a shift in the way we think about pollination in community ecology}, particularly from a theoretical perspective.
 In contrast to the predominant literature, our study provides compelling evidence that animal-mediated pollination is a fluid dance between competition and facilitation.
