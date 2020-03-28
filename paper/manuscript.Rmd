@@ -1,12 +1,12 @@
 ---
 title: "The trade-offs of sharing pollinators: pollination service is determined by the community context"
-author: 
-  - "E. Fernando Cagua^1^ ([efc29@uclive.ac.nz](mailto:efc29@uclive.ac.nz))"
-  - "Hugo J. Marrero^2^ ([hugomarrero@gmail.com](hugomarrero@gmail.com))"
-  - "Jason M. Tylianakis^1^ ([jason.tylianakis@canterbury.ac.nz](jason.tylianakis@canterbury.ac.nz))"
-  - "Daniel B. Stouffer^1^ ([daniel.stouffer@canterbury.ac.nz](daniel.stouffer@canterbury.ac.nz))"
+#author: 
+#  - "E. Fernando Cagua^1^ ([efc29@uclive.ac.nz](mailto:efc29@uclive.ac.nz))"
+#  - "Hugo J. Marrero^2^ ([hugomarrero@gmail.com](hugomarrero@gmail.com))"
+#  - "Jason M. Tylianakis^1^ #([jason.tylianakis@canterbury.ac.nz](jason.tylianakis@canterbury.ac.nz))"
+#  - "Daniel B. Stouffer^1^ ([daniel.stouffer@canterbury.ac.nz](daniel.stouffer@canterbury.ac.nz))"
 bibliography: bibliography.bib
-csl: ecology.csl
+csl: the-american-naturalist.csl
 output: #word_document
   bookdown::pdf_document2:
     # base_format: rticles::peerj_article
@@ -27,10 +27,10 @@ header-includes:
   - \newcommand{\lr}[1]{page~\pageref{#1}, line~\lineref{#1}}
   - \externaldocument[S-]{supp-info}
   - \usepackage[export]{adjustbox}
-  - \usepackage[nomarkers]{endfloat}
-  - \usepackage{caption}
-  - \captionsetup{labelsep=none,textformat=empty}
-  - \usepackage{ragged2e}
+#  - \usepackage[nomarkers]{endfloat}
+#  - \usepackage{caption}
+#  - \captionsetup{labelsep=none,textformat=empty}
+#  - \usepackage{ragged2e}
 editor_options: 
   chunk_output_type: console
 ---
@@ -45,21 +45,21 @@ knitr::opts_chunk$set(echo = FALSE, message = FALSE,
 loadd(abs_wordcount, msc_wordcount, n_displays, n_references, keywords, references)
 ```
  
-^1^ Centre for Integrative Ecology, School of Biological Sciences, University of Canterbury, Private Bag 4800, Christchurch 8041, New Zealand
+<!-- ^1^ Centre for Integrative Ecology, School of Biological Sciences, University of Canterbury, Private Bag 4800, Christchurch 8041, New Zealand -->
 
-^2^ Centro de Recursos Naturales Renovables de las Zonas Semiáridas, CONICET, Camino de la Carrindanga Km. 7, 8000 Bahía Blanca, Argentina
+<!-- ^2^ Centro de Recursos Naturales Renovables de las Zonas Semiáridas, CONICET, Camino de la Carrindanga Km. 7, 8000 Bahía Blanca, Argentina -->
 
-**Running head:** The trade-offs of sharing pollinators
+<!-- **Running head:** The trade-offs of sharing pollinators -->
 
-<!-- **Article type:** Report. -->
+**Manuscript type:** Article.
 
-<!-- **Number of words:** `r abs_wordcount$n_words_stri` in abstract; `r format(round(msc_wordcount$n_words_stri), big.mark = ",")` in main text. -->
+**Number of words:** `r abs_wordcount$n_words_stri` in abstract; `r format(round(msc_wordcount$n_words_stri), big.mark = ",")` in main text.
 
 <!-- **Number of displays:** `r n_displays$figures` figures; `r n_displays$tables` tables; `r n_displays$text_boxes` text boxes. -->
 
 <!-- **Number of references:** `r n_references` -->
 
-**Author for correspondence:** E. Fernando Cagua (+64 20 4026 8153).
+<!-- **Author for correspondence:** E. Fernando Cagua (+64 20 4026 8153). -->
 
 <!-- **Data accessibility:** All data and code necessary to reproduce the results has been included in the Electronic Supplementary Materials and will be publicly available in appropriate databases upon acceptance. -->
 
@@ -69,13 +69,17 @@ loadd(abs_wordcount, msc_wordcount, n_displays, n_references, keywords, referenc
 
 <!-- The authors do not wish to opt-in to post the submission as a preprint on bioRxiv -->
 
-\RaggedRight
+<!-- \RaggedRight -->
+
+**Keywords:** `r keywords`
+
+\clearpage
 
 # Abstract
 
 `r paste(drake::readd(abstract), collapse = "")`
 
-**Keywords:** `r keywords`
+\clearpage
 
 # Introduction
 
@@ -354,8 +358,8 @@ These trade-offs emphasise the inherently competitive nature of pollination.
 However, many of the widely used theoretical models of plant-pollinator communities do not account for the adverse effects of sharing pollinators [but see @rohr_structural_2014 and similar]. 
 We therefore propose that achieving a better understanding of species coexistence and how pollination supports plant biodiversity will require seeing them as both mutualistic and competitive communities [@johnson_coexistence_2019]. 
 
-# Acknowledgements
+<!-- # Acknowledgements -->
 
-`r paste(drake::readd(acknowledgements), collapse = "")`
+<!-- `r paste(drake::readd(acknowledgements), collapse = "")` -->
 
 # References

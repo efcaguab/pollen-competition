@@ -20,14 +20,14 @@
     University of Canterbury, \\
     New Zealand
 }
-\date{July 5, 2019}
+\date{March 28, 2020}
 %-----------------------------------------------------------------------------%
 \begin{document}
 % Name and address of receiver
 \begin{letter}
 {
     Editorial Office,\\
-    Ecology
+    The American Naturalist
 }
 % Opening statement
 \opening{Dear Editorial Team,}
@@ -37,7 +37,7 @@
 drake::loadd(msc_title)
 @
 
-We are submitting the manuscript entitled ``\Sexpr{msc_title}'' to be considered for publication in \emph{Ecology}.
+We are submitting the manuscript entitled ``\Sexpr{msc_title}'' to be considered for publication in \emph{The American Naturalist}.
 
 The main goal of our study is to explore the balance between competition and facilitation in plants belonging to the same pollination community.
 It has been known for some time that plants that share pollinators can indirectly compete with or facilitate each other.
@@ -57,16 +57,17 @@ This emphasises the importance of the community context for pollen deposition, i
 Our work provides fundamental understanding of plant reproductive biology, while also \emph{calling for a shift in the way we think about pollination in community ecology}, particularly from a theoretical perspective.
 In contrast to the predominant literature, our study provides compelling evidence that animal-mediated pollination is a fluid dance between competition and facilitation.
 Some lessons might also apply to other biological complex systems where facilitation and competition might be at odds like plant-frugivore and plant-fungus interactions.
-Thus, we believe that this manuscript will be interesting to the broad readership of \emph{Ecology}.
+Thus, we believe that this manuscript will be interesting to the readership of \emph{The American Naturalist}.
 
-Lastly, please note that the data used in this manuscript have been previously published by one of the co-authors\autocite{marrero_effect_2014,marrero_agricultural_2016,marrero_exotic_2017}.
+Please note that the data used in this manuscript have been previously published by one of the co-authors\autocite{marrero_effect_2014,marrero_agricultural_2016,marrero_exotic_2017}.
 However, the enclosed work represents a novel contribution from all involved.
+Lastly, we would like to bring to your attention that an earlier version of this manuscript has been published as a preprint\autocite{cagua_trade-offs_2019}.
 
 Thanks for your consideration.
 \bigskip
 
 \hfill
-Fernando Cagua,
+Fernando Cagua
 
 \vfill
 % Closing statement
